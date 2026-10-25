@@ -1,0 +1,7 @@
+{
+  "server": "localhost",
+  "database": "PhoneStore_QA_20261025_061611_2722bd",
+  "url": "http://localhost:65377",
+  "environment": "QA",
+  "credentials": ".artifacts/qa-env/private.json (local only; do not publish)"
+}

@@ -1,0 +1,16 @@
+﻿PASS Stock cannot oversell or become negative
+PASS Invalid stock operations preserve balances
+PASS Cancellation requires ownership and pending status
+PASS Stale version and repeated transitions are rejected
+PASS COD is paid only on successful completion
+PASS Failed delivery can be received only once
+PASS Order captures immutable lines and prices
+PASS Order rejects duplicate variants
+8 checks passed.
+PASS HTTP anonymous catalog and rendered account pages
+PASS HTTP CSRF blocks unauthenticated mutation without token
+PASS HTTP MVC registration and login with persisted account
+PASS HTTP MVC choose variant, add/update cart, checkout and order detail
+PASS HTTP admin login, confirm, dispatch and complete COD through API
+PASS HTTP reports, ownership, invalid inputs and lock invalidates existing cookie
+6 HTTP acceptance checks passed. Retained sample user: verify1025045137, completed order: DH66617f3e87124958a95e1ba0

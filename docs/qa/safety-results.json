@@ -1,0 +1,37 @@
+[
+  {
+    "id": "GUARD-LEGACY-API",
+    "status": "PASS",
+    "expected": "Từ chối trước kết nối/ghi dữ liệu khi thiếu/sai cấu hình QA",
+    "actual": "Đã dừng với thông báo bảo vệ đúng; không công bố stdout/stderr thô",
+    "exitCode": 3762504530
+  },
+  {
+    "id": "GUARD-LEGACY-SQL",
+    "status": "PASS",
+    "expected": "Từ chối trước kết nối/ghi dữ liệu khi thiếu/sai cấu hình QA",
+    "actual": "Đã dừng với thông báo bảo vệ đúng; không công bố stdout/stderr thô",
+    "exitCode": 3762504530
+  },
+  {
+    "id": "GUARD-BROWSER",
+    "status": "PASS",
+    "expected": "Từ chối trước kết nối/ghi dữ liệu khi thiếu/sai cấu hình QA",
+    "actual": "Đã dừng với thông báo bảo vệ đúng; không công bố stdout/stderr thô",
+    "exitCode": 1
+  },
+  {
+    "id": "GUARD-WEB-WRONG-DB",
+    "status": "PASS",
+    "expected": "Từ chối trước kết nối/ghi dữ liệu khi thiếu/sai cấu hình QA",
+    "actual": "Đã dừng với thông báo bảo vệ đúng; không công bố stdout/stderr thô",
+    "exitCode": 3762504530
+  },
+  {
+    "id": "GUARD-NATIVE",
+    "status": "PASS",
+    "expected": "Từ chối trước kết nối/ghi dữ liệu khi thiếu/sai cấu hình QA",
+    "actual": "Đã dừng với thông báo bảo vệ đúng; không công bố stdout/stderr thô",
+    "exitCode": 3762504530
+  }
+]

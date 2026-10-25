@@ -1,0 +1,9394 @@
+[
+  {
+    "testId": "ENV-012",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 4842.39
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 46.77
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1074.54
+  },
+  {
+    "testId": "UC01-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 3.49
+  },
+  {
+    "testId": "UC01-001",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 233.7
+  },
+  {
+    "testId": "UC01-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.62
+  },
+  {
+    "testId": "UC01-001",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 102.33
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.38
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 110.96
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.22
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 92.56
+  },
+  {
+    "testId": "UC01-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.56
+  },
+  {
+    "testId": "UC01-002",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 119.32
+  },
+  {
+    "testId": "UC01-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.76
+  },
+  {
+    "testId": "UC01-002",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 95.32
+  },
+  {
+    "testId": "UC01-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.28
+  },
+  {
+    "testId": "UC01-002",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 97.2
+  },
+  {
+    "testId": "UC01-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.57
+  },
+  {
+    "testId": "UC01-003",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 8.76
+  },
+  {
+    "testId": "UC01-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.71
+  },
+  {
+    "testId": "UC01-003",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 87.33
+  },
+  {
+    "testId": "UC01-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.27
+  },
+  {
+    "testId": "UC01-003",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 82.84
+  },
+  {
+    "testId": "UC01-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.24
+  },
+  {
+    "testId": "UC01-003",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 3.52
+  },
+  {
+    "testId": "UC01-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.62
+  },
+  {
+    "testId": "UC01-005",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 81.91
+  },
+  {
+    "testId": "UC01-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.32
+  },
+  {
+    "testId": "UC01-005",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 7.7
+  },
+  {
+    "testId": "UC01-005",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 52.14
+  },
+  {
+    "testId": "UC01-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 9.66
+  },
+  {
+    "testId": "UC01-009",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 52.21
+  },
+  {
+    "testId": "UC01-009",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 13.29
+  },
+  {
+    "testId": "UC01-010",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.28
+  },
+  {
+    "testId": "UC01-010",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 21.42
+  },
+  {
+    "testId": "UC01-010",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 12.58
+  },
+  {
+    "testId": "UC01-010",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 12.22
+  },
+  {
+    "testId": "UC05-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.44
+  },
+  {
+    "testId": "UC05-004",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 77.4
+  },
+  {
+    "testId": "SEC-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.05
+  },
+  {
+    "testId": "SEC-004",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 87.14
+  },
+  {
+    "testId": "QA-ERR401",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 4.27
+  },
+  {
+    "testId": "QA-CSRF",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 21.34
+  },
+  {
+    "testId": "WEB-HOME-EMPTY",
+    "method": "GET",
+    "route": "/",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1075.27
+  },
+  {
+    "testId": "WEB-HOME-EMPTY",
+    "method": "GET",
+    "route": "/Account/Login",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 34.19
+  },
+  {
+    "testId": "UC02-001",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 630.73
+  },
+  {
+    "testId": "UC02-001",
+    "method": "GET",
+    "route": "/api/catalog/2",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 77.52
+  },
+  {
+    "testId": "UC02-004",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 433.06
+  },
+  {
+    "testId": "UC02-004",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 8.17
+  },
+  {
+    "testId": "UC02-005",
+    "method": "GET",
+    "route": "/api/admin/products/4",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 29.64
+  },
+  {
+    "testId": "UC02-005",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 13.48
+  },
+  {
+    "testId": "UC02-005",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 6.77
+  },
+  {
+    "testId": "UC02-007",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.73
+  },
+  {
+    "testId": "UC02-007",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.68
+  },
+  {
+    "testId": "UC02-007",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 634.95
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 565.55
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 8.65
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 331.67
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 10.67
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 10.99
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 10.13
+  },
+  {
+    "testId": "UC02-008",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 165.27
+  },
+  {
+    "testId": "QA-FILTER",
+    "method": "GET",
+    "route": "/api/admin/products/6",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.98
+  },
+  {
+    "testId": "QA-FILTER",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 456.5
+  },
+  {
+    "testId": "QA-MONEY",
+    "method": "GET",
+    "route": "/api/admin/products/7",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.19
+  },
+  {
+    "testId": "QA-MONEY",
+    "method": "GET",
+    "route": "/Catalog/Details/7",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 27.89
+  },
+  {
+    "testId": "UC02-009",
+    "method": "GET",
+    "route": "/api/catalog/9223372036854775807",
+    "role": "ANONYMOUS",
+    "status": 404,
+    "ms": 3.6
+  },
+  {
+    "testId": "UC02-009",
+    "method": "GET",
+    "route": "/api/admin/products/8",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.77
+  },
+  {
+    "testId": "UC02-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.96
+  },
+  {
+    "testId": "UC02-009",
+    "method": "PUT",
+    "route": "/api/admin/products/8",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 160.45
+  },
+  {
+    "testId": "UC02-009",
+    "method": "GET",
+    "route": "/api/catalog/8",
+    "role": "ANONYMOUS",
+    "status": 404,
+    "ms": 2.98
+  },
+  {
+    "testId": "UC02-009",
+    "method": "GET",
+    "route": "/api/admin/products/8",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.68
+  },
+  {
+    "testId": "UC02-010",
+    "method": "GET",
+    "route": "/api/admin/products/9",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.08
+  },
+  {
+    "testId": "UC02-010",
+    "method": "GET",
+    "route": "/Catalog/Details/9",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 5.53
+  },
+  {
+    "testId": "UC02-010",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.29
+  },
+  {
+    "testId": "UC02-010",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 60.24
+  },
+  {
+    "testId": "UC03-001",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 37.48
+  },
+  {
+    "testId": "UC03-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.73
+  },
+  {
+    "testId": "UC03-001",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 35.02
+  },
+  {
+    "testId": "UC03-001",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 18.17
+  },
+  {
+    "testId": "UC03-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.34
+  },
+  {
+    "testId": "UC03-002",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 13.27
+  },
+  {
+    "testId": "UC03-002",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.3
+  },
+  {
+    "testId": "UC03-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.78
+  },
+  {
+    "testId": "UC03-003",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.99
+  },
+  {
+    "testId": "UC03-003",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.05
+  },
+  {
+    "testId": "UC03-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.3
+  },
+  {
+    "testId": "UC03-004",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 14.86
+  },
+  {
+    "testId": "UC03-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.58
+  },
+  {
+    "testId": "UC03-004",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 13.83
+  },
+  {
+    "testId": "UC03-004",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.35
+  },
+  {
+    "testId": "UC03-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.45
+  },
+  {
+    "testId": "UC03-005",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 7.1
+  },
+  {
+    "testId": "UC03-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.91
+  },
+  {
+    "testId": "UC03-005",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 6.31
+  },
+  {
+    "testId": "UC03-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.92
+  },
+  {
+    "testId": "UC03-005",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 7.06
+  },
+  {
+    "testId": "UC03-005",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.91
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.59
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.2
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.92
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "POST",
+    "route": "/Cart/Update",
+    "role": "CUSTOMER_A",
+    "status": 302,
+    "ms": 15.18
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.42
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.72
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.64
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.14
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "POST",
+    "route": "/Cart/Update",
+    "role": "CUSTOMER_A",
+    "status": 302,
+    "ms": 5.62
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.13
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.48
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.12
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.94
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "POST",
+    "route": "/Cart/Update",
+    "role": "CUSTOMER_A",
+    "status": 302,
+    "ms": 2.54
+  },
+  {
+    "testId": "QA-MVC-CART",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.49
+  },
+  {
+    "testId": "QA-CART-ID",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.87
+  },
+  {
+    "testId": "QA-CART-ID",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 7.06
+  },
+  {
+    "testId": "UC03-006",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.28
+  },
+  {
+    "testId": "UC03-006",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 6.48
+  },
+  {
+    "testId": "UC03-006",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.33
+  },
+  {
+    "testId": "UC03-006",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 6.03
+  },
+  {
+    "testId": "UC03-007",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.78
+  },
+  {
+    "testId": "UC03-007",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.2
+  },
+  {
+    "testId": "UC03-007",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.59
+  },
+  {
+    "testId": "UC03-007",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.02
+  },
+  {
+    "testId": "UC03-007",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 10.78
+  },
+  {
+    "testId": "UC03-007",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.3
+  },
+  {
+    "testId": "UC03-007",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 35.77
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.68
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.19
+  },
+  {
+    "testId": "fixture",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.35
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.12
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 9.33
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.48
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.04
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.71
+  },
+  {
+    "testId": "UC03-010",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.81
+  },
+  {
+    "testId": "UC03-010",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 37.75
+  },
+  {
+    "testId": "UC03-010",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.8
+  },
+  {
+    "testId": "UC03-010",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 6.4
+  },
+  {
+    "testId": "UC03-010",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.04
+  },
+  {
+    "testId": "UC03-010",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 4.83
+  },
+  {
+    "testId": "UC03-010",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.54
+  },
+  {
+    "testId": "UC03-008",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.3
+  },
+  {
+    "testId": "UC03-008",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 15.2
+  },
+  {
+    "testId": "UC03-008",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.05
+  },
+  {
+    "testId": "UC03-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.13
+  },
+  {
+    "testId": "UC03-011",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 311.62
+  },
+  {
+    "testId": "UC03-012",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.45
+  },
+  {
+    "testId": "UC03-012",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.89
+  },
+  {
+    "testId": "UC03-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.72
+  },
+  {
+    "testId": "UC03-014",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 11.49
+  },
+  {
+    "testId": "UC03-014",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.31
+  },
+  {
+    "testId": "UC03-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.33
+  },
+  {
+    "testId": "UC03-014",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_B",
+    "status": 403,
+    "ms": 5.34
+  },
+  {
+    "testId": "UC03-015",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.5
+  },
+  {
+    "testId": "UC04-001",
+    "method": "GET",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 104.42
+  },
+  {
+    "testId": "UC04-001",
+    "method": "GET",
+    "route": "/api/orders",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 7.27
+  },
+  {
+    "testId": "UC04-002",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 13.94
+  },
+  {
+    "testId": "UC04-009",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_B",
+    "status": 404,
+    "ms": 4.99
+  },
+  {
+    "testId": "UC04-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.07
+  },
+  {
+    "testId": "UC04-009",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_B",
+    "status": 404,
+    "ms": 43.94
+  },
+  {
+    "testId": "UC04-009",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.26
+  },
+  {
+    "testId": "UC09-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.6
+  },
+  {
+    "testId": "UC09-003",
+    "method": "POST",
+    "route": "/api/admin/orders/1/complete",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 36.93
+  },
+  {
+    "testId": "UC09-003",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.34
+  },
+  {
+    "testId": "UC09-002",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 54.48
+  },
+  {
+    "testId": "UC09-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.43
+  },
+  {
+    "testId": "UC09-002",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 13.74
+  },
+  {
+    "testId": "UC09-002",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.38
+  },
+  {
+    "testId": "UC09-002",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.73
+  },
+  {
+    "testId": "UC04-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.98
+  },
+  {
+    "testId": "UC04-005",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 8.25
+  },
+  {
+    "testId": "UC04-005",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.8
+  },
+  {
+    "testId": "UC09-004",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.49
+  },
+  {
+    "testId": "UC09-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.71
+  },
+  {
+    "testId": "UC09-004",
+    "method": "POST",
+    "route": "/api/admin/orders/1/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 30.75
+  },
+  {
+    "testId": "UC09-004",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.8
+  },
+  {
+    "testId": "UC09-004",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.29
+  },
+  {
+    "testId": "UC09-004",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.68
+  },
+  {
+    "testId": "UC09-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.29
+  },
+  {
+    "testId": "UC09-005",
+    "method": "POST",
+    "route": "/api/admin/orders/1/dispatch",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 5.32
+  },
+  {
+    "testId": "UC09-005",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.1
+  },
+  {
+    "testId": "UC09-007",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.84
+  },
+  {
+    "testId": "UC09-006",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.69
+  },
+  {
+    "testId": "UC09-006",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.24
+  },
+  {
+    "testId": "UC09-006",
+    "method": "POST",
+    "route": "/api/admin/orders/1/complete",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 17.88
+  },
+  {
+    "testId": "UC09-006",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.61
+  },
+  {
+    "testId": "UC09-011",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 11.59
+  },
+  {
+    "testId": "UC09-012",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 12.2
+  },
+  {
+    "testId": "UC10-008",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 126.79
+  },
+  {
+    "testId": "UC10-009",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 39.36
+  },
+  {
+    "testId": "UC03-016",
+    "method": "GET",
+    "route": "/api/admin/products/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.17
+  },
+  {
+    "testId": "UC03-016",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.29
+  },
+  {
+    "testId": "UC03-016",
+    "method": "PUT",
+    "route": "/api/admin/products/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 26.25
+  },
+  {
+    "testId": "UC03-016",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.39
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.67
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.44
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 11.94
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.52
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.49
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 30.75
+  },
+  {
+    "testId": "UC04-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.35
+  },
+  {
+    "testId": "UC04-004",
+    "method": "POST",
+    "route": "/api/orders/2/cancel",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 24.51
+  },
+  {
+    "testId": "UC04-004",
+    "method": "GET",
+    "route": "/api/orders/2",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.26
+  },
+  {
+    "testId": "UC04-004",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.13
+  },
+  {
+    "testId": "UC04-006",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.97
+  },
+  {
+    "testId": "UC04-007",
+    "method": "GET",
+    "route": "/api/orders/2",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.04
+  },
+  {
+    "testId": "UC04-007",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.24
+  },
+  {
+    "testId": "UC04-007",
+    "method": "POST",
+    "route": "/api/orders/2/cancel",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 5.95
+  },
+  {
+    "testId": "UC04-007",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.12
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.68
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.02
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 9.91
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.94
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.11
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 19.67
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.03
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.13
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/admin/orders/3/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.1
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.41
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.58
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.79
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/admin/orders/3/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.62
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.26
+  },
+  {
+    "testId": "UC09-008",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.8
+  },
+  {
+    "testId": "UC09-008",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.82
+  },
+  {
+    "testId": "UC09-008",
+    "method": "POST",
+    "route": "/api/admin/orders/3/fail",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.45
+  },
+  {
+    "testId": "UC09-008",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.18
+  },
+  {
+    "testId": "UC09-008",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.83
+  },
+  {
+    "testId": "UC09-009",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.3
+  },
+  {
+    "testId": "UC09-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.32
+  },
+  {
+    "testId": "UC09-009",
+    "method": "POST",
+    "route": "/api/admin/orders/3/return",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.91
+  },
+  {
+    "testId": "UC09-009",
+    "method": "GET",
+    "route": "/api/admin/orders/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.01
+  },
+  {
+    "testId": "UC09-009",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.08
+  },
+  {
+    "testId": "UC09-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.09
+  },
+  {
+    "testId": "UC09-009",
+    "method": "POST",
+    "route": "/api/admin/orders/3/return",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 6.21
+  },
+  {
+    "testId": "UC09-009",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.79
+  },
+  {
+    "testId": "UC10-001",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.21
+  },
+  {
+    "testId": "UC10-006",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 34.51
+  },
+  {
+    "testId": "UC10-005",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.08
+  },
+  {
+    "testId": "UC10-005",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.31
+  },
+  {
+    "testId": "UC10-005",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.73
+  },
+  {
+    "testId": "UC10-005",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.2
+  },
+  {
+    "testId": "UC10-004",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.63
+  },
+  {
+    "testId": "UC10-004",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.42
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.56
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.42
+  },
+  {
+    "testId": "UC03-009",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 11.39
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.17
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/admin/products/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.31
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.92
+  },
+  {
+    "testId": "UC03-009",
+    "method": "PUT",
+    "route": "/api/admin/products/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 18.74
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.74
+  },
+  {
+    "testId": "UC03-009",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 9.89
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/admin/products/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.44
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.32
+  },
+  {
+    "testId": "UC03-009",
+    "method": "PUT",
+    "route": "/api/admin/products/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.19
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.64
+  },
+  {
+    "testId": "UC03-009",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 10.54
+  },
+  {
+    "testId": "UC03-009",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.12
+  },
+  {
+    "testId": "UC04-003",
+    "method": "GET",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 81.73
+  },
+  {
+    "testId": "UC06-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.32
+  },
+  {
+    "testId": "UC06-001",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 33.98
+  },
+  {
+    "testId": "UC06-001",
+    "method": "GET",
+    "route": "/api/admin/products/15",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.62
+  },
+  {
+    "testId": "UC06-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.4
+  },
+  {
+    "testId": "UC06-001",
+    "method": "PUT",
+    "route": "/api/admin/products/15",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 12.1
+  },
+  {
+    "testId": "UC06-001",
+    "method": "GET",
+    "route": "/api/catalog/15",
+    "role": "ANONYMOUS",
+    "status": 404,
+    "ms": 3.97
+  },
+  {
+    "testId": "UC06-002",
+    "method": "GET",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 162.02
+  },
+  {
+    "testId": "UC06-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.31
+  },
+  {
+    "testId": "UC06-002",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 10.85
+  },
+  {
+    "testId": "UC06-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.53
+  },
+  {
+    "testId": "UC06-002",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 10.85
+  },
+  {
+    "testId": "UC06-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.84
+  },
+  {
+    "testId": "UC06-003",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.92
+  },
+  {
+    "testId": "UC06-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.05
+  },
+  {
+    "testId": "UC06-003",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.48
+  },
+  {
+    "testId": "UC06-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.99
+  },
+  {
+    "testId": "UC06-003",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.25
+  },
+  {
+    "testId": "UC06-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.8
+  },
+  {
+    "testId": "UC06-003",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.62
+  },
+  {
+    "testId": "UC06-004",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.08
+  },
+  {
+    "testId": "UC06-004",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 10.92
+  },
+  {
+    "testId": "UC06-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.28
+  },
+  {
+    "testId": "UC06-005",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 6.35
+  },
+  {
+    "testId": "UC06-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.02
+  },
+  {
+    "testId": "UC06-005",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.75
+  },
+  {
+    "testId": "UC06-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.8
+  },
+  {
+    "testId": "UC06-005",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.08
+  },
+  {
+    "testId": "UC06-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.77
+  },
+  {
+    "testId": "UC06-005",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 6.44
+  },
+  {
+    "testId": "UC06-008",
+    "method": "GET",
+    "route": "/api/admin/products/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.88
+  },
+  {
+    "testId": "UC06-008",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.59
+  },
+  {
+    "testId": "UC06-008",
+    "method": "PUT",
+    "route": "/api/admin/products/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 19.32
+  },
+  {
+    "testId": "UC06-008",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.91
+  },
+  {
+    "testId": "QA-IMAGE-URL",
+    "method": "GET",
+    "route": "/api/admin/products/20",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.69
+  },
+  {
+    "testId": "QA-IMAGE-URL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.24
+  },
+  {
+    "testId": "QA-IMAGE-URL",
+    "method": "PUT",
+    "route": "/api/admin/products/20",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.36
+  },
+  {
+    "testId": "QA-IMAGE-URL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.69
+  },
+  {
+    "testId": "QA-IMAGE-URL",
+    "method": "PUT",
+    "route": "/api/admin/products/20",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.75
+  },
+  {
+    "testId": "UC07-001",
+    "method": "GET",
+    "route": "/api/admin/customers",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 48.27
+  },
+  {
+    "testId": "UC07-002",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 6.5
+  },
+  {
+    "testId": "UC07-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.42
+  },
+  {
+    "testId": "UC07-002",
+    "method": "PUT",
+    "route": "/api/admin/customers/4",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 33.12
+  },
+  {
+    "testId": "UC07-002",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.05
+  },
+  {
+    "testId": "UC07-007",
+    "method": "GET",
+    "route": "/api/admin/customers",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 14.42
+  },
+  {
+    "testId": "UC08-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.35
+  },
+  {
+    "testId": "UC08-001",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 32.83
+  },
+  {
+    "testId": "UC08-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.3
+  },
+  {
+    "testId": "UC08-001",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/2",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 37.44
+  },
+  {
+    "testId": "UC08-001",
+    "method": "GET",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 31.42
+  },
+  {
+    "testId": "UC08-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.87
+  },
+  {
+    "testId": "UC08-002",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 90.55
+  },
+  {
+    "testId": "UC08-002",
+    "method": "GET",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 64.52
+  },
+  {
+    "testId": "UC08-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.61
+  },
+  {
+    "testId": "UC08-002",
+    "method": "PUT",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 51.84
+  },
+  {
+    "testId": "UC08-002",
+    "method": "GET",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.44
+  },
+  {
+    "testId": "UC08-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.7
+  },
+  {
+    "testId": "UC08-003",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 7.25
+  },
+  {
+    "testId": "UC08-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.52
+  },
+  {
+    "testId": "UC08-003",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 6.42
+  },
+  {
+    "testId": "UC08-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.24
+  },
+  {
+    "testId": "UC08-003",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.56
+  },
+  {
+    "testId": "UC08-004",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.61
+  },
+  {
+    "testId": "UC08-005",
+    "method": "GET",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.21
+  },
+  {
+    "testId": "UC08-005",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.59
+  },
+  {
+    "testId": "UC08-005",
+    "method": "POST",
+    "route": "/api/admin/purchases/14/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 66.87
+  },
+  {
+    "testId": "UC08-005",
+    "method": "GET",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.8
+  },
+  {
+    "testId": "UC08-005",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.59
+  },
+  {
+    "testId": "UC08-007",
+    "method": "GET",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.77
+  },
+  {
+    "testId": "UC08-007",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.72
+  },
+  {
+    "testId": "UC08-007",
+    "method": "PUT",
+    "route": "/api/admin/purchases/14",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 5.07
+  },
+  {
+    "testId": "UC08-007",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.04
+  },
+  {
+    "testId": "UC08-007",
+    "method": "POST",
+    "route": "/api/admin/purchases/14/cancel",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 15.07
+  },
+  {
+    "testId": "UC08-007",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.18
+  },
+  {
+    "testId": "UC08-012",
+    "method": "GET",
+    "route": "/api/admin/products/21",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.4
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.39
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.9
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.16
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.87
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.68
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.23
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.91
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 15.24
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.77
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.83
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/admin/stock/25/adjust",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 30.15
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.09
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/admin/stock/25/adjust",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.68
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.45
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/admin/stock/25/adjust",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 18.73
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.75
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.29
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/admin/stock/25/adjust",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 5.92
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/admin/orders/4",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.07
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.96
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "POST",
+    "route": "/api/admin/orders/4/cancel",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.14
+  },
+  {
+    "testId": "QA-ADJUST",
+    "method": "GET",
+    "route": "/api/admin/orders/4",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.08
+  },
+  {
+    "testId": "UC08-013",
+    "method": "GET",
+    "route": "/api/admin/movements",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 46.35
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN_2",
+    "status": 200,
+    "ms": 2.85
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ADMIN_2",
+    "status": 200,
+    "ms": 77.78
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.36
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.54
+  },
+  {
+    "testId": "SEC-011",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.61
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.54
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.38
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 1.79
+  },
+  {
+    "testId": "SEC-011",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 7.74
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 4.08
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 2.58
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.61
+  },
+  {
+    "testId": "SEC-011",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 14.66
+  },
+  {
+    "testId": "SEC-011",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 11.1
+  },
+  {
+    "testId": "SEC-011",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.51
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.18
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.62
+  },
+  {
+    "testId": "SEC-012",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.1
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.83
+  },
+  {
+    "testId": "SEC-012",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.54
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.54
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.06
+  },
+  {
+    "testId": "SEC-012",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 12.91
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.67
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.7
+  },
+  {
+    "testId": "SEC-012",
+    "method": "POST",
+    "route": "/api/orders/6/cancel",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.99
+  },
+  {
+    "testId": "SEC-012",
+    "method": "POST",
+    "route": "/api/admin/orders/6/confirm",
+    "role": "ADMIN",
+    "status": 409,
+    "ms": 9.5
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/admin/orders/6",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.18
+  },
+  {
+    "testId": "SEC-012",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.91
+  },
+  {
+    "testId": "SEC-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.86
+  },
+  {
+    "testId": "SEC-013",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.56
+  },
+  {
+    "testId": "SEC-013",
+    "method": "GET",
+    "route": "/api/admin/purchases/17",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.95
+  },
+  {
+    "testId": "SEC-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.46
+  },
+  {
+    "testId": "SEC-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN_2",
+    "status": 200,
+    "ms": 2.46
+  },
+  {
+    "testId": "SEC-013",
+    "method": "POST",
+    "route": "/api/admin/purchases/17/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.57
+  },
+  {
+    "testId": "SEC-013",
+    "method": "POST",
+    "route": "/api/admin/purchases/17/confirm",
+    "role": "ADMIN_2",
+    "status": 409,
+    "ms": 8.64
+  },
+  {
+    "testId": "SEC-013",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.33
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.25
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.71
+  },
+  {
+    "testId": "SEC-014",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.1
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.24
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.85
+  },
+  {
+    "testId": "SEC-014",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 12.86
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/admin/orders/7",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.71
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.27
+  },
+  {
+    "testId": "SEC-014",
+    "method": "POST",
+    "route": "/api/admin/orders/7/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.99
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/admin/orders/7",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.84
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/admin/orders/7",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.72
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.58
+  },
+  {
+    "testId": "SEC-014",
+    "method": "POST",
+    "route": "/api/admin/orders/7/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.07
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/admin/orders/7",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.84
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN_2",
+    "status": 200,
+    "ms": 1.69
+  },
+  {
+    "testId": "SEC-014",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.69
+  },
+  {
+    "testId": "SEC-014",
+    "method": "POST",
+    "route": "/api/admin/orders/7/complete",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.74
+  },
+  {
+    "testId": "SEC-014",
+    "method": "POST",
+    "route": "/api/admin/orders/7/complete",
+    "role": "ADMIN_2",
+    "status": 409,
+    "ms": 9.1
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.74
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.67
+  },
+  {
+    "testId": "SEC-016",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.47
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.77
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/admin/products/26",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.25
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.32
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.08
+  },
+  {
+    "testId": "SEC-016",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 13.83
+  },
+  {
+    "testId": "SEC-016",
+    "method": "PUT",
+    "route": "/api/admin/products/26",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 16.71
+  },
+  {
+    "testId": "SEC-016",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.54
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.54
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.02
+  },
+  {
+    "testId": "UC03-013",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.5
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.89
+  },
+  {
+    "testId": "UC03-013",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.57
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.92
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.83
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 1.82
+  },
+  {
+    "testId": "UC03-013",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 7.85
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.74
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 1.7
+  },
+  {
+    "testId": "UC03-013",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 13.88
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.92
+  },
+  {
+    "testId": "UC03-013",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 9.13
+  },
+  {
+    "testId": "UC03-013",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.72
+  },
+  {
+    "testId": "UC08-008",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.2
+  },
+  {
+    "testId": "UC08-008",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.18
+  },
+  {
+    "testId": "UC08-008",
+    "method": "GET",
+    "route": "/api/admin/purchases/21",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.16
+  },
+  {
+    "testId": "UC08-008",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.08
+  },
+  {
+    "testId": "UC08-008",
+    "method": "POST",
+    "route": "/api/admin/purchases/21/confirm",
+    "role": "ADMIN",
+    "status": 500,
+    "ms": 30.82
+  },
+  {
+    "testId": "UC08-008",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.23
+  },
+  {
+    "testId": "UC08-008",
+    "method": "GET",
+    "route": "/api/admin/purchases/21",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.75
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.3
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.97
+  },
+  {
+    "testId": "SEC-015",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.52
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.33
+  },
+  {
+    "testId": "SEC-015",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.27
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.86
+  },
+  {
+    "testId": "SEC-015",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.76
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.66
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.35
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.99
+  },
+  {
+    "testId": "SEC-015",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.97
+  },
+  {
+    "testId": "SEC-015",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.29
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.9
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 76.11
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 2.9
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 79.54
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/products/30",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.06
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 15.43
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.56
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 5
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 1.78
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 6.76
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 3.64
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 2.41
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 16.34
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/orders/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.57
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.76
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/admin/orders/11/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.28
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/orders/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.46
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/orders/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.38
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.11
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/admin/orders/11/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.57
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/orders/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/orders/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.64
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.03
+  },
+  {
+    "testId": "E2E-01",
+    "method": "POST",
+    "route": "/api/admin/orders/11/complete",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.14
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/orders/11",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.24
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.95
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/orders/11",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 3.58
+  },
+  {
+    "testId": "E2E-01",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.59
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.41
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 3.3
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 1.47
+  },
+  {
+    "testId": "E2E-02",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 6.91
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 3.68
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 1.8
+  },
+  {
+    "testId": "E2E-02",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 12.34
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.26
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 3.05
+  },
+  {
+    "testId": "E2E-02",
+    "method": "POST",
+    "route": "/api/orders/12/cancel",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 8.65
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.77
+  },
+  {
+    "testId": "E2E-02",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.4
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.96
+  },
+  {
+    "testId": "E2E-03",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.69
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.9
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/admin/purchases/25",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.96
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.83
+  },
+  {
+    "testId": "E2E-03",
+    "method": "POST",
+    "route": "/api/admin/purchases/25/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.14
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 4.15
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 1.66
+  },
+  {
+    "testId": "E2E-03",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 8.09
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 4.19
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 1.93
+  },
+  {
+    "testId": "E2E-03",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 13.84
+  },
+  {
+    "testId": "E2E-03",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.41
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.63
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 3.65
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 2.01
+  },
+  {
+    "testId": "E2E-04",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 6.87
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 2.46
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 2.34
+  },
+  {
+    "testId": "E2E-04",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 13.89
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.33
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.61
+  },
+  {
+    "testId": "E2E-04",
+    "method": "POST",
+    "route": "/api/admin/orders/14/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.53
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.77
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.64
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.32
+  },
+  {
+    "testId": "E2E-04",
+    "method": "POST",
+    "route": "/api/admin/orders/14/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.19
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.54
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.06
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.53
+  },
+  {
+    "testId": "E2E-04",
+    "method": "POST",
+    "route": "/api/admin/orders/14/fail",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.4
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.98
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.07
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.11
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.92
+  },
+  {
+    "testId": "E2E-04",
+    "method": "POST",
+    "route": "/api/admin/orders/14/return",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 11.75
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/orders/14",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.75
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.52
+  },
+  {
+    "testId": "E2E-04",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.76
+  },
+  {
+    "testId": "E2E-05",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.08
+  },
+  {
+    "testId": "E2E-05",
+    "method": "GET",
+    "route": "/api/admin/customers",
+    "role": "E2E_CUSTOMER",
+    "status": 403,
+    "ms": 6.17
+  },
+  {
+    "testId": "E2E-05",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "E2E_CUSTOMER",
+    "status": 200,
+    "ms": 1.93
+  },
+  {
+    "testId": "E2E-05",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "E2E_CUSTOMER",
+    "status": 403,
+    "ms": 1.73
+  },
+  {
+    "testId": "E2E-05",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.84
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.37
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.77
+  },
+  {
+    "testId": "E2E-06",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.75
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.33
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.58
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 1.97
+  },
+  {
+    "testId": "E2E-06",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 9.96
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 3.81
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.58
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 2.58
+  },
+  {
+    "testId": "E2E-06",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_B",
+    "status": 200,
+    "ms": 16.3
+  },
+  {
+    "testId": "E2E-06",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 409,
+    "ms": 17.41
+  },
+  {
+    "testId": "E2E-06",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.47
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.41
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.31
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.25
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.64
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.05
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.99
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.93
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.79
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.33
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.34
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.43
+  },
+  {
+    "testId": "QA-CART-NULL-BOUND",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 5.21
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/admin/products/36",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.93
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 7.11
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/catalog/36",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.64
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.69
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.8
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.64
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.82
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 7.45
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.5
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.82
+  },
+  {
+    "testId": "QA-FILTER-CROSS-FLOW",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 13.94
+  },
+  {
+    "testId": "WEB-COLOR",
+    "method": "GET",
+    "route": "/api/admin/products/37",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.49
+  },
+  {
+    "testId": "WEB-COLOR",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 322.38
+  },
+  {
+    "testId": "WEB-COLOR",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 351.47
+  },
+  {
+    "testId": "WEB-COLOR",
+    "method": "GET",
+    "route": "/Search",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 767.35
+  },
+  {
+    "testId": "WEB-SUGGESTIONS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 18.46
+  },
+  {
+    "testId": "WEB-SUGGESTIONS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 171.93
+  },
+  {
+    "testId": "WEB-SUGGESTIONS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 6.12
+  },
+  {
+    "testId": "WEB-SUGGESTIONS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 3.72
+  },
+  {
+    "testId": "WEB-SUGGESTIONS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 0.72
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/admin/products/38",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.87
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.46
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "PUT",
+    "route": "/api/admin/products/38",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 13.54
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 16.44
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 5.05
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/admin/products/38",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.19
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.41
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "PUT",
+    "route": "/api/admin/products/38",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.29
+  },
+  {
+    "testId": "WEB-ACCENTS",
+    "method": "GET",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 3.97
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "GET",
+    "route": "/api/admin/products/39",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.56
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.48
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "PUT",
+    "route": "/api/admin/products/39",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 42.61
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "GET",
+    "route": "/api/catalog/39",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 15.47
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "GET",
+    "route": "/api/admin/products/39",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.04
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.61
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "PUT",
+    "route": "/api/admin/products/39",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 15.19
+  },
+  {
+    "testId": "WEB-GALLERY",
+    "method": "GET",
+    "route": "/api/catalog/39",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 3.03
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.07
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.6
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.62
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.77
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.26
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 4.95
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.48
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 14.05
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/admin/orders/17",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.95
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.83
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "POST",
+    "route": "/api/admin/orders/17/cancel",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.37
+  },
+  {
+    "testId": "WEB-QR",
+    "method": "GET",
+    "route": "/api/admin/orders/17",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.63
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/products/41",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.9
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/products/42",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.34
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/products/43",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.78
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.53
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.08
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 12.07
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.98
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 21.58
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 10.16
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.79
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 22.32
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/18",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.21
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.84
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/18/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.58
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/18",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.52
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/18",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.98
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.37
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/18/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 12.4
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/18",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.79
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/18",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.41
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.85
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/18/complete",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.33
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/18",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.32
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.22
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.81
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 9.44
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.6
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 18.55
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.07
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.24
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/19/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 7.98
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.72
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.83
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.11
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/19/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 11.53
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 11.15
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.87
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.39
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/19/complete",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 12.02
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/19",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.84
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.27
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.77
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 21.05
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 6.65
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.61
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 49.26
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/20",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.89
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.22
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/20/cancel",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 14.19
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/20",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.41
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.3
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.72
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.68
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 5.19
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.41
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 16.11
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.6
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.59
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.17
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.49
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.54
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 18.69
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/22",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.71
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.81
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/22/confirm",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.22
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/22",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.2
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/22",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.35
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.53
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/22/dispatch",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 22.26
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/22",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 10.08
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/22",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.43
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.54
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "POST",
+    "route": "/api/admin/orders/22/complete",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 12.04
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/orders/22",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.66
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/bestsellers",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 492.07
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/admin/products/41",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.6
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.53
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "PUT",
+    "route": "/api/admin/products/41",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 18.01
+  },
+  {
+    "testId": "WEB-BESTSELLERS",
+    "method": "GET",
+    "route": "/api/bestsellers",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 8.13
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/products/44",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.21
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.1
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 40.52
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.1
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/4",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 42.46
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "GET",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.83
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.96
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "POST",
+    "route": "/api/admin/lookups/categories",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.72
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.7
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "PUT",
+    "route": "/api/admin/lookups/categories/2",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 24.09
+  },
+  {
+    "testId": "QA-LOOKUPS",
+    "method": "GET",
+    "route": "/api/admin/lookups/categories",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.84
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 15.17
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.55
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 20.69
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 15.42
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.37
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "POST",
+    "route": "/api/guest-cart/preview",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 8.2
+  },
+  {
+    "testId": "QA-MERGE",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.72
+  },
+  {
+    "testId": "QA-PUBLIC-LOOKUPS",
+    "method": "GET",
+    "route": "/api/lookups/brands",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 13.27
+  },
+  {
+    "testId": "QA-PUBLIC-LOOKUPS",
+    "method": "GET",
+    "route": "/api/lookups/categories",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 7.44
+  },
+  {
+    "testId": "QA-ADMIN-ORDERLIST",
+    "method": "GET",
+    "route": "/api/admin/orders",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 82.85
+  },
+  {
+    "testId": "QA-ADMIN-ORDERLIST",
+    "method": "GET",
+    "route": "/api/admin/orders",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 98.39
+  },
+  {
+    "testId": "QA-DRAFT-CANCEL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.16
+  },
+  {
+    "testId": "QA-DRAFT-CANCEL",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.14
+  },
+  {
+    "testId": "QA-DRAFT-CANCEL",
+    "method": "GET",
+    "route": "/api/admin/purchases/40",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.07
+  },
+  {
+    "testId": "QA-DRAFT-CANCEL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.33
+  },
+  {
+    "testId": "QA-DRAFT-CANCEL",
+    "method": "POST",
+    "route": "/api/admin/purchases/40/cancel",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.18
+  },
+  {
+    "testId": "QA-DRAFT-CANCEL",
+    "method": "GET",
+    "route": "/api/admin/purchases/40",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.45
+  },
+  {
+    "testId": "QA-PURCHASE-LIST",
+    "method": "GET",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 76.51
+  },
+  {
+    "testId": "QA-PURCHASE-LIST",
+    "method": "GET",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 82.14
+  },
+  {
+    "testId": "EP001-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/customers",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 11.63
+  },
+  {
+    "testId": "EP001-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.61
+  },
+  {
+    "testId": "EP001-ANON",
+    "method": "GET",
+    "route": "/api/admin/customers",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.75
+  },
+  {
+    "testId": "EP001-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.19
+  },
+  {
+    "testId": "EP001-ROLE",
+    "method": "GET",
+    "route": "/api/admin/customers",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.15
+  },
+  {
+    "testId": "EP002-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.76
+  },
+  {
+    "testId": "EP002-ANON",
+    "method": "PUT",
+    "route": "/api/admin/customers/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.65
+  },
+  {
+    "testId": "EP002-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.49
+  },
+  {
+    "testId": "EP002-ROLE",
+    "method": "PUT",
+    "route": "/api/admin/customers/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.9
+  },
+  {
+    "testId": "EP002-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.15
+  },
+  {
+    "testId": "EP002-JSON",
+    "method": "PUT",
+    "route": "/api/admin/customers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.99
+  },
+  {
+    "testId": "EP002-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.17
+  },
+  {
+    "testId": "EP002-EMPTY",
+    "method": "PUT",
+    "route": "/api/admin/customers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.81
+  },
+  {
+    "testId": "EP002-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.28
+  },
+  {
+    "testId": "EP002-NULL",
+    "method": "PUT",
+    "route": "/api/admin/customers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.48
+  },
+  {
+    "testId": "EP002-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.06
+  },
+  {
+    "testId": "EP002-MEDIA",
+    "method": "PUT",
+    "route": "/api/admin/customers/1",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 3.06
+  },
+  {
+    "testId": "EP003-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 2.36
+  },
+  {
+    "testId": "EP003-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.61
+  },
+  {
+    "testId": "EP003-ANON",
+    "method": "GET",
+    "route": "/api/admin/lookups/brands",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.43
+  },
+  {
+    "testId": "EP003-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.77
+  },
+  {
+    "testId": "EP003-ROLE",
+    "method": "GET",
+    "route": "/api/admin/lookups/brands",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.32
+  },
+  {
+    "testId": "EP004-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.26
+  },
+  {
+    "testId": "EP004-ANON",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.7
+  },
+  {
+    "testId": "EP004-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.13
+  },
+  {
+    "testId": "EP004-ROLE",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.63
+  },
+  {
+    "testId": "EP004-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.29
+  },
+  {
+    "testId": "EP004-JSON",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.7
+  },
+  {
+    "testId": "EP004-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.98
+  },
+  {
+    "testId": "EP004-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.31
+  },
+  {
+    "testId": "EP004-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.13
+  },
+  {
+    "testId": "EP004-NULL",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.65
+  },
+  {
+    "testId": "EP004-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.06
+  },
+  {
+    "testId": "EP004-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 2.48
+  },
+  {
+    "testId": "EP005-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.05
+  },
+  {
+    "testId": "EP005-ANON",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.56
+  },
+  {
+    "testId": "EP005-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.69
+  },
+  {
+    "testId": "EP005-ROLE",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.74
+  },
+  {
+    "testId": "EP005-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.96
+  },
+  {
+    "testId": "EP005-JSON",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.64
+  },
+  {
+    "testId": "EP005-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.38
+  },
+  {
+    "testId": "EP005-EMPTY",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.95
+  },
+  {
+    "testId": "EP005-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.26
+  },
+  {
+    "testId": "EP005-NULL",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.41
+  },
+  {
+    "testId": "EP005-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.04
+  },
+  {
+    "testId": "EP005-MEDIA",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 4.48
+  },
+  {
+    "testId": "EP006-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/movements",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 3.15
+  },
+  {
+    "testId": "EP006-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.23
+  },
+  {
+    "testId": "EP006-ANON",
+    "method": "GET",
+    "route": "/api/admin/movements",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.99
+  },
+  {
+    "testId": "EP006-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.72
+  },
+  {
+    "testId": "EP006-ROLE",
+    "method": "GET",
+    "route": "/api/admin/movements",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.94
+  },
+  {
+    "testId": "EP007-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/orders",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 3.8
+  },
+  {
+    "testId": "EP007-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.9
+  },
+  {
+    "testId": "EP007-ANON",
+    "method": "GET",
+    "route": "/api/admin/orders",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.48
+  },
+  {
+    "testId": "EP007-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.65
+  },
+  {
+    "testId": "EP007-ROLE",
+    "method": "GET",
+    "route": "/api/admin/orders",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.82
+  },
+  {
+    "testId": "EP008-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 2.21
+  },
+  {
+    "testId": "EP008-MISSING-ID",
+    "method": "GET",
+    "route": "/api/admin/orders/9223372036854775807",
+    "role": "ADMIN",
+    "status": 404,
+    "ms": 18.19
+  },
+  {
+    "testId": "EP008-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.26
+  },
+  {
+    "testId": "EP008-ANON",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.68
+  },
+  {
+    "testId": "EP008-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.88
+  },
+  {
+    "testId": "EP008-ROLE",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.5
+  },
+  {
+    "testId": "EP009-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.36
+  },
+  {
+    "testId": "EP009-ANON",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.15
+  },
+  {
+    "testId": "EP009-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.6
+  },
+  {
+    "testId": "EP009-ROLE",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.12
+  },
+  {
+    "testId": "EP009-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.32
+  },
+  {
+    "testId": "EP009-JSON",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.33
+  },
+  {
+    "testId": "EP009-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.35
+  },
+  {
+    "testId": "EP009-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.07
+  },
+  {
+    "testId": "EP009-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.8
+  },
+  {
+    "testId": "EP009-NULL",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP009-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.36
+  },
+  {
+    "testId": "EP009-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 2.19
+  },
+  {
+    "testId": "EP010-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 2.52
+  },
+  {
+    "testId": "EP010-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.74
+  },
+  {
+    "testId": "EP010-ANON",
+    "method": "GET",
+    "route": "/api/admin/products",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.69
+  },
+  {
+    "testId": "EP010-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP010-ROLE",
+    "method": "GET",
+    "route": "/api/admin/products",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.81
+  },
+  {
+    "testId": "EP011-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.59
+  },
+  {
+    "testId": "EP011-ANON",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.56
+  },
+  {
+    "testId": "EP011-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.75
+  },
+  {
+    "testId": "EP011-ROLE",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 3.77
+  },
+  {
+    "testId": "EP011-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.26
+  },
+  {
+    "testId": "EP011-JSON",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 10.49
+  },
+  {
+    "testId": "EP011-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.78
+  },
+  {
+    "testId": "EP011-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 12.97
+  },
+  {
+    "testId": "EP011-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.94
+  },
+  {
+    "testId": "EP011-NULL",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.42
+  },
+  {
+    "testId": "EP011-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 8.67
+  },
+  {
+    "testId": "EP011-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 3.47
+  },
+  {
+    "testId": "EP012-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 2.11
+  },
+  {
+    "testId": "EP012-MISSING-ID",
+    "method": "GET",
+    "route": "/api/admin/products/9223372036854775807",
+    "role": "ADMIN",
+    "status": 404,
+    "ms": 4.65
+  },
+  {
+    "testId": "EP012-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.26
+  },
+  {
+    "testId": "EP012-ANON",
+    "method": "GET",
+    "route": "/api/admin/products/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.82
+  },
+  {
+    "testId": "EP012-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.59
+  },
+  {
+    "testId": "EP012-ROLE",
+    "method": "GET",
+    "route": "/api/admin/products/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.71
+  },
+  {
+    "testId": "EP013-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.98
+  },
+  {
+    "testId": "EP013-ANON",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.02
+  },
+  {
+    "testId": "EP013-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.41
+  },
+  {
+    "testId": "EP013-ROLE",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.83
+  },
+  {
+    "testId": "EP013-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.62
+  },
+  {
+    "testId": "EP013-JSON",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.34
+  },
+  {
+    "testId": "EP013-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.15
+  },
+  {
+    "testId": "EP013-EMPTY",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.38
+  },
+  {
+    "testId": "EP013-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.03
+  },
+  {
+    "testId": "EP013-NULL",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.96
+  },
+  {
+    "testId": "EP013-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.54
+  },
+  {
+    "testId": "EP013-MEDIA",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 4.17
+  },
+  {
+    "testId": "EP014-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 5.5
+  },
+  {
+    "testId": "EP014-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.68
+  },
+  {
+    "testId": "EP014-ANON",
+    "method": "GET",
+    "route": "/api/admin/purchases",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.56
+  },
+  {
+    "testId": "EP014-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.19
+  },
+  {
+    "testId": "EP014-ROLE",
+    "method": "GET",
+    "route": "/api/admin/purchases",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 3.21
+  },
+  {
+    "testId": "EP015-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.26
+  },
+  {
+    "testId": "EP015-ANON",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.84
+  },
+  {
+    "testId": "EP015-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.83
+  },
+  {
+    "testId": "EP015-ROLE",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.6
+  },
+  {
+    "testId": "EP015-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.99
+  },
+  {
+    "testId": "EP015-JSON",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.92
+  },
+  {
+    "testId": "EP015-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.25
+  },
+  {
+    "testId": "EP015-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP015-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.91
+  },
+  {
+    "testId": "EP015-NULL",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.32
+  },
+  {
+    "testId": "EP015-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.11
+  },
+  {
+    "testId": "EP015-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 1.82
+  },
+  {
+    "testId": "EP016-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/purchases/1",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 2.67
+  },
+  {
+    "testId": "EP016-MISSING-ID",
+    "method": "GET",
+    "route": "/api/admin/purchases/9223372036854775807",
+    "role": "ADMIN",
+    "status": 404,
+    "ms": 4.44
+  },
+  {
+    "testId": "EP016-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.29
+  },
+  {
+    "testId": "EP016-ANON",
+    "method": "GET",
+    "route": "/api/admin/purchases/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.48
+  },
+  {
+    "testId": "EP016-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.93
+  },
+  {
+    "testId": "EP016-ROLE",
+    "method": "GET",
+    "route": "/api/admin/purchases/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.2
+  },
+  {
+    "testId": "EP017-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.37
+  },
+  {
+    "testId": "EP017-ANON",
+    "method": "PUT",
+    "route": "/api/admin/purchases/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.08
+  },
+  {
+    "testId": "EP017-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.05
+  },
+  {
+    "testId": "EP017-ROLE",
+    "method": "PUT",
+    "route": "/api/admin/purchases/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.02
+  },
+  {
+    "testId": "EP017-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.44
+  },
+  {
+    "testId": "EP017-JSON",
+    "method": "PUT",
+    "route": "/api/admin/purchases/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.58
+  },
+  {
+    "testId": "EP017-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.94
+  },
+  {
+    "testId": "EP017-EMPTY",
+    "method": "PUT",
+    "route": "/api/admin/purchases/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.93
+  },
+  {
+    "testId": "EP017-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.06
+  },
+  {
+    "testId": "EP017-NULL",
+    "method": "PUT",
+    "route": "/api/admin/purchases/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.75
+  },
+  {
+    "testId": "EP017-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.17
+  },
+  {
+    "testId": "EP017-MEDIA",
+    "method": "PUT",
+    "route": "/api/admin/purchases/1",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 2.09
+  },
+  {
+    "testId": "EP018-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.23
+  },
+  {
+    "testId": "EP018-ANON",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.7
+  },
+  {
+    "testId": "EP018-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.13
+  },
+  {
+    "testId": "EP018-ROLE",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.28
+  },
+  {
+    "testId": "EP018-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.97
+  },
+  {
+    "testId": "EP018-JSON",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.9
+  },
+  {
+    "testId": "EP018-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.52
+  },
+  {
+    "testId": "EP018-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.95
+  },
+  {
+    "testId": "EP018-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.65
+  },
+  {
+    "testId": "EP018-NULL",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.83
+  },
+  {
+    "testId": "EP018-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.4
+  },
+  {
+    "testId": "EP018-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 4.04
+  },
+  {
+    "testId": "EP019-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.61
+  },
+  {
+    "testId": "EP019-ANON",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.21
+  },
+  {
+    "testId": "EP019-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.32
+  },
+  {
+    "testId": "EP019-ROLE",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.86
+  },
+  {
+    "testId": "EP019-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.24
+  },
+  {
+    "testId": "EP019-JSON",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.87
+  },
+  {
+    "testId": "EP019-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.13
+  },
+  {
+    "testId": "EP019-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.56
+  },
+  {
+    "testId": "EP019-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.21
+  },
+  {
+    "testId": "EP019-NULL",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.39
+  },
+  {
+    "testId": "EP019-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.63
+  },
+  {
+    "testId": "EP019-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 3.11
+  },
+  {
+    "testId": "EP020-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/reports",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 1.94
+  },
+  {
+    "testId": "EP020-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.64
+  },
+  {
+    "testId": "EP020-ANON",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.38
+  },
+  {
+    "testId": "EP020-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.44
+  },
+  {
+    "testId": "EP020-ROLE",
+    "method": "GET",
+    "route": "/api/admin/reports",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 5.48
+  },
+  {
+    "testId": "EP021-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 1.8
+  },
+  {
+    "testId": "EP021-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.75
+  },
+  {
+    "testId": "EP021-ANON",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.47
+  },
+  {
+    "testId": "EP021-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.51
+  },
+  {
+    "testId": "EP021-ROLE",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.85
+  },
+  {
+    "testId": "EP022-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.64
+  },
+  {
+    "testId": "EP022-ANON",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.42
+  },
+  {
+    "testId": "EP022-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.93
+  },
+  {
+    "testId": "EP022-ROLE",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP022-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.37
+  },
+  {
+    "testId": "EP022-JSON",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.27
+  },
+  {
+    "testId": "EP022-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.12
+  },
+  {
+    "testId": "EP022-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.7
+  },
+  {
+    "testId": "EP022-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.36
+  },
+  {
+    "testId": "EP022-NULL",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.75
+  },
+  {
+    "testId": "EP022-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.34
+  },
+  {
+    "testId": "EP022-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 2.78
+  },
+  {
+    "testId": "EP023-METHOD",
+    "method": "DELETE",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 405,
+    "ms": 2.92
+  },
+  {
+    "testId": "EP023-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.36
+  },
+  {
+    "testId": "EP023-ANON",
+    "method": "GET",
+    "route": "/api/admin/suppliers",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.01
+  },
+  {
+    "testId": "EP023-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.68
+  },
+  {
+    "testId": "EP023-ROLE",
+    "method": "GET",
+    "route": "/api/admin/suppliers",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.79
+  },
+  {
+    "testId": "EP024-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.89
+  },
+  {
+    "testId": "EP024-ANON",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.76
+  },
+  {
+    "testId": "EP024-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.58
+  },
+  {
+    "testId": "EP024-ROLE",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 1.63
+  },
+  {
+    "testId": "EP024-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.13
+  },
+  {
+    "testId": "EP024-JSON",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 3.41
+  },
+  {
+    "testId": "EP024-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.25
+  },
+  {
+    "testId": "EP024-EMPTY",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.58
+  },
+  {
+    "testId": "EP024-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.14
+  },
+  {
+    "testId": "EP024-NULL",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 1.93
+  },
+  {
+    "testId": "EP024-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.95
+  },
+  {
+    "testId": "EP024-MEDIA",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 2.19
+  },
+  {
+    "testId": "EP025-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.85
+  },
+  {
+    "testId": "EP025-ANON",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.47
+  },
+  {
+    "testId": "EP025-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.28
+  },
+  {
+    "testId": "EP025-ROLE",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "CUSTOMER_A",
+    "status": 403,
+    "ms": 2.2
+  },
+  {
+    "testId": "EP025-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.54
+  },
+  {
+    "testId": "EP025-JSON",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.9
+  },
+  {
+    "testId": "EP025-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.02
+  },
+  {
+    "testId": "EP025-EMPTY",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.15
+  },
+  {
+    "testId": "EP025-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.36
+  },
+  {
+    "testId": "EP025-NULL",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 2.28
+  },
+  {
+    "testId": "EP025-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.92
+  },
+  {
+    "testId": "EP025-MEDIA",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "ADMIN",
+    "status": 415,
+    "ms": 2.01
+  },
+  {
+    "testId": "EP026-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.07
+  },
+  {
+    "testId": "EP026-JSON",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.27
+  },
+  {
+    "testId": "EP026-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.74
+  },
+  {
+    "testId": "EP026-EMPTY",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 0.57
+  },
+  {
+    "testId": "EP026-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.78
+  },
+  {
+    "testId": "EP026-NULL",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 0.57
+  },
+  {
+    "testId": "EP026-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.84
+  },
+  {
+    "testId": "EP026-MEDIA",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 415,
+    "ms": 0.81
+  },
+  {
+    "testId": "EP027-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.32
+  },
+  {
+    "testId": "EP027-ANON",
+    "method": "POST",
+    "route": "/api/auth/logout",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.66
+  },
+  {
+    "testId": "EP028-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.96
+  },
+  {
+    "testId": "EP028-ANON",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.38
+  },
+  {
+    "testId": "EP028-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.9
+  },
+  {
+    "testId": "EP028-JSON",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 12.24
+  },
+  {
+    "testId": "EP028-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.19
+  },
+  {
+    "testId": "EP028-EMPTY",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 7.53
+  },
+  {
+    "testId": "EP028-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.85
+  },
+  {
+    "testId": "EP028-NULL",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.38
+  },
+  {
+    "testId": "EP028-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.45
+  },
+  {
+    "testId": "EP028-MEDIA",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 2.67
+  },
+  {
+    "testId": "EP029-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.17
+  },
+  {
+    "testId": "EP029-JSON",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.04
+  },
+  {
+    "testId": "EP029-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.81
+  },
+  {
+    "testId": "EP029-EMPTY",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 0.84
+  },
+  {
+    "testId": "EP029-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.65
+  },
+  {
+    "testId": "EP029-NULL",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 0.54
+  },
+  {
+    "testId": "EP029-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.45
+  },
+  {
+    "testId": "EP029-MEDIA",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 415,
+    "ms": 0.72
+  },
+  {
+    "testId": "EP030-METHOD",
+    "method": "DELETE",
+    "route": "/api/bestsellers",
+    "role": "ANONYMOUS",
+    "status": 405,
+    "ms": 0.51
+  },
+  {
+    "testId": "EP031-METHOD",
+    "method": "DELETE",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 405,
+    "ms": 1.63
+  },
+  {
+    "testId": "EP031-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.75
+  },
+  {
+    "testId": "EP031-ANON",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.6
+  },
+  {
+    "testId": "EP031-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.29
+  },
+  {
+    "testId": "EP031-ROLE",
+    "method": "GET",
+    "route": "/api/cart",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP032-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.21
+  },
+  {
+    "testId": "EP032-ANON",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.58
+  },
+  {
+    "testId": "EP032-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.4
+  },
+  {
+    "testId": "EP032-ROLE",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 3.18
+  },
+  {
+    "testId": "EP032-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2
+  },
+  {
+    "testId": "EP032-JSON",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.72
+  },
+  {
+    "testId": "EP032-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.84
+  },
+  {
+    "testId": "EP032-EMPTY",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 7.78
+  },
+  {
+    "testId": "EP032-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.73
+  },
+  {
+    "testId": "EP032-NULL",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.27
+  },
+  {
+    "testId": "EP032-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.91
+  },
+  {
+    "testId": "EP032-MEDIA",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 1.94
+  },
+  {
+    "testId": "EP033-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.41
+  },
+  {
+    "testId": "EP033-ANON",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.49
+  },
+  {
+    "testId": "EP033-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.35
+  },
+  {
+    "testId": "EP033-ROLE",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 1.55
+  },
+  {
+    "testId": "EP033-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.52
+  },
+  {
+    "testId": "EP033-JSON",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.03
+  },
+  {
+    "testId": "EP033-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.22
+  },
+  {
+    "testId": "EP033-EMPTY",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 5.78
+  },
+  {
+    "testId": "EP033-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.94
+  },
+  {
+    "testId": "EP033-NULL",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.6
+  },
+  {
+    "testId": "EP033-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.13
+  },
+  {
+    "testId": "EP033-MEDIA",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 1.58
+  },
+  {
+    "testId": "EP034-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.65
+  },
+  {
+    "testId": "EP034-ANON",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.56
+  },
+  {
+    "testId": "EP034-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.66
+  },
+  {
+    "testId": "EP034-ROLE",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 1.27
+  },
+  {
+    "testId": "EP034-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.93
+  },
+  {
+    "testId": "EP034-JSON",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.34
+  },
+  {
+    "testId": "EP034-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.79
+  },
+  {
+    "testId": "EP034-EMPTY",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.37
+  },
+  {
+    "testId": "EP034-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.51
+  },
+  {
+    "testId": "EP034-NULL",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.65
+  },
+  {
+    "testId": "EP034-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.73
+  },
+  {
+    "testId": "EP034-MEDIA",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 2.52
+  },
+  {
+    "testId": "EP035-METHOD",
+    "method": "DELETE",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 405,
+    "ms": 0.96
+  },
+  {
+    "testId": "EP036-METHOD",
+    "method": "DELETE",
+    "route": "/api/catalog/1",
+    "role": "ANONYMOUS",
+    "status": 405,
+    "ms": 0.61
+  },
+  {
+    "testId": "EP036-MISSING-ID",
+    "method": "GET",
+    "route": "/api/catalog/9223372036854775807",
+    "role": "ANONYMOUS",
+    "status": 404,
+    "ms": 2.66
+  },
+  {
+    "testId": "EP037-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.35
+  },
+  {
+    "testId": "EP037-JSON",
+    "method": "POST",
+    "route": "/api/guest-cart/preview",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.49
+  },
+  {
+    "testId": "EP037-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.11
+  },
+  {
+    "testId": "EP037-EMPTY",
+    "method": "POST",
+    "route": "/api/guest-cart/preview",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.12
+  },
+  {
+    "testId": "EP037-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.09
+  },
+  {
+    "testId": "EP037-NULL",
+    "method": "POST",
+    "route": "/api/guest-cart/preview",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 2.61
+  },
+  {
+    "testId": "EP037-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.95
+  },
+  {
+    "testId": "EP037-MEDIA",
+    "method": "POST",
+    "route": "/api/guest-cart/preview",
+    "role": "ANONYMOUS",
+    "status": 415,
+    "ms": 0.78
+  },
+  {
+    "testId": "EP038-METHOD",
+    "method": "DELETE",
+    "route": "/api/lookups/brands",
+    "role": "ANONYMOUS",
+    "status": 405,
+    "ms": 0.99
+  },
+  {
+    "testId": "EP039-METHOD",
+    "method": "DELETE",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 405,
+    "ms": 4.65
+  },
+  {
+    "testId": "EP039-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.08
+  },
+  {
+    "testId": "EP039-ANON",
+    "method": "GET",
+    "route": "/api/orders",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.63
+  },
+  {
+    "testId": "EP039-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.89
+  },
+  {
+    "testId": "EP039-ROLE",
+    "method": "GET",
+    "route": "/api/orders",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 4.82
+  },
+  {
+    "testId": "EP040-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.2
+  },
+  {
+    "testId": "EP040-ANON",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1.52
+  },
+  {
+    "testId": "EP040-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.45
+  },
+  {
+    "testId": "EP040-ROLE",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 3.71
+  },
+  {
+    "testId": "EP040-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.63
+  },
+  {
+    "testId": "EP040-JSON",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.63
+  },
+  {
+    "testId": "EP040-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.74
+  },
+  {
+    "testId": "EP040-EMPTY",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 4.14
+  },
+  {
+    "testId": "EP040-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.78
+  },
+  {
+    "testId": "EP040-NULL",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 3.11
+  },
+  {
+    "testId": "EP040-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.17
+  },
+  {
+    "testId": "EP040-MEDIA",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 2.19
+  },
+  {
+    "testId": "EP041-METHOD",
+    "method": "DELETE",
+    "route": "/api/orders/1",
+    "role": "CUSTOMER_A",
+    "status": 405,
+    "ms": 2.64
+  },
+  {
+    "testId": "EP041-MISSING-ID",
+    "method": "GET",
+    "route": "/api/orders/9223372036854775807",
+    "role": "CUSTOMER_A",
+    "status": 404,
+    "ms": 24.36
+  },
+  {
+    "testId": "EP041-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.44
+  },
+  {
+    "testId": "EP041-ANON",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.53
+  },
+  {
+    "testId": "EP041-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.2
+  },
+  {
+    "testId": "EP041-ROLE",
+    "method": "GET",
+    "route": "/api/orders/1",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 2.53
+  },
+  {
+    "testId": "EP042-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.91
+  },
+  {
+    "testId": "EP042-ANON",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.63
+  },
+  {
+    "testId": "EP042-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.8
+  },
+  {
+    "testId": "EP042-ROLE",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 2.37
+  },
+  {
+    "testId": "EP042-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.39
+  },
+  {
+    "testId": "EP042-JSON",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.1
+  },
+  {
+    "testId": "EP042-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.29
+  },
+  {
+    "testId": "EP042-EMPTY",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.66
+  },
+  {
+    "testId": "EP042-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 4.09
+  },
+  {
+    "testId": "EP042-NULL",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.65
+  },
+  {
+    "testId": "EP042-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.77
+  },
+  {
+    "testId": "EP042-MEDIA",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 2.15
+  },
+  {
+    "testId": "EP043-METHOD",
+    "method": "DELETE",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 405,
+    "ms": 2.88
+  },
+  {
+    "testId": "EP043-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.93
+  },
+  {
+    "testId": "EP043-ANON",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 1
+  },
+  {
+    "testId": "EP044-ANON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.81
+  },
+  {
+    "testId": "EP044-ANON",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 0.59
+  },
+  {
+    "testId": "EP044-ROLE",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 54.1
+  },
+  {
+    "testId": "EP044-ROLE",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "ADMIN",
+    "status": 403,
+    "ms": 1.23
+  },
+  {
+    "testId": "EP044-JSON",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.38
+  },
+  {
+    "testId": "EP044-JSON",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.75
+  },
+  {
+    "testId": "EP044-EMPTY",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.89
+  },
+  {
+    "testId": "EP044-EMPTY",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 2.97
+  },
+  {
+    "testId": "EP044-NULL",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.99
+  },
+  {
+    "testId": "EP044-NULL",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 1.87
+  },
+  {
+    "testId": "EP044-MEDIA",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.01
+  },
+  {
+    "testId": "EP044-MEDIA",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 415,
+    "ms": 1.46
+  },
+  {
+    "testId": "EP045-METHOD",
+    "method": "DELETE",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 405,
+    "ms": 0.77
+  },
+  {
+    "testId": "EP046-METHOD",
+    "method": "DELETE",
+    "route": "/api/suggestions",
+    "role": "ANONYMOUS",
+    "status": 405,
+    "ms": 0.73
+  },
+  {
+    "testId": "API-014",
+    "method": "GET",
+    "route": "/api/catalog",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 257.11
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 6.11
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/orders/1",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 9.68
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.17
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.42
+  },
+  {
+    "testId": "fixture",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.62
+  },
+  {
+    "testId": "fixture",
+    "method": "GET",
+    "route": "/api/admin/purchases/41",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.91
+  },
+  {
+    "testId": "EP002-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP002-BOUND",
+    "method": "PUT",
+    "route": "/api/admin/customers/3",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 9.6
+  },
+  {
+    "testId": "EP004-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.01
+  },
+  {
+    "testId": "EP004-BOUND",
+    "method": "POST",
+    "route": "/api/admin/lookups/brands",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.26
+  },
+  {
+    "testId": "EP005-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.56
+  },
+  {
+    "testId": "EP005-BOUND",
+    "method": "PUT",
+    "route": "/api/admin/lookups/brands/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.06
+  },
+  {
+    "testId": "EP009-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.82
+  },
+  {
+    "testId": "EP009-BOUND",
+    "method": "POST",
+    "route": "/api/admin/orders/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 16.17
+  },
+  {
+    "testId": "EP011-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 4.27
+  },
+  {
+    "testId": "EP011-BOUND",
+    "method": "POST",
+    "route": "/api/admin/products",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 7.62
+  },
+  {
+    "testId": "EP013-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.01
+  },
+  {
+    "testId": "EP013-BOUND",
+    "method": "PUT",
+    "route": "/api/admin/products/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 12.57
+  },
+  {
+    "testId": "EP015-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.33
+  },
+  {
+    "testId": "EP015-BOUND",
+    "method": "POST",
+    "route": "/api/admin/purchases",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.78
+  },
+  {
+    "testId": "EP017-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.54
+  },
+  {
+    "testId": "EP017-BOUND",
+    "method": "PUT",
+    "route": "/api/admin/purchases/41",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 9.76
+  },
+  {
+    "testId": "EP018-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.97
+  },
+  {
+    "testId": "EP018-BOUND",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/cancel",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 5.8
+  },
+  {
+    "testId": "EP019-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.63
+  },
+  {
+    "testId": "EP019-BOUND",
+    "method": "POST",
+    "route": "/api/admin/purchases/1/confirm",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 7.11
+  },
+  {
+    "testId": "EP022-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.83
+  },
+  {
+    "testId": "EP022-BOUND",
+    "method": "POST",
+    "route": "/api/admin/stock/1/adjust",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 12.03
+  },
+  {
+    "testId": "EP024-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.39
+  },
+  {
+    "testId": "EP024-BOUND",
+    "method": "POST",
+    "route": "/api/admin/suppliers",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 4.08
+  },
+  {
+    "testId": "EP025-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 1.8
+  },
+  {
+    "testId": "EP025-BOUND",
+    "method": "PUT",
+    "route": "/api/admin/suppliers/1",
+    "role": "ADMIN",
+    "status": 400,
+    "ms": 10.08
+  },
+  {
+    "testId": "EP026-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.65
+  },
+  {
+    "testId": "EP026-BOUND",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 4.84
+  },
+  {
+    "testId": "EP028-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.14
+  },
+  {
+    "testId": "EP028-BOUND",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 31.98
+  },
+  {
+    "testId": "EP029-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.77
+  },
+  {
+    "testId": "EP029-BOUND",
+    "method": "POST",
+    "route": "/api/auth/register",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 3.67
+  },
+  {
+    "testId": "EP032-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.52
+  },
+  {
+    "testId": "EP032-BOUND",
+    "method": "POST",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 6.34
+  },
+  {
+    "testId": "EP033-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.96
+  },
+  {
+    "testId": "EP033-BOUND",
+    "method": "PUT",
+    "route": "/api/cart",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 4.63
+  },
+  {
+    "testId": "EP034-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.68
+  },
+  {
+    "testId": "EP034-BOUND",
+    "method": "POST",
+    "route": "/api/cart/merge",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 4.08
+  },
+  {
+    "testId": "EP037-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.65
+  },
+  {
+    "testId": "EP037-BOUND",
+    "method": "POST",
+    "route": "/api/guest-cart/preview",
+    "role": "ANONYMOUS",
+    "status": 400,
+    "ms": 1.38
+  },
+  {
+    "testId": "EP040-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.84
+  },
+  {
+    "testId": "EP040-BOUND",
+    "method": "POST",
+    "route": "/api/orders",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 8.23
+  },
+  {
+    "testId": "EP042-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.27
+  },
+  {
+    "testId": "EP042-BOUND",
+    "method": "POST",
+    "route": "/api/orders/1/cancel",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 9.75
+  },
+  {
+    "testId": "EP044-BOUND",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 2.5
+  },
+  {
+    "testId": "EP044-BOUND",
+    "method": "PUT",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 6.41
+  },
+  {
+    "testId": "UC01-008",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_B",
+    "status": 401,
+    "ms": 4.27
+  },
+  {
+    "testId": "UC07-003",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.11
+  },
+  {
+    "testId": "UC07-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.11
+  },
+  {
+    "testId": "UC07-003",
+    "method": "PUT",
+    "route": "/api/admin/customers/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 21.5
+  },
+  {
+    "testId": "UC07-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.71
+  },
+  {
+    "testId": "UC07-003",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 98.24
+  },
+  {
+    "testId": "UC07-003",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 401,
+    "ms": 1.86
+  },
+  {
+    "testId": "UC07-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.26
+  },
+  {
+    "testId": "UC07-003",
+    "method": "PUT",
+    "route": "/api/admin/customers/3",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 11.19
+  },
+  {
+    "testId": "UC07-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 0.95
+  },
+  {
+    "testId": "UC07-003",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 115.27
+  },
+  {
+    "testId": "UC01-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.8
+  },
+  {
+    "testId": "UC01-011",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 400,
+    "ms": 101.41
+  },
+  {
+    "testId": "UC01-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 1.91
+  },
+  {
+    "testId": "UC01-011",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 239.65
+  },
+  {
+    "testId": "UC01-011",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 401,
+    "ms": 0.49
+  },
+  {
+    "testId": "UC01-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.54
+  },
+  {
+    "testId": "UC01-011",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 119.5
+  },
+  {
+    "testId": "UC01-011",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 0.62
+  },
+  {
+    "testId": "UC01-011",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 94.41
+  },
+  {
+    "testId": "UC01-007",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 3.44
+  },
+  {
+    "testId": "UC01-007",
+    "method": "POST",
+    "route": "/api/auth/logout",
+    "role": "CUSTOMER_A",
+    "status": 200,
+    "ms": 8.52
+  },
+  {
+    "testId": "UC01-007",
+    "method": "GET",
+    "route": "/api/profile",
+    "role": "CUSTOMER_A",
+    "status": 401,
+    "ms": 1.01
+  },
+  {
+    "testId": "UC05-003",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN_EXPIRED",
+    "status": 200,
+    "ms": 2.63
+  },
+  {
+    "testId": "UC05-003",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ADMIN_EXPIRED",
+    "status": 200,
+    "ms": 109.18
+  },
+  {
+    "testId": "UC05-003",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN_EXPIRED",
+    "status": 401,
+    "ms": 3.32
+  },
+  {
+    "testId": "UC05-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 2.17
+  },
+  {
+    "testId": "UC05-002",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 96.04
+  },
+  {
+    "testId": "UC05-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 1.05
+  },
+  {
+    "testId": "UC05-002",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 3.47
+  },
+  {
+    "testId": "UC05-002",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN_2",
+    "status": 401,
+    "ms": 4.67
+  },
+  {
+    "testId": "UC05-002",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.54
+  },
+  {
+    "testId": "UC05-002",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 401,
+    "ms": 99.42
+  },
+  {
+    "testId": "UC05-006",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 2.09
+  },
+  {
+    "testId": "UC05-006",
+    "method": "POST",
+    "route": "/api/auth/password",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 205.05
+  },
+  {
+    "testId": "UC05-006",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 401,
+    "ms": 0.63
+  },
+  {
+    "testId": "UC05-006",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 0.39
+  },
+  {
+    "testId": "UC05-006",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 88.83
+  },
+  {
+    "testId": "UC05-001",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 3.34
+  },
+  {
+    "testId": "UC05-001",
+    "method": "POST",
+    "route": "/api/auth/logout",
+    "role": "ADMIN",
+    "status": 200,
+    "ms": 5.32
+  },
+  {
+    "testId": "UC05-001",
+    "method": "GET",
+    "route": "/api/admin/stock",
+    "role": "ADMIN",
+    "status": 401,
+    "ms": 0.62
+  },
+  {
+    "testId": "SEC-008",
+    "method": "GET",
+    "route": "/api/security/token",
+    "role": "ANONYMOUS",
+    "status": 200,
+    "ms": 0.9
+  },
+  {
+    "testId": "SEC-008",
+    "method": "POST",
+    "route": "/api/auth/login",
+    "role": "ANONYMOUS",
+    "status": 429,
+    "ms": 1.09
+  }
+]

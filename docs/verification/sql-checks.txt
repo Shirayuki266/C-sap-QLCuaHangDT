@@ -1,0 +1,31 @@
+﻿PASS Stock cannot oversell or become negative
+PASS Invalid stock operations preserve balances
+PASS Cancellation requires ownership and pending status
+PASS Stale version and repeated transitions are rejected
+PASS COD is paid only on successful completion
+PASS Failed delivery can be received only once
+PASS Order captures immutable lines and prices
+PASS Order rejects duplicate variants
+8 checks passed.
+Integration database: PhoneStore_Checks_20261025_045140_96764
+PASS SQL registration, password hash, duplicate input and login roles
+PASS SQL catalog filters, pagination and invalid range
+PASS SQL product creation starts at zero; customer cannot write catalog
+PASS SQL receipt draft, edit, confirm and repeated confirmation
+PASS SQL cart add/update/remove and guest merge do not reserve
+PASS SQL checkout, retry RequestKey, ownership and customer cancellation
+PASS SQL complete COD updates balances, history and revenue
+PASS SQL failed delivery does not restock until physical return; return once
+PASS SQL price changes require reconfirmation; old order snapshot unchanged
+PASS SQL last unit race across separate SQL connections
+PASS SQL multi-line checkout rollback after first reservation
+PASS SQL customer cancellation versus admin confirmation uses rowversion
+PASS SQL inventory adjustment requires reason and protects held stock
+PASS SQL locked accounts lose sessions; password change revokes all
+PASS SQL reports exclude unpaid/cancelled/failed and share table/chart rows
+PASS SQL lookup, supplier and product soft CRUD preserve references
+PASS SQL empty/cancelled receipts and nonpositive cost rejected
+PASS SQL profile uniqueness and mutation validation
+PASS SQL report periods use UTC+7 and exclusive next-day boundary
+PASS SQL audit journal reconciles all inventory and COD totals
+20 SQL integration checks passed. Database retained: PhoneStore_Checks_20261025_045140_96764

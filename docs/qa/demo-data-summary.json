@@ -1,0 +1,283 @@
+{
+  "database": "PhoneStore_QA_20261025_061611_2722bd",
+  "products": 24,
+  "variants": 72,
+  "customers": 40,
+  "purchases": 136,
+  "orders": 410,
+  "statuses": [
+    {
+      "status": "HOAN_TAT",
+      "count": 305
+    },
+    {
+      "status": "DA_HUY",
+      "count": 34
+    },
+    {
+      "status": "GIAO_THAT_BAI",
+      "count": 68
+    },
+    {
+      "status": "CHO_XAC_NHAN",
+      "count": 1
+    },
+    {
+      "status": "DA_XAC_NHAN",
+      "count": 1
+    },
+    {
+      "status": "DANG_GIAO",
+      "count": 1
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2024-01",
+      "orders": 9,
+      "revenue": 213280000
+    },
+    {
+      "month": "2024-02",
+      "orders": 9,
+      "revenue": 167380000
+    },
+    {
+      "month": "2024-03",
+      "orders": 9,
+      "revenue": 134530000
+    },
+    {
+      "month": "2024-04",
+      "orders": 9,
+      "revenue": 122380000
+    },
+    {
+      "month": "2024-05",
+      "orders": 9,
+      "revenue": 149830000
+    },
+    {
+      "month": "2024-06",
+      "orders": 9,
+      "revenue": 197080000
+    },
+    {
+      "month": "2024-07",
+      "orders": 9,
+      "revenue": 175480000
+    },
+    {
+      "month": "2024-08",
+      "orders": 9,
+      "revenue": 140380000
+    },
+    {
+      "month": "2024-09",
+      "orders": 9,
+      "revenue": 119680000
+    },
+    {
+      "month": "2024-10",
+      "orders": 9,
+      "revenue": 151630000
+    },
+    {
+      "month": "2024-11",
+      "orders": 9,
+      "revenue": 191230000
+    },
+    {
+      "month": "2024-12",
+      "orders": 9,
+      "revenue": 182680000
+    },
+    {
+      "month": "2025-01",
+      "orders": 9,
+      "revenue": 136780000
+    },
+    {
+      "month": "2025-02",
+      "orders": 9,
+      "revenue": 125530000
+    },
+    {
+      "month": "2025-03",
+      "orders": 9,
+      "revenue": 134980000
+    },
+    {
+      "month": "2025-04",
+      "orders": 9,
+      "revenue": 194830000
+    },
+    {
+      "month": "2025-05",
+      "orders": 9,
+      "revenue": 177280000
+    },
+    {
+      "month": "2025-06",
+      "orders": 9,
+      "revenue": 144880000
+    },
+    {
+      "month": "2025-07",
+      "orders": 9,
+      "revenue": 131380000
+    },
+    {
+      "month": "2025-08",
+      "orders": 9,
+      "revenue": 132280000
+    },
+    {
+      "month": "2025-09",
+      "orders": 9,
+      "revenue": 175030000
+    },
+    {
+      "month": "2025-10",
+      "orders": 9,
+      "revenue": 182230000
+    },
+    {
+      "month": "2025-11",
+      "orders": 9,
+      "revenue": 152080000
+    },
+    {
+      "month": "2025-12",
+      "orders": 9,
+      "revenue": 127780000
+    },
+    {
+      "month": "2026-01",
+      "orders": 9,
+      "revenue": 138130000
+    },
+    {
+      "month": "2026-02",
+      "orders": 9,
+      "revenue": 179980000
+    },
+    {
+      "month": "2026-03",
+      "orders": 9,
+      "revenue": 185830000
+    },
+    {
+      "month": "2026-04",
+      "orders": 9,
+      "revenue": 146680000
+    },
+    {
+      "month": "2026-05",
+      "orders": 9,
+      "revenue": 135880000
+    },
+    {
+      "month": "2026-06",
+      "orders": 9,
+      "revenue": 133180000
+    },
+    {
+      "month": "2026-07",
+      "orders": 9,
+      "revenue": 177280000
+    },
+    {
+      "month": "2026-08",
+      "orders": 9,
+      "revenue": 187630000
+    },
+    {
+      "month": "2026-09",
+      "orders": 9,
+      "revenue": 151630000
+    },
+    {
+      "month": "2026-10",
+      "orders": 8,
+      "revenue": 114600000
+    }
+  ],
+  "quarterly": [
+    {
+      "Year": 2024,
+      "Quarter": 1,
+      "revenue": 515190000
+    },
+    {
+      "Year": 2024,
+      "Quarter": 2,
+      "revenue": 469290000
+    },
+    {
+      "Year": 2024,
+      "Quarter": 3,
+      "revenue": 435540000
+    },
+    {
+      "Year": 2024,
+      "Quarter": 4,
+      "revenue": 525540000
+    },
+    {
+      "Year": 2025,
+      "Quarter": 1,
+      "revenue": 397290000
+    },
+    {
+      "Year": 2025,
+      "Quarter": 2,
+      "revenue": 516990000
+    },
+    {
+      "Year": 2025,
+      "Quarter": 3,
+      "revenue": 438690000
+    },
+    {
+      "Year": 2025,
+      "Quarter": 4,
+      "revenue": 462090000
+    },
+    {
+      "Year": 2026,
+      "Quarter": 1,
+      "revenue": 503940000
+    },
+    {
+      "Year": 2026,
+      "Quarter": 2,
+      "revenue": 415740000
+    },
+    {
+      "Year": 2026,
+      "Quarter": 3,
+      "revenue": 516540000
+    },
+    {
+      "Year": 2026,
+      "Quarter": 4,
+      "revenue": 114600000
+    }
+  ],
+  "yearly": [
+    {
+      "year": 2024,
+      "revenue": 1945560000
+    },
+    {
+      "year": 2025,
+      "revenue": 1815060000
+    },
+    {
+      "year": 2026,
+      "revenue": 1550820000
+    }
+  ],
+  "verification": "PASS: quantities, journal, order totals and paid/completed revenue"
+}

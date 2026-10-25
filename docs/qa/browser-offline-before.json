@@ -1,0 +1,86 @@
+[
+  {
+    "Id": "ENV-009",
+    "Module": "ENV",
+    "Title": "Migration t\u1EA1o DB QA",
+    "Expected": "T\u1EA1o m\u1EDBi th\u00E0nh c\u00F4ng",
+    "Actual": "C\u00E1c assertion \u0111\u00E3 \u0111\u1EA1t.",
+    "Status": "PASS",
+    "Kind": "SQL runtime",
+    "Evidence": "docs/qa/results.json#ENV-009",
+    "Bug": null,
+    "Ms": 1027.193
+  },
+  {
+    "Id": "ENV-008",
+    "Module": "ENV",
+    "Title": "K\u1EBFt n\u1ED1i DB ri\u00EAng",
+    "Expected": "K\u1EBFt n\u1ED1i \u0111\u01B0\u1EE3c",
+    "Actual": "C\u00E1c assertion \u0111\u00E3 \u0111\u1EA1t.",
+    "Status": "PASS",
+    "Kind": "SQL runtime",
+    "Evidence": "docs/qa/results.json#ENV-008",
+    "Bug": null,
+    "Ms": 18.971
+  },
+  {
+    "Id": "ENV-011",
+    "Module": "ENV",
+    "Title": "Seed v\u00E0 seed l\u1EA1i",
+    "Expected": "Kh\u00F4ng nh\u00E2n \u0111\u00F4i t\u00E0i kho\u1EA3n/s\u1EA3n ph\u1EA9m",
+    "Actual": "C\u00E1c assertion \u0111\u00E3 \u0111\u1EA1t.",
+    "Status": "PASS",
+    "Kind": "SQL runtime",
+    "Evidence": "docs/qa/results.json#ENV-011",
+    "Bug": null,
+    "Ms": 987.0998
+  },
+  {
+    "Id": "DB-014",
+    "Module": "DB",
+    "Title": "Ch\u1EA1y l\u1EA1i migration gi\u1EEF d\u1EEF li\u1EC7u",
+    "Expected": "Kh\u00F4ng m\u1EA5t 3 s\u1EA3n ph\u1EA9m",
+    "Actual": "C\u00E1c assertion \u0111\u00E3 \u0111\u1EA1t.",
+    "Status": "PASS",
+    "Kind": "SQL runtime",
+    "Evidence": "docs/qa/results.json#DB-014",
+    "Bug": null,
+    "Ms": 6.7985
+  },
+  {
+    "Id": "ENV-012",
+    "Module": "ENV",
+    "Title": "Kh\u1EDFi \u0111\u1ED9ng backend QA",
+    "Expected": "GET catalog HTTP 200",
+    "Actual": "C\u00E1c assertion \u0111\u00E3 \u0111\u1EA1t.",
+    "Status": "PASS",
+    "Kind": "HTTP \u002B SQL",
+    "Evidence": "docs/qa/results.json#ENV-012",
+    "Bug": null,
+    "Ms": 1979.3265
+  },
+  {
+    "Id": "UC01-001",
+    "Module": "UC01",
+    "Title": "\u0110\u0103ng k\u00FD hai kh\u00E1ch QA",
+    "Expected": "Hai t\u00E0i kho\u1EA3n CUSTOMER kh\u00E1c ID",
+    "Actual": "C\u00E1c assertion \u0111\u00E3 \u0111\u1EA1t.",
+    "Status": "PASS",
+    "Kind": "HTTP \u002B SQL",
+    "Evidence": "docs/qa/results.json#UC01-001",
+    "Bug": null,
+    "Ms": 228.5224
+  },
+  {
+    "Id": "UI-013",
+    "Module": "UI",
+    "Title": "Chrome desktop/mobile, XSS v\u00E0 m\u1EA5t m\u1EA1ng guest",
+    "Expected": "T\u1EA5t c\u1EA3 assertion tr\u00ECnh duy\u1EC7t \u0111\u1EA1t",
+    "Actual": "browser process failed; inspect private local artifacts without publishing raw credentials",
+    "Status": "FAIL",
+    "Kind": "Chrome runtime",
+    "Evidence": "docs/qa/results.json#UI-013",
+    "Bug": null,
+    "Ms": 2064.0183
+  }
+]

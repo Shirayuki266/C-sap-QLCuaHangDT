@@ -1,0 +1,4 @@
+﻿@model ProfileRequest
+@{ViewData["Title"]="Hồ sơ";}
+<section class="form-card"><h1>Hồ sơ của tôi</h1><form method="post"><div asp-validation-summary="All" class="text-danger" role="alert"></div><label>Họ tên<input asp-for="FullName" class="form-control" required maxlength="120"/></label><label>Điện thoại<input asp-for="Phone" class="form-control" required type="tel" maxlength="20"/></label><label>Email<input asp-for="Email" class="form-control" type="email" maxlength="254"/></label><label>Địa chỉ<input asp-for="Address" class="form-control" maxlength="500"/></label><button class="btn btn-primary">Lưu hồ sơ</button></form></section>
+

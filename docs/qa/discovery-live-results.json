@@ -1,0 +1,50 @@
+[
+  {
+    "id": "LIVE-HOME",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-ARROW-UP-LAST-OPTION",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-ESCAPE-CLOSES",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-BRAND-SUGGESTION-CLICK",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-EMPTY-INPUT-NO-REQUEST",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-OUTSIDE-CLOSES",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-CATALOG-FILTER",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-MOBILE-CATALOG",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-EMPTY-RESULTS",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-MOBILE-HOME",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-HTTPS-IMAGE-FROM-DB",
+    "status": "PASS"
+  },
+  {
+    "id": "LIVE-GALLERY-ORDER",
+    "status": "PASS"
+  }
+]

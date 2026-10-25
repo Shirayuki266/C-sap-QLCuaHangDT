@@ -1,0 +1,349 @@
+PASS ENV-009 Migration tạo DB QA
+PASS ENV-008 Kết nối DB riêng
+PASS ENV-011 Seed và seed lại
+PASS DB-014 Chạy lại migration giữ dữ liệu
+PASS ENV-012 Khởi động backend QA
+PASS UC01-001 Đăng ký hai khách QA
+PASS UC01-002 Trùng username/email/SĐT
+PASS UC01-003 Email/SĐT/password không hợp lệ
+PASS UC01-004 Hash khác plaintext và mỗi tài khoản có salt riêng
+PASS UC01-005 Sai mật khẩu và username không tồn tại
+PASS UC01-009 Xem/sửa hồ sơ chính mình
+PASS UC01-010 Overpost ID hồ sơ người khác
+PASS UC05-004 Customer đăng nhập quản trị
+PASS SEC-004 Overpost vai trò lúc đăng ký
+PASS QA-ERR401 Schema lỗi chưa đăng nhập
+PASS QA-CSRF Schema lỗi CSRF
+PASS WEB-HOME-EMPTY Trang chủ riêng và header khách
+PASS UC02-001 Danh sách và chi tiết DB
+PASS UC02-004 Tìm kiếm có/rỗng
+PASS UC02-005 Từ khóa Unicode, khoảng trắng, ký tự SQL
+PASS UC02-007 Biên khoảng giá
+PASS UC02-008 Sort/phân trang ổn định
+PASS QA-FILTER Giá và sort theo biến thể khớp bộ lọc
+PASS QA-MONEY Giá có phần lẻ được hiển thị chính xác
+PASS UC02-009 Không tồn tại và ngừng bán
+PASS UC02-010 Hết hàng
+PASS UC03-001 Thêm đúng biến thể
+PASS UC03-002 Thêm lại biến thể
+PASS UC03-003 Hai biến thể khác nhau
+PASS UC03-004 Sửa/xóa API
+PASS UC03-005 Số âm/0 POST/không nguyên JSON
+PASS QA-MVC-CART Form số lượng sai kiểu không được xóa giỏ
+PASS QA-CART-ID PUT thiếu/ID0 không được báo thành công
+PASS UC03-006 Lượng vượt tồn/giới hạn
+PASS UC03-007 Tiền giỏ tính từ DB
+PASS UC03-010 Thông tin nhận không hợp lệ
+PASS UC03-008 Không tin tổng/giá client
+PASS UC03-011 Tạo COD nhiều dòng
+PASS UC03-012 Dữ liệu đơn/chi tiết/thanh toán/giữ/log
+PASS UC03-014 Retry sau khi server đã commit
+PASS UC03-015 Giỏ sau đặt hàng
+PASS UC04-001 Lịch sử theo chủ tài khoản
+PASS UC04-002 Chi tiết snapshot và tổng
+PASS UC04-009 Sửa ID để xem/hủy đơn người khác
+PASS UC09-003 Nhảy thẳng complete từ chờ
+PASS UC09-002 Xác nhận đơn hợp lệ
+PASS UC04-005 Khách không hủy sau xác nhận
+PASS UC09-004 Xuất giao cập nhật đồng thời thực/giữ
+PASS UC09-005 Xuất giao lặp với version mới
+PASS UC09-007 Shipping và thanh toán tách biệt
+PASS UC09-006 Hoàn tất thu COD
+PASS UC09-011 Customer đọc trạng thái mới
+PASS UC09-012 Timeline có actor, giờ và trạng thái
+PASS UC10-008 Báo cáo không đếm trùng JOIN nhiều dòng
+PASS UC10-009 Bán chạy hai biến thể
+PASS UC03-016 Thay giá/tên không đổi đơn cũ
+PASS UC04-004 Hủy đơn chờ có lý do
+PASS UC04-006 Hủy trả lượng giữ
+PASS UC04-007 Hủy lặp không giải phóng thêm
+PASS UC09-008 Giao thất bại chưa nhập lại
+PASS UC09-009 Nhận hàng thực tế chỉ một lần
+PASS UC10-001 Doanh thu chỉ hoàn tất đã thu
+PASS UC10-006 Báo cáo rỗng
+PASS UC10-005 Kỳ sai và ngày ngoài phạm vi
+PASS UC10-004 Biên ngày UTC+7 đầu/cuối kỳ
+PASS UC03-009 Giá đổi/ngừng/hết tồn tại checkout
+PASS UC04-003 Lọc đơn theo trạng thái/ngày
+PASS UC06-001 Thêm/sửa/ngừng sản phẩm qua API
+PASS UC06-002 Mã/SKU trùng
+PASS UC06-003 Bắt buộc/độ dài
+PASS UC06-004 Tổ hợp biến thể trùng
+PASS UC06-005 Biên giá âm/zero/lẻ3 số/quá lớn
+PASS UC06-008 Overpost tồn trong thông tin sản phẩm
+PASS QA-IMAGE-URL URL ảnh không an toàn
+PASS UC07-001 Tìm khách hàng
+PASS UC07-002 Admin cập nhật khách hàng
+PASS UC07-007 Response không chứa hash/mật khẩu
+PASS UC08-001 CRUD mềm NCC
+PASS UC08-002 Lập phiếu nháp và sửa dòng
+PASS UC08-003 Số lượng/giá nhập sai
+PASS UC08-004 Nháp không cộng tồn
+PASS UC08-005 Xác nhận phiếu
+PASS UC08-007 Phiếu chốt không sửa/hủy
+PASS UC08-012 Nhập giá vốn không tự sửa giá bán
+PASS QA-ADJUST Kiểm kê lý do/giữ/version
+PASS UC08-013 Nhật ký actor/chứng từ/lý do
+PASS SEC-011 Hai khách tranh hàng cuối qua HTTP song song
+PASS SEC-012 Khách hủy trong lúc Admin xác nhận
+PASS SEC-013 Hai request chốt cùng phiếu nhập
+PASS SEC-014 Hoàn tất/thu tiền cùng đơn song song
+PASS SEC-016 Giá đổi cùng lúc checkout
+PASS UC03-013 Lỗi sau khi giữ dòng đầu phải rollback
+PASS UC08-008 Chốt nhập lỗi SQL ở dòng2 rollback dòng1
+PASS SEC-015 Timeout thật ở proxy sau server commit và retry
+PASS E2E-01 Đăng ký → COD → Admin → hoàn tất → doanh thu
+PASS E2E-02 Đặt → giữ → khách hủy → đối chiếu tồn/báo cáo
+PASS E2E-03 Phiếu nhập → xác nhận → mua hàng vừa nhập
+PASS E2E-04 Giao thất bại → nhận lại hàng → đối chiếu
+PASS E2E-05 Khách gọi màn hình/API Admin
+PASS E2E-06 Hai khách đồng thời với tồn1
+PASS QA-TARGET-GUARD Đích sai/mất cấu hình bị từ chối trước SQL
+PASS QA-IDENTITY Backend QA chứng minh đích trước bộ thử cũ
+PASS QA-CART-NULL-BOUND Giỏ null/overflow trực tiếp không đổi dữ liệu SQL
+PASS QA-FILTER-CROSS-FLOW Giá đúng biến thể lọc từ danh sách tới checkout
+PASS WEB-COLOR Màu/dung lượng/giá cùng một biến thể
+PASS WEB-SUGGESTIONS Gợi ý dữ liệu DB/rỗng/biên/ký tự lạ
+PASS WEB-ACCENTS Tìm tiếng Việt không dấu, loại hàng ngừng bán
+PASS WEB-GALLERY Ảnh HTTPS bổ sung, thứ tự và public DTO
+PASS WEB-QR QR trực tiếp bị chặn, COD còn hoạt động
+PASS WEB-BESTSELLERS Bán chạy tính tay: gộp biến thể, loại trạng thái/kỳ, tie-break
+PASS UI-013 Chrome desktop/mobile, XSS và mất mạng guest
+PASS ENV-014 WinForms runtime và thao tác tạo sản phẩm/phiếu
+PASS QA-LOOKUPS Hãng/danh mục API CRUD mềm
+PASS QA-MERGE Hợp nhất giỏ/preview guest
+PASS QA-PUBLIC-LOOKUPS Danh mục public
+PASS QA-ADMIN-ORDERLIST Tìm/lọc đơn Admin theo khách và mã
+PASS QA-DRAFT-CANCEL Hủy phiếu nháp hợp lệ
+PASS QA-PURCHASE-LIST Danh sách phiếu nhập lọc trạng thái/mã và phân trang
+PASS EP001-METHOD /api/admin/customers sai HTTP method
+PASS EP001-ANON GET /api/admin/customers chưa login
+PASS EP001-ROLE GET /api/admin/customers sai vai trò
+PASS EP002-ANON PUT /api/admin/customers/{id:long} chưa login
+PASS EP002-ROLE PUT /api/admin/customers/{id:long} sai vai trò
+PASS EP002-JSON PUT /api/admin/customers/{id:long} JSON lỗi
+PASS EP002-EMPTY PUT /api/admin/customers/{id:long} thiếu trường
+PASS EP002-NULL PUT /api/admin/customers/{id:long} null body
+PASS EP002-MEDIA PUT /api/admin/customers/{id:long} Content-Type sai
+PASS EP003-METHOD /api/admin/lookups/{kind} sai HTTP method
+PASS EP003-ANON GET /api/admin/lookups/{kind} chưa login
+PASS EP003-ROLE GET /api/admin/lookups/{kind} sai vai trò
+PASS EP004-ANON POST /api/admin/lookups/{kind} chưa login
+PASS EP004-ROLE POST /api/admin/lookups/{kind} sai vai trò
+PASS EP004-JSON POST /api/admin/lookups/{kind} JSON lỗi
+PASS EP004-EMPTY POST /api/admin/lookups/{kind} thiếu trường
+PASS EP004-NULL POST /api/admin/lookups/{kind} null body
+PASS EP004-MEDIA POST /api/admin/lookups/{kind} Content-Type sai
+PASS EP005-ANON PUT /api/admin/lookups/{kind}/{id:int} chưa login
+PASS EP005-ROLE PUT /api/admin/lookups/{kind}/{id:int} sai vai trò
+PASS EP005-JSON PUT /api/admin/lookups/{kind}/{id:int} JSON lỗi
+PASS EP005-EMPTY PUT /api/admin/lookups/{kind}/{id:int} thiếu trường
+PASS EP005-NULL PUT /api/admin/lookups/{kind}/{id:int} null body
+PASS EP005-MEDIA PUT /api/admin/lookups/{kind}/{id:int} Content-Type sai
+PASS EP006-METHOD /api/admin/movements sai HTTP method
+PASS EP006-ANON GET /api/admin/movements chưa login
+PASS EP006-ROLE GET /api/admin/movements sai vai trò
+PASS EP007-METHOD /api/admin/orders sai HTTP method
+PASS EP007-ANON GET /api/admin/orders chưa login
+PASS EP007-ROLE GET /api/admin/orders sai vai trò
+PASS EP008-METHOD /api/admin/orders/{id:long} sai HTTP method
+PASS EP008-MISSING-ID /api/admin/orders/{id:long} ID không tồn tại
+PASS EP008-ANON GET /api/admin/orders/{id:long} chưa login
+PASS EP008-ROLE GET /api/admin/orders/{id:long} sai vai trò
+PASS EP009-ANON POST /api/admin/orders/{id:long}/{actionName} chưa login
+PASS EP009-ROLE POST /api/admin/orders/{id:long}/{actionName} sai vai trò
+PASS EP009-JSON POST /api/admin/orders/{id:long}/{actionName} JSON lỗi
+PASS EP009-EMPTY POST /api/admin/orders/{id:long}/{actionName} thiếu trường
+PASS EP009-NULL POST /api/admin/orders/{id:long}/{actionName} null body
+PASS EP009-MEDIA POST /api/admin/orders/{id:long}/{actionName} Content-Type sai
+PASS EP010-METHOD /api/admin/products sai HTTP method
+PASS EP010-ANON GET /api/admin/products chưa login
+PASS EP010-ROLE GET /api/admin/products sai vai trò
+PASS EP011-ANON POST /api/admin/products chưa login
+PASS EP011-ROLE POST /api/admin/products sai vai trò
+PASS EP011-JSON POST /api/admin/products JSON lỗi
+PASS EP011-EMPTY POST /api/admin/products thiếu trường
+PASS EP011-NULL POST /api/admin/products null body
+PASS EP011-MEDIA POST /api/admin/products Content-Type sai
+PASS EP012-METHOD /api/admin/products/{id:long} sai HTTP method
+PASS EP012-MISSING-ID /api/admin/products/{id:long} ID không tồn tại
+PASS EP012-ANON GET /api/admin/products/{id:long} chưa login
+PASS EP012-ROLE GET /api/admin/products/{id:long} sai vai trò
+PASS EP013-ANON PUT /api/admin/products/{id:long} chưa login
+PASS EP013-ROLE PUT /api/admin/products/{id:long} sai vai trò
+PASS EP013-JSON PUT /api/admin/products/{id:long} JSON lỗi
+PASS EP013-EMPTY PUT /api/admin/products/{id:long} thiếu trường
+PASS EP013-NULL PUT /api/admin/products/{id:long} null body
+PASS EP013-MEDIA PUT /api/admin/products/{id:long} Content-Type sai
+PASS EP014-METHOD /api/admin/purchases sai HTTP method
+PASS EP014-ANON GET /api/admin/purchases chưa login
+PASS EP014-ROLE GET /api/admin/purchases sai vai trò
+PASS EP015-ANON POST /api/admin/purchases chưa login
+PASS EP015-ROLE POST /api/admin/purchases sai vai trò
+PASS EP015-JSON POST /api/admin/purchases JSON lỗi
+PASS EP015-EMPTY POST /api/admin/purchases thiếu trường
+PASS EP015-NULL POST /api/admin/purchases null body
+PASS EP015-MEDIA POST /api/admin/purchases Content-Type sai
+PASS EP016-METHOD /api/admin/purchases/{id:long} sai HTTP method
+PASS EP016-MISSING-ID /api/admin/purchases/{id:long} ID không tồn tại
+PASS EP016-ANON GET /api/admin/purchases/{id:long} chưa login
+PASS EP016-ROLE GET /api/admin/purchases/{id:long} sai vai trò
+PASS EP017-ANON PUT /api/admin/purchases/{id:long} chưa login
+PASS EP017-ROLE PUT /api/admin/purchases/{id:long} sai vai trò
+PASS EP017-JSON PUT /api/admin/purchases/{id:long} JSON lỗi
+PASS EP017-EMPTY PUT /api/admin/purchases/{id:long} thiếu trường
+PASS EP017-NULL PUT /api/admin/purchases/{id:long} null body
+PASS EP017-MEDIA PUT /api/admin/purchases/{id:long} Content-Type sai
+PASS EP018-ANON POST /api/admin/purchases/{id:long}/cancel chưa login
+PASS EP018-ROLE POST /api/admin/purchases/{id:long}/cancel sai vai trò
+PASS EP018-JSON POST /api/admin/purchases/{id:long}/cancel JSON lỗi
+PASS EP018-EMPTY POST /api/admin/purchases/{id:long}/cancel thiếu trường
+PASS EP018-NULL POST /api/admin/purchases/{id:long}/cancel null body
+PASS EP018-MEDIA POST /api/admin/purchases/{id:long}/cancel Content-Type sai
+PASS EP019-ANON POST /api/admin/purchases/{id:long}/confirm chưa login
+PASS EP019-ROLE POST /api/admin/purchases/{id:long}/confirm sai vai trò
+PASS EP019-JSON POST /api/admin/purchases/{id:long}/confirm JSON lỗi
+PASS EP019-EMPTY POST /api/admin/purchases/{id:long}/confirm thiếu trường
+PASS EP019-NULL POST /api/admin/purchases/{id:long}/confirm null body
+PASS EP019-MEDIA POST /api/admin/purchases/{id:long}/confirm Content-Type sai
+PASS EP020-METHOD /api/admin/reports sai HTTP method
+PASS EP020-ANON GET /api/admin/reports chưa login
+PASS EP020-ROLE GET /api/admin/reports sai vai trò
+PASS EP021-METHOD /api/admin/stock sai HTTP method
+PASS EP021-ANON GET /api/admin/stock chưa login
+PASS EP021-ROLE GET /api/admin/stock sai vai trò
+PASS EP022-ANON POST /api/admin/stock/{id:long}/adjust chưa login
+PASS EP022-ROLE POST /api/admin/stock/{id:long}/adjust sai vai trò
+PASS EP022-JSON POST /api/admin/stock/{id:long}/adjust JSON lỗi
+PASS EP022-EMPTY POST /api/admin/stock/{id:long}/adjust thiếu trường
+PASS EP022-NULL POST /api/admin/stock/{id:long}/adjust null body
+PASS EP022-MEDIA POST /api/admin/stock/{id:long}/adjust Content-Type sai
+PASS EP023-METHOD /api/admin/suppliers sai HTTP method
+PASS EP023-ANON GET /api/admin/suppliers chưa login
+PASS EP023-ROLE GET /api/admin/suppliers sai vai trò
+PASS EP024-ANON POST /api/admin/suppliers chưa login
+PASS EP024-ROLE POST /api/admin/suppliers sai vai trò
+PASS EP024-JSON POST /api/admin/suppliers JSON lỗi
+PASS EP024-EMPTY POST /api/admin/suppliers thiếu trường
+PASS EP024-NULL POST /api/admin/suppliers null body
+PASS EP024-MEDIA POST /api/admin/suppliers Content-Type sai
+PASS EP025-ANON PUT /api/admin/suppliers/{id:long} chưa login
+PASS EP025-ROLE PUT /api/admin/suppliers/{id:long} sai vai trò
+PASS EP025-JSON PUT /api/admin/suppliers/{id:long} JSON lỗi
+PASS EP025-EMPTY PUT /api/admin/suppliers/{id:long} thiếu trường
+PASS EP025-NULL PUT /api/admin/suppliers/{id:long} null body
+PASS EP025-MEDIA PUT /api/admin/suppliers/{id:long} Content-Type sai
+PASS EP026-JSON POST /api/auth/login JSON lỗi
+PASS EP026-EMPTY POST /api/auth/login thiếu trường
+PASS EP026-NULL POST /api/auth/login null body
+PASS EP026-MEDIA POST /api/auth/login Content-Type sai
+PASS EP027-ANON POST /api/auth/logout chưa login
+PASS EP028-ANON POST /api/auth/password chưa login
+PASS EP028-JSON POST /api/auth/password JSON lỗi
+PASS EP028-EMPTY POST /api/auth/password thiếu trường
+PASS EP028-NULL POST /api/auth/password null body
+PASS EP028-MEDIA POST /api/auth/password Content-Type sai
+PASS EP029-JSON POST /api/auth/register JSON lỗi
+PASS EP029-EMPTY POST /api/auth/register thiếu trường
+PASS EP029-NULL POST /api/auth/register null body
+PASS EP029-MEDIA POST /api/auth/register Content-Type sai
+PASS EP030-METHOD /api/bestsellers sai HTTP method
+PASS EP031-METHOD /api/cart sai HTTP method
+PASS EP031-ANON GET /api/cart chưa login
+PASS EP031-ROLE GET /api/cart sai vai trò
+PASS EP032-ANON POST /api/cart chưa login
+PASS EP032-ROLE POST /api/cart sai vai trò
+PASS EP032-JSON POST /api/cart JSON lỗi
+PASS EP032-EMPTY POST /api/cart thiếu trường
+PASS EP032-NULL POST /api/cart null body
+PASS EP032-MEDIA POST /api/cart Content-Type sai
+PASS EP033-ANON PUT /api/cart chưa login
+PASS EP033-ROLE PUT /api/cart sai vai trò
+PASS EP033-JSON PUT /api/cart JSON lỗi
+PASS EP033-EMPTY PUT /api/cart thiếu trường
+PASS EP033-NULL PUT /api/cart null body
+PASS EP033-MEDIA PUT /api/cart Content-Type sai
+PASS EP034-ANON POST /api/cart/merge chưa login
+PASS EP034-ROLE POST /api/cart/merge sai vai trò
+PASS EP034-JSON POST /api/cart/merge JSON lỗi
+PASS EP034-EMPTY POST /api/cart/merge thiếu trường
+PASS EP034-NULL POST /api/cart/merge null body
+PASS EP034-MEDIA POST /api/cart/merge Content-Type sai
+PASS EP035-METHOD /api/catalog sai HTTP method
+PASS EP036-METHOD /api/catalog/{id:long} sai HTTP method
+PASS EP036-MISSING-ID /api/catalog/{id:long} ID không tồn tại
+PASS EP037-JSON POST /api/guest-cart/preview JSON lỗi
+PASS EP037-EMPTY POST /api/guest-cart/preview thiếu trường
+PASS EP037-NULL POST /api/guest-cart/preview null body
+PASS EP037-MEDIA POST /api/guest-cart/preview Content-Type sai
+PASS EP038-METHOD /api/lookups/{kind} sai HTTP method
+PASS EP039-METHOD /api/orders sai HTTP method
+PASS EP039-ANON GET /api/orders chưa login
+PASS EP039-ROLE GET /api/orders sai vai trò
+PASS EP040-ANON POST /api/orders chưa login
+PASS EP040-ROLE POST /api/orders sai vai trò
+PASS EP040-JSON POST /api/orders JSON lỗi
+PASS EP040-EMPTY POST /api/orders thiếu trường
+PASS EP040-NULL POST /api/orders null body
+PASS EP040-MEDIA POST /api/orders Content-Type sai
+PASS EP041-METHOD /api/orders/{id:long} sai HTTP method
+PASS EP041-MISSING-ID /api/orders/{id:long} ID không tồn tại
+PASS EP041-ANON GET /api/orders/{id:long} chưa login
+PASS EP041-ROLE GET /api/orders/{id:long} sai vai trò
+PASS EP042-ANON POST /api/orders/{id:long}/cancel chưa login
+PASS EP042-ROLE POST /api/orders/{id:long}/cancel sai vai trò
+PASS EP042-JSON POST /api/orders/{id:long}/cancel JSON lỗi
+PASS EP042-EMPTY POST /api/orders/{id:long}/cancel thiếu trường
+PASS EP042-NULL POST /api/orders/{id:long}/cancel null body
+PASS EP042-MEDIA POST /api/orders/{id:long}/cancel Content-Type sai
+PASS EP043-METHOD /api/profile sai HTTP method
+PASS EP043-ANON GET /api/profile chưa login
+PASS EP044-ANON PUT /api/profile chưa login
+PASS EP044-ROLE PUT /api/profile sai vai trò
+PASS EP044-JSON PUT /api/profile JSON lỗi
+PASS EP044-EMPTY PUT /api/profile thiếu trường
+PASS EP044-NULL PUT /api/profile null body
+PASS EP044-MEDIA PUT /api/profile Content-Type sai
+PASS EP045-METHOD /api/security/token sai HTTP method
+PASS EP046-METHOD /api/suggestions sai HTTP method
+PASS API-014 Đầu vào sort/page an toàn
+PASS API-022 Đo thời gian request trong bộ QA
+PASS EP002-BOUND PUT /api/admin/customers/{id:long} giá trị biên sai
+PASS EP004-BOUND POST /api/admin/lookups/{kind} giá trị biên sai
+PASS EP005-BOUND PUT /api/admin/lookups/{kind}/{id:int} giá trị biên sai
+PASS EP009-BOUND POST /api/admin/orders/{id:long}/{actionName} giá trị biên sai
+PASS EP011-BOUND POST /api/admin/products giá trị biên sai
+PASS EP013-BOUND PUT /api/admin/products/{id:long} giá trị biên sai
+PASS EP015-BOUND POST /api/admin/purchases giá trị biên sai
+PASS EP017-BOUND PUT /api/admin/purchases/{id:long} giá trị biên sai
+PASS EP018-BOUND POST /api/admin/purchases/{id:long}/cancel giá trị biên sai
+PASS EP019-BOUND POST /api/admin/purchases/{id:long}/confirm giá trị biên sai
+PASS EP022-BOUND POST /api/admin/stock/{id:long}/adjust giá trị biên sai
+PASS EP024-BOUND POST /api/admin/suppliers giá trị biên sai
+PASS EP025-BOUND PUT /api/admin/suppliers/{id:long} giá trị biên sai
+PASS EP026-BOUND POST /api/auth/login giá trị biên sai
+PASS EP028-BOUND POST /api/auth/password giá trị biên sai
+PASS EP029-BOUND POST /api/auth/register giá trị biên sai
+PASS EP032-BOUND POST /api/cart giá trị biên sai
+PASS EP033-BOUND PUT /api/cart giá trị biên sai
+PASS EP034-BOUND POST /api/cart/merge giá trị biên sai
+PASS EP037-BOUND POST /api/guest-cart/preview giá trị biên sai
+PASS EP040-BOUND POST /api/orders giá trị biên sai
+PASS EP042-BOUND POST /api/orders/{id:long}/cancel giá trị biên sai
+PASS EP044-BOUND PUT /api/profile giá trị biên sai
+PASS UC01-008 Hết hạn phiên khách tại DB
+PASS UC07-003 Khóa/mở đúng tài khoản
+PASS UC01-011 Đổi mật khẩu cần mật khẩu cũ; thu hồi phiên
+PASS UC01-007 Logout thực sự thu hồi phiên
+PASS UC05-003 Admin hết hạn phiên tại DB
+PASS UC05-002 Admin sai mật khẩu/không tồn tại/bị khóa
+PASS UC05-006 Admin đổi mật khẩu và thu hồi phiên
+PASS UC05-001 Admin logout
+PASS SEC-008 Rate limit đăng nhập thật
+PASS DB-001 Constraint vật lý chặn dữ liệu lỗi
+PASS DB-002 Toàn vẹn constraint hiện tại
+PASS DB-004 Tiền decimal(18,2)
+PASS DB-008 Không cascade xóa lịch sử
+PASS DB-015 Đối chiếu toàn bộ tổng chứng từ
+PASS DB-016 Đối chiếu giữ theo trạng thái đơn và nhật ký kho
+PASS DB-012 Index truy vấn chính tồn tại

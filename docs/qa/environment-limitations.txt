@@ -1,0 +1,6 @@
+﻿Observed 2026-10-25 in the QA session:
+PowerShell Get-ExecutionPolicy: Restricted.
+BackupRestore.ps1 invoked only for database matching ^PhoneStore_QA_[A-Za-z0-9_]+$.
+PowerShell rejected invocation before execution: PSSecurityException / UnauthorizedAccess, running scripts is disabled on this system.
+No ExecutionPolicy changes were made.
+Installed printer count: 2. No physical print was sent or verified; installed queues do not prove physical output.

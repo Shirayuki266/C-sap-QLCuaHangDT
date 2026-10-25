@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PhoneStore.Admin/PhoneStore.Admin.csproj" />
+    <Project Path="src/PhoneStore.Core/PhoneStore.Core.csproj" />
+    <Project Path="src/PhoneStore.Infrastructure/PhoneStore.Infrastructure.csproj" />
+    <Project Path="src/PhoneStore.Web/PhoneStore.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PhoneStore.Checks/PhoneStore.Checks.csproj" />
+    <Project Path="tests/PhoneStore.Qa/PhoneStore.Qa.csproj" />
+  </Folder>
+</Solution>

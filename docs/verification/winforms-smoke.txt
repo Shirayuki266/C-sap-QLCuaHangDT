@@ -1,0 +1,12 @@
+﻿PASS Tổng quan
+PASS Điện thoại
+PASS Hãng
+PASS Danh mục
+PASS Khách hàng
+PASS Nhà cung cấp
+PASS Nhập hàng
+PASS Tồn kho
+PASS Đơn hàng
+PASS Báo cáo
+PASS Tài khoản
+PASS ProductEditor preserves BrandId after data binding; product/purchase/customer editors render.

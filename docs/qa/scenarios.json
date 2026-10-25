@@ -1,0 +1,56 @@
+{
+  "E2E-01": {
+    "customerId": 10,
+    "variantId": 36,
+    "initialStock": 3,
+    "quantity": 1,
+    "price": 123456.75,
+    "orderId": 11,
+    "finalStatus": "HOAN_TAT",
+    "payment": "DA_THU",
+    "finalStock": 2,
+    "finalReserved": 0,
+    "revenueDelta": 123456.75
+  },
+  "E2E-02": {
+    "variantId": 37,
+    "orderId": 12,
+    "onHand": 2,
+    "reserved": 0,
+    "revenueDelta": 0.00
+  },
+  "E2E-03": {
+    "receiptId": 25,
+    "variantId": 38,
+    "receiptQuantity": 4,
+    "cost": 321,
+    "orderId": 13,
+    "onHand": 4,
+    "reserved": 1,
+    "available": 3
+  },
+  "E2E-04": {
+    "variantId": 39,
+    "orderId": 14,
+    "stockBeforeReturn": 0,
+    "onHand": 1,
+    "reserved": 0,
+    "revenueDelta": 0.00
+  },
+  "E2E-05": {
+    "actor": "CUSTOMER",
+    "readStatus": 403,
+    "writeStatus": 403,
+    "stockUnchanged": true
+  },
+  "E2E-06": {
+    "variantId": 40,
+    "statuses": [
+      409,
+      200
+    ],
+    "onHand": 1,
+    "reserved": 1,
+    "available": 0
+  }
+}

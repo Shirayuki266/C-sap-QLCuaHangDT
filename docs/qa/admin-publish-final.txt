@@ -1,0 +1,5 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  PhoneStore.Core -> D:\C-sap-QLCuaHangDT\src\PhoneStore.Core\bin\Release\net10.0\PhoneStore.Core.dll
+  PhoneStore.Admin -> D:\C-sap-QLCuaHangDT\src\PhoneStore.Admin\bin\Release\net10.0-windows\win-x64\PhoneStore.Admin.dll
+  PhoneStore.Admin -> D:\C-sap-QLCuaHangDT\dist\Phone Store Admin\

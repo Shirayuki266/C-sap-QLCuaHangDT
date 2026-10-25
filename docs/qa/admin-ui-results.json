@@ -1,0 +1,26 @@
+[
+    {
+        "id":  "UI-DESKTOP-SHORTCUT",
+        "status":  "PASS"
+    },
+    {
+        "id":  "UI-LOGIN-ONLY-TWO-INPUTS",
+        "status":  "PASS"
+    },
+    {
+        "id":  "UI-WRONG-PASSWORD-MESSAGE",
+        "status":  "PASS"
+    },
+    {
+        "id":  "UI-QA-ADMIN-LOGIN",
+        "status":  "PASS"
+    },
+    {
+        "id":  "UI-REPEATED-SHORTCUT-ONE-INSTANCE",
+        "status":  "PASS"
+    },
+    {
+        "id":  "UI-CLOSE-KEEPS-SHARED-BACKEND",
+        "status":  "PASS"
+    }
+]

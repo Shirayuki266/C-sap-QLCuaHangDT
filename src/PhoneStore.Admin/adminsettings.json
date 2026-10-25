@@ -1,0 +1,8 @@
+{
+  "ApiBaseUrl": "http://localhost:5088",
+  "Environment": "Local",
+  "TargetFingerprint": "",
+  "StartLocalBackend": true,
+  "BackendExecutable": "backend/PhoneStore.Web.exe",
+  "BackendConfiguration": ""
+}
