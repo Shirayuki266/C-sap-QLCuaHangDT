@@ -74,6 +74,8 @@ Every row requires a live active ADMIN session. WinForms calls the same backend 
 
 ## State and delivery trace
 
+K02/A01 server login/session behavior and K01's signed-in registration guard now have [SQL](../tests/PhoneStore.Checks/SessionChecks.cs) and [HTTP](../tests/PhoneStore.Checks/SessionHttpChecks.cs) evidence. Task [#15](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/15), branch `feature/15-login-sessions`, tracks B3-B5/E1/PRE/POST/BR1 and partial G01. These rows supersede their initial planned descriptions below; logout, password/profile changes and customer-lock management remain pending. Their UIs remain deferred.
+
 K01's guest registration service/API is implemented with SQL/HTTP evidence; its UI is deferred. K02-K15 and A01-A22 remain **Not implemented** as business services. Login/session functionality and cross-flow verification of the signed-in-user registration guard follow in the authentication tasks. Planned service names, API routes and tests become concrete links only when implemented. Schema prerequisites and foundation checks do not satisfy complete G01-G08 or the other business rows. Each later task records actual issue, branch, commit, PR, latest-head CI and merge SHA. Partial work remains partial.
 
 | Task | Phase / trace | Issue | Branch | Commit / PR | CI / merge | Status |

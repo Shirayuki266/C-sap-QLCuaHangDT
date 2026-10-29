@@ -45,14 +45,16 @@ Enforce FK/unique/check constraints on SQL as defense in depth. Optional email u
 - Date filters use ISO `yyyy-MM-dd` in UTC+7. Convert an inclusive local from-date and the day after an inclusive to-date to an exclusive UTC interval. Reject reversed/unrepresentable intervals. Stock is current and ignores sales periods. General reports accept explicit periods; homepage bestseller defaults remain undecided.
 - Errors use `{code,message,traceId}` with Vietnamese messages. 400 INVALID_INPUT, 401 UNAUTHORIZED, 403 FORBIDDEN, 404 NOT_FOUND, 409 CONCURRENT_UPDATE/INVALID_STATE/OUT_OF_STOCK/PRICE_CHANGED, 503 DATABASE_UNAVAILABLE and a generic 500 SERVER_ERROR. Nonowners receive 404 for order detail/mutations. PRICE_CHANGED must also return the current cart/price data required for explicit customer reconfirmation, without committing an order.
 
-## Planned service and route map
+## Service and route map
+
+K02/A01 login and current-session queries are implemented; see [account contracts](ACCOUNTS.md) for cookie, surface, expiry and authorization behavior. Routes without an implemented label remain planned.
 
 All write rows require validation, anti-forgery protection and the indicated service transaction. ADMIN can never be publicly registered. A CUSTOMER cannot access internal catalog/purchasing/stock/reports merely by changing query flags.
 
 | Source | Planned service / HTTP operation | Role / record scope |
 | --- | --- | --- |
 | K01 (implemented) | Account: POST `/api/auth/register` with username/password/fullName/phone/optional email/address -> 201 `{id,username,role}`, no login | Guest; role always CUSTOMER |
-| K02/A01 | Account: POST `/api/auth/login` with credentials and explicit customer/admin surface -> protected session cookie, safe user | Anonymous; active account of required role |
+| K02/A01 (implemented) | Account: POST `/api/auth/login` with `{username,password,surface}` -> protected session cookie, safe user/expiry; GET `/api/auth/session` and `/api/admin/session` query current identity | Login anonymous; selected active role; queries require live session/ADMIN respectively |
 | K03/A02 | Account: POST `/api/auth/logout` -> revoke current session | Current signed-in actor only |
 | K04 | Account: GET/PUT `/api/account/profile` -> safe own profile | CUSTOMER self |
 | K05/A03 | Account: POST `/api/account/password` current/new password -> revoke all related sessions and cookie | CUSTOMER/ADMIN self |
