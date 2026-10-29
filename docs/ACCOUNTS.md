@@ -22,6 +22,14 @@ Implementation uses the framework's [cookie authentication and principal validat
 
 `POST /api/account/password` accepts `{currentPassword,newPassword}` and requires a live session plus CSRF. Actor/session come from server context; clients cannot choose an account. The service revalidates the current SQL session/account under the shared write lock, verifies the old password, validates the replacement with the same policy as registration, stores a salted hash and deletes all sessions of that account in one transaction. Only after commit does the API clear the current cookie and return 204. Every device must log in again; other accounts are unaffected.
 
-Wrong current password, invalid replacement, foreign JSON members or failed CSRF preserve all state. A competing password change cannot use a session revoked by the winner. A late SQL write failure rolls back both the hash update and session deletions. [Password service/HTTP checks](../tests/PhoneStore.Checks/PasswordChecks.cs) prove CUSTOMER/ADMIN success/failure, old-cookie replay, old/new credential behavior, account boundaries, concurrency and forced SQL rollback. Profile editing and customer lock/unlock management remain separate tasks.
+Wrong current password, invalid replacement, foreign JSON members or failed CSRF preserve all state. A competing password change cannot use a session revoked by the winner. A late SQL write failure rolls back both the hash update and session deletions. [Password service/HTTP checks](../tests/PhoneStore.Checks/PasswordChecks.cs) prove CUSTOMER/ADMIN success/failure, old-cookie replay, old/new credential behavior, account boundaries, concurrency and forced SQL rollback.
+
+## Customer profile (K04)
+
+`GET /api/account/profile` returns `{id,username,fullName,phone,email,address}` for the validated CUSTOMER only. ADMIN receives 403; anonymous/expired sessions receive 401. Supplying another account ID never selects that record. `PUT /api/account/profile` accepts only `{fullName,phone,email,address}`, requires CSRF and returns 204. Unknown identity, role, username or password fields are rejected.
+
+The service shares validation/normalization with registration, revalidates active CUSTOMER/session ownership under the write lock, and checks unique phone/optional email through SQL constraints. A failed validation/duplicate transaction leaves every field unchanged. Successful edits preserve passwords, roles, sessions, other customers and historical order snapshots. Concurrent claims for the same phone/email accept one winner without a partially updated loser. [Profile SQL/HTTP checks](../tests/PhoneStore.Checks/ProfileChecks.cs) cover ownership/IDOR, both authorization boundaries, CSRF, field validation, duplicates, normalization, optional email, snapshot preservation, account/session boundaries and a two-customer uniqueness race.
+
+ADMIN customer queries/edits/locking and administrator provisioning remain separate tasks. No account UI has been implemented.
 
 Reading Active during validation is not a substitute for the future lock command atomically revoking every related session.

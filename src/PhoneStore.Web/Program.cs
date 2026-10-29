@@ -22,6 +22,7 @@ builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
 builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
 builder.Services.AddScoped<IAccountSessions, AccountSessions>();
 builder.Services.AddScoped<IAccountPasswords, AccountPasswords>();
+builder.Services.AddScoped<IAccountProfiles, AccountProfiles>();
 builder.Services.AddScoped<SessionAuthentication>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
@@ -135,6 +136,22 @@ app.MapGet("/api/admin/session", (HttpContext context) =>
     context.Response.Headers.CacheControl = "no-store";
     return Results.Ok(SessionAuthentication.Current(context).Account);
 }).RequireAuthorization("Admin");
+app.MapGet("/api/account/profile", async (IAccountProfiles profiles, HttpContext context, CancellationToken cancellationToken) =>
+{
+    var current = SessionAuthentication.Current(context);
+    var profile = await profiles.ReadAsync(current.Account.Id, current.SessionId, cancellationToken);
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.Ok(profile);
+}).RequireAuthorization("Customer");
+app.MapPut("/api/account/profile", async (ProfileChangeRequest request, IAccountProfiles profiles,
+    IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
+{
+    await antiforgery.ValidateRequestAsync(context);
+    var current = SessionAuthentication.Current(context);
+    await profiles.UpdateAsync(current.Account.Id, current.SessionId, request, cancellationToken);
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.NoContent();
+}).RequireAuthorization("Customer");
 app.MapGet("/api/security/token", (IAntiforgery antiforgery, HttpContext context) =>
 {
     context.Response.Headers.CacheControl = "no-store";
