@@ -1,9 +1,0 @@
-﻿@model CartDto
-@{ViewData["Title"]="Giỏ hàng";}
-<h1>Giỏ hàng</h1><div id="guest-cart"></div>
-@if(User.IsInRole("CUSTOMER")){
-@if(Model.Lines.Count==0){<div class="alert alert-info">Giỏ hàng của bạn đang trống. <a asp-controller="Catalog" asp-action="Index">Chọn điện thoại</a>.</div>}
-<div class="cart-lines">@foreach(var line in Model.Lines){<article class="product cart-line"><div><h2>@line.Name</h2><p>@line.Sku · @line.Color · @line.StorageGb GB</p><strong>@line.Price.FormatMoney() ₫</strong>@if(!line.Active||line.Quantity>line.Available){<p class="text-danger" role="alert">@(line.Active?"Số lượng vượt tồn hiện hành. Vui lòng sửa giỏ.":"Mặt hàng đã ngừng bán. Vui lòng xóa khỏi giỏ.")</p>}</div><form asp-action="Update" method="post"><input type="hidden" name="VariantId" value="@line.VariantId"/><label>Số lượng<input type="number" class="form-control" name="Quantity" min="1" max="10000" value="@line.Quantity" required/></label><button class="btn btn-outline-primary">Cập nhật</button></form><form asp-action="Update" method="post" data-confirm="Xóa mặt hàng khỏi giỏ?"><input type="hidden" name="VariantId" value="@line.VariantId"/><input type="hidden" name="Quantity" value="0"/><button class="btn btn-outline-danger">Xóa</button></form><p>Thành tiền: @line.Total.FormatMoney() ₫</p></article>}</div>
-<h2 class="mt-4">Tổng tiền: @Model.Total.FormatMoney() ₫</h2>@if(Model.Lines.Count>0&&Model.Lines.All(x=>x.Active&&x.Quantity<=x.Available)){<a class="btn btn-primary" asp-action="Checkout">Tiến hành đặt hàng COD</a>}
-}else{<p>Giỏ tạm được lưu trên trình duyệt. <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="/Cart">Đăng nhập</a> để đồng bộ và đặt hàng.</p>}
-

@@ -1,8 +1,0 @@
-  PhoneStore.Core -> D:\C-sap-QLCuaHangDT\src\PhoneStore.Core\bin\Release\net10.0\PhoneStore.Core.dll
-  PhoneStore.Admin -> D:\C-sap-QLCuaHangDT\src\PhoneStore.Admin\bin\Release\net10.0-windows\PhoneStore.Admin.dll
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:00.80

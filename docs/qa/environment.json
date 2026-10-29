@@ -1,8 +1,0 @@
-{
-  "database": "PhoneStore_QA_20261025_083708_26baf7",
-  "url": "http://localhost:59219",
-  "sdk": "10.0.401",
-  "os": "Microsoft Windows NT 10.0.22631.0",
-  "configuration": "Release",
-  "baselineCommit": "ccd7b0e \u002B uncommitted workspace; see source hashes"
-}

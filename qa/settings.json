@@ -1,6 +1,0 @@
-{
-  "server": "localhost",
-  "connectionString": "Server=localhost;Integrated Security=True;Encrypt=True;TrustServerCertificate=True",
-  "databasePrefix": "PhoneStore_QA_",
-  "environment": "QA"
-}
