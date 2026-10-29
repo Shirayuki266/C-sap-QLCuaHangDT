@@ -1,6 +1,6 @@
 # Initial data and service contracts
 
-This is an implementation contract for the clean rebuild, derived from report sections 1.5.2.1, 2.3.12, 2.4 and appendix A. Implemented routes are `/health/live`, `/health/ready`, `GET /api/security/token` and `POST /api/auth/register` (K01). The remaining business routes below are **planned** and must receive service, authorization and integration tests before use by either UI.
+This is an implementation contract for the clean rebuild, derived from report sections 1.5.2.1, 2.3.12, 2.4 and appendix A. Health, CSRF, registration, customer/admin login, current-session queries and logout are implemented. Routes without an implemented label below are **planned** and must receive service, authorization and integration tests before use by either UI. See [account contracts](ACCOUNTS.md) for the current endpoint details.
 
 ## Persistence
 
@@ -55,7 +55,7 @@ All write rows require validation, anti-forgery protection and the indicated ser
 | --- | --- | --- |
 | K01 (implemented) | Account: POST `/api/auth/register` with username/password/fullName/phone/optional email/address -> 201 `{id,username,role}`, no login | Guest; role always CUSTOMER |
 | K02/A01 (implemented) | Account: POST `/api/auth/login` with `{username,password,surface}` -> protected session cookie, safe user/expiry; GET `/api/auth/session` and `/api/admin/session` query current identity | Login anonymous; selected active role; queries require live session/ADMIN respectively |
-| K03/A02 | Account: POST `/api/auth/logout` -> revoke current session | Current signed-in actor only |
+| K03/A02 (implemented) | Account: POST `/api/auth/logout` -> 204, revoke only current session and clear cookie | Current signed-in actor only; requires CSRF |
 | K04 | Account: GET/PUT `/api/account/profile` -> safe own profile | CUSTOMER self |
 | K05/A03 | Account: POST `/api/account/password` current/new password -> revoke all related sessions and cookie | CUSTOMER/ADMIN self |
 | K06-K09 | Catalog: GET `/api/catalog`, `/api/catalog/{id}`, `/api/lookups/{kind}` -> public products/variants/filters | Guest/CUSTOMER, active public records |

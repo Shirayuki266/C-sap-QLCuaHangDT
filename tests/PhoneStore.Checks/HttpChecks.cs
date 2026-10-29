@@ -78,6 +78,7 @@ internal static class HttpChecks
             });
             if (migratedConnection is not null) await RegistrationHttpChecks.Run(client, migratedConnection);
             if (migratedConnection is not null) await SessionHttpChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null) await LogoutChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
