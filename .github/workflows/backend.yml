@@ -1,0 +1,57 @@
+name: Backend
+
+on:
+  pull_request:
+    branches: [develop, staging, main]
+  push:
+    branches: [develop, staging, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Build and SQL Server checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      sql:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: Y
+          # Disposable service credential; never used by an application environment.
+          MSSQL_SA_PASSWORD: CiOnly_Str0ng!Pass1234
+        ports:
+          - 1433:1433
+        options: >-
+          --health-cmd="/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'CiOnly_Str0ng!Pass1234' -C -b -Q 'SELECT 1'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=12
+          --health-start-period=20s
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      PHONESTORE_QA_SERVER: localhost,1433
+      PHONESTORE_QA_DATABASE: PhoneStore_QA_CI
+      PHONESTORE_TEST_CONNECTION: Server=localhost,1433;Database=PhoneStore_QA_CI;User ID=sa;Password=CiOnly_Str0ng!Pass1234;Encrypt=True;TrustServerCertificate=True
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore backend and checks
+        run: |
+          dotnet restore src/PhoneStore.Web/PhoneStore.Web.csproj
+          dotnet restore tests/PhoneStore.Checks/PhoneStore.Checks.csproj
+      - name: Build backend and checks
+        run: |
+          dotnet build src/PhoneStore.Web/PhoneStore.Web.csproj -c Release --no-restore
+          dotnet build tests/PhoneStore.Checks/PhoneStore.Checks.csproj -c Release --no-restore
+      - name: Run domain and isolated SQL Server integration checks
+        run: dotnet run --project tests/PhoneStore.Checks -c Release --no-build -- --integration
