@@ -57,5 +57,20 @@ public sealed class AccountSessions(StoreDbContext db, IPasswordHasher<Account> 
             new DateTimeOffset(DateTime.SpecifyKind(row.ExpiresAt, DateTimeKind.Utc)));
     }
 
+    public async Task RevokeAsync(long accountId, Guid sessionId, CancellationToken cancellationToken = default)
+    {
+        await using var transaction = await db.Database.BeginTransactionAsync(IsolationLevel.Serializable, cancellationToken);
+        await db.Database.ExecuteSqlRawAsync("""
+            DECLARE @result int;
+            EXEC @result=sys.sp_getapplock @Resource=N'PhoneStore:write',@LockMode='Exclusive',@LockOwner='Transaction',@LockTimeout=10000;
+            IF @result<0 THROW 51000,N'Không thể khóa giao dịch.',1;
+            """, cancellationToken);
+        var now = clock.GetUtcNow().UtcDateTime;
+        if (!await db.Accounts.AsNoTracking().AnyAsync(x => x.Id == accountId && x.Active, cancellationToken) ||
+            await db.Sessions.Where(x => x.Id == sessionId && x.AccountId == accountId && x.ExpiresAt > now).ExecuteDeleteAsync(cancellationToken) != 1)
+            throw new BusinessException("UNAUTHORIZED", "Phiên đăng nhập đã hết hạn hoặc đã được thu hồi.");
+        await transaction.CommitAsync(cancellationToken);
+    }
+
     private static BusinessException Denied() => new("UNAUTHORIZED", "Tên đăng nhập hoặc mật khẩu không đúng, hoặc tài khoản không được phép đăng nhập.");
 }

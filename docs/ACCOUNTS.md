@@ -14,4 +14,8 @@ The source fixes the session lifetime at eight hours without sliding renewal. Bo
 
 Implementation uses the framework's [cookie authentication and principal validation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-10.0). Actual application evidence is [SQL session checks](../tests/PhoneStore.Checks/SessionChecks.cs) and [HTTP session checks](../tests/PhoneStore.Checks/SessionHttpChecks.cs): failed credentials/role injection/CSRF, safe protected-cookie login, exact expiry/no sliding renewal, session revocation, disabled accounts, role changes, 401/403, and K01's authenticated-user guard. Tests use their own SQL databases and users; no operational accounts are seeded.
 
-Logout, password change, profile editing and customer lock/unlock management are separate tasks. Reading Active during validation is not a substitute for the future lock command atomically revoking every related session.
+## Logout (K03/A02)
+
+`POST /api/auth/logout` requires the authenticated cookie and its current CSRF token. It accepts no caller-selected actor/session: these are taken from the validated server context. It atomically deletes only the current PHIEN row, clears the cookie after commit and returns 204. Other devices of the same account remain signed in. Expired/revoked/unauthenticated requests return 401; failed CSRF returns 400 and deletes nothing. Replaying a captured old cookie or concurrent logout cannot revoke another device or restore the deleted session. See [SQL/HTTP logout checks](../tests/PhoneStore.Checks/LogoutChecks.cs).
+
+Password change, profile editing and customer lock/unlock management remain separate tasks. Reading Active during validation is not a substitute for the future lock command atomically revoking every related session.

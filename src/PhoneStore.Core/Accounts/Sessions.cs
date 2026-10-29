@@ -14,4 +14,5 @@ public interface IAccountSessions
 {
     Task<AccountSession> LoginAsync(LoginRequest request, CancellationToken cancellationToken = default);
     Task<AccountSession?> ValidateAsync(long accountId, Guid sessionId, CancellationToken cancellationToken = default);
+    Task RevokeAsync(long accountId, Guid sessionId, CancellationToken cancellationToken = default);
 }

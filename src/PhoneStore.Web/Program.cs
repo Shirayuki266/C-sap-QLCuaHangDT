@@ -110,6 +110,15 @@ app.MapGet("/api/auth/session", (HttpContext context) =>
     var session = SessionAuthentication.Current(context);
     return Results.Ok(new { session.Account.Id, session.Account.Username, session.Account.Role, session.ExpiresAt });
 }).RequireAuthorization();
+app.MapPost("/api/auth/logout", async (IAccountSessions sessions, IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
+{
+    await antiforgery.ValidateRequestAsync(context);
+    var current = SessionAuthentication.Current(context);
+    await sessions.RevokeAsync(current.Account.Id, current.SessionId, cancellationToken);
+    await context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.NoContent();
+}).RequireAuthorization();
 app.MapGet("/api/admin/session", (HttpContext context) =>
 {
     context.Response.Headers.CacheControl = "no-store";
