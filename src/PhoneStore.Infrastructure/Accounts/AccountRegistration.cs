@@ -1,5 +1,4 @@
 using System.Data;
-using System.Net.Mail;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
@@ -18,14 +17,7 @@ public sealed class AccountRegistration(StoreDbContext db, IPasswordHasher<Accou
         if (!Regex.IsMatch(username, @"\A[a-z0-9_.@-]{3,100}\z", RegexOptions.CultureInvariant | RegexOptions.NonBacktracking))
             throw Invalid("Tên đăng nhập cần 3–100 ký tự Latin, số hoặc _ . @ -.");
         var password = PasswordInput.Validate(request.Password);
-        var name = Text(request.FullName, 120, "Họ tên");
-        var phone = Text(request.Phone, 20, "Số điện thoại");
-        if (!Regex.IsMatch(phone, @"\A\+?[0-9]{9,15}\z", RegexOptions.CultureInvariant | RegexOptions.NonBacktracking))
-            throw Invalid("Số điện thoại cần 9–15 chữ số và có thể bắt đầu bằng +.");
-        var email = Text(request.Email, 254, "Email", optional: true).ToLowerInvariant();
-        if (email.Length != 0 && (!MailAddress.TryCreate(email, out var parsed) || parsed.Address != email))
-            throw Invalid("Email không hợp lệ.");
-        var address = Text(request.Address, 500, "Địa chỉ", optional: true);
+        var profile = ProfileInput.Validate(new(request.FullName, request.Phone, request.Email, request.Address));
 
         var account = new Account { Username = username, Role = "CUSTOMER", Active = true };
         account.PasswordHash = passwords.HashPassword(account, password);
@@ -39,7 +31,7 @@ public sealed class AccountRegistration(StoreDbContext db, IPasswordHasher<Accou
                 """, cancellationToken);
             db.Accounts.Add(account);
             await db.SaveChangesAsync(cancellationToken);
-            db.Customers.Add(new Customer { Id = account.Id, FullName = name, Phone = phone, Email = email.Length == 0 ? null : email, Address = address });
+            db.Customers.Add(new Customer { Id = account.Id, FullName = profile.FullName, Phone = profile.Phone, Email = profile.Email, Address = profile.Address });
             await db.SaveChangesAsync(cancellationToken);
             await transaction.CommitAsync(cancellationToken);
             return new(account.Id, account.Username, account.Role);

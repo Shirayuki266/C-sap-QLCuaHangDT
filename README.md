@@ -2,7 +2,7 @@
 
 Clean rebuild of the phone store backend, started on 2026-10-30. The previous implementation and its historical QA claims have been removed from this branch. Git history and existing SQL databases are preserved.
 
-The requirements cover K01-K15 (customer website) and A01-A22 (WinForms administration). Only COD payments are in scope. The schema, registration (K01), customer/admin login sessions (K02/A01) and server role policies are implemented; other business functions are pending. New customer pages and WinForms screens are deferred until all backend requirements, SQL Server integration tests and CI pass on `develop`.
+The requirements cover K01-K15 (customer website) and A01-A22 (WinForms administration). Only COD payments are in scope. The schema and account server flows K01-K05/A01-A03 are implemented: registration, role-specific login, current-session logout, own customer profile and password change with all-session revocation. Catalog, inventory/purchasing, cart, orders/COD, customer administration, invoices and reports remain pending. New customer pages and WinForms screens are deferred until all backend requirements, SQL Server integration tests and CI pass on `develop`.
 
 ## Structure
 
@@ -33,7 +33,7 @@ Fetch `GET /api/security/token`, preserve the returned anti-forgery cookie, then
 
 Success returns HTTP 201 `{id,username,role}` with role CUSTOMER. The service saves the account and profile in one SQL transaction, hashes the password, enforces unique username/phone/email, and does not log the customer in. Missing/invalid CSRF, malformed input and duplicates return safe Vietnamese errors. There are no registration pages or public ADMIN registration.
 
-`POST /api/auth/login` accepts `{username,password,surface}` with surface `customer` or `admin`, returning a safe identity/expiry and protected session cookie. Sessions last eight hours without sliding renewal and are validated from SQL Server on each request. `GET /api/auth/session` requires a live session; `GET /api/admin/session` requires ADMIN. `POST /api/auth/logout` revokes only the current session. `POST /api/account/password` verifies the current password and revokes all sessions of that account when changing it. Both mutations require CSRF and return 204. Use a fresh CSRF token after identity changes. See [account contracts and evidence](docs/ACCOUNTS.md). Profile changes and admin provisioning are not implemented yet.
+`POST /api/auth/login` accepts `{username,password,surface}` with surface `customer` or `admin`, returning a safe identity/expiry and protected session cookie. Sessions last eight hours without sliding renewal and are validated from SQL Server on each request. `GET /api/auth/session` requires a live session; `GET /api/admin/session` requires ADMIN. `POST /api/auth/logout` revokes only the current session. `POST /api/account/password` verifies the current password and revokes all sessions of that account when changing it. `GET/PUT /api/account/profile` reads/edits only the caller's CUSTOMER profile. Mutations require CSRF; successful logout/password/profile updates return 204. Use a fresh CSRF token after identity changes. See [account contracts and evidence](docs/ACCOUNTS.md). Admin provisioning and account UI are not implemented yet.
 
 ## Checks
 
@@ -45,7 +45,7 @@ $env:PHONESTORE_TEST_CONNECTION = 'Server=localhost;Database=PhoneStore_QA_Local
 dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integration
 ```
 
-The HTTP checks start and stop their own backend on a loopback port. Integration checks require an explicit matching QA connection, create unique databases and remove only those databases afterward. They do not touch `PhoneStore`, `PhoneStore_Rebuild` or a pre-existing QA database. Checks cover configuration/errors, liveness/readiness, migration replay/concurrency/lineage protection, all 18 EF entity mappings, SQL constraints/uniqueness/history preservation, real rowversion conflicts, transaction rollback and K01 service/API validation, uniqueness races, hashing, CSRF and overposting protection. They do not certify unimplemented stock/order/session business services.
+The HTTP checks start and stop their own backend on a loopback port. Integration checks require an explicit matching QA connection, create unique databases and remove only those databases afterward. They do not touch `PhoneStore`, `PhoneStore_Rebuild` or a pre-existing QA database. Checks cover migrations/schema/EF mappings/SQL rowversions and constraints, plus account validation, hashing, session lifetime/revocation, role/record authorization, CSRF, overposting, uniqueness races, password rollback and profile snapshot preservation. They do not certify unimplemented catalog, purchasing/stock, cart, order/COD or reporting services.
 
 See [requirements trace](docs/TRACEABILITY.md), [data/service contracts](docs/CONTRACTS.md), [decisions](docs/DECISIONS.md) and [contribution rules](CONTRIBUTING.md) for the verified baseline and remaining work.
 
