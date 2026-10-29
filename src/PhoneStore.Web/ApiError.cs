@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Antiforgery;
 using PhoneStore.Core;
 
 namespace PhoneStore.Web;
@@ -16,7 +17,11 @@ public sealed record ApiError(string Code, string Message, string TraceId)
         _ => 500
     };
 
-    public static ApiError From(Exception exception, string traceId) => exception is BusinessException business
-        ? new(business.Code, business.Message, traceId)
-        : new("SERVER_ERROR", "Không thể xử lý yêu cầu. Vui lòng thử lại sau.", traceId);
+    public static ApiError From(Exception exception, string traceId) => exception switch
+    {
+        BusinessException business => new(business.Code, business.Message, traceId),
+        AntiforgeryValidationException => new("INVALID_INPUT", "Phiên xác thực biểu mẫu không hợp lệ. Vui lòng tải lại và thử lại.", traceId),
+        BadHttpRequestException { StatusCode: 400 } => new("INVALID_INPUT", "Dữ liệu yêu cầu không hợp lệ. Vui lòng kiểm tra và thử lại.", traceId),
+        _ => new("SERVER_ERROR", "Không thể xử lý yêu cầu. Vui lòng thử lại sau.", traceId)
+    };
 }
