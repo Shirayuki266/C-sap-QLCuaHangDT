@@ -1,4 +1,11 @@
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using PhoneStore.Core;
+using PhoneStore.Core.Accounts;
+using PhoneStore.Infrastructure.Accounts;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 
@@ -7,6 +14,17 @@ var builder = WebApplication.CreateBuilder(args.Where(argument => argument != "-
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
+builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
+builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
+builder.Services.ConfigureHttpJsonOptions(options => options.SerializerOptions.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow);
+builder.Services.AddAntiforgery(options =>
+{
+    options.HeaderName = "X-CSRF-TOKEN";
+    options.Cookie.Name = "PhoneStore.Antiforgery";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SameSite = SameSiteMode.Lax;
+});
+if (builder.Environment.IsEnvironment("Testing")) builder.Services.AddDataProtection().UseEphemeralDataProtectionProvider();
 var app = builder.Build();
 
 if (migrate)
@@ -36,6 +54,7 @@ app.UseStatusCodePages(async status =>
     var context = status.HttpContext;
     var (code, message) = context.Response.StatusCode switch
     {
+        400 => ("INVALID_INPUT", "Dữ liệu yêu cầu không hợp lệ. Vui lòng kiểm tra và thử lại."),
         404 => ("NOT_FOUND", "Không tìm thấy tài nguyên được yêu cầu."),
         405 => ("METHOD_NOT_ALLOWED", "Phương thức yêu cầu không được hỗ trợ."),
         _ => ("REQUEST_FAILED", "Không thể xử lý yêu cầu.")
@@ -44,6 +63,21 @@ app.UseStatusCodePages(async status =>
 });
 
 app.MapGet("/health/live", () => Results.Ok(new { application = "PhoneStore", status = "live" }));
+app.MapGet("/api/security/token", (IAntiforgery antiforgery, HttpContext context) =>
+{
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.Ok(new { token = antiforgery.GetAndStoreTokens(context).RequestToken });
+});
+app.MapPost("/api/auth/register", async (RegistrationRequest request, IAccountRegistration registrations,
+    IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
+{
+    await antiforgery.ValidateRequestAsync(context);
+    if (context.User.Identity?.IsAuthenticated == true)
+        throw new BusinessException("INVALID_STATE", "Vui lòng đăng xuất trước khi đăng ký tài khoản mới.");
+    var result = await registrations.RegisterAsync(request, cancellationToken);
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.Json(result, statusCode: 201);
+});
 app.MapGet("/health/ready", async (DatabaseMigrator migrations, HttpContext context) =>
 {
     using var deadline = CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);

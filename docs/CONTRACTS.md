@@ -1,6 +1,6 @@
 # Initial data and service contracts
 
-This is an implementation contract for the clean rebuild, derived from report sections 1.5.2.1, 2.3.12, 2.4 and appendix A. It does not certify implementation. At introduction only `/health/live` and `/health/ready` exist. Business routes below are **planned** and must receive service, authorization and integration tests before use by either UI.
+This is an implementation contract for the clean rebuild, derived from report sections 1.5.2.1, 2.3.12, 2.4 and appendix A. Implemented routes are `/health/live`, `/health/ready`, `GET /api/security/token` and `POST /api/auth/register` (K01). The remaining business routes below are **planned** and must receive service, authorization and integration tests before use by either UI.
 
 ## Persistence
 
@@ -51,7 +51,7 @@ All write rows require validation, anti-forgery protection and the indicated ser
 
 | Source | Planned service / HTTP operation | Role / record scope |
 | --- | --- | --- |
-| K01 | Account: POST `/api/auth/register` with username/password/name/phone/optional email/address -> account ID, no login | Guest; role always CUSTOMER |
+| K01 (implemented) | Account: POST `/api/auth/register` with username/password/fullName/phone/optional email/address -> 201 `{id,username,role}`, no login | Guest; role always CUSTOMER |
 | K02/A01 | Account: POST `/api/auth/login` with credentials and explicit customer/admin surface -> protected session cookie, safe user | Anonymous; active account of required role |
 | K03/A02 | Account: POST `/api/auth/logout` -> revoke current session | Current signed-in actor only |
 | K04 | Account: GET/PUT `/api/account/profile` -> safe own profile | CUSTOMER self |
@@ -76,6 +76,8 @@ All write rows require validation, anti-forgery protection and the indicated ser
 ## Command semantics
 
 Account creation + profile are atomic. Password change and lock commit session revocation in the same transaction. Logout revokes only the current session. Unlock never revives an old session. Every authenticated request validates both stored expiry and active account.
+
+K01 input policy retains the previously known validator behavior while replacing its implementation: trimmed/lowercase username uses 3-100 Latin letters/digits or `_ . @ -`; password uses 10-128 characters with a letter and digit; phone has 9-15 digits and optional leading `+`, without guessing country-prefix equivalence. Name/phone/address are trimmed, email is optional and trimmed/lowercased, display-name email syntax is rejected, and storage capacity limits above apply. These are named technical validation policies, not extra original UC branches. Unknown JSON members, including role/passwordHash, are rejected. Missing/malformed bodies and failed CSRF produce structured INVALID_INPUT errors. Successful registration does not create a session or issue a login cookie. Login/session and authenticated-user cross-flow checks remain separate tasks.
 
 Product creation takes cost and percentage per new variant, creates inventory at zero and calculates price. Editing existing variants never accepts an arbitrary cost/sale-price override; a changed percentage recomputes from persisted current cost. New cost comes from confirming a receipt. Preserve all old variants; disable rather than delete. Common product edits must advance/check the submitted versions of retained variants.
 

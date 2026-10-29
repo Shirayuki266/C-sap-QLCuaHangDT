@@ -76,6 +76,7 @@ internal static class HttpChecks
                 using var wrongMethod = await client.PostAsync("/health/live", null);
                 Check.True(wrongMethod.StatusCode == HttpStatusCode.MethodNotAllowed, "Wrong method was accepted.");
             });
+            if (migratedConnection is not null) await RegistrationHttpChecks.Run(client, migratedConnection);
         }
         finally
         {
