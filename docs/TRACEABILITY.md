@@ -80,7 +80,9 @@ All 37 business rows above are **Not implemented** in the replacement baseline. 
 | --- | --- | --- | --- | --- | --- | --- |
 | Backend CI | Foundation / enables SQL verification | [#1](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/1) | `chore/1-backend-ci` | `524fc85`; [#3](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/3) | [merge CI](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/40959935122); `24ae9c8` | Merged and checked |
 | Clean backend foundation | Foundation / prerequisite only | [#2](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/2) | `feature/2-backend-foundation` | `4c8dd80`; [#4](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/4) | [merge CI](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/40960309866); `b0b4ef8` | Merged and checked |
-| Requirement trace | Foundation / all rows | [#5](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/5) | `docs/5-rebuild-requirements` | Pending | Pending | In progress |
+| Requirement trace | Foundation / all rows | [#5](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/5) | `docs/5-rebuild-requirements` | `788b4ff`; [#6](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/6) | [merge CI](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/40961154415); `1f79076` | Merged and checked |
+| Contribution workflow | Foundation / delivery rules | [#7](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/7) | `docs/7-contribution-workflow` | `3d561f3`; [#8](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/8) | Merge `6a34e19`; post-merge CI pending verification | Merged |
+| Data/service contracts | Foundation / all rows | [#9](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/9) | `docs/9-data-service-contracts` | Pending | Pending | In progress |
 
 ## Dependency order and gate
 
