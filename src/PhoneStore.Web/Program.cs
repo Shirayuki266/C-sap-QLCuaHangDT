@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +10,7 @@ using PhoneStore.Core.Accounts;
 using PhoneStore.Infrastructure.Accounts;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
+using PhoneStore.Web.Security;
 
 var migrate = args.Contains("--migrate");
 var builder = WebApplication.CreateBuilder(args.Where(argument => argument != "--migrate").ToArray());
@@ -16,6 +19,25 @@ builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(co
 builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
 builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
+builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
+builder.Services.AddScoped<IAccountSessions, AccountSessions>();
+builder.Services.AddScoped<SessionAuthentication>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+{
+    options.Cookie.Name = "PhoneStore.Session";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SameSite = SameSiteMode.Lax;
+    options.Cookie.SecurePolicy = builder.Environment.IsDevelopment() || builder.Environment.IsEnvironment("Testing")
+        ? CookieSecurePolicy.SameAsRequest : CookieSecurePolicy.Always;
+    options.ExpireTimeSpan = SessionPolicy.Lifetime;
+    options.SlidingExpiration = false;
+    options.EventsType = typeof(SessionAuthentication);
+});
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Customer", policy => policy.RequireRole("CUSTOMER"));
+    options.AddPolicy("Admin", policy => policy.RequireRole("ADMIN"));
+});
 builder.Services.ConfigureHttpJsonOptions(options => options.SerializerOptions.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow);
 builder.Services.AddAntiforgery(options =>
 {
@@ -62,7 +84,37 @@ app.UseStatusCodePages(async status =>
     await context.Response.WriteAsJsonAsync(new ApiError(code, message, context.TraceIdentifier));
 });
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapGet("/health/live", () => Results.Ok(new { application = "PhoneStore", status = "live" }));
+app.MapPost("/api/auth/login", async (LoginRequest request, IAccountSessions sessions, IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
+{
+    await antiforgery.ValidateRequestAsync(context);
+    if (context.User.Identity?.IsAuthenticated == true)
+        throw new BusinessException("INVALID_STATE", "Vui lòng đăng xuất trước khi đăng nhập tài khoản khác.");
+    var session = await sessions.LoginAsync(request, cancellationToken);
+    await context.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, SessionAuthentication.Principal(session), new AuthenticationProperties
+    {
+        IssuedUtc = session.ExpiresAt - SessionPolicy.Lifetime,
+        ExpiresUtc = session.ExpiresAt,
+        IsPersistent = false,
+        AllowRefresh = false
+    });
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.Ok(new { session.Account.Id, session.Account.Username, session.Account.Role, session.ExpiresAt });
+});
+app.MapGet("/api/auth/session", (HttpContext context) =>
+{
+    context.Response.Headers.CacheControl = "no-store";
+    var session = SessionAuthentication.Current(context);
+    return Results.Ok(new { session.Account.Id, session.Account.Username, session.Account.Role, session.ExpiresAt });
+}).RequireAuthorization();
+app.MapGet("/api/admin/session", (HttpContext context) =>
+{
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.Ok(SessionAuthentication.Current(context).Account);
+}).RequireAuthorization("Admin");
 app.MapGet("/api/security/token", (IAntiforgery antiforgery, HttpContext context) =>
 {
     context.Response.Headers.CacheControl = "no-store";

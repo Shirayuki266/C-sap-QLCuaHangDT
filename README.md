@@ -2,7 +2,7 @@
 
 Clean rebuild of the phone store backend, started on 2026-10-30. The previous implementation and its historical QA claims have been removed from this branch. Git history and existing SQL databases are preserved.
 
-The requirements cover K01-K15 (customer website) and A01-A22 (WinForms administration). Only COD payments are in scope. The schema and K01 registration service/API are implemented; the other business functions are pending. New customer pages and WinForms screens are deferred until all backend requirements, SQL Server integration tests and CI pass on `develop`.
+The requirements cover K01-K15 (customer website) and A01-A22 (WinForms administration). Only COD payments are in scope. The schema, registration (K01), customer/admin login sessions (K02/A01) and server role policies are implemented; other business functions are pending. New customer pages and WinForms screens are deferred until all backend requirements, SQL Server integration tests and CI pass on `develop`.
 
 ## Structure
 
@@ -19,6 +19,7 @@ Requires .NET 10 SDK and SQL Server. The dependency versions follow the previous
 dotnet restore PhoneStore.slnx
 dotnet build PhoneStore.slnx -c Release --no-restore
 $env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore_Rebuild;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
+$env:ASPNETCORE_ENVIRONMENT = 'Development'
 # Explicitly create a NEW database and apply the clean schema, without accounts or sample data:
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --urls http://localhost:5080
@@ -30,7 +31,9 @@ dotnet run --no-build -c Release --project src/PhoneStore.Web -- --urls http://l
 
 Fetch `GET /api/security/token`, preserve the returned anti-forgery cookie, then send its `token` value in `X-CSRF-TOKEN` to `POST /api/auth/register`. JSON fields are `username`, `password`, `fullName`, `phone`, optional `email` and `address`. Unknown fields are rejected; clients cannot set role or passwordHash. Input policies are in [contracts](docs/CONTRACTS.md).
 
-Success returns HTTP 201 `{id,username,role}` with role CUSTOMER. The service saves the account and profile in one SQL transaction, hashes the password, enforces unique username/phone/email, and does not log the customer in. Missing/invalid CSRF, malformed input and duplicates return safe Vietnamese errors. Login and other account operations are not implemented yet. There are no registration pages or public ADMIN registration.
+Success returns HTTP 201 `{id,username,role}` with role CUSTOMER. The service saves the account and profile in one SQL transaction, hashes the password, enforces unique username/phone/email, and does not log the customer in. Missing/invalid CSRF, malformed input and duplicates return safe Vietnamese errors. There are no registration pages or public ADMIN registration.
+
+`POST /api/auth/login` accepts `{username,password,surface}` with surface `customer` or `admin`, returning a safe identity/expiry and protected session cookie. Sessions last eight hours without sliding renewal and are validated from SQL Server on each request. `GET /api/auth/session` requires a live session; `GET /api/admin/session` requires ADMIN. Use a fresh CSRF token after login. See [account contracts and evidence](docs/ACCOUNTS.md). Logout, password/profile changes and admin provisioning are not implemented yet.
 
 ## Checks
 

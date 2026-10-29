@@ -77,6 +77,7 @@ internal static class HttpChecks
                 Check.True(wrongMethod.StatusCode == HttpStatusCode.MethodNotAllowed, "Wrong method was accepted.");
             });
             if (migratedConnection is not null) await RegistrationHttpChecks.Run(client, migratedConnection);
+            if (migratedConnection is not null) await SessionHttpChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
