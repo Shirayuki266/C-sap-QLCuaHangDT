@@ -8,7 +8,7 @@ namespace PhoneStore.Checks;
 
 internal static class HttpChecks
 {
-    public static async Task Run()
+    public static async Task Run(string? migratedConnection = null)
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
         while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent;
@@ -20,11 +20,12 @@ internal static class HttpChecks
         var port = ((IPEndPoint)portLease.LocalEndpoint).Port;
         portLease.Stop();
         var url = $"http://127.0.0.1:{port}";
-        var target = new SqlConnectionStringBuilder(Environment.GetEnvironmentVariable("PHONESTORE_TEST_CONNECTION") ??
+        var target = new SqlConnectionStringBuilder(migratedConnection ?? Environment.GetEnvironmentVariable("PHONESTORE_TEST_CONNECTION") ??
             "Server=localhost;Integrated Security=True;Encrypt=True;TrustServerCertificate=True")
         {
-            InitialCatalog = "PhoneStore_QA_Unmigrated_" + Guid.NewGuid().ToString("N"), ConnectTimeout = 2
+            ConnectTimeout = 2
         };
+        if (migratedConnection is null) target.InitialCatalog = "PhoneStore_QA_Unmigrated_" + Guid.NewGuid().ToString("N");
         var start = new ProcessStartInfo("dotnet") { UseShellExecute = false, CreateNoWindow = true,
             RedirectStandardOutput = true, RedirectStandardError = true, WorkingDirectory = root.FullName };
         start.ArgumentList.Add(dll);
@@ -54,11 +55,16 @@ internal static class HttpChecks
                 using var json = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
                 Check.True(response.IsSuccessStatusCode && json.RootElement.GetProperty("application").GetString() == "PhoneStore", "Liveness contract failed.");
             });
-            await Check.Run("HTTP readiness fails closed before schema installation", async () =>
+            await Check.Run(migratedConnection is null ? "HTTP readiness fails closed before schema installation" : "HTTP readiness recognizes the migrated schema", async () =>
             {
                 using var response = await client.GetAsync("/health/ready");
                 var body = await response.Content.ReadAsStringAsync();
                 using var json = JsonDocument.Parse(body);
+                if (migratedConnection is not null)
+                {
+                    Check.True(response.IsSuccessStatusCode && json.RootElement.GetProperty("status").GetString() == "ready", "Migrated schema was not reported ready.");
+                    return;
+                }
                 Check.True(response.StatusCode == HttpStatusCode.ServiceUnavailable && json.RootElement.GetProperty("code").GetString() == "DATABASE_UNAVAILABLE", "Unmigrated database was reported ready.");
                 Check.True(!body.Contains(target.InitialCatalog) && !body.Contains("Password"), "Readiness exposed configuration.");
             });

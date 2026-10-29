@@ -2,10 +2,20 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 
-var builder = WebApplication.CreateBuilder(args);
+var migrate = args.Contains("--migrate");
+var builder = WebApplication.CreateBuilder(args.Where(argument => argument != "--migrate").ToArray());
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
+builder.Services.AddScoped<DatabaseMigrator>();
 var app = builder.Build();
+
+if (migrate)
+{
+    await using var scope = app.Services.CreateAsyncScope();
+    await scope.ServiceProvider.GetRequiredService<DatabaseMigrator>().MigrateAsync();
+    Console.WriteLine("Đã áp dụng và kiểm tra migration của bản xây lại.");
+    return;
+}
 
 app.Use(async (context, next) =>
 {
@@ -34,17 +44,13 @@ app.UseStatusCodePages(async status =>
 });
 
 app.MapGet("/health/live", () => Results.Ok(new { application = "PhoneStore", status = "live" }));
-app.MapGet("/health/ready", async (StoreDbContext db, HttpContext context) =>
+app.MapGet("/health/ready", async (DatabaseMigrator migrations, HttpContext context) =>
 {
     using var deadline = CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);
     deadline.CancelAfter(TimeSpan.FromSeconds(3));
     try
     {
-        // A database connection alone does not prove that the application schema is installed.
-        var ready = await db.Database.SqlQueryRaw<int>(
-            "SELECT CASE WHEN OBJECT_ID(N'dbo.__PhoneStoreMigrations') IS NULL THEN 0 ELSE 1 END AS [Value]")
-            .SingleAsync(deadline.Token);
-        if (ready == 1) return Results.Ok(new { status = "ready" });
+        if (await migrations.IsCurrentAsync(deadline.Token)) return Results.Ok(new { status = "ready" });
     }
     catch (Exception exception) when (exception is not OutOfMemoryException)
     {
