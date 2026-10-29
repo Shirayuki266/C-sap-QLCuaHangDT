@@ -1,4 +1,0 @@
-@model List<PhoneStore.Web.Controllers.HomeController.Credit>
-@{ViewData["Title"]="Nguồn ảnh sản phẩm";}
-<h1>Nguồn ảnh sản phẩm</h1><p>Ảnh từ Wikimedia Commons được sử dụng theo giấy phép của từng tác giả, hiển thị theo tỷ lệ gốc; không chỉnh sửa nội dung. Ảnh dự phòng do cửa hàng tạo không đại diện model cụ thể.</p>
-@foreach(var entry in Model.Where(x=>x.Images.Count>0)){<section class="product mb-3"><h2>@entry.Model</h2>@foreach(var image in entry.Images){<p><a href="@image.Source" rel="noopener noreferrer">Ảnh gốc</a> · @image.Author · <a href="@image.LicenseUrl" rel="noopener noreferrer">@image.License</a></p>}</section>}

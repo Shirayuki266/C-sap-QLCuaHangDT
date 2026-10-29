@@ -1,7 +1,0 @@
-  PhoneStore.Core -> D:\C-sap-QLCuaHangDT\src\PhoneStore.Core\bin\Release\net10.0\PhoneStore.Core.dll
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:00.64

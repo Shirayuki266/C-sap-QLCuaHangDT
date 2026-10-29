@@ -1,5 +1,0 @@
-PASS BROWSER desktop SQL catalog
-PASS BROWSER mobile no horizontal overflow
-PASS BROWSER variant selection updates live price
-PASS BROWSER guest cart reads storage and current database prices
-FAIL BROWSER offline guest error is Vietnamese and cart preserved

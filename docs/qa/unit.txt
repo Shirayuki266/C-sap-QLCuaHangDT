@@ -1,9 +1,0 @@
-PASS Stock cannot oversell or become negative
-PASS Invalid stock operations preserve balances
-PASS Cancellation requires ownership and pending status
-PASS Stale version and repeated transitions are rejected
-PASS COD is paid only on successful completion
-PASS Failed delivery can be received only once
-PASS Order captures immutable lines and prices
-PASS Order rejects duplicate variants
-8 checks passed.
