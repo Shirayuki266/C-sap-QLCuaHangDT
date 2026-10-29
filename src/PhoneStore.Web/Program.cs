@@ -21,6 +21,7 @@ builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
 builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
 builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
 builder.Services.AddScoped<IAccountSessions, AccountSessions>();
+builder.Services.AddScoped<IAccountPasswords, AccountPasswords>();
 builder.Services.AddScoped<SessionAuthentication>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
@@ -115,6 +116,16 @@ app.MapPost("/api/auth/logout", async (IAccountSessions sessions, IAntiforgery a
     await antiforgery.ValidateRequestAsync(context);
     var current = SessionAuthentication.Current(context);
     await sessions.RevokeAsync(current.Account.Id, current.SessionId, cancellationToken);
+    await context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+    context.Response.Headers.CacheControl = "no-store";
+    return Results.NoContent();
+}).RequireAuthorization();
+app.MapPost("/api/account/password", async (PasswordChangeRequest request, IAccountPasswords passwords,
+    IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
+{
+    await antiforgery.ValidateRequestAsync(context);
+    var current = SessionAuthentication.Current(context);
+    await passwords.ChangeAsync(current.Account.Id, current.SessionId, request, cancellationToken);
     await context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
     context.Response.Headers.CacheControl = "no-store";
     return Results.NoContent();

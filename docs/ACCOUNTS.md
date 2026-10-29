@@ -18,4 +18,10 @@ Implementation uses the framework's [cookie authentication and principal validat
 
 `POST /api/auth/logout` requires the authenticated cookie and its current CSRF token. It accepts no caller-selected actor/session: these are taken from the validated server context. It atomically deletes only the current PHIEN row, clears the cookie after commit and returns 204. Other devices of the same account remain signed in. Expired/revoked/unauthenticated requests return 401; failed CSRF returns 400 and deletes nothing. Replaying a captured old cookie or concurrent logout cannot revoke another device or restore the deleted session. See [SQL/HTTP logout checks](../tests/PhoneStore.Checks/LogoutChecks.cs).
 
-Password change, profile editing and customer lock/unlock management remain separate tasks. Reading Active during validation is not a substitute for the future lock command atomically revoking every related session.
+## Password change (K05/A03)
+
+`POST /api/account/password` accepts `{currentPassword,newPassword}` and requires a live session plus CSRF. Actor/session come from server context; clients cannot choose an account. The service revalidates the current SQL session/account under the shared write lock, verifies the old password, validates the replacement with the same policy as registration, stores a salted hash and deletes all sessions of that account in one transaction. Only after commit does the API clear the current cookie and return 204. Every device must log in again; other accounts are unaffected.
+
+Wrong current password, invalid replacement, foreign JSON members or failed CSRF preserve all state. A competing password change cannot use a session revoked by the winner. A late SQL write failure rolls back both the hash update and session deletions. [Password service/HTTP checks](../tests/PhoneStore.Checks/PasswordChecks.cs) prove CUSTOMER/ADMIN success/failure, old-cookie replay, old/new credential behavior, account boundaries, concurrency and forced SQL rollback. Profile editing and customer lock/unlock management remain separate tasks.
+
+Reading Active during validation is not a substitute for the future lock command atomically revoking every related session.

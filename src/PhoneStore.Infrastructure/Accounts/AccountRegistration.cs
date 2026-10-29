@@ -17,9 +17,7 @@ public sealed class AccountRegistration(StoreDbContext db, IPasswordHasher<Accou
         var username = Text(request.Username, 100, "Tên đăng nhập").ToLowerInvariant();
         if (!Regex.IsMatch(username, @"\A[a-z0-9_.@-]{3,100}\z", RegexOptions.CultureInvariant | RegexOptions.NonBacktracking))
             throw Invalid("Tên đăng nhập cần 3–100 ký tự Latin, số hoặc _ . @ -.");
-        var password = request.Password;
-        if (password is null || password.Length < 10 || password.Length > 128 || !password.Any(char.IsLetter) || !password.Any(char.IsDigit))
-            throw Invalid("Mật khẩu cần 10–128 ký tự, gồm chữ và số.");
+        var password = PasswordInput.Validate(request.Password);
         var name = Text(request.FullName, 120, "Họ tên");
         var phone = Text(request.Phone, 20, "Số điện thoại");
         if (!Regex.IsMatch(phone, @"\A\+?[0-9]{9,15}\z", RegexOptions.CultureInvariant | RegexOptions.NonBacktracking))
