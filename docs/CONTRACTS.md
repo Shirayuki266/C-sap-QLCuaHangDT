@@ -57,7 +57,7 @@ All write rows require validation, anti-forgery protection and the indicated ser
 | K02/A01 (implemented) | Account: POST `/api/auth/login` with `{username,password,surface}` -> protected session cookie, safe user/expiry; GET `/api/auth/session` and `/api/admin/session` query current identity | Login anonymous; selected active role; queries require live session/ADMIN respectively |
 | K03/A02 (implemented) | Account: POST `/api/auth/logout` -> 204, revoke only current session and clear cookie | Current signed-in actor only; requires CSRF |
 | K04 | Account: GET/PUT `/api/account/profile` -> safe own profile | CUSTOMER self |
-| K05/A03 | Account: POST `/api/account/password` current/new password -> revoke all related sessions and cookie | CUSTOMER/ADMIN self |
+| K05/A03 (implemented) | Account: POST `/api/account/password` with currentPassword/newPassword -> 204, atomically replace hash and revoke all related sessions/cookie | CUSTOMER/ADMIN self; requires live session and CSRF |
 | K06-K09 | Catalog: GET `/api/catalog`, `/api/catalog/{id}`, `/api/lookups/{kind}` -> public products/variants/filters | Guest/CUSTOMER, active public records |
 | A04-A07 | Catalog: GET/POST `/api/admin/products`, GET/PUT `/api/admin/products/{id}`; product edits include every retained variant/version | ADMIN internal records |
 | A08 | Catalog: GET/POST `/api/admin/lookups/{kind}`, PUT `/api/admin/lookups/{kind}/{id}` | ADMIN, brands/categories only |
