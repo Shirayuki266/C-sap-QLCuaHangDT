@@ -15,7 +15,7 @@ The 18 application tables below and one technical migration ledger retain the so
 | PHIEN | GUID Id, AccountId FK, ExpiresAt; expiry/revocation checked for each authenticated request |
 | HANG / DANH_MUC | int Id, unique Name, Active |
 | SAN_PHAM | bigint Id; unique Code, Name, BrandId/CategoryId FKs, Specifications, Description, ImageUrl, Active |
-| SAN_PHAM_ANH | bigint Id; ProductId FK, HTTPS Url, SortOrder; unique ProductId/Url |
+| SAN_PHAM_ANH | bigint Id; ProductId FK, HTTPS Url, SortOrder; computed SHA-256 UrlHash for unique ProductId/URL indexing without exceeding SQL Server key width |
 | BIEN_THE | bigint Id; ProductId FK, unique Sku; Color, StorageGb, Cost, ProfitPercent, Price, Active, Version; unique ProductId/Color/StorageGb |
 | TON_KHO | VariantId PK/FK; OnHand, Reserved, Version; check 0 <= Reserved <= OnHand |
 | GIO_HANG_CT | CustomerId/VariantId compound PK and FKs; Quantity, UpdatedAt; no reservation |
@@ -35,7 +35,7 @@ Source-backed conventions: SQL money columns `decimal(18,2)`; percentage range 0
 
 Implementation choices for the fresh schema: use `decimal(7,2)` for percentage (two fractional digits), `datetime2(7)` for UTC timestamps, bigint business keys, int lookup keys, GUID request/operation/session keys. Persisted username/code/SKU normalization happens in services; uniqueness is also enforced by SQL. Required text limits follow column capacity: username 100, hash 1000, full name 120, phone 20, email 254, address 500, product code 30, product name 200, SKU/color 50, specifications 20000, description 50000, image URL 1000, reason 1000. These are storage/input capacity decisions, not claims of additional source business rules.
 
-Enforce FK/unique/check constraints on SQL as defense in depth. Optional email uses a filtered unique index. Journal uniqueness covers operation/variant, each order/variant/kind, and each purchase/variant/kind. Movement signs depend on the action and must be checked by services; SQL also rejects a movement whose physical and reserved deltas are both zero. No aggregate or cross-table payment/order consistency is falsely attributed to a CHECK constraint.
+Enforce FK/unique/check constraints on SQL as defense in depth. Optional email uses a filtered unique index. Journal uniqueness covers operation/variant, each order/variant/kind, and each purchase/variant/kind. The new internal movement vocabulary is NHAP/GIU/HUY_GIU/XUAT_GIAO/NHAN_LAI/DIEU_CHINH; these are implementation labels for the source actions. Movement signs depend on the action and must be checked by services; SQL also rejects a movement whose physical and reserved deltas are both zero. No aggregate or cross-table payment/order consistency is falsely attributed to a CHECK constraint. Long image URLs use a persisted SHA-256 index key because a full 1000-character URL exceeds SQL Server's index key limit; services still validate and compare complete URLs.
 
 ## Shared API conventions
 
