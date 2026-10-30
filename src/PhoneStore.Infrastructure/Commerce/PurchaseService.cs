@@ -4,7 +4,7 @@ using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
 public sealed partial class PurchaseService(BusinessKernel kernel)
 {
-    public async Task<PurchaseView> Read(Actor actor, long id)
+    public Task<PurchaseView> Read(Actor actor, long id) => kernel.Read<PurchaseView>(async () =>
     {
         await kernel.Require(actor, "ADMIN");
         var row = await (from p in kernel.Db.Purchases.AsNoTracking() join supplier in kernel.Db.Suppliers on p.SupplierId equals supplier.Id
@@ -17,15 +17,15 @@ public sealed partial class PurchaseService(BusinessKernel kernel)
         return new(receipt.Id, receipt.Code, receipt.SupplierId, row.Supplier, receipt.Status, receipt.Total, receipt.CreatorId, receipt.ConfirmerId,
             new(DateTime.SpecifyKind(receipt.CreatedAt, DateTimeKind.Utc)), receipt.ConfirmedAt.HasValue ? new DateTimeOffset(DateTime.SpecifyKind(receipt.ConfirmedAt.Value, DateTimeKind.Utc)) : null,
             Convert.ToBase64String(receipt.Version), lines);
-    }
-    public async Task<Page<PurchaseView>> List(Actor actor, string? query = null, string? status = null, int page = 1, int pageSize = 20)
+    });
+    public Task<Page<PurchaseView>> List(Actor actor, string? query = null, string? status = null, int page = 1, int pageSize = 20) => kernel.Read<Page<PurchaseView>>(async () =>
     {
         await kernel.Require(actor, "ADMIN"); var term = Rules.Text(query, 100, "Từ khóa", true); Rules.Offset(page, pageSize);
         if (status is not null && status is not ("NHAP" or "DA_XAC_NHAN" or "DA_HUY")) throw Rules.Error("INVALID_INPUT", "Trạng thái phiếu nhập không hợp lệ.");
         var q = kernel.Db.Purchases.AsNoTracking().Where(x => (status == null || x.Status == status) && (term == "" || x.Code.Contains(term) || kernel.Db.Suppliers.Any(s => s.Id == x.SupplierId && s.Name.Contains(term))));
         var count = await q.CountAsync(); var ids = await q.OrderByDescending(x => x.Id).Skip(Rules.Offset(page, pageSize)).Take(pageSize).Select(x => x.Id).ToListAsync();
         var rows = new List<PurchaseView>(); foreach (var id in ids) rows.Add(await Read(actor, id)); return new(rows, count, page, pageSize);
-    }
+    });
     public Task<long> Save(Actor actor, long id, PurchaseInput input) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); var db = kernel.Db;

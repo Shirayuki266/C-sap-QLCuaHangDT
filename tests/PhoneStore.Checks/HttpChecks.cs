@@ -97,6 +97,7 @@ internal static class HttpChecks
             if (migratedConnection is not null) await CustomerAdminChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await InvoiceChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await ReportChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null) await CommerceReadChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {

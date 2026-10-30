@@ -21,6 +21,27 @@ public sealed class BusinessKernel(StoreDbContext db, TimeProvider clock)
         if (account.Role != role) throw Rules.Error("FORBIDDEN", "Bạn không có quyền thực hiện chức năng này.");
         return account;
     }
+    public async Task<T> Read<T>(Func<Task<T>> action, CancellationToken ct = default)
+    {
+        if (db.Database.CurrentTransaction is not null) return await action();
+        await using var transaction = await db.Database.BeginTransactionAsync(IsolationLevel.Serializable, ct);
+        try
+        {
+            await db.Database.ExecuteSqlRawAsync("""
+                DECLARE @result int;
+                EXEC @result=sys.sp_getapplock @Resource=N'PhoneStore:write',@LockMode='Shared',@LockOwner='Transaction',@LockTimeout=10000;
+                IF @result<0 THROW 51000,N'Không thể khóa truy vấn.',1;
+                """, ct);
+            var result = await action();
+            await transaction.CommitAsync(ct);
+            return result;
+        }
+        catch (SqlException error) when (error.Number is 51000 or 1205)
+        {
+            throw Rules.Error("CONCURRENT_UPDATE", "Dữ liệu đang cập nhật. Vui lòng tải lại.");
+        }
+    }
+
     public async Task<T> Write<T>(Func<Task<T>> action, CancellationToken ct = default)
     {
         if (db.Database.CurrentTransaction is not null)

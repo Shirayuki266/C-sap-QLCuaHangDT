@@ -5,21 +5,21 @@ using PhoneStore.Infrastructure.Accounts;
 namespace PhoneStore.Infrastructure.Commerce;
 public sealed class CustomerAdminService(BusinessKernel kernel)
 {
-    public async Task<Page<AdminCustomer>> List(Actor actor,string? query=null,bool? active=null,int page=1,int pageSize=20)
+    public Task<Page<AdminCustomer>> List(Actor actor,string? query=null,bool? active=null,int page=1,int pageSize=20) => kernel.Read<Page<AdminCustomer>>(async () =>
     {
         await kernel.Require(actor,"ADMIN");var offset=Rules.Offset(page,pageSize);var term=Rules.Text(query,100,"Từ khóa",true);
         var q=from c in kernel.Db.Customers.AsNoTracking() join a in kernel.Db.Accounts.AsNoTracking() on c.Id equals a.Id
               where a.Role=="CUSTOMER"&&(!active.HasValue||a.Active==active)&&(term==""||c.FullName.Contains(term)||c.Phone.Contains(term)||(c.Email!=null&&c.Email.Contains(term))||a.Username.Contains(term)) select new{c,a};
         var count=await q.CountAsync();var rows=await q.OrderBy(x=>x.c.FullName).ThenBy(x=>x.c.Id).Skip(offset).Take(pageSize).ToListAsync();
         return new(rows.Select(x=>new AdminCustomer(x.c.Id,x.a.Username,x.c.FullName,x.c.Phone,x.c.Email,x.c.Address,x.a.Active,new(DateTime.SpecifyKind(x.a.CreatedAt,DateTimeKind.Utc)))).ToList(),count,page,pageSize);
-    }
-    public async Task<AdminCustomer> Read(Actor actor,long id)
+    });
+    public Task<AdminCustomer> Read(Actor actor,long id) => kernel.Read<AdminCustomer>(async () =>
     {
         await kernel.Require(actor,"ADMIN");
         var row=await(from c in kernel.Db.Customers.AsNoTracking() join a in kernel.Db.Accounts.AsNoTracking() on c.Id equals a.Id where c.Id==id&&a.Role=="CUSTOMER" select new{c,a}).SingleOrDefaultAsync()
             ??throw Rules.Error("NOT_FOUND","Không tìm thấy khách hàng.");
         return new(row.c.Id,row.a.Username,row.c.FullName,row.c.Phone,row.c.Email,row.c.Address,row.a.Active,new(DateTime.SpecifyKind(row.a.CreatedAt,DateTimeKind.Utc)));
-    }
+    });
     public Task<bool> Update(Actor actor,long id,ProfileChangeRequest input)=>kernel.Write(async()=>
     {
         await Read(actor,id);var profile=ProfileInput.Validate(input);

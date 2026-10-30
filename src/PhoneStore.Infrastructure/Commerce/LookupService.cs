@@ -14,12 +14,12 @@ public sealed class LookupService(BusinessKernel kernel)
         "categories" => kernel.Db.Categories.AsNoTracking().Select(x => new LookupView { Id = x.Id, Name = x.Name, Active = x.Active }),
         _ => throw Rules.Error("NOT_FOUND", "Không tìm thấy loại danh mục.")
     };
-    public async Task<Page<LookupView>> List(Actor actor, string kind, string? query = null, int page = 1, int pageSize = 20)
+    public Task<Page<LookupView>> List(Actor actor, string kind, string? query = null, int page = 1, int pageSize = 20) => kernel.Read<Page<LookupView>>(async () =>
     {
         await kernel.Require(actor, "ADMIN"); var offset = Rules.Offset(page, pageSize); var text = Rules.Text(query, 100, "Từ khóa", true);
         var rows = Query(kind); if (text.Length != 0) rows = rows.Where(x => x.Name.Contains(text));
         return new(await rows.OrderBy(x => x.Name).ThenBy(x => x.Id).Skip(offset).Take(pageSize).ToListAsync(), await rows.CountAsync(), page, pageSize);
-    }
+    });
     public Task<int> Save(Actor actor, string kind, int id, LookupInput input) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); if (id < 0) throw Rules.Error("INVALID_INPUT", "Mã danh mục không hợp lệ.");
