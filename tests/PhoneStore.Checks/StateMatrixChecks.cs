@@ -205,8 +205,16 @@ internal static class StateMatrixChecks
         var input=new StockCountInput(stock.OnHand+3,"Exact retry probe",Convert.ToBase64String(stock.Version),key);var first=await Send(new(c.AdminClient,path,input));Check.True(first.Status==204,"Exact count retry fixture failed.");
         var committed=await f.Snapshot();var now=committed.Stock.Single(x=>x.VariantId==variant);var repeat=await Send(new(c.AdminClient,path,input with{Version=Convert.ToBase64String(now.Version)}));await f.Unchanged(committed);
         audit.Observe("DIFF-COUNT-EXACT-RETRY","409/INVALID_STATE (ALREADY_APPLIED mapping)",$"{repeat.Status}/{repeat.Code}",repeat.Status==409&&repeat.Code=="INVALID_STATE","Exact repeated count is validated as unchanged quantity before the OperationKey guard. Data is safe; error classification differs from section7 even after existing mapping.");
-        var pending=await f.CreateOrder("CHO_XAC_NHAN");var unpaid=(await f.Snapshot()).Payments.Single(x=>x.OrderId==pending.Id);
-        audit.Observe("DIFF-COD-AMOUNT","Amount=Total (section5 unconditional wording)",$"Amount={unpaid.Amount}; Total={pending.Total}",unpaid.Amount==pending.Total,"Matrix wording conflicts with its own unpaid COD table and existing approved policy: Amount=0 before collection, equals Total only when DA_THU. Recommend correcting matrix, not collecting pending COD.");
+        await audit.Cell("COD conditional Amount across all six states",async()=>
+        {
+            foreach(var state in StateMatrixFixture.States)
+            {
+                var orderInState=await f.CreateOrder(state);var payment=(await f.Snapshot()).Payments.Single(x=>x.OrderId==orderInState.Id);var collected=state=="HOAN_TAT";
+                Check.True(payment.Method=="COD"&&payment.Status==(collected?"DA_THU":"CHUA_THU")&&payment.Amount==(collected?orderInState.Total:0m),"Corrected matrix COD status/Amount rule failed.");
+                Check.True(collected?payment.CollectedAt.HasValue&&payment.CollectedAt==orderInState.CompletedAt!.Value.UtcDateTime&&payment.ActorId==c.Admin.AccountId:payment.CollectedAt==null&&payment.ActorId==null&&orderInState.CompletedAt==null,"Corrected matrix COD collection metadata wrong.");
+            }
+        });
+        audit.Observe("DIFF-COD-AMOUNT","DA_THU: Amount=Total; CHUA_THU: Amount=0","Conditional Amount asserted across six states",!audit.Failures.Contains("COD conditional Amount across all six states"),"Resolved by the corrected user attachment section5. This is now positive conformance evidence; production behavior is unchanged.");
         var draftBefore=await f.Snapshot();
         await using var draftDb=c.Open();var purchases=new PurchaseService(c.Kernel(draftDb));
         var emptyId=await purchases.Save(c.Admin,0,new(f.Data.SupplierId,[],RequestKey:Guid.NewGuid()));var empty=await purchases.Read(c.Admin,emptyId);
