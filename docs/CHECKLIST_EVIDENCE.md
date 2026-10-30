@@ -14,4 +14,6 @@ Running a combined test does not automatically prove every clause of every check
 
 See [proposed-to-actual API mappings](API_COMPATIBILITY.md) for transport-only differences and explicitly non-equivalent proposals. Original checklist IDs and all five result statuses are maintained in the local audit report.
 
+`RemainingP0Checks` runs the eight requested P0 cells explicitly: K03.04, A01.04, A02.03, A02.04, A11.04, A11.05, A20.05 and RACE.09. It compares business snapshots around logout/lock, runs four phone/email claim races, enumerates all 42 order state/action pairs, verifies missing reasons/stale/repeated effects, and injects undelivered requests, SQL login failure and lost committed logout replies. Captured-cookie/SQL reconciliation is independent of local cookie removal. ADMIN lifetime is checked against eight hours. WinForms/TLS/browser testing remains deferred; no other unrun P1/P2 cell is certified by these tests.
+
 `PublicBestsellerChecks` proves approved DEC.07/FE.01 with real SQL sales: product grouping, snapshot revenue tie-breaking, top-eight/ID ties, current labels/prices, inactive product/brand/category exclusion, UTC+7 boundaries, empty periods, anonymous HTTP and unchanged business data. ADMIN report ordering remains independent.
