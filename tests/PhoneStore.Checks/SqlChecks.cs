@@ -29,6 +29,7 @@ internal static class SqlChecks
             await SchemaChecks.Run(target.ConnectionString);
             await RegistrationChecks.Run(target.ConnectionString);
             await SessionChecks.Run(target.ConnectionString);
+            await DemoSeedChecks.Run(target.ConnectionString);
             await Check.Run("SQL integration uses its own real SQL Server database", async () =>
             {
                 await using var query = sql.CreateCommand();
