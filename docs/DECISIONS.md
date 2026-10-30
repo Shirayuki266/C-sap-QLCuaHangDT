@@ -2,6 +2,8 @@
 
 ## Confirmed
 
+- Final user decision on 2026-10-31: T9 return reason is optional (missing/blank/whitespace succeeds), trimmed and limited to 1000 characters when supplied; persist it in the return and order histories. T9 still requires version, advances it and writes one same-state history row. Count retries returning INVALID_INPUT for unchanged count and persisted empty purchase drafts are accepted unchanged. A03.02 and FE.04 are accepted compatibility differences, not blockers. K10.03 remains deferred to MVC.
+
 - User approval on 2026-10-30: DEC.02 uses max(server, guest), caps at current Available, removes missing/discontinued/zero-available lines and reports adjustments. Duplicate guest IDs use max. Unchanged inputs and availability produce an idempotent merge; changed live availability is re-evaluated on retry. DEC.03 explicitly retains current behavior, including public exclusion of products under inactive brands/categories.
 
 - On 2026-10-30 the user explicitly requested deleting the old application code and implementing a fresh version from the revised report and backend-first prompt. This overrides preserving the former UI/source. Git history, private Word/prompt/design inputs, local tool settings and existing SQL databases remain intact.

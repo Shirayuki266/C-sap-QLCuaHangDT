@@ -19,7 +19,7 @@
 | `/api/admin/inventory` | GET `/api/admin/stock` | `query,brandId,below,page,pageSize`; below means available <= explicit threshold. No invented default low-stock threshold. |
 | Inventory `/{id}/log` | GET `/api/admin/stock/movements?variantId={id}` | Supports operationKey and bounded paging. |
 | `countedQuantity` | `counted` | Same absolute physical count, reason/version/operationKey required. |
-| Order `ship`, `receive-back` | `dispatch`, `receive-return` | Same physical/reserved effects and failed-state return guard. Return currently also requires a reason. |
+| Order `ship`, `receive-back` | `dispatch`, `receive-return` | Same physical/reserved effects and failed-state return guard. Return reason is optional, trimmed and limited to 1000 characters; cancellation/failure reasons remain required. |
 | Checkout `confirmedLines` | `lines` | `{variantId,quantity,price}` are confirmation values; persisted cart/live SQL remain authoritative. |
 | Version-only transition commands | `{version,operationKey,reason?}` | Nonempty operationKey is required by the current command contract. Version/state prevent repeated transitions; stock effects also have unique journal keys. |
 | Purchase create without key | Purchase create with `requestKey` | Stable creation retry identity; edits need version. This guard is not silently removed to match the draft. |
@@ -61,6 +61,8 @@ Successful readiness now includes environment and a deterministic credential-fre
 | PRICE_CHANGED, FORBIDDEN, NOT_FOUND, INVALID_STATE | Same functional meaning; customer nonowner order remains 404. |
 
 Inactive cart/recipient/empty-cart validations can share INVALID_INPUT. Read the current cart's issue flags and reconcile after errors; do not claim a one-to-one stable code mapping where none exists.
+
+On 2026-10-31 the user explicitly accepted A03.02 (shared own-password operation) and FE.04 (non-bijective checkout error mapping) as accepted differences. They are not unresolved backend blockers. Exact count replay with a refreshed version and unchanged count returns INVALID_INPUT/400, also explicitly accepted; the ledger still prevents repeated effects.
 
 ## Pending business decisions and non-equivalent proposals
 

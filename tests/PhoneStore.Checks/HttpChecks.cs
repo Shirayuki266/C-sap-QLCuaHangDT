@@ -8,7 +8,7 @@ namespace PhoneStore.Checks;
 
 internal static class HttpChecks
 {
-    public static async Task Run(string? migratedConnection = null, bool demoOnly = false)
+    public static async Task Run(string? migratedConnection = null, bool demoOnly = false,bool priorityOnly=false)
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
         while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent;
@@ -49,6 +49,11 @@ internal static class HttpChecks
                 await Task.Delay(100);
             }
             Check.True(ready, "Backend liveness did not become available within 10 seconds.");
+            if(priorityOnly)
+            {
+                await PriorityP0Checks.Run(new Uri(url),migratedConnection??throw new InvalidOperationException("Priority checks require their isolated migrated database."));
+                return;
+            }
             await Check.Run("HTTP liveness works without a migrated database", async () =>
             {
                 using var response = await client.GetAsync("/health/live");
@@ -107,6 +112,8 @@ internal static class HttpChecks
             if (migratedConnection is not null && !demoOnly) await ChecklistCatalogFilterChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await RemainingP0Checks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await StateMatrixChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await ReturnReasonChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await PriorityP0Checks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
