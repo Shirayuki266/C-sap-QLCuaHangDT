@@ -12,6 +12,7 @@ using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 using PhoneStore.Web.Security;
+using PhoneStore.Web.Endpoints;
 
 var migrate = args.Contains("--migrate");
 var builder = WebApplication.CreateBuilder(args.Where(argument => argument != "--migrate").ToArray());
@@ -19,6 +20,7 @@ var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("S
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<BusinessKernel>();
+builder.Services.AddScoped<LookupService>();
 builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
 builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
 builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
@@ -184,4 +186,6 @@ app.MapGet("/health/ready", async (DatabaseMigrator migrations, HttpContext cont
     return Results.Json(new ApiError("DATABASE_UNAVAILABLE", "CSDL chưa sẵn sàng hoặc chưa được tạo cấu trúc.", context.TraceIdentifier), statusCode: 503);
 });
 
+app.MapLookups();
 app.Run();
+// Endpoint modules call the same SQL-backed services as future MVC/WinForms clients.
