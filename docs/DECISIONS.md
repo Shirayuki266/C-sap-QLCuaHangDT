@@ -15,8 +15,9 @@
 
 ## Pending decisions
 
-- Homepage bestseller period: the legacy code used 30 days, but it was removed. The revised prompt requires a separate decision if the report does not settle this. Proposed: current calendar month in UTC+7. Do not fix this homepage policy until the user chooses it; general reports accept explicit periods and can proceed.
 - Verified shop name/contact/address/hours and licensed product imagery: obtain before publishing content. Prototype values remain examples.
 - Load/latency targets and deployment/backup schedule: not quantified by the report; no performance claim is made by correctness tests.
 
 These questions do not block the schema, account, catalog, stock or order backend tasks.
+
+DEC.07 was approved on 2026-10-30: public bestsellers use the current calendar month in UTC+7, top eight products aggregated across variants, completed orders with collected COD matching the total, ranked by quantity descending, snapshot revenue descending, then product ID ascending. Current public eligibility, name, image and minimum active-variant price apply. An empty month has no fallback.
