@@ -2,7 +2,7 @@
 
 Clean rebuild of the phone store backend, started on 2026-10-30. The previous implementation and its historical QA claims have been removed from this branch. Git history and existing SQL databases are preserved.
 
-The requirements cover K01-K15 (customer website) and A01-A22 (WinForms administration). Only COD payments are in scope. The schema and account server flows K01-K05/A01-A03 are implemented: registration, role-specific login, current-session logout, own customer profile and password change with all-session revocation. Catalog, inventory/purchasing, cart, orders/COD, customer administration, invoices and reports remain pending. New customer pages and WinForms screens are deferred until all backend requirements, SQL Server integration tests and CI pass on `develop`.
+The shared backend implements the revised report’s K01-K15 and A01-A22 server flows: accounts, public/internal catalog, variants/pricing, suppliers, persistent purchase drafts, stock/journal, carts, COD orders and fulfillment, customer administration, invoice data and reports. SQL Server is the only database. New customer pages, WinForms screens and physical printing remain the next phase. See [commerce contracts](docs/COMMERCE.md), [database/demo operations](docs/DATABASE.md) and [requirement evidence](docs/TRACEABILITY.md).
 
 ## Structure
 
@@ -20,7 +20,7 @@ dotnet restore PhoneStore.slnx
 dotnet build PhoneStore.slnx -c Release --no-restore
 $env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore_Rebuild;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
 $env:ASPNETCORE_ENVIRONMENT = 'Development'
-# Explicitly create a NEW database and apply the clean schema, without accounts or sample data:
+# Explicitly create a NEW database and apply the clean schema, without accounts or sample data (use explicit bootstrap commands afterward):
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --urls http://localhost:5080
 ```
@@ -33,7 +33,7 @@ Fetch `GET /api/security/token`, preserve the returned anti-forgery cookie, then
 
 Success returns HTTP 201 `{id,username,role}` with role CUSTOMER. The service saves the account and profile in one SQL transaction, hashes the password, enforces unique username/phone/email, and does not log the customer in. Missing/invalid CSRF, malformed input and duplicates return safe Vietnamese errors. There are no registration pages or public ADMIN registration.
 
-`POST /api/auth/login` accepts `{username,password,surface}` with surface `customer` or `admin`, returning a safe identity/expiry and protected session cookie. Sessions last eight hours without sliding renewal and are validated from SQL Server on each request. `GET /api/auth/session` requires a live session; `GET /api/admin/session` requires ADMIN. `POST /api/auth/logout` revokes only the current session. `POST /api/account/password` verifies the current password and revokes all sessions of that account when changing it. `GET/PUT /api/account/profile` reads/edits only the caller's CUSTOMER profile. Mutations require CSRF; successful logout/password/profile updates return 204. Use a fresh CSRF token after identity changes. See [account contracts and evidence](docs/ACCOUNTS.md). Admin provisioning and account UI are not implemented yet.
+`POST /api/auth/login` accepts `{username,password,surface}` with surface `customer` or `admin`, returning a safe identity/expiry and protected session cookie. Sessions last eight hours without sliding renewal and are validated from SQL Server on each request. `GET /api/auth/session` requires a live session; `GET /api/admin/session` requires ADMIN. `POST /api/auth/logout` revokes only the current session. `POST /api/account/password` verifies the current password and revokes all sessions of that account when changing it. `GET/PUT /api/account/profile` reads/edits only the caller's CUSTOMER profile. Mutations require CSRF; successful logout/password/profile updates return 204. Use a fresh CSRF token after identity changes. See [account contracts and evidence](docs/ACCOUNTS.md). Explicit ADMIN provisioning and atomic demo seeding are documented in [database operations](docs/DATABASE.md). Account UI remains deferred.
 
 ## Checks
 
@@ -45,8 +45,8 @@ $env:PHONESTORE_TEST_CONNECTION = 'Server=localhost;Database=PhoneStore_QA_Local
 dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integration
 ```
 
-The HTTP checks start and stop their own backend on a loopback port. Integration checks require an explicit matching QA connection, create unique databases and remove only those databases afterward. They do not touch `PhoneStore`, `PhoneStore_Rebuild` or a pre-existing QA database. Checks cover migrations/schema/EF mappings/SQL rowversions and constraints, plus account validation, hashing, session lifetime/revocation, role/record authorization, CSRF, overposting, uniqueness races, password rollback and profile snapshot preservation. They do not certify unimplemented catalog, purchasing/stock, cart, order/COD or reporting services.
+The HTTP checks start and stop their own backend on a loopback port. Integration checks require an explicit matching QA connection, create unique databases and remove only those databases afterward. They do not touch `PhoneStore`, `PhoneStore_Rebuild` or a pre-existing QA database. Checks cover migrations/constraints/rowversions; account/session/role/CSRF and ownership; catalog validation and pricing; receipt/stock reconciliation; cart merge and checkout idempotency; last-unit and competing order-action races; late SQL rollback for passwords, purchases, checkout, lock and COD completion; invoices and UTC+7 reports. A separate disposable SQL database proves the complete 20-product/customer demo, audit, non-destructive rerun and actual HTTP checkout-to-paid-invoice/report workflow.
 
-See [requirements trace](docs/TRACEABILITY.md), [data/service contracts](docs/CONTRACTS.md), [decisions](docs/DECISIONS.md) and [contribution rules](CONTRIBUTING.md) for the verified baseline and remaining work.
+See [requirements trace](docs/TRACEABILITY.md), [data/service contracts](docs/CONTRACTS.md), [decisions](docs/DECISIONS.md) and [contribution rules](CONTRIBUTING.md) for the implemented server contracts, actual merged evidence and UI/deployment boundaries.
 
 Private Word requirements, the implementation prompt and the option A design archive remain local and ignored by Git. They must not be uploaded to issues or PRs. Shop contact details and product assets must be configured from verified data before any public release.

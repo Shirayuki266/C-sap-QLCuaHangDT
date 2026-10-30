@@ -1,6 +1,6 @@
 # Account API and verification
 
-All user-facing messages are Vietnamese. Public registration always creates CUSTOMER, never ADMIN. No default or sample operational credentials are provisioned.
+All user-facing messages are Vietnamese. Public registration always creates CUSTOMER, never ADMIN. There are no default credentials or startup-provisioned accounts. Explicit administrative provisioning and local demo credentials are described in [DATABASE](DATABASE.md).
 
 ## Login and session queries (K02/A01)
 
@@ -30,6 +30,6 @@ Wrong current password, invalid replacement, foreign JSON members or failed CSRF
 
 The service shares validation/normalization with registration, revalidates active CUSTOMER/session ownership under the write lock, and checks unique phone/optional email through SQL constraints. A failed validation/duplicate transaction leaves every field unchanged. Successful edits preserve passwords, roles, sessions, other customers and historical order snapshots. Concurrent claims for the same phone/email accept one winner without a partially updated loser. [Profile SQL/HTTP checks](../tests/PhoneStore.Checks/ProfileChecks.cs) cover ownership/IDOR, both authorization boundaries, CSRF, field validation, duplicates, normalization, optional email, snapshot preservation, account/session boundaries and a two-customer uniqueness race.
 
-ADMIN customer queries/edits/locking and administrator provisioning remain separate tasks. No account UI has been implemented.
+ADMIN customer queries/edits and transactional lock/unlock are implemented; see [commerce contracts](COMMERCE.md) and [customer administration checks](../tests/PhoneStore.Checks/CustomerAdminChecks.cs). Explicit administrator provisioning is documented in [DATABASE](DATABASE.md). No account UI has been implemented.
 
-Reading Active during validation is not a substitute for the future lock command atomically revoking every related session.
+Lock sets Active=false and deletes every customer session in one transaction. Unlock requires a new login and cannot revive old cookies. The backend gate also proves rollback of session deletion when the final account update is rejected by SQL.

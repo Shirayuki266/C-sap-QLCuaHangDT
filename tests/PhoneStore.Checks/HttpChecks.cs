@@ -27,7 +27,7 @@ internal static class HttpChecks
         };
         if (migratedConnection is null) target.InitialCatalog = "PhoneStore_QA_Unmigrated_" + Guid.NewGuid().ToString("N");
         var start = new ProcessStartInfo("dotnet") { UseShellExecute = false, CreateNoWindow = true,
-            RedirectStandardOutput = true, RedirectStandardError = true, WorkingDirectory = root.FullName };
+            RedirectStandardOutput = true, RedirectStandardError = true, WorkingDirectory = Path.Combine(root.FullName, "src", "PhoneStore.Web") };
         start.ArgumentList.Add(dll);
         start.ArgumentList.Add("--urls");
         start.ArgumentList.Add(url);
@@ -99,6 +99,7 @@ internal static class HttpChecks
             if (migratedConnection is not null && !demoOnly) await InvoiceChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await ReportChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await CommerceReadChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await BackendGateChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
