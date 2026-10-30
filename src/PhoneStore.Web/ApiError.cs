@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Antiforgery;
 using PhoneStore.Core;
+using PhoneStore.Core.Commerce;
+using System.Text.Json.Serialization;
 
 namespace PhoneStore.Web;
 
-public sealed record ApiError(string Code, string Message, string TraceId)
+public sealed record ApiError(string Code, string Message, string TraceId, [property:JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)] object? Details=null)
 {
     public static int Status(string code) => code switch
     {
@@ -19,6 +21,7 @@ public sealed record ApiError(string Code, string Message, string TraceId)
 
     public static ApiError From(Exception exception, string traceId) => exception switch
     {
+        PriceChangedException changed => new("PRICE_CHANGED", changed.Message, traceId, changed.Cart),
         BusinessException business => new(business.Code, business.Message, traceId),
         AntiforgeryValidationException => new("INVALID_INPUT", "Phiên xác thực biểu mẫu không hợp lệ. Vui lòng tải lại và thử lại.", traceId),
         BadHttpRequestException { StatusCode: 400 } => new("INVALID_INPUT", "Dữ liệu yêu cầu không hợp lệ. Vui lòng kiểm tra và thử lại.", traceId),
