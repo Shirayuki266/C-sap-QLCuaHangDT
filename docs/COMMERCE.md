@@ -43,7 +43,7 @@ Eight-byte SQL rowversions are Base64 strings named `version`. Missing/malformed
 | GET | `/api/admin/orders/{id}/invoice` | ADMIN internal sales document snapshots |
 | GET | `/api/admin/reports?kind=...` | ADMIN revenue, bestsellers or current stock |
 
-Catalog queries accept `query,brandId,minPrice,maxPrice,storageGb,color,sort,page,pageSize`. Sort is name/newest/price-asc/price-desc; combined filters match the same variant. Public products require active product, brand, category and matching variant; internal queries retain disabled records. Inventory accepts `query,brandId,below,page,pageSize`, where below means available stock <= threshold, including discontinued items. Journal queries accept `variantId,operationKey,page,pageSize`. Order filters use query/status/from/to and ADMIN-only customerId.
+Catalog queries accept `query,brandId,minPrice,maxPrice,storageGb,color,sort,page,pageSize`. ADMIN internal queries additionally accept optional `active=true/false`; omitted state includes both trading and discontinued products. Sort is name/newest/price-asc/price-desc; combined filters match the same variant. Public products require active product, brand, category and matching variant. Inventory accepts `query,brandId,below,page,pageSize`, where below means available stock <= threshold, including discontinued items. Journal queries accept `variantId,operationKey,page,pageSize`. Order filters use query/status/from/to and ADMIN-only customerId.
 
 ## Product and purchasing commands
 

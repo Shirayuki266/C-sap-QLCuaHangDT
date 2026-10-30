@@ -101,6 +101,7 @@ internal static class HttpChecks
             if (migratedConnection is not null && !demoOnly) await CommerceReadChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await BackendGateChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await ChecklistP0Checks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await ChecklistCatalogFilterChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
