@@ -8,7 +8,7 @@ namespace PhoneStore.Checks;
 
 internal static class HttpChecks
 {
-    public static async Task Run(string? migratedConnection = null)
+    public static async Task Run(string? migratedConnection = null, bool demoOnly = false)
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
         while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent;
@@ -76,28 +76,29 @@ internal static class HttpChecks
                 using var wrongMethod = await client.PostAsync("/health/live", null);
                 Check.True(wrongMethod.StatusCode == HttpStatusCode.MethodNotAllowed, "Wrong method was accepted.");
             });
-            if (migratedConnection is not null) await RegistrationHttpChecks.Run(client, migratedConnection);
-            if (migratedConnection is not null) await SessionHttpChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await LogoutChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await PasswordChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await ProfileChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await BusinessKernelChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await LookupChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await ProductChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await CatalogChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await SupplierChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await PurchaseDraftChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await PurchaseConfirmChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await InventoryChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await CartChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await CheckoutChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await OrderQueryChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await OrderDecisionChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await OrderFulfillmentChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await CustomerAdminChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await InvoiceChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await ReportChecks.Run(new Uri(url), migratedConnection);
-            if (migratedConnection is not null) await CommerceReadChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && demoOnly) await DemoHttpChecks.Run(new Uri(url));
+            if (migratedConnection is not null && !demoOnly) await RegistrationHttpChecks.Run(client, migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await SessionHttpChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await LogoutChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await PasswordChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await ProfileChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await BusinessKernelChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await LookupChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await ProductChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await CatalogChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await SupplierChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await PurchaseDraftChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await PurchaseConfirmChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await InventoryChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await CartChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await CheckoutChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await OrderQueryChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await OrderDecisionChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await OrderFulfillmentChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await CustomerAdminChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await InvoiceChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await ReportChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await CommerceReadChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {

@@ -14,8 +14,11 @@ using PhoneStore.Web;
 using PhoneStore.Web.Security;
 using PhoneStore.Web.Endpoints;
 
-var migrate = args.Contains("--migrate");
-var builder = WebApplication.CreateBuilder(args.Where(argument => argument != "--migrate").ToArray());
+var commandModes = new[]{"--migrate","--provision-admin","--seed-demo","--audit-db"};
+var modes = args.Where(commandModes.Contains).ToArray();
+if(modes.Length>1)throw new ArgumentException("Chỉ chọn một lệnh quản trị mỗi lần.");
+var migrate = modes.Contains("--migrate");
+var builder = WebApplication.CreateBuilder(args.Where(argument => !commandModes.Contains(argument)).ToArray());
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
@@ -68,6 +71,12 @@ builder.Services.AddAntiforgery(options =>
 if (builder.Environment.IsEnvironment("Testing")) builder.Services.AddDataProtection().UseEphemeralDataProtectionProvider();
 var app = builder.Build();
 
+if (modes.Length==1 && !migrate)
+{
+    await BootstrapCommand.Run(modes[0],app.Services);
+    return;
+}
+
 if (migrate)
 {
     await using var scope = app.Services.CreateAsyncScope();
@@ -103,6 +112,7 @@ app.UseStatusCodePages(async status =>
     await context.Response.WriteAsJsonAsync(new ApiError(code, message, context.TraceIdentifier));
 });
 
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
