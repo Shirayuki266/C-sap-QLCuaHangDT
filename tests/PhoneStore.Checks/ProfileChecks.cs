@@ -4,6 +4,8 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core;
+using PhoneStore.Core.Commerce;
+using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Core.Accounts;
 using PhoneStore.Infrastructure.Accounts;
 using PhoneStore.Infrastructure.Data;
@@ -16,7 +18,7 @@ internal static class ProfileChecks
     {
         StoreDbContext Open() => new(new DbContextOptionsBuilder<StoreDbContext>().UseSqlServer(connection).Options);
         const string password = "ProfileChecks@12345";
-        long firstId, secondId;
+        long firstId, secondId, snapshotOrderId;
         await using (var db = Open())
         {
             var registrations = new AccountRegistration(db, new PasswordHasher<Account>());
@@ -24,7 +26,6 @@ internal static class ProfileChecks
             secondId = (await registrations.RegisterAsync(new("profile-second", password, "Second Customer", "0956789002", "second-profile@example.test", "Other address"))).Id;
             var admin = new Account { Username = "profile-admin", Role = "ADMIN" };
             admin.PasswordHash = new PasswordHasher<Account>().HashPassword(admin, password); db.Add(admin);
-            db.Orders.Add(new Order { Code = "PROFILE-SNAPSHOT", CustomerId = firstId, Recipient = "Snapshot Recipient", Phone = "0956789001", Address = "Snapshot address", Total = 100m, RequestKey = Guid.NewGuid() });
             await db.SaveChangesAsync();
         }
         using var first = new ApiTestClient(address); using var second = new ApiTestClient(address); using var adminClient = new ApiTestClient(address); using var guest = new ApiTestClient(address);
@@ -32,6 +33,13 @@ internal static class ProfileChecks
         {
             using var login = await tuple.Item1.Send("/api/auth/login", new LoginRequest(tuple.Item2, password, tuple.Item3));
             Check.True(login.IsSuccessStatusCode, "Profile fixture login failed.");
+        }
+        using (var fixture = new CommerceContext(connection,address,"profile-history"))
+        {
+            await fixture.Initialize();var data=await PurchaseConfirmChecks.Receive(fixture,await CommerceData.Create(fixture));
+            await using var db=Open();var session=await db.Sessions.AsNoTracking().FirstAsync(x=>x.AccountId==firstId);var actor=new Actor(firstId,session.Id);var k=fixture.Kernel(db);var cart=new CartService(k);
+            await cart.Set(actor,new(data.Product.Variants[0].Id,1));var current=await cart.Read(actor);
+            snapshotOrderId=(await new CheckoutService(k).Place(actor,new(Guid.NewGuid(),"Snapshot Recipient","0956789001","Snapshot address",current.Lines.Select(x=>new PriceConfirmation(x.VariantId,x.Quantity,x.Price!.Value)).ToList()))).Id;
         }
         var valid = new ProfileChangeRequest("Updated Customer", "0956789003", "new-profile@example.test", "New address");
         async Task<CustomerProfile> Read(ApiTestClient client)
@@ -70,7 +78,7 @@ internal static class ProfileChecks
             var stored = await Read(first);
             Check.True(stored.FullName == valid.FullName && stored.Phone == valid.Phone && stored.Email == valid.Email && stored.Address == valid.Address, "Profile normalization failed.");
             Check.True((await Read(second)).Phone == "0956789002", "Update changed another customer's profile.");
-            await using var db = Open(); var snapshot = await db.Orders.SingleAsync(x => x.Code == "PROFILE-SNAPSHOT");
+            await using var db = Open(); var snapshot = await db.Orders.SingleAsync(x => x.Id == snapshotOrderId);
             Check.True(snapshot.Recipient == "Snapshot Recipient" && snapshot.Phone == "0956789001" && snapshot.Address == "Snapshot address", "Profile edit rewrote old order snapshots.");
             using var emptyEmail = await first.Send("/api/account/profile", valid with { Email = null }, HttpMethod.Put);
             Check.True(emptyEmail.IsSuccessStatusCode && (await Read(first)).Email is null, "Optional profile email could not be cleared.");
