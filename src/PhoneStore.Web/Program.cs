@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core;
 using PhoneStore.Core.Accounts;
 using PhoneStore.Infrastructure.Accounts;
+using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 using PhoneStore.Web.Security;
@@ -17,6 +18,7 @@ var builder = WebApplication.CreateBuilder(args.Where(argument => argument != "-
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
+builder.Services.AddScoped<BusinessKernel>();
 builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
 builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
 builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
