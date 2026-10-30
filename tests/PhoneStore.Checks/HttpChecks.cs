@@ -90,6 +90,7 @@ internal static class HttpChecks
             if (migratedConnection is not null) await PurchaseConfirmChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await InventoryChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await CartChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null) await CheckoutChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
