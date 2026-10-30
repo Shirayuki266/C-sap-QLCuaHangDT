@@ -25,7 +25,7 @@ dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --urls http://localhost:5080
 ```
 
-`GET /health/live` checks the process. `GET /health/ready` returns 503 until the exact migration lineage/checksum is installed. Normal startup does not create, migrate, seed or reset a database. The explicit `--migrate` command creates the new schema or verifies/replays its version without duplication; it rejects legacy/unmanaged schemas and altered applied checksums. Do not point it at an old application database. There are no default credentials. `TrustServerCertificate=True` is for local development only; configure a trusted SQL certificate for deployment.
+`GET /health/live` checks the process. Successful readiness includes `environment` and a stable SHA-256 `fingerprint` of the configured application/environment/server/database target, excluding credentials. Remote ADMIN clients compare those with their configured expected values before login and must separately validate HTTPS/TLS; this fingerprint is not a certificate fingerprint. `GET /health/ready` returns 503 until the exact migration lineage/checksum is installed. Normal startup does not create, migrate, seed or reset a database. The explicit `--migrate` command creates the new schema or verifies/replays its version without duplication; it rejects legacy/unmanaged schemas and altered applied checksums. Do not point it at an old application database. There are no default credentials. `TrustServerCertificate=True` is for local development only; configure a trusted SQL certificate for deployment.
 
 ## Registration API (K01)
 

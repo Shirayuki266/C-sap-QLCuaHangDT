@@ -20,6 +20,7 @@ if(modes.Length>1)throw new ArgumentException("Chỉ chọn một lệnh quản 
 var migrate = modes.Contains("--migrate");
 var builder = WebApplication.CreateBuilder(args.Where(argument => !commandModes.Contains(argument)).ToArray());
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
+var backendFingerprint = BackendIdentity.Fingerprint(connection,builder.Environment.EnvironmentName);
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<BusinessKernel>();
@@ -200,7 +201,7 @@ app.MapGet("/health/ready", async (DatabaseMigrator migrations, HttpContext cont
     deadline.CancelAfter(TimeSpan.FromSeconds(3));
     try
     {
-        if (await migrations.IsCurrentAsync(deadline.Token)) return Results.Ok(new { status = "ready" });
+        if (await migrations.IsCurrentAsync(deadline.Token)) return Results.Ok(new { status = "ready", environment = app.Environment.EnvironmentName, fingerprint = backendFingerprint });
     }
     catch (Exception exception) when (exception is not OutOfMemoryException)
     {
