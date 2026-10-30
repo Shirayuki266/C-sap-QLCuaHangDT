@@ -6,7 +6,7 @@ namespace PhoneStore.Infrastructure.Commerce;
 
 public sealed class ProductService(BusinessKernel kernel)
 {
-    public async Task<AdminProduct> Read(Actor actor, long id)
+    public Task<AdminProduct> Read(Actor actor, long id) => kernel.Read<AdminProduct>(async () =>
     {
         await kernel.Require(actor, "ADMIN");
         var p = await kernel.Db.Products.AsNoTracking().SingleOrDefaultAsync(x => x.Id == id) ?? throw Rules.Error("NOT_FOUND", "Không tìm thấy sản phẩm.");
@@ -15,7 +15,7 @@ public sealed class ProductService(BusinessKernel kernel)
         var images = await kernel.Db.ProductImages.AsNoTracking().Where(x => x.ProductId == id).OrderBy(x => x.SortOrder).ThenBy(x => x.Id).Select(x => new ImageInput(x.Url, x.SortOrder)).ToListAsync();
         return new(p.Id, p.Code, p.Name, p.BrandId, p.CategoryId, p.Specifications, p.Description, p.ImageUrl, p.Active,
             variants.Select(x => new AdminVariant(x.v.Id, x.v.Sku, x.v.Color, x.v.StorageGb, x.v.Cost, x.v.ProfitPercent, x.v.Price, x.v.Active, x.s.OnHand, x.s.Reserved, Convert.ToBase64String(x.v.Version))).ToList(), images);
-    }
+    });
     public Task<long> Save(Actor actor, long id, ProductInput input) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); if (id < 0) throw Rules.Error("INVALID_INPUT", "Mã sản phẩm không hợp lệ.");

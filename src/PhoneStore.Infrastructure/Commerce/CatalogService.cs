@@ -34,22 +34,22 @@ public sealed class CatalogService(BusinessKernel kernel)
             _ => throw Rules.Error("INVALID_INPUT", "Cách sắp xếp không hợp lệ.")
         };
     }
-    public async Task<Page<PublicProduct>> List(CatalogFilter filter)
+    public Task<Page<PublicProduct>> List(CatalogFilter filter) => kernel.Read<Page<PublicProduct>>(async () =>
     {
         var query = Query(filter, false); var total = await query.CountAsync();
         var ids = await query.Skip(Rules.Offset(filter.Page, filter.PageSize)).Take(filter.PageSize).Select(p => p.Id).ToListAsync();
         var rows = new List<PublicProduct>(); foreach (var id in ids) rows.Add(await Read(id, filter));
         return new(rows, total, filter.Page, filter.PageSize);
-    }
-    public async Task<Page<AdminProduct>> Internal(Actor actor, CatalogFilter filter)
+    });
+    public Task<Page<AdminProduct>> Internal(Actor actor, CatalogFilter filter) => kernel.Read<Page<AdminProduct>>(async () =>
     {
         await kernel.Require(actor, "ADMIN"); var query = Query(filter, true); var total = await query.CountAsync();
         var ids = await query.Skip(Rules.Offset(filter.Page, filter.PageSize)).Take(filter.PageSize).Select(p => p.Id).ToListAsync();
         var rows = new List<AdminProduct>(); var service = new ProductService(kernel);
         foreach (var id in ids) rows.Add(await service.Read(actor, id));
         return new(rows, total, filter.Page, filter.PageSize);
-    }
-    public async Task<PublicProduct> Read(long id, CatalogFilter? filter = null)
+    });
+    public Task<PublicProduct> Read(long id, CatalogFilter? filter = null) => kernel.Read<PublicProduct>(async () =>
     {
         filter ??= new(); var variants = Variants(filter, false);
         var row = await (from p in kernel.Db.Products.AsNoTracking() join b in kernel.Db.Brands on p.BrandId equals b.Id
@@ -62,5 +62,5 @@ public sealed class CatalogService(BusinessKernel kernel)
         var images = await kernel.Db.ProductImages.AsNoTracking().Where(x => x.ProductId == id).OrderBy(x => x.SortOrder).ThenBy(x => x.Id).Select(x => new ImageInput(x.Url, x.SortOrder)).ToListAsync();
         var product = row.p;
         return new(product.Id, product.Code, product.Name, row.Brand, row.Category, product.Specifications, product.Description, product.ImageUrl, data, images);
-    }
+    });
 }

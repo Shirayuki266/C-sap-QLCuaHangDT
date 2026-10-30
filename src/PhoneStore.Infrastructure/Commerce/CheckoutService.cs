@@ -9,7 +9,7 @@ public sealed class CheckoutService(BusinessKernel kernel)
         await kernel.Require(actor,"CUSTOMER");Rules.Key(requestKey);
         var id=await kernel.Db.Orders.AsNoTracking().Where(x=>x.RequestKey==requestKey&&x.CustomerId==actor.AccountId).Select(x=>(long?)x.Id).SingleOrDefaultAsync()
             ??throw Rules.Error("NOT_FOUND","Không tìm thấy yêu cầu đặt hàng của bạn.");
-        return await OrderReadModel.Load(kernel.Db,id);
+        return await kernel.Read(()=>OrderReadModel.Load(kernel.Db,id));
     }
     public async Task<OrderView> Place(Actor actor,CheckoutInput input)
     {
@@ -52,6 +52,6 @@ public sealed class CheckoutService(BusinessKernel kernel)
             db.OrderHistory.Add(new OrderHistory{OrderId=order.Id,ActorId=actor.AccountId,To="CHO_XAC_NHAN",At=kernel.Now});
             db.Cart.RemoveRange(cart);return order.Id;
         });
-        return await OrderReadModel.Load(kernel.Db,id);
+        return await kernel.Read(()=>OrderReadModel.Load(kernel.Db,id));
     }
 }

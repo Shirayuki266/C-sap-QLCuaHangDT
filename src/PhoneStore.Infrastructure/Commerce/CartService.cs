@@ -4,7 +4,7 @@ using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
 public sealed class CartService(BusinessKernel kernel)
 {
-    public async Task<CartView> Preview(List<CartInput> inputs)
+    public Task<CartView> Preview(List<CartInput> inputs) => kernel.Read<CartView>(async () =>
     {
         Validate(inputs);var ids=inputs.Select(x=>x.VariantId).Distinct().ToList();
         var rows=await (from v in kernel.Db.Variants.AsNoTracking() join p in kernel.Db.Products on v.ProductId equals p.Id
@@ -20,13 +20,13 @@ public sealed class CartService(BusinessKernel kernel)
             result.Add(new(input.VariantId,row.Name,row.v.Sku,row.v.Color,row.v.StorageGb,input.Quantity,row.v.Price,row.Available,row.Trading,issue));
         }
         return new(result,result.Sum(x=>x.Quantity*(x.Price??0)),result.Any(x=>x.Issue is not null));
-    }
-    public async Task<CartView> Read(Actor actor)
+    });
+    public Task<CartView> Read(Actor actor) => kernel.Read<CartView>(async () =>
     {
         await kernel.Require(actor,"CUSTOMER");
         var lines=await kernel.Db.Cart.AsNoTracking().Where(x=>x.CustomerId==actor.AccountId).Select(x=>new CartInput(x.VariantId,x.Quantity)).ToListAsync();
         return await Preview(lines);
-    }
+    });
     private static void Validate(List<CartInput>? lines)
     {
         if(lines is null||lines.Count>100||lines.Any(x=>x is null||x.VariantId<=0||x.Quantity<=0))throw Rules.Error("INVALID_INPUT","Giỏ cần mã biến thể/số lượng hợp lệ, tối đa 100 dòng.");

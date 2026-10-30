@@ -3,7 +3,7 @@ using PhoneStore.Core.Commerce;
 namespace PhoneStore.Infrastructure.Commerce;
 public sealed class ReportService(BusinessKernel kernel)
 {
-    public async Task<StoreReport> Read(Actor actor,string kind,string? from=null,string? to=null)
+    public Task<StoreReport> Read(Actor actor,string kind,string? from=null,string? to=null) => kernel.Read<StoreReport>(async () =>
     {
         await kernel.Require(actor,"ADMIN");
         if(kind=="stock")
@@ -22,5 +22,5 @@ public sealed class ReportService(BusinessKernel kernel)
         var ids=best.Select(x=>x.VariantId).ToArray();var names=await(from v in kernel.Db.Variants.AsNoTracking() join p in kernel.Db.Products on v.ProductId equals p.Id where ids.Contains(v.Id) select new{v.Id,p.Name,v.Sku}).ToDictionaryAsync(x=>x.Id);
         var rows=best.OrderByDescending(x=>x.Quantity).ThenBy(x=>x.VariantId).Select(x=>new Bestseller(x.VariantId,names[x.VariantId].Name,names[x.VariantId].Sku,x.Quantity,x.Revenue)).ToList();
         return new(kind,"UTC+07:00",from,to,headers.Sum(x=>x.Total),rows.Sum(x=>x.Quantity),headers.Count,daily,rows,[]);
-    }
+    });
 }
