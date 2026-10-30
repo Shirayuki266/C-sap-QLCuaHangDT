@@ -24,6 +24,7 @@ builder.Services.AddScoped<LookupService>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<CatalogService>();
 builder.Services.AddScoped<SupplierService>();
+builder.Services.AddScoped<PurchaseService>();
 builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
 builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
 builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
@@ -193,5 +194,6 @@ app.MapLookups();
 app.MapProducts();
 app.MapCatalog();
 app.MapSuppliers();
+app.MapPurchases();
 app.Run();
 // Endpoint modules call the same SQL-backed services as future MVC/WinForms clients.
