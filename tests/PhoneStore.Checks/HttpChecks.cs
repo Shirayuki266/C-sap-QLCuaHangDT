@@ -114,6 +114,7 @@ internal static class HttpChecks
             if (migratedConnection is not null && !demoOnly) await StateMatrixChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await ReturnReasonChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await PriorityP0Checks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await PurchaseCancellationChecklistChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
