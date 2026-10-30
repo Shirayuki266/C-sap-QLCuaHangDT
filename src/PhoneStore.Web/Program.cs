@@ -20,6 +20,7 @@ var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("S
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<BusinessKernel>();
+builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<LookupService>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<CatalogService>();
@@ -197,5 +198,6 @@ app.MapCatalog();
 app.MapSuppliers();
 app.MapPurchases();
 app.MapInventory();
+app.MapCarts();
 app.Run();
 // Endpoint modules call the same SQL-backed services as future MVC/WinForms clients.
