@@ -93,6 +93,7 @@ internal static class HttpChecks
             if (migratedConnection is not null && !demoOnly) await InventoryChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await CartChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await ApprovedMergeChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await PublicBestsellerChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await CheckoutChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await OrderQueryChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await OrderDecisionChecks.Run(new Uri(url), migratedConnection);

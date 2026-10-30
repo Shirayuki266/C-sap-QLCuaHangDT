@@ -13,3 +13,5 @@ Running a combined test does not automatically prove every clause of every check
 `ReadinessIdentityChecks` verifies Word A.1.2 target/environment metadata, identity stability across credential changes and isolation of configured targets, plus not-ready failure behavior. Remote WinForms TLS/fingerprint rejection itself remains a client-phase test.
 
 See [proposed-to-actual API mappings](API_COMPATIBILITY.md) for transport-only differences and explicitly non-equivalent proposals. Original checklist IDs and all five result statuses are maintained in the local audit report.
+
+`PublicBestsellerChecks` proves approved DEC.07/FE.01 with real SQL sales: product grouping, snapshot revenue tie-breaking, top-eight/ID ties, current labels/prices, inactive product/brand/category exclusion, UTC+7 boundaries, empty periods, anonymous HTTP and unchanged business data. ADMIN report ordering remains independent.

@@ -66,7 +66,7 @@ Inactive cart/recipient/empty-cart validations can share INVALID_INPUT. Read the
 
 - DEC.02 approved on 2026-10-30: max/cap/drop merge with adjustment results; unchanged-input retries are idempotent under unchanged live availability. No durable merge-intent ledger is required by this approved policy.
 - DEC.03 confirmed on 2026-10-30: retain the existing public visibility policy; inactive brand/category excludes its products. The alternative proposal is not adopted.
-- DEC.07/FE.01: default homepage bestseller period/top count/grouping/ties remain unapproved; an ADMIN report is not a substitute for a public homepage endpoint.
+- DEC.07/FE.01 approved: public `GET /api/catalog/bestsellers` returns current UTC+7 month/top-eight products by quantity, snapshot revenue and product ID. Homepage rendering remains a later client task.
 - DEC.01: stripping phone punctuation, minimum password8 and rejecting the same new password remain proposals. Current named validator uses trimmed phone, 10-128 password characters with letter/digit and optional normalized email.
 - DEC.06: same key with changed payload returns a conflict under the current policy. Source-required same-intent/owner retry is supported; returning an old order for changed content is an unapproved change.
 - Exact supplier-ID/date purchase-list filters and category-ID filter are not native parameters. Do not simulate these by filtering one already-paginated page and report correct totals; their proposed capability has no equivalent mapping yet.
