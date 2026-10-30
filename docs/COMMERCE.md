@@ -29,7 +29,7 @@ Eight-byte SQL rowversions are Base64 strings named `version`. Missing/malformed
 | POST | `/api/admin/stock/{id}/adjust` | ADMIN physical count and reason |
 | POST | `/api/cart/preview` | Public read-only validation of guest inputs |
 | GET, POST, PUT | `/api/cart` | CUSTOMER own read / additive add / replace or explicit zero-delete |
-| POST | `/api/cart/merge` | CUSTOMER atomic additive guest merge |
+| POST | `/api/cart/merge` | CUSTOMER atomic max/cap/drop guest merge |
 | POST | `/api/orders` | CUSTOMER COD checkout / same-key same-content retry |
 | GET | `/api/orders/by-request/{key}` | CUSTOMER reconcile an owned checkout result |
 | GET | `/api/orders`, `/api/orders/{id}` | CUSTOMER own history/detail |
@@ -59,7 +59,7 @@ Stock adjustment is `{counted,reason,version,operationKey}`. Counted is an expli
 
 ## Cart, checkout and fulfillment
 
-Cart inputs contain explicit integer variantId/quantity. POST adds, PUT replaces and PUT quantity=0 deletes. Preview/read returns missing/discontinued/shortage issues rather than silently dropping lines. Merge sums matching variants and validates the resulting persisted cart atomically. Cart changes never reserve stock.
+Cart inputs contain explicit integer variantId/quantity. POST adds, PUT replaces and PUT quantity=0 deletes. Preview/read returns missing/discontinued/shortage issues rather than silently dropping lines. Approved DEC.02 merge uses max(server, guest), consolidates duplicate guest IDs with max, caps quantities at current availability and removes missing/discontinued/zero-available lines. It returns 200 `{cart,adjusted}` with per-variant requested/final quantities and reasons. Repeating identical inputs with unchanged availability does not accumulate quantity. The full union, including existing cart rows, is reconciled in one transaction; at most 100 retained variants are allowed. Cart changes never reserve stock.
 
 Checkout is `{requestKey,recipient,phone,address,paymentMethod:"COD",lines:[{variantId,quantity,price}]}`. Lines are the customer's explicitly confirmed server prices. A changed cart/price returns 409 `{code:"PRICE_CHANGED",message,traceId,details:<current CartView>}` and commits nothing. Other errors omit details. Reconfirm fresh values before retrying. Sufficient stock, immutable recipient/line/name/SKU/prices, unpaid COD, reservation/journal/history and own-cart clearing form one transaction. Same owner/key/immutable content returns the existing order even after its cart is cleared; changed content conflicts and another owner cannot reuse the key.
 

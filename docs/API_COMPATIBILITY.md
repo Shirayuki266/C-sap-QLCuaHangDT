@@ -11,7 +11,7 @@
 | Admin password | POST `/api/account/password` | One shared self-password operation serves K05 and A03. CUSTOMER may change its own password, never choose an ADMIN account/role. |
 | Account/Catalog/Cart/Orders MVC actions | Corresponding `/api/auth/*`, `/api/account/*`, `/api/catalog`, `/api/cart`, `/api/orders` services/endpoints | Equivalent server operations only. MVC/Razor pages, form binding, ModelState/PRG and browser redirects are deferred and have not been implemented or accepted by this mapping. MVC calls must use the shared services directly, not loopback HTTP. |
 | `/Cart/Quote` | POST `/api/cart/preview` | Array `[{variantId,quantity}]`, not `{lines:[...]}`. No persistence/reservation. |
-| `/Cart/Merge` | POST `/api/cart/merge` | Array input. Current policy adds quantities atomically and rejects the whole merge on unavailable/discontinued lines. This is NOT equivalent to the proposed max/cap/drop policy; see pending decisions below. |
+| `/Cart/Merge` | POST `/api/cart/merge` | Array input. Approved DEC.02 now implements max/cap/drop and returns 200 `{cart,adjusted}`. Existing POST cart add remains additive; only merge policy changed. |
 | `/api/admin/brands`, `/categories` | `/api/admin/lookups/brands`, `/lookups/categories` | GET/POST and PUT `/{id}`. Full-state request includes `name,active`. |
 | Product `/active` | GET product, then PUT `/api/admin/products/{id}` | Send retained variant IDs/versions and current product fields with desired `active`. There is no product-level rowversion; retained variant versions protect aggregate edits. |
 | Customer `/active` | POST `/api/admin/customers/{id}/state` | `{active,expectedActive}`. Lock atomically revokes every session; unlock requires new login. |
@@ -64,8 +64,8 @@ Inactive cart/recipient/empty-cart validations can share INVALID_INPUT. Read the
 
 ## Pending business decisions and non-equivalent proposals
 
-- DEC.02: max versus additive merge, capping/removing unavailable lines and repeat-merge identity need approval. Current additive merge has no durable retry identity; K10.04 is not accepted merely because a transaction exists.
-- DEC.03: keeping products public after disabling their brand/category is a proposal that differs from the existing public visibility policy. No silent change.
+- DEC.02 approved on 2026-10-30: max/cap/drop merge with adjustment results; unchanged-input retries are idempotent under unchanged live availability. No durable merge-intent ledger is required by this approved policy.
+- DEC.03 confirmed on 2026-10-30: retain the existing public visibility policy; inactive brand/category excludes its products. The alternative proposal is not adopted.
 - DEC.07/FE.01: default homepage bestseller period/top count/grouping/ties remain unapproved; an ADMIN report is not a substitute for a public homepage endpoint.
 - DEC.01: stripping phone punctuation, minimum password8 and rejecting the same new password remain proposals. Current named validator uses trimmed phone, 10-128 password characters with letter/digit and optional normalized email.
 - DEC.06: same key with changed payload returns a conflict under the current policy. Source-required same-intent/owner retry is supported; returning an old order for changed content is an unapproved change.

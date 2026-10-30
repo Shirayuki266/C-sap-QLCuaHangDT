@@ -49,12 +49,32 @@ public sealed class CartService(BusinessKernel kernel)
     }
     public Task<bool> Set(Actor actor,CartInput input,bool add=false)=>kernel.Write(async()=>
     {await kernel.Require(actor,"CUSTOMER");await SetOne(actor.AccountId,input,add);return true;});
-    public Task<bool> Merge(Actor actor,List<CartInput> inputs)=>kernel.Write(async()=>
+    public Task<CartMergeResult> Merge(Actor actor,List<CartInput> inputs)=>kernel.Write(async()=>
     {
         await kernel.Require(actor,"CUSTOMER");Validate(inputs);
-        var existing=await kernel.Db.Cart.Where(x=>x.CustomerId==actor.AccountId).Select(x=>x.VariantId).ToListAsync();
-        if(existing.Union(inputs.Select(x=>x.VariantId)).Count()>100)throw Rules.Error("INVALID_INPUT","Giỏ hợp nhất vượt 100 biến thể.");
-        foreach(var group in inputs.GroupBy(x=>x.VariantId).OrderBy(x=>x.Key))await SetOne(actor.AccountId,new(group.Key,checked((int)group.Sum(x=>(long)x.Quantity))),true);
-        return true;
+        var db=kernel.Db;
+        var existing=await db.Cart.Where(x=>x.CustomerId==actor.AccountId).ToDictionaryAsync(x=>x.VariantId);
+        var desired=inputs.GroupBy(x=>x.VariantId).ToDictionary(g=>g.Key,g=>g.Max(x=>x.Quantity));
+        foreach(var row in existing.Values)desired[row.VariantId]=Math.Max(row.Quantity,desired.GetValueOrDefault(row.VariantId));
+        var previews=new List<CartLineView>();
+        foreach(var chunk in desired.OrderBy(x=>x.Key).Select(x=>new CartInput(x.Key,x.Value)).Chunk(100))
+            previews.AddRange((await Preview(chunk.ToList())).Lines);
+        var adjusted=new List<CartAdjustment>();var kept=0;
+        foreach(var line in previews)
+        {
+            var quantity=line.Sellable?Math.Min(line.Quantity,line.Available):0;
+            if(quantity>0)kept++;
+            if(quantity!=line.Quantity)
+                adjusted.Add(new(line.VariantId,line.Quantity,quantity,!line.Sellable?line.Issue!:quantity==0?"OUT_OF_STOCK":"QUANTITY_ADJUSTED"));
+            if(existing.TryGetValue(line.VariantId,out var row))
+            {
+                if(quantity==0)db.Cart.Remove(row);
+                else if(quantity!=row.Quantity){row.Quantity=quantity;row.UpdatedAt=kernel.Now;}
+            }
+            else if(quantity>0)db.Cart.Add(new CartLine{CustomerId=actor.AccountId,VariantId=line.VariantId,Quantity=quantity,UpdatedAt=kernel.Now});
+        }
+        if(kept>100)throw Rules.Error("INVALID_INPUT","Giỏ hợp nhất vượt 100 biến thể sau điều chỉnh.");
+        await db.SaveChangesAsync();
+        return new CartMergeResult(await Read(actor),adjusted);
     });
 }
