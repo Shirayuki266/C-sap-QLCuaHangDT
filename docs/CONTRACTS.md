@@ -1,6 +1,6 @@
-# Initial data and service contracts
+# Data and service contracts
 
-This is an implementation contract for the clean rebuild, derived from report sections 1.5.2.1, 2.3.12, 2.4 and appendix A. Health, CSRF and account server flows K01-K05/A01-A03 are implemented. Routes without an implemented label below are **planned** and must receive service, authorization and integration tests before use by either UI. See [account contracts](ACCOUNTS.md) for the current endpoint details.
+This is an implementation contract for the clean rebuild, derived from report sections 1.5.2.1, 2.3.12, 2.4 and appendix A. All K01-K15/A01-A22 server flows are implemented. See [accounts](ACCOUNTS.md), [commerce contracts](COMMERCE.md), [database operations and sample manifest](DATABASE.md) and [merged verification evidence](TRACEABILITY.md). UI-only rendering and printer actions remain deferred.
 
 ## Persistence
 
@@ -15,7 +15,7 @@ The 18 application tables below and one technical migration ledger retain the so
 | PHIEN | GUID Id, AccountId FK, ExpiresAt; expiry/revocation checked for each authenticated request |
 | HANG / DANH_MUC | int Id, unique Name, Active |
 | SAN_PHAM | bigint Id; unique Code, Name, BrandId/CategoryId FKs, Specifications, Description, ImageUrl, Active |
-| SAN_PHAM_ANH | bigint Id; ProductId FK, HTTPS Url, SortOrder; computed SHA-256 UrlHash for unique ProductId/URL indexing without exceeding SQL Server key width |
+| SAN_PHAM_ANH | bigint Id; ProductId FK, HTTPS or safe local /images/ Url, SortOrder; computed SHA-256 UrlHash for unique ProductId/URL indexing without exceeding SQL Server key width |
 | BIEN_THE | bigint Id; ProductId FK, unique Sku; Color, StorageGb, Cost, ProfitPercent, Price, Active, Version; unique ProductId/Color/StorageGb |
 | TON_KHO | VariantId PK/FK; OnHand, Reserved, Version; check 0 <= Reserved <= OnHand |
 | GIO_HANG_CT | CustomerId/VariantId compound PK and FKs; Quantity, UpdatedAt; no reservation |
@@ -41,23 +41,23 @@ Enforce FK/unique/check constraints on SQL as defense in depth. Optional email u
 
 - JSON uses camelCase. IDs are numbers; money and percentages are decimal JSON numbers, never client-authoritative totals. Versions are Base64-encoded 8-byte SQL rowversions. A missing/malformed required version is 400; a correctly formed stale version is 409.
 - Authenticated actor/role/session are derived from protected cookies and the stored session, not request IDs. WinForms uses a CookieContainer and the same API. No token/password goes into localStorage. Every cookie-authenticated mutation, including login/registration/logout, requires the anti-forgery token from `GET /api/security/token` in `X-CSRF-TOKEN`.
-- Pages use one-based `page` and bounded `pageSize`; planned technical defaults are 20/max 100. Responses contain `{items,total,page,pageSize}` and stable ordering with an ID tiebreaker. A valid empty query succeeds with an empty list, while network/server/authorization errors remain errors.
+- Pages use one-based `page` and bounded `pageSize`; technical defaults are 20/max 100. Responses contain `{items,total,page,pageSize}` and stable ordering with an ID tiebreaker. A valid empty query succeeds with an empty list, while network/server/authorization errors remain errors.
 - Date filters use ISO `yyyy-MM-dd` in UTC+7. Convert an inclusive local from-date and the day after an inclusive to-date to an exclusive UTC interval. Reject reversed/unrepresentable intervals. Stock is current and ignores sales periods. General reports accept explicit periods; homepage bestseller defaults remain undecided.
-- Errors use `{code,message,traceId}` with Vietnamese messages. 400 INVALID_INPUT, 401 UNAUTHORIZED, 403 FORBIDDEN, 404 NOT_FOUND, 409 CONCURRENT_UPDATE/INVALID_STATE/OUT_OF_STOCK/PRICE_CHANGED, 503 DATABASE_UNAVAILABLE and a generic 500 SERVER_ERROR. Nonowners receive 404 for order detail/mutations. PRICE_CHANGED must also return the current cart/price data required for explicit customer reconfirmation, without committing an order.
+- Errors use `{code,message,traceId}` (PRICE_CHANGED additionally supplies `details` containing the current cart) with Vietnamese messages. 400 INVALID_INPUT, 401 UNAUTHORIZED, 403 FORBIDDEN, 404 NOT_FOUND, 409 CONCURRENT_UPDATE/INVALID_STATE/OUT_OF_STOCK/PRICE_CHANGED, 503 DATABASE_UNAVAILABLE and a generic 500 SERVER_ERROR. Nonowners receive 404 for order detail/mutations. PRICE_CHANGED must also return the current cart/price data required for explicit customer reconfirmation, without committing an order.
 
 ## Service and route map
 
-K02/A01 login and current-session queries are implemented; see [account contracts](ACCOUNTS.md) for cookie, surface, expiry and authorization behavior. Routes without an implemented label remain planned.
+All routes below are implemented; see [account contracts](ACCOUNTS.md) and [commerce contracts](COMMERCE.md) for exact query fields, payloads and response semantics.
 
 All write rows require validation, anti-forgery protection and the indicated service transaction. ADMIN can never be publicly registered. A CUSTOMER cannot access internal catalog/purchasing/stock/reports merely by changing query flags.
 
-| Source | Planned service / HTTP operation | Role / record scope |
+| Source | Service / HTTP operation | Role / record scope |
 | --- | --- | --- |
-| K01 (implemented) | Account: POST `/api/auth/register` with username/password/fullName/phone/optional email/address -> 201 `{id,username,role}`, no login | Guest; role always CUSTOMER |
-| K02/A01 (implemented) | Account: POST `/api/auth/login` with `{username,password,surface}` -> protected session cookie, safe user/expiry; GET `/api/auth/session` and `/api/admin/session` query current identity | Login anonymous; selected active role; queries require live session/ADMIN respectively |
-| K03/A02 (implemented) | Account: POST `/api/auth/logout` -> 204, revoke only current session and clear cookie | Current signed-in actor only; requires CSRF |
-| K04 (implemented) | Account: GET/PUT `/api/account/profile` -> safe own profile / 204 on update; input fullName/phone/email/address only | CUSTOMER self; writes require CSRF |
-| K05/A03 (implemented) | Account: POST `/api/account/password` with currentPassword/newPassword -> 204, atomically replace hash and revoke all related sessions/cookie | CUSTOMER/ADMIN self; requires live session and CSRF |
+| K01 | Account: POST `/api/auth/register` with username/password/fullName/phone/optional email/address -> 201 `{id,username,role}`, no login | Guest; role always CUSTOMER |
+| K02/A01 | Account: POST `/api/auth/login` with `{username,password,surface}` -> protected session cookie, safe user/expiry; GET `/api/auth/session` and `/api/admin/session` query current identity | Login anonymous; selected active role; queries require live session/ADMIN respectively |
+| K03/A02 | Account: POST `/api/auth/logout` -> 204, revoke only current session and clear cookie | Current signed-in actor only; requires CSRF |
+| K04 | Account: GET/PUT `/api/account/profile` -> safe own profile / 204 on update; input fullName/phone/email/address only | CUSTOMER self; writes require CSRF |
+| K05/A03 | Account: POST `/api/account/password` with currentPassword/newPassword -> 204, atomically replace hash and revoke all related sessions/cookie | CUSTOMER/ADMIN self; requires live session and CSRF |
 | K06-K09 | Catalog: GET `/api/catalog`, `/api/catalog/{id}`, `/api/lookups/{kind}` -> public products/variants/filters | Guest/CUSTOMER, active public records |
 | A04-A07 | Catalog: GET/POST `/api/admin/products`, GET/PUT `/api/admin/products/{id}`; product edits include every retained variant/version | ADMIN internal records |
 | A08 | Catalog: GET/POST `/api/admin/lookups/{kind}`, PUT `/api/admin/lookups/{kind}/{id}` | ADMIN, brands/categories only |

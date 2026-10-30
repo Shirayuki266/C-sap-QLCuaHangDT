@@ -10,6 +10,7 @@ internal static class DemoHttpChecks
     {
         await Check.Run("Seeded database supports real ADMIN and CUSTOMER HTTP queries with reconciled reports",async()=>
         {
+            using var imageClient=new HttpClient{BaseAddress=address};using var image=await imageClient.GetAsync("/images/demo-phone.svg");Check.True(image.IsSuccessStatusCode&&image.Content.Headers.ContentType?.MediaType=="image/svg+xml"&&(await image.Content.ReadAsStringAsync()).Contains("DEMO"),"Seeded demo image resource is unavailable.");
             using var admin=new ApiTestClient(address);using var customer=new ApiTestClient(address);
             using var a=await admin.Send("/api/auth/login",new LoginRequest(DemoSeeder.AdminUsername,DemoSeedChecks.AdminPassword,"admin"));using var c=await customer.Send("/api/auth/login",new LoginRequest("demo.customer.01",DemoSeedChecks.CustomerPassword));Check.True(a.IsSuccessStatusCode&&c.IsSuccessStatusCode,"Seeded credential login failed.");
             using var products=await admin.Http.GetAsync("/api/admin/products?pageSize=100");var productPage=(await products.Content.ReadFromJsonAsync<Page<AdminProduct>>())!;Check.True(products.IsSuccessStatusCode&&productPage.Total==20,"Seeded products unavailable.");
