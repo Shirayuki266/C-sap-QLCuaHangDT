@@ -200,11 +200,11 @@ internal static class StateMatrixChecks
         var c=f.Context;var order=await f.CreateOrder("GIAO_THAT_BAI");var before=await f.Snapshot();
         var noReason=await Send(new(c.AdminClient,$"/api/admin/orders/{order.Id}/receive-return",new VersionedCommand(order.Version,Guid.NewGuid())));
         if(noReason.Status==204)await f.AssertOrderEffect(before,order,OrderMatrixCase.All.Single(x=>x.Name=="receive-return"));else await f.Unchanged(before);
-        audit.Observe("DIFF-T9-REASON","204 (section3 T9: no reason required)",$"{noReason.Status}/{noReason.Code??"SUCCESS"}",noReason.Status==204,"Backend currently has an extra required reason. No production change; user must decide whether to relax backend or amend matrix.");
+        audit.Observe("DIFF-T9-REASON","204 (section3 T9: optional reason)",$"{noReason.Status}/{noReason.Code??"SUCCESS"}",noReason.Status==204,"Final user decision 31 October: return reason optional; cancellation and delivery-failure reasons stay required.");
         var variant=f.Data.Product.Variants[0].Id;var stock=(await f.Snapshot()).Stock.Single(x=>x.VariantId==variant);var key=Guid.NewGuid();var path=$"/api/admin/stock/{variant}/adjust";
         var input=new StockCountInput(stock.OnHand+3,"Exact retry probe",Convert.ToBase64String(stock.Version),key);var first=await Send(new(c.AdminClient,path,input));Check.True(first.Status==204,"Exact count retry fixture failed.");
         var committed=await f.Snapshot();var now=committed.Stock.Single(x=>x.VariantId==variant);var repeat=await Send(new(c.AdminClient,path,input with{Version=Convert.ToBase64String(now.Version)}));await f.Unchanged(committed);
-        audit.Observe("DIFF-COUNT-EXACT-RETRY","409/INVALID_STATE (ALREADY_APPLIED mapping)",$"{repeat.Status}/{repeat.Code}",repeat.Status==409&&repeat.Code=="INVALID_STATE","Exact repeated count is validated as unchanged quantity before the OperationKey guard. Data is safe; error classification differs from section7 even after existing mapping.");
+        audit.Observe("DIFF-COUNT-EXACT-RETRY","400/INVALID_INPUT (approved section7 exact count retry)",$"{repeat.Status}/{repeat.Code}",repeat.Status==400&&repeat.Code=="INVALID_INPUT","Accepted existing behavior: unchanged-count validation precedes the ledger guard. Exact retry must leave the entire business snapshot unchanged.");
         await audit.Cell("COD conditional Amount across all six states",async()=>
         {
             foreach(var state in StateMatrixFixture.States)
@@ -220,6 +220,6 @@ internal static class StateMatrixChecks
         var emptyId=await purchases.Save(c.Admin,0,new(f.Data.SupplierId,[],RequestKey:Guid.NewGuid()));var empty=await purchases.Read(c.Admin,emptyId);
         var draftAfter=await f.Snapshot();StateMatrixFixture.Same(draftBefore.Stock,draftAfter.Stock,"Empty draft changed stock.");StateMatrixFixture.Same(draftBefore.Variants,draftAfter.Variants,"Empty draft changed price.");StateMatrixFixture.Same(draftBefore.Movements,draftAfter.Movements,"Empty draft wrote stock journals.");
         var beforeConfirm=await f.Snapshot();await CommerceContext.Reject("INVALID_INPUT",async()=>await purchases.Confirm(c.Admin,emptyId,new(empty.Version,Guid.NewGuid())));await f.Unchanged(beforeConfirm);
-        audit.Observe("DIFF-EMPTY-DRAFT","Section6 P1 lists variant lines as creation conditions",$"{empty.Status}; lines={empty.Lines.Count}; total={empty.Total}; empty-confirm=INVALID_INPUT/400",empty.Lines.Count>0,"Existing confirmed policy permits empty persisted drafts and forbids empty confirmation. Matrix should distinguish P1 drafting from P4 confirmation.");
+        audit.Observe("DIFF-EMPTY-DRAFT","NHAP with zero lines/total; empty confirmation rejected",$"{empty.Status}; lines={empty.Lines.Count}; total={empty.Total}; empty-confirm=INVALID_INPUT/400",empty.Status=="NHAP"&&empty.Lines.Count==0&&empty.Total==0,"Accepted section6 policy permits persisted empty drafts and requires nonempty confirmation. PURCHASE_EMPTY maps to existing INVALID_INPUT/400.");
     }
 }

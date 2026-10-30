@@ -37,7 +37,7 @@ public sealed partial class OrderWorkflow
     {
         var order=await Load(actor,id,command,true);await Unpaid(id);
         if(order.Status!="GIAO_THAT_BAI"||await kernel.Db.Movements.AnyAsync(x=>x.OrderId==id&&x.Kind=="NHAN_LAI"))throw Rules.Error("INVALID_STATE","Chỉ nhận lại một lần hàng của đơn giao thất bại.");
-        var reason=Rules.Text(command.Reason,1000,"Lý do nhận lại hàng");await KeyUnused(command.OperationKey);
+        var reason=Rules.Text(command.Reason,1000,"Lý do nhận lại hàng",optional:true);await KeyUnused(command.OperationKey);
         foreach(var line in await kernel.Db.OrderLines.AsNoTracking().Where(x=>x.OrderId==id).OrderBy(x=>x.VariantId).ToListAsync())
         {
             var max=int.MaxValue-line.Quantity;

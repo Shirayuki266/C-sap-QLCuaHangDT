@@ -3,6 +3,11 @@ using PhoneStore.Core;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 
+if(args.SequenceEqual(new[]{"--priority-p0"}))
+{
+    await PriorityP0Checks.RunIsolated();Check.Summary();return;
+}
+
 if (args.Any(argument => argument != "--integration"))
     throw new ArgumentException("Unknown check argument.");
 

@@ -103,7 +103,7 @@ internal sealed class StateMatrixFixture(CommerceContext context,CommerceData da
         Same(before.Payments.Where(x=>x.OrderId!=order.Id),after.Payments.Where(x=>x.OrderId!=order.Id),"Another payment changed.");
         var addedHistory=after.History.Where(x=>!before.History.Any(y=>y.Id==x.Id)).ToList();
         Same(before.History,after.History.Where(x=>before.History.Any(y=>y.Id==x.Id)).ToList(),"Existing history changed.");
-        Check.True(action.Name=="receive-return"?addedHistory.Count is 0 or 1:addedHistory.Count==1,"Transition history count wrong.");
+        Check.True(addedHistory.Count==1,"Transition history count wrong.");
         Check.True(addedHistory.All(x=>x.OrderId==order.Id&&x.From==order.Status&&x.To==action.Target&&x.ActorId==(action.Name=="customer-cancel"?context.Customer.AccountId:context.Admin.AccountId)),"History state/actor wrong.");
         var added=after.Movements.Where(x=>!before.Movements.Any(y=>y.Id==x.Id)).ToList();
         Same(before.Movements,after.Movements.Where(x=>before.Movements.Any(y=>y.Id==x.Id)).ToList(),"Existing stock journal changed.");

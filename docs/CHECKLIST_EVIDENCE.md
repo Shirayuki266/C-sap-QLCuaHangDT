@@ -2,7 +2,7 @@
 
 The proposed API document is an interoperability reference. Runtime naming, success DTO shape and error-code differences do not require a backend rewrite when behavior is equivalent. The original Word report and source-backed checklist requirements remain authoritative.
 
-P0 groups in the decision document `03_DEC_DA_CHOT.md` are DEC.01, DEC.05 and DEC.06. Proposed password/phone policies and changed-payload replay are not silently adopted. Source-backed session/ownership/hash tests remain in the executable runner.
+Priority labels come only from the official `CHECKLIST_BACKEND_TOAN_BO_USECASE_PRIORITY.md`: 114 P0, 89 P1 and 21 P2 rows. Earlier grouping by decision IDs or test class names is historical and must not be used to assign priorities. Proposed password/phone policies and changed-payload replay are not silently adopted. Existing session/ownership/hash evidence is retained.
 
 `ChecklistCatalogFilterChecks` proves A04.01-A04.04 with active/inactive internal search, correct totals/pages, role guards and unchanged public visibility/inventory/prices. The missing trading-state filter is a functional correction; q/query and DTO naming remain mappings.
 
@@ -14,10 +14,12 @@ Running a combined test does not automatically prove every clause of every check
 
 See [proposed-to-actual API mappings](API_COMPATIBILITY.md) for transport-only differences and explicitly non-equivalent proposals. Original checklist IDs and all five result statuses are maintained in the local audit report.
 
-`RemainingP0Checks` runs the eight requested P0 cells explicitly: K03.04, A01.04, A02.03, A02.04, A11.04, A11.05, A20.05 and RACE.09. It compares business snapshots around logout/lock, runs four phone/email claim races, enumerates all 42 order state/action pairs, verifies missing reasons/stale/repeated effects, and injects undelivered requests, SQL login failure and lost committed logout replies. Captured-cookie/SQL reconciliation is independent of local cookie removal. ADMIN lifetime is checked against eight hours. WinForms/TLS/browser testing remains deferred; no other unrun P1/P2 cell is certified by these tests.
+`RemainingP0Checks` is a historical test class name, not a priority assignment. It directly covers K03.04, A01.04, A02.03, A02.04, A11.04, A11.05, A20.05 and RACE.09 with business snapshots, identity races, order state/actions and network faults. Use the official per-ID label when reporting these results. Captured-cookie/SQL reconciliation is independent of local cookie removal. ADMIN lifetime is checked against eight hours; WinForms/TLS/browser testing remains deferred.
 
 `PublicBestsellerChecks` proves approved DEC.07/FE.01 with real SQL sales: product grouping, snapshot revenue tie-breaking, top-eight/ID ties, current labels/prices, inactive product/brand/category exclusion, UTC+7 boundaries, empty periods, anonymous HTTP and unchanged business data. ADMIN report ordering remains independent.
 
 `StateMatrixChecks` supersedes the seven-action coverage claim for the new matrix: 48 parameterized order cells including invoices and separate customer/admin cancellation, 15 receipt operation/state cells, and seven retry/race groups. Literal matrix disagreements are separate observations, not PASS claims; strict mode fails on them. See [state matrix audit and decisions still needed](STATE_MATRIX_AUDIT.md), especially the no-reason T9 and identical count retry. The prior A20.05 PASS was limited to the then-current contract and is not unconditional acceptance of the new matrix.
 
 The corrected attachment resolves the COD wording disagreement. A new directly named six-state SQL check verifies conditional Amount and collection metadata; the same 48/15/seven coverage is rerun. T9 reason, identical count retry and empty-draft wording remain separate observations pending a decision. No production behavior is changed.
+
+The final 31 October decisions supersede that historical pending state: T9 is optional (the sole production edit), and exact count-retry INVALID_INPUT plus empty drafts are accepted. `ReturnReasonChecks` adds nine normalization/length/rollback cases. `PriorityP0Checks` verifies six outstanding official P0 rows with a selected runner, preserving existing unaffected PASS evidence. See [official priority and review evidence](PRIORITY_CHECKLIST_EVIDENCE.md). Submit the PR and wait for user approval; do not automatically merge.

@@ -167,7 +167,7 @@ internal static class RemainingP0Checks
                 var committed=await Business(c);await CommerceContext.Reject("CONCURRENT_UPDATE",()=>Apply(order,action,command));Check.True(committed==await Business(c),"Stale retry repeated effect.");
                 await CommerceContext.Reject("INVALID_STATE",()=>Apply(result,action,new(result.Version,Guid.NewGuid(),"Repeat")));Check.True(committed==await Business(c),"Fresh-version repeat repeated effect.");
             }
-            foreach(var item in new[]{("cancel","CHO_XAC_NHAN"),("fail","DANG_GIAO"),("receive-return","GIAO_THAT_BAI")})
+            foreach(var item in new[]{("cancel","CHO_XAC_NHAN"),("fail","DANG_GIAO")})
             {var order=await Create(item.Item2);var before=await Business(c);await CommerceContext.Reject("INVALID_INPUT",()=>Apply(order,item.Item1,new(order.Version,Guid.NewGuid())));Check.True(before==await Business(c),"Missing reason mutated business data.");}
             var unknown=await Create();var snapshot=await Business(c);using var invalid=await c.AdminClient.Send($"/api/admin/orders/{unknown.Id}/unknown",new VersionedCommand(unknown.Version,Guid.NewGuid()));Check.True(invalid.StatusCode==HttpStatusCode.NotFound&&snapshot==await Business(c),"Unknown transition accepted or mutated data.");
         });
