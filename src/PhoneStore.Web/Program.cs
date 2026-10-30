@@ -22,6 +22,7 @@ builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<BusinessKernel>();
 builder.Services.AddScoped<LookupService>();
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<CatalogService>();
 builder.Services.AddScoped<IPasswordHasher<Account>, PasswordHasher<Account>>();
 builder.Services.AddScoped<IAccountRegistration, AccountRegistration>();
 builder.Services.AddSingleton<TimeProvider>(TimeProvider.System);
@@ -189,5 +190,6 @@ app.MapGet("/health/ready", async (DatabaseMigrator migrations, HttpContext cont
 
 app.MapLookups();
 app.MapProducts();
+app.MapCatalog();
 app.Run();
 // Endpoint modules call the same SQL-backed services as future MVC/WinForms clients.
