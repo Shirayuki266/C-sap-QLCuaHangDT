@@ -82,6 +82,7 @@ internal static class HttpChecks
             if (migratedConnection is not null) await PasswordChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await ProfileChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await BusinessKernelChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null) await LookupChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
