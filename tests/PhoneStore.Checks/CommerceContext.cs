@@ -38,5 +38,12 @@ internal sealed class CommerceContext(string connection, Uri address, string pre
         try { await action(); } catch (BusinessException error) when (error.Code == code) { return; }
         throw new InvalidOperationException("Expected business error " + code);
     }
+    public async Task RefreshCustomerSession()
+    {
+        await using var db=Open();
+        var username=await db.Accounts.Where(x=>x.Id==Customer.AccountId).Select(x=>x.Username).SingleAsync();
+        var login=await new AccountSessions(db,new PasswordHasher<Account>(),TimeProvider.System).LoginAsync(new(username,Password));
+        Customer=new(login.Account.Id,login.SessionId);
+    }
     public void Dispose() { AdminClient.Dispose(); CustomerClient.Dispose(); }
 }
