@@ -11,3 +11,5 @@ P0 groups in the decision document `03_DEC_DA_CHOT.md` are DEC.01, DEC.05 and DE
 Running a combined test does not automatically prove every clause of every checklist item. The local audit report records PASS/FAIL/BLOCKED/NOT RUN/N/A by exact original IDs and distinguishes unapproved proposals and deferred UI.
 
 `ReadinessIdentityChecks` verifies Word A.1.2 target/environment metadata, identity stability across credential changes and isolation of configured targets, plus not-ready failure behavior. Remote WinForms TLS/fingerprint rejection itself remains a client-phase test.
+
+See [proposed-to-actual API mappings](API_COMPATIBILITY.md) for transport-only differences and explicitly non-equivalent proposals. Original checklist IDs and all five result statuses are maintained in the local audit report.
