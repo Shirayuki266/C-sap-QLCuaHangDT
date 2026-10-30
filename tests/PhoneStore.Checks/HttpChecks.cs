@@ -94,6 +94,7 @@ internal static class HttpChecks
             if (migratedConnection is not null) await OrderQueryChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await OrderDecisionChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null) await OrderFulfillmentChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null) await CustomerAdminChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
