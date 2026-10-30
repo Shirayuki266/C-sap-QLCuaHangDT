@@ -17,5 +17,7 @@ public static class PurchaseEndpoints
         });
         routes.MapPost("/{id:long}/cancel", async (long id, VersionedCommand input, PurchaseService service, HttpContext c) =>
         { await service.Cancel(CommerceEndpoints.Actor(c), id, input); return Results.NoContent(); });
+        routes.MapPost("/{id:long}/confirm", async (long id, VersionedCommand input, PurchaseService service, HttpContext c) =>
+        { await service.Confirm(CommerceEndpoints.Actor(c), id, input); return Results.NoContent(); });
     }
 }
