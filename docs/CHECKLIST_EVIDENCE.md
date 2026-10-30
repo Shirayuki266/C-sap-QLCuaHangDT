@@ -9,3 +9,5 @@ P0 groups in the decision document `03_DEC_DA_CHOT.md` are DEC.01, DEC.05 and DE
 `ChecklistP0Checks` adds directly named FLOW.01-FLOW.08 evidence with H=10/R=0, cost 1,000,000 and price 1,200,000. It also checks RACE.04/05/07/08 and RACE.10's late two-SKU dispatch failure followed by a safe retry. It uses real services and SQL Server, not in-memory mocks. Existing registration/session/password/checkout tests cover the remaining P0 authentication and retry paths.
 
 Running a combined test does not automatically prove every clause of every checklist item. The local audit report records PASS/FAIL/BLOCKED/NOT RUN/N/A by exact original IDs and distinguishes unapproved proposals and deferred UI.
+
+`ReadinessIdentityChecks` verifies Word A.1.2 target/environment metadata, identity stability across credential changes and isolation of configured targets, plus not-ready failure behavior. Remote WinForms TLS/fingerprint rejection itself remains a client-phase test.
