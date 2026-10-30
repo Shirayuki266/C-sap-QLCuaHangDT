@@ -19,7 +19,7 @@ public sealed class CatalogService(BusinessKernel kernel)
     {
         Rules.Offset(filter.Page, filter.PageSize); var variants = Variants(filter, all);
         var query = kernel.Db.Products.AsNoTracking().Where(p => (all || (p.Active && kernel.Db.Brands.Any(b => b.Id == p.BrandId && b.Active) && kernel.Db.Categories.Any(c => c.Id == p.CategoryId && c.Active))) &&
-            (!filter.BrandId.HasValue || p.BrandId == filter.BrandId) && variants.Any(v => v.ProductId == p.Id));
+            (!filter.BrandId.HasValue || p.BrandId == filter.BrandId) && (!all || !filter.Active.HasValue || p.Active == filter.Active.Value) && variants.Any(v => v.ProductId == p.Id));
         var term = Rules.Text(filter.Query, 100, "Từ khóa", true).Replace('đ', 'd').Replace('Đ', 'D');
         if (term.Length > 0) query = query.Where(p => EF.Functions.Collate(p.Name, SearchCollation).Replace("đ", "d").Contains(term) ||
             EF.Functions.Collate(p.Code, SearchCollation).Contains(term) || EF.Functions.Collate(p.Specifications, SearchCollation).Replace("đ", "d").Contains(term) ||

@@ -9,8 +9,8 @@ public static class CatalogEndpoints
         app.MapGet("/api/catalog", (string? query, int? brandId, decimal? minPrice, decimal? maxPrice, int? storageGb, string? color, string? sort, int? page, int? pageSize, CatalogService service)
             => service.List(new(query, brandId, minPrice, maxPrice, storageGb, color, sort ?? "name", page ?? 1, pageSize ?? 20)));
         app.MapGet("/api/catalog/{id:long}", (long id, CatalogService service) => service.Read(id));
-        app.MapGet("/api/admin/products", (string? query, int? brandId, decimal? minPrice, decimal? maxPrice, int? storageGb, string? color, string? sort, int? page, int? pageSize, CatalogService service, HttpContext context)
-            => service.Internal(CommerceEndpoints.Actor(context), new(query, brandId, minPrice, maxPrice, storageGb, color, sort ?? "name", page ?? 1, pageSize ?? 20)))
+        app.MapGet("/api/admin/products", (string? query, int? brandId, decimal? minPrice, decimal? maxPrice, int? storageGb, string? color, string? sort, int? page, int? pageSize, bool? active, CatalogService service, HttpContext context)
+            => service.Internal(CommerceEndpoints.Actor(context), new(query, brandId, minPrice, maxPrice, storageGb, color, sort ?? "name", page ?? 1, pageSize ?? 20, active)))
             .RequireAuthorization("Admin").AddEndpointFilter<CommerceCsrfFilter>();
     }
 }
