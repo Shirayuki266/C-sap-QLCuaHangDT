@@ -1,0 +1,57 @@
+@model PhoneStore.Web.Models.CartPageViewModel
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn";
+}
+<div class="cart-heading"><h1>Giỏ hàng của bạn</h1><a href="/Catalog/Index">Tiếp tục xem máy</a></div>
+<section id="cart-feedback" class="cart-feedback" role="status" aria-live="polite"></section>
+<div asp-validation-summary="All" class="validation-summary" role="alert" data-error-variant="@Model.ErrorVariant"></div>
+<section id="cart-page" data-guest="@(Model.Guest ? "true" : "false")" aria-label="Sản phẩm trong giỏ">
+    @if (Model.Guest)
+    {
+        <p id="guest-loading">Đang đọc giỏ hàng trên trình duyệt…</p>
+        <noscript><p>Giỏ khách cần JavaScript. Bạn có thể <a href="/Account/Login?returnUrl=%2FCart%2FIndex">đăng nhập</a> để dùng giỏ tài khoản.</p></noscript>
+    }
+    <div class="cart-layout" id="cart-content">
+        <div class="cart-lines">
+            @foreach (var line in Model.Cart.Lines)
+            {
+                <article class="cart-line" data-variant-id="@line.VariantId">
+                    <div class="cart-line-heading"><h2>@(line.Name ?? "Sản phẩm không còn tồn tại")</h2><strong>@(line.Price.HasValue ? WebsiteFormatting.Money(line.Price.Value) : "Chưa có giá")</strong></div>
+                    <p>@line.StorageGb GB · @line.Color</p>
+                    <p>Khả dụng: @line.Available</p>
+                    @if (line.Issue is not null)
+                    { <p class="cart-line-issue">@(line.Issue == "OUT_OF_STOCK" ? "Số lượng vượt khả dụng. Vui lòng cập nhật hoặc xóa dòng này." : "Sản phẩm không còn bán. Vui lòng xóa dòng này.")</p> }
+                    @if (Model.ErrorVariant == line.VariantId && !ViewData.ModelState.IsValid)
+                    { <p class="cart-line-issue">Chưa cập nhật dòng này. Vui lòng kiểm tra số lượng và thông báo phía trên.</p> }
+                    <div class="cart-line-actions">
+                        <form action="/Cart/Update" method="post" asp-antiforgery="false">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="variantId" value="@line.VariantId" />
+                            <label for="quantity-@line.VariantId">Số lượng</label>
+                            <input id="quantity-@line.VariantId" name="quantity" type="number" min="1" max="@Math.Max(1, line.Available)" step="1" value="@(Model.ErrorVariant == line.VariantId && Model.AttemptedQuantity is not null ? Model.AttemptedQuantity : line.Quantity.ToString())" required />
+                            <button class="button button-light" type="submit">Cập nhật</button>
+                        </form>
+                        <form action="/Cart/Remove" method="post" asp-antiforgery="false">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="variantId" value="@line.VariantId" />
+                            <button class="text-button" type="submit" aria-label="Xóa @line.Name khỏi giỏ">Xóa</button>
+                        </form>
+                    </div>
+                    <p class="cart-line-total">Thành tiền: <strong>@WebsiteFormatting.Money((line.Price ?? 0) * line.Quantity)</strong></p>
+                </article>
+            }
+            @if (!Model.Guest && Model.Cart.Lines.Count == 0)
+            { <div class="cart-empty"><h2>Giỏ hàng đang trống</h2><p>Chọn chiếc điện thoại phù hợp để bắt đầu.</p><a class="button button-primary" href="/Catalog/Index">Xem điện thoại</a></div> }
+        </div>
+        @if (!Model.Guest && Model.Cart.Lines.Count > 0)
+        {
+            <aside class="cart-summary" aria-label="Tóm tắt giỏ hàng">
+                <h2>Tóm tắt giỏ hàng</h2><p>Thanh toán khi nhận hàng (COD)</p>
+                <div class="cart-total"><span>Tổng tiền hàng</span><strong id="cart-total">@WebsiteFormatting.Money(Model.Cart.Total)</strong></div>
+                <p>Giá được cập nhật từ cửa hàng. Hàng chưa được giữ khi ở trong giỏ.</p>
+                <button class="button button-primary" disabled>Đặt hàng — sắp có</button>
+                <p>Chức năng đặt hàng đang được hoàn thiện.</p>
+            </aside>
+        }
+    </div>
+</section>

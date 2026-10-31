@@ -1,0 +1,6 @@
+Base: develop / PR93 merge 38ce221a3ee16a78aadf59653a396b2e7990ac44
+Command: git diff --exit-code origin/develop -- src/PhoneStore.Infrastructure src/PhoneStore.Web/Program.cs src/PhoneStore.Web/Endpoints src/PhoneStore.Web/Security src/PhoneStore.WinForms
+Observed: empty diff; exit0.
+Allowed src changes: approved Core/IStoreService MVC boundary; Web/Storefront/MvcStoreAdapter; new MVC controller/models/views/assets and shared MVC layout only.
+Full local regression: 299 groups pass; focused cart rerun8 groups pass; real Chromium plus SQL oracle pass. Latest-head CI is recorded in PR verification, not inferred from local checks.
+No migrations, existing services, admin endpoints, authentication implementation or schema changes.

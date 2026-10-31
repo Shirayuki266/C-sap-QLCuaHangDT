@@ -1,0 +1,55 @@
+{
+  "browser": "Playwright Chromium",
+  "qaOnly": true,
+  "records": [
+    {
+      "name": "guest-cart-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "columns": 2,
+      "unlabelled": 0
+    },
+    {
+      "name": "guest-cart-mobile",
+      "viewport": 390,
+      "width": 390,
+      "columns": 1,
+      "unlabelled": 0
+    },
+    {
+      "name": "guest-add-reload-update-tampered-price",
+      "result": "PASS"
+    },
+    {
+      "name": "merge-failure-mobile",
+      "viewport": 390,
+      "width": 390,
+      "columns": 1,
+      "unlabelled": 0
+    },
+    {
+      "name": "merged-cart-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "columns": 2,
+      "unlabelled": 0
+    },
+    {
+      "name": "merged-cart-mobile",
+      "viewport": 390,
+      "width": 390,
+      "columns": 1,
+      "unlabelled": 0
+    },
+    {
+      "name": "login-network500-retain-retry-max-cap-drop-replay-badge",
+      "result": "PASS"
+    }
+  ],
+  "javascriptErrors": [],
+  "notes": [
+    "500/network failures are injected by Playwright only",
+    "SQL runner separately verifies stock, journal, orders and final cart",
+    "Checkout is deferred to step4b"
+  ]
+}
