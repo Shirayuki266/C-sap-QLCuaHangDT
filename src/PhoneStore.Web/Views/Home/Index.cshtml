@@ -1,4 +1,5 @@
 @using Microsoft.Extensions.Options
+@model PhoneStore.Web.Models.HomeViewModel
 @inject IOptions<StorefrontOptions> Storefront
 @{
     ViewData["Title"] = "Trang chủ";
@@ -13,6 +14,13 @@
     </div>
     <div class="welcome-type" aria-hidden="true">mono<br /><span>phone.</span></div>
 </section>
+@if (Model.Bestsellers.Items.Count > 0)
+{
+    <section class="home-bestsellers" id="bestsellers" aria-labelledby="bestsellers-title">
+        <div class="catalog-section-heading"><div><h2 id="bestsellers-title">Điện thoại bán chạy</h2><p>Tháng @Model.Bestsellers.From.ToString("MM/yyyy") · Đơn hoàn tất đã thu COD</p></div><a href="/Catalog/Index">Xem tất cả điện thoại</a></div>
+        <div class="product-grid">@foreach (var product in Model.Bestsellers.Items) { <partial name="_ProductCard" model="new PhoneStore.Web.Models.ProductCardViewModel(product.ProductId, product.Name, null, product.ImageUrl, product.MinPrice, null, null)" /> }</div>
+    </section>
+}
 <section class="about-section" id="about" aria-labelledby="about-title">
     <div><h2 id="about-title">Chọn chiếc máy<br />phù hợp với bạn.</h2></div>
     <div><p>Tra cứu cấu hình, chọn dung lượng và màu sắc bạn cần. Giá và khả dụng được cập nhật khi bạn xem sản phẩm.</p><p>Thanh toán COD khi nhận hàng. Theo dõi đơn và thông tin giao hàng trong tài khoản của bạn.</p></div>

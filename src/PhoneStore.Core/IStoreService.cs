@@ -6,6 +6,10 @@ namespace PhoneStore.Core;
 /// <summary>In-process customer MVC boundary. Existing services remain authoritative.</summary>
 public interface IStoreService
 {
+    Task<Page<PublicProduct>> ReadCatalogAsync(CatalogFilter filter);
+    Task<PublicProduct> ReadProductAsync(long productId, long? variantId = null);
+    Task<List<CatalogBrand>> ReadBrandsAsync();
+    Task<PublicBestsellers> ReadBestsellersAsync();
     Task RegisterAsync(RegistrationRequest request, CancellationToken cancellationToken = default);
     Task<AccountSession> LoginAsync(string? username, string? password, CancellationToken cancellationToken = default);
     Task LogoutAsync(Actor actor, CancellationToken cancellationToken = default);
@@ -15,3 +19,5 @@ public interface IStoreService
     Task<CartView> ReadCartAsync(Actor actor);
     Task AddToCartAsync(Actor actor, long productId, long variantId, int quantity);
 }
+
+public sealed record CatalogBrand(int Id, string Name);

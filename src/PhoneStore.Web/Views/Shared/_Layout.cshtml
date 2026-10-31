@@ -3,6 +3,7 @@
 @{
     var shop = Storefront.Value;
     var home = Context.Request.Path == "/" || Context.Request.Path == "/Home/Index";
+    var catalog = Context.Request.Path.StartsWithSegments("/Catalog");
 }
 <!doctype html>
 <html lang="vi">
@@ -12,7 +13,9 @@
     <title>@ViewData["Title"] · @shop.Name</title>
     <link rel="stylesheet" href="~/css/storefront.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/accounts.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/catalog.css" asp-append-version="true" />
     <script src="~/js/storefront.js" asp-append-version="true" defer></script>
+    <script src="~/js/catalog.js" asp-append-version="true" defer></script>
     @if (Context.Request.Path.StartsWithSegments("/Account"))
     {
         <script src="~/js/accounts.js" asp-append-version="true" defer></script>
@@ -26,7 +29,7 @@
             <a href="/Home/Index" class="brand" aria-label="@shop.Name — Trang chủ">@shop.Name<span>.</span></a>
             <form action="/Catalog/Index" method="get" class="site-search" role="search">
                 <label class="visually-hidden" for="site-q">Tìm điện thoại</label>
-                <input id="site-q" name="q" type="search" placeholder="Tìm iPhone, Samsung, Xiaomi…" maxlength="100" />
+                <input id="site-q" name="q" type="search" value="@ViewData["CatalogQuery"]" placeholder="Tìm iPhone, Samsung, Xiaomi…" maxlength="100" />
                 <button type="submit" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
             </form>
             <nav class="account-links" aria-label="Tài khoản và mua hàng">
@@ -45,7 +48,7 @@
         </div>
         <nav class="primary-nav container" aria-label="Điều hướng chính">
             <a href="/Home/Index" aria-current="@(home ? "page" : null)">Trang chủ</a>
-            <a href="/Catalog/Index">Sản phẩm</a>
+            <a href="/Catalog/Index" aria-current="@(catalog ? "page" : null)">Sản phẩm</a>
             <a href="/Home/Index#about">Về cửa hàng</a>
             <a href="/Home/Index#contact">Liên hệ</a>
         </nav>

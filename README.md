@@ -47,7 +47,7 @@ The smoke creates an isolated empty QA DB, proves startup does not migrate, runs
 
 ## Customer MVC
 
-Customer MVC is delivered in separate reviewable steps. The foundation merged as PR87 at `be460cb59c0bfc8f0a49f1787bead0b0487579d7`; the account step adds `/Account/Register`, `/Account/Login`, POST logout, own profile and password change. See [account behavior and test commands](docs/MVC_ACCOUNTS.md) and [all99 official MVC checklist results](docs/MVC_CHECKLIST_RESULTS.md). Guest-cart merging, catalog, checkout and order pages remain later steps; account screenshots do not certify those flows.
+Customer MVC is delivered in separate reviewable steps. Foundation PR87 and Account PR91 are merged; the catalog step starts at `342741f71111e8e1f9e6d415073222f920ddeb55`. It adds public Home bestsellers, `/Catalog/Index` and `/Catalog/Details/{id}`. See [accounts](docs/MVC_ACCOUNTS.md), [catalog behavior and tests](docs/MVC_CATALOG.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). **Cart/Add is not implemented until step4:** the details form/selection UI is present, but this PR cannot run a purchase flow. WEB.K09.02–04 retain NOT RUN with partial GET/UI evidence. Guest-cart merging, checkout and order pages remain later steps.
 
 ## Provisioning and sample data
 

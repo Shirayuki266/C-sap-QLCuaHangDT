@@ -1,0 +1,43 @@
+@model PhoneStore.Web.Models.CatalogIndexViewModel
+@using PhoneStore.Web.Models
+@{ ViewData["Title"] = "Điện thoại"; }
+<nav class="breadcrumbs" aria-label="Đường dẫn"><a href="/Home/Index">Trang chủ</a><span aria-hidden="true">/</span><span>Sản phẩm</span></nav>
+<header class="catalog-heading">
+    <div><h1>Chọn điện thoại phù hợp</h1><p>Tìm theo hãng, mức giá, dung lượng và màu sắc.</p></div>
+    @if (Model.Results is not null) { <p class="catalog-total" data-result-total="@Model.Results.Total">@Model.Results.Total sản phẩm phù hợp</p> }
+</header>
+<div class="catalog-layout">
+    <details class="catalog-filter" open>
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6m-8 0v6"/></svg>Lọc điện thoại<svg class="filter-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <partial name="_Filters" model="Model" />
+    </details>
+    <section class="catalog-results" aria-labelledby="results-title">
+        <div class="catalog-results-heading"><h2 id="results-title">Điện thoại</h2>@if (Model.Results is not null) { <p>@Model.Results.Total sản phẩm</p> }</div>
+        <nav class="filter-chips" aria-label="Điều kiện đang lọc">
+            @if (!string.IsNullOrWhiteSpace(Model.Filter.Q)) { <a href="@Model.Filter.PageUrl(remove: "query")">Từ khóa: @Model.Filter.Q <span class="visually-hidden">— xóa tìm kiếm</span></a> }
+            @if (Model.Filter.BrandId.HasValue) { <a href="@Model.Filter.PageUrl(remove: "brand")">Hãng: @(Model.Brands.FirstOrDefault(brand => brand.Id == Model.Filter.BrandId)?.Name ?? "Hãng đã chọn") <span class="visually-hidden">— xóa hãng</span></a> }
+            @if (Model.Filter.MinPrice.HasValue || Model.Filter.MaxPrice.HasValue) { <a href="@Model.Filter.PageUrl(remove: "price")">Khoảng giá đã chọn <span class="visually-hidden">— xóa khoảng giá</span></a> }
+            @if (Model.Filter.StorageGb.HasValue) { <a href="@Model.Filter.PageUrl(remove: "storage")">@Model.Filter.StorageGb GB <span class="visually-hidden">— xóa dung lượng</span></a> }
+            @if (!string.IsNullOrWhiteSpace(Model.Filter.Color)) { <a href="@Model.Filter.PageUrl(remove: "color")">Màu: @Model.Filter.Color <span class="visually-hidden">— xóa màu</span></a> }
+        </nav>
+        @if (Model.Results is null)
+        {
+            <div class="catalog-empty" role="status"><h3>Kiểm tra lại bộ lọc</h3><p>Điều chỉnh thông tin được đánh dấu rồi áp dụng lại để xem sản phẩm.</p></div>
+        }
+        else if (Model.Results.Items.Count == 0)
+        {
+            <div class="catalog-empty" role="status"><h3>Chưa tìm thấy điện thoại phù hợp</h3><p>Thử từ khóa khác hoặc xóa bớt bộ lọc để xem thêm sản phẩm.</p><a href="/Catalog/Index" class="button">Xem tất cả điện thoại</a></div>
+        }
+        else
+        {
+            <div class="product-grid">@foreach (var product in Model.Results.Items) { <partial name="_ProductCard" model="ProductCardViewModel.From(product)" /> }</div>
+        }
+        @if (Model.Results is not null)
+        {
+            <nav class="catalog-pagination" aria-label="Phân trang">
+                <p>Trang @Model.Results.PageNumber · @Model.Results.Total sản phẩm</p>
+                <div>@if (Model.Results.PageNumber > 1) { <a href="@Model.Filter.PageUrl(Model.Results.PageNumber - 1)" rel="prev">Trang trước</a> }@if (Model.Results.PageNumber < Model.TotalPages) { <a href="@Model.Filter.PageUrl(Model.Results.PageNumber + 1)" rel="next">Trang sau</a> }</div>
+            </nav>
+        }
+    </section>
+</div>
