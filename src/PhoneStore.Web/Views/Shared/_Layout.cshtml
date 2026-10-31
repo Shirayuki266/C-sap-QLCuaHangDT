@@ -1,0 +1,63 @@
+@using Microsoft.Extensions.Options
+@inject IOptions<StorefrontOptions> Storefront
+@{
+    var shop = Storefront.Value;
+    var home = Context.Request.Path == "/" || Context.Request.Path == "/Home/Index";
+}
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] · @shop.Name</title>
+    <link rel="stylesheet" href="~/css/storefront.css" asp-append-version="true" />
+    <script src="~/js/storefront.js" asp-append-version="true" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div class="topnote">Chọn đúng máy · Kết nối điều bạn yêu · Thanh toán khi nhận hàng</div>
+    <header class="site-header">
+        <div class="masthead container">
+            <a href="/Home/Index" class="brand" aria-label="@shop.Name — Trang chủ">@shop.Name<span>.</span></a>
+            <form action="/Catalog/Index" method="get" class="site-search" role="search">
+                <label class="visually-hidden" for="site-q">Tìm điện thoại</label>
+                <input id="site-q" name="q" type="search" placeholder="Tìm iPhone, Samsung, Xiaomi…" maxlength="100" />
+                <button type="submit" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+            </form>
+            <nav class="account-links" aria-label="Tài khoản và mua hàng">
+                <a href="/Orders/Index">Đơn hàng</a>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a href="/Account/Profile">Tài khoản của tôi</a>
+                }
+                else
+                {
+                    <a href="/Account/Login">Đăng nhập</a>
+                }
+                <a href="/Cart/Index">@await Component.InvokeAsync("CartBadge")</a>
+            </nav>
+        </div>
+        <nav class="primary-nav container" aria-label="Điều hướng chính">
+            <a href="/Home/Index" aria-current="@(home ? "page" : null)">Trang chủ</a>
+            <a href="/Catalog/Index">Sản phẩm</a>
+            <a href="/Home/Index#about">Về cửa hàng</a>
+            <a href="/Home/Index#contact">Liên hệ</a>
+        </nav>
+    </header>
+    <main id="main" class="container main-content" tabindex="-1">
+        @if (TempData["Notice"] is string notice)
+        {
+            <div class="notice" role="status">@notice</div>
+        }
+        @RenderBody()
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="/Home/Index" class="brand">@shop.Name<span>.</span></a>
+            <p>Chọn điện thoại phù hợp. Thanh toán khi nhận hàng.</p>
+            <a href="/Home/Index#contact">Liên hệ cửa hàng</a>
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -13,6 +13,7 @@ using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 using PhoneStore.Web.Security;
 using PhoneStore.Web.Endpoints;
+using PhoneStore.Web.Storefront;
 
 var commandModes = new[]{"--migrate","--provision-admin","--seed-demo","--audit-db"};
 var modes = args.Where(commandModes.Contains).ToArray();
@@ -71,6 +72,7 @@ builder.Services.AddAntiforgery(options =>
     options.Cookie.SameSite = SameSiteMode.Lax;
 });
 if (builder.Environment.IsEnvironment("Testing")) builder.Services.AddDataProtection().UseEphemeralDataProtectionProvider();
+builder.Services.AddStorefrontMvc(builder.Configuration);
 var app = builder.Build();
 
 if (modes.Length==1 && !migrate)
@@ -115,6 +117,7 @@ app.UseStatusCodePages(async status =>
 });
 
 app.UseStaticFiles();
+app.UseStorefrontMvc();
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -226,5 +229,6 @@ app.MapOrderFulfillment();
 app.MapCustomerAdmin();
 app.MapInvoices();
 app.MapReports();
+app.MapControllers();
 app.Run();
 // Endpoint modules call the same SQL-backed services as future MVC/WinForms clients.
