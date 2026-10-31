@@ -16,7 +16,7 @@ using PhoneStore.Web.Storefront;
 
 namespace PhoneStore.Checks;
 
-internal sealed class MvcFoundationFactory(string connection, string root, string environment = "Testing") : WebApplicationFactory<StorefrontEntryPoint>
+internal sealed class MvcFoundationFactory(string connection, string root, string environment = "Testing", DbCommandInterceptor? extraProbe = null) : WebApplicationFactory<StorefrontEntryPoint>
 {
     public CartCommandProbe CartProbe { get; } = new();
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -28,6 +28,7 @@ internal sealed class MvcFoundationFactory(string connection, string root, strin
         {
             services.AddDataProtection().UseEphemeralDataProtectionProvider();
             services.AddDbContext<StoreDbContext>(options => options.AddInterceptors(CartProbe));
+            if (extraProbe is not null) services.AddDbContext<StoreDbContext>(options => options.AddInterceptors(extraProbe));
             services.AddControllersWithViews().AddApplicationPart(typeof(MvcFoundationProbeController).Assembly);
             services.Configure<StorefrontOptions>(options => options.ContactNote = "<script>private-html-probe</script>");
         });

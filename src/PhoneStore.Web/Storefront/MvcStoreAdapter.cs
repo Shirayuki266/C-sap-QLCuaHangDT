@@ -7,7 +7,8 @@ namespace PhoneStore.Web.Storefront;
 
 public sealed class MvcStoreAdapter(CatalogService catalog, CartService carts,
     IAccountRegistration registration, IAccountSessions sessions, IAccountProfiles profiles,
-    IAccountPasswords passwords, LookupService lookups, PublicBestsellerService bestsellers) : IStoreService
+    IAccountPasswords passwords, LookupService lookups, PublicBestsellerService bestsellers,
+    CheckoutService checkout, OrderQueryService orders) : IStoreService
 {
     public Task<Page<PublicProduct>> ReadCatalogAsync(CatalogFilter filter) => catalog.List(filter);
     public async Task<PublicProduct> ReadProductAsync(long productId, long? variantId = null)
@@ -42,6 +43,14 @@ public sealed class MvcStoreAdapter(CatalogService catalog, CartService carts,
     public Task<CartMergeResult> MergeCartAsync(Actor actor, List<CartInput> lines) => carts.Merge(actor, lines);
     public Task UpdateCartAsync(Actor actor, long variantId, int quantity) => carts.Set(actor, new(variantId, quantity));
     public Task RemoveCartAsync(Actor actor, long variantId) => carts.Set(actor, new(variantId, 0));
+    public async Task<long> PlaceOrderAsync(Actor actor, CheckoutInput input) => (await checkout.Place(actor, input)).Id;
+    public async Task<long> ResolveOrderAsync(Actor actor, Guid requestKey) => (await checkout.Resolve(actor, requestKey)).Id;
+    public async Task<CustomerOrderSnapshot> ReadCustomerOrderAsync(Actor actor, long orderId)
+    {
+        var order = await orders.Read(actor, orderId);
+        return new(order.Id, order.Code, order.Recipient, order.Phone, order.Address, order.Status, order.Payment,
+            order.Total, order.CreatedAt, order.Lines, order.History.Select(item => new CustomerOrderEvent(item.From, item.To, item.At, item.Reason)).ToList());
+    }
 
     public async Task AddToCartAsync(Actor actor, long productId, long variantId, int quantity)
     {

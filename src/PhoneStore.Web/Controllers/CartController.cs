@@ -4,11 +4,12 @@ using PhoneStore.Core;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Web.Models;
 using PhoneStore.Web.Security;
+using PhoneStore.Web.Storefront;
 
 namespace PhoneStore.Web.Controllers;
 
 [Route("Cart"), ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
-public sealed class CartController(IStoreService store) : Controller
+public sealed class CartController(IStoreService store, CheckoutConfirmation confirmations) : Controller
 {
     private Actor Current()
     {
@@ -20,6 +21,58 @@ public sealed class CartController(IStoreService store) : Controller
 
     [HttpGet("Index")]
     public Task<IActionResult> Index() => Page();
+
+    [Authorize(Policy = "Customer"), HttpGet("Checkout")]
+    public async Task<IActionResult> Checkout(CancellationToken cancellationToken)
+    {
+        var actor = Current(); var cart = await store.ReadCartAsync(actor);
+        if (cart.Lines.Count == 0) { TempData["Notice"] = "Giỏ hàng đang rỗng. Vui lòng chọn sản phẩm trước khi đặt hàng."; return RedirectToAction(nameof(Index)); }
+        var profile = await store.ReadProfileAsync(actor, cancellationToken);
+        return await CheckoutPage(new() { RequestKey = Guid.NewGuid(), Recipient = profile.FullName, Phone = profile.Phone, Address = profile.Address, PaymentMethod = "COD" }, cart);
+    }
+
+    private async Task<IActionResult> CheckoutPage(CheckoutViewModel model, CartView? cart = null)
+    {
+        model.Cart = cart ?? await store.ReadCartAsync(Current());
+        model.Confirmation = confirmations.Protect(Current().AccountId, model.RequestKey, model.Cart);
+        ModelState.Remove(nameof(model.Confirmation));
+        return View("Checkout", model);
+    }
+
+    [Authorize(Policy = "Customer"), HttpPost("Checkout")]
+    public async Task<IActionResult> Checkout(CheckoutViewModel model)
+    {
+        var actor = Current();
+        var lines = confirmations.Read(model.Confirmation, actor.AccountId, model.RequestKey);
+        if (lines is null) ModelState.AddModelError(string.Empty, "Phiên xác nhận không hợp lệ. Vui lòng tải lại trang đặt hàng.");
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                var id = await store.PlaceOrderAsync(actor, new(model.RequestKey, model.Recipient, model.Phone, model.Address, lines, model.PaymentMethod!));
+                TempData["Notice"] = "Đặt hàng COD thành công. Bạn có thể xem lại thông tin đơn bên dưới.";
+                return RedirectToAction("Details", "Orders", new { id });
+            }
+            catch (PriceChangedException changed)
+            {
+                model.PriceChanged = true;
+                ModelState.AddModelError(string.Empty, "Giá hoặc giỏ hàng đã thay đổi. Chưa tạo đơn và chưa giữ hàng. Vui lòng kiểm tra giá mới rồi xác nhận lại.");
+                return await CheckoutPage(model, changed.Cart);
+            }
+            catch (BusinessException error) when (error.Code == "INVALID_STATE")
+            {
+                try
+                {
+                    var id = await store.ResolveOrderAsync(actor, model.RequestKey);
+                    TempData["Notice"] = "Yêu cầu này đã có kết quả. Vui lòng kiểm tra đơn trước khi đặt thêm.";
+                    return RedirectToAction("Details", "Orders", new { id });
+                }
+                catch (BusinessException missing) when (missing.Code == "NOT_FOUND") { FormErrors.AddSummary(ModelState, error); }
+            }
+            catch (BusinessException error) when (error.Code is "INVALID_INPUT" or "OUT_OF_STOCK" or "CONCURRENT_UPDATE") { FormErrors.AddSummary(ModelState, error); }
+        }
+        return await CheckoutPage(model);
+    }
 
     [Authorize(Policy = "Customer"), HttpPost("Add")]
     public async Task<IActionResult> Add(CartChangeForm form)
