@@ -1,0 +1,20 @@
+@model PhoneStore.Web.Models.ProfileViewModel
+@{ ViewData["Title"] = "Thông tin tài khoản"; }
+<div class="account-page">
+    <header class="account-intro">
+        <h1>Thông tin tài khoản</h1>
+        <p>Xin chào, <strong>@Model.Username</strong>. Cập nhật thông tin để thuận tiện khi đặt hàng.</p>
+        <nav class="account-navigation" aria-label="Quản lý tài khoản"><a href="/Account/Profile" aria-current="page">Thông tin cá nhân</a><a href="/Account/Password">Đổi mật khẩu</a><a href="/Orders/Index">Đơn hàng của tôi</a></nav>
+        <form asp-controller="Account" asp-action="Logout" method="post"><button class="text-button" type="submit">Đăng xuất</button></form>
+    </header>
+    <form asp-controller="Account" asp-action="Profile" method="post" class="account-form">
+        <div asp-validation-summary="ModelOnly" role="alert" tabindex="-1"></div>
+        <p class="form-note">Các trường có dấu * là bắt buộc.</p>
+        <div class="field"><label asp-for="FullName">Họ tên *</label><input asp-for="FullName" autocomplete="name" maxlength="120" required  aria-describedby="FullName-error" aria-invalid="@(ViewData.ModelState["FullName"]?.Errors.Count > 0 ? "true" : null)" /><span asp-validation-for="FullName" id="FullName-error"></span></div>
+        <div class="field"><label asp-for="Phone">Số điện thoại *</label><input asp-for="Phone" type="tel" autocomplete="tel" maxlength="20" required  aria-describedby="Phone-error" aria-invalid="@(ViewData.ModelState["Phone"]?.Errors.Count > 0 ? "true" : null)" /><span asp-validation-for="Phone" id="Phone-error"></span></div>
+        <div class="field"><label asp-for="Email">Email <span class="optional">(tùy chọn)</span></label><input asp-for="Email" type="email" autocomplete="email" maxlength="254"  aria-describedby="Email-error" aria-invalid="@(ViewData.ModelState["Email"]?.Errors.Count > 0 ? "true" : null)" /><span asp-validation-for="Email" id="Email-error"></span></div>
+        <div class="field"><label asp-for="Address">Địa chỉ <span class="optional">(tùy chọn)</span></label><input asp-for="Address" autocomplete="street-address" maxlength="500"  aria-describedby="Address-error" aria-invalid="@(ViewData.ModelState["Address"]?.Errors.Count > 0 ? "true" : null)" /><span asp-validation-for="Address" id="Address-error"></span></div>
+        <button class="button" type="submit">Lưu thông tin</button>
+        <p class="form-note">Thông tin người nhận trên đơn đã đặt được giữ nguyên.</p>
+    </form>
+</div>

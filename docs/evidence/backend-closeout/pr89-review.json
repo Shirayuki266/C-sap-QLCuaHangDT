@@ -252,5 +252,14 @@
   "ci": "Final amended-head required CI is linked in PR89 Checks/final review; original7431544 was SUCCESS. No pending run is counted as PASS.",
   "mergePerformed": false,
   "tagCreated": false,
-  "branchDeleted": false
+  "branchDeleted": false,
+  "currentMvcFoundationProvenance": {
+    "asOf": "2026-10-31",
+    "pr": 87,
+    "state": "MERGED",
+    "approvedHead": "edadd8403c2ef0f5295212dacc1ce59acf0167da",
+    "mergeCommit": "be460cb59c0bfc8f0a49f1787bead0b0487579d7",
+    "postMergeCI": "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41178900613",
+    "historicalInventoryNotice": "The retained refs listing is the actual historical PR89 capture, not current branch status; do not replace captured old objects with later SHAs."
+  }
 }

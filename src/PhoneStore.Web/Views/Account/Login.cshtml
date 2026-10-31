@@ -1,0 +1,17 @@
+@model PhoneStore.Web.Models.LoginViewModel
+@{ ViewData["Title"] = "Đăng nhập"; }
+<div class="account-page">
+    <header class="account-intro">
+        <h1>Đăng nhập tài khoản</h1>
+        <p>Xem giỏ hàng đã lưu, cập nhật thông tin và theo dõi đơn của bạn.</p>
+        <p>Chưa có tài khoản? <a href="/Account/Register">Đăng ký tài khoản</a></p>
+    </header>
+    <form asp-controller="Account" asp-action="Login" method="post" class="account-form">
+        <div asp-validation-summary="ModelOnly" role="alert" tabindex="-1"></div>
+        <input asp-for="ReturnUrl" type="hidden" />
+        <div class="field"><label asp-for="Username">Tên đăng nhập</label><input asp-for="Username" autocomplete="username" maxlength="100" required  aria-describedby="Username-error" aria-invalid="@(ViewData.ModelState["Username"]?.Errors.Count > 0 ? "true" : null)" /><span asp-validation-for="Username" id="Username-error"></span></div>
+        <div class="field"><label asp-for="Password">Mật khẩu</label><input asp-for="Password" type="password" value="" autocomplete="current-password" maxlength="128" required  aria-describedby="Password-error" aria-invalid="@(ViewData.ModelState["Password"]?.Errors.Count > 0 ? "true" : null)" /><span asp-validation-for="Password" id="Password-error"></span></div>
+        <button class="button" type="submit">Đăng nhập</button>
+        <p class="form-note">Phiên đăng nhập kéo dài tối đa 8 giờ.</p>
+    </form>
+</div>
