@@ -121,3 +121,5 @@ Frontend starts only when server behavior for every row/branch above is implemen
 The final backend gate task records its own latest-head and post-merge CI in its linked GitHub issue. The backend implementation is complete when that task is merged and its develop checks pass. Physical printers, frontend rendering, production deployment/keys/backups and measured load targets are outside this verification.
 
 Final backend gate: [#59](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/59), branch `feature/59-backend-gate`. Its issue records the exact commit, PR, latest-head checks and verified merge CI after the task completes; this document does not invent its own future SHA.
+
+The final acceptance closeout is [BACKEND_CHECKLIST_FINAL](BACKEND_CHECKLIST_FINAL.md), with [API scope decisions](API_COMPATIBILITY.md) and [fresh empty-DB proof](BACKEND_CLOSEOUT.md). K09.02 passes API behavior; selected-pair validation and the three UI-only rows transfer to MVC as accepted differences. Legacy upgrade coverage is N/A; the actual rebuild001 final schema is independently inspected. This documentation does not claim the closeout PR is merged or a backend tag exists.

@@ -1,0 +1,256 @@
+{
+  "reviewedInitialHead": "7431544feab95fce368da6a88a5f231530a77183",
+  "runtimeBaseline": "dbc888ab962bbfd9b3f19514ce06b00d0d328e1c",
+  "runtimeDiffPaths": [],
+  "runtimeTree": "56f3aaad8f974b5c05281e5bacd973722d2c1c98",
+  "reviewChangesOnlyDocumentation": true,
+  "changedPaths": [
+    {
+      "status": "M",
+      "path": "README.md",
+      "group": "README"
+    },
+    {
+      "status": "M",
+      "path": "docs/API_COMPATIBILITY.md",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/BACKEND_CHECKLIST_FINAL.md",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/BACKEND_CLOSEOUT.md",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/BACKEND_HANDOVER.md",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/BACKEND_SECURITY_REVIEW.md",
+      "group": "docs"
+    },
+    {
+      "status": "M",
+      "path": "docs/PROMPT2A_TEST_EVIDENCE.md",
+      "group": "docs"
+    },
+    {
+      "status": "M",
+      "path": "docs/TRACEABILITY.md",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/backend-closeout/empty-db-smoke.json",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/backend-closeout/pr89-review.json",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/backend-closeout/security-review.json",
+      "group": "docs"
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-repository-secrets.mjs",
+      "group": "inventory-tool"
+    },
+    {
+      "status": "A",
+      "path": "tests/PhoneStore.Checks/EmptyDatabaseSmokeChecks.cs",
+      "group": "tests"
+    },
+    {
+      "status": "A",
+      "path": "tests/PhoneStore.Checks/FinalSchemaSmokeChecks.cs",
+      "group": "tests"
+    },
+    {
+      "status": "M",
+      "path": "tests/PhoneStore.Checks/Program.cs",
+      "group": "tests"
+    },
+    {
+      "status": "M",
+      "path": "tests/PhoneStore.Checks/Prompt2ASupplementChecks.cs",
+      "group": "tests"
+    }
+  ],
+  "reproduction": {
+    "head": "7431544feab95fce368da6a88a5f231530a77183",
+    "cloneWasInitiallyClean": true,
+    "initialBuildArtifactsAbsent": true,
+    "qaDatabase": "PhoneStore_QA_PR89_b649fc0493ed4f3b8312f493076a68fe",
+    "environment": "Development",
+    "configurationSubstitution": "Illustrative application and test DB names replaced with one new generated QA name; no credentials stored.",
+    "steps": [
+      {
+        "name": "restore",
+        "command": "dotnet restore PhoneStore.slnx",
+        "exitCode": 0
+      },
+      {
+        "name": "build",
+        "command": "dotnet build PhoneStore.slnx -c Release --no-restore",
+        "exitCode": 0
+      },
+      {
+        "name": "migrate",
+        "command": "dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate",
+        "exitCode": 0
+      },
+      {
+        "name": "backend-smoke",
+        "command": "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --backend-smoke",
+        "exitCode": 0
+      },
+      {
+        "name": "integration",
+        "command": "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integration",
+        "exitCode": 0
+      },
+      {
+        "name": "audit-after-integration",
+        "command": "dotnet run --no-build -c Release --project src/PhoneStore.Web -- --audit-db",
+        "exitCode": 0
+      }
+    ],
+    "hostSmoke": {
+      "qaDatabase": "PhoneStore_QA_PR89_b649fc0493ed4f3b8312f493076a68fe",
+      "responses": [
+        {
+          "path": "/health/live",
+          "status": 200
+        },
+        {
+          "path": "/health/ready",
+          "status": 200
+        },
+        {
+          "path": "/api/catalog",
+          "status": 200,
+          "items": 0,
+          "total": 0
+        },
+        {
+          "path": "/api/admin/session",
+          "status": 401
+        }
+      ],
+      "environment": "Development",
+      "seeded": false
+    },
+    "smokeChecks": 6,
+    "integrationChecks": 251,
+    "auditAfter": {
+      "Counts": {
+        "__PhoneStoreMigrations": 1,
+        "BIEN_THE": 0,
+        "DANH_MUC": 0,
+        "DON_HANG": 0,
+        "DON_HANG_CT": 0,
+        "GIO_HANG_CT": 0,
+        "HANG": 0,
+        "KHACH_HANG": 0,
+        "LICH_SU_DON": 0,
+        "NHA_CUNG_CAP": 0,
+        "NHAT_KY_KHO": 0,
+        "PHIEN": 0,
+        "PHIEU_NHAP": 0,
+        "PHIEU_NHAP_CT": 0,
+        "SAN_PHAM": 0,
+        "SAN_PHAM_ANH": 0,
+        "TAI_KHOAN": 0,
+        "THANH_TOAN": 0,
+        "TON_KHO": 0
+      },
+      "Errors": [],
+      "Valid": true
+    },
+    "readmeCommandFailures": [],
+    "documentationClarifications": [
+      "Test section requires the preceding restore/Release build before --no-build.",
+      "Development audit CLI emits framework logs before its JSON; supplemental audit parser was corrected, no runtime command failed."
+    ],
+    "qaDatabaseRetainedForInspection": true,
+    "clonePathPublished": false
+  },
+  "secretReview": {
+    "tools": [
+      "scripts/check-repository-secrets.mjs --history",
+      "Independent no-extension-filter read-only UTF8/UTF16 blob inventory, with JWT and protected-cookie patterns"
+    ],
+    "remote": {
+      "nonShallowClone": true,
+      "advertisedBranches": 5,
+      "advertisedTags": 0,
+      "refs": [
+        "refs/heads/main 77d0bd6cff8f09f251736eca08f41c7ee6d55cac",
+        "refs/remotes/origin/HEAD 77d0bd6cff8f09f251736eca08f41c7ee6d55cac",
+        "refs/remotes/origin/develop dbc888ab962bbfd9b3f19514ce06b00d0d328e1c",
+        "refs/remotes/origin/docs/88-backend-closeout 7431544feab95fce368da6a88a5f231530a77183",
+        "refs/remotes/origin/feature/79-optional-return 35f5dbc7e2710aa94acd14d61c1a4bb227280051",
+        "refs/remotes/origin/feature/86-mvc-foundation 2f72c339ebde2380da6f9233351aa9a435196a97",
+        "refs/remotes/origin/main 77d0bd6cff8f09f251736eca08f41c7ee6d55cac"
+      ],
+      "currentText": 160,
+      "historyText": 601,
+      "binarySkipped": 73,
+      "unresolvedRealSecretCandidates": 0,
+      "currentQAFixtureMatches": 29,
+      "privateInputBlobs": 0,
+      "wordOrPrototypeTrackedAtHead": false
+    },
+    "local": {
+      "scope": "All refs including Codex recovery refs",
+      "historyText": 638,
+      "privatePrototypeBlobs": 21,
+      "prototypeDemoLiteralOccurrences": 8,
+      "unresolvedRealSecretCandidates": 0,
+      "ignoredWordArchive": true,
+      "extractedPrototypeIgnored": false,
+      "historyOrRefCleanupPerformed": false
+    },
+    "sampleIdentifierException": "DemoSeeder illustrative names remain in runtime source as explicitly accepted; passwords supplied externally, QA/dev-only procedure, no default password. No claim of zero sample identifiers in all local Git objects."
+  },
+  "groups": {
+    "P0": {
+      "total": 114,
+      "PASS": 112,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 1,
+      "N/A": 1
+    },
+    "P1": {
+      "total": 89,
+      "PASS": 88,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 1,
+      "N/A": 0
+    },
+    "P2": {
+      "total": 21,
+      "PASS": 20,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 1,
+      "N/A": 0
+    }
+  },
+  "ci": "Final amended-head required CI is linked in PR89 Checks/final review; original7431544 was SUCCESS. No pending run is counted as PASS.",
+  "mergePerformed": false,
+  "tagCreated": false,
+  "branchDeleted": false
+}

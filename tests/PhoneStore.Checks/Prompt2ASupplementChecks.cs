@@ -53,20 +53,20 @@ internal sealed partial class Prompt2AFixture
             using var r=await C.CustomerClient.Http.GetAsync($"/api/catalog/{d.Product.Id}");var raw=await r.Content.ReadAsStringAsync();var detail=await r.Content.ReadFromJsonAsync<PublicProduct>();
             Check.True(r.StatusCode==HttpStatusCode.OK&&detail!.Variants.All(x=>x.Available==5)&&!raw.Contains("\"onHand\"",StringComparison.OrdinalIgnoreCase)&&!raw.Contains("\"reserved\"",StringComparison.OrdinalIgnoreCase),"Public positive availability or internal-balance redaction wrong.");await Unchanged(before);
         });
-        await Check.Run("K09.02 supplement records unsupported foreign selection while proving no foreign DTO data or writes",async()=>
+        await Check.Run("K09.02 supplement accepts API isolation and transfers selected-pair validation to WEB.K09.02",async()=>
         {
             var d=await Data();var other=await Data();var before=await Snapshot();var sqlBefore=await ProductSql(d);var foreign=other.Product.Variants[0].Id;
             var path=$"/api/catalog/{d.Product.Id}?variantId={foreign}";using var r=await C.CustomerClient.Http.GetAsync(path);
             if(r.StatusCode is HttpStatusCode.BadRequest or HttpStatusCode.NotFound){await Unchanged(before);return;}
             var detail=await r.Content.ReadFromJsonAsync<PublicProduct>();
             Check.True(r.StatusCode==HttpStatusCode.OK&&detail!.Id==d.Product.Id&&detail.Variants.All(x=>d.Product.Variants.Any(v=>v.Id==x.Id))&&!detail.Variants.Any(x=>x.Id==foreign),"Foreign selection leaked or injected a variant.");await Unchanged(before);
-            observations.Add(new("K09.02-selected-variant","BLOCKED","A selected foreign variant must not become valid purchasing detail; no native selected-variant binding exists",
+            observations.Add(new("K09.02-selected-variant","PASS","API owns its returned variants; selected product-variant validation transfers to WEB.K09.02 as an accepted difference",
                 new{method="GET",path,requestedProduct=d.Product.Id,requestedVariant=foreign},new{status=(int)r.StatusCode,productId=detail!.Id,variantIds=detail.Variants.Select(x=>x.Id).ToArray(),selectedVariantField=false,foreignVariantExposed=false},sqlBefore,await ProductSql(d),
-                "The query is ignored, returning200 with only owned variants. This proves DTO isolation, not rejection of an invalid selected product/variant pair. Decide a server selection contract or explicitly assign selection to MVC; no production edit was made."));
+                "The query is ignored, returning200 with only owned variants and no DB writes. API behavior passes; kiểm tra cặp sản phẩm–biến thể chuyển sang WEB.K09.02, khác biệt được chấp nhận. This does not claim a native API pair-rejection guard. No production edit was made."));
         });
         var output=Environment.GetEnvironmentVariable("PHONESTORE_PROMPT2A_SUPPLEMENT_RESULTS");
         if(!string.IsNullOrWhiteSpace(output))await File.WriteAllTextAsync(output,JsonSerializer.Serialize(new{Observations=observations},new JsonSerializerOptions{WriteIndented=true}));
         foreach(var item in observations)Console.WriteLine($"SUPPLEMENT {item.Status} {item.Id}: {item.Note}");
-        if(Environment.GetEnvironmentVariable("PHONESTORE_PROMPT2A_SUPPLEMENT_STRICT")=="1")Check.True(observations.All(x=>x.Status=="PASS"),"Strict supplemental acceptance has unresolved selected-variant contract; see sanitized observations.");
+        if(Environment.GetEnvironmentVariable("PHONESTORE_PROMPT2A_SUPPLEMENT_STRICT")=="1")Check.True(observations.All(x=>x.Status=="PASS"),"Strict backend acceptance has unresolved observations; see sanitized observations.");
     }
 }

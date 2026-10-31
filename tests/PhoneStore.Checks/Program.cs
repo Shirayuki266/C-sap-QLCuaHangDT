@@ -3,6 +3,11 @@ using PhoneStore.Core;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 
+if(args.SequenceEqual(new[]{"--backend-smoke"}))
+{
+    await EmptyDatabaseSmokeChecks.Run();Check.Summary();return;
+}
+
 if(args.SequenceEqual(new[]{"--prompt2a"}))
 {
     await Prompt2AChecks.RunIsolated();Check.Summary();return;
@@ -33,5 +38,9 @@ await Check.Run("API errors hide unexpected details and retain business conflict
     return Task.CompletedTask;
 });
 await HttpChecks.Run();
-if (args.Contains("--integration")) await SqlChecks.Run();
+if (args.Contains("--integration"))
+{
+    await SqlChecks.Run();
+    await EmptyDatabaseSmokeChecks.Run();
+}
 Check.Summary();

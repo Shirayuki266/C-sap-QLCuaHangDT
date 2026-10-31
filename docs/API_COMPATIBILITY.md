@@ -1,6 +1,24 @@
 # Proposed contract to implemented backend
 
-`01_API_CONTRACT.md` is a proposal, not an instruction to replace working service behavior. The Word report, checklist and source-backed parts of decisions 01-08 govern acceptance. P0 groups are DEC.01, DEC.05 and DEC.06; unapproved sub-proposals inside those groups do not become mandatory solely from that priority.
+`01_API_CONTRACT.md` is a proposal, not an instruction to replace working service behavior. The Word report, checklist and accepted decisions govern backend acceptance. Priority labels come exclusively from CHECKLIST_BACKEND_TOAN_BO_USECASE_PRIORITY.md:114P0/89P1/21P2. Do not define extra P0 groups from DEC numbers.
+
+## Backend closeout and accepted MVC transfers
+
+The user accepted the following scope decisions. They change the acceptance ledger, not runtime behavior. This closeout does not merge or certify the separate MVC foundation PR87.
+
+| ID | Priority | Backend status | Accepted scope |
+| --- | --- | --- | --- |
+| K09.02 | P1 | PASS (API) | Missing/discontinued product IDs return404; public detail contains only its own variants. The API does not bind a selected variantId query. **Kiểm tra cặp sản phẩm–biến thể chuyển sang WEB.K09.02, khác biệt được chấp nhận.** Do not claim an API selection-pair guard exists. |
+| K10.03 | P0 | NOT RUN | **Chuyển sang MVC**, WEB.K10.03/WEB.K10.04: browser storage, client cleanup and real guest merge. Existing preview/merge/checkout server proofs are retained. |
+| BASE.12 | P1 | NOT RUN | **Chuyển sang MVC**, WEB.BASE.07/WEB.K10.03/WEB.K10.04: browser state versus persisted cart/draft and no cache authority. |
+| FE.08 | P2 | NOT RUN | **Chuyển sang MVC** for browser/forms/responsive/confirmation evidence; physical printer behavior remains with the applicable client stage. Not accepted by service tests alone. |
+| GATE.01 | P0 | PASS (server) | All37 server use cases have retained evidence; the three UI rows above are explicitly transferred. This does not accept MVC pages or printing. |
+| GATE.03 | P0 | PASS (backend) | No remaining backend correctness FAIL/BLOCKED in the accepted scope; selection-pair behavior is an accepted transfer, not a pending backend repair. |
+| BASE.05 | P0 | N/A (legacy upgrade) | **Dựng DB mới + chạy lại: PASS; nâng cấp từ DB cũ: N/A.** Chỉ hỗ trợ dựng DB mới, không có đường nâng cấp từ DB cũ. No claim of running a legacy003 upgrade or preserving legacy prices through an upgrade is made. |
+
+The actual clean lineage is `rebuild/001_initial_store`, from001_InitialStore.sql. It creates the final schema including Cost/ProfitPercent/Price. Its ledger is **dbo.__PhoneStoreMigrations**. There are no rebuild002/003 migrations; none are fabricated. The closeout checks INFORMATION_SCHEMA/sys for the final19-table schema, uniqueness, CHECK constraints, NO ACTION foreign keys and rowversions.
+
+Final224-ID counts after these scope decisions: P0=112PASS/1NOT RUN/1N/A; P1=88PASS/1NOT RUN; P2=20PASS/1NOT RUN. Total220PASS,0FAIL,0BLOCKED,3NOT RUN,1N/A. See [the final ledger](BACKEND_CHECKLIST_FINAL.md).
 
 ## Routes and requests
 
@@ -72,6 +90,6 @@ On 2026-10-31 the user explicitly accepted A03.02 (shared own-password operation
 - DEC.01: stripping phone punctuation, minimum password8 and rejecting the same new password remain proposals. Current named validator uses trimmed phone, 10-128 password characters with letter/digit and optional normalized email.
 - DEC.06: same key with changed payload returns a conflict under the current policy. Source-required same-intent/owner retry is supported; returning an old order for changed content is an unapproved change.
 - Exact supplier-ID/date purchase-list filters and category-ID filter are not native parameters. Do not simulate these by filtering one already-paginated page and report correct totals; their proposed capability has no equivalent mapping yet.
-- Legacy migration003 applies to legacy lineage. This clean rebuild rejects legacy/unmanaged schemas and preserves their data; it does not pretend to perform that upgrade.
+- Legacy migration003 price preservation is N/A by the user's final scope decision: only new DB creation is supported, with no upgrade path from an old DB. The rebuild rejects legacy/unmanaged schemas without modifying them.
 
 Checklist results distinguish PASS/FAIL/BLOCKED/NOT RUN/N/A by the original IDs. A source-backed test pass does not approve every proposed policy or certify frontend behavior.
