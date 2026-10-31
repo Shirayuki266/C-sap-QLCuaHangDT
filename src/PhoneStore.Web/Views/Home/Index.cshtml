@@ -1,0 +1,23 @@
+@using Microsoft.Extensions.Options
+@inject IOptions<StorefrontOptions> Storefront
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+<section class="welcome" aria-labelledby="welcome-title">
+    <div class="welcome-copy">
+        <h1 id="welcome-title">Chạm công nghệ.<br /><span>Mở trải nghiệm.</span></h1>
+        <p>@Storefront.Value.Introduction</p>
+        <a class="button button-light" href="/Catalog/Index">Khám phá sản phẩm <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
+        <a class="welcome-link" href="#about">Về @Storefront.Value.Name</a>
+        <p class="welcome-note">Dễ chọn máy · Dễ đặt hàng · COD</p>
+    </div>
+    <div class="welcome-type" aria-hidden="true">mono<br /><span>phone.</span></div>
+</section>
+<section class="about-section" id="about" aria-labelledby="about-title">
+    <div><h2 id="about-title">Chọn chiếc máy<br />phù hợp với bạn.</h2></div>
+    <div><p>Tra cứu cấu hình, chọn dung lượng và màu sắc bạn cần. Giá và khả dụng được cập nhật khi bạn xem sản phẩm.</p><p>Thanh toán COD khi nhận hàng. Theo dõi đơn và thông tin giao hàng trong tài khoản của bạn.</p></div>
+</section>
+<section class="contact-section" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Kết nối với @Storefront.Value.Name</h2>
+    <p>@Storefront.Value.ContactNote</p>
+</section>
