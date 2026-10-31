@@ -1,0 +1,292 @@
+﻿PASS SQL configuration requires an explicit application database
+PASS API errors hide unexpected details and retain business conflicts
+PASS HTTP liveness works without a migrated database
+PASS HTTP readiness fails closed before schema installation
+PASS HTTP missing routes and methods return structured errors
+PASS BASE.08 A01.04 not-ready target remains 503 without configuration leaks
+PASS Schema migration serializes independent callers and replays once
+PASS EF mappings persist all 18 application entity types
+PASS SQL constraints reject invalid stock, costs, percentages and COD
+PASS SQL uniqueness and NO ACTION foreign keys preserve identities and history
+PASS Optional email accepts multiple nulls but rejects duplicate values
+PASS SQL rowversion prevents a stale EF writer from overwriting inventory
+PASS Migration rejects altered checksums and legacy lineage without rewriting rows
+PASS Migration refuses an unmanaged nonempty database and preserves its data
+PASS HTTP liveness works without a migrated database
+PASS HTTP readiness recognizes the migrated schema
+PASS HTTP missing routes and methods return structured errors
+PASS BASE.01 A01.04 readiness exposes stable environment and application-target identity
+PASS A01.04 readiness identity varies by environment/target and excludes all credentials
+PASS K01 HTTP rejects missing/invalid CSRF without writing
+PASS K01 HTTP creates CUSTOMER with safe response and no login cookie/session
+PASS K01 HTTP duplicate/invalid/overposted JSON has safe structured errors
+PASS HTTP login rejects CSRF, invalid credentials, locked accounts and role injection
+PASS HTTP customer/admin login issues protected cookies and safe session identities
+PASS Authenticated re-login and K01 registration are rejected without extra writes
+PASS HTTP session validation rejects tampering, expired/revoked sessions and changed roles
+PASS K03/A02 CSRF failure does not revoke any valid session
+PASS K03 revokes only the current session and rejects its captured cookie
+PASS A02 logout and unauthenticated repeats preserve other sessions
+PASS Concurrent logout revokes a session once without server errors
+PASS Logout service refuses foreign session ownership
+PASS K05/A03 CUSTOMER invalid input/CSRF preserves password and sessions
+PASS K05/A03 CUSTOMER change revokes every old cookie and requires new credentials
+PASS K05/A03 ADMIN invalid input/CSRF preserves password and sessions
+PASS K05/A03 ADMIN change revokes every old cookie and requires new credentials
+PASS Concurrent password changes revalidate the SQL session under the write lock
+PASS Late SQL password write failure rolls back hash and all session deletions
+PASS K04 profile queries require CUSTOMER and ignore foreign account selection
+PASS K04 invalid/duplicate profile fields and missing CSRF preserve all state
+PASS K04 valid normalized edits preserve sessions, other customers and order snapshots
+PASS K04 concurrent phone claims produce one winner and preserve the losing profile
+PASS K04 service rejects a session owned by a different account
+PASS Commerce kernel validates live SQL actor roles and session ownership
+PASS Commerce kernel rolls back nested writes and maps SQL uniqueness errors
+PASS Commerce numeric/version/paging rules match SQL storage and report rounding
+PASS A08 both lookup kinds validate uniqueness, disable without deletion and filter pages
+PASS A08 HTTP roles, CSRF, malformed paging and successful writes use real backend
+PASS A05 creates computed prices and zero inventory; invalid aggregates roll back
+PASS A06 server costs, retained variants and common metadata rowversions protect edits
+PASS A07 trading changes preserve records and API denies role/CSRF/stock overposting
+PASS K06-K08 SQL search, same-variant filtering and stable pages are accurate
+PASS K09/A04 public redaction, inactive visibility and internal roles are enforced
+PASS A13 supplier persistence, duplicates, validation and disabled history are enforced
+PASS A13 supplier HTTP authorization and CSRF reject unauthorized writes
+PASS A14 draft persistence, duplicate rejection and creation retry leave stock/prices unchanged
+PASS A14 equal-total line edits advance rowversion; A15 cancellation is draft-only
+PASS A15 confirmation is once-only and latest confirmation controls cost/price
+PASS A15 multi-line repricing failure rolls back earlier stock updates and all journals
+PASS A15 independent concurrent confirmations produce one inventory effect
+PASS A16/A17 counts preserve reservations and write the exact physical delta once
+PASS A16 inventory is ADMIN-only with real filters and bounded pages
+PASS K10/K11 own cart prices, updates, duplicate merge and deletion do not reserve stock
+PASS K10/K11 approved merge caps shortages and guest stale preview remains explicit
+PASS K10.04 DEC.02 max merge repeats and parallel retries do not accumulate guest quantities
+PASS DEC.02 merge reports live caps and removes discontinued missing and zero-stock lines
+PASS DEC.02 late merge write failure rolls back all cart adjustments without stock effects
+PASS DEC.07 FE.01 public monthly ranking aggregates products and snapshot quantity/revenue/ID ties
+PASS DEC.07 UTC+7 month rollover includes exact start and excludes next-month boundary without fallback
+PASS DEC.07 public bestseller reads leave inventory payment and history unchanged; anonymous HTTP is bounded and redacted
+PASS K12 invalid COD/recipient and changed prices commit no order or reservation
+PASS K12 pending/unpaid snapshots, request-key retry and own-cart clearing are atomic
+PASS K12 independent buyers racing for the last unit cannot oversell
+PASS K12 late SQL payment failure restores all reservations, cart and document rows
+PASS K13/K14/A12/A18 own snapshots, admin customer filters and nonowner 404 are accurate
+PASS Order date filters use UTC+7 boundaries and reject malformed/reversed extremes
+PASS K15/A19 confirmation leaves COD unpaid; admin cancellation releases only reservations
+PASS K15/A19 independent cancellation-versus-confirmation race preserves one valid outcome
+PASS A20 dispatch decrements physical/reserved once; completion atomically collects COD
+PASS A20 failed delivery keeps stock out until explicit once-only physical return
+PASS A20 late payment write failure rolls back completion, timestamps and history
+PASS A09/A10 customer administration is bounded, safe and preserves history/credentials
+PASS A11 lock revokes every session atomically; unlock never resurrects old cookies
+PASS A21 invoice eligibility and immutable snapshots are read-only and ADMIN-scoped
+PASS A22 revenue uses paid completion dates at exact UTC+7 boundaries without header multiplication
+PASS A22 bestsellers sort by quantity; current stock ignores period and ADMIN role is enforced
+PASS Read aggregates hold a shared SQL application lock against concurrent business writes
+PASS A06 metadata-only edits advance every variant version and reject concurrent stale forms
+PASS K12 actual repricing between cart and checkout returns HTTP 409 with current cart and no hold
+PASS A13/A15 disabled supplier prevents confirmation without stock/cost effects
+PASS ADMIN write API role and CSRF matrix rejects every customer request before effects
+PASS Full-state commands require explicit active booleans instead of silently changing state
+PASS A11 rejected late account lock restores all deleted sessions and active state
+PASS A19/A20 concurrent dispatch/cancel and complete/fail commit one coherent outcome
+PASS A22 bestseller rank follows quantity even when the lower-quantity item has greater revenue
+PASS FLOW.01 DEC.05 INV.01-04 exact COD flow 10/0/10 to 8/0/8 and 2400000 collected
+PASS FLOW.02 K15.01-04 customer cancellation releases only reservations once
+PASS FLOW.03 A19.02-03 confirmed administrative cancellation cannot later dispatch
+PASS FLOW.04 DEC.05 A20.03-05 failed delivery stays out until once-only physical return
+PASS FLOW.05 A14.04 A15.01/03 draft keeps cost and confirmation reprices once
+PASS FLOW.06 K12.02 K14.03 snapshot price remains 1200000 after live price becomes 1320000
+PASS FLOW.07 A17.01-03 physical counts below/equal/above reservations use absolute values
+PASS FLOW.08 RACE.10 A20.06 late two-SKU dispatch journal failure rolls back and retries once
+PASS RACE.04 DEC.05 two dispatches reduce each SKU once
+PASS RACE.05 DEC.05 two physical returns restore each SKU once
+PASS RACE.07 A17.04 count versus checkout cannot commit Reserved above OnHand
+PASS RACE.08 A15.05 receipt versus percentage edit follows a valid serialized cost/price outcome
+PASS A04.01-02 internal active/inactive filters compose with query brand and stable paging
+PASS A04.03-04 public visibility and role guards remain unchanged; state reads do not mutate
+PASS K03.04 CUSTOMER logout preserves profiles carts orders payments inventory and history
+PASS A02.04 ADMIN logout revokes only its session and preserves all business records
+PASS A11.04 locking a customer with held orders preserves business data and allows ADMIN management
+PASS A11.05 missing invalid and stale customer state requests are rejected atomically
+PASS RACE.09 separate phone and email registration and profile races have one winner and no partial loser
+PASS A20.05 full six-state seven-action matrix rejects wrong order stale versions missing reasons and repeats
+PASS A01.04 SQL/network login failures create no false success or session; ADMIN lifetime is eight hours
+PASS A02.03 lost logout request retains session; lost committed response is reconciled with SQL and captured cookie
+PASS MATRIX ORDER CHO_XAC_NHAN / customer-cancel
+PASS MATRIX ORDER CHO_XAC_NHAN / confirm
+PASS MATRIX ORDER CHO_XAC_NHAN / admin-cancel
+PASS MATRIX ORDER CHO_XAC_NHAN / dispatch
+PASS MATRIX ORDER CHO_XAC_NHAN / complete
+PASS MATRIX ORDER CHO_XAC_NHAN / fail
+PASS MATRIX ORDER CHO_XAC_NHAN / receive-return
+PASS MATRIX ORDER CHO_XAC_NHAN / invoice
+PASS MATRIX ORDER DA_XAC_NHAN / customer-cancel
+PASS MATRIX ORDER DA_XAC_NHAN / confirm
+PASS MATRIX ORDER DA_XAC_NHAN / admin-cancel
+PASS MATRIX ORDER DA_XAC_NHAN / dispatch
+PASS MATRIX ORDER DA_XAC_NHAN / complete
+PASS MATRIX ORDER DA_XAC_NHAN / fail
+PASS MATRIX ORDER DA_XAC_NHAN / receive-return
+PASS MATRIX ORDER DA_XAC_NHAN / invoice
+PASS MATRIX ORDER DANG_GIAO / customer-cancel
+PASS MATRIX ORDER DANG_GIAO / confirm
+PASS MATRIX ORDER DANG_GIAO / admin-cancel
+PASS MATRIX ORDER DANG_GIAO / dispatch
+PASS MATRIX ORDER DANG_GIAO / complete
+PASS MATRIX ORDER DANG_GIAO / fail
+PASS MATRIX ORDER DANG_GIAO / receive-return
+PASS MATRIX ORDER DANG_GIAO / invoice
+PASS MATRIX ORDER HOAN_TAT / customer-cancel
+PASS MATRIX ORDER HOAN_TAT / confirm
+PASS MATRIX ORDER HOAN_TAT / admin-cancel
+PASS MATRIX ORDER HOAN_TAT / dispatch
+PASS MATRIX ORDER HOAN_TAT / complete
+PASS MATRIX ORDER HOAN_TAT / fail
+PASS MATRIX ORDER HOAN_TAT / receive-return
+PASS MATRIX ORDER HOAN_TAT / invoice
+PASS MATRIX ORDER DA_HUY / customer-cancel
+PASS MATRIX ORDER DA_HUY / confirm
+PASS MATRIX ORDER DA_HUY / admin-cancel
+PASS MATRIX ORDER DA_HUY / dispatch
+PASS MATRIX ORDER DA_HUY / complete
+PASS MATRIX ORDER DA_HUY / fail
+PASS MATRIX ORDER DA_HUY / receive-return
+PASS MATRIX ORDER DA_HUY / invoice
+PASS MATRIX ORDER GIAO_THAT_BAI / customer-cancel
+PASS MATRIX ORDER GIAO_THAT_BAI / confirm
+PASS MATRIX ORDER GIAO_THAT_BAI / admin-cancel
+PASS MATRIX ORDER GIAO_THAT_BAI / dispatch
+PASS MATRIX ORDER GIAO_THAT_BAI / complete
+PASS MATRIX ORDER GIAO_THAT_BAI / fail
+PASS MATRIX ORDER GIAO_THAT_BAI / receive-return
+PASS MATRIX ORDER GIAO_THAT_BAI / invoice
+PASS MATRIX PURCHASE NHAP / edit
+PASS MATRIX PURCHASE NHAP / add-line
+PASS MATRIX PURCHASE NHAP / remove-line
+PASS MATRIX PURCHASE NHAP / cancel
+PASS MATRIX PURCHASE NHAP / confirm
+PASS MATRIX PURCHASE DA_XAC_NHAN / edit
+PASS MATRIX PURCHASE DA_XAC_NHAN / add-line
+PASS MATRIX PURCHASE DA_XAC_NHAN / remove-line
+PASS MATRIX PURCHASE DA_XAC_NHAN / cancel
+PASS MATRIX PURCHASE DA_XAC_NHAN / confirm
+PASS MATRIX PURCHASE DA_HUY / edit
+PASS MATRIX PURCHASE DA_HUY / add-line
+PASS MATRIX PURCHASE DA_HUY / remove-line
+PASS MATRIX PURCHASE DA_HUY / cancel
+PASS MATRIX PURCHASE DA_HUY / confirm
+PASS MATRIX RETRY RACE.02
+PASS MATRIX RETRY RACE.03
+PASS MATRIX RETRY RACE.04
+PASS MATRIX RETRY RACE.05
+PASS MATRIX RETRY RACE.06 purchase confirmation
+PASS MATRIX RETRY inventory OperationKey concurrent and fresh-version repeats
+PASS MATRIX RETRY K12.06 RACE.11 checkout same-key owner replay
+PASS MATRIX COD conditional Amount across all six states
+PASS A20.05 T9 optional return reason: missing
+PASS A20.05 T9 optional return reason: null
+PASS A20.05 T9 optional return reason: empty
+PASS A20.05 T9 optional return reason: whitespace
+PASS A20.05 T9 optional return reason: long whitespace
+PASS A20.05 T9 optional return reason: trimmed text
+PASS A20.05 T9 optional return reason: 1000 characters
+PASS A20.05 T9 optional return reason: trim before length
+PASS A20.05 T9 optional return reason: 1001 rejected
+PASS K07.04 public special-character search uses SQL parameters and leaves business data unchanged
+PASS A07.01 disable and reopen product changes public visibility and revalidates checkout
+PASS A07.04 checkout rechecks a variant discontinued after viewing the cart and rolls back
+PASS A08.02 disabling used brand and category preserves products variants receipts orders and history
+PASS A18.04 all-order queries enforce ADMIN and are read-only for header COD stock and history
+PASS A21.02 invoice recipient lines prices and total remain snapshots after catalog and profile edits
+PASS A15.04 cancelling populated and empty drafts changes only receipt status/version
+PASS A15.04 empty or inactive-supplier confirmation rejects atomically while draft cancellation remains allowed
+PASS A15.04 stale edit cancellation and confirmation return CONCURRENT_UPDATE without writes
+PASS A15.04 confirmed and cancelled receipts reject edit cancel and confirm without second effects
+PASS A05.05 image URLs allowed fields uniqueness and CUSTOMER guards reject without partial writes
+PASS A17.05 late SQL journal failure rolls back the stock update and same-key retry applies once
+PASS K09.02 missing and discontinued products reject; detail variant membership excludes foreign variants
+PASS K09.03 physical stock fully reserved remains public with available zero and internal balances redacted
+PASS A10.02 ADMIN profile edits reject duplicate phone/email atomically and retain normalized own values
+PASS A10.04 missing or invalid ADMIN customer edits preserve profiles and old recipient snapshots
+PASS A15.04 recheck empty draft cancellation and confirmation guards without stock or price side effects
+PASS A21.01 all six invoice eligibility states missing IDs and roles preserve all business data
+PASS A16.03 stock no-match is empty but real SQL read failure is SERVER_ERROR not zero stock
+PASS K08.01 combined brand price storage color and sort return exact matching pages and totals
+PASS K08.02 color storage and price must match the same variant not separate variants
+PASS A08.03 inactive lookups cannot be newly selected but retained references can be edited
+PASS A09.01 ADMIN name phone email searches and paged totals identify the exact customers
+PASS A12.04 selected-customer order lists keep price total history snapshots and are read-only
+PASS A09.04 customer searches preserve all profile account state session and business rows
+PASS K07.02 public blank whitespace and no-match search return correct metadata without writes
+PASS K08.04 clearing individual or all filters recomputes exact totals and stable pages
+PASS K13.04 own order history lists do not change status completion payment stock or journals
+PASS A05.05 supplement required gallery URL rejects null empty whitespace and oversized values
+PASS A05.05 supplement records optional primary image separately from mandatory gallery entries
+PASS K09.03 supplement positive physical-minus-reserved availability is exact and redacted
+PASS K09.02 supplement accepts API isolation and transfers selected-pair validation to WEB.K09.02
+PASS K01 normalizes account/profile and creates CUSTOMER without a session
+PASS K01 duplicate username/phone/email rolls back both account and profile
+PASS K01 malformed and out-of-capacity input writes no account
+PASS K01 optional email is nullable and identical passwords get independent salts
+PASS K01 independent SQL connections race safely on duplicate registration
+PASS K02/A01 invalid, locked or wrong-surface credentials create no sessions
+PASS K02/A01 persist role-specific sessions with exact fixed eight-hour expiry
+PASS SQL session validation observes deletion and current active account state
+PASS Demo seed late failure rolls back accounts, stock, purchases and orders together
+PASS Demo dataset contains 20 products/customers with fully reconciled stock/COD/history
+PASS HTTP liveness works without a migrated database
+PASS HTTP readiness recognizes the migrated schema
+PASS HTTP missing routes and methods return structured errors
+PASS Seeded database supports real ADMIN and CUSTOMER HTTP queries with reconciled reports
+PASS Explicit admin provisioning hashes secrets and refuses overwrites; seed refuses unrelated data
+PASS SQL integration uses its own real SQL Server database
+PASS SQL transaction rollback leaves no partially written data
+PASS Closeout empty QA startup is live but not ready and does not auto-migrate or seed
+PASS Closeout actual CLI migration installs rebuild001 only with nineteen tables and zero sample rows
+PASS Closeout CLI migration replay preserves ledger timestamp checksum and empty application tables
+PASS Closeout INFORMATION_SCHEMA sys prove final nineteen-table schema unique checks NO ACTION FK and rowversions
+PASS Closeout migrated QA host smoke checks readiness empty public queries authorization and CSRF
+PASS Closeout read-only smoke leaves eighteen business tables empty and migration ledger unchanged
+PASS MVC foundation real Razor HTML encodes configured text and serves responsive assets
+PASS MVC foundation HTML errors do not change API JSON errors or expose exception details
+PASS MVC foundation protected redirect is local and personal responses are no-store
+PASS MVC foundation Production500 is friendly HTML and never a developer page
+PASS MVC foundation global antiforgery rejects form and JSON POST without side effects
+PASS MVC approved duplicate summary retains model values and registration unique failures roll back all rows
+PASS MVC foundation shared cookie validates SQL session and retains fixed eight-hour security
+PASS MVC foundation admin cookie cannot enter customer website but keeps API authorization
+PASS MVC foundation service codes remain non500 and duplicate summary never guesses a field
+PASS MVC approved product-variant adapter rejects mismatch404 before any cart SQL and preserves H R prices histories
+PASS MVC foundation revoked and expired SQL sessions redirect with no renewal or new business data
+PASS WEB.K01.01 WEB.K01.03 actual form registers CUSTOMER once without session and ignores overposting
+PASS WEB.K01.02 duplicate username phone email are summary-only and preserve form and exact SQL snapshot
+PASS WEB.K01.04 WEB.K01.05 optional email multiple NULLs invalid fields and password boundaries
+PASS WEB.K02.02 WEB.K02.03 credential failures locked and ADMIN accounts share one generic form error without sessions
+PASS WEB.K02.01 WEB.K02.05 WEB.BASE.05 real login local redirects fixed cookie and already-signed-in guard
+PASS WEB.K04.04 anonymous profile and password challenge locally with no-store
+PASS WEB.K04.01 WEB.K04.03 profile binds session ownership ignores identity role active and preserves order snapshots
+PASS WEB.K04.02 duplicate profile fields summary-only exact SQL rollback and own unchanged identity accepted
+PASS WEB.BASE.02 account POST missing and invalid antiforgery preserve complete SQL snapshot
+PASS WEB.BASE.04 profile names and addresses are encoded in actual Razor form HTML
+PASS WEB.K05.01 invalid current/new password gives field errors with no SQL mutation or echoed secrets
+PASS WEB.K03.01 WEB.K03.02 POST logout revokes only current session cookie replay fails and business SQL preserved
+PASS WEB.K03.03 expired session logout redirects to login without effects or 500
+PASS WEB.K05.02 WEB.K05.03 successful password PRG revokes all SQL sessions and both devices
+PASS WEB.BASE.08 ADMIN cookie cannot edit customer profile or password while admin API remains valid
+PASS WEB.HOME.01 empty monthly sales hides bestseller section without fake products
+PASS WEB.K06.01 public catalog DEC03 visibility exact totals and disjoint pages preserve SQL
+PASS WEB.K06.02 WEB.K07.02 empty search and whitespace/no-match return correct structure and recovery
+PASS WEB.K06.03 invalid pagination is consistently400 HTML without partial results or500
+PASS WEB.K07.01 special SQL-like and HTML query strings remain encoded and literal without SQL writes
+PASS WEB.K08.01 combined same-variant filtering retains query on page links and displays filtered server price
+PASS WEB.K08.02 removing individual filters and all filters preserves remaining query and totals
+PASS WEB.K08.03 inverted prices unknown sort and malformed filter values return soft HTML errors
+PASS WEB.K09.01 details and no-JS variant GET show exact server prices availability without physical stock
+PASS WEB.K09.02 PARTIAL GET404 and adapter selection reject mismatch before cart SQL; POST deferred
+PASS WEB.K09.03 WEB.K09.04 PARTIAL form schema unavailable text integer availability bounds; no Cart Add action
+PASS WEB.HOME.01 real homepage monthly rankings and public prices match bestseller service with unchanged SQL
+PASS WEB.K07.01 catalog text and attributes encode script-like product metadata
+PASS WEB.K06.02 query DB failure is a real HTML500 trace response rather than empty catalog
+291 checks passed.

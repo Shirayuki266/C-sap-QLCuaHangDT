@@ -18,6 +18,16 @@ if(args.SequenceEqual(new[]{"--mvc-accounts"}))
     await MvcAccountChecks.Run();Check.Summary();return;
 }
 
+if(args.SequenceEqual(new[]{"--mvc-catalog"}))
+{
+    await MvcCatalogChecks.Run();Check.Summary();return;
+}
+
+if(args.SequenceEqual(new[]{"--mvc-catalog-browser"}))
+{
+    await MvcCatalogBrowserChecks.Run();return;
+}
+
 if(args.SequenceEqual(new[]{"--prompt2a"}))
 {
     await Prompt2AChecks.RunIsolated();Check.Summary();return;
@@ -54,5 +64,6 @@ if (args.Contains("--integration"))
     await EmptyDatabaseSmokeChecks.Run();
     await MvcFoundationChecks.Run();
     await MvcAccountChecks.Run();
+    await MvcCatalogChecks.Run();
 }
 Check.Summary();

@@ -1,0 +1,15 @@
+@model PhoneStore.Web.Models.ProductCardViewModel
+<article class="product-card" data-product-id="@Model.Id">
+    <a href="/Catalog/Details/@Model.Id" class="product-card-image" tabindex="-1" aria-hidden="true">
+        <span class="image-placeholder" hidden="@(!string.IsNullOrWhiteSpace(Model.ImageUrl))"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 17 5-5 4 4 3-3 6 6"/><circle cx="15" cy="8" r="1"/></svg><span>Chưa có ảnh</span></span>
+        @if (!string.IsNullOrWhiteSpace(Model.ImageUrl)) { <img src="@Model.ImageUrl" alt="" loading="lazy" width="480" height="360" data-product-image /> }
+    </a>
+    <div class="product-card-copy">
+        @if (Model.Brand is not null) { <p class="product-brand">@Model.Brand</p> }
+        <h2><a href="/Catalog/Details/@Model.Id">@Model.Name</a></h2>
+        @if (Model.VariantLabel is not null) { <p class="product-variant">@Model.VariantLabel</p> }
+        <p class="product-price">@WebsiteFormatting.Money(Model.Price)</p>
+        @if (Model.InStock.HasValue) { <p class="product-availability">@(Model.InStock.Value ? "Còn hàng" : "Hết hàng")</p> }
+        <a class="product-details-link" href="/Catalog/Details/@Model.Id" aria-label="Xem chi tiết @Model.Name">Xem chi tiết <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </div>
+</article>

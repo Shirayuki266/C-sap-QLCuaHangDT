@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
+using PhoneStore.Core;
+using PhoneStore.Web.Models;
 
 namespace PhoneStore.Web.Controllers;
 
-public sealed class HomeController : Controller
+[ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+public sealed class HomeController(IStoreService store) : Controller
 {
     [HttpGet("/")]
     [HttpGet("/Home/Index")]
-    public IActionResult Index() => View();
+    public async Task<IActionResult> Index() => View(new HomeViewModel(await store.ReadBestsellersAsync()));
 }

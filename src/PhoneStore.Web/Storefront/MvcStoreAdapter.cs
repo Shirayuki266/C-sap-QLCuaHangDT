@@ -7,8 +7,23 @@ namespace PhoneStore.Web.Storefront;
 
 public sealed class MvcStoreAdapter(CatalogService catalog, CartService carts,
     IAccountRegistration registration, IAccountSessions sessions, IAccountProfiles profiles,
-    IAccountPasswords passwords) : IStoreService
+    IAccountPasswords passwords, LookupService lookups, PublicBestsellerService bestsellers) : IStoreService
 {
+    public Task<Page<PublicProduct>> ReadCatalogAsync(CatalogFilter filter) => catalog.List(filter);
+    public async Task<PublicProduct> ReadProductAsync(long productId, long? variantId = null)
+    {
+        var product = await catalog.Read(productId);
+        if (variantId.HasValue) RequireSelection(product, variantId.Value);
+        return product;
+    }
+    public async Task<List<CatalogBrand>> ReadBrandsAsync() =>
+        (await lookups.Public("brands")).Select(brand => new CatalogBrand(brand.Id, brand.Name)).ToList();
+    public Task<PublicBestsellers> ReadBestsellersAsync() => bestsellers.Read();
+    private static void RequireSelection(PublicProduct product, long variantId)
+    {
+        if (!product.Variants.Any(variant => variant.Id == variantId))
+            throw new BusinessException("NOT_FOUND", "Không tìm thấy lựa chọn sản phẩm.");
+    }
     public async Task RegisterAsync(RegistrationRequest request, CancellationToken cancellationToken = default) =>
         await registration.RegisterAsync(request, cancellationToken);
     public Task<AccountSession> LoginAsync(string? username, string? password, CancellationToken cancellationToken = default) =>
@@ -27,9 +42,7 @@ public sealed class MvcStoreAdapter(CatalogService catalog, CartService carts,
     public async Task AddToCartAsync(Actor actor, long productId, long variantId, int quantity)
     {
         // Approved MVC input association check, read only. Never price, reserve or authorize here.
-        var product = await catalog.Read(productId);
-        if (!product.Variants.Any(variant => variant.Id == variantId))
-            throw new BusinessException("NOT_FOUND", "Không tìm thấy lựa chọn sản phẩm.");
+        await ReadProductAsync(productId, variantId);
         await carts.Set(actor, new(variantId, quantity), add: true);
     }
 }
