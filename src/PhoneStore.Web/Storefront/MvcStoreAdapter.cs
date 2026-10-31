@@ -38,6 +38,10 @@ public sealed class MvcStoreAdapter(CatalogService catalog, CartService carts,
         passwords.ChangeAsync(actor.AccountId, actor.SessionId, request, cancellationToken);
 
     public Task<CartView> ReadCartAsync(Actor actor) => carts.Read(actor);
+    public Task<CartView> QuoteCartAsync(List<CartInput> lines) => carts.Preview(lines);
+    public Task<CartMergeResult> MergeCartAsync(Actor actor, List<CartInput> lines) => carts.Merge(actor, lines);
+    public Task UpdateCartAsync(Actor actor, long variantId, int quantity) => carts.Set(actor, new(variantId, quantity));
+    public Task RemoveCartAsync(Actor actor, long variantId) => carts.Set(actor, new(variantId, 0));
 
     public async Task AddToCartAsync(Actor actor, long productId, long variantId, int quantity)
     {

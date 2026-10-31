@@ -18,6 +18,10 @@ public interface IStoreService
     Task ChangePasswordAsync(Actor actor, PasswordChangeRequest request, CancellationToken cancellationToken = default);
     Task<CartView> ReadCartAsync(Actor actor);
     Task AddToCartAsync(Actor actor, long productId, long variantId, int quantity);
+    Task<CartView> QuoteCartAsync(List<CartInput> lines);
+    Task<CartMergeResult> MergeCartAsync(Actor actor, List<CartInput> lines);
+    Task UpdateCartAsync(Actor actor, long variantId, int quantity);
+    Task RemoveCartAsync(Actor actor, long variantId);
 }
 
 public sealed record CatalogBrand(int Id, string Name);

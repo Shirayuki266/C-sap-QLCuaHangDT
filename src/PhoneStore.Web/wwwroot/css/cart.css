@@ -1,0 +1,28 @@
+.cart-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.cart-heading h1 { margin: 0; font-size: clamp(1.65rem, 3vw, 2.35rem); line-height: 1.2; }
+.cart-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, 1fr); align-items: start; gap: 24px; }
+.cart-lines { min-width: 0; display: grid; gap: 16px; }
+.cart-line, .cart-summary, .cart-empty { padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.cart-line-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; }
+.cart-line h2, .cart-summary h2, .cart-empty h2 { font-size: 1.35rem; margin: 0 0 10px; }
+.cart-line p { margin: 6px 0 12px; }
+.cart-line-heading strong { color: var(--navy); font-size: 1.15rem; }
+.cart-line-actions, .cart-line-actions form { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.cart-line-actions { justify-content: space-between; margin: 20px 0; }
+.cart-line input { width: 80px; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
+.cart-line .button { min-height: 44px; padding: 8px 16px; }
+.cart-line-total, .cart-total { border-top: 1px solid var(--line); padding-top: 16px; }
+.cart-total { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; font-size: 1.2rem; margin: 24px 0; }
+.cart-summary .button { width: 100%; justify-content: center; }
+.cart-summary p { color: var(--muted); }
+.cart-line-issue { font-weight: 650; color: var(--navy); }
+.cart-feedback:empty { display: none; }
+.cart-feedback:not(:empty) { background: var(--soft); padding: 20px; border-radius: 14px; margin-bottom: 24px; }
+.cart-feedback button { margin-top: 12px; }
+.cart-empty { grid-column: 1 / -1; }
+@media (max-width: 800px) { .cart-layout { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+    .cart-heading { align-items: start; flex-direction: column; gap: 12px; }
+    .cart-line, .cart-summary, .cart-empty { padding: 20px; }
+    .cart-line-actions form { gap: 8px; }
+}

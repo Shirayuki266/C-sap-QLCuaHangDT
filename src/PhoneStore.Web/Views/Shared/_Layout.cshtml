@@ -1,5 +1,6 @@
 @using Microsoft.Extensions.Options
 @inject IOptions<StorefrontOptions> Storefront
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
 @{
     var shop = Storefront.Value;
     var home = Context.Request.Path == "/" || Context.Request.Path == "/Home/Index";
@@ -10,18 +11,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(Context).RequestToken" />
     <title>@ViewData["Title"] · @shop.Name</title>
     <link rel="stylesheet" href="~/css/storefront.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/accounts.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/catalog.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
     <script src="~/js/storefront.js" asp-append-version="true" defer></script>
     <script src="~/js/catalog.js" asp-append-version="true" defer></script>
+    <script src="~/js/cart.js" asp-append-version="true" defer></script>
     @if (Context.Request.Path.StartsWithSegments("/Account"))
     {
         <script src="~/js/accounts.js" asp-append-version="true" defer></script>
     }
 </head>
-<body>
+<body data-customer="@(User.IsInRole("CUSTOMER") ? "true" : "false")">
     <a class="skip-link" href="#main">Đến nội dung chính</a>
     <div class="topnote">Chọn đúng máy · Kết nối điều bạn yêu · Thanh toán khi nhận hàng</div>
     <header class="site-header">
@@ -43,7 +47,7 @@
                 {
                     <a href="/Account/Login">Đăng nhập</a>
                 }
-                <a href="/Cart/Index">@await Component.InvokeAsync("CartBadge")</a>
+                <a href="/Cart/Index" id="cart-badge">@await Component.InvokeAsync("CartBadge")</a>
             </nav>
         </div>
         <nav class="primary-nav container" aria-label="Điều hướng chính">
@@ -54,6 +58,7 @@
         </nav>
     </header>
     <main id="main" class="container main-content" tabindex="-1">
+        <div id="cart-sync" class="cart-feedback" role="status" aria-live="polite"></div>
         @if (TempData["Notice"] is string notice)
         {
             <div class="notice" role="status">@notice</div>
