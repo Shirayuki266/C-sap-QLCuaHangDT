@@ -73,7 +73,7 @@ public sealed class AccountController(IStoreService store) : Controller
                 TempData["Notice"] = "Đăng nhập thành công.";
                 return LocalRedirect(model.ReturnUrl);
             }
-            catch (BusinessException error) when (error.Code is "UNAUTHORIZED" or "UNAUTHENTICATED" or "INVALID_CREDENTIALS" or "ACCOUNT_LOCKED")
+            catch (BusinessException error) when (error.Code is "UNAUTHORIZED" or "INVALID_CREDENTIALS" or "ACCOUNT_LOCKED")
             { ModelState.AddModelError(string.Empty, LoginError); }
             catch (BusinessException error) when (IsFormError(error)) { FormErrors.AddSummary(ModelState, error); }
         }

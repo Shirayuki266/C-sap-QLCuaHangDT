@@ -28,6 +28,9 @@
     }
     function count(cart) { if (badge) badge.textContent = `Giỏ hàng (${cart.lines.reduce((sum, line) => sum + line.quantity, 0)})`; }
     async function request(action, lines) {
+        const loading = action === "Merge" ? "Đang hợp nhất giỏ hàng…" : "Đang kiểm tra giỏ hàng…";
+        notice(loading); page?.setAttribute("aria-busy", "true");
+        try {
         const response = await fetch(`/Cart/${action}`, {
             method: "POST", credentials: "same-origin", redirect: "error",
             headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content },
@@ -36,6 +39,10 @@
         const json = response.headers.get("content-type")?.includes("application/json") ? await response.json() : null;
         if (!response.ok || !json) throw new Error(json?.message || "Chưa kết nối được với cửa hàng. Giỏ trên trình duyệt vẫn được giữ. Vui lòng thử lại.");
         return json;
+        } finally {
+            page?.removeAttribute("aria-busy");
+            if (feedback.textContent === loading) feedback.replaceChildren();
+        }
     }
     function issue(line) {
         return line.issue === "OUT_OF_STOCK" ? "Số lượng vượt khả dụng. Vui lòng giảm số lượng." : line.issue ? "Sản phẩm không còn bán. Vui lòng xóa dòng này." : null;

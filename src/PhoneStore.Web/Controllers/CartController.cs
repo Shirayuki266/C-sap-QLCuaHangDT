@@ -59,6 +59,23 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
                 ModelState.AddModelError(string.Empty, "Giá hoặc giỏ hàng đã thay đổi. Chưa tạo đơn và chưa giữ hàng. Vui lòng kiểm tra giá mới rồi xác nhận lại.");
                 return await CheckoutPage(model, changed.Cart);
             }
+            catch (BusinessException error) when (error.Code == "PRICE_CHANGED")
+            {
+                model.PriceChanged = true;
+                ModelState.AddModelError(string.Empty, "Giá hoặc giỏ hàng đã thay đổi. Chưa tạo đơn và chưa giữ hàng. Vui lòng kiểm tra giá mới rồi xác nhận lại.");
+                return await CheckoutPage(model);
+            }
+            catch (BusinessException error) when (error.Code is "REQUEST_KEY_CONFLICT" or "PAYMENT_METHOD_UNSUPPORTED")
+            {
+                model.RequestKey = Guid.NewGuid(); ModelState.Remove(nameof(model.RequestKey));
+                FormErrors.AddSummary(ModelState, error);
+                return await CheckoutPage(model);
+            }
+            catch (BusinessException error) when (WebsiteServiceErrors.CartIssue(error.Code))
+            {
+                FormErrors.AddSummary(ModelState, error);
+                return await CheckoutPage(model);
+            }
             catch (BusinessException error) when (error.Code == "INVALID_STATE")
             {
                 try
@@ -80,7 +97,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         if (ModelState.IsValid)
         {
             try { await store.AddToCartAsync(Current(), form.ProductId, form.VariantId, form.Quantity); TempData["Notice"] = "Đã thêm sản phẩm vào giỏ hàng."; return RedirectToAction(nameof(Index)); }
-            catch (BusinessException error) when (error.Code is "INVALID_INPUT" or "OUT_OF_STOCK") { ModelState.AddModelError(string.Empty, error.Message); }
+            catch (BusinessException error) when (error.Code == "INVALID_INPUT" || WebsiteServiceErrors.CartIssue(error.Code)) { ModelState.AddModelError(string.Empty, error.Message); }
         }
         return await Page(form.VariantId, Request.Form["quantity"]);
     }
@@ -91,7 +108,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         if (ModelState.IsValid)
         {
             try { await store.UpdateCartAsync(Current(), form.VariantId, form.Quantity); TempData["Notice"] = "Đã cập nhật số lượng theo giá hiện tại."; return RedirectToAction(nameof(Index)); }
-            catch (BusinessException error) when (error.Code is "INVALID_INPUT" or "OUT_OF_STOCK" or "NOT_FOUND") { ModelState.AddModelError(string.Empty, error.Message); }
+            catch (BusinessException error) when (error.Code is "INVALID_INPUT" or "NOT_FOUND" || WebsiteServiceErrors.CartIssue(error.Code)) { ModelState.AddModelError(string.Empty, error.Message); }
         }
         return await Page(form.VariantId, Request.Form["quantity"]);
     }
@@ -110,7 +127,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
     {
         if (!ModelState.IsValid || form?.Lines is null) return BadRequest(new { code = "INVALID_INPUT", message = "Giỏ hàng không hợp lệ. Vui lòng kiểm tra số lượng." });
         try { return Json(await store.QuoteCartAsync(form.Lines)); }
-        catch (BusinessException error) { return StatusCode(ApiError.Status(error.Code), new { code = error.Code, message = error.Message }); }
+        catch (BusinessException error) { return StatusCode(WebsiteServiceErrors.Status(error.Code), WebsiteServiceErrors.Json(error, HttpContext.TraceIdentifier)); }
     }
 
     [Authorize(Policy = "Customer"), HttpPost("Merge")]
@@ -118,6 +135,6 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
     {
         if (!ModelState.IsValid || form?.Lines is null) return BadRequest(new { code = "INVALID_INPUT", message = "Giỏ hàng không hợp lệ. Vui lòng kiểm tra số lượng." });
         try { return Json(await store.MergeCartAsync(Current(), form.Lines)); }
-        catch (BusinessException error) { return StatusCode(ApiError.Status(error.Code), new { code = error.Code, message = error.Message }); }
+        catch (BusinessException error) { return StatusCode(WebsiteServiceErrors.Status(error.Code), WebsiteServiceErrors.Json(error, HttpContext.TraceIdentifier)); }
     }
 }

@@ -1,0 +1,7 @@
+Base: merged PR99 / origin/develop 3bc247dd79ee3eab7919cdfe60fa34671a448f26
+Command:
+git diff 3bc247dd79ee3eab7919cdfe60fa34671a448f26 -- src/PhoneStore.Core src/PhoneStore.Infrastructure src/PhoneStore.Web/Program.cs src/PhoneStore.Web/Endpoints src/PhoneStore.Web/Security
+
+Result: empty (no changed protected files).
+The acceptance step changes only customer MVC presentation/error translation,
+tests and documentation. No services/schema/migrations/admin API change.

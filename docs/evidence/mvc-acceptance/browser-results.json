@@ -1,0 +1,594 @@
+{
+  "browser": "Playwright Chromium",
+  "qaOnly": true,
+  "checks": [
+    {
+      "id": "WEB.BASE.12",
+      "route": "Cart/Checkout",
+      "posts": 1,
+      "busy": {
+        "busy": "true",
+        "disabled": true
+      },
+      "captureMethod": "Browser-only preventDefault after shipping busy handler; separate real duplicate submission"
+    },
+    {
+      "id": "WEB.BASE.12",
+      "route": "Orders/Cancel",
+      "posts": 1,
+      "busy": {
+        "busy": "true",
+        "disabled": true
+      },
+      "captureMethod": "Browser-only preventDefault after shipping busy handler; separate real duplicate submission"
+    },
+    {
+      "id": "WEB.FLOW.01",
+      "status": "PASS"
+    },
+    {
+      "id": "WEB.FLOW.02",
+      "status": "PASS",
+      "adminTransport": "real confirm/dispatch/complete APIs"
+    },
+    {
+      "id": "WEB.FLOW.03",
+      "status": "PASS",
+      "adminTransport": "real product PUT profitPercent30"
+    },
+    {
+      "id": "WEB.FLOW.04",
+      "status": "PASS"
+    },
+    {
+      "id": "WEB.FLOW.05",
+      "status": "PASS"
+    },
+    {
+      "id": "WEB.UI.02",
+      "screen": "UI13",
+      "focus": {
+        "tag": "A",
+        "outline": "solid",
+        "width": 3
+      }
+    },
+    {
+      "id": "WEB.UI.02",
+      "screen": "UI03",
+      "focus": {
+        "tag": "A",
+        "outline": "solid",
+        "width": 3
+      }
+    },
+    {
+      "id": "WEB.UI.02",
+      "screen": "UI04",
+      "focus": {
+        "tag": "A",
+        "outline": "solid",
+        "width": 3
+      }
+    },
+    {
+      "id": "WEB.UI.02",
+      "screen": "UI05",
+      "focus": {
+        "tag": "A",
+        "outline": "solid",
+        "width": 3
+      }
+    },
+    {
+      "id": "WEB.UI.02",
+      "screen": "UI06",
+      "focus": {
+        "tag": "A",
+        "outline": "solid",
+        "width": 3
+      }
+    },
+    {
+      "id": "WEB.UI.02",
+      "screen": "UI07",
+      "focus": {
+        "tag": "A",
+        "outline": "solid",
+        "width": 3
+      }
+    },
+    {
+      "id": "WEB.UI.03",
+      "gallery": "initial and late thumbnail failure, main fallback, healthy secondary recovery"
+    },
+    {
+      "id": "WEB.BASE.12",
+      "route": "Account/Register",
+      "posts": 1,
+      "busy": {
+        "busy": "true",
+        "disabled": true
+      },
+      "captureMethod": "Browser-only preventDefault after shipping busy handler; separate real duplicate submission"
+    },
+    {
+      "id": "WEB.BASE.12",
+      "route": "Account/Login",
+      "posts": 1,
+      "busy": {
+        "busy": "true",
+        "disabled": true
+      },
+      "captureMethod": "Browser-only preventDefault after shipping busy handler; separate real duplicate submission"
+    }
+  ],
+  "screens": [
+    {
+      "name": "FLOW01-guest-cart",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW01-merged-cart",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW01-checkout-busy",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW01-placed",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW01-cancel-busy",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW01-cancelled",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW02-confirm",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW02-dispatch",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW02-complete",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW03-reconfirmation",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW03-new-price-order",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW04-invalid-cart",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW04-blocked-checkout",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW05-login-challenge",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "FLOW05-recovered-checkout",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI13-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 3
+    },
+    {
+      "name": "UI13-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 1
+    },
+    {
+      "name": "UI13-loading-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 1
+    },
+    {
+      "name": "UI03-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 3
+    },
+    {
+      "name": "UI03-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 1
+    },
+    {
+      "name": "UI03-loading-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 1
+    },
+    {
+      "name": "UI04-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI04-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI04-loading-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI05-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI05-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI05-loading-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI06-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI06-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI06-loading-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI07-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI07-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI07-loading-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI03-tablet",
+      "viewport": 768,
+      "width": 768,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": 2
+    },
+    {
+      "name": "UI03-empty-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI03-error-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI04-error-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI04-sold-out-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI04-gallery-recovered-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI04-gallery-late-error-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI07-empty-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI07-error-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "profile-error-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI13-error500-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI13-empty-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "register-busy-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "login-busy-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI05-empty-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "UI06-empty-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "profile-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    },
+    {
+      "name": "password-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "imagesWithoutAlt": 0,
+      "adminLinks": 0,
+      "gridColumns": null
+    }
+  ],
+  "javascriptErrors": [],
+  "notes": [
+    "All five flows use real pages and real admin APIs; parent records per-step H/R/Available",
+    "UI13 injected500 uses actual WAF Production error template; no shipping test endpoint",
+    "Register/Login/Checkout/Cancel busy states use browser-only submit pause; separately verified real duplicate POSTs",
+    "Non-list screens use empty/unavailable/missing-input states appropriate to their function"
+  ]
+}
