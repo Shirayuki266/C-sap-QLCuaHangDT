@@ -13,6 +13,11 @@ if(args.SequenceEqual(new[]{"--mvc-foundation"}))
     await MvcFoundationChecks.Run();Check.Summary();return;
 }
 
+if(args.SequenceEqual(new[]{"--mvc-accounts"}))
+{
+    await MvcAccountChecks.Run();Check.Summary();return;
+}
+
 if(args.SequenceEqual(new[]{"--prompt2a"}))
 {
     await Prompt2AChecks.RunIsolated();Check.Summary();return;
@@ -48,5 +53,6 @@ if (args.Contains("--integration"))
     await SqlChecks.Run();
     await EmptyDatabaseSmokeChecks.Run();
     await MvcFoundationChecks.Run();
+    await MvcAccountChecks.Run();
 }
 Check.Summary();

@@ -11,7 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] · @shop.Name</title>
     <link rel="stylesheet" href="~/css/storefront.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/accounts.css" asp-append-version="true" />
     <script src="~/js/storefront.js" asp-append-version="true" defer></script>
+    @if (Context.Request.Path.StartsWithSegments("/Account"))
+    {
+        <script src="~/js/accounts.js" asp-append-version="true" defer></script>
+    }
 </head>
 <body>
     <a class="skip-link" href="#main">Đến nội dung chính</a>
@@ -29,6 +34,7 @@
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a href="/Account/Profile">Tài khoản của tôi</a>
+                    <form asp-controller="Account" asp-action="Logout" method="post"><button class="text-button" type="submit">Đăng xuất</button></form>
                 }
                 else
                 {

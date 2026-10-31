@@ -45,6 +45,10 @@ dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integrat
 
 The smoke creates an isolated empty QA DB, proves startup does not migrate, runs the actual `--migrate` CLI twice, inspects INFORMATION_SCHEMA/sys, runs the read-only audit, starts the host and checks public/protected/CSRF behavior. All18 application/session tables stay empty. It removes only the unique DB it created. The full CI integration run also executes this smoke. No checks target PhoneStore_Rebuild or a demo/live database.
 
+## Customer MVC
+
+Customer MVC is delivered in separate reviewable steps. The foundation merged as PR87 at `be460cb59c0bfc8f0a49f1787bead0b0487579d7`; the account step adds `/Account/Register`, `/Account/Login`, POST logout, own profile and password change. See [account behavior and test commands](docs/MVC_ACCOUNTS.md) and [all99 official MVC checklist results](docs/MVC_CHECKLIST_RESULTS.md). Guest-cart merging, catalog, checkout and order pages remain later steps; account screenshots do not certify those flows.
+
 ## Provisioning and sample data
 
 ADMIN provisioning requires explicit credentials supplied externally via `PHONESTORE_ADMIN_USERNAME`/`PHONESTORE_ADMIN_PASSWORD` and the separate `--provision-admin` command. See [secure-input instructions](docs/DATABASE.md); do not put credentials in shell command arguments or source.

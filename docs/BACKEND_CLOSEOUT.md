@@ -1,6 +1,6 @@
 # Backend closeout
 
-This PR changes documentation, a read-only security inventory tool and QA tests only. Runtime source, services, API endpoints and migrations have zero diff from accepted backend2A/develop dbc888a. The separate MVC foundation PR87 is not merged or certified by this work. No release tag is created.
+This records the historical backend closeout PR89: documentation, a read-only security inventory tool and QA tests only. Its runtime source, services, API endpoints and migrations have zero diff from accepted backend2A/develop dbc888a. The MVC foundation was outside that closeout. Subsequently, PR87 merged as be460cb59c0bfc8f0a49f1787bead0b0487579d7 with [post-merge CI SUCCESS](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41178900613); see [current foundation provenance](MVC_FOUNDATION.md). The later backend tag/release operation does not change the historical PR89 evidence captured here.
 
 The subsequent review of PR89 adds documentation only. [BACKEND_HANDOVER](BACKEND_HANDOVER.md) records clean-clone README execution, exact source paths, migration-lock mechanisms, service scope and the distinction between remote Git history and local recovery refs. This does not change the PR's tests/tool or runtime.
 

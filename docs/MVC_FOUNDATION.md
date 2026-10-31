@@ -1,5 +1,9 @@
 # Customer MVC — foundation PR
 
+## Merge provenance (current)
+
+PR87 was approved at edadd8403c2ef0f5295212dacc1ce59acf0167da and merged into develop on 2026-10-31 as **be460cb59c0bfc8f0a49f1787bead0b0487579d7**. [Post-merge CI SUCCESS](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41178900613) ran262 checks (251 backend/smoke plus11 foundation groups). Earlier references to the original pre-rebase head are historical, not the current foundation revision. The account PR starts from this verified merge; it does not re-open or re-merge PR87.
+
 This is step1 of six customer website PRs. It adds the MVC shell, shared layout, HTML error handling, customer-aware cookie events, automatic antiforgery and WebApplicationFactory SQL QA configuration. The catalog, account forms, cart/checkout and order controllers follow in separate PRs; navigation destinations for those screens are not implemented here. This PR is not final UI13 or K01-K15 acceptance.
 
 ## Approved boundary
@@ -18,7 +22,7 @@ FormErrors.AddSummary places a supplied service message at the top of ModelState
 
 ## Executed verification
 
-Release build:0 warnings/errors. The complete existing SQL/API suite plus11 new WebApplicationFactory groups passes **256 checks**. Tests create and dispose generated PhoneStore_QA_Rebuild_GUID databases under the existing explicit QA target guard. They do not use the demo database or PhoneStore_Rebuild. Run the normal --integration command for CI coverage, or --mvc-foundation for the focused groups.
+Release build:0 warnings/errors. At the merged foundation revision the complete SQL/API/smoke suite plus11 WebApplicationFactory groups passes **262 checks**. Tests create and dispose generated PhoneStore_QA_Rebuild_GUID databases under the existing explicit QA target guard. They do not use the demo database or PhoneStore_Rebuild. Run the normal --integration command for CI coverage, or --mvc-foundation for the focused groups.
 
 | Evidence | Assertions actually executed |
 | --- | --- |

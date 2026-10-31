@@ -1,0 +1,942 @@
+{
+  "at": "2026-10-31T08:27:29.128Z",
+  "scope": "MVC step2 Account K01-K05; no auto-merge",
+  "sourceSha256": "28d3546ffab80960d3e64dfa6bde1c112c5815d51342c957f88e52dcb0149305",
+  "contractSha256": "b12d10e82db8e68272686e75a138d2689fa940a14f7f2e2942cea4fd6c7a8d2b",
+  "foundation": {
+    "pr": 87,
+    "approvedHead": "edadd8403c2ef0f5295212dacc1ce59acf0167da",
+    "mergeCommit": "be460cb59c0bfc8f0a49f1787bead0b0487579d7",
+    "postMergeCI": "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41178900613"
+  },
+  "branch": "feature/90-mvc-accounts",
+  "ci": {
+    "conclusion": "success",
+    "headSha": "5cf710722d30b192f95845b65ba7f9260cbd2b27",
+    "status": "completed",
+    "url": "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41182414720",
+    "observedChecks": 277
+  },
+  "localChecks": 277,
+  "totals": {
+    "P0": 48,
+    "P1": 43,
+    "P2": 8
+  },
+  "groups": {
+    "P0": {
+      "total": 48,
+      "PASS": 14,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 34,
+      "N/A": 0
+    },
+    "P1": {
+      "total": 43,
+      "PASS": 12,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 31,
+      "N/A": 0
+    },
+    "P2": {
+      "total": 8,
+      "PASS": 2,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 6,
+      "N/A": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "WEB.BASE.01",
+      "priority": "P0",
+      "criterion": "Controller gọi dịch vụ trực tiếp trong cùng tiến trình qua một **adapter mỏng** (interface `IStoreService` gom các dịch vụ hiện có), không gọi lại HTTP API của chính mình; controller, view và adapter không chứa logic nghiệp vụ (giá, kho, trạng thái, quyền) và không sửa nghiệp vụ của dịch vụ cũ.",
+      "status": "NOT RUN",
+      "reason": "Account controller now calls the in-process adapter; catalog/cart/order controllers remain later steps. No complete15-UC claim.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.02",
+      "priority": "P0",
+      "criterion": "Mọi action ghi (POST) có antiforgery (cấu hình toàn cục hoặc từng action); POST thiếu/sai token bị từ chối và không ghi dữ liệu. Hai action JSON `/Cart/Quote` và `/Cart/Merge` cũng bắt token (gửi qua header).",
+      "status": "NOT RUN",
+      "reason": "Missing/invalid tokens on all five real Account POST routes reject400 with identical SQL; real Quote/Merge await cart PR.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.03",
+      "priority": "P0",
+      "criterion": "ViewModel và view **không** chứa giá vốn, `OnHand`, `Reserved`, hash mật khẩu, `ActorId`, `OperationKey`; kiểm bằng đọc mã và kiểm nội dung HTML của trang chi tiết, giỏ, đơn.",
+      "status": "NOT RUN",
+      "reason": "Account ViewModels/HTML have no forbidden fields; details/cart/order HTML not implemented yet.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.04",
+      "priority": "P0",
+      "criterion": "Dữ liệu người dùng và catalog được HTML-encode; không dùng `@Html.Raw` với dữ liệu người dùng. Thử `<script>` ở tên người nhận, địa chỉ, lý do hủy, từ khóa tìm kiếm → hiển thị như văn bản.",
+      "status": "NOT RUN",
+      "reason": "Actual Profile script-like name/address encoded; recipient/cancel/search screens remain later PRs.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.05",
+      "priority": "P0",
+      "criterion": "Trang cần đăng nhập chuyển hướng tới `/Account/Login?returnUrl=...`; `returnUrl` chỉ chấp nhận đường dẫn cục bộ (`Url.IsLocalUrl`). `returnUrl=https://evil.example` bị bỏ qua.",
+      "status": "PASS",
+      "reason": "Real Profile challenge and MVC Login GET/POST tested with local/external/protocol-relative/backslash destinations; Url.IsLocalUrl is used.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.06",
+      "priority": "P0",
+      "criterion": "Cookie phiên `HttpOnly`, `SameSite=Lax`, `Secure` khi chạy HTTPS; hạn 8 giờ không gia hạn trượt. Phiên hết hạn hoặc bị thu hồi → về trang đăng nhập, không lỗi 500.",
+      "status": "PASS",
+      "reason": "Cookie thực qua WAF: HttpOnly/SameSite=Lax/Secure HTTPS, SQL hết hạn8h, không sliding Set-Cookie; phiên hết hạn/thu hồi redirect. Dùng chính bộ validator phiên cũ.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.BASE.07",
+      "priority": "P0",
+      "criterion": "Không dùng cache làm nguồn chốt giá/kho/quyền: giá và tồn khả dụng đọc từ DB mỗi lần; trang giỏ, checkout, đơn, hồ sơ không bị cache (`no-store`).",
+      "status": "NOT RUN",
+      "reason": "Actual Account pages no-store; cart/checkout/order live-state acceptance awaits those pages.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.08",
+      "priority": "P1",
+      "criterion": "Phiên của tài khoản ADMIN (tạo qua API quản trị) không dùng được để đặt hàng/hủy đơn/sửa hồ sơ trên website khách; website không có đường vào chức năng quản trị.",
+      "status": "NOT RUN",
+      "reason": "Real ADMIN cookie rejected403 on Profile/Password and API unchanged; checkout/cancel await later PRs.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.09",
+      "priority": "P1",
+      "criterion": "Trang lỗi 403/404/500 thân thiện; 500 chỉ hiện mã tra cứu (`traceId`), không stack trace; môi trường Production tắt trang lỗi dành cho nhà phát triển.",
+      "status": "PASS",
+      "reason": "WAF HTML403/404/500 và500 môi trường Production; thông báo chung +traceId, không stack/private exception. Playwright chụp404 desktop/mobile.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.BASE.10",
+      "priority": "P1",
+      "criterion": "Tiền hiển thị dạng `23.980.000 đ`; thời gian hiển thị theo UTC+7, DB giữ UTC; số lượng là số nguyên.",
+      "status": "NOT RUN",
+      "reason": "Inherited formatting unit checks pass; money/order views remain unimplemented.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.11",
+      "priority": "P1",
+      "criterion": "Mọi mã lỗi dịch vụ được ánh xạ đúng bảng 4.1 trong `01_API_CONTRACT.md` (ModelState / redirect / trang lỗi); không mã lỗi dịch vụ nào biến thành 500.",
+      "status": "NOT RUN",
+      "reason": "Actual account errors mapped to summary/field/redirect/403; cart/checkout/order-specific mappings await later PRs.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.12",
+      "priority": "P1",
+      "criterion": "Nút gửi chuyển sang trạng thái đang xử lý và chống bấm lặp ở đăng ký, đăng nhập, đặt hàng, hủy đơn; server vẫn an toàn khi bị gửi lặp.",
+      "status": "NOT RUN",
+      "reason": "Chromium actual Register/Login double submits each1POST with disabled button, busy label and aria-busy; checkout/cancel deferred.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.13",
+      "priority": "P1",
+      "criterion": "Form giữ nguyên dữ liệu đã nhập khi có lỗi (trừ mật khẩu).",
+      "status": "NOT RUN",
+      "reason": "Actual account forms preserve safe values and clear secrets on errors; remaining forms deferred.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.BASE.14",
+      "priority": "P1",
+      "criterion": "Test tích hợp chạy trên CSDL QA riêng, không dùng CSDL demo/`PhoneStore_Rebuild`; CI chạy được toàn bộ.",
+      "status": "PASS",
+      "reason": "Full277 SQL QA checks; CI SUCCESS on verified implementation 5cf710722d30b192f95845b65ba7f9260cbd2b27. Latest PR head must still match its successful required check.",
+      "evidence": [
+        "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41182414720"
+      ]
+    },
+    {
+      "id": "WEB.BASE.15",
+      "priority": "P1",
+      "criterion": "Cấu hình và bí mật không nằm trong mã hoặc trang; log không chứa mật khẩu, cookie, token.",
+      "status": "PASS",
+      "reason": "Diff mới không thêm bí mật; Razor/HTML không có cấu hình nhạy cảm; logger không ghi body/cookie/token/password. Snapshot account/session/hash chỉ giữ trong RAM, không xuất.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.BASE.16",
+      "priority": "P1",
+      "criterion": "Layout và điều hướng thống nhất theo thiết kế: header (Trang chủ, Sản phẩm, Giỏ kèm số lượng, menu tài khoản), footer; màu xanh cho thao tác chính (phương án A).",
+      "status": "NOT RUN",
+      "reason": "Account links and POST Logout wired in shared frame; complete shopping navigation pending other controllers.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K01.01",
+      "priority": "P0",
+      "criterion": "Đăng ký hợp lệ → tạo đúng một tài khoản `CUSTOMER`, chuyển tới `/Account/Login` kèm thông báo; **không** tự đăng nhập.",
+      "status": "PASS",
+      "reason": "Real POST Register redirects to Login + TempData; SQL account/profile +1, sessions unchanged; repeat creates no second account.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.02",
+      "priority": "P0",
+      "criterion": "Trùng tên đăng nhập/điện thoại/email → hiển thị lỗi trùng **ở mức form** (thông báo chung, không bắt buộc đúng trường vì dịch vụ chưa trả thông tin trường), giữ dữ liệu form, không tạo dữ liệu dở dang. Không đoán trường bằng cách phân tích chuỗi thông báo.",
+      "status": "PASS",
+      "reason": "Three real duplicate POSTs (username/phone/email): summary only, safe input retained, passwords absent, exact accounts/profiles/sessions/business snapshot unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.03",
+      "priority": "P0",
+      "criterion": "Form bị gắn thêm `role=ADMIN`, `active`, `id` → bị bỏ qua (kiểm bằng request HTTP thật).",
+      "status": "PASS",
+      "reason": "HTTP form role=ADMIN, active=false, id=other ignored; SQL proves new active CUSTOMER with its own profile.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.04",
+      "priority": "P1",
+      "criterion": "Email để trống được chấp nhận (nhiều tài khoản không có email); email sai định dạng báo lỗi.",
+      "status": "PASS",
+      "reason": "Two registrations without email store NULL; malformed email produces field error and identical SQL snapshot.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.05",
+      "priority": "P1",
+      "criterion": "Chính sách mật khẩu theo backend (10–128 ký tự, có chữ và số) được nêu trước khi gửi; mật khẩu không bao giờ xuất hiện trong HTML trả về.",
+      "status": "PASS",
+      "reason": "Policy visible before submission; 10/128-character valid boundaries accepted; short/129/no-letter/no-digit rejected without mutation or echoed password.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.01",
+      "priority": "P0",
+      "criterion": "Đăng nhập đúng → tạo phiên; chuyển tới `returnUrl` cục bộ hoặc trang chủ.",
+      "status": "PASS",
+      "reason": "Real MVC login creates fixed eight-hour SQL session and secure cookie; local Profile redirect; external/protocol-relative/backslash return URLs ignored.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.02",
+      "priority": "P0",
+      "criterion": "Sai thông tin hoặc tài khoản khóa → lỗi chung trên form; không lộ tài khoản có tồn tại hay không; trạng thái khóa chỉ báo sau khi mật khẩu đúng.",
+      "status": "PASS",
+      "reason": "Nonexistent/wrong/locked (wrong and correct password) requests render identical generic summary and create no session or partial SQL changes.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.03",
+      "priority": "P0",
+      "criterion": "Tài khoản `ADMIN` đăng nhập ở form khách bị từ chối bằng lỗi chung, không có phiên.",
+      "status": "PASS",
+      "reason": "ADMIN credentials on actual customer form produce the same generic summary and no SQL session.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.04",
+      "priority": "P1",
+      "criterion": "Đăng nhập xong gọi hợp nhất giỏ guest (xem WEB.K10.04) và số lượng giỏ trên header được cập nhật.",
+      "status": "NOT RUN",
+      "reason": "NOT RUN: guest localStorage cart and real /Cart/Merge belong to the cart/checkout PR; no synthetic merge endpoint shipped.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K02.05",
+      "priority": "P2",
+      "criterion": "Mở trang đăng nhập khi đã có phiên: xử lý có kiểm soát (chuyển về trang chủ hoặc báo đã đăng nhập).",
+      "status": "PASS",
+      "reason": "Authenticated GET Login/Register redirects home with unchanged session count.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K03.01",
+      "priority": "P0",
+      "criterion": "Đăng xuất bằng `POST` + antiforgery thu hồi phiên hiện tại; cookie cũ không dùng được; `GET /Account/Logout` không đăng xuất.",
+      "status": "PASS",
+      "reason": "GET Logout returns405 without revocation; tokened POST revokes exactly one session; replay of actual old cookie redirects to login.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K03.02",
+      "priority": "P1",
+      "criterion": "Đăng xuất không xóa hồ sơ, giỏ máy chủ hay đơn; sau đăng xuất người dùng không thấy dữ liệu giỏ máy chủ của người trước.",
+      "status": "PASS",
+      "reason": "Logout preserves exact profiles/cart/orders/lines/payments/history/stock/variants snapshot; other device works, anonymous header hides previous cart count.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K03.03",
+      "priority": "P1",
+      "criterion": "Đăng xuất khi phiên đã hết hạn → về đăng nhập, không lỗi 500.",
+      "status": "PASS",
+      "reason": "Expired SQL session POST Logout redirects to Login; exact SQL snapshot unchanged; no500.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.01",
+      "priority": "P0",
+      "criterion": "Chỉ sửa được hồ sơ của chính mình; `customerId`, `role`, `active` trong form bị bỏ qua.",
+      "status": "PASS",
+      "reason": "Real profile POST ignores foreign customerId/id/Username/role/active; only own profile changes, other customer and account role unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.02",
+      "priority": "P1",
+      "criterion": "Trùng điện thoại/email với người khác → lỗi trùng ở mức form (như `WEB.K01.02`); giữ nguyên giá trị của chính mình không bị báo trùng.",
+      "status": "PASS",
+      "reason": "Duplicate phone/email render summary only with retained input and identical complete SQL snapshot; own unchanged phone/email accepted.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.03",
+      "priority": "P1",
+      "criterion": "Lưu thành công hiển thị lại đúng; đơn cũ vẫn giữ snapshot người nhận cũ.",
+      "status": "PASS",
+      "reason": "PRG Profile displays saved fields + TempData; serialized old order recipient/address/phone and stock unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.04",
+      "priority": "P1",
+      "criterion": "Chưa đăng nhập vào trang hồ sơ → chuyển tới đăng nhập.",
+      "status": "PASS",
+      "reason": "Anonymous actual Profile/Password routes redirect to local Login and carry no-store.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K05.01",
+      "priority": "P0",
+      "criterion": "Sai mật khẩu hiện tại hoặc mật khẩu mới không đạt → lỗi tại trường, không đổi mật khẩu.",
+      "status": "PASS",
+      "reason": "Wrong current/weak new password yields correct field error; both password inputs cleared; exact SQL snapshot/hash/sessions unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K05.02",
+      "priority": "P0",
+      "criterion": "Đổi thành công → mọi phiên của tài khoản bị thu hồi (kể cả thiết bị khác), chuyển tới đăng nhập kèm thông báo.",
+      "status": "PASS",
+      "reason": "Valid change removes every SQL session (multiple real devices); both cookies challenged; login notice appears; old password fails, new succeeds.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K05.03",
+      "priority": "P1",
+      "criterion": "Mật khẩu không xuất hiện trong response hoặc log.",
+      "status": "PASS",
+      "reason": "Submitted passwords absent from HTTP response bodies, browser password inputs and actual Kestrel host logs; no body/secret logging added.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K06.01",
+      "priority": "P0",
+      "criterion": "`/Catalog/Index` chỉ hiện sản phẩm đang bán (đúng DEC.03); phân trang và tổng số đúng; không lộ giá vốn hay tồn thực.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K06.02",
+      "priority": "P1",
+      "criterion": "Trạng thái rỗng thân thiện, gợi ý đổi từ khóa hoặc xóa bộ lọc.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K06.03",
+      "priority": "P1",
+      "criterion": "`page`/`pageSize` ngoài khoảng được xử lý nhất quán, không lỗi 500.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K06.04",
+      "priority": "P2",
+      "criterion": "Thẻ sản phẩm có ảnh, tên, giá từ biến thể đang bán, trạng thái hàng; lưới 3 cột thu về 1–2 cột trên màn hình nhỏ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K07.01",
+      "priority": "P0",
+      "criterion": "Từ khóa chứa ký tự đặc biệt, SQL-like hoặc HTML không gây lỗi 500 và được hiển thị lại an toàn (đã encode).",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K07.02",
+      "priority": "P1",
+      "criterion": "Từ khóa trống hoặc toàn khoảng trắng = không lọc; từ khóa không khớp → tập rỗng đúng cấu trúc.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K08.01",
+      "priority": "P1",
+      "criterion": "Kết hợp hãng + khoảng giá + dung lượng + màu + sắp xếp cho kết quả đúng; dung lượng và màu cùng thỏa trên **một** biến thể; bộ lọc được giữ khi đổi trang.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K08.02",
+      "priority": "P1",
+      "criterion": "Nút xóa bộ lọc trở về danh sách theo điều kiện còn lại, tổng số và phân trang khớp.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K08.03",
+      "priority": "P1",
+      "criterion": "Khoảng giá đảo hoặc `sort` lạ → báo lỗi nhẹ trên bộ lọc, không 500.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K08.04",
+      "priority": "P2",
+      "criterion": "Màn hình nhỏ: bộ lọc chuyển thành bảng mở.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K09.01",
+      "priority": "P0",
+      "criterion": "`/Catalog/Details/{id}`: chọn dung lượng/màu cập nhật giá và số lượng có thể bán; chỉ hiển thị khả dụng (`OnHand − Reserved`), không hiển thị tồn thực.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K09.02",
+      "priority": "P0",
+      "criterion": "Sản phẩm không tồn tại hoặc ngừng bán → 404; cặp (`productId`, `variantId`) không khớp bị chặn **ở adapter MVC** (đọc `CatalogService` trước khi gọi dịch vụ giỏ); giá, tồn, quyền vẫn do dịch vụ cũ quyết định.",
+      "status": "NOT RUN",
+      "reason": "Inherited association adapter tests pass; actual Catalog/Details + Cart/Add routes await catalog/cart PRs.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K09.03",
+      "priority": "P1",
+      "criterion": "Hết hàng: nút Thêm vào giỏ bị vô hiệu kèm chữ \"Hết hàng\"; gửi thẳng request vẫn bị server từ chối.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K09.04",
+      "priority": "P1",
+      "criterion": "Số lượng là số nguyên dương và bị giới hạn theo khả dụng; server kiểm tra lại.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.HOME.01",
+      "priority": "P1",
+      "criterion": "Trang chủ có giới thiệu, sản phẩm bán chạy (đúng DEC.07 qua dịch vụ), liên hệ và footer; danh sách bán chạy rỗng thì ẩn mục.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.HOME.02",
+      "priority": "P2",
+      "criterion": "Thông tin cửa hàng/liên hệ là dữ liệu mẫu và cấu hình được, không hard-code rải rác.",
+      "status": "PASS",
+      "reason": "StorefrontOptions cấu hình tập trung tên/giới thiệu/liên hệ; Razor render nội dung được cấu hình trong WAF và encode script-like input. Đây là ô cấu hình, không nghiệm thu toàn UI13.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.K10.01",
+      "priority": "P0",
+      "criterion": "Khách đăng nhập thêm vào giỏ máy chủ: cộng dồn dòng cùng biến thể; vượt khả dụng hoặc ngừng bán → lỗi tại dòng; `Reserved` không đổi.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K10.02",
+      "priority": "P0",
+      "criterion": "Giá luôn lấy từ server: sửa giá/số lượng giả trong form hoặc `localStorage` không ảnh hưởng giá hiển thị và tiền tính.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K10.03",
+      "priority": "P0",
+      "criterion": "**Giỏ guest:** khi chưa đăng nhập, giỏ nằm ở `localStorage`; `/Cart/Quote` định giá và kiểm tồn mà không lưu server; dữ liệu giả (giá, userId) trong `localStorage` bị bỏ qua. *(Ô K10.03 của checklist backend được chuyển sang đây.)*",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K10.04",
+      "priority": "P0",
+      "criterion": "Sau đăng nhập, `/Cart/Merge` hợp nhất theo `max`, cắt theo khả dụng, bỏ dòng ngừng bán và hiển thị các dòng bị điều chỉnh; gọi lặp (F5, bấm hai lần) không nhân đôi số lượng; `localStorage` được dọn khi thành công.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K10.05",
+      "priority": "P1",
+      "criterion": "Hợp nhất lỗi (mạng, 500) → giỏ guest không bị mất và thử lại được.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K10.06",
+      "priority": "P1",
+      "criterion": "Số lượng giỏ trên header đúng cho cả guest và khách đăng nhập.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K11.01",
+      "priority": "P0",
+      "criterion": "Sửa số lượng/xóa dòng → tổng cập nhật theo phản hồi của server; xóa dòng cuối cho giỏ rỗng hợp lệ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K11.02",
+      "priority": "P0",
+      "criterion": "Cập nhật/xóa chỉ tác động giỏ của chính khách đang đăng nhập; không sửa được giỏ người khác bằng cách đổi tham số.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K11.03",
+      "priority": "P1",
+      "criterion": "Số lượng vượt tồn, mặt hàng ngừng bán hoặc giá đổi được hiển thị tại đúng dòng liên quan.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K11.04",
+      "priority": "P1",
+      "criterion": "Nút Đặt hàng yêu cầu đăng nhập; guest đăng nhập xong được đưa về giỏ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K11.05",
+      "priority": "P2",
+      "criterion": "Màn hình nhỏ: giỏ thành từng thẻ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.01",
+      "priority": "P0",
+      "criterion": "`GET /Cart/Checkout` chỉ cho khách đăng nhập; giỏ rỗng → về giỏ; mỗi lần mở trang sinh `requestKey` mới (GUID, trường ẩn).",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.02",
+      "priority": "P0",
+      "criterion": "`POST /Cart/Checkout` thành công → một đơn `CHO_XAC_NHAN`, COD `CHUA_THU`, `Reserved` tăng đúng, giỏ được xóa; chuyển tới `/Orders/Details/{id}` hiển thị mã đơn, tổng tiền, trạng thái và liên kết Xem đơn.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.03",
+      "priority": "P0",
+      "criterion": "Giá đổi giữa lúc xem và lúc đặt → trang hiển thị giá mới và yêu cầu xác nhận lại; chưa tạo đơn, chưa giữ kho.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.04",
+      "priority": "P0",
+      "criterion": "Thiếu hàng, ngừng bán hoặc giỏ rỗng → quay lại với lỗi theo dòng; transaction thất bại không bao giờ hiện \"thành công\" và không để lại đơn dở dang.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.05",
+      "priority": "P0",
+      "criterion": "Gửi form hai lần (bấm đúp, F5, Back rồi gửi lại) cùng `requestKey` → chỉ một đơn, `Reserved` tăng một lần; người dùng được chuyển tới đơn đã tạo.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.06",
+      "priority": "P0",
+      "criterion": "Hai khách cùng đặt món cuối cùng → chỉ một thành công; người kia nhận lỗi thiếu hàng và giỏ không bị mất.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.07",
+      "priority": "P0",
+      "criterion": "Form bị gắn thêm `total`, `price`, `paymentStatus`, `customerId` → bị bỏ qua; chỉ chấp nhận `paymentMethod = COD`.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.08",
+      "priority": "P1",
+      "criterion": "Người nhận, điện thoại, địa chỉ bắt buộc; sai → lỗi tại trường và giữ form; cho sửa địa chỉ mặc định lấy từ hồ sơ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.09",
+      "priority": "P1",
+      "criterion": "Phiên hết hạn khi đang ở trang đặt hàng → đăng nhập lại rồi quay lại không mất giỏ; không có đơn nào được tạo bằng phiên cũ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K12.10",
+      "priority": "P2",
+      "criterion": "Màn hình nhỏ: tóm tắt tiền đặt dưới thông tin giao hàng.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K13.01",
+      "priority": "P0",
+      "criterion": "`/Orders/Index` chỉ có đơn của khách hiện tại; lọc theo trạng thái, thời gian, mã; phân trang; chưa đăng nhập → đăng nhập.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K13.02",
+      "priority": "P1",
+      "criterion": "Trạng thái rỗng thân thiện; khoảng ngày đảo báo lỗi nhẹ, không 500.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K13.03",
+      "priority": "P1",
+      "criterion": "Xem danh sách không đổi trạng thái, ngày hoàn tất hay thanh toán (đối soát DB trước/sau).",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K14.01",
+      "priority": "P0",
+      "criterion": "`/Orders/Details/{id}` với đơn của khách khác hoặc ID không tồn tại → 404 giống nhau (không lộ tồn tại); đã thử bằng ID đơn của khách khác.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K14.02",
+      "priority": "P0",
+      "criterion": "Hiển thị snapshot (sản phẩm, giá, số lượng, người nhận, tổng, COD, trạng thái thanh toán, timeline); đổi catalog hoặc hồ sơ rồi xem lại vẫn không đổi.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K14.03",
+      "priority": "P1",
+      "criterion": "Timeline chỉ có thời điểm, từ/đến, lý do; không lộ `ActorId` hay tài khoản quản trị.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K14.04",
+      "priority": "P1",
+      "criterion": "Nút Hủy chỉ hiện khi `CHO_XAC_NHAN`, có hộp xác nhận trước khi gửi; trạng thái hiển thị bằng chữ, không chỉ bằng màu.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K15.01",
+      "priority": "P0",
+      "criterion": "`POST /Orders/Cancel` hợp lệ (chủ đơn, `CHO_XAC_NHAN`, có lý do, đúng `version`) → `DA_HUY`, `Reserved` giảm đúng, `OnHand` không đổi, COD vẫn `CHUA_THU`.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K15.02",
+      "priority": "P0",
+      "criterion": "Hủy đơn của người khác hoặc ID giả → 404 và không đổi dữ liệu.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K15.03",
+      "priority": "P0",
+      "criterion": "Admin vừa xác nhận (version cũ) → khách nhận thông báo \"đơn đã thay đổi, vui lòng tải lại\"; đơn không bị hủy.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K15.04",
+      "priority": "P0",
+      "criterion": "Gửi hủy hai lần hoặc hủy đơn đã `DA_XAC_NHAN` trở đi → từ chối; `Reserved` không giảm lần hai.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.K15.05",
+      "priority": "P1",
+      "criterion": "Thiếu lý do → lỗi tại trường, giữ form.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.FLOW.01",
+      "priority": "P0",
+      "criterion": "Guest xem trang chủ → danh mục → chi tiết → thêm giỏ (`localStorage`) → Đặt hàng → đăng nhập → giỏ được hợp nhất → đặt COD → xem đơn → hủy → `Reserved` được trả lại.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.FLOW.02",
+      "priority": "P0",
+      "criterion": "Khách đặt hàng → Admin (API quản trị) xác nhận, xuất giao, hoàn tất → khách thấy đúng trạng thái, timeline, COD \"Đã thu\"; tổng tiền khớp từng bước.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.FLOW.03",
+      "priority": "P0",
+      "criterion": "Admin đổi tỷ lệ lợi nhuận giữa lúc có giỏ và lúc đặt → khách xác nhận lại giá mới → đơn lưu giá mới; giỏ không lưu giá cũ.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.FLOW.04",
+      "priority": "P1",
+      "criterion": "Sản phẩm bị ngừng bán khi đang trong giỏ → giỏ báo dòng không hợp lệ; checkout bị chặn.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.FLOW.05",
+      "priority": "P1",
+      "criterion": "Hết phiên giữa luồng → đăng nhập lại → quay lại đúng trang, giỏ còn nguyên.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.UI.01",
+      "priority": "P1",
+      "criterion": "Có ảnh chụp UI03, UI04, UI05, UI06, UI07, UI13 ở màn hình rộng và rộng ≤ 480 px; bố cục khớp thiết kế: màu xanh cho thao tác chính, thẻ 3 cột thu còn 1–2 cột, bộ lọc thành bảng mở, giỏ thành thẻ.",
+      "status": "NOT RUN",
+      "reason": "Four account forms have desktop/390px captures; full UI03–UI07/UI13 screenshots await remaining screens.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.UI.02",
+      "priority": "P2",
+      "criterion": "Bàn phím dùng được (thứ tự Tab, focus rõ), form có nhãn, ảnh có `alt`.",
+      "status": "NOT RUN",
+      "reason": "Account labels, keyboard/form focus and no-overflow verified; entire website keyboard coverage deferred.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.UI.03",
+      "priority": "P2",
+      "criterion": "Mỗi màn hình có trạng thái rỗng, đang tải và lỗi rõ ràng.",
+      "status": "NOT RUN",
+      "reason": "Later MVC step; action/screen not yet implemented and not executed.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.GATE.01",
+      "priority": "P0",
+      "criterion": "Đủ 15 chức năng khách (K01–K15) có trang/action chạy được và bằng chứng; phần chưa làm được ghi rõ.",
+      "status": "NOT RUN",
+      "reason": "Only foundation and Account K01-K05 implemented; catalog/cart/orders/flows not complete.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.GATE.02",
+      "priority": "P0",
+      "criterion": "Mọi ô P0 là `PASS` (hoặc `BLOCKED` có lý do được bạn duyệt).",
+      "status": "NOT RUN",
+      "reason": "Remaining P0 NOT RUN belong to later MVC steps; no overall handover acceptance.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.GATE.03",
+      "priority": "P0",
+      "criterion": "CI chạy đúng commit mới nhất và xanh; test chạy trên CSDL QA.",
+      "status": "PASS",
+      "reason": "Full277 SQL QA checks; CI SUCCESS on verified implementation 5cf710722d30b192f95845b65ba7f9260cbd2b27. Latest PR head must still match its successful required check.",
+      "evidence": [
+        "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41182414720"
+      ]
+    },
+    {
+      "id": "WEB.GATE.04",
+      "priority": "P0",
+      "criterion": "Không đổi dịch vụ, schema, API quản trị ngoài phạm vi được duyệt (diff chứng minh). **Ngoại lệ đã duyệt:** thêm mới interface `IStoreService` và adapter MVC (chỉ thêm file, không sửa file dịch vụ cũ) cùng cấu hình host MVC; hồi quy của API quản trị phải giữ nguyên kết quả. Mọi lỗ hổng phát hiện ở dịch vụ được báo cáo, không tự sửa.",
+      "status": "PASS",
+      "reason": "Existing Infrastructure/services/migrations/API Program/Endpoints/Security have empty diff from merged foundation. Only MVC interface/adapter/presentation/tests/docs changed;277 local regression checks pass.",
+      "evidence": [
+        "docs/MVC_ACCOUNTS.md"
+      ]
+    },
+    {
+      "id": "WEB.GATE.05",
+      "priority": "P1",
+      "criterion": "Ảnh chụp hoặc video chạy tay các luồng `WEB.FLOW.01`–`03`.",
+      "status": "NOT RUN",
+      "reason": "Account screenshots are not complete WEB.FLOW.01–03 purchasing-flow evidence.",
+      "evidence": []
+    },
+    {
+      "id": "WEB.GATE.06",
+      "priority": "P1",
+      "criterion": "Báo cáo theo đúng nhãn P0/P1/P2 trong file này, kèm bảng bằng chứng.",
+      "status": "PASS",
+      "reason": "All99 official IDs retained with exactly48P0/43P1/8P2, per-ID evidence/limits and counts.",
+      "evidence": [
+        "docs/MVC_CHECKLIST_RESULTS.md"
+      ]
+    }
+  ]
+}
