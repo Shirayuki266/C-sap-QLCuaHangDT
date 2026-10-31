@@ -1,52 +1,56 @@
-# Phone Store
+# Phone Store backend
 
-Clean rebuild of the phone store backend, started on 2026-10-30. The previous implementation and its historical QA claims have been removed from this branch. Git history and existing SQL databases are preserved.
+.NET10 + ASP.NET Core API + EF Core/SQL Server. The accepted backend implements K01-K15/A01-A22 server behavior; MVC/WinForms UI is a separate stage. See [API mapping](docs/API_COMPATIBILITY.md), [final backend checklist](docs/BACKEND_CHECKLIST_FINAL.md) and [database details](docs/DATABASE.md).
 
-The shared backend implements the revised report’s K01-K15 and A01-A22 server flows: accounts, public/internal catalog, variants/pricing, suppliers, persistent purchase drafts, stock/journal, carts, COD orders and fulfillment, customer administration, invoice data and reports. SQL Server is the only database. New customer pages, WinForms screens and physical printing remain the next phase. See [commerce contracts](docs/COMMERCE.md), [database/demo operations](docs/DATABASE.md) and [requirement evidence](docs/TRACEABILITY.md).
+## Run from a new database
 
-## Structure
-
-- `PhoneStore.Core`: shared domain rules and service contracts.
-- `PhoneStore.Infrastructure`: EF Core and SQL Server persistence.
-- `PhoneStore.Web`: shared ASP.NET Core API/MVC host. No customer UI is implemented yet.
-- `PhoneStore.Checks`: executable checks; failures produce a nonzero exit code. Use `dotnet run`, not `dotnet test`, for this runner.
-
-## Local development
-
-Requires .NET 10 SDK and SQL Server. The dependency versions follow the previous repository's .NET 10 baseline; no major upgrade was made. Run from this directory:
+Requires the .NET10 SDK and SQL Server. Run at the repository root. The following is a **local Windows-authentication example**, not a production connection or credential:
 
 ```powershell
 dotnet restore PhoneStore.slnx
 dotnet build PhoneStore.slnx -c Release --no-restore
-$env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore_Rebuild;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
 $env:ASPNETCORE_ENVIRONMENT = 'Development'
-# Explicitly create a NEW database and apply the clean schema, without accounts or sample data (use explicit bootstrap commands afterward):
+$env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore_Dev_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --urls http://localhost:5080
 ```
 
-`GET /health/live` checks the process. Successful readiness includes `environment` and a stable SHA-256 `fingerprint` of the configured application/environment/server/database target, excluding credentials. Remote ADMIN clients compare those with their configured expected values before login and must separately validate HTTPS/TLS; this fingerprint is not a certificate fingerprint. `GET /health/ready` returns 503 until the exact migration lineage/checksum is installed. Normal startup does not create, migrate, seed or reset a database. The explicit `--migrate` command creates the new schema or verifies/replays its version without duplication; it rejects legacy/unmanaged schemas and altered applied checksums. Do not point it at an old application database. There are no default credentials. `TrustServerCertificate=True` is for local development only; configure a trusted SQL certificate for deployment.
+Use a genuinely new DB name; never point this command at a legacy or live DB. `--migrate` explicitly creates/verifies the **rebuild001** lineage and checksum. It installs the final19-table schema, including BIEN_THE.Cost/ProfitPercent/Price; the actual ledger is **dbo.__PhoneStoreMigrations**. No002/003 migration is required or supplied for this rebuild. **Chỉ hỗ trợ dựng DB mới, không có đường nâng cấp từ DB cũ.** Legacy003 price-preserving upgrade coverage is N/A.
 
-## Registration API (K01)
+Normal host startup does not migrate, seed or create accounts. Check `GET /health/live` and `GET /health/ready`; readiness is503 before migration and200 afterward. There are no default passwords. Stop the host with Ctrl+C. Use a trusted SQL certificate and `TrustServerCertificate=False` outside local development; remote application access requires HTTPS.
 
-Fetch `GET /api/security/token`, preserve the returned anti-forgery cookie, then send its `token` value in `X-CSRF-TOKEN` to `POST /api/auth/register`. JSON fields are `username`, `password`, `fullName`, `phone`, optional `email` and `address`. Unknown fields are rejected; clients cannot set role or passwordHash. Input policies are in [contracts](docs/CONTRACTS.md).
+## Configuration
 
-Success returns HTTP 201 `{id,username,role}` with role CUSTOMER. The service saves the account and profile in one SQL transaction, hashes the password, enforces unique username/phone/email, and does not log the customer in. Missing/invalid CSRF, malformed input and duplicates return safe Vietnamese errors. There are no registration pages or public ADMIN registration.
+| Setting | Required use |
+| --- | --- |
+| `ConnectionStrings__Store` | Explicit application SQL target, supplied externally; never commit a real connection or password |
+| `ASPNETCORE_ENVIRONMENT` | Development locally; Production for a configured deployment |
+| `--urls` / `ASPNETCORE_URLS` | Host listening URL; local example above, HTTPS for remote use |
+| `PHONESTORE_QA_SERVER`, `PHONESTORE_QA_DATABASE`, `PHONESTORE_TEST_CONNECTION` | Matching explicit QA target for SQL checks; QA DB name must start with PhoneStore_QA_ |
+| `PHONESTORE_BACKEND_SMOKE_REPORT` | Optional path for sanitized smoke/schema JSON; never includes connection strings, cookies or tokens |
 
-`POST /api/auth/login` accepts `{username,password,surface}` with surface `customer` or `admin`, returning a safe identity/expiry and protected session cookie. Sessions last eight hours without sliding renewal and are validated from SQL Server on each request. `GET /api/auth/session` requires a live session; `GET /api/admin/session` requires ADMIN. `POST /api/auth/logout` revokes only the current session. `POST /api/account/password` verifies the current password and revokes all sessions of that account when changing it. `GET/PUT /api/account/profile` reads/edits only the caller's CUSTOMER profile. Mutations require CSRF; successful logout/password/profile updates return 204. Use a fresh CSRF token after identity changes. See [account contracts and evidence](docs/ACCOUNTS.md). Explicit ADMIN provisioning and atomic demo seeding are documented in [database operations](docs/DATABASE.md). Account UI remains deferred.
+SQL-authentication deployments must inject credentials through environment/secret management. The repository contains no real application connection or production password; disposable QA fixture credentials are identified in the [security review](docs/BACKEND_SECURITY_REVIEW.md).
 
-## Checks
+## Test and reproduce the empty-DB smoke
+
+The checks are an executable runner: use `dotnet run`, **not** `dotnet test`. This section requires the restore and Release build above before either `--no-build` command; do not start here in a fresh checkout without building first.
 
 ```powershell
-dotnet run --no-build -c Release --project tests/PhoneStore.Checks
 $env:PHONESTORE_QA_SERVER = 'localhost'
 $env:PHONESTORE_QA_DATABASE = 'PhoneStore_QA_Local'
 $env:PHONESTORE_TEST_CONNECTION = 'Server=localhost;Database=PhoneStore_QA_Local;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
+dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --backend-smoke
 dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integration
 ```
 
-The HTTP checks start and stop their own backend on a loopback port. Integration checks require an explicit matching QA connection, create unique databases and remove only those databases afterward. They do not touch `PhoneStore`, `PhoneStore_Rebuild` or a pre-existing QA database. Checks cover migrations/constraints/rowversions; account/session/role/CSRF and ownership; catalog validation and pricing; receipt/stock reconciliation; cart merge and checkout idempotency; last-unit and competing order-action races; late SQL rollback for passwords, purchases, checkout, lock and COD completion; invoices and UTC+7 reports. A separate disposable SQL database proves the complete 20-product/customer demo, audit, non-destructive rerun and actual HTTP checkout-to-paid-invoice/report workflow.
+The smoke creates an isolated empty QA DB, proves startup does not migrate, runs the actual `--migrate` CLI twice, inspects INFORMATION_SCHEMA/sys, runs the read-only audit, starts the host and checks public/protected/CSRF behavior. All18 application/session tables stay empty. It removes only the unique DB it created. The full CI integration run also executes this smoke. No checks target PhoneStore_Rebuild or a demo/live database.
 
-See [requirements trace](docs/TRACEABILITY.md), [data/service contracts](docs/CONTRACTS.md), [decisions](docs/DECISIONS.md) and [contribution rules](CONTRIBUTING.md) for the implemented server contracts, actual merged evidence and UI/deployment boundaries.
+## Provisioning and sample data
 
-Private Word requirements, the implementation prompt and the option A design archive remain local and ignored by Git. They must not be uploaded to issues or PRs. Shop contact details and product assets must be configured from verified data before any public release.
+ADMIN provisioning requires explicit credentials supplied externally via `PHONESTORE_ADMIN_USERNAME`/`PHONESTORE_ADMIN_PASSWORD` and the separate `--provision-admin` command. See [secure-input instructions](docs/DATABASE.md); do not put credentials in shell command arguments or source.
+
+The optional seeder runs **only by the explicit `--seed-demo` command**, only on a separate **QA/dev DB**, and **must never run on a live DB**. It has no default password: `PHONESTORE_DEMO_ADMIN_PASSWORD` and `PHONESTORE_DEMO_CUSTOMER_PASSWORD` must be supplied externally. The existing runtime does not enforce a QA-name restriction; adding that guard is an accepted later improvement, not part of this closeout. The empty-DB startup/smoke never invokes it.
+
+Private Word files and the prototype archive are ignored and untracked. The locally extracted prototype directory is untracked, but is not covered by the current ignore rules: never stage it. The full GitHub branch/tag history was checked separately from local Codex recovery refs; those local recovery trees contain prototype objects, so do not claim every local Git object is free of private inputs. No refs were removed or history rewritten. See [handover and review scope](docs/BACKEND_HANDOVER.md).
+
+Backend tagging remains pending explicit user approval; this PR neither merges itself nor creates `backend-v1.0`. See [closeout evidence and tag procedure](docs/BACKEND_CLOSEOUT.md).

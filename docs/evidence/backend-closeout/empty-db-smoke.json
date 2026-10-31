@@ -1,0 +1,894 @@
+{
+  "ActualMigration": {
+    "Id": "rebuild/001_initial_store",
+    "Sha256": "D6F075FF66B08AB24D71D44CFA727DD9ACF5001C359DECB157CB5A4C8DD8C274",
+    "AppliedAt": "2026-10-31T03:29:13.7319831"
+  },
+  "AppliedIds": [
+    "rebuild/001_initial_store"
+  ],
+  "LegacyUpgrade": "N/A: ch\u1EC9 h\u1ED7 tr\u1EE3 d\u1EF1ng DB m\u1EDBi, kh\u00F4ng c\u00F3 \u0111\u01B0\u1EDDng n\u00E2ng c\u1EA5p t\u1EEB DB c\u0169",
+  "Schema": {
+    "Tables": [
+      "__PhoneStoreMigrations",
+      "BIEN_THE",
+      "DANH_MUC",
+      "DON_HANG",
+      "DON_HANG_CT",
+      "GIO_HANG_CT",
+      "HANG",
+      "KHACH_HANG",
+      "LICH_SU_DON",
+      "NHA_CUNG_CAP",
+      "NHAT_KY_KHO",
+      "PHIEN",
+      "PHIEU_NHAP",
+      "PHIEU_NHAP_CT",
+      "SAN_PHAM",
+      "SAN_PHAM_ANH",
+      "TAI_KHOAN",
+      "THANH_TOAN",
+      "TON_KHO"
+    ],
+    "LedgerTable": "dbo.__PhoneStoreMigrations",
+    "VariantColumns": [
+      {
+        "ColumnName": "Cost",
+        "DataType": "decimal",
+        "Precision": 18,
+        "Scale": 2,
+        "IsNullable": "NO"
+      },
+      {
+        "ColumnName": "Price",
+        "DataType": "decimal",
+        "Precision": 18,
+        "Scale": 2,
+        "IsNullable": "NO"
+      },
+      {
+        "ColumnName": "ProfitPercent",
+        "DataType": "decimal",
+        "Precision": 7,
+        "Scale": 2,
+        "IsNullable": "NO"
+      }
+    ],
+    "Rowversions": [
+      {
+        "TableName": "BIEN_THE",
+        "ColumnName": "Version",
+        "MaxLength": 8,
+        "IsNullable": false
+      },
+      {
+        "TableName": "DON_HANG",
+        "ColumnName": "Version",
+        "MaxLength": 8,
+        "IsNullable": false
+      },
+      {
+        "TableName": "PHIEU_NHAP",
+        "ColumnName": "Version",
+        "MaxLength": 8,
+        "IsNullable": false
+      },
+      {
+        "TableName": "TON_KHO",
+        "ColumnName": "Version",
+        "MaxLength": 8,
+        "IsNullable": false
+      }
+    ],
+    "UniqueIndexes": [
+      {
+        "TableName": "__PhoneStoreMigrations",
+        "IndexName": "PK____PhoneS__3214EC07A0E69A11",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "BIEN_THE",
+        "IndexName": "PK__BIEN_THE__3214EC0763D514B6",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "BIEN_THE",
+        "IndexName": "UQ__BIEN_THE__CA1FD3C5FACDD4BA",
+        "Columns": "Sku",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "BIEN_THE",
+        "IndexName": "UX_BIEN_THE_ProductColorStorage",
+        "Columns": "ProductId,Color,StorageGb",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DANH_MUC",
+        "IndexName": "PK__DANH_MUC__3214EC076DAC93E7",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DANH_MUC",
+        "IndexName": "UQ__DANH_MUC__737584F6A9BD8F5B",
+        "Columns": "Name",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DON_HANG",
+        "IndexName": "PK__DON_HANG__3214EC073DB0E4F0",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DON_HANG",
+        "IndexName": "UQ__DON_HANG__A25C5AA796936511",
+        "Columns": "Code",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DON_HANG",
+        "IndexName": "UQ__DON_HANG__F6AC419DC5A2FAF9",
+        "Columns": "RequestKey",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DON_HANG_CT",
+        "IndexName": "PK__DON_HANG__3214EC07A78EB610",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "DON_HANG_CT",
+        "IndexName": "UX_DON_HANG_CT_Variant",
+        "Columns": "OrderId,VariantId",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "GIO_HANG_CT",
+        "IndexName": "PK__GIO_HANG__F44447E0B0E2C3D5",
+        "Columns": "CustomerId,VariantId",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "HANG",
+        "IndexName": "PK__HANG__3214EC070FDC3245",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "HANG",
+        "IndexName": "UQ__HANG__737584F6963D9848",
+        "Columns": "Name",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "KHACH_HANG",
+        "IndexName": "PK__KHACH_HA__3214EC07CCDE7C22",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "KHACH_HANG",
+        "IndexName": "UQ__KHACH_HA__5C7E359EF0E89EA3",
+        "Columns": "Phone",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "KHACH_HANG",
+        "IndexName": "UX_KHACH_HANG_Email",
+        "Columns": "Email",
+        "IsPrimaryKey": false,
+        "FilterDefinition": "([Email] IS NOT NULL)"
+      },
+      {
+        "TableName": "LICH_SU_DON",
+        "IndexName": "PK__LICH_SU___3214EC077377AD6A",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "NHA_CUNG_CAP",
+        "IndexName": "PK__NHA_CUNG__3214EC078017B5E0",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "NHA_CUNG_CAP",
+        "IndexName": "UQ__NHA_CUNG__A25C5AA73F6E6B08",
+        "Columns": "Code",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "IndexName": "PK__NHAT_KY___3214EC0740E87ED2",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "IndexName": "UX_NHAT_KY_KHO_Operation",
+        "Columns": "OperationKey,VariantId",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "IndexName": "UX_NHAT_KY_KHO_OrderKind",
+        "Columns": "OrderId,VariantId,Kind",
+        "IsPrimaryKey": false,
+        "FilterDefinition": "([OrderId] IS NOT NULL)"
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "IndexName": "UX_NHAT_KY_KHO_PurchaseKind",
+        "Columns": "PurchaseId,VariantId,Kind",
+        "IsPrimaryKey": false,
+        "FilterDefinition": "([PurchaseId] IS NOT NULL)"
+      },
+      {
+        "TableName": "PHIEN",
+        "IndexName": "PK__PHIEN__3214EC07E44B11B9",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "PHIEU_NHAP",
+        "IndexName": "PK__PHIEU_NH__3214EC078177D5E1",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "PHIEU_NHAP",
+        "IndexName": "UQ__PHIEU_NH__A25C5AA7E1D59995",
+        "Columns": "Code",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "PHIEU_NHAP_CT",
+        "IndexName": "PK__PHIEU_NH__3214EC07343CEFF2",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "PHIEU_NHAP_CT",
+        "IndexName": "UX_PHIEU_NHAP_CT_Variant",
+        "Columns": "PurchaseId,VariantId",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "SAN_PHAM",
+        "IndexName": "PK__SAN_PHAM__3214EC07B754F5ED",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "SAN_PHAM",
+        "IndexName": "UQ__SAN_PHAM__A25C5AA7640A9776",
+        "Columns": "Code",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "SAN_PHAM_ANH",
+        "IndexName": "PK__SAN_PHAM__3214EC07CA149BF6",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "SAN_PHAM_ANH",
+        "IndexName": "UX_SAN_PHAM_ANH_ProductUrl",
+        "Columns": "ProductId,UrlHash",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "TAI_KHOAN",
+        "IndexName": "PK__TAI_KHOA__3214EC07DE440CEB",
+        "Columns": "Id",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "TAI_KHOAN",
+        "IndexName": "UQ__TAI_KHOA__536C85E49E6FD254",
+        "Columns": "Username",
+        "IsPrimaryKey": false,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "THANH_TOAN",
+        "IndexName": "PK__THANH_TO__C3905BCF2F1A89AE",
+        "Columns": "OrderId",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      },
+      {
+        "TableName": "TON_KHO",
+        "IndexName": "PK__TON_KHO__0EA2338496154892",
+        "Columns": "VariantId",
+        "IsPrimaryKey": true,
+        "FilterDefinition": null
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "FromTable": "BIEN_THE",
+        "FromColumn": "ProductId",
+        "ToTable": "SAN_PHAM",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "DON_HANG",
+        "FromColumn": "CustomerId",
+        "ToTable": "KHACH_HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "DON_HANG_CT",
+        "FromColumn": "OrderId",
+        "ToTable": "DON_HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "DON_HANG_CT",
+        "FromColumn": "VariantId",
+        "ToTable": "BIEN_THE",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "GIO_HANG_CT",
+        "FromColumn": "CustomerId",
+        "ToTable": "KHACH_HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "GIO_HANG_CT",
+        "FromColumn": "VariantId",
+        "ToTable": "BIEN_THE",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "KHACH_HANG",
+        "FromColumn": "Id",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "LICH_SU_DON",
+        "FromColumn": "ActorId",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "LICH_SU_DON",
+        "FromColumn": "OrderId",
+        "ToTable": "DON_HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "NHAT_KY_KHO",
+        "FromColumn": "ActorId",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "NHAT_KY_KHO",
+        "FromColumn": "OrderId",
+        "ToTable": "DON_HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "NHAT_KY_KHO",
+        "FromColumn": "PurchaseId",
+        "ToTable": "PHIEU_NHAP",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "NHAT_KY_KHO",
+        "FromColumn": "VariantId",
+        "ToTable": "BIEN_THE",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "PHIEN",
+        "FromColumn": "AccountId",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "PHIEU_NHAP",
+        "FromColumn": "ConfirmerId",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "PHIEU_NHAP",
+        "FromColumn": "CreatorId",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "PHIEU_NHAP",
+        "FromColumn": "SupplierId",
+        "ToTable": "NHA_CUNG_CAP",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "PHIEU_NHAP_CT",
+        "FromColumn": "PurchaseId",
+        "ToTable": "PHIEU_NHAP",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "PHIEU_NHAP_CT",
+        "FromColumn": "VariantId",
+        "ToTable": "BIEN_THE",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "SAN_PHAM",
+        "FromColumn": "BrandId",
+        "ToTable": "HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "SAN_PHAM",
+        "FromColumn": "CategoryId",
+        "ToTable": "DANH_MUC",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "SAN_PHAM_ANH",
+        "FromColumn": "ProductId",
+        "ToTable": "SAN_PHAM",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "THANH_TOAN",
+        "FromColumn": "ActorId",
+        "ToTable": "TAI_KHOAN",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "THANH_TOAN",
+        "FromColumn": "OrderId",
+        "ToTable": "DON_HANG",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "FromTable": "TON_KHO",
+        "FromColumn": "VariantId",
+        "ToTable": "BIEN_THE",
+        "ToColumn": "Id",
+        "DeleteAction": 0,
+        "UpdateAction": 0,
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      }
+    ],
+    "Checks": [
+      {
+        "TableName": "BIEN_THE",
+        "ConstraintName": "CK__BIEN_THE__Cost__74AE54BC",
+        "Definition": "([Cost]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "BIEN_THE",
+        "ConstraintName": "CK__BIEN_THE__Price__76969D2E",
+        "Definition": "([Price]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "BIEN_THE",
+        "ConstraintName": "CK__BIEN_THE__Profit__75A278F5",
+        "Definition": "([ProfitPercent]\u003E=(0) AND [ProfitPercent]\u003C=(10000))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "BIEN_THE",
+        "ConstraintName": "CK__BIEN_THE__Storag__73BA3083",
+        "Definition": "([StorageGb]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "DON_HANG",
+        "ConstraintName": "CK__DON_HANG__Reques__0B91BA14",
+        "Definition": "([RequestKey]\u003C\u003E\u002700000000-0000-0000-0000-000000000000\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "DON_HANG",
+        "ConstraintName": "CK__DON_HANG__Status__08B54D69",
+        "Definition": "([Status]=\u0027GIAO_THAT_BAI\u0027 OR [Status]=\u0027DA_HUY\u0027 OR [Status]=\u0027HOAN_TAT\u0027 OR [Status]=\u0027DANG_GIAO\u0027 OR [Status]=\u0027DA_XAC_NHAN\u0027 OR [Status]=\u0027CHO_XAC_NHAN\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "DON_HANG",
+        "ConstraintName": "CK__DON_HANG__Total__09A971A2",
+        "Definition": "([Total]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "DON_HANG",
+        "ConstraintName": "CK_DON_HANG_Completion",
+        "Definition": "([Status]=\u0027HOAN_TAT\u0027 AND [CompletedAt] IS NOT NULL OR [Status]\u003C\u003E\u0027HOAN_TAT\u0027 AND [CompletedAt] IS NULL)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "DON_HANG_CT",
+        "ConstraintName": "CK__DON_HANG___Price__1332DBDC",
+        "Definition": "([Price]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "DON_HANG_CT",
+        "ConstraintName": "CK__DON_HANG___Quant__123EB7A3",
+        "Definition": "([Quantity]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "GIO_HANG_CT",
+        "ConstraintName": "CK__GIO_HANG___Quant__02084FDA",
+        "Definition": "([Quantity]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "LICH_SU_DON",
+        "ConstraintName": "CK__LICH_SU_DO__From__1DB06A4F",
+        "Definition": "([From] IS NULL OR ([From]=\u0027GIAO_THAT_BAI\u0027 OR [From]=\u0027DA_HUY\u0027 OR [From]=\u0027HOAN_TAT\u0027 OR [From]=\u0027DANG_GIAO\u0027 OR [From]=\u0027DA_XAC_NHAN\u0027 OR [From]=\u0027CHO_XAC_NHAN\u0027))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "LICH_SU_DON",
+        "ConstraintName": "CK__LICH_SU_DON__To__1EA48E88",
+        "Definition": "([To]=\u0027GIAO_THAT_BAI\u0027 OR [To]=\u0027DA_HUY\u0027 OR [To]=\u0027HOAN_TAT\u0027 OR [To]=\u0027DANG_GIAO\u0027 OR [To]=\u0027DA_XAC_NHAN\u0027 OR [To]=\u0027CHO_XAC_NHAN\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "ConstraintName": "CK__NHAT_KY_K__Opera__3D2915A8",
+        "Definition": "([OperationKey]\u003C\u003E\u002700000000-0000-0000-0000-000000000000\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "ConstraintName": "CK__NHAT_KY_KH__Kind__3B40CD36",
+        "Definition": "([Kind]=\u0027DIEU_CHINH\u0027 OR [Kind]=\u0027NHAN_LAI\u0027 OR [Kind]=\u0027XUAT_GIAO\u0027 OR [Kind]=\u0027HUY_GIU\u0027 OR [Kind]=\u0027GIU\u0027 OR [Kind]=\u0027NHAP\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "ConstraintName": "CK_NHAT_KY_KHO_Delta",
+        "Definition": "([DeltaOnHand]\u003C\u003E(0) OR [DeltaReserved]\u003C\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "NHAT_KY_KHO",
+        "ConstraintName": "CK_NHAT_KY_KHO_Document",
+        "Definition": "([OrderId] IS NULL OR [PurchaseId] IS NULL)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "PHIEU_NHAP",
+        "ConstraintName": "CK__PHIEU_NHA__Statu__2B0A656D",
+        "Definition": "([Status]=\u0027DA_HUY\u0027 OR [Status]=\u0027DA_XAC_NHAN\u0027 OR [Status]=\u0027NHAP\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "PHIEU_NHAP",
+        "ConstraintName": "CK__PHIEU_NHA__Total__2BFE89A6",
+        "Definition": "([Total]\u003E=(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "PHIEU_NHAP",
+        "ConstraintName": "CK_PHIEU_NHAP_Confirmation",
+        "Definition": "([Status]=\u0027DA_XAC_NHAN\u0027 AND [ConfirmerId] IS NOT NULL AND [ConfirmedAt] IS NOT NULL AND [Total]\u003E(0) OR [Status]\u003C\u003E\u0027DA_XAC_NHAN\u0027 AND [ConfirmerId] IS NULL AND [ConfirmedAt] IS NULL)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "PHIEU_NHAP_CT",
+        "ConstraintName": "CK__PHIEU_NHA__Quant__339FAB6E",
+        "Definition": "([Quantity]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "PHIEU_NHAP_CT",
+        "ConstraintName": "CK__PHIEU_NHAP__Cost__3493CFA7",
+        "Definition": "([Cost]\u003E(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "SAN_PHAM",
+        "ConstraintName": "CK__SAN_PHAM__Descri__68487DD7",
+        "Definition": "(datalength([Description])\u003C=(100000))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "SAN_PHAM",
+        "ConstraintName": "CK__SAN_PHAM__Specif__66603565",
+        "Definition": "(datalength([Specifications])\u003C=(40000))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "SAN_PHAM_ANH",
+        "ConstraintName": "CK__SAN_PHAM___SortO__6E01572D",
+        "Definition": "([SortOrder]\u003E=(0))",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "TAI_KHOAN",
+        "ConstraintName": "CK__TAI_KHOAN__Role__4E88ABD4",
+        "Definition": "([Role]=\u0027ADMIN\u0027 OR [Role]=\u0027CUSTOMER\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "THANH_TOAN",
+        "ConstraintName": "CK__THANH_TOA__Metho__17036CC0",
+        "Definition": "([Method]=\u0027COD\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "THANH_TOAN",
+        "ConstraintName": "CK__THANH_TOA__Statu__17F790F9",
+        "Definition": "([Status]=\u0027DA_THU\u0027 OR [Status]=\u0027CHUA_THU\u0027)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "THANH_TOAN",
+        "ConstraintName": "CK_THANH_TOAN_Collection",
+        "Definition": "([Status]=\u0027CHUA_THU\u0027 AND [Amount]=(0) AND [CollectedAt] IS NULL AND [ActorId] IS NULL OR [Status]=\u0027DA_THU\u0027 AND [Amount]\u003E(0) AND [CollectedAt] IS NOT NULL AND [ActorId] IS NOT NULL)",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      },
+      {
+        "TableName": "TON_KHO",
+        "ConstraintName": "CK_TON_KHO_Balance",
+        "Definition": "([Reserved]\u003E=(0) AND [OnHand]\u003E=[Reserved])",
+        "IsDisabled": false,
+        "IsNotTrusted": false
+      }
+    ]
+  },
+  "Responses": [
+    {
+      "Path": "/health/ready before migration",
+      "Status": 503,
+      "Code": "DATABASE_UNAVAILABLE",
+      "Items": null
+    },
+    {
+      "Path": "/health/live",
+      "Status": 200,
+      "Code": null,
+      "Items": null
+    },
+    {
+      "Path": "/health/ready",
+      "Status": 200,
+      "Code": null,
+      "Items": null
+    },
+    {
+      "Path": "/api/catalog",
+      "Status": 200,
+      "Code": null,
+      "Items": 0
+    },
+    {
+      "Path": "/api/catalog/bestsellers",
+      "Status": 200,
+      "Code": null,
+      "Items": 0
+    },
+    {
+      "Path": "/api/lookups/brands",
+      "Status": 200,
+      "Code": null,
+      "Items": 0
+    },
+    {
+      "Path": "/api/admin/session",
+      "Status": 401,
+      "Code": "UNAUTHORIZED",
+      "Items": null
+    },
+    {
+      "Path": "/api/admin/orders",
+      "Status": 401,
+      "Code": "UNAUTHORIZED",
+      "Items": null
+    },
+    {
+      "Path": "/api/security/token",
+      "Status": 200,
+      "Code": null,
+      "Items": null
+    },
+    {
+      "Path": "POST /api/auth/register without CSRF",
+      "Status": 400,
+      "Code": "INVALID_INPUT",
+      "Items": null
+    }
+  ],
+  "TableCountsAfter": {
+    "BIEN_THE": 0,
+    "DANH_MUC": 0,
+    "DON_HANG": 0,
+    "DON_HANG_CT": 0,
+    "GIO_HANG_CT": 0,
+    "HANG": 0,
+    "KHACH_HANG": 0,
+    "LICH_SU_DON": 0,
+    "NHA_CUNG_CAP": 0,
+    "NHAT_KY_KHO": 0,
+    "PHIEN": 0,
+    "PHIEU_NHAP": 0,
+    "PHIEU_NHAP_CT": 0,
+    "SAN_PHAM": 0,
+    "SAN_PHAM_ANH": 0,
+    "TAI_KHOAN": 0,
+    "THANH_TOAN": 0,
+    "TON_KHO": 0
+  },
+  "Seeded": false,
+  "Provisioned": false,
+  "Scope": "Generated isolated QA database; no credentials/tokens/cookies exported. Test fixture disposes only its own database."
+}
