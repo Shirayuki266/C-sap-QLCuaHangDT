@@ -27,6 +27,7 @@ internal sealed class MvcFoundationFactory(string connection, string root, strin
         builder.ConfigureServices(services =>
         {
             services.AddDataProtection().UseEphemeralDataProtectionProvider();
+            services.AddHttpContextAccessor();
             services.AddDbContext<StoreDbContext>(options => options.AddInterceptors(CartProbe));
             if (extraProbe is not null) services.AddDbContext<StoreDbContext>(options => options.AddInterceptors(extraProbe));
             services.AddControllersWithViews().AddApplicationPart(typeof(MvcFoundationProbeController).Assembly);

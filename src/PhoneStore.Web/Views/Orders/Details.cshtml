@@ -1,16 +1,30 @@
-@model PhoneStore.Core.CustomerOrderSnapshot
+@model PhoneStore.Web.Models.OrderDetailsViewModel
 @{ ViewData["Title"] = "Chi tiết đơn hàng"; }
-<div class="cart-heading"><h1>Chi tiết đơn hàng</h1><a href="/Catalog/Index">Tiếp tục xem máy</a></div>
-<div class="order-status"><p class="order-code">Mã đơn: <strong>@Model.Code</strong></p><p><strong>@OrderLabels.Status(Model.Status)</strong> · COD · @OrderLabels.Payment(Model.Payment)</p><p>Đặt lúc <time datetime="@Model.CreatedAt.ToString("O")">@WebsiteFormatting.Time(Model.CreatedAt.UtcDateTime)</time> (UTC+7)</p><a href="/Orders/Details/@Model.Id">Xem đơn</a></div>
+<div class="cart-heading"><h1>Chi tiết đơn hàng</h1><a href="/Orders/Index">Quay lại danh sách đơn</a></div>
+<div class="order-status"><p class="order-code">Mã đơn: <strong>@Model.Order.Code</strong></p><p><strong>@OrderLabels.Status(Model.Order.Status)</strong> · COD · @OrderLabels.Payment(Model.Order.Payment)</p><p>Đặt lúc <time datetime="@Model.Order.CreatedAt.ToString("O")">@WebsiteFormatting.Time(Model.Order.CreatedAt.UtcDateTime)</time> (UTC+7)</p><a href="/Orders/Details/@Model.Order.Id">Xem đơn</a></div>
 <div class="receipt-layout">
-    <section class="receipt-section" aria-label="Thông tin người nhận"><h2>Giao đến</h2><p><strong>@Model.Recipient</strong></p><p>@Model.Phone</p><p class="receipt-address">@Model.Address</p></section>
+    <section class="receipt-section" aria-label="Thông tin người nhận"><h2>Giao đến</h2><p><strong>@Model.Order.Recipient</strong></p><p>@Model.Order.Phone</p><p class="receipt-address">@Model.Order.Address</p></section>
     <section class="receipt-section" aria-label="Sản phẩm đã đặt"><h2>Sản phẩm trong đơn</h2>
-        @foreach (var line in Model.Lines)
+        @foreach (var line in Model.Order.Lines)
         { <div class="checkout-line"><h3>@line.Name</h3><p>@line.Description · @line.Sku</p><p>@line.Quantity × @WebsiteFormatting.Money(line.Price)</p><strong>@WebsiteFormatting.Money(line.Total)</strong></div> }
-        <div class="cart-total"><span>Tổng tiền</span><strong id="order-total">@WebsiteFormatting.Money(Model.Total)</strong></div>
+        <div class="cart-total"><span>Tổng tiền</span><strong id="order-total">@WebsiteFormatting.Money(Model.Order.Total)</strong></div>
     </section>
     <section class="receipt-section receipt-timeline" aria-label="Lịch sử đơn hàng"><h2>Tiến trình đơn hàng</h2><ol>
-        @foreach (var item in Model.Timeline)
+        @foreach (var item in Model.Order.Timeline)
         { <li><time datetime="@item.At.ToString("O")">@WebsiteFormatting.Time(item.At.UtcDateTime)</time><p>@(item.From is null ? "Tạo đơn" : OrderLabels.Status(item.From)) → @OrderLabels.Status(item.To)</p>@if (!string.IsNullOrWhiteSpace(item.Reason)) { <p>@item.Reason</p> }</li> }
     </ol></section>
 </div>
+@if (Model.Order.Status == "CHO_XAC_NHAN")
+{
+    <details class="cancel-panel" id="cancel-panel" open="@(!ViewData.ModelState.IsValid)">
+        <summary>Hủy đơn hàng</summary>
+        <form action="/Orders/Cancel" method="post" asp-antiforgery="false" class="cancel-form">
+            @Html.AntiForgeryToken()
+            <input asp-for="Id" type="hidden" /><input asp-for="Version" type="hidden" />
+            <h2>Xác nhận hủy đơn này?</h2><p>Vui lòng cho biết lý do. Hủy thành công sẽ trả lại lượng hàng đang giữ cho đơn.</p>
+            <div asp-validation-summary="All" class="validation-summary" role="alert" tabindex="-1"></div>
+            <label asp-for="Reason">Lý do hủy <span aria-hidden="true">*</span></label><textarea asp-for="Reason" rows="3" maxlength="1000" required></textarea><span asp-validation-for="Reason"></span>
+            <button type="submit" class="button button-primary">Xác nhận hủy đơn</button>
+        </form>
+    </details>
+}

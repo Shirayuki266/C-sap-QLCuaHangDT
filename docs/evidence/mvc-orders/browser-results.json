@@ -1,0 +1,95 @@
+{
+  "browser": "Playwright Chromium",
+  "qaOnly": true,
+  "records": [
+    {
+      "name": "orders-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "mobileCards": "table-row"
+    },
+    {
+      "name": "orders-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": "grid"
+    },
+    {
+      "name": "orders-invalid-filter-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "orders-empty-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "order-confirmed-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "order-long-reason-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "cancel-reason-error-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "cancel-pending-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "cancel-pending-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "order-cancelled-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "order-cancelled-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "mobileCards": null
+    },
+    {
+      "name": "native-confirm-dismiss-no-post-accept-double-guard-and-reload",
+      "result": "PASS",
+      "confirmDialogs": 2,
+      "acceptedPosts": 1
+    }
+  ],
+  "javascriptErrors": [],
+  "notes": [
+    "SQL checkpoints owned by parent QA runner; no shipping hook",
+    "Server missing-reason validation bypasses client-only validation intentionally",
+    "List/filter/empty/error/timeline reads compare full commerce snapshots"
+  ]
+}
