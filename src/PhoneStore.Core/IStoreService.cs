@@ -22,6 +22,9 @@ public interface IStoreService
     Task<CartMergeResult> MergeCartAsync(Actor actor, List<CartInput> lines);
     Task UpdateCartAsync(Actor actor, long variantId, int quantity);
     Task RemoveCartAsync(Actor actor, long variantId);
+    Task<long> PlaceOrderAsync(Actor actor, CheckoutInput input);
+    Task<long> ResolveOrderAsync(Actor actor, Guid requestKey);
+    Task<CustomerOrderSnapshot> ReadCustomerOrderAsync(Actor actor, long orderId);
 }
 
 public sealed record CatalogBrand(int Id, string Name);

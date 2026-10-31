@@ -1,0 +1,6 @@
+Base: develop / PR95 merge d4138d80c31c9e5f64d439df3027ed7c8e2582d6
+Command: git diff --exit-code origin/develop -- src/PhoneStore.Infrastructure src/PhoneStore.Web/Program.cs src/PhoneStore.Web/Endpoints src/PhoneStore.Web/Security src/PhoneStore.WinForms
+Observed: empty diff; exit0.
+Allowed additions/changes: Core MVC interface and safe customer receipt projection; MVC adapter/host registration/controllers/models/Razor/assets; tests and docs.
+No old services, database schema/migrations, admin API, authentication implementation or WinForms changes.
+Local evidence:310 integration groups;11 focused checkout groups; real Chromium and exact SQL oracle. Latest-head CI is separately bound in final PR verification.

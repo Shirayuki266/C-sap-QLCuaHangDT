@@ -1,0 +1,74 @@
+{
+  "browser": "Playwright Chromium",
+  "qaOnly": true,
+  "records": [
+    {
+      "name": "checkout-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "summaryBelowShipping": false
+    },
+    {
+      "name": "checkout-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "summaryBelowShipping": true
+    },
+    {
+      "name": "checkout-price-change-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "summaryBelowShipping": false
+    },
+    {
+      "name": "checkout-price-change-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "summaryBelowShipping": true
+    },
+    {
+      "name": "receipt-desktop",
+      "viewport": 1440,
+      "width": 1440,
+      "unlabelled": 0,
+      "summaryBelowShipping": null
+    },
+    {
+      "name": "receipt-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "summaryBelowShipping": null
+    },
+    {
+      "name": "fresh-guid-price-reconfirm-double-submit-F5-Back-original-key-replay",
+      "result": "PASS",
+      "guardedBrowserPosts": 1,
+      "serverOrderCount": 1,
+      "backNavigation": "ERR_CACHE_MISS for no-store POST",
+      "backRestoredForm": false,
+      "backReplayTransport": "browser HTTP replay of captured form after no-store Back; stale DOM form was not restored"
+    },
+    {
+      "name": "checkout-resumed-mobile",
+      "viewport": 390,
+      "width": 390,
+      "unlabelled": 0,
+      "summaryBelowShipping": true
+    },
+    {
+      "name": "expire-mid-checkout-login-return-cart-retained-old-cookie-denied-new-session-order",
+      "result": "PASS"
+    }
+  ],
+  "javascriptErrors": [],
+  "notes": [
+    "Parent QA fixture alone changes price/expires sessions; no shipping QA endpoint",
+    "Captured form tokens/cookies stay in memory",
+    "SQL oracle verifies first order after every replay and final new-session order"
+  ]
+}
