@@ -1,0 +1,1 @@
+{"qaOnly":true,"adminTransport":"real /api/admin/orders/{id}/confirm","gatedArrivals":2,"independentSqlConnections":2,"actualSqlLockWaitObserved":true,"adminStatus":204,"customerStatus":302,"finalState":"DA_XAC_NHAN","inventoryUnchanged":true,"paymentUnchanged":true,"cancelJournalRows":0,"historyDelta":1}

@@ -47,7 +47,7 @@ The smoke creates an isolated empty QA DB, proves startup does not migrate, runs
 
 ## Customer MVC
 
-Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account PR91, Catalog PR93 and Cart PR95 are merged; step4b starts at `d4138d80c31c9e5f64d439df3027ed7c8e2582d6`. It adds COD checkout with protected server-price confirmation and a read-only owned order receipt. See [accounts](docs/MVC_ACCOUNTS.md), [catalog](docs/MVC_CATALOG.md), [carts](docs/MVC_CART.md), [checkout and HTTP/SQL/Chromium evidence](docs/MVC_CHECKOUT.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). Order list, remaining order controls/cancellation and complete purchasing FLOW remain later steps. Existing backend services, schema and admin API are unchanged.
+Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account PR91, Catalog PR93, Cart PR95 and Checkout PR97 are merged; step5 starts at `41398139b8bbbb151fb48e27fc864e742a6494d6`. It adds owned order lists/filtering/pagination and pending-order cancellation with version checks and confirmation. See [accounts](docs/MVC_ACCOUNTS.md), [catalog](docs/MVC_CATALOG.md), [carts](docs/MVC_CART.md), [checkout](docs/MVC_CHECKOUT.md), [orders/cancellation and HTTP/SQL/Chromium evidence](docs/MVC_ORDERS.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). Complete WEB.FLOW and final whole-site/accessibility acceptance remain step6. Existing backend services, schema and admin API are unchanged.
 
 ## Provisioning and sample data
 

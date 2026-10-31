@@ -25,6 +25,8 @@ public interface IStoreService
     Task<long> PlaceOrderAsync(Actor actor, CheckoutInput input);
     Task<long> ResolveOrderAsync(Actor actor, Guid requestKey);
     Task<CustomerOrderSnapshot> ReadCustomerOrderAsync(Actor actor, long orderId);
+    Task<Page<CustomerOrderSummary>> ListCustomerOrdersAsync(Actor actor, OrderFilter filter);
+    Task CancelCustomerOrderAsync(Actor actor, long orderId, string? reason, string? version);
 }
 
 public sealed record CatalogBrand(int Id, string Name);

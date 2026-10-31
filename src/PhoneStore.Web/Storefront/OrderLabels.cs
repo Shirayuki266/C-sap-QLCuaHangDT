@@ -2,6 +2,7 @@ namespace PhoneStore.Web.Storefront;
 
 public static class OrderLabels
 {
+    public static readonly string[] States = ["CHO_XAC_NHAN", "DA_XAC_NHAN", "DANG_GIAO", "HOAN_TAT", "DA_HUY", "GIAO_THAT_BAI"];
     public static string Status(string value) => value switch
     {
         "CHO_XAC_NHAN" => "Chờ xác nhận", "DA_XAC_NHAN" => "Đã xác nhận", "DANG_GIAO" => "Đang giao",
