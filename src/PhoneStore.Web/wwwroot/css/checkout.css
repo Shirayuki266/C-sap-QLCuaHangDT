@@ -1,0 +1,38 @@
+.checkout-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, 1fr); gap: 24px; align-items: start; }
+.shipping-panel, .checkout-summary, .receipt-section, .order-status { min-width: 0; margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.shipping-panel legend { padding: 0 8px; font-size: 1.35rem; font-weight: 700; }
+.shipping-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.shipping-fields > div { min-width: 0; }
+.shipping-address { grid-column: 1 / -1; }
+.shipping-fields label { display: block; margin-bottom: 8px; font-weight: 650; }
+.shipping-fields input, .shipping-fields textarea { display: block; width: 100%; padding: 12px; min-height: 48px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); }
+.shipping-fields textarea { resize: vertical; }
+.shipping-fields p, .checkout-summary p, .checkout-submit p { color: var(--muted); margin: 8px 0; }
+.cod-choice { margin-top: 28px; padding: 16px; border-radius: 10px; background: var(--soft); }
+.cod-choice label { font-weight: 650; }
+.cod-choice input { accent-color: var(--blue); margin-right: 8px; }
+.cod-choice p { margin: 8px 0 0; }
+.checkout-summary h2, .receipt-section h2 { margin: 0 0 20px; font-size: 1.35rem; }
+.checkout-line + .checkout-line { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.checkout-line h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.checkout-line p { margin: 4px 0 8px; overflow-wrap: anywhere; }
+.checkout-submit { grid-column: 1 / -1; max-width: 72ch; }
+.checkout-submit .button { margin-top: 20px; width: 100%; }
+.checkout-submit button:disabled { cursor: not-allowed; }
+.checkout-form .input-validation-error { border-color: #a52932; }
+.checkout-form .field-validation-error { display: block; margin-top: 6px; }
+.checkout-form .validation-summary-valid { display: none; }
+.order-status { margin-bottom: 24px; }
+.order-status p { margin: 0 0 12px; }
+.order-code { overflow-wrap: anywhere; }
+.receipt-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
+.receipt-address { white-space: pre-line; overflow-wrap: anywhere; }
+.receipt-timeline { grid-column: 1 / -1; }
+.receipt-timeline ol { padding-left: 24px; margin-bottom: 0; }
+.receipt-timeline li + li { margin-top: 20px; }
+.receipt-timeline li p { margin: 4px 0; }
+@media (max-width: 800px) { .checkout-layout, .receipt-layout { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+    .shipping-fields { grid-template-columns: 1fr; }
+    .shipping-panel, .checkout-summary, .receipt-section, .order-status { padding: 20px; }
+}

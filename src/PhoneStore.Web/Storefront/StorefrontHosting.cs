@@ -10,6 +10,7 @@ public static class StorefrontHosting
     public static IServiceCollection AddStorefrontMvc(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IStoreService, MvcStoreAdapter>();
+        services.AddSingleton<CheckoutConfirmation>();
         services.AddScoped<StorefrontCookieEvents>();
         services.PostConfigure<CookieAuthenticationOptions>(CookieAuthenticationDefaults.AuthenticationScheme,
             options => options.EventsType = typeof(StorefrontCookieEvents));
