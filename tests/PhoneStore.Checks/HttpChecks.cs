@@ -8,7 +8,7 @@ namespace PhoneStore.Checks;
 
 internal static class HttpChecks
 {
-    public static async Task Run(string? migratedConnection = null, bool demoOnly = false,bool priorityOnly=false)
+    public static async Task Run(string? migratedConnection = null, bool demoOnly = false,bool priorityOnly=false,bool prompt2aOnly=false)
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
         while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent;
@@ -49,6 +49,10 @@ internal static class HttpChecks
                 await Task.Delay(100);
             }
             Check.True(ready, "Backend liveness did not become available within 10 seconds.");
+            if(prompt2aOnly)
+            {
+                await Prompt2AChecks.Run(new Uri(url),migratedConnection??throw new InvalidOperationException("Prompt2A requires its isolated migrated database."));return;
+            }
             if(priorityOnly)
             {
                 await PriorityP0Checks.Run(new Uri(url),migratedConnection??throw new InvalidOperationException("Priority checks require their isolated migrated database."));
@@ -115,6 +119,7 @@ internal static class HttpChecks
             if (migratedConnection is not null && !demoOnly) await ReturnReasonChecks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await PriorityP0Checks.Run(new Uri(url), migratedConnection);
             if (migratedConnection is not null && !demoOnly) await PurchaseCancellationChecklistChecks.Run(new Uri(url), migratedConnection);
+            if (migratedConnection is not null && !demoOnly) await Prompt2AChecks.Run(new Uri(url), migratedConnection);
         }
         finally
         {
