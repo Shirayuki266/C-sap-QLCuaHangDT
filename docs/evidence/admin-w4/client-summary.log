@@ -1,0 +1,17 @@
+13 admin client checks passed.
+11 admin W2 client checks passed.
+9 admin W3 client checks passed.
+PASS WIN.A14.01/03 draft POST requestKey,201/GET; server metadata/total and no stock change; same-key replay201 same id
+PASS WIN.A14.02 stale PUT rejects atomically, complete versioned edit; validation no partial rows
+PASS WIN.A15.01/03 RACE two gated real confirmations on distinct connections: one204 one409, one stock/price/journal effect
+PASS WIN.A15.02 cancel nonempty/empty drafts sends version+operationKey, no stock/price changes
+PASS WIN.A14.04/A15.04 empty/stopped supplier/overflow-price confirm400, draft and prior line stock rollback
+PASS WIN.A14.05 purchase query/status/paging only; empty draft metadata remains authoritative
+PASS WIN.A16.01/02 stock query/brand/explicit below/page/no-match; actual injected SQL failure is error, never zero
+PASS WIN.A17.01/02/04 absolute count uses variantId and stock version; below reserved/negative/stale reject
+PASS WIN.A17.03 lost count response reconciles journal operationKey, no retry effect; new intention new key
+PASS WIN.A16.03 movement variant/key paging, actor/document/time and read-only SQL
+PASS WIN.A14.01 same requestKey uncertain creation retry: changed body blocked,201 same id, readback failures guarded
+PASS WIN.A15.01/02 uncertain confirm/cancel reconciles GET; same operationKey frozen, no second stock effect
+PASS WIN.A05.04 handoff reads persisted variant/cost, hints local until explicit draft save, stock unchanged
+13 admin W4 client checks passed.

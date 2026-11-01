@@ -85,4 +85,5 @@ jobs:
             .artifacts/admin-w1/forms/
             .artifacts/admin-w2/forms/
             .artifacts/admin-w3/forms/
+            .artifacts/admin-w4/forms/
           if-no-files-found: error

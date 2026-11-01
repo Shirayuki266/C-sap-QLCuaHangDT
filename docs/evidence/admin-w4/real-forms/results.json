@@ -1,0 +1,86 @@
+{
+  "fakeApi": false,
+  "qaOnly": true,
+  "captures": [
+    {
+      "name": "UI08-real-product-hints",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI09-real-handoff-unsaved",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI09-real-purchase-draft",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI09-real-confirm-dialog",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI09-real-confirmed-stock-price",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI10-real-stock-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI10-real-count-input",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI10-real-count-confirm",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI10-real-count-saved",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI10-real-journal",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}

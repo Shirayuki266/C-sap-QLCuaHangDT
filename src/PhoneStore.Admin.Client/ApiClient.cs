@@ -11,6 +11,7 @@ public sealed class ApiClient : IAdminApi
     private readonly ServerSettings settings;
     private readonly SemaphoreSlim writes = new(1, 1);
     private bool disposed;
+    private string? uncertainPurchaseBody;
     public event Action? SessionEnded;
     public AdminIdentity? Identity { get; private set; }
     public bool NeedsReconciliation { get; private set; }
@@ -119,7 +120,7 @@ public sealed class ApiClient : IAdminApi
     public async Task ReconcileAsync(Func<CancellationToken, Task> readAuthoritativeResult, CancellationToken cancellationToken = default)
     {
         // Caller chooses a real GET/lookup/journal read; a failed read never clears the guard.
-        await readAuthoritativeResult(cancellationToken); NeedsReconciliation = false;
+        await readAuthoritativeResult(cancellationToken); NeedsReconciliation = false;uncertainPurchaseBody=null;
     }
 
     public async Task<long> CreateAsync<T>(string path, T input, CancellationToken cancellationToken = default)
@@ -134,7 +135,7 @@ public sealed class ApiClient : IAdminApi
                 if (response.StatusCode != HttpStatusCode.Created) throw new AdminApiException("INVALID_RESPONSE");
                 var created = await Deserialize<CreatedId>(response, cancellationToken);
                 if (created.Id <= 0) throw new AdminApiException("INVALID_RESPONSE");
-                return created.Id;
+                uncertainPurchaseBody=null;return created.Id;
             }
             catch (AdminApiException) { NeedsReconciliation = true; throw new AdminApiException("UNCERTAIN"); }
         }
@@ -154,31 +155,53 @@ public sealed class ApiClient : IAdminApi
     }
     private sealed record CreatedId(long Id);
 
+    public async Task<long> RetryPurchaseCreateAsync(PurchaseRequest input,CancellationToken cancellationToken=default)
+    {
+        await writes.WaitAsync(cancellationToken);
+        try
+        {
+            RequireSession();using var content=JsonContent.Create(input);var json=await content.ReadAsStringAsync(cancellationToken);
+            if(!NeedsReconciliation||input.RequestKey==Guid.Empty||uncertainPurchaseBody is null||json!=uncertainPurchaseBody)throw new AdminApiException("UNCERTAIN");
+            using var response=await WriteAsync("/api/admin/purchases",input,cancellationToken);
+            try
+            {
+                if(response.StatusCode!=HttpStatusCode.Created)throw new AdminApiException("INVALID_RESPONSE");
+                var created=await Deserialize<CreatedId>(response,cancellationToken);if(created.Id<=0)throw new AdminApiException("INVALID_RESPONSE");
+                NeedsReconciliation=false;uncertainPurchaseBody=null;return created.Id;
+            }
+            catch(AdminApiException){NeedsReconciliation=true;throw new AdminApiException("UNCERTAIN");}
+        }
+        finally{writes.Release();}
+    }
+
     private async Task<HttpResponseMessage> WriteAsync<T>(string path, T input, CancellationToken cancellationToken, HttpMethod? method = null)
     {
         var token = await ReadAsync<TokenResult>("/api/security/token", false, cancellationToken);
         if (string.IsNullOrWhiteSpace(token.Token)) throw new AdminApiException("INVALID_RESPONSE");
         using var request = new HttpRequestMessage(method ?? HttpMethod.Post, path) { Content = JsonContent.Create(input) };
+        uncertainPurchaseBody=path=="/api/admin/purchases"&&request.Method==HttpMethod.Post?await request.Content.ReadAsStringAsync(cancellationToken):null;
         request.Headers.Add("X-CSRF-TOKEN", token.Token);
         try
         {
             var response = await http.SendAsync(request, cancellationToken);
-            try { await Check(response, cancellationToken); return response; }
+            try { await Check(response, cancellationToken,path); return response; }
             catch { response.Dispose(); throw; }
         }
         catch (HttpRequestException) { NeedsReconciliation = true; throw new AdminApiException("UNCERTAIN"); }
         catch (OperationCanceledException) { NeedsReconciliation = true; throw new AdminApiException("UNCERTAIN"); }
+        catch(AdminApiException error)when(error.Status is 500 or 503){NeedsReconciliation=true;throw;}
     }
 
-    private async Task Check(HttpResponseMessage response, CancellationToken cancellationToken)
+    private async Task Check(HttpResponseMessage response, CancellationToken cancellationToken,string? writePath=null)
     {
         if (response.IsSuccessStatusCode) return;
-        var status = (int)response.StatusCode; string? trace = null; string? code = null;
-        try { var error = await response.Content.ReadFromJsonAsync<ErrorBody>(cancellationToken); code = error?.Code; trace = error?.TraceId; }
+        var status = (int)response.StatusCode; string? trace = null; string? code = null;string? validation=null;
+        try { var error = await response.Content.ReadFromJsonAsync<ErrorBody>(cancellationToken); code = error?.Code; trace = error?.TraceId;
+            if(writePath is not null&&(writePath.StartsWith("/api/admin/purchases/",StringComparison.Ordinal)||writePath.StartsWith("/api/admin/stock/",StringComparison.Ordinal)))validation=error?.Message; }
         catch (JsonException) { }
         if (status == 401) { Reset(); code = "UNAUTHORIZED"; }
         code ??= status switch { 400 => "INVALID_INPUT", 403 => "FORBIDDEN", 404 => "NOT_FOUND", 409 => "INVALID_STATE", 503 => "DATABASE_UNAVAILABLE", _ => "SERVER_ERROR" };
-        throw new AdminApiException(code, status, trace);
+        throw new AdminApiException(code, status, trace,validation);
     }
     private static async Task<T> Deserialize<T>(HttpResponseMessage response, CancellationToken cancellationToken)
     {
@@ -196,9 +219,9 @@ public sealed class ApiClient : IAdminApi
         if (Identity.ExpiresAt <= DateTimeOffset.UtcNow) { Reset(); throw new AdminApiException("UNAUTHORIZED", 401); }
     }
     private void ClearCookies() { foreach (Cookie cookie in cookies.GetAllCookies()) cookie.Expired = true; }
-    private void Reset() { var wasAuthenticated = Identity is not null; Identity = null; NeedsReconciliation = false; ClearCookies(); if (wasAuthenticated) SessionEnded?.Invoke(); }
+    private void Reset() { var wasAuthenticated = Identity is not null; Identity = null; NeedsReconciliation = false;uncertainPurchaseBody=null; ClearCookies(); if (wasAuthenticated) SessionEnded?.Invoke(); }
     public void Dispose() { if (disposed) return; disposed = true; Identity = null; ClearCookies(); http.Dispose(); writes.Dispose(); }
-    private sealed record ErrorBody(string? Code, string? TraceId);
+    private sealed record ErrorBody(string? Code, string? TraceId,string? Message);
     private sealed class MemoryCookies(CookieContainer jar, HttpMessageHandler inner) : DelegatingHandler(inner)
     {
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

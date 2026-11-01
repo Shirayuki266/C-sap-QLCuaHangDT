@@ -25,6 +25,7 @@ public interface IAdminApi : IDisposable
     Task CommandAsync<T>(string path, T input, CommandIntent intent, CancellationToken cancellationToken = default);
     Task<long> CreateAsync<T>(string path, T input, CancellationToken cancellationToken = default) => throw new NotSupportedException();
     Task PutAsync<T>(string path, T input, CancellationToken cancellationToken = default) => throw new NotSupportedException();
+    Task<long> RetryPurchaseCreateAsync(PurchaseRequest input,CancellationToken cancellationToken=default) => throw new NotSupportedException();
     Task ReconcileAsync(Func<CancellationToken, Task> readAuthoritativeResult, CancellationToken cancellationToken = default);
 }
 

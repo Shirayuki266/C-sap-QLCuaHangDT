@@ -40,6 +40,12 @@ public sealed class VariantDraft
 
 public static class CatalogForms
 {
+    public static bool SavedMatches(ProductRecord saved,ProductRequest draft)
+    {
+        var original=CatalogWorkspace.Request(saved);
+        return draft.Code==saved.Code&&draft.Name==saved.Name&&draft.BrandId==saved.BrandId&&draft.CategoryId==saved.CategoryId&&draft.Specifications==saved.Specifications&&draft.Description==saved.Description&&draft.ImageUrl==saved.ImageUrl&&draft.Active==saved.Active&&
+            draft.Variants.OrderBy(v=>v.Id).SequenceEqual(original.Variants.OrderBy(v=>v.Id))&&draft.Images.Select(i=>i.Url).SequenceEqual(saved.Images.OrderBy(i=>i.SortOrder).Select(i=>i.Url));
+    }
     public static bool ImageAllowed(string? text, bool optional = true)
     {
         var url = text?.Trim() ?? "";

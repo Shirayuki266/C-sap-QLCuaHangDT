@@ -19,6 +19,7 @@ internal sealed class QaBackend : WebApplicationFactory<StorefrontEntryPoint>, I
     public string NextPassword { get; } = "QaNext@" + Guid.NewGuid().ToString("N");
     public long AdminId { get; private set; }
     public readonly List<string> LogMessages = [];
+    public Microsoft.EntityFrameworkCore.Diagnostics.DbCommandInterceptor? CommandInterceptor { get; set; }
     public static string Root
     {
         get { var dir = new DirectoryInfo(AppContext.BaseDirectory); while (dir is not null && !File.Exists(Path.Combine(dir.FullName, "PhoneStore.slnx"))) dir = dir.Parent; return dir?.FullName ?? throw new InvalidOperationException("Root missing"); }
@@ -46,7 +47,7 @@ internal sealed class QaBackend : WebApplicationFactory<StorefrontEntryPoint>, I
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing").UseContentRoot(Path.Combine(Root, "src", "PhoneStore.Web")).UseSetting("ConnectionStrings:Store", Connection);
-        builder.ConfigureServices(services => { services.AddHttpContextAccessor(); services.AddDataProtection().UseEphemeralDataProtectionProvider(); });
+        builder.ConfigureServices(services => { services.AddHttpContextAccessor(); services.AddDataProtection().UseEphemeralDataProtectionProvider(); if(CommandInterceptor is not null)services.AddDbContext<StoreDbContext>(options=>options.AddInterceptors(CommandInterceptor)); });
         builder.ConfigureLogging(logging => { logging.ClearProviders(); logging.AddProvider(new MemoryLog(LogMessages)); });
     }
     public ApiClient Api(DelegatingHandler? probe = null, ServerSettings? settings = null)
