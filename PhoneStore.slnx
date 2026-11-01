@@ -1,10 +1,14 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/PhoneStore.Admin.Client/PhoneStore.Admin.Client.csproj" />
+    <Project Path="src/PhoneStore.Admin/PhoneStore.Admin.csproj" />
     <Project Path="src/PhoneStore.Core/PhoneStore.Core.csproj" />
     <Project Path="src/PhoneStore.Infrastructure/PhoneStore.Infrastructure.csproj" />
     <Project Path="src/PhoneStore.Web/PhoneStore.Web.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/PhoneStore.Admin.Client.Checks/PhoneStore.Admin.Client.Checks.csproj" />
+    <Project Path="tests/PhoneStore.Admin.Tests/PhoneStore.Admin.Tests.csproj" />
     <Project Path="tests/PhoneStore.Checks/PhoneStore.Checks.csproj" />
   </Folder>
 </Solution>

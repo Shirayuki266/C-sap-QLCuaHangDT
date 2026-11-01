@@ -55,3 +55,31 @@ jobs:
           dotnet build tests/PhoneStore.Checks/PhoneStore.Checks.csproj -c Release --no-restore
       - name: Run domain and isolated SQL Server integration checks
         run: dotnet run --project tests/PhoneStore.Checks -c Release --no-build -- --integration
+      - name: Run new Admin Client checks against isolated SQL QA
+        run: dotnet run --project tests/PhoneStore.Admin.Client.Checks -c Release
+
+  admin-windows:
+    name: Windows Admin build and form checks
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Build new Admin and form checks
+        run: dotnet build tests/PhoneStore.Admin.Tests -c Release
+      - name: Configure desktop for minimum 1280x800 form surface
+        shell: powershell
+        run: |
+          Set-DisplayResolution -Width 1920 -Height 1080 -Force
+          Get-DisplayResolution
+      - name: Run STA form checks with fake API
+        run: dotnet run --project tests/PhoneStore.Admin.Tests -c Release --no-build
+      - name: Upload WinForms evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: admin-w1-windows-forms
+          path: .artifacts/admin-w1/forms/
+          if-no-files-found: error
