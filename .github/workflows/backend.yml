@@ -84,4 +84,5 @@ jobs:
           path: |
             .artifacts/admin-w1/forms/
             .artifacts/admin-w2/forms/
+            .artifacts/admin-w3/forms/
           if-no-files-found: error

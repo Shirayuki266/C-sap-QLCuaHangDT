@@ -1,0 +1,12 @@
+{
+  "qaOnly": true,
+  "customers": 1,
+  "customerName": "Kh\u00E1ch QA W3 \u00B7 API th\u1EF1c",
+  "suppliers": 1,
+  "activeSuppliers": 1,
+  "orders": 0,
+  "inventoryRows": 0,
+  "payments": 0,
+  "journal": 0,
+  "adminSessions": 0
+}

@@ -1,24 +1,24 @@
-# WinForms acceptance ledger — W1–W2
+# WinForms acceptance ledger — W1–W3
 
-Official latest08:113 unique IDs, **48 P0 /59 P1 /6 P2**. Source SHA256 ae7962fe17cd92aacd1445b203b319c0e6d47859827a9fda6ddbadffca89ae29. W1 accepted PR103; W2 has16 executed IDs (6 P0/10 P1). [W2 report](WINFORMS_W2.md); [W1 historical report](WINFORMS_W1.md). Exact final-head CI is bound in PR verification.
+Official latest08:113 unique IDs, **48 P0 /59 P1 /6 P2**. Source SHA256 ae7962fe17cd92aacd1445b203b319c0e6d47859827a9fda6ddbadffca89ae29. W1/W2 accepted PR103/105; W3 has11 executed IDs (2 P0/9 P1). [W3 report](WINFORMS_W3.md); [W2](WINFORMS_W2.md); [W1](WINFORMS_W1.md). Exact final-head CI is bound in PR verification.
 
 ## Whole phase
 
 | Priority | Total | PASS | FAIL | BLOCKED | NOT RUN | N/A |
 |---|---:|---:|---:|---:|---:|---:|
-|P0|48|21|0|0|27|0|
-|P1|59|23|0|0|36|0|
+|P0|48|23|0|0|25|0|
+|P1|59|32|0|0|27|0|
 |P2|6|2|0|0|4|0|
 
-## W2 subset
+## W3 subset
 
 | Priority | Total | PASS | FAIL | BLOCKED | NOT RUN | N/A |
 |---|---:|---:|---:|---:|---:|---:|
-|P0|6|6|0|0|0|0|
-|P1|10|10|0|0|0|0|
+|P0|2|2|0|0|0|0|
+|P1|9|9|0|0|0|0|
 |P2|0|0|0|0|0|0|
 
-All67 remaining NOT RUN IDs are listed below with scope/reasons. A05.04 remains W4; BASE15 remains partial until later confirmations. No whole-phase gate is passed.
+All56 remaining NOT RUN IDs and reasons are listed below. A05.04 remains W4; BASE15 remains partial until remaining confirmations. Supplier picker is tested as a component, not a saved purchase. Full order operations remain W5; no whole-phase gate is passed.
 
 ## P0
 
@@ -45,8 +45,8 @@ All67 remaining NOT RUN IDs are listed below with scope/reasons. A05.04 remains 
 |WIN.A06.02|W2|PASS|Real stale PUT409 CONCURRENT_UPDATE after competing valid update; rejected SQL snapshot unchanged, form retains draft and tells user to reload.|
 |WIN.A07.01|W2|PASS|GET full aggregate -> confirmed PUT active=false/true -> GET; cancellation sends no write. Product/history retained; variant state edits also ask confirmation.|
 |WIN.A08.02|W2|PASS|Real duplicate create/update lookup400 leaves SQL unchanged; stopping does not remove product/orders/history. No delete operation.|
-|WIN.A10.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A11.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
+|WIN.A10.01|W3|PASS|Exactly four profile request fields; real duplicate phone/email and bad syntax400 are atomic. Actual editor has four TextBoxes/no state/role/password field and retains rejected draft.|
+|WIN.A11.01|W3|PASS|Confirmed active+expectedActive command tested. Lock deletes2 actual customer sessions; both old clients401, old write401; unlock restores0 sessions; fresh login required. UI explains both consequences.|
 |WIN.A14.01|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A14.02|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A15.01|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
@@ -81,7 +81,7 @@ All67 remaining NOT RUN IDs are listed below with scope/reasons. A05.04 remains 
 |WIN.BASE.12|W1|PASS|Exact23.980.000 đ and UTC+7 next-day boundary asserted; DateOnly request formatter is invariant yyyy-MM-dd. Future money/table displays remain their function tests.|
 |WIN.BASE.13|W1|PASS|Actual MainForm navigation has11 named entries,1280x800 minimum, server/user status and honest unimplemented-module text; native sidebar scroll enabled. Real API Main capture retained.|
 |WIN.BASE.14|W1|PASS|Readiness/login/password/logout use async HTTP; held fake login proves live busy state, disabled submit and error recovery on actual controls. Only W1 screens are assessed; later data screens remain NOT RUN.|
-|WIN.BASE.15|W1|NOT RUN|Partial W1 shared dialog plus W2 product/variant/lookup confirmations proven; customer/order/purchase/stock integrations remain W3–W5, so whole criterion stays NOT RUN.|
+|WIN.BASE.15|W1|NOT RUN|Partial W1 shared dialog, W2 product/lookup and W3 customer confirmations proven; purchase/stock/order integrations remain W4–W5, so whole criterion stays NOT RUN.|
 |WIN.BASE.16|W1|PASS|Invalid login/settings retain username/configuration; password fields deliberately blank. Safe form errors shown without guessing fields from backend message text. Later domain forms not yet implemented.|
 |WIN.BASE.17|W1|PASS|Independent Client SQL QA checks13 and Windows STA form checks8 pass locally; both CI jobs must be successful. CI SUCCESS snapshot 4b5f3d940fcf0291edeeb9c2da9267355ced47ff; exact final head must be reverified after docs amendment.|
 |WIN.BASE.18|W1|PASS|Actual settings form rejects remoteHTTP without losing input; allowlisted URL/environment/fingerprint roundtrip through QA settings file, with no password/cookie/token properties.|
@@ -102,15 +102,15 @@ All67 remaining NOT RUN IDs are listed below with scope/reasons. A05.04 remains 
 |WIN.A07.02|W2|PASS|Actual inactive filter and rendered text Đã ngừng; status does not rely on color.|
 |WIN.A08.01|W2|PASS|Actual lookup POST201/list and PUT204/list, dedicated name+active, ADMIN inactive retention/paging; actual form new/edit selection paths tested.|
 |WIN.A08.03|W2|PASS|Actual confirmation cancellation blocks write, warning explicitly mentions website visibility; actual public detail404 when either brand/category inactive, ADMIN retained.|
-|WIN.A09.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A09.02|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A10.02|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A11.02|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A11.03|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A12.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A13.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A13.02|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A13.03|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
+|WIN.A09.01|W3|PASS|Real query name/phone/email, state, page1/page2 and no-match; safe customer DTO has no credential/hash/role fields. Actual list controls and empty/error states rendered.|
+|WIN.A09.02|W3|PASS|Actual customer GET and rendered contact/status/date; working orders entry. No account secret properties are exposed.|
+|WIN.A10.02|W3|PASS|PUT204 then GET authoritative profile, own unchanged contacts accepted.21 real checkout snapshots/payment/history/H50R21/journal remain identical; credential hash privately unchanged.|
+|WIN.A11.02|W3|PASS|Competing authenticated admin session changes state; stale expectedActive409 changes no SQL data. Actual form retains state and displays reload message.|
+|WIN.A11.03|W3|PASS|ADMIN excluded from actual customer list; ADMIN customer-read/state target404 with SQL unchanged. Invalid-target detail hides lock action, no role input exists.|
+|WIN.A12.01|W3|PASS|Real customer orders page20+1, peer empty and read-only order detail GET. Actual button opens fallback details; typed handoff supports future fullW5 without claiming those operations.|
+|WIN.A13.01|W3|PASS|Actual supplier POST201/list by code and PUT204/list, stop/reopen, query/state/paging. Actual new/edit controls and list readback; no DELETE/by-id GET.|
+|WIN.A13.02|W3|PASS|Real duplicate supplier code create/update400 rolls back fully. Actual editor retains code/name/contact/status draft and allows correction.|
+|WIN.A13.03|W3|PASS|Real active=true selector reads all103 active rows across bounded100 pages and excludes stopped NCC. Actual picker returns active record; W4 purchase integration remains deferred.|
 |WIN.A14.03|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A14.04|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A14.05|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
