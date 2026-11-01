@@ -7,8 +7,10 @@
 Requires the .NET10 SDK and SQL Server. Run at the repository root. The following is a **local Windows-authentication example**, not a production connection or credential:
 
 ```powershell
-dotnet restore PhoneStore.slnx
-dotnet build PhoneStore.slnx -c Release --no-restore
+dotnet restore src/PhoneStore.Web/PhoneStore.Web.csproj
+dotnet restore tests/PhoneStore.Checks/PhoneStore.Checks.csproj
+dotnet build src/PhoneStore.Web/PhoneStore.Web.csproj -c Release --no-restore
+dotnet build tests/PhoneStore.Checks/PhoneStore.Checks.csproj -c Release --no-restore
 $env:ASPNETCORE_ENVIRONMENT = 'Development'
 $env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore_Dev_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
 dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate
@@ -48,6 +50,12 @@ The smoke creates an isolated empty QA DB, proves startup does not migrate, runs
 ## Customer MVC
 
 Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account PR91, Catalog PR93, Cart PR95, Checkout PR97 and Orders PR99 are merged. Final step6 starts at `3bc247dd79ee3eab7919cdfe60fa34671a448f26` and adds complete browser/admin-API/SQL flow acceptance, shared loading/error feedback and whole-site checks. See [customer website handover and browser test commands](docs/MVC_HANDOVER.md), [source boundary audit](docs/MVC_ARCHITECTURE_AUDIT.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). Function-specific evidence remains in the accounts/catalog/cart/checkout/orders reports. Existing backend services, schema and admin API are unchanged. This acceptance PR awaits user review and does not merge itself.
+
+## Windows Admin
+
+W1 adds a separate HTTP-only native WinForms application and net10.0 client. On Windows: `dotnet run --project src/PhoneStore.Admin -c Release`. Configure the backend URL on Login; there are no default credentials. See [W1 setup/boundaries/tests](docs/WINFORMS_W1.md) and the [113-ID Admin ledger](docs/WINFORMS_CHECKLIST_RESULTS.md). Functional business modules remain later W2–W6 work; this PR does not merge itself.
+
+The full solution now includes Windows targets and is built on Windows. The explicit backend commands above and unchanged Ubuntu CI build only Web/Checks; a new cross-platform Admin.Client.Checks step uses isolated SQL QA. Windows form checks run separately with a fake API and publish actual control captures.
 
 ## Provisioning and sample data
 

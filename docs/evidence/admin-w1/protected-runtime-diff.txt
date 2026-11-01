@@ -1,0 +1,11 @@
+Base: web-v1.0 / merged PR101 at f8a0801e055b1e6c3dc310eee6b2607a2770c31e
+
+git diff f8a0801e055b1e6c3dc310eee6b2607a2770c31e -- src/PhoneStore.Core src/PhoneStore.Infrastructure src/PhoneStore.Web tests/PhoneStore.Checks
+
+Observed: empty. Existing application services, schema/migrations, admin API,
+MVC host/assets and all previous tests remain unchanged.
+
+Only four new Admin/application/check projects, solution additions, docs/evidence,
+an appended Ubuntu Client check step and a separate Windows job are included.
+Existing Ubuntu steps remain unchanged. Private Word/prototype inputs and raw
+QA logs/configuration are not committed.
