@@ -1,0 +1,6849 @@
+{
+  "qaOnly": true,
+  "steps": 32,
+  "perStepAssertionsPassed": true,
+  "records": [
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "guest-home",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "catalog",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "details",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "guest-cart-add",
+      "effect": "cart",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "checkout-entry-login",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "login-merge",
+      "effect": "cart",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 0,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 1,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "checkout",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 1,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 1,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "placed",
+      "effect": "place",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 3,
+        "cartQuantity": 1,
+        "historyRows": 9,
+        "journalRows": 12,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 0,
+        "historyRows": 10,
+        "journalRows": 13,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "read-receipt",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 0,
+        "historyRows": 10,
+        "journalRows": 13,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 0,
+        "historyRows": 10,
+        "journalRows": 13,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.01",
+      "step": "cancelled",
+      "effect": "cancel",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 0,
+        "historyRows": 10,
+        "journalRows": 13,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 0,
+        "historyRows": 11,
+        "journalRows": 14,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.02",
+      "step": "cart-add",
+      "effect": "cart",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 0,
+        "historyRows": 11,
+        "journalRows": 14,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 1,
+        "historyRows": 11,
+        "journalRows": 14,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.02",
+      "step": "checkout",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 1,
+        "historyRows": 11,
+        "journalRows": 14,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 1,
+        "historyRows": 11,
+        "journalRows": 14,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.02",
+      "step": "placed",
+      "effect": "place",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 2,
+            "available": 6
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 4,
+        "cartQuantity": 1,
+        "historyRows": 11,
+        "journalRows": 14,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 12,
+        "journalRows": 15,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.02",
+      "step": "confirm",
+      "effect": "confirm",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 12,
+        "journalRows": 15,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 13,
+        "journalRows": 15,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "DA_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.02",
+      "step": "dispatch",
+      "effect": "dispatch",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 8,
+            "R": 3,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 13,
+        "journalRows": 15,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "DA_XAC_NHAN",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 14,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "DANG_GIAO",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.02",
+      "step": "complete",
+      "effect": "complete",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 14,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "DANG_GIAO",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.03",
+      "step": "cart-add",
+      "effect": "cart",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 0,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.03",
+      "step": "old-checkout",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.03",
+      "step": "admin-profit-change",
+      "effect": "price",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.03",
+      "step": "reconfirm-no-order",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.03",
+      "step": "placed-new-price",
+      "effect": "place",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 2,
+            "available": 5
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 5,
+        "cartQuantity": 1,
+        "historyRows": 15,
+        "journalRows": 16,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 0,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.04",
+      "step": "cart-add",
+      "effect": "cart",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 0,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.04",
+      "step": "admin-stop-selling",
+      "effect": "inactive",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.04",
+      "step": "invalid-cart",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.04",
+      "step": "checkout-blocked",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.04",
+      "step": "admin-resume-selling",
+      "effect": "inactive",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.05",
+      "step": "checkout",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.05",
+      "step": "session-expired",
+      "effect": "expiry",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.05",
+      "step": "login-challenge",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.FLOW.05",
+      "step": "checkout-recovered",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.UI.03",
+      "step": "empty-home-no-commerce-mutation",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    },
+    {
+      "flow": "WEB.UI.03",
+      "step": "ui-matrix-no-commerce-mutation",
+      "effect": "read",
+      "before": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      },
+      "after": {
+        "stock": [
+          {
+            "variantId": 1,
+            "H": 7,
+            "R": 3,
+            "available": 4
+          },
+          {
+            "variantId": 2,
+            "H": 8,
+            "R": 8,
+            "available": 0
+          },
+          {
+            "variantId": 3,
+            "H": 7,
+            "R": 0,
+            "available": 7
+          },
+          {
+            "variantId": 4,
+            "H": 6,
+            "R": 0,
+            "available": 6
+          },
+          {
+            "variantId": 5,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 6,
+            "H": 8,
+            "R": 0,
+            "available": 8
+          },
+          {
+            "variantId": 7,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 8,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 9,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 10,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          },
+          {
+            "variantId": 11,
+            "H": 0,
+            "R": 0,
+            "available": 0
+          }
+        ],
+        "ownOrders": 6,
+        "cartQuantity": 1,
+        "historyRows": 16,
+        "journalRows": 17,
+        "orders": [
+          {
+            "Id": 1,
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 2,
+            "Status": "HOAN_TAT",
+            "Total": 44000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 3,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 168000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 4,
+            "Status": "DA_HUY",
+            "Total": 12000000.00,
+            "cod": "CHUA_THU"
+          },
+          {
+            "Id": 5,
+            "Status": "HOAN_TAT",
+            "Total": 12000000.00,
+            "cod": "DA_THU"
+          },
+          {
+            "Id": 6,
+            "Status": "CHO_XAC_NHAN",
+            "Total": 13000000.00,
+            "cod": "CHUA_THU"
+          }
+        ]
+      }
+    }
+  ]
+}

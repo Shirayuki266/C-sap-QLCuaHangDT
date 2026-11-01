@@ -6,6 +6,11 @@ for (const image of document.querySelectorAll("img[data-product-image]")) {
     if (image.complete && image.naturalWidth === 0) fallback();
 }
 const filterPanel = document.querySelector(".catalog-filter");
+for (const image of document.querySelectorAll("img[data-product-thumbnail]")) {
+    const fallback = () => { image.hidden = true; image.parentElement.querySelector(".thumbnail-error").hidden = false; };
+    image.addEventListener("error", fallback);
+    if (image.complete && image.naturalWidth === 0) fallback();
+}
 if (filterPanel) {
     const wide = matchMedia("(min-width:900px)");
     const showFilters = () => { filterPanel.open = wide.matches || !!filterPanel.querySelector(".validation-summary-errors"); };
@@ -45,5 +50,6 @@ if (detail) {
     selectVariant(false);
     for (const thumbnail of detail.querySelectorAll("button[data-image-url]")) thumbnail.addEventListener("click", () => {
         const image = detail.querySelector("#main-product-image"); image.hidden = false; image.parentElement.querySelector(".image-placeholder").hidden = true; image.src = thumbnail.dataset.imageUrl;
+        if (image.complete && image.naturalWidth === 0) { image.hidden = true; image.parentElement.querySelector(".image-placeholder").hidden = false; }
     });
 }

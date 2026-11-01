@@ -1,0 +1,5 @@
+.navigation-progress { padding: 12px 20px; margin-top: 16px; background: var(--soft); color: var(--navy); border-radius: 10px; font-weight: 650; }
+.navigation-progress[hidden] { display: none; }
+select:focus-visible, textarea:focus-visible { outline: 3px solid #cf6c13; outline-offset: 4px; }
+.thumbnail-error { font-size: .75rem; line-height: 1.3; color: var(--ink); }
+.product-thumbnails img[hidden], .thumbnail-error[hidden] { display: none; }

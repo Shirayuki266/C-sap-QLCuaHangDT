@@ -8,7 +8,7 @@
             <span class="image-placeholder" hidden="@(images.Count > 0)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 17 5-5 4 4 3-3 6 6"/><circle cx="15" cy="8" r="1"/></svg><span>Chưa có ảnh</span></span>
             @if (images.Count > 0) { <img src="@images[0]" alt="@product.Name" width="720" height="720" id="main-product-image" data-product-image /> }
         </div>
-        @if (images.Count > 1) { <div class="product-thumbnails" aria-label="Ảnh sản phẩm">@foreach (var image in images) { <button type="button" data-image-url="@image" aria-label="Xem ảnh @(images.IndexOf(image) + 1) của @product.Name"><img src="@image" alt="" width="72" height="72" loading="lazy" /></button> }</div> }
+        @if (images.Count > 1) { <div class="product-thumbnails" aria-label="Ảnh sản phẩm">@foreach (var image in images) { <button type="button" data-image-url="@image" aria-label="Xem ảnh @(images.IndexOf(image) + 1) của @product.Name"><img src="@image" alt="" width="72" height="72" loading="lazy" data-product-thumbnail /><span class="thumbnail-error" hidden>Ảnh lỗi</span></button> }</div> }
     </div>
     <div class="product-buying">
         <p class="product-brand">@product.Brand</p><h1>@product.Name</h1><p class="product-spec-summary">@product.Specifications</p>

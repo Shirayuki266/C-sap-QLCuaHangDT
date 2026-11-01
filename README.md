@@ -47,7 +47,7 @@ The smoke creates an isolated empty QA DB, proves startup does not migrate, runs
 
 ## Customer MVC
 
-Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account PR91, Catalog PR93, Cart PR95 and Checkout PR97 are merged; step5 starts at `41398139b8bbbb151fb48e27fc864e742a6494d6`. It adds owned order lists/filtering/pagination and pending-order cancellation with version checks and confirmation. See [accounts](docs/MVC_ACCOUNTS.md), [catalog](docs/MVC_CATALOG.md), [carts](docs/MVC_CART.md), [checkout](docs/MVC_CHECKOUT.md), [orders/cancellation and HTTP/SQL/Chromium evidence](docs/MVC_ORDERS.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). Complete WEB.FLOW and final whole-site/accessibility acceptance remain step6. Existing backend services, schema and admin API are unchanged.
+Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account PR91, Catalog PR93, Cart PR95, Checkout PR97 and Orders PR99 are merged. Final step6 starts at `3bc247dd79ee3eab7919cdfe60fa34671a448f26` and adds complete browser/admin-API/SQL flow acceptance, shared loading/error feedback and whole-site checks. See [customer website handover and browser test commands](docs/MVC_HANDOVER.md), [source boundary audit](docs/MVC_ARCHITECTURE_AUDIT.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). Function-specific evidence remains in the accounts/catalog/cart/checkout/orders reports. Existing backend services, schema and admin API are unchanged. This acceptance PR awaits user review and does not merge itself.
 
 ## Provisioning and sample data
 

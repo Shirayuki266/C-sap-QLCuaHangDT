@@ -3,6 +3,16 @@ using PhoneStore.Core;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 
+if(args.SequenceEqual(new[]{"--mvc-acceptance-browser"}))
+{
+    await MvcAcceptanceBrowserChecks.Run();return;
+}
+
+if(args.SequenceEqual(new[]{"--mvc-acceptance"}))
+{
+    await MvcAcceptanceChecks.Run();Check.Summary();return;
+}
+
 if(args.SequenceEqual(new[]{"--mvc-orders-browser"}))
 {
     await MvcOrdersBrowserChecks.Run();return;
@@ -98,5 +108,6 @@ if (args.Contains("--integration"))
     await MvcCartChecks.Run();
     await MvcCheckoutChecks.Run();
     await MvcOrdersChecks.Run();
+    await MvcAcceptanceChecks.Run();
 }
 Check.Summary();

@@ -36,15 +36,9 @@ public sealed class StorefrontErrors(RequestDelegate next, ILogger<StorefrontErr
             }
             if (exception is BusinessException business)
             {
-                var status = business.Code switch
-                {
-                    "FORBIDDEN" => 403, "NOT_FOUND" => 404,
-                    "CONCURRENT_UPDATE" or "STALE_VERSION" or "INVALID_STATE" or "ALREADY_APPLIED" or
-                    "PRICE_CHANGED" or "OUT_OF_STOCK" or "INSUFFICIENT_STOCK" or "VARIANT_INACTIVE" or
-                    "CART_EMPTY" or "REQUEST_KEY_CONFLICT" => 409,
-                    _ => 400
-                };
-                await Render(context, ForStatus(status));
+                var status = WebsiteServiceErrors.Status(business.Code);
+                if (status >= 500) logger.LogError("Website service failed: {Code}, trace {TraceId}", business.Code, context.TraceIdentifier);
+                await Render(context, ForStatus(status) with { TraceId = status >= 500 ? context.TraceIdentifier : null });
                 return;
             }
             if (exception is AntiforgeryValidationException or BadHttpRequestException)
