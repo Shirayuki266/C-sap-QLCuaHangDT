@@ -1,0 +1,3 @@
+PASS W5 actual WinForms order transitions/invoice/installed-driver PrintPreview with SQL step barriers
+1 admin form checks passed.
+PASS W5 real WinForms/Kestrel/SQL: confirm/dispatch/complete COD, invoice/PrintPreview read-only, fail/receive/cancel;9 SQL checkpoints; logout revoked

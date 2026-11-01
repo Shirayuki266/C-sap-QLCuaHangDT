@@ -10,6 +10,9 @@ if(args.Contains("--desktop-catalog")){await DesktopQaChecks.Run(catalog:true);r
 if(args.Contains("--desktop-contacts")){await DesktopQaChecks.Run(contacts:true);return;}
 if(args.Contains("--desktop-supply")){await DesktopQaChecks.Run(supply:true);return;}
 
+if(args.Contains("--desktop-orders")){await OrderDesktopQaChecks.Run();return;}
+if(args.Contains("--orders-only")){await OrderChecks.Run();return;}
+
 var passed = 0;
 void Assert(bool condition, string message) { if (!condition) throw new InvalidOperationException(message); }
 async Task Error(string expected, Func<Task> action) { try { await action(); throw new InvalidOperationException("Expected " + expected); } catch (AdminApiException error) { Assert(error.Code == expected, "Unexpected safe error: " + error.Code); } }
@@ -145,6 +148,7 @@ await File.WriteAllTextAsync(Path.Combine(evidence,"sql-results.json"),JsonSeria
 await CatalogChecks.Run();
 await ContactChecks.Run();
 await SupplyChecks.Run();
+await OrderChecks.Run();
 
 internal sealed class Probe : DelegatingHandler
 {
