@@ -31,7 +31,7 @@ internal static partial class Program
             foreach(var url in new[]{"javascript:alert(1)","data:x","//host/a","http://host/a","/images/../a"}){form.ImageBox.Text=url;await form.SaveAsync();Assert(api.Writes==0&&form.ImageBox.Text==url,"Invalid URL not retained/blocked");}
             form.ImageBox.Text="/images/qa.png";form.Variants[0].SuggestedQuantity=0;await form.SaveAsync();Assert(api.Writes==0,"Invalid suggestion sent");form.Variants[0].SuggestedQuantity=1;
             api.WriteError=new AdminApiException("INVALID_INPUT",400);await form.SaveAsync();Assert(form.NameBox.Text=="Điện thoại mới QA"&&form.Variants[0].Sku=="QA-NEW-B"&&form.SaveButton.Enabled,"Server error lost draft");await Capture(form,"UI08-product-error-retained");
-            api.WriteError=null;await form.SaveAsync();Assert(api.CreateCalls==2&&form.Saved?.Id==1&&form.Variants[0].Price==12000000,"Create did not read authoritative product");Assert(!form.PurchaseButton.Enabled,"W4 purchase opened early");form.Close();
+            api.WriteError=null;await form.SaveAsync();Assert(api.CreateCalls==2&&form.Saved?.Id==1&&form.Variants[0].Price==12000000,"Create did not read authoritative product");Assert(form.PurchaseButton.Enabled,"Persisted product purchase handoff unavailable");form.Close();
         });
         await Test("WIN.A06.01/02/03/04 editor GET complete PUT, old cost read-only, server price and stale retention",async()=>
         {
@@ -41,7 +41,7 @@ internal static partial class Program
             form.Variants[0].Cost=99;form.Variants[0].ProfitPercent=25;form.AddVariantButton.PerformClick();form.Variants.Last().Sku="QA-ADDED";form.Variants.Last().Color="Xanh";
             api.WriteError=new AdminApiException("CONCURRENT_UPDATE",409);await form.SaveAsync();Assert(form.MessageLabel.Text.Contains("vui lòng tải lại")&&form.Variants.Count==3&&form.Variants[0].ProfitPercent==25,"Stale conflict erased draft");
             Assert(api.LastRequest?.Variants.Count==3&&api.LastRequest.Variants[0].Version=="AAAAAAAAAAE="&&api.LastRequest.Variants[0].Cost==10000000,"Incomplete/mutated old variant request");
-            api.WriteError=null;await form.SaveAsync();Assert(form.Variants[0].Price==12500000,"Displayed price not server reply");Assert(form.Handoff().ProductId==1&&!form.PurchaseButton.Enabled,"Typed W4 handoff missing");form.Close();
+            api.WriteError=null;await form.SaveAsync();Assert(form.Variants[0].Price==12500000,"Displayed price not server reply");Assert(form.Handoff().ProductId==1&&form.PurchaseButton.Enabled,"Persisted product handoff missing");form.Close();
         });
         await Test("WIN.A07.01/02 and A08.01/02/03 confirmation gates full-state commands and retains rejected lookup draft",async()=>
         {

@@ -1,0 +1,90 @@
+{
+  "qaOnly": true,
+  "records": [
+    {
+      "stage": "product-saved",
+      "purchases": 0,
+      "status": null,
+      "quantity": 0,
+      "H": 0,
+      "R": 0,
+      "journal": 0,
+      "variants": [
+        {
+          "Cost": 10000000.00,
+          "Price": 12000000.00
+        }
+      ],
+      "orders": 0,
+      "payments": 0
+    },
+    {
+      "stage": "handoff-open",
+      "purchases": 0,
+      "status": null,
+      "quantity": 0,
+      "H": 0,
+      "R": 0,
+      "journal": 0,
+      "variants": [
+        {
+          "Cost": 10000000.00,
+          "Price": 12000000.00
+        }
+      ],
+      "orders": 0,
+      "payments": 0
+    },
+    {
+      "stage": "draft-saved",
+      "purchases": 1,
+      "status": "NHAP",
+      "quantity": 4,
+      "H": 0,
+      "R": 0,
+      "journal": 0,
+      "variants": [
+        {
+          "Cost": 10000000.00,
+          "Price": 12000000.00
+        }
+      ],
+      "orders": 0,
+      "payments": 0
+    },
+    {
+      "stage": "confirmed",
+      "purchases": 1,
+      "status": "DA_XAC_NHAN",
+      "quantity": 4,
+      "H": 4,
+      "R": 0,
+      "journal": 1,
+      "variants": [
+        {
+          "Cost": 10000000.00,
+          "Price": 12000000.00
+        }
+      ],
+      "orders": 0,
+      "payments": 0
+    },
+    {
+      "stage": "counted",
+      "purchases": 1,
+      "status": "DA_XAC_NHAN",
+      "quantity": 4,
+      "H": 5,
+      "R": 0,
+      "journal": 2,
+      "variants": [
+        {
+          "Cost": 10000000.00,
+          "Price": 12000000.00
+        }
+      ],
+      "orders": 0,
+      "payments": 0
+    }
+  ]
+}

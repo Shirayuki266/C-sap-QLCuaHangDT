@@ -1,10 +1,12 @@
 namespace PhoneStore.Admin.Client;
 
-public sealed class AdminApiException(string code, int status = 0, string? traceId = null) : Exception(MessageFor(code, status, traceId))
+public sealed class AdminApiException(string code, int status = 0, string? traceId = null,string? publicValidation=null) : Exception(MessageFor(code, status, traceId))
 {
     public string Code { get; } = code;
     public int Status { get; } = status;
     public string? TraceId { get; } = SafeTrace(traceId);
+    // Only the public INVALID_INPUT400 envelope of purchase/stock writes; never SQL/stack/login/500 bodies.
+    public string? PublicValidation { get; }=status==400&&code=="INVALID_INPUT"&&publicValidation is{Length:>0 and <=1000}&&!publicValidation.Any(char.IsControl)?publicValidation:null;
     private static string? SafeTrace(string? value) => value is { Length: > 0 and <= 120 } && value.All(c => char.IsAsciiLetterOrDigit(c) || c is '-' or '_' or ':' or '.') ? value : null;
     private static string MessageFor(string code, int status, string? trace) => status >= 500 && status != 503
         ? "Máy chủ chưa thể xử lý yêu cầu. Mã tra cứu: " + (SafeTrace(trace) ?? "không có")

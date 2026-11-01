@@ -26,7 +26,7 @@ public sealed class ProductEditor : Form
     public Button AddVariantButton { get; }=AdminTheme.Button("Thêm biến thể",false);
     public Button SaveButton { get; }=AdminTheme.Button("Lưu sản phẩm");
     public Button ReloadButton { get; }=AdminTheme.Button("Tải lại / đối soát",false);
-    public Button PurchaseButton { get; }=AdminTheme.Button("Lập phiếu nhập · W4",false);
+    public Button PurchaseButton { get; }=AdminTheme.Button("Lập phiếu nhập",false);
     public Label MessageLabel { get; }=AdminTheme.Label("");
     public event Action<PurchaseHandoff>? PurchaseRequested;
     public long ProductId { get; }
@@ -39,7 +39,7 @@ public sealed class ProductEditor : Form
         var form=AdminTheme.Stack(24);form.Dock=DockStyle.Top;general.AutoScroll=true;general.Controls.Add(form);
         AdminTheme.Field(form,"Mã sản phẩm *",CodeBox);AdminTheme.Field(form,"Tên điện thoại *",NameBox);AdminTheme.Add(form,AdminTheme.Label("Hãng *"));AdminTheme.Add(form,BrandBox);AdminTheme.Add(form,AdminTheme.Label("Danh mục *"));AdminTheme.Add(form,CategoryBox);AdminTheme.Field(form,"Thông số",SpecificationsBox);AdminTheme.Field(form,"Mô tả",DescriptionBox);AdminTheme.Add(form,ActiveBox);
         var vg=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=3,ColumnCount=1};vg.RowStyles.Add(new RowStyle(SizeType.AutoSize));vg.RowStyles.Add(new RowStyle(SizeType.Percent,100));vg.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        vg.Controls.Add(CatalogUi.Toolbar(AddVariantButton,AdminTheme.Label("Giá bán từ máy chủ · Không xóa biến thể; dùng cột Kinh doanh")),0,0);vg.Controls.Add(VariantGrid,0,1);vg.Controls.Add(AdminTheme.Label("Giá vốn cũ chỉ đọc. Lượng gợi ý chỉ dùng cho bước W4; chưa lưu phiếu, chưa tăng tồn."),0,2);variantTab.Controls.Add(vg);
+        vg.Controls.Add(CatalogUi.Toolbar(AddVariantButton,AdminTheme.Label("Giá bán từ máy chủ · Không xóa biến thể; dùng cột Kinh doanh")),0,0);vg.Controls.Add(VariantGrid,0,1);vg.Controls.Add(AdminTheme.Label("Giá vốn cũ chỉ đọc. Lượng gợi ý điền sang phiếu nhập, chỉ lưu khi lưu phiếu và không tự tăng tồn."),0,2);variantTab.Controls.Add(vg);
         foreach(var (property,title,read) in new[]{("Sku","SKU *",false),("Color","Màu *",false),("StorageGb","GB *",false),("Cost","Giá vốn (đ) *",false),("ProfitPercent","Lợi nhuận % *",false),("Price","Giá bán server (đ)",true),("Active","Kinh doanh",false),("OnHand","Tồn thực",true),("Reserved","Đang giữ",true),("Available","Có thể bán",true),("SuggestedQuantity","Lượng gợi ý *",false),("Version","Version",true)})CatalogUi.Column(VariantGrid,property,title,read,property=="Version"?140:100);
         VariantGrid.CellBeginEdit+=(_,e)=>{if(e.ColumnIndex==VariantGrid.Columns["Cost"]!.Index&&VariantGrid.Rows[e.RowIndex].DataBoundItem is VariantDraft{Id:>0})e.Cancel=true;};
         foreach(DataGridViewColumn column in VariantGrid.Columns)column.MinimumWidth=column.Name is "Price" or "ProfitPercent" or "Cost" or "Version" or "Available"?150:120;
@@ -47,8 +47,14 @@ public sealed class ProductEditor : Form
         VariantGrid.DataError+=(_,e)=>{e.ThrowException=false;MessageLabel.Text="Dữ liệu biến thể chưa hợp lệ. Dung lượng/lượng gợi ý là số nguyên; giá vốn/tỷ lệ là số.";};
         var imageForm=AdminTheme.Stack(24);imageForm.Dock=DockStyle.Top;imageTab.Controls.Add(imageForm);AdminTheme.Field(imageForm,"Ảnh chính · HTTPS hoặc /images/ · có thể để trống",ImageBox);AdminTheme.Add(imageForm,AdminTheme.Label("Ảnh bổ sung · tối đa 12 URL, mỗi dòng một ảnh; thứ tự từ trên xuống"));AdminTheme.Add(imageForm,ImagesBox);
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=4,ColumnCount=1,Padding=new Padding(20)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label(id==0?"Thêm điện thoại":"Sửa điện thoại",22,true),0,0);root.Controls.Add(tabs,0,1);root.Controls.Add(MessageLabel,0,2);root.Controls.Add(CatalogUi.Toolbar(SaveButton,ReloadButton,PurchaseButton),0,3);Controls.Add(root);PurchaseButton.Enabled=false;
-        AddVariantButton.Click+=(_,_)=>Variants.Add(new());SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
-        PurchaseButton.Click+=(_,_)=>{if(Saved is not null)PurchaseRequested?.Invoke(Handoff());};
+        AddVariantButton.Click+=(_,_)=>{Variants.Add(new());PurchaseAction();};SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
+        VariantGrid.CellEndEdit+=(_,_)=>PurchaseAction();
+        PurchaseButton.Click+=async(_,_)=>
+        {
+            if(!VariantGrid.EndEdit()||Saved is null||!CatalogForms.SavedMatches(Saved,Input())||Variants.Any(v=>v.Id<=0||v.SuggestedQuantity<=0)){MessageLabel.Text="Lưu sản phẩm và các biến thể trước; lượng gợi ý phải dương.";return;}
+            var handoff=Handoff();if(PurchaseRequested is not null)PurchaseRequested(handoff);else{using var form=new PurchaseEditor(api,handoff:handoff);form.ShowDialog(this);}
+            try{Bind(await workspace.Product(Saved.Id));MessageLabel.Text="Đã tải lại giá và tồn từ máy chủ. Lượng gợi ý không được lưu vào kho.";}catch(Exception error){MessageLabel.Text=AdminTheme.Failure(error);}PurchaseAction();
+        };
     }
     public PurchaseHandoff Handoff()=>new(Saved?.Id??0,Variants.Where(v=>v.Id>0).Select(v=>new PurchaseSuggestion(v.Id,v.Sku,v.SuggestedQuantity)).ToArray());
     public ProductRequest Input()=>new(CodeBox.Text,NameBox.Text,(BrandBox.SelectedItem as LookupRow)?.Id??0,(CategoryBox.SelectedItem as LookupRow)?.Id??0,SpecificationsBox.Text,DescriptionBox.Text,ImageBox.Text,ActiveBox.Checked,Variants.Select(v=>v.Request()).ToList(),
@@ -72,9 +78,10 @@ public sealed class ProductEditor : Form
     }
     private void Bind(ProductRecord? product)
     {
+        var suggestions=Variants.GroupBy(v=>v.Sku.Trim(),StringComparer.OrdinalIgnoreCase).ToDictionary(g=>g.Key,g=>g.First().SuggestedQuantity,StringComparer.OrdinalIgnoreCase);
         original=Saved=product;BrandBox.DataSource=brands.Where(b=>b.Active||b.Id==product?.BrandId).ToList();CategoryBox.DataSource=categories.Where(c=>c.Active||c.Id==product?.CategoryId).ToList();
         if(product is not null){CodeBox.Text=product.Code;NameBox.Text=product.Name;BrandBox.SelectedItem=brands.SingleOrDefault(b=>b.Id==product.BrandId);CategoryBox.SelectedItem=categories.SingleOrDefault(c=>c.Id==product.CategoryId);SpecificationsBox.Text=product.Specifications;DescriptionBox.Text=product.Description;ImageBox.Text=product.ImageUrl;ImagesBox.Text=string.Join(Environment.NewLine,product.Images.OrderBy(i=>i.SortOrder).Select(i=>i.Url));ActiveBox.Checked=product.Active;}
-        Variants=new(CatalogForms.Drafts(product));VariantGrid.DataSource=Variants;
+        Variants=new(CatalogForms.Drafts(product));foreach(var v in Variants)if(suggestions.TryGetValue(v.Sku,out var quantity))v.SuggestedQuantity=quantity;VariantGrid.DataSource=Variants;
     }
     public async Task SaveAsync()
     {
@@ -84,5 +91,6 @@ public sealed class ProductEditor : Form
         if(original is not null&&(original.Active!=input.Active||variantStateChanged)&&!confirm("Thay đổi kinh doanh","Xác nhận thay đổi trạng thái sản phẩm hoặc biến thể? Dữ liệu và lịch sử được giữ nguyên."))return;
         SetBusy(true);try{var product=await workspace.Save(original?.Id??ProductId,input);Bind(product);MessageLabel.Text="Đã lưu. Giá bán, tồn và version đã tải lại từ máy chủ.";}catch(Exception error){MessageLabel.Text=AdminTheme.Failure(error);}finally{SetBusy(false);}
     }
-    private void SetBusy(bool value){busy=value;SaveButton.Enabled=ReloadButton.Enabled=AddVariantButton.Enabled=VariantGrid.Enabled=CodeBox.Enabled=NameBox.Enabled=BrandBox.Enabled=CategoryBox.Enabled=SpecificationsBox.Enabled=DescriptionBox.Enabled=ImageBox.Enabled=ImagesBox.Enabled=ActiveBox.Enabled=!value;PurchaseButton.Enabled=false;if(value)MessageLabel.Text="Đang xử lý…";}
+    private void PurchaseAction()=>PurchaseButton.Enabled=!busy&&Saved is not null&&Variants.All(v=>v.Id>0&&v.SuggestedQuantity>0)&&CatalogForms.SavedMatches(Saved,Input());
+    private void SetBusy(bool value){busy=value;SaveButton.Enabled=ReloadButton.Enabled=AddVariantButton.Enabled=VariantGrid.Enabled=CodeBox.Enabled=NameBox.Enabled=BrandBox.Enabled=CategoryBox.Enabled=SpecificationsBox.Enabled=DescriptionBox.Enabled=ImageBox.Enabled=ImagesBox.Enabled=ActiveBox.Enabled=!value;PurchaseAction();if(value)MessageLabel.Text="Đang xử lý…";}
 }

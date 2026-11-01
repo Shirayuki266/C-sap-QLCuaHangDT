@@ -28,12 +28,14 @@ public sealed class MainForm : Form
             var button = AdminTheme.Button(name, false); button.Width = 190; button.Height = 40; navigation.Add(button); side.Controls.Add(button);
             button.Click += (_, _) =>
             {
-                TitleLabel.Text = name; ContentLabel.Text = name == "Tài khoản" ? "Quản lý phiên và mật khẩu của bạn" : name is "Điện thoại" or "Hãng" or "Danh mục" or "Khách hàng" or "Nhà cung cấp" ? "Chọn mục này để mở cửa sổ quản lý." : "Chưa triển khai";
+                TitleLabel.Text = name; ContentLabel.Text = name == "Tài khoản" ? "Quản lý phiên và mật khẩu của bạn" : name is "Điện thoại" or "Hãng" or "Danh mục" or "Khách hàng" or "Nhà cung cấp" or "Nhập hàng" or "Tồn kho" ? "Chọn mục này để mở cửa sổ quản lý." : "Chưa triển khai";
                 foreach (var item in navigation) item.BackColor = item == button ? Color.FromArgb(234, 240, 255) : Color.White;
                 if(name=="Điện thoại"){using var form=new ProductListForm(api);form.ShowDialog(this);}
                 else if(name is "Hãng" or "Danh mục"){using var form=new LookupForm(api,name=="Hãng"?"brands":"categories");form.ShowDialog(this);}
                 else if(name=="Khách hàng"){using var form=new CustomerListForm(api);form.ShowDialog(this);}
                 else if(name=="Nhà cung cấp"){using var form=new SupplierListForm(api);form.ShowDialog(this);}
+                else if(name=="Nhập hàng"){using var form=new PurchaseListForm(api);form.ShowDialog(this);}
+                else if(name=="Tồn kho"){var settings=new StockPreferenceStore();using var form=new StockListForm(api,settings.Load(),settings.Save);form.ShowDialog(this);}
             };
         }
         var body = AdminTheme.Stack(32); body.BackColor = AdminTheme.Canvas;

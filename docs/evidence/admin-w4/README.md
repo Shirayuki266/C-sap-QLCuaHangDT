@@ -1,0 +1,13 @@
+# W4 evidence provenance
+
+These files are sanitized outputs of executed checks on isolated, generated SQL QA databases. No demo/shared database is used. The W4 implementation starts from develop `bfbf2f652a4fc91b40c7079e341bc187096a668a` (W3 merge). The exact W4 head and CI runs are bound in the PR verification comment; generated evidence does not embed its own commit SHA.
+
+- `sql-results.json`:13 new W4 Admin.Client scenario groups, request methods/paths/sanitized purchasing and counting DTOs, statuses, before/after snapshot hashes and race/retry facts. Authentication bodies/headers are omitted.
+- `sql-states.json`:18 full ordered SQL snapshots keyed by SHA256. Rejected writes reference identical before/after keys. Includes purchases/lines, variants, stock/movements, suppliers, orders/lines/payments/history; no credential/session tables.
+- `desktop-sql-results.json`:five independently acknowledged SQL checkpoints from real WinForms controls through loopback Kestrel into a separate QA database. It is not the fake form fixture.
+- `forms/results.json` and19 PNGs:actual STA forms with a synthetic API,120DPI,1280×800 surfaces and620×330 protected dialogs. Seven W4 scenario groups (25 total including W1–W3). Proves control states, retention, confirmation text and paging guards, not financial correctness.
+- `real-forms/results.json` and10 PNGs:actual forms with real QA backend; corresponding SQL checkpoints above. Local Windows smoke, not presented as Windows CI SQL coverage.
+- `*-summary.log`:bounded runner summaries. The existing unchanged backend integration runner reports322 passing checks; new client runner retains W1/W2/W3 and13 W4 groups. Windows CI independently regenerates fake controls; Ubuntu independently runs the original regression and real SQL client checks.
+- `direction.md`, `finish-review.md`, `finish-verdict.md`, `design-documentation.md`:native incumbent extension contract, independent full review, scored F1/F2 fix verdict and system comparison. The verdict is ship at the two-finding scope, not whole-phase/W6 acceptance.
+
+No generated product imagery is shipped. PNGs are DrawToBitmap audit evidence. Private Word/prototype inputs are not copied into this directory. No fresh exact Word-image comparison is claimed when the originally named local document is unavailable. File10 was supplied and reconciled on2026-11-02; see the W4 report and113-ID ledger for the corrected69 PASS/44 NOT RUN counts. Earlier review/direction snapshots accurately record its unavailability at capture/review time; that historical limitation is superseded by the document reconciliation, without changing any UI or SQL evidence.
