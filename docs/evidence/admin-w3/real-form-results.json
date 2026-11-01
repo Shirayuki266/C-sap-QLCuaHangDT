@@ -1,0 +1,46 @@
+{
+  "fakeApi": false,
+  "qaOnly": true,
+  "captures": [
+    {
+      "name": "UI11-real-qa-profile",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-real-qa-customers",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "supplier-real-qa-editor",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "supplier-real-qa-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "supplier-real-qa-picker",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}

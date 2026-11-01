@@ -7,6 +7,7 @@ using PhoneStore.Admin.Client.Checks;
 
 if(args.Contains("--desktop-smoke")){await DesktopQaChecks.Run();return;}
 if(args.Contains("--desktop-catalog")){await DesktopQaChecks.Run(catalog:true);return;}
+if(args.Contains("--desktop-contacts")){await DesktopQaChecks.Run(contacts:true);return;}
 
 var passed = 0;
 void Assert(bool condition, string message) { if (!condition) throw new InvalidOperationException(message); }
@@ -141,6 +142,7 @@ Console.WriteLine($"{passed} admin client checks passed.");
 var evidence = Path.Combine(QaBackend.Root, ".artifacts", "admin-w1"); Directory.CreateDirectory(evidence);
 await File.WriteAllTextAsync(Path.Combine(evidence,"sql-results.json"),JsonSerializer.Serialize(new{qaOnly=true,checks=passed,allCommerceUnchanged=true,records=sqlTrace},new JsonSerializerOptions{WriteIndented=true}));
 await CatalogChecks.Run();
+await ContactChecks.Run();
 
 internal sealed class Probe : DelegatingHandler
 {

@@ -1,0 +1,60 @@
+PASS WIN.A01.01 actual readiness fingerprint; expected mismatch prevents login request
+PASS WIN.A01.02 invalid CUSTOMER locked login create no session and use generic feedback
+PASS WIN.BASE.04 actual missing/wrong CSRF400 and per-write token refresh with same session cookie
+PASS WIN.BASE.07 expired or revoked SQL session401 clears client; subsequent command sends no POST
+PASS WIN.A01.04 lost login response requires session GET before explicit retry, never stuck
+PASS WIN.BASE.06 malformed successful login JSON reconciles received cookie instead of replaying credentials
+PASS WIN.A03 actual invalid password leaves hash/sessions; valid change revokes every session
+PASS WIN.A02 actual logout revokes session; repeated/expired logout is safe
+PASS WIN.BASE.08 post-commit response loss blocks blind retry until authoritative GET reconciliation
+PASS WIN.BASE.11/12/20 typed request and page JSON, exact Vietnamese money and UTC+7, safe bounded query
+PASS WIN.BASE.06 controlled errors for HTTP business codes500 trace JSON network timeout
+PASS WIN.BASE.02/03 application architecture and secret boundary
+PASS SQL before/after: business tables unchanged; only account hash/session changes authorized
+13 admin client checks passed.
+PASS WIN.A08.01 ADMIN lookup POST201/list refresh/PUT204 full name+active, paging includes inactive
+PASS WIN.A05.01 create product POST201 then GET, formula server price and zero H/R; WIN.A04.02 detail fields
+PASS WIN.A05.02 duplicate code/SKU/combination, invalid cost/rate/image rollback entire aggregate
+PASS WIN.A05.03/05 client validation supports forms; server accepts image policies and rate boundaries
+PASS WIN.A04.01/03 query brand active paging, names resolve inactive ADMIN lists;404/no-match
+PASS WIN.A06.01/04 missing retained variant rejected, complete old id/version preserved, cost immutable/new stock0
+PASS WIN.A06.02 stale aggregate PUT409 no overwrite; server409 maps reload message
+PASS WIN.A06.03 rate PUT changes server price but real checkout order/payment/history/H/R snapshots stay fixed
+PASS WIN.A07.01/02 full active PUT retains aggregate/history; WIN.A08.02/03 lookup stop hides public only, unique name atomic
+PASS WIN.BASE.08 W2 uncertain create reconciles exact code before another write; every POST/PUT fresh CSRF
+PASS WIN.BASE.08 successful201/204 but readback503 retains known id, blocks repeat until GET/list
+11 admin W2 client checks passed.
+PASS WIN.A09.01/02 query/state/paging/detail; narrow safe DTOs exclude secrets and ADMIN
+PASS WIN.A12.01 real customer orders page20+1, empty peer and working read-only detail
+PASS WIN.A10.01 duplicate phone/email and invalid profile atomic; exact four-field request
+PASS WIN.A10.02 own contacts accepted; PUT204 then GET;21 old order snapshots/stock/payment/history unchanged
+PASS WIN.A11.01 confirmed state command revokes both real sessions; unlock restores none; fresh login required
+PASS WIN.A11.02/03 stale expectedActive409 no overwrite; ADMIN target404 no lock/profile capability
+PASS WIN.A13.01/02 supplier POST201/query, PUT204/query, duplicate create/update atomic and no by-id/delete
+PASS WIN.A13.03 active-only picker reads all bounded pages; list queries/page; no stock/order mutation
+PASS WIN.BASE.08 W3 lost response/readback guard reconciles customer ID and supplier list, no blind resend
+9 admin W3 client checks passed.
+
+PASS WIN.A01/BASE.14 actual STA LoginForm clears password before await, guards duplicate, renders ready/busy/error
+PASS WIN.BASE.13 shell navigation placeholders no fake commerce; account controls and QA status
+PASS WIN.A03 form submits only self passwords, clears fields and retains controlled errors
+PASS WIN.BASE.18 user settings only allow public server configuration, validation preserves form
+PASS WIN.A02 bounded best-effort close and logout work without a live server
+PASS WIN.BASE.07 production application context returns to LoginForm on revoked session
+PASS WIN.BASE.15 reusable confirmation dialog defaults to safe dismissal
+PASS WIN.A04.01/03 actual list filters/paging, inactive label resolution and no-match/error
+PASS WIN.A05.01/02/03/05 new editor validation retains form, server errors retained, POST201 then GET
+PASS WIN.A06.01/02/03/04 editor GET complete PUT, old cost read-only, server price and stale retention
+PASS WIN.A07.01/02 and A08.01/02/03 confirmation gates full-state commands and retains rejected lookup draft
+PASS WIN.A04.02/03 actual details/read error and Main catalog navigation opens real child form
+5 admin W2 form checks passed.
+PASS WIN.A09.01/02 actual customer list filters/empty/error and safe detail
+PASS WIN.A10.01/02 actual four-field profile form retains duplicate errors, then PUT/readback
+PASS WIN.A11.01/02/03 confirmations/full state, stale reload message, ADMIN has no lock action
+PASS WIN.A12.01 actual customer orders/empty and handoff opens read-only HTTP detail
+PASS WIN.A13.01/02/03 supplier new/edit/duplicate retention, no deletion and active-only picker
+5 admin W3 form checks passed.
+18 admin form checks passed.
+
+1 admin form checks passed.
+PASS real W3 WinForms/Kestrel/SQL QA: profile saved, supplier created/listed/selected; orders/inventory unchanged; admin session removed

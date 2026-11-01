@@ -1,0 +1,1371 @@
+{
+  "at": "2026-11-01T16:13:17.507Z",
+  "sourceSha256": "ae7962fe17cd92aacd1445b203b319c0e6d47859827a9fda6ddbadffca89ae29",
+  "sourceAvailability": "Original08/09 read at W3 start; later Downloads paths missing. Exact113 ID/priority/criterion snapshot and original SHA retained from accepted W2 ledger; no reconstructed source or invented priorities.",
+  "base": "cc4ab8aa4eed4bd752b60a449b189eb8a72e921e",
+  "branch": "feature/106-admin-contacts",
+  "scope": "W1/W2 accepted plus W3; exact final-head CI bound in PR; no auto-merge",
+  "groups": {
+    "P0": {
+      "total": 48,
+      "PASS": 23,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 25,
+      "N/A": 0
+    },
+    "P1": {
+      "total": 59,
+      "PASS": 32,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 27,
+      "N/A": 0
+    },
+    "P2": {
+      "total": 6,
+      "PASS": 2,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 4,
+      "N/A": 0
+    }
+  },
+  "w3": {
+    "P0": {
+      "total": 2,
+      "PASS": 2,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 0
+    },
+    "P1": {
+      "total": 9,
+      "PASS": 9,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 0
+    },
+    "P2": {
+      "total": 0,
+      "PASS": 0,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "WIN.BASE.01",
+      "priority": "P0",
+      "criterion": "Solution có `PhoneStore.Admin.Client` (net10.0, không phụ thuộc WinForms), `PhoneStore.Admin` (net10.0-windows), dự án kiểm tra Client chạy trên Ubuntu (`PhoneStore.Admin.Client.Checks`, net10.0) và dự án test form (`PhoneStore.Admin.Tests`, net10.0-windows). Build Release không cảnh báo/lỗi trên runner Windows; job Ubuntu hiện có vẫn chạy đúng và không bị ảnh hưởng.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Four projects built locally Release without warnings/errors; exact Windows/Ubuntu CI evidence required before PASS. CI SUCCESS snapshot 4b5f3d940fcf0291edeeb9c2da9267355ced47ff; exact final head must be reverified after docs amendment.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json",
+        "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41302051431"
+      ]
+    },
+    {
+      "id": "WIN.BASE.02",
+      "priority": "P0",
+      "criterion": "Admin chỉ gọi **HTTP API** bằng `HttpClient` + `CookieContainer`. Hai dự án ứng dụng (`Admin.Client` và `Admin`) không tham chiếu `PhoneStore.Infrastructure` hoặc `PhoneStore.Web`, không có gói EF/SqlClient; chứng minh bằng test quét `.csproj`/`project.assets.json` và mã nguồn. Dự án kiểm tra `Admin.Client.Checks` được phép tham chiếu host Web để chạy backend thật.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Both shipping source/projects scanned; restored Client assets scanned in Ubuntu checks and both application assets in Windows checks. No Core/Web/Infrastructure/EF/SqlClient application reference; test host references scoped to new QA runner.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.03",
+      "priority": "P0",
+      "criterion": "Không có chuỗi kết nối SQL, mật khẩu hay token trong mã, cấu hình, log hoặc tệp người dùng. Chỉ có địa chỉ máy chủ (Base URL) được cấu hình; mật khẩu không bao giờ được lưu đĩa; cookie phiên chỉ nằm trong bộ nhớ.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Shipping code/settings contain no credential or SQL literal. Cookie jar stays in memory; generated QA credentials absent from captured logs. Password controls clear before await, after errors and on close; no remember option.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.04",
+      "priority": "P0",
+      "criterion": "Mọi lệnh ghi (POST/PUT/DELETE) tự lấy CSRF token từ `GET /api/security/token` và gửi kèm. Có test chứng minh thiếu token bị backend từ chối (400) và client xử lý có kiểm soát (lấy token mới và thử lại một lần, hoặc báo lỗi); không lệnh ghi nào đi mà không có token.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual missingCSRF400 and deliberately stripped-token400 cause no session write/retry; successful login/logout fetch a fresh token for each POST and share in-memory cookies.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.05",
+      "priority": "P0",
+      "criterion": "Địa chỉ máy chủ: chỉ cho phép `http` với loopback (localhost); mọi địa chỉ khác bắt buộc `https` và dùng kiểm tra chứng chỉ mặc định, không có tùy chọn tắt kiểm tra.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "HTTP nonloopback, credentials, schemes, query/fragment/path targets rejected; HTTPS and loopback accepted. Default certificate checking, no certificate bypass.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.06",
+      "priority": "P0",
+      "criterion": "Mọi lỗi (401, 400, 403, 404, 409, 500, 503, mất mạng, timeout, JSON sai) được ánh xạ thành thông báo tiếng Việt đúng bảng lỗi trong `API_COMPATIBILITY.md`; không crash, không hiện stack trace; 500 chỉ hiện mã tra cứu (`traceId`). Có bộ xử lý ngoại lệ toàn cục.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Real business failures plus controlled transport injections cover403/404/409/500trace/503, malformedJSON, network/timeout. Backend/private body text never displayed; global UI failure handlers are generic. Malformed success reconciles before another write.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.07",
+      "priority": "P0",
+      "criterion": "Phiên hết hạn hoặc bị thu hồi (401) giữa chừng → thông báo, quay về đăng nhập, không gửi thêm lệnh ghi bằng phiên cũ, dữ liệu form chưa lưu được giữ lại nếu có thể.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual SQL session expiry yields401 and prevents subsequent POST. Actual production application context, driven with fakeAPI on STA, closes Main and returns Login on session event; password/session values are not carried across.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.08",
+      "priority": "P0",
+      "criterion": "Sau phản hồi không chắc chắn (timeout, mất mạng) đối với POST/PUT/lệnh chuyển trạng thái, client **không tự gửi lại mù quáng**: đối soát trước bằng GET (đối tượng nếu biết `id`; danh sách theo `query` nếu chưa biết `id`; nhật ký kho theo `operationKey` cho kiểm kê) rồi mới cho người dùng thao tác tiếp. Riêng tạo phiếu nhập khi chưa biết `id` (backend không có GET theo `requestKey`): chỉ được gửi lại **cùng** `requestKey`, và hành vi lặp của backend phải được test và ghi lại.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual server commits logout then probe loses response: next write blocked before POST; failed reconciliation keeps guard. Lost/malformed login responses are checked via real session GET before explicit retry/recovery. Later domain-command workflows remain their stages.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.09",
+      "priority": "P0",
+      "criterion": "Chống bấm lặp: nút gửi chuyển sang trạng thái xử lý và vô hiệu trong lúc gửi. `requestKey` (tạo phiếu) và `operationKey` (kiểm kê, chuyển trạng thái, nhận lại) được sinh **một lần cho một ý định** và tái sử dụng khi thử lại cùng ý định; ý định mới dùng key mới.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "STA double-submit while login pending sends one call; Enter routes through actual Form dialog-key handling. Intent key helper keeps immutable in-memory GUID per intention; new intention receives new key. Future domain-key/race proofs remain W4/W5.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.10",
+      "priority": "P0",
+      "criterion": "Client không tự quyết định nghiệp vụ: giá bán, tổng tiền, tồn kho, doanh thu, trạng thái hợp lệ đều lấy từ phản hồi của server. Giá trị xem trước (nếu có) phải ghi rõ \"ước tính\". Việc ánh xạ trạng thái → nút hành động ở client chỉ là **quy tắc hiển thị**; backend vẫn là nơi quyết định khi thực hiện lệnh.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "W1 UI/client have no selling-price, inventory, revenue or order-transition authority; form placeholders make no domain claims. Existing services untouched. Future domain presentation will be rechecked as added.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.11",
+      "priority": "P1",
+      "criterion": "Phân trang theo hợp đồng thực tế: mặc định 20, tối đa 100 (không gửi >100); ô tìm kiếm gửi tham số `query`; không giả lập bộ lọc mà API không có (lọc phiếu nhập theo NCC/ngày, lọc sản phẩm theo ID danh mục, mã AND khách) bằng cách lọc trên một trang rồi báo tổng.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Bounded page/query builder rejects>100; real supplier no-match reads items/total/page/pageSize. No unsupported domain filters exposed by W1; later screens must retain this boundary.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.12",
+      "priority": "P1",
+      "criterion": "Tiền hiển thị `23.980.000 đ`; thời gian hiển thị theo UTC+7; ngày lọc gửi theo UTC+7 (ngày cuối bao gồm); số lượng là số nguyên.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Exact23.980.000 đ and UTC+7 next-day boundary asserted; DateOnly request formatter is invariant yyyy-MM-dd. Future money/table displays remain their function tests.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.13",
+      "priority": "P1",
+      "criterion": "Cửa sổ chính có điều hướng đúng thiết kế: Tổng quan, Điện thoại, Khách hàng, Nhập hàng, Tồn kho, Đơn hàng, Báo cáo, Tài khoản (kèm Hãng, Danh mục, NCC); thanh trạng thái hiện môi trường, người dùng hiện tại; cửa sổ tối thiểu 1280 × 800, bảng có cuộn.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual MainForm navigation has11 named entries,1280x800 minimum, server/user status and honest unimplemented-module text; native sidebar scroll enabled. Real API Main capture retained.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.14",
+      "priority": "P1",
+      "criterion": "Mọi tải dữ liệu chạy bất đồng bộ, không chặn luồng giao diện; mỗi màn hình có trạng thái đang tải, rỗng và lỗi.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Readiness/login/password/logout use async HTTP; held fake login proves live busy state, disabled submit and error recovery on actual controls. Only W1 screens are assessed; later data screens remain NOT RUN.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.15",
+      "priority": "P1",
+      "criterion": "Có hộp xác nhận cho: hủy đơn, giao thất bại, khóa/mở tài khoản khách, xác nhận phiếu nhập, điều chỉnh kho, ngừng bán sản phẩm/hãng/danh mục.",
+      "step": "W1",
+      "status": "NOT RUN",
+      "reason": "Partial W1 shared dialog, W2 product/lookup and W3 customer confirmations proven; purchase/stock/order integrations remain W4–W5, so whole criterion stays NOT RUN.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.16",
+      "priority": "P1",
+      "criterion": "Form giữ nguyên dữ liệu đã nhập khi có lỗi; lỗi theo trường hiển thị cạnh ô nhập khi có thể, nếu không thì ở đầu form.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Invalid login/settings retain username/configuration; password fields deliberately blank. Safe form errors shown without guessing fields from backend message text. Later domain forms not yet implemented.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.17",
+      "priority": "P1",
+      "criterion": "Có test cho `Admin.Client` chạy trên CI Ubuntu với backend thật trên CSDL QA riêng, và test form chạy trên CI Windows (form dựng với API giả); không dùng CSDL demo hoặc `PhoneStore_Rebuild`.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Independent Client SQL QA checks13 and Windows STA form checks8 pass locally; both CI jobs must be successful. CI SUCCESS snapshot 4b5f3d940fcf0291edeeb9c2da9267355ced47ff; exact final head must be reverified after docs amendment.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json",
+        "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41302051431"
+      ]
+    },
+    {
+      "id": "WIN.BASE.18",
+      "priority": "P1",
+      "criterion": "Cấu hình (Base URL, môi trường/fingerprint kỳ vọng tùy chọn) lưu trong user settings, không chứa bí mật; có hiển thị và sửa được ở màn hình đăng nhập.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual settings form rejects remoteHTTP without losing input; allowlisted URL/environment/fingerprint roundtrip through QA settings file, with no password/cookie/token properties.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.20",
+      "priority": "P1",
+      "criterion": "Request dùng DTO riêng đúng tên trường của backend; không gửi lại nguyên đối tượng phản hồi làm request (backend từ chối trường ngoài DTO). Danh sách phân trang đọc từ `{items, total, page, pageSize}`.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Separate LoginInput/PasswordInput exact camelCase fields asserted; real paged DTO response read correctly. No response object used as request; later DTOs remain future work.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.BASE.19",
+      "priority": "P2",
+      "criterion": "Thứ tự Tab, nhãn, `AcceptButton`/`CancelButton`, phím tắt thao tác chính, DPI scaling (`AutoScaleMode`).",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual Enter-dialog-key route triggers guarded login; labels/accessibility names, AcceptButton/CancelButton and AutoScaleMode.Dpi present. Shared confirmation starts on dismissal. Full125/150%DPI matrix remains W6.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A01.01",
+      "priority": "P0",
+      "criterion": "Trước khi đăng nhập gọi `GET /health/ready`; hiển thị môi trường và fingerprint nhận được. Phản hồi 503, hoặc môi trường/fingerprint khác giá trị kỳ vọng trong cấu hình (nếu có đặt) → chặn đăng nhập và nêu lý do.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual readiness environment/fingerprint shown in real Login capture. Wrong expected environment/fingerprint prevents POST.503 is mapped in controlled transport proof.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A01.02",
+      "priority": "P0",
+      "criterion": "`POST /api/auth/login` với `surface=\"admin\"`. Thành công → mở màn hình Tổng quan. Sai thông tin, tài khoản CUSTOMER hoặc tài khoản bị khóa → thông báo chung, không có phiên, không lộ nguyên nhân.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual invalid credentials, CUSTOMER and locked account get generic feedback and leave session row count unchanged; valid ADMIN opens real MainForm.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A01.03",
+      "priority": "P0",
+      "criterion": "Mật khẩu không được lưu, ghi log hoặc giữ lại trong điều khiển sau khi gửi; không có chức năng \"ghi nhớ mật khẩu\".",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual controls clear submitted password before pending task; error/close clears again; shipping settings and code have no default credential or remember-password option.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A01.04",
+      "priority": "P1",
+      "criterion": "Mất kết nối hoặc timeout khi đăng nhập → thông báo và thử lại được; không kẹt ở trạng thái đang xử lý.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual postcommit lost login response blocks blind resend; real session GET restores explicit retry path. Network error form re-enables actions; malformed success can recover received session without second login.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A01.05",
+      "priority": "P1",
+      "criterion": "Bấm Đăng nhập lặp chỉ gửi một yêu cầu; phím Enter ở ô mật khẩu tương đương nút Đăng nhập.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual Enter key handling and repeated PerformClick during held login produce one call and readable external progress label.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A02.01",
+      "priority": "P0",
+      "criterion": "Đăng xuất gọi `POST /api/auth/logout` (kèm CSRF), xóa cookie ở client, đóng mọi form, về LoginForm; thao tác tiếp theo phải đăng nhập lại.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual client and real WinForms/Kestrel logout revoke current SQL session and clear local identity/cookies; application context returns Login and closes owned screens.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A02.02",
+      "priority": "P1",
+      "criterion": "Đăng xuất khi phiên đã hết hạn vẫn về LoginForm, không lỗi.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual already-revoked session logout safely clears local state; repeated logout is harmless.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A02.03",
+      "priority": "P2",
+      "criterion": "Đóng ứng dụng khi đang đăng nhập cố gắng đăng xuất tốt nhất có thể và không bị treo.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual Main Close attempts fakeAPI logout, respects two-second cancellation bound and disposes form; successful real API logout also verified. Network loss cannot promise remote revocation.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A03.01",
+      "priority": "P0",
+      "criterion": "Đổi mật khẩu của chính mình (`POST /api/account/password`: mật khẩu hiện tại + mật khẩu mới). Thành công → mọi phiên bị thu hồi, buộc đăng nhập lại.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Two real ADMIN sessions; valid own-password change updates hash and deletes every SQL session; old session401, old password rejected, new password accepted.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A03.02",
+      "priority": "P1",
+      "criterion": "Sai mật khẩu hiện tại hoặc mật khẩu mới không đạt (10–128 ký tự, có chữ và số) → lỗi ở form, mật khẩu không đổi.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "Actual wrong current/short/overlong new password rejected with hash unchanged; form error keeps fields empty and shows controlled summary.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A03.03",
+      "priority": "P1",
+      "criterion": "Giao diện không có cách đổi mật khẩu của tài khoản khác; mật khẩu không xuất hiện trong log.",
+      "step": "W1",
+      "status": "PASS",
+      "reason": "No accountId/role/foreign target in PasswordInput or UI; test logs exclude generated passwords; form only invokes self-password API.",
+      "evidence": [
+        "docs/WINFORMS_W1.md",
+        "docs/evidence/admin-w1/checks.txt",
+        "docs/evidence/admin-w1/sql-results.json",
+        "docs/evidence/admin-w1/form-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A04.01",
+      "priority": "P1",
+      "criterion": "Danh sách điện thoại nội bộ: tìm theo `query`, lọc hãng và trạng thái (mặc định gồm cả sản phẩm ngừng kinh doanh), phân trang. Tên hãng/danh mục lấy từ danh sách tra cứu của ADMIN (kể cả mục đã ngừng).",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual query/brand/state paging and distinct page2; UI controls list inactive rows/names from ADMIN.20 default, bounded100 lookup pages; no invented category filter.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A04.02",
+      "priority": "P1",
+      "criterion": "Chi tiết sản phẩm: mã, tên, cấu hình, mô tả, ảnh. Mỗi biến thể có giá vốn, tỷ lệ, giá bán, tồn thực, đang giữ, có thể bán (= tồn thực − đang giữ) và version.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual ADMIN detail DTO and server price/cost/profit/H/R/version; actual STA details/editor show description/image URLs and available presentation. Real QA captures retained.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A04.03",
+      "priority": "P1",
+      "criterion": "Không tìm thấy hoặc lỗi tải → thông báo; danh sách rỗng hiển thị trạng thái rỗng.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual404 and no-match wrapper; form fake503 displays genuine failure feedback rather than an empty/zero success.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A05.01",
+      "priority": "P0",
+      "criterion": "Tạo sản phẩm với ít nhất một biến thể (SKU, màu, dung lượng, giá vốn, tỷ lệ lợi nhuận). Giá bán hiển thị là giá server trả về; `201 {id}` → GET lại để hiển thị; tồn ban đầu 0.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Real POST201 -> GET; two variants server price12,000,000; SQL initial H0/R0, no journal. Actual QA ProductEditor creates and reads back independently.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A05.02",
+      "priority": "P0",
+      "criterion": "Mọi lỗi từ server (trùng mã/SKU/tổ hợp biến thể, tỷ lệ ngoài 0–10.000%, giá vốn không dương, ảnh không hợp lệ) hiển thị rõ và giữ dữ liệu form; không tạo dữ liệu dở dang.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Real duplicate code/SKU/variant-combination and invalid cost/rates/images rejected400 with identical ordered SQL snapshots; actual form retains fields/variants and re-enables save.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A05.03",
+      "priority": "P1",
+      "criterion": "Ràng buộc form hỗ trợ người dùng: mã, SKU, tên không rỗng; dung lượng và giá vốn dương; lượng cần nhập là số nguyên dương. Kiểm tra của client không thay thế kiểm tra của server.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Client required code/name/SKU/color, positive storage/cost/integer suggested quantity and percent bounds asserted; actual controls block invalid draft, server independently rejects bad values.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A05.04",
+      "priority": "P1",
+      "criterion": "Sau khi tạo, nút \"Lập phiếu nhập\" mở phiếu nháp điền sẵn các biến thể và lượng gợi ý; lượng này chỉ được lưu khi người dùng lưu phiếu và không tự tăng tồn.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4 NOT RUN: typed purchase handoff/event exists, button disabled; actual draft opening/saving/stock workflow not implemented or accepted.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A05.05",
+      "priority": "P1",
+      "criterion": "Ảnh sản phẩm: chỉ `https://...`, `/images/...` hoặc để trống; giá trị khác bị chặn ở form và bị server từ chối.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Main image optional; HTTPS and /images accepted; invalid schemes/credentials/traversal/blank Images[]/overlong rejected; form retains invalid URL without sending.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A06.01",
+      "priority": "P0",
+      "criterion": "Sửa sản phẩm: GET rồi PUT đầy đủ — gửi mọi biến thể cũ kèm `id` và `version`; không cho sửa giá vốn và giá bán của biến thể cũ; biến thể mới nhận giá vốn ban đầu và tồn 0.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "GET -> dedicated complete PUT with old IDs/versions; direct incomplete PUT400 leaves SQL unchanged. Cost/price read-only, old cost retained by DTO binder; new variant zero stock.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A06.02",
+      "priority": "P0",
+      "criterion": "Xung đột phiên bản (409) → thông báo \"dữ liệu đã thay đổi, vui lòng tải lại\"; không ghi đè dữ liệu của người khác.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Real stale PUT409 CONCURRENT_UPDATE after competing valid update; rejected SQL snapshot unchanged, form retains draft and tells user to reload.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A06.03",
+      "priority": "P1",
+      "criterion": "Đổi tỷ lệ lợi nhuận → giá bán mới hiển thị lấy từ server sau khi lưu; đơn cũ không đổi.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual checkout snapshot before rate PUT retains line price12,000,000/payment/history/H5R1/journal; live server price12,500,000 after25%. Form renders returned price.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A06.04",
+      "priority": "P1",
+      "criterion": "Form không có thao tác xóa biến thể; chỉ có ngừng kinh doanh.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "No variant delete action or DELETE request; grid disallows row deletion, retains every old variant and offers active state only.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A07.01",
+      "priority": "P0",
+      "criterion": "Ngừng/mở kinh doanh sản phẩm bằng PUT với `active` mong muốn và có hộp xác nhận; không có thao tác xóa hàng đã giao dịch.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "GET full aggregate -> confirmed PUT active=false/true -> GET; cancellation sends no write. Product/history retained; variant state edits also ask confirmation.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A07.02",
+      "priority": "P1",
+      "criterion": "Trạng thái ngừng hiển thị bằng chữ, không chỉ bằng màu.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual inactive filter and rendered text Đã ngừng; status does not rely on color.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A08.01",
+      "priority": "P1",
+      "criterion": "Quản lý hãng và danh mục qua `/admin/lookups/{kind}` (GET/POST/PUT) gửi trạng thái đầy đủ (`name`, `active`); danh sách hiển thị cả mục đã ngừng.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual lookup POST201/list and PUT204/list, dedicated name+active, ADMIN inactive retention/paging; actual form new/edit selection paths tested.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A08.02",
+      "priority": "P0",
+      "criterion": "Không có thao tác xóa; ngừng/mở không làm mất sản phẩm hay lịch sử; tên trùng bị server từ chối và hiển thị.",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Real duplicate create/update lookup400 leaves SQL unchanged; stopping does not remove product/orders/history. No delete operation.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A08.03",
+      "priority": "P1",
+      "criterion": "Cảnh báo trước khi ngừng một hãng/danh mục: sản phẩm liên quan sẽ không còn hiển thị ở website (DEC.03).",
+      "step": "W2",
+      "status": "PASS",
+      "reason": "Actual confirmation cancellation blocks write, warning explicitly mentions website visibility; actual public detail404 when either brand/category inactive, ADMIN retained.",
+      "evidence": [
+        "docs/WINFORMS_W2.md",
+        "docs/evidence/admin-w2/sql-results.json",
+        "docs/evidence/admin-w2/form-results.json",
+        "docs/evidence/admin-w2/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A09.01",
+      "priority": "P1",
+      "criterion": "Tra cứu khách hàng theo `query` (tên, điện thoại, email), lọc trạng thái, phân trang; không hiển thị mật khẩu hay mã băm.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Real query name/phone/email, state, page1/page2 and no-match; safe customer DTO has no credential/hash/role fields. Actual list controls and empty/error states rendered.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A09.02",
+      "priority": "P1",
+      "criterion": "Chi tiết khách hàng: hồ sơ, trạng thái, liên kết sang đơn của khách.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Actual customer GET and rendered contact/status/date; working orders entry. No account secret properties are exposed.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A10.01",
+      "priority": "P0",
+      "criterion": "Sửa chỉ họ tên, điện thoại, email, địa chỉ; trùng điện thoại/email hiển thị lỗi và giữ form; form không có trường vai trò, trạng thái hay mật khẩu.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Exactly four profile request fields; real duplicate phone/email and bad syntax400 are atomic. Actual editor has four TextBoxes/no state/role/password field and retains rejected draft.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A10.02",
+      "priority": "P1",
+      "criterion": "Sau khi lưu GET lại để hiển thị; các đơn cũ giữ nguyên snapshot người nhận.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "PUT204 then GET authoritative profile, own unchanged contacts accepted.21 real checkout snapshots/payment/history/H50R21/journal remain identical; credential hash privately unchanged.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A11.01",
+      "priority": "P0",
+      "criterion": "Khóa/mở dùng `POST /admin/customers/{id}/state` với `{active, expectedActive}` và hộp xác nhận. Sau khi khóa, giao diện nêu rõ mọi phiên của khách bị thu hồi; khi mở lại, khách phải đăng nhập lại.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Confirmed active+expectedActive command tested. Lock deletes2 actual customer sessions; both old clients401, old write401; unlock restores0 sessions; fresh login required. UI explains both consequences.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A11.02",
+      "priority": "P1",
+      "criterion": "`expectedActive` lệch (người khác vừa đổi) → thông báo tải lại.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Competing authenticated admin session changes state; stale expectedActive409 changes no SQL data. Actual form retains state and displays reload message.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A11.03",
+      "priority": "P1",
+      "criterion": "Không có thao tác khóa dành cho tài khoản ADMIN.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "ADMIN excluded from actual customer list; ADMIN customer-read/state target404 with SQL unchanged. Invalid-target detail hides lock action, no role input exists.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A12.01",
+      "priority": "P1",
+      "criterion": "Xem đơn của khách (`GET /admin/customers/{id}/orders`) có phân trang; mở được chi tiết đơn; khách chưa có đơn → trạng thái rỗng.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Real customer orders page20+1, peer empty and read-only order detail GET. Actual button opens fallback details; typed handoff supports future fullW5 without claiming those operations.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A13.01",
+      "priority": "P1",
+      "criterion": "Nhà cung cấp: danh sách (`query`, phân trang), tạo, sửa (mã, tên, điện thoại, địa chỉ, trạng thái); không có thao tác xóa. Backend không có GET nhà cung cấp theo `id`: sau `201 {id}` hoặc sau khi sửa, làm mới bằng danh sách (`query` theo mã).",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Actual supplier POST201/list by code and PUT204/list, stop/reopen, query/state/paging. Actual new/edit controls and list readback; no DELETE/by-id GET.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A13.02",
+      "priority": "P1",
+      "criterion": "Mã NCC trùng → lỗi hiển thị, giữ form.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Real duplicate supplier code create/update400 rolls back fully. Actual editor retains code/name/contact/status draft and allows correction.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A13.03",
+      "priority": "P1",
+      "criterion": "NCC đã ngừng không xuất hiện trong danh sách chọn khi lập phiếu mới.",
+      "step": "W3",
+      "status": "PASS",
+      "reason": "Real active=true selector reads all103 active rows across bounded100 pages and excludes stopped NCC. Actual picker returns active record; W4 purchase integration remains deferred.",
+      "evidence": [
+        "docs/WINFORMS_W3.md",
+        "docs/evidence/admin-w3/sql-results.json",
+        "docs/evidence/admin-w3/form-results.json",
+        "docs/evidence/admin-w3/desktop-sql-results.json"
+      ]
+    },
+    {
+      "id": "WIN.A14.01",
+      "priority": "P0",
+      "criterion": "Lập phiếu nháp: chọn NCC hoạt động, thêm/xóa dòng (biến thể, số lượng nguyên > 0, giá vốn > 0), không trùng biến thể; POST kèm `requestKey` (GUID sinh một lần cho một ý định); `201 {id}` → GET lại.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A14.02",
+      "priority": "P0",
+      "criterion": "Sửa nháp: PUT thay toàn bộ dòng kèm `version`; xung đột → tải lại; phiếu đã xác nhận hoặc đã hủy không sửa được (nút bị vô hiệu và server vẫn từ chối).",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A14.03",
+      "priority": "P1",
+      "criterion": "Mã phiếu, ngày lập, người lập, trạng thái và tổng tiền hiển thị lấy từ server; client không tự quyết tổng tiền.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A14.04",
+      "priority": "P1",
+      "criterion": "Cho phép lưu nháp rỗng; xác nhận phiếu rỗng bị chặn kèm thông báo.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A14.05",
+      "priority": "P1",
+      "criterion": "Danh sách phiếu: `query`, trạng thái, phân trang; không giả lập bộ lọc theo NCC hoặc ngày bằng cách lọc một trang.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A15.01",
+      "priority": "P0",
+      "criterion": "Xác nhận phiếu: hộp thoại nêu tổng tiền và lượng nhập; gửi confirm kèm `version` và `operationKey`; thành công → GET lại, tồn tăng đúng từng biến thể, giá vốn và giá bán lấy từ server.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A15.02",
+      "priority": "P0",
+      "criterion": "Hủy nháp (kể cả nháp rỗng; lệnh gửi `{version, operationKey}`) không đổi tồn, giá vốn, giá bán.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A15.03",
+      "priority": "P0",
+      "criterion": "Bấm xác nhận lặp, phiếu đã chốt hoặc `version` cũ → bị từ chối và hiển thị; tồn không tăng lần hai.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A15.04",
+      "priority": "P1",
+      "criterion": "NCC ngừng, giá bán tính ra ngoài giới hạn, phiếu rỗng → thông báo rõ nguyên nhân; phiếu giữ nguyên là nháp.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A16.01",
+      "priority": "P1",
+      "criterion": "Tồn kho: `query`, hãng, ngưỡng \"sắp hết\" nhập tường minh (không có ngưỡng mặc định ẩn), phân trang; hiển thị tồn thực, đang giữ, có thể bán theo biến thể.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A16.02",
+      "priority": "P0",
+      "criterion": "Lỗi tải tồn kho hiển thị lỗi thật, không bao giờ hiển thị 0; truy vấn không khớp → trạng thái rỗng đúng.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A16.03",
+      "priority": "P1",
+      "criterion": "Nhật ký kho theo biến thể (`GET /admin/stock/movements?variantId=`): thời gian, loại, chênh lệch tồn/giữ, chứng từ, người thực hiện; phân trang.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A17.01",
+      "priority": "P0",
+      "criterion": "Kiểm kê: nhập số thực tế (`counted`, giá trị tuyệt đối), lý do bắt buộc; hộp xác nhận nêu số hiện tại, số mới và chênh lệch; gửi kèm `version` và `operationKey`; thành công → GET lại. Đường dẫn dùng `variantId`; `version` lấy từ dữ liệu tồn kho (không dùng version biến thể trong sản phẩm).",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A17.02",
+      "priority": "P0",
+      "criterion": "Số thấp hơn lượng đang giữ hoặc âm bị từ chối và nêu rõ lý do; lưới tồn không cho sửa trực tiếp ô.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A17.03",
+      "priority": "P0",
+      "criterion": "Thử lại cùng ý định dùng cùng `operationKey`; ý định mới dùng key mới; gửi lặp không đổi kho lần hai.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A17.04",
+      "priority": "P1",
+      "criterion": "Xung đột `version` → thông báo tải lại.",
+      "step": "W4",
+      "status": "NOT RUN",
+      "reason": "W4: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A18.01",
+      "priority": "P1",
+      "criterion": "Danh sách đơn: một ô `query` (mã, người nhận, khách, điện thoại), lọc trạng thái, từ/đến ngày (UTC+7, ngày cuối bao gồm), phân trang; không giả lập hai điều kiện mã AND khách.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A18.02",
+      "priority": "P1",
+      "criterion": "Chi tiết đơn: người nhận, địa chỉ, dòng hàng (snapshot), trạng thái đơn và COD tách riêng (trạng thái thanh toán; số đã thu bằng tổng đơn khi `DA_THU`, bằng 0 khi chưa thu; thời điểm thu = `completedAt`, theo bất biến COD trong `API_COMPATIBILITY.md`, không giả định có trường `amount`/`collectedAt`), cờ `returnReceived`, lịch sử xử lý kèm người xử lý, version.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A18.03",
+      "priority": "P1",
+      "criterion": "Xem danh sách và chi tiết không đổi dữ liệu (đối soát DB trước-sau).",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A18.04",
+      "priority": "P1",
+      "criterion": "Phiên thiếu quyền (403) → thông báo \"không có quyền\", không crash.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A19.01",
+      "priority": "P0",
+      "criterion": "Nút hành động hiển thị theo đúng ma trận mục 4 của file 02: Chờ xác nhận → Xác nhận/Hủy; Đã xác nhận → Xuất giao/Hủy; Đang giao → Hoàn tất + thu COD/Giao thất bại; các trạng thái khác không có nút ghi. **Ngoại lệ:** đơn `GIAO_THAT_BAI` có `returnReceived = false` có nút Nhận lại (xem `WIN.A20.03`).",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A19.02",
+      "priority": "P0",
+      "criterion": "Xác nhận đơn: `POST confirm {version, operationKey}`; thành công → GET lại thấy `DA_XAC_NHAN`, COD vẫn chưa thu.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A19.03",
+      "priority": "P0",
+      "criterion": "Hủy đơn: lý do bắt buộc và có hộp xác nhận; thành công → `DA_HUY`, đang giữ giảm, tồn thực không đổi, COD chưa thu.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A19.04",
+      "priority": "P0",
+      "criterion": "Xung đột (khách vừa hủy, người khác vừa xử lý) → thông báo tải lại và làm mới dữ liệu trên màn hình; không hiển thị trạng thái giả.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A20.01",
+      "priority": "P0",
+      "criterion": "Xuất giao (`dispatch`), hoàn tất (`complete`), giao thất bại (`fail`, lý do bắt buộc), nhận lại (`receive-return`, lý do tùy chọn) đúng theo trạng thái; mỗi lệnh gửi `{version, operationKey, reason?}` với `operationKey` sinh một lần cho một ý định.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A20.02",
+      "priority": "P0",
+      "criterion": "Hoàn tất hiển thị COD \"Đã thu\", số đã thu bằng tổng đơn và thời điểm thu bằng `completedAt`; mọi trạng thái khác COD chưa thu và số đã thu bằng 0 (suy từ bất biến COD, không giả định trường riêng).",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A20.03",
+      "priority": "P0",
+      "criterion": "Nhận lại hàng chỉ có cho đơn `GIAO_THAT_BAI` có `returnReceived = false`, có hộp xác nhận hàng thực nhận; gửi lặp bị từ chối, tồn kho không tăng lần hai.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A20.04",
+      "priority": "P0",
+      "criterion": "Test ma trận 6 trạng thái × 8 hành động ở lớp `Admin.Client`: danh sách hành động cho phép khớp mục 4 file 02; ô không cho phép không có nút; ép gửi lệnh sai trạng thái vẫn bị server từ chối và giao diện báo lỗi.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A20.05",
+      "priority": "P1",
+      "criterion": "Giao thất bại hoặc hủy thiếu lý do bị chặn ở form, kèm thông báo tại ô lý do.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A21.01",
+      "priority": "P1",
+      "criterion": "Hóa đơn: `GET /admin/orders/{id}/invoice`; nội dung hiển thị trong **form xem hóa đơn** (`title`, `notice` không phải hóa đơn điện tử thuế, người nhận, dòng hàng, tổng, COD) và có nút PrintPreview; chỉ cho đơn `DA_XAC_NHAN`, `DANG_GIAO`, `HOAN_TAT`; đơn khác báo lỗi.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A21.02",
+      "priority": "P1",
+      "criterion": "Xem hoặc in hóa đơn không đổi trạng thái, kho hay số tiền đã thu; dữ liệu là snapshot của đơn.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A21.03",
+      "priority": "P2",
+      "criterion": "Không cần máy in vật lý. Khi hệ thống không có máy in nào được cài (kể cả không có hàng đợi/driver), form xem hóa đơn vẫn hoạt động và PrintPreview báo thông báo rõ ràng, không crash; có test cho trường hợp không có máy in chạy được trên CI.",
+      "step": "W5",
+      "status": "NOT RUN",
+      "reason": "W5: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.01",
+      "priority": "P0",
+      "criterion": "Doanh thu (`kind=revenue`) cần từ ngày/đến ngày (UTC+7, ngày cuối bao gồm); số liệu lấy từ server, client không tự tính lại; \"từ ngày > đến ngày\" báo lỗi tại trường.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.02",
+      "priority": "P1",
+      "criterion": "Bán chạy (`kind=bestsellers`) và tồn hiện tại (`kind=stock`, bỏ qua kỳ) đúng loại; không gửi tham số kỳ cho báo cáo tồn.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.03",
+      "priority": "P1",
+      "criterion": "Bảng và biểu đồ lấy từ cùng một `StoreReport` của một lần gọi (biểu đồ dựng từ các dòng `daily`; backend không có trường chart); tổng các dòng bằng tổng hiển thị; nhóm theo tháng làm ở client từ các dòng theo ngày. Bán chạy nhóm theo **biến thể**, không theo sản phẩm.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.04",
+      "priority": "P1",
+      "criterion": "Không có dữ liệu: hiển thị 0 và trạng thái rỗng; lỗi tải hiển thị lỗi thật, không đổi thành 0.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.05",
+      "priority": "P1",
+      "criterion": "Tổng quan (UI02): đơn chờ xác nhận và đang giao (tổng từ danh sách đơn theo `status`); **cần nhận lại** = duyệt **hết** các trang của `status=GIAO_THAT_BAI` rồi đếm `returnReceived = false` (lỗi giữa chừng → báo lỗi, không báo số một phần); doanh thu kỳ và hôm nay (UTC+7); hàng sắp hết (ngưỡng nhập tường minh); biểu đồ doanh thu 7 ngày. Mỗi chỉ số do một tác vụ tải riêng (có thể gồm nhiều yêu cầu phân trang) kèm thời điểm tải, không hứa nguyên tử.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.06",
+      "priority": "P1",
+      "criterion": "Bấm \"Đơn chờ xác nhận\" mở danh sách đơn đã lọc; bấm \"Sắp hết\" mở tồn kho đã lọc theo ngưỡng.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.A22.07",
+      "priority": "P2",
+      "criterion": "Bảng báo cáo phân trang khi dài; nhãn ngày và giá trị hiện khi chọn cột.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.FLOW.01",
+      "priority": "P0",
+      "criterion": "Đăng nhập → tạo sản phẩm (biến thể, giá vốn, tỷ lệ) → lập phiếu nhập → xác nhận (tồn tăng, giá vốn và giá bán đúng) → khách đặt đơn COD → Admin xác nhận, xuất giao, hoàn tất → doanh thu hiện trong báo cáo.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.FLOW.02",
+      "priority": "P0",
+      "criterion": "Đơn giao thất bại → nhận lại → tồn thực tăng đúng một lần; hủy đơn đã xác nhận → đang giữ giảm đúng.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.FLOW.03",
+      "priority": "P0",
+      "criterion": "Hai máy Admin cùng sửa một đơn hoặc một phiếu: máy sau nhận thông báo tải lại, không ghi đè.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.FLOW.04",
+      "priority": "P1",
+      "criterion": "Phiên hết hạn giữa luồng lập phiếu → về đăng nhập; dữ liệu phiếu chưa lưu được giữ lại (hoặc cảnh báo rõ) và không có phiếu nào bị tạo bằng phiên cũ.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.FLOW.05",
+      "priority": "P1",
+      "criterion": "Kiểm kê hạ tồn xuống dưới ngưỡng → sản phẩm xuất hiện ở \"Sắp hết\".",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.UI.01",
+      "priority": "P1",
+      "criterion": "Có ảnh chụp UI01, UI02, UI08–UI12 và các form phụ (hãng, danh mục, NCC, tài khoản) ở cửa sổ 1280 × 800 và ở 125%/150% DPI; bố cục khớp thiết kế (màu xanh cho thao tác chính).",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.UI.02",
+      "priority": "P1",
+      "criterion": "Bảng cuộn khi dữ liệu dài, không cắt chữ ở kích thước tối thiểu.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.UI.03",
+      "priority": "P2",
+      "criterion": "Bàn phím: thứ tự Tab, `AcceptButton`/`CancelButton`, phím tắt thao tác chính, nhãn rõ.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.UI.04",
+      "priority": "P2",
+      "criterion": "Trạng thái truyền đạt bằng chữ cùng màu; ngôn ngữ tiếng Việt nhất quán.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.GATE.01",
+      "priority": "P0",
+      "criterion": "Đủ A01–A22 có màn hình chạy được, ánh xạ UI/UC rõ, kèm bằng chứng.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.GATE.02",
+      "priority": "P0",
+      "criterion": "Mọi ô P0 là `PASS` (hoặc `BLOCKED` có lý do được duyệt).",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.GATE.03",
+      "priority": "P0",
+      "criterion": "CI Windows xanh trên đúng commit mới nhất; job Ubuntu hiện có vẫn xanh.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.GATE.04",
+      "priority": "P0",
+      "criterion": "Không đổi backend, schema, API, website MVC ngoài phạm vi được duyệt (diff chứng minh); thiếu sót của API được báo cáo, không tự sửa.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.GATE.05",
+      "priority": "P1",
+      "criterion": "Chạy tay các luồng `WIN.FLOW.01`–`02` với backend QA, có ảnh hoặc video.",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    },
+    {
+      "id": "WIN.GATE.06",
+      "priority": "P1",
+      "criterion": "Báo cáo theo nhãn trong file này; có `docs/WINFORMS_HANDOVER.md` (cách chạy, khác biệt chấp nhận, giới hạn, bảng đếm).",
+      "step": "W6",
+      "status": "NOT RUN",
+      "reason": "W6: outside W1; no implementation or real acceptance evidence yet.",
+      "evidence": []
+    }
+  ]
+}

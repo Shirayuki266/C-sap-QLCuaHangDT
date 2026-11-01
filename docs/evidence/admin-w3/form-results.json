@@ -1,0 +1,95 @@
+{
+  "fakeApi": true,
+  "qaOnly": true,
+  "checks": 5,
+  "captures": [
+    {
+      "name": "UI11-customer-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-customer-empty",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-customer-details",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-customer-profile-error",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-customer-profile-saved",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-customer-locked",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "customer-orders",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "customer-order-readonly-detail",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "supplier-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "supplier-editor-error",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "supplier-active-picker",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}
