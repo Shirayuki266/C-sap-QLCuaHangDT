@@ -1,0 +1,3933 @@
+{
+  "qaOnly": true,
+  "checks": 11,
+  "rejectedWrites": [
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A",
+      "afterSha256": "15261CECF24EF3FD8E11DCC588944ACD97AC54B183407734E77C5B7658CF2A6A"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "58067E4B5818559418B863E88C7C87DEA70BD5C0320231DDB038B1E4463CD0F6",
+      "afterSha256": "58067E4B5818559418B863E88C7C87DEA70BD5C0320231DDB038B1E4463CD0F6"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "58067E4B5818559418B863E88C7C87DEA70BD5C0320231DDB038B1E4463CD0F6",
+      "afterSha256": "58067E4B5818559418B863E88C7C87DEA70BD5C0320231DDB038B1E4463CD0F6"
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "unchanged": true,
+      "beforeSha256": "309A72C56955AA9BBDC92D0A1A6A90504A90FADA48D94FDB56111E20607CD8CD",
+      "afterSha256": "309A72C56955AA9BBDC92D0A1A6A90504A90FADA48D94FDB56111E20607CD8CD"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "D2FFFF866E2869FA3F582D819860C13961B401C6A244E7A9579C5F226CDDD034",
+      "afterSha256": "D2FFFF866E2869FA3F582D819860C13961B401C6A244E7A9579C5F226CDDD034"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "D2FFFF866E2869FA3F582D819860C13961B401C6A244E7A9579C5F226CDDD034",
+      "afterSha256": "D2FFFF866E2869FA3F582D819860C13961B401C6A244E7A9579C5F226CDDD034"
+    },
+    {
+      "code": "INVALID_INPUT",
+      "unchanged": true,
+      "beforeSha256": "D2FFFF866E2869FA3F582D819860C13961B401C6A244E7A9579C5F226CDDD034",
+      "afterSha256": "D2FFFF866E2869FA3F582D819860C13961B401C6A244E7A9579C5F226CDDD034"
+    }
+  ],
+  "priceChanges": [
+    {
+      "serverPrice": 12500000.00,
+      "before": {
+        "order": {
+          "Id": 1,
+          "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+          "CustomerId": 2,
+          "Recipient": "Kh\u00E1ch QA",
+          "Phone": "0938123591",
+          "Address": "QA only",
+          "Status": "CHO_XAC_NHAN",
+          "Total": 12000000.00,
+          "CreatedAt": "2026-11-01T12:05:30.8768934",
+          "CompletedAt": null,
+          "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+          "Version": "AAAAAAAAB/0="
+        },
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "after": {
+        "order": {
+          "Id": 1,
+          "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+          "CustomerId": 2,
+          "Recipient": "Kh\u00E1ch QA",
+          "Phone": "0938123591",
+          "Address": "QA only",
+          "Status": "CHO_XAC_NHAN",
+          "Total": 12000000.00,
+          "CreatedAt": "2026-11-01T12:05:30.8768934",
+          "CompletedAt": null,
+          "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+          "Version": "AAAAAAAAB/0="
+        },
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "unchanged": true
+    }
+  ],
+  "records": [
+    {
+      "ids": "WIN.A08.01 ADMIN lookup POST201/list refresh/PUT204 full name\u002Bactive, paging includes inactive",
+      "status": "PASS",
+      "before": {
+        "brands": [],
+        "categories": [],
+        "products": [],
+        "variants": [],
+        "images": [],
+        "stock": [],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [],
+        "variants": [],
+        "images": [],
+        "stock": [],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/lookups/brands",
+          "status": 201,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/lookups/categories",
+          "status": 201,
+          "body": "{\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/categories?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/lookups/brands",
+          "status": 201,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng \\u0111\\u00E3 ng\\u1EEBng QA\u0022,\u0022active\u0022:false}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/brands/1",
+          "status": 204,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA s\\u1EEDa t\\u00EAn\u0022,\u0022active\u0022:false}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/brands/1",
+          "status": 204,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A05.01 create product POST201 then GET, formula server price and zero H/R; WIN.A04.02 detail fields",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [],
+        "variants": [],
+        "images": [],
+        "stock": [],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 201,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-ONE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A05.02 duplicate code/SKU/combination, invalid cost/rate/image rollback entire aggregate",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-ONE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-DUPSKU\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-DUPSKU\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-COMB\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-COMB\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-COMB-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-COMB-NEW\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-RATE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-RATE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-RATE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:-0.01,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-RATE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-RATE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-RATE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:10000.01,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-RATE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-RATE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-RATE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:0.001,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-COST\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-COST\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-COST-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:0,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022javascript:alert(1)\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022data:image/png;base64,AA\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022//host/a\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022http://host/a\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://user:pass@host/a\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022/images/../a\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-IMAGE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-IMAGE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-IMAGE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-LONG\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-LONG\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022https://example.test/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-LONG-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-LONG-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A05.03/05 client validation supports forms; server accepts image policies and rate boundaries",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 201,
+          "body": "{\u0022code\u0022:\u0022QA-W2-BOUND\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-BOUND\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-BOUND-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:10000,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/16",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A04.01/03 query brand active paging, names resolve inactive ADMIN lists;404/no-match",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=QA-W2\u0026page=1\u0026pageSize=1\u0026brandId=1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=QA-W2\u0026page=2\u0026pageSize=1\u0026brandId=1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=QA-W2\u0026page=1\u0026pageSize=20\u0026brandId=2",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=no-match-bcbb63ae-82fb-47c6-b81c-97daa469baf3\u0026page=1\u0026pageSize=20",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/9223372036854775807",
+          "status": 404,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/categories?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A06.01/04 missing retained variant rejected, complete old id/version preserved, cost immutable/new stock0",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9E="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB9I="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          }
+        ],
+        "images": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/U="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/Y="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/c="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 3,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-ONE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:20.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB9E=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 400,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-ONE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:20.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB9E=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB9I=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 204,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-ONE\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:20.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB9E=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB9I=\u0022},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-NEW\u0022,\u0022color\u0022:\u0022Xanh\u0022,\u0022storageGb\u0022:512,\u0022cost\u0022:15000000,\u0022profitPercent\u0022:10,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A06.02 stale aggregate PUT409 no overwrite; server409 maps reload message",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-ONE",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/U="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/Y="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/c="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 3,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/k="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/o="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/s="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 4,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "http": [
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 204,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110\\u00E3 s\\u1EEDa b\\u1EDFi phi\\u00EAn kh\\u00E1c\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:20.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/U=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/Y=\u0022},{\u0022id\u0022:21,\u0022sku\u0022:\u0022QA-W2-NEW\u0022,\u0022color\u0022:\u0022Xanh\u0022,\u0022storageGb\u0022:512,\u0022cost\u0022:15000000.00,\u0022profitPercent\u0022:10.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/c=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 409,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022Kh\\u00F4ng \\u0111\\u01B0\\u1EE3c ghi \\u0111\\u00E8\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:20.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/U=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/Y=\u0022},{\u0022id\u0022:21,\u0022sku\u0022:\u0022QA-W2-NEW\u0022,\u0022color\u0022:\u0022Xanh\u0022,\u0022storageGb\u0022:512,\u0022cost\u0022:15000000.00,\u0022profitPercent\u0022:10.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/c=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A06.03 rate PUT changes server price but real checkout order/payment/history/H/R snapshots stay fixed",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/k="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/o="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/s="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 4,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9M="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [],
+        "lines": [],
+        "payments": [],
+        "history": [],
+        "journal": []
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/8="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAE="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAI="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 5,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "http": [
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 204,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110\\u00E3 s\\u1EEDa b\\u1EDFi phi\\u00EAn kh\\u00E1c\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:25,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/k=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/o=\u0022},{\u0022id\u0022:21,\u0022sku\u0022:\u0022QA-W2-NEW\u0022,\u0022color\u0022:\u0022Xanh\u0022,\u0022storageGb\u0022:512,\u0022cost\u0022:15000000.00,\u0022profitPercent\u0022:10.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/s=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A07.01/02 full active PUT retains aggregate/history; WIN.A08.02/03 lookup stop hides public only, unique name atomic",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/8="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAE="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAI="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 5,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAY="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAc="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAg="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 7,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "http": [
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 204,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110\\u00E3 s\\u1EEDa b\\u1EDFi phi\\u00EAn kh\\u00E1c\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:false,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:25.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAAB/8=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAE=\u0022},{\u0022id\u0022:21,\u0022sku\u0022:\u0022QA-W2-NEW\u0022,\u0022color\u0022:\u0022Xanh\u0022,\u0022storageGb\u0022:512,\u0022cost\u0022:15000000.00,\u0022profitPercent\u0022:10.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAI=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=\u0026page=1\u0026pageSize=20\u0026active=false",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=\u0026page=1\u0026pageSize=20\u0026active=true",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/1",
+          "status": 204,
+          "body": "{\u0022code\u0022:\u0022QA-W2-ONE\u0022,\u0022name\u0022:\u0022\\u0110\\u00E3 s\\u1EEDa b\\u1EDFi phi\\u00EAn kh\\u00E1c\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:1,\u0022sku\u0022:\u0022QA-W2-ONE-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:25.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAM=\u0022},{\u0022id\u0022:2,\u0022sku\u0022:\u0022QA-W2-ONE-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAQ=\u0022},{\u0022id\u0022:21,\u0022sku\u0022:\u0022QA-W2-NEW\u0022,\u0022color\u0022:\u0022Xanh\u0022,\u0022storageGb\u0022:512,\u0022cost\u0022:15000000.00,\u0022profitPercent\u0022:10.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAU=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/lookups/brands",
+          "status": 400,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/lookups/categories",
+          "status": 400,
+          "body": "{\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/brands/2",
+          "status": 400,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA\u0022,\u0022active\u0022:false}"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/brands/1",
+          "status": 204,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA\u0022,\u0022active\u0022:false}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/brands/1",
+          "status": 204,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/categories/1",
+          "status": 204,
+          "body": "{\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA\u0022,\u0022active\u0022:false}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/categories?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/categories?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/lookups/categories/1",
+          "status": 204,
+          "body": "{\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/categories?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.BASE.08 W2 uncertain create reconciles exact code before another write; every POST/PUT fresh CSRF",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAY="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAc="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAg="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 7,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          },
+          {
+            "Id": 17,
+            "Code": "QA-W2-LOST",
+            "Name": "\u0110\u00E3 l\u01B0u d\u00F9 m\u1EA5t ph\u1EA3n h\u1ED3i QA",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAY="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAc="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAg="
+          },
+          {
+            "Id": 22,
+            "ProductId": 17,
+            "Sku": "QA-W2-LOST-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA0="
+          },
+          {
+            "Id": 23,
+            "ProductId": 17,
+            "Sku": "QA-W2-LOST-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA4="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 7,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 9,
+            "ProductId": 17,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          },
+          {
+            "VariantId": 22,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACAs="
+          },
+          {
+            "VariantId": 23,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACAw="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 201,
+          "body": "{\u0022code\u0022:\u0022QA-W2-LOST\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-LOST\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-LOST-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-LOST-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products?query=QA-W2-LOST\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/products/17",
+          "status": 204,
+          "body": "{\u0022code\u0022:\u0022QA-W2-LOST\u0022,\u0022name\u0022:\u0022\\u0110\\u00E3 l\\u01B0u d\\u00F9 m\\u1EA5t ph\\u1EA3n h\\u1ED3i QA\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:22,\u0022sku\u0022:\u0022QA-W2-LOST-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000.00,\u0022profitPercent\u0022:20.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAk=\u0022},{\u0022id\u0022:23,\u0022sku\u0022:\u0022QA-W2-LOST-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000.00,\u0022profitPercent\u0022:0.00,\u0022active\u0022:true,\u0022version\u0022:\u0022AAAAAAAACAo=\u0022}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/17",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.BASE.08 successful201/204 but readback503 retains known id, blocks repeat until GET/list",
+      "status": "PASS",
+      "before": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          },
+          {
+            "Id": 17,
+            "Code": "QA-W2-LOST",
+            "Name": "\u0110\u00E3 l\u01B0u d\u00F9 m\u1EA5t ph\u1EA3n h\u1ED3i QA",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAY="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAc="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAg="
+          },
+          {
+            "Id": 22,
+            "ProductId": 17,
+            "Sku": "QA-W2-LOST-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA0="
+          },
+          {
+            "Id": 23,
+            "ProductId": 17,
+            "Sku": "QA-W2-LOST-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA4="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 7,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 9,
+            "ProductId": 17,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          },
+          {
+            "VariantId": 22,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACAs="
+          },
+          {
+            "VariantId": 23,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACAw="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "after": {
+        "brands": [
+          {
+            "Id": 1,
+            "Name": "H\u00E3ng QA",
+            "Active": true
+          },
+          {
+            "Id": 2,
+            "Name": "H\u00E3ng \u0111\u00E3 ng\u1EEBng QA",
+            "Active": false
+          },
+          {
+            "Id": 4,
+            "Name": "H\u00E3ng QA readback",
+            "Active": true
+          }
+        ],
+        "categories": [
+          {
+            "Id": 1,
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA",
+            "Active": true
+          }
+        ],
+        "products": [
+          {
+            "Id": 1,
+            "Code": "QA-W2-ONE",
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 16,
+            "Code": "QA-W2-BOUND",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-BOUND",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "",
+            "Active": true
+          },
+          {
+            "Id": 17,
+            "Code": "QA-W2-LOST",
+            "Name": "\u0110\u00E3 l\u01B0u d\u00F9 m\u1EA5t ph\u1EA3n h\u1ED3i QA",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          },
+          {
+            "Id": 18,
+            "Code": "QA-W2-READBACK",
+            "Name": "\u0110i\u1EC7n tho\u1EA1i QA QA-W2-READBACK",
+            "BrandId": 1,
+            "CategoryId": 1,
+            "Specifications": "Th\u00F4ng s\u1ED1 QA",
+            "Description": "M\u00F4 t\u1EA3 QA",
+            "ImageUrl": "/images/qa-main.png",
+            "Active": true
+          }
+        ],
+        "variants": [
+          {
+            "Id": 1,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 25.00,
+            "Price": 12500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAY="
+          },
+          {
+            "Id": 2,
+            "ProductId": 1,
+            "Sku": "QA-W2-ONE-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAc="
+          },
+          {
+            "Id": 20,
+            "ProductId": 16,
+            "Sku": "QA-W2-BOUND-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 10000.00,
+            "Price": 1010000000.00,
+            "Active": true,
+            "Version": "AAAAAAAAB/M="
+          },
+          {
+            "Id": 21,
+            "ProductId": 1,
+            "Sku": "QA-W2-NEW",
+            "Color": "Xanh",
+            "StorageGb": 512,
+            "Cost": 15000000.00,
+            "ProfitPercent": 10.00,
+            "Price": 16500000.00,
+            "Active": true,
+            "Version": "AAAAAAAACAg="
+          },
+          {
+            "Id": 22,
+            "ProductId": 17,
+            "Sku": "QA-W2-LOST-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA0="
+          },
+          {
+            "Id": 23,
+            "ProductId": 17,
+            "Sku": "QA-W2-LOST-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA4="
+          },
+          {
+            "Id": 24,
+            "ProductId": 18,
+            "Sku": "QA-W2-READBACK-B",
+            "Color": "\u0110en",
+            "StorageGb": 128,
+            "Cost": 10000000.00,
+            "ProfitPercent": 20.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACA8="
+          },
+          {
+            "Id": 25,
+            "ProductId": 18,
+            "Sku": "QA-W2-READBACK-W",
+            "Color": "Tr\u1EAFng",
+            "StorageGb": 256,
+            "Cost": 12000000.00,
+            "ProfitPercent": 0.00,
+            "Price": 12000000.00,
+            "Active": true,
+            "Version": "AAAAAAAACBA="
+          }
+        ],
+        "images": [
+          {
+            "Id": 2,
+            "ProductId": 16,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 7,
+            "ProductId": 1,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 9,
+            "ProductId": 17,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          },
+          {
+            "Id": 10,
+            "ProductId": 18,
+            "Url": "https://example.test/qa.png",
+            "SortOrder": 0
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 5,
+            "Reserved": 1,
+            "Version": "AAAAAAAAB/4="
+          },
+          {
+            "VariantId": 2,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "VariantId": 20,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/Q="
+          },
+          {
+            "VariantId": 21,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB/g="
+          },
+          {
+            "VariantId": 22,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACAs="
+          },
+          {
+            "VariantId": 23,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACAw="
+          },
+          {
+            "VariantId": 24,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACBE="
+          },
+          {
+            "VariantId": 25,
+            "OnHand": 0,
+            "Reserved": 0,
+            "Version": "AAAAAAAACBI="
+          }
+        ],
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DH18ee080e1f84439f8cf9fd4584d5f8f6",
+            "CustomerId": 2,
+            "Recipient": "Kh\u00E1ch QA",
+            "Phone": "0938123591",
+            "Address": "QA only",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 12000000.00,
+            "CreatedAt": "2026-11-01T12:05:30.8768934",
+            "CompletedAt": null,
+            "RequestKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6",
+            "Version": "AAAAAAAAB/0="
+          }
+        ],
+        "lines": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "VariantId": 1,
+            "Name": "\u0110\u00E3 s\u1EEDa b\u1EDFi phi\u00EAn kh\u00E1c",
+            "Sku": "QA-W2-ONE-B",
+            "Description": "\u0110en / 128GB",
+            "Quantity": 1,
+            "Price": 12000000.00
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T12:05:30.9507574",
+            "Reason": null
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 1,
+            "At": "2026-11-01T12:05:30.9369273",
+            "Reason": null,
+            "OperationKey": "18ee080e-1f84-439f-8cf9-fd4584d5f8f6"
+          }
+        ]
+      },
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/products",
+          "status": 201,
+          "body": "{\u0022code\u0022:\u0022QA-W2-READBACK\u0022,\u0022name\u0022:\u0022\\u0110i\\u1EC7n tho\\u1EA1i QA QA-W2-READBACK\u0022,\u0022brandId\u0022:1,\u0022categoryId\u0022:1,\u0022specifications\u0022:\u0022Th\\u00F4ng s\\u1ED1 QA\u0022,\u0022description\u0022:\u0022M\\u00F4 t\\u1EA3 QA\u0022,\u0022imageUrl\u0022:\u0022/images/qa-main.png\u0022,\u0022active\u0022:true,\u0022variants\u0022:[{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-READBACK-B\u0022,\u0022color\u0022:\u0022\\u0110en\u0022,\u0022storageGb\u0022:128,\u0022cost\u0022:10000000,\u0022profitPercent\u0022:20,\u0022active\u0022:true,\u0022version\u0022:null},{\u0022id\u0022:0,\u0022sku\u0022:\u0022QA-W2-READBACK-W\u0022,\u0022color\u0022:\u0022Tr\\u1EAFng\u0022,\u0022storageGb\u0022:256,\u0022cost\u0022:12000000,\u0022profitPercent\u0022:0,\u0022active\u0022:true,\u0022version\u0022:null}],\u0022images\u0022:[{\u0022url\u0022:\u0022https://example.test/qa.png\u0022,\u0022sortOrder\u0022:0}]}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/18",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/products/18",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/lookups/brands",
+          "status": 201,
+          "body": "{\u0022name\u0022:\u0022H\\u00E3ng QA readback\u0022,\u0022active\u0022:true}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/lookups/brands?page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    }
+  ]
+}

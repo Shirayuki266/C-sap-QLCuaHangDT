@@ -3,7 +3,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin.Tests;
 
-internal static class Program
+internal static partial class Program
 {
     private static int passed;
     private static string output = "";
@@ -35,6 +35,7 @@ internal static class Program
     private static async Task Run(string[] args)
     {
         if (args.Contains("--real-api")) { await RealApi(); return; }
+        if (args.Contains("--real-catalog")) { await RealCatalog(); return; }
         var fake = new FakeApi(); var settings = new ServerSettings("https://qa.example.test");
         await Test("WIN.BASE.02 Windows restored application assets exclude backend/EF/SQL packages", () =>
         {
@@ -64,7 +65,7 @@ internal static class Program
             fake.Identity = new(1, "qa-admin", "ADMIN", DateTimeOffset.UtcNow.AddHours(8)); using var form = new MainForm(fake, FakeApi.Ready); form.Show(); await Task.Delay(40);
             Assert(form.Navigation.Count == 11 && form.MinimumSize.Width >= 1280 && form.MinimumSize.Height >= 800 && form.Width >= 1280 && form.Height >= 800,
                 $"Shell structure missing: navigation={form.Navigation.Count};minimum={form.MinimumSize};size={form.Size};dpi={form.DeviceDpi}");
-            foreach (var button in form.Navigation) { button.PerformClick(); Assert(form.TitleLabel.Text == button.Text, "Navigation not operational"); if (button.Text != "Tài khoản") Assert(form.ContentLabel.Text == "Chưa triển khai", "Placeholder invents delivered capability"); }
+            foreach (var button in form.Navigation.Where(b=>b.Text is not ("Điện thoại" or "Hãng" or "Danh mục"))) { button.PerformClick(); Assert(form.TitleLabel.Text == button.Text, "Navigation not operational"); if (button.Text != "Tài khoản") Assert(form.ContentLabel.Text == "Chưa triển khai", "Placeholder invents delivered capability"); }
             form.Navigation[0].PerformClick(); Assert(form.StatusLabel.Text.Contains("QA") && form.StatusLabel.Text.Contains("qa-admin"), "Session/server status absent"); await Capture(form, "UI02-main-1280");
             form.EndSession();
         });
@@ -104,6 +105,7 @@ internal static class Program
             await Capture(dialog, "confirmation-foundation"); dialog.DismissButton.PerformClick(); Assert(dialog.DialogResult == DialogResult.Cancel, "Dismiss did not cancel"); dialog.Close();
         });
         File.WriteAllText(Path.Combine(output, "results.json"), JsonSerializer.Serialize(new { platform = "Windows STA WinForms", fakeApi = true, checks = passed, logicalMinimum = "1280x800 for main/login; physical dimensions depend on DPI", captures, notes = "Actual form controls/PerformClick/DrawToBitmap; actual backend/SQL proofs live in Admin.Client.Checks. No fake evidence is labeled as real API." }, new JsonSerializerOptions { WriteIndented = true }));
+        await CatalogFormsChecks();
     }
     private static async Task RealApi()
     {

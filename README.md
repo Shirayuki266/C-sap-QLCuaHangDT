@@ -53,7 +53,7 @@ Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account
 
 ## Windows Admin
 
-W1 adds a separate HTTP-only native WinForms application and net10.0 client. On Windows: `dotnet run --project src/PhoneStore.Admin -c Release`. Configure the backend URL on Login; there are no default credentials. See [W1 setup/boundaries/tests](docs/WINFORMS_W1.md) and the [113-ID Admin ledger](docs/WINFORMS_CHECKLIST_RESULTS.md). Functional business modules remain later W2–W6 work; this PR does not merge itself.
+W1 adds a separate HTTP-only native WinForms application and net10.0 client. W2 adds products, multi-variant editing, brands and categories. On Windows: `dotnet run --project src/PhoneStore.Admin -c Release`. Configure the backend URL on Login; there are no default credentials. See [W1 setup/boundaries/tests](docs/WINFORMS_W1.md), [W2 catalog/SQL/UI evidence](docs/WINFORMS_W2.md) and the [113-ID Admin ledger](docs/WINFORMS_CHECKLIST_RESULTS.md). Customer/supplier, purchasing/stock, orders and reports remain W3–W6; the W4 purchase handoff is disabled. This PR does not merge itself.
 
 The full solution now includes Windows targets and is built on Windows. The explicit backend commands above and unchanged Ubuntu CI build only Web/Checks; a new cross-platform Admin.Client.Checks step uses isolated SQL QA. Windows form checks run separately with a fake API and publish actual control captures.
 

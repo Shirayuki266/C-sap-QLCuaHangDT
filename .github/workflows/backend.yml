@@ -80,6 +80,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: admin-w1-windows-forms
-          path: .artifacts/admin-w1/forms/
+          name: admin-windows-forms
+          path: |
+            .artifacts/admin-w1/forms/
+            .artifacts/admin-w2/forms/
           if-no-files-found: error

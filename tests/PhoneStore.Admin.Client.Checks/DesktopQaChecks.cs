@@ -7,7 +7,7 @@ namespace PhoneStore.Admin.Client.Checks;
 
 internal static class DesktopQaChecks
 {
-    public static async Task Run()
+    public static async Task Run(bool catalog=false)
     {
         if (!OperatingSystem.IsWindows()) throw new InvalidOperationException("Explicit desktop smoke requires Windows.");
         await using var qa = await QaBackend.Create(); using var lease = new TcpListener(IPAddress.Loopback, 0); lease.Start(); var port = ((IPEndPoint)lease.LocalEndpoint).Port; lease.Stop();
@@ -22,15 +22,21 @@ internal static class DesktopQaChecks
             for(var attempt=0;attempt<100;attempt++){try{using var response=await client.GetAsync(url+"/health/ready");if(response.IsSuccessStatusCode){ready=true;break;}}catch(HttpRequestException){}await Task.Delay(100);}
             if (!ready) throw new InvalidOperationException("Real QA host not ready; output withheld.");
             var ui = new ProcessStartInfo("dotnet") { UseShellExecute = false, CreateNoWindow = true, WorkingDirectory = QaBackend.Root, RedirectStandardOutput = true, RedirectStandardError = true };
-            ui.ArgumentList.Add(Path.Combine(QaBackend.Root,"tests","PhoneStore.Admin.Tests","bin",configuration,"net10.0-windows","PhoneStore.Admin.Tests.dll"));ui.ArgumentList.Add("--real-api");
+            ui.ArgumentList.Add(Path.Combine(QaBackend.Root,"tests","PhoneStore.Admin.Tests","bin",configuration,"net10.0-windows","PhoneStore.Admin.Tests.dll"));ui.ArgumentList.Add(catalog?"--real-catalog":"--real-api");
             ui.Environment["PHONESTORE_ADMIN_QA_URL"] = url; ui.Environment["PHONESTORE_ADMIN_QA_USERNAME"] = "admin-w1-qa"; ui.Environment["PHONESTORE_ADMIN_QA_PASSWORD"] = qa.Password;
-            ui.Environment["PHONESTORE_ADMIN_UI_EVIDENCE"] = Path.Combine(QaBackend.Root,".artifacts","admin-w1","real-forms");
+            ui.Environment["PHONESTORE_ADMIN_UI_EVIDENCE"] = Path.Combine(QaBackend.Root,".artifacts",catalog?"admin-w2":"admin-w1","real-forms");
             using var process = Process.Start(ui) ?? throw new InvalidOperationException("QA WinForms runner failed"); var result = process.StandardOutput.ReadToEndAsync(); var failure = process.StandardError.ReadToEndAsync();
             try { await process.WaitForExitAsync().WaitAsync(TimeSpan.FromMinutes(2)); }
             finally { if(!process.HasExited){process.Kill(true);await process.WaitForExitAsync();} }
             Console.Write(await result); if(process.ExitCode!=0)throw new InvalidOperationException("QA WinForms smoke failed: "+await failure);
-            await using var db=qa.Open();if(await db.Sessions.AnyAsync(x=>x.AccountId==qa.AdminId)||await db.Orders.AnyAsync()||await db.Inventory.AnyAsync())throw new InvalidOperationException("Desktop smoke left session/commerce mutation");
-            Console.WriteLine("PASS real WinForms/Kestrel/SQL QA: login session created then logout removed; orders/inventory unchanged");
+            await using var db=qa.Open();if(await db.Sessions.AnyAsync(x=>x.AccountId==qa.AdminId)||await db.Orders.AnyAsync()||(!catalog&&await db.Inventory.AnyAsync()))throw new InvalidOperationException("Desktop smoke left unexpected session/commerce mutation");
+            if(catalog)
+            {
+                var data=new{qaOnly=true,products=await db.Products.CountAsync(),variants=await db.Variants.CountAsync(),H=await db.Inventory.SumAsync(x=>x.OnHand),R=await db.Inventory.SumAsync(x=>x.Reserved),prices=await db.Variants.Select(x=>x.Price).ToListAsync(),orders=await db.Orders.CountAsync(),journal=await db.Movements.CountAsync(),payments=await db.Payments.CountAsync()};
+                if(data.products!=1||data.variants!=1||data.H!=0||data.R!=0||data.prices.Single()!=12000000||data.journal!=0||data.payments!=0)throw new InvalidOperationException("Desktop catalog SQL result wrong");
+                await File.WriteAllTextAsync(Path.Combine(QaBackend.Root,".artifacts","admin-w2","desktop-sql-results.json"),System.Text.Json.JsonSerializer.Serialize(data,new System.Text.Json.JsonSerializerOptions{WriteIndented=true}));
+            }
+            Console.WriteLine(catalog?"PASS real W2 WinForms/Kestrel/SQL QA: editor created product, server price12000000, stock H0/R0; list displayed; session removed":"PASS real WinForms/Kestrel/SQL QA: login session created then logout removed; orders/inventory unchanged");
         }
         finally { if(!host.HasExited){host.Kill(true);await host.WaitForExitAsync();} }
         if((await logs).Contains(qa.Password)||(await errors).Contains(qa.Password))throw new InvalidOperationException("QA host exposed a credential");
