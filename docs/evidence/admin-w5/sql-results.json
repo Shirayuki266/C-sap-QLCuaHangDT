@@ -1,0 +1,2536 @@
+{
+  "qaOnly": true,
+  "checks": 5,
+  "matrixCells": 48,
+  "matrix": [
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "CustomerCancel",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "EE209432A35D974D3C6B9F92152FE62BF2CB0A8BC151307E33D9675027CCFA2C",
+      "after": "1B078BC723EC5D3C993BDCC142A9440327EAF68C423C912C9B5DCC74FAF1E42B"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "Confirm",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "2E1E2BE9D04CD975F3C6665A72E526025ADA7028F645AEC1F8BED6A7E502DAD9",
+      "after": "471060DA846CBEB164C1614ED3229F8270E06BB58D8C88F1361C0D7C6BFFA06B"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "Cancel",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "5502D411235762E20CFDABD80785F33196ABB4316A0BBD5FB08B2BDBF9B2BC30",
+      "after": "039B6B2A4BE2B8B8C858F1A70A48FBD2D4B7EF81798527775941B497A933DA09"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "Dispatch",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "8792D96A7D14FC8633212E396A29FEB5F14237FE8F1B11DA7D9B6A9EE024261E",
+      "after": "8792D96A7D14FC8633212E396A29FEB5F14237FE8F1B11DA7D9B6A9EE024261E"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "Complete",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "CE56B8984DFCA7D26BF0F172A9FA13F27DBFFFD57BB220D4B93066CEAD8940EB",
+      "after": "CE56B8984DFCA7D26BF0F172A9FA13F27DBFFFD57BB220D4B93066CEAD8940EB"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "Fail",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "5207D47F7E6A35527714AE02CA3B62A344D48D27F48352B682CF4DD7B4CA7B66",
+      "after": "5207D47F7E6A35527714AE02CA3B62A344D48D27F48352B682CF4DD7B4CA7B66"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "ReceiveReturn",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "75B01F67224C1F67ED8B68261D7140A56F04D24DC044C8F066C5DDF5FAF4C430",
+      "after": "75B01F67224C1F67ED8B68261D7140A56F04D24DC044C8F066C5DDF5FAF4C430"
+    },
+    {
+      "state": "CHO_XAC_NHAN",
+      "action": "Invoice",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "25B9165839ED412D8DCE99693000F02FFF100009084372C78B603E91FBB9324C",
+      "after": "25B9165839ED412D8DCE99693000F02FFF100009084372C78B603E91FBB9324C"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "CustomerCancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "66FC54CE5329009506EBA16E8C0D28A494785DE1121696A7F2EBD55AFBCF8ED5",
+      "after": "66FC54CE5329009506EBA16E8C0D28A494785DE1121696A7F2EBD55AFBCF8ED5"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "Confirm",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "A9320B6D4C6662B682054BBEB8DEB0BD3EAA2786F1BA803071ECB40793EA009B",
+      "after": "A9320B6D4C6662B682054BBEB8DEB0BD3EAA2786F1BA803071ECB40793EA009B"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "Cancel",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "AF9DB13EE5979FC2159DCD50ADDC542B3D0D4DF4A80DB9A4296228694EF2F946",
+      "after": "82FE005E4B3B68BC54470A261C936AD88593F28DF65FD4F4B428D1E4CC28CE12"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "Dispatch",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "4528395DBB4000B53F41940EC0F17B321F9CE6E0FC58BBE972E555B6EE0ED4E6",
+      "after": "8AA4A87E2061782261571746DC116FDA8D6CADF2D707D8B0560960136A5AB6AE"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "Complete",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "5DFFA5E9B46E8DEC98BFFBE97EB61A1ECB56046632BC324CE1E085B07500224A",
+      "after": "5DFFA5E9B46E8DEC98BFFBE97EB61A1ECB56046632BC324CE1E085B07500224A"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "Fail",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "6A5745C2837606078B03B1DAFDDBD559F6F2D847158CCE5223D73BCBBDDF8233",
+      "after": "6A5745C2837606078B03B1DAFDDBD559F6F2D847158CCE5223D73BCBBDDF8233"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "ReceiveReturn",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "04425E258B1DFF345DA3CB52ADDA041C41DC9F560813596A0CFCAE4DF4C5B934",
+      "after": "04425E258B1DFF345DA3CB52ADDA041C41DC9F560813596A0CFCAE4DF4C5B934"
+    },
+    {
+      "state": "DA_XAC_NHAN",
+      "action": "Invoice",
+      "allowed": true,
+      "status": 200,
+      "code": null,
+      "before": "01F6191E0EB6916B4B031251244FBFC8E10500260A9D714459627A77197DE139",
+      "after": "01F6191E0EB6916B4B031251244FBFC8E10500260A9D714459627A77197DE139"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "CustomerCancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "FC7967DFCC266BC116D7DC8640B12DA84C5C1E3E04B1E381C87EB6BC62FA850A",
+      "after": "FC7967DFCC266BC116D7DC8640B12DA84C5C1E3E04B1E381C87EB6BC62FA850A"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "Confirm",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "90909DE78E4190E6BE2365FE2B888FCB26811E72222EA30527E1886BEC770087",
+      "after": "90909DE78E4190E6BE2365FE2B888FCB26811E72222EA30527E1886BEC770087"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "Cancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "3CD4638E0D444EB8EE6D2BE3D408A5CA168627853BCBDE24B9A00DDD687ED6F0",
+      "after": "3CD4638E0D444EB8EE6D2BE3D408A5CA168627853BCBDE24B9A00DDD687ED6F0"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "Dispatch",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "013F63D7038C18BB2FFF66D543131A8115D525CB9B44AA116AAE470BE8C6E8B4",
+      "after": "013F63D7038C18BB2FFF66D543131A8115D525CB9B44AA116AAE470BE8C6E8B4"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "Complete",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "13AB11B45EA34D08ACE12748DC8FD67C9919DF7E557EDC573B5D3A9D10F6DC8C",
+      "after": "DE10A381E8F933179CFB12239C26E4D5BB292DC9CDCCFADFE895FCCFA86DD3CE"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "Fail",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "E3160E0797E7700796DECA3E19C2C8320CA911A26455FC09FE0588CDE90D4FEF",
+      "after": "239ADAF2B2FBEE74AA07CE066A43BCCFE3E837107F06226F02139E329F9B41EC"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "ReceiveReturn",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "BC68CB7E29116FE02B953365939048F02B1E64D9F7E841D7A09ABBABC902F316",
+      "after": "BC68CB7E29116FE02B953365939048F02B1E64D9F7E841D7A09ABBABC902F316"
+    },
+    {
+      "state": "DANG_GIAO",
+      "action": "Invoice",
+      "allowed": true,
+      "status": 200,
+      "code": null,
+      "before": "ACE1B2754CE9F3F8C2ED5A1EA7888878723B9C9F71E5CC98CDD22C8512AB667B",
+      "after": "ACE1B2754CE9F3F8C2ED5A1EA7888878723B9C9F71E5CC98CDD22C8512AB667B"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "CustomerCancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "6D38257B82CE3753BF2F8B7F5158C059B8611C2CF744E92220861DCEAA0CE8A6",
+      "after": "6D38257B82CE3753BF2F8B7F5158C059B8611C2CF744E92220861DCEAA0CE8A6"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "Confirm",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "970F2A67645D7DABC9473A16A1A61C33AF605F1E8BF9A671C70A6A09C7A96EA5",
+      "after": "970F2A67645D7DABC9473A16A1A61C33AF605F1E8BF9A671C70A6A09C7A96EA5"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "Cancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "7E521D1A9EC14345D27EF3CCD9F51A426D029D4397FA46E205E9C156A3F31345",
+      "after": "7E521D1A9EC14345D27EF3CCD9F51A426D029D4397FA46E205E9C156A3F31345"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "Dispatch",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "FCDE99C80BEC56FC39F4E51D49AB8413DA2CCC4740EB7CD054D4058FC8B3CD3A",
+      "after": "FCDE99C80BEC56FC39F4E51D49AB8413DA2CCC4740EB7CD054D4058FC8B3CD3A"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "Complete",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "E03F293CF354D7DC0428249310E1A9E5E02A375F743651FFF631FD88B88DAEA9",
+      "after": "E03F293CF354D7DC0428249310E1A9E5E02A375F743651FFF631FD88B88DAEA9"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "Fail",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "7445968AFE867270C4350524CB8210F5E76BC0682580B65CC6F1D51FC009B32F",
+      "after": "7445968AFE867270C4350524CB8210F5E76BC0682580B65CC6F1D51FC009B32F"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "ReceiveReturn",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "07E4EE44E822A7FE50DC232E14EA62BE7B0EA8A73A53AF7F23BCE5B1B53D1F7F",
+      "after": "07E4EE44E822A7FE50DC232E14EA62BE7B0EA8A73A53AF7F23BCE5B1B53D1F7F"
+    },
+    {
+      "state": "HOAN_TAT",
+      "action": "Invoice",
+      "allowed": true,
+      "status": 200,
+      "code": null,
+      "before": "EF60C2C34764EC337EF2ECFC25BCCD2576E35BFBC8C782937B3E21EA3DB22C8F",
+      "after": "EF60C2C34764EC337EF2ECFC25BCCD2576E35BFBC8C782937B3E21EA3DB22C8F"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "CustomerCancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "33E9BB1F0E60D2B48000CEDC59F7A56E498666331FD2CFB9BA4BD5CC3098E12B",
+      "after": "33E9BB1F0E60D2B48000CEDC59F7A56E498666331FD2CFB9BA4BD5CC3098E12B"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "Confirm",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "117AECC2D7ED497B59F4E9B9D46278A3A70C85CAC8BA0C373CDAE0677E9B7193",
+      "after": "117AECC2D7ED497B59F4E9B9D46278A3A70C85CAC8BA0C373CDAE0677E9B7193"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "Cancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "37EAE60AB29B1E936AD07C61DEB37D4D75BF87174D900AF9F6376E351C3E0340",
+      "after": "37EAE60AB29B1E936AD07C61DEB37D4D75BF87174D900AF9F6376E351C3E0340"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "Dispatch",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "E663C48D020B3451C16AAADBD2DB287A38ADBA47D70035A76F9A073920801C1C",
+      "after": "E663C48D020B3451C16AAADBD2DB287A38ADBA47D70035A76F9A073920801C1C"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "Complete",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "113F46C16C5EE8586EE184E029B21236D92D8E711C03921FDAB5C68FA3D2E2D0",
+      "after": "113F46C16C5EE8586EE184E029B21236D92D8E711C03921FDAB5C68FA3D2E2D0"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "Fail",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "DE1D39595B341D18E7A0557845DFB7C158127F542FBAEF74CBF3FAFBA1696FE3",
+      "after": "DE1D39595B341D18E7A0557845DFB7C158127F542FBAEF74CBF3FAFBA1696FE3"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "ReceiveReturn",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "75559228FBEDA705AFAE34746A5AFF7AD8D23E9D725E47FEB8ED7F11003579AB",
+      "after": "75559228FBEDA705AFAE34746A5AFF7AD8D23E9D725E47FEB8ED7F11003579AB"
+    },
+    {
+      "state": "DA_HUY",
+      "action": "Invoice",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "2283A9DBA70B85C4D549C990680F73DF35B830EA23224548E0F868F0AC46F0DA",
+      "after": "2283A9DBA70B85C4D549C990680F73DF35B830EA23224548E0F868F0AC46F0DA"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "CustomerCancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "637FA5DF7ED3BA71FF61082BBD7ED003BF9C3931702781F29543A9D59E114662",
+      "after": "637FA5DF7ED3BA71FF61082BBD7ED003BF9C3931702781F29543A9D59E114662"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "Confirm",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "D29BD18B3A5179EA3FF01C00C2F1522EC0093B6F4E68BDD7AD18B53B076EAFEA",
+      "after": "D29BD18B3A5179EA3FF01C00C2F1522EC0093B6F4E68BDD7AD18B53B076EAFEA"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "Cancel",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "353DE9D8F4F60D3EAA1BACA06CCE9B0D2347639CB030155760D78F61BD7CFE10",
+      "after": "353DE9D8F4F60D3EAA1BACA06CCE9B0D2347639CB030155760D78F61BD7CFE10"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "Dispatch",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "D06ADD1B50B782C7589F093D18FFE0527BF2BE583B476C781C8707ABA9C3C061",
+      "after": "D06ADD1B50B782C7589F093D18FFE0527BF2BE583B476C781C8707ABA9C3C061"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "Complete",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "0041F27EE1E21DF5966014FCB28EEF8FD646526B8F7D3ED91F8F3DC49B1AC2D4",
+      "after": "0041F27EE1E21DF5966014FCB28EEF8FD646526B8F7D3ED91F8F3DC49B1AC2D4"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "Fail",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "D739A6BE5202FE2392D5E33FD5DC928A3038D4E42215168C54D0097C28C7693F",
+      "after": "D739A6BE5202FE2392D5E33FD5DC928A3038D4E42215168C54D0097C28C7693F"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "ReceiveReturn",
+      "allowed": true,
+      "status": 204,
+      "code": null,
+      "before": "1D72A5F5814C6AC46F0CC5E89241E7CE11A208A2C459136845F13BE972C3B590",
+      "after": "4FD2624C544E4125B03DC985877816AE9A1EEEB511AFFAA71A130A0DB882484D"
+    },
+    {
+      "state": "GIAO_THAT_BAI",
+      "action": "Invoice",
+      "allowed": false,
+      "status": 409,
+      "code": "INVALID_STATE",
+      "before": "022CD5EC1B274FEF5959C765FB287AAE45DE022D6AEC074F4EE120283C044A56",
+      "after": "022CD5EC1B274FEF5959C765FB287AAE45DE022D6AEC074F4EE120283C044A56"
+    }
+  ],
+  "facts": [
+    {
+      "returnReason": null,
+      "returnedOnce": true,
+      "before": "2B5411F4533D1EC0036B5D1716595604EE91DE7CA7D6E7F56D7D1F6FEAEF067C",
+      "after": "2B5411F4533D1EC0036B5D1716595604EE91DE7CA7D6E7F56D7D1F6FEAEF067C"
+    },
+    {
+      "returnReason": "  ",
+      "returnedOnce": true,
+      "before": "8842B5E430F5A71E1291ACEB5F740E162CC0C69D2401B224B0AB32ED75CFE21F",
+      "after": "8842B5E430F5A71E1291ACEB5F740E162CC0C69D2401B224B0AB32ED75CFE21F"
+    },
+    {
+      "returnReason": "  H\u00E0ng th\u1EF1c nh\u1EADn QA  ",
+      "returnedOnce": true,
+      "before": "83AF7439BAE69AE0534912F267D53F3AD80EAD47D47D20F0B8901D6F45586BF6",
+      "after": "83AF7439BAE69AE0534912F267D53F3AD80EAD47D47D20F0B8901D6F45586BF6"
+    },
+    {
+      "raceArrivals": 2,
+      "distinctConnections": 2,
+      "winner": "customer-cancel204",
+      "loser": "admin-confirm409 CONCURRENT_UPDATE",
+      "before": "6E4BFC9530E53A03A7F54E1149BD4C043200EDBDEA03813DCE65F2F1D5BBD297",
+      "after": "6BD58CB8720AF72184DDFA88DEE4D45634480DB5A752986567CA194BB635D51F"
+    },
+    {
+      "date": "2026-06-10",
+      "includedIds": [
+        58,
+        57
+      ],
+      "listReadOnly": true,
+      "invoiceReadOnly": true
+    },
+    {
+      "unknownOrderReadbackOnce": true,
+      "operationKey": "20956567-12e7-45c3-805c-ba9ac8f85fb1"
+    },
+    {
+      "unsentIntentReconciledBeforeRetry": true,
+      "operationKey": "07babc53-8226-4a50-8d95-7949529ae2ac",
+      "before": "B72601D597E1B2651DD0F23AD28E67F5E8B7CA243837200C82B0B02E149C78C5",
+      "after": "D90F9191687C9AF5B757520A2F9EB339143843ED7BEA7E79AABC313888AFEA12"
+    }
+  ],
+  "http": [
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/1",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/1",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/2",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/2/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB94=\u0022,\u0022operationKey\u0022:\u002254fe082f-8ea2-455f-96c7-f7bf6d07d3c5\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/2",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/2",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/3",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/3/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002BM=\u0022,\u0022operationKey\u0022:\u002262239c05-538b-48dd-b2e7-bb25fd003b68\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/3",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/3",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/4",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/4/dispatch",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002Bk=\u0022,\u0022operationKey\u0022:\u0022c557e0b4-3034-49c3-9f60-081c56c0ca20\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/5",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/5/complete",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002Bw=\u0022,\u0022operationKey\u0022:\u002294868265-3d9b-4eaa-a146-10b0a83e3a33\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/6",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/6/fail",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002B8=\u0022,\u0022operationKey\u0022:\u0022e642a0ee-e33d-47cb-9d11-e2a7cb0a06bd\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/7",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/7/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB/M=\u0022,\u0022operationKey\u0022:\u00225aecc314-f9d7-4a54-8682-841bd77f947b\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/8",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/8/invoice",
+      "Status": 409,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/9",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/9/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB/o=\u0022,\u0022operationKey\u0022:\u0022d115769f-8a74-423b-b51a-e8579549e412\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/9",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/10",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/10/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAAB/8=\u0022,\u0022operationKey\u0022:\u0022e69c052d-a7b4-4e30-ba4b-5ce1929fe145\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/10",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/10/confirm",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACAM=\u0022,\u0022operationKey\u0022:\u00225b8425f2-6d4e-4ce3-a9f9-3f6e6990f0cd\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/11",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/11/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACAQ=\u0022,\u0022operationKey\u0022:\u00220757ca7d-d245-401b-9328-8dc1dd48e3c4\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/11",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/11/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACAo=\u0022,\u0022operationKey\u0022:\u00227fd94b3d-17ec-4c07-8e3d-faa7eab9bad3\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/11",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/11",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/12",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/12/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACA4=\u0022,\u0022operationKey\u0022:\u00227b87bdd1-ed88-4127-ad93-a42f5fd45ae9\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/12",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/12/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACBE=\u0022,\u0022operationKey\u0022:\u00220c03a3b1-ac17-47f6-9394-60f3e6029695\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/12",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/12",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/13",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/13/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACBU=\u0022,\u0022operationKey\u0022:\u0022e9820aa2-af7a-4221-abc7-d458cb3f7078\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/13",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/13/complete",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACBg=\u0022,\u0022operationKey\u0022:\u0022282afea5-52c4-4619-8d1d-ef88e379d0c2\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/14",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/14/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACBk=\u0022,\u0022operationKey\u0022:\u0022d3af9a19-b5ba-4494-b545-21ab900f4aa4\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/14",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/14/fail",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACBw=\u0022,\u0022operationKey\u0022:\u0022dbfbbfcc-3908-4868-81e5-a67d7287674d\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/15",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/15/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACCI=\u0022,\u0022operationKey\u0022:\u0022a35e0ffb-649c-4cdc-b671-971056415520\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/15",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/15/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACCY=\u0022,\u0022operationKey\u0022:\u0022c4509cee-098d-4b2e-95f5-4e16f57adb53\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/16",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/16/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACC8=\u0022,\u0022operationKey\u0022:\u0022fd5afcc0-3128-442c-8c69-2aa48529ab3c\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/16",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/16/invoice",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/17",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/17/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACDM=\u0022,\u0022operationKey\u0022:\u0022e1fd5453-7132-4683-aac5-b323f1cbd5f3\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/17",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/17/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACDY=\u0022,\u0022operationKey\u0022:\u0022011eceec-edb5-4381-9e28-71311df130fd\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/17",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/18",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/18/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACDo=\u0022,\u0022operationKey\u0022:\u0022a2ba2edd-378f-4905-a5f9-5cb2fbfb42d8\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/18",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/18/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACD0=\u0022,\u0022operationKey\u0022:\u0022987041a1-cf14-4c24-b871-804e91096207\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/18",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/18/confirm",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACEA=\u0022,\u0022operationKey\u0022:\u0022078e8208-4d12-45ac-8ff9-f35a90e6ccb4\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/19",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/19/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACEE=\u0022,\u0022operationKey\u0022:\u00227b57906c-02e2-4234-9581-299e858dce9e\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/19",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/19/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACEQ=\u0022,\u0022operationKey\u0022:\u00227184c392-e0ae-4829-b14d-d22468d1df1e\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/19",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/19/cancel",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACEk=\u0022,\u0022operationKey\u0022:\u0022789c26fb-5ed7-4b73-b803-94566649682b\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/20/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACEo=\u0022,\u0022operationKey\u0022:\u0022766858c1-231a-488c-8a34-381db14537d3\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/20/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACE0=\u0022,\u0022operationKey\u0022:\u0022c5d7c5a4-e772-44d5-bc6c-c7afa8f4784a\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/20/dispatch",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACFA=\u0022,\u0022operationKey\u0022:\u0022dcea9cd2-4919-4c0f-bc7c-813e7e03f836\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/21",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/21/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACFE=\u0022,\u0022operationKey\u0022:\u00226dfbb325-093d-4098-bbca-ee443f30cca7\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/21",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/21/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACFQ=\u0022,\u0022operationKey\u0022:\u0022bceae597-e414-4c4e-a069-9f9cf33f64dc\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/21",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/21/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACFc=\u0022,\u0022operationKey\u0022:\u002248bca2c0-3526-4bcd-b153-122a86a4a278\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/21",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/21",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/22",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/22/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACFk=\u0022,\u0022operationKey\u0022:\u002261957d18-903f-4827-87eb-69e543f36700\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/22",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/22/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACFw=\u0022,\u0022operationKey\u0022:\u0022935e5c06-2f6d-43f1-b609-c9db3f052fc5\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/22",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/22/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACF8=\u0022,\u0022operationKey\u0022:\u002247952a3f-a3d6-4b0c-abad-4908bae2fe52\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/22",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/22",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/23",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/23/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACGE=\u0022,\u0022operationKey\u0022:\u00229a4b1006-6272-409e-8681-84056e0c20ca\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/23",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/23/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACGQ=\u0022,\u0022operationKey\u0022:\u002283a40ed6-52e5-4b30-82be-a4e0da36488c\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/23",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/23/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACGc=\u0022,\u0022operationKey\u0022:\u002266454661-7919-4d0e-8199-19d882ac3b19\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/24",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/24/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACGo=\u0022,\u0022operationKey\u0022:\u00226c141114-feac-41b1-8365-9eec5bbe4e6e\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/24",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/24/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACG0=\u0022,\u0022operationKey\u0022:\u002247b54b4b-7907-487e-b69e-f63d0d57516a\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/24",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/24/invoice",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/25",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/25/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACHM=\u0022,\u0022operationKey\u0022:\u0022c0d06674-2adc-48a3-9652-9655916da27b\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/25",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/25/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACHY=\u0022,\u0022operationKey\u0022:\u002283933e2e-b90c-4507-92a4-176dd53d9696\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/25",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/25/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACHk=\u0022,\u0022operationKey\u0022:\u002299d9e32f-3d52-40a7-8785-f2ecd30afc51\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/25",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/26",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/26/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACHs=\u0022,\u0022operationKey\u0022:\u00226623f43c-60f1-417f-ac7e-f2d0ec40525a\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/26",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/26/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACH4=\u0022,\u0022operationKey\u0022:\u0022d2a8adb6-93ba-442c-b3ee-f151e5b9eccf\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/26",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/26/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACIE=\u0022,\u0022operationKey\u0022:\u002226d5e37a-e123-49b1-be72-2f72544cfc06\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/26",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/26/confirm",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACII=\u0022,\u0022operationKey\u0022:\u0022fe23a33d-cc7b-4ca7-8e1f-2855b29e40ac\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/27",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/27/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACIM=\u0022,\u0022operationKey\u0022:\u002292acdca2-82ff-42b3-bf6b-4f3ef23db18a\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/27",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/27/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACIY=\u0022,\u0022operationKey\u0022:\u0022f007d3eb-aa42-4e7c-90be-7168221dafbb\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/27",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/27/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACIk=\u0022,\u0022operationKey\u0022:\u00221c57f420-b30a-495b-b2f4-74557a54a314\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/27",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/27/cancel",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACIo=\u0022,\u0022operationKey\u0022:\u0022900db0aa-905d-4efa-b80b-4e7af5a1ce91\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/28",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/28/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACIs=\u0022,\u0022operationKey\u0022:\u00226bf34333-ff96-4197-a15e-051fb0220c7f\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/28",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/28/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACI4=\u0022,\u0022operationKey\u0022:\u0022757f81dc-519e-4e8a-ab16-1f8612b59994\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/28",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/28/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACJE=\u0022,\u0022operationKey\u0022:\u0022f6ddc954-2f31-45c4-b90c-e9779be1c0ee\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/28",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/28/dispatch",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACJI=\u0022,\u0022operationKey\u0022:\u00229600a022-8c39-4a99-be1f-6c2f93b58c80\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/29",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/29/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACJM=\u0022,\u0022operationKey\u0022:\u00226efe4546-f4d2-4353-bdb5-ad61ccd97e69\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/29",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/29/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACJY=\u0022,\u0022operationKey\u0022:\u00225722e69e-3e5b-45fc-90d8-3a584f0efdd0\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/29",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/29/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACJk=\u0022,\u0022operationKey\u0022:\u0022a546153c-4be7-43a3-b1bd-9d4b382ca127\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/29",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/29/complete",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACJo=\u0022,\u0022operationKey\u0022:\u0022463d2458-8746-4685-9fc8-6cfaee546f5e\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/30",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/30/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACKA=\u0022,\u0022operationKey\u0022:\u0022c3b78506-5184-4264-89b8-457ac6973c93\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/30",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/30/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACKo=\u0022,\u0022operationKey\u0022:\u0022e3db5561-b6d6-4839-a957-dffee04ea5ca\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/30",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/30/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACK4=\u0022,\u0022operationKey\u0022:\u0022885a6efe-dab8-4e18-9e04-13a447626fb9\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/30",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/30/fail",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACK8=\u0022,\u0022operationKey\u0022:\u00223cc05fc5-853a-43f8-afc6-793f3e427915\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/31",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/31/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACLA=\u0022,\u0022operationKey\u0022:\u00223e8a3e34-8aa0-4342-a08a-cc2381cf70c6\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/31",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/31/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACLM=\u0022,\u0022operationKey\u0022:\u0022fcd49a54-09da-44d1-ae14-5506a3c10831\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/31",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/31/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACLY=\u0022,\u0022operationKey\u0022:\u0022d9517a04-7419-4dc3-9e8f-36e2db1a33cb\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/31",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/31/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACLc=\u0022,\u0022operationKey\u0022:\u00226263e446-209c-4b57-abc4-9bd260b72fe0\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/32",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/32/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACLg=\u0022,\u0022operationKey\u0022:\u00222c8c92fd-b2d7-4272-8ccf-977a9e42584b\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/32",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/32/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACLs=\u0022,\u0022operationKey\u0022:\u0022d2c40fe0-6815-4b07-8125-98a2649aed02\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/32",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/32/complete",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACL4=\u0022,\u0022operationKey\u0022:\u002209de2dec-526c-406b-b8fe-5ac4e8146658\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/32",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/32/invoice",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/33",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/33/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACMA=\u0022,\u0022operationKey\u0022:\u0022f2862f5b-f510-495d-9ccd-fb8503d0f02b\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/33",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/34",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/34/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACMY=\u0022,\u0022operationKey\u0022:\u00229c2c4ff3-6703-41bc-b4ba-a199eebe3657\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/34",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/34/confirm",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACMs=\u0022,\u0022operationKey\u0022:\u0022038bf131-047a-40b5-b9bf-c938a3b7763a\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/35",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/35/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACMw=\u0022,\u0022operationKey\u0022:\u0022f7604d50-ec46-4d3b-853a-05e9be0eb7a5\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/35",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/35/cancel",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACNE=\u0022,\u0022operationKey\u0022:\u00227447e19a-c1c7-44ee-8ce2-64bbe893b663\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/36",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/36/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACNI=\u0022,\u0022operationKey\u0022:\u00227d0c4bb6-e151-4abf-bb7e-264558d6744a\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/36",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/36/dispatch",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACNc=\u0022,\u0022operationKey\u0022:\u002243fddaba-9a29-4de3-93b7-daffd59eb1e4\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/37",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/37/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACNg=\u0022,\u0022operationKey\u0022:\u0022e44bea4d-9b5e-4ed1-8156-ea30db6fd10c\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/37",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/37/complete",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACN0=\u0022,\u0022operationKey\u0022:\u00225c61ac37-c2fb-4e19-998f-1ed461f78684\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/38",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/38/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACN4=\u0022,\u0022operationKey\u0022:\u0022ea5c7c95-e353-44d9-bb31-2c1dd770dc35\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/38",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/38/fail",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACOM=\u0022,\u0022operationKey\u0022:\u00228576e303-1da7-415a-a313-9e654c7375b8\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/39",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/39/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACOQ=\u0022,\u0022operationKey\u0022:\u002233f2f700-61c9-4ec6-9dfe-1e3b4f04e5f6\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/39",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/39/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACOk=\u0022,\u0022operationKey\u0022:\u0022930a0c41-87d4-42b4-86f9-a3b8e71a2799\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/40",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/40/cancel",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACOo=\u0022,\u0022operationKey\u0022:\u00225fc29fe1-d289-4bfb-bb90-0931317f01bb\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/40",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/40/invoice",
+      "Status": 409,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/41",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/41/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACPA=\u0022,\u0022operationKey\u0022:\u002202411909-875b-4a61-901a-5ee3ee50b080\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/41",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/41/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACPM=\u0022,\u0022operationKey\u0022:\u0022dda1e103-4811-4329-b9a5-ca5029cfedde\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/41",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/41/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACPY=\u0022,\u0022operationKey\u0022:\u0022647d3022-628d-4d23-940c-547b28bc93e3\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/41",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/42",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/42/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACPg=\u0022,\u0022operationKey\u0022:\u00224eb9125e-d867-451f-b16b-94eec82b9808\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/42",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/42/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACPs=\u0022,\u0022operationKey\u0022:\u00227012c0c4-6009-4426-8632-a318ebe1867c\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/42",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/42/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQE=\u0022,\u0022operationKey\u0022:\u00227452aeca-4b5e-429b-adc7-da3b7864f574\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/42",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/42/confirm",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQM=\u0022,\u0022operationKey\u0022:\u0022cf16f444-480a-479e-a8f4-2b6133f9102c\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/43",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/43/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQQ=\u0022,\u0022operationKey\u0022:\u002226f49015-aed9-492b-86c3-f10ea98a6814\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/43",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/43/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQc=\u0022,\u0022operationKey\u0022:\u002212e62bfe-1d3b-4741-b0d9-5f541a4a4190\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/43",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/43/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQo=\u0022,\u0022operationKey\u0022:\u0022ee91ff7d-366d-4093-b8a0-ac4b462b2609\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/43",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/43/cancel",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQs=\u0022,\u0022operationKey\u0022:\u00221a3a38aa-0f9e-4862-ae60-b514634bc09a\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/44",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/44/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQw=\u0022,\u0022operationKey\u0022:\u0022cd6ac525-a54a-4e29-9829-b80550d5faa9\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/44",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/44/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACQ8=\u0022,\u0022operationKey\u0022:\u0022535b1777-29b1-4e38-9871-02fc5d70d033\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/44",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/44/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRI=\u0022,\u0022operationKey\u0022:\u002247f1e802-57c2-4126-8e7d-e856602ae432\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/44",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/44/dispatch",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRM=\u0022,\u0022operationKey\u0022:\u002235630b72-588f-45f0-a093-c417d0c8bd01\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/45",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/45/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRQ=\u0022,\u0022operationKey\u0022:\u0022eee2fbb8-e9fc-4f79-a1d4-749a3700b202\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/45",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/45/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRc=\u0022,\u0022operationKey\u0022:\u002292847062-7abf-4ee6-9cc8-fa84972ff961\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/45",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/45/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRo=\u0022,\u0022operationKey\u0022:\u0022855c1288-c4b0-465a-a6f7-db76dd72f2c1\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/45",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/45/complete",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRs=\u0022,\u0022operationKey\u0022:\u0022f87b54b5-2152-4ac0-8c04-1867c96f2eea\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/46",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/46/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACRw=\u0022,\u0022operationKey\u0022:\u0022ab64dae3-edea-4b0b-943c-94b2fd199d41\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/46",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/46/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACR8=\u0022,\u0022operationKey\u0022:\u00229521e8a2-b4fc-4268-aa26-d769b1322440\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/46",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/46/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACSI=\u0022,\u0022operationKey\u0022:\u002205112690-5ad9-4ec5-a50f-06e128534a99\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/46",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/46/fail",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACSM=\u0022,\u0022operationKey\u0022:\u0022f424fa53-b5c0-49ab-8407-029779fa7df5\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/47",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/47/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACSQ=\u0022,\u0022operationKey\u0022:\u0022569dd34d-462f-42b6-8be2-4c7e19d01ac0\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/47",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/47/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACSc=\u0022,\u0022operationKey\u0022:\u002272463aa5-ee7e-44e1-ba3b-bcca48831f43\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/47",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/47/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACSo=\u0022,\u0022operationKey\u0022:\u0022c3863994-975d-4368-ae6c-f7f280ca3ab4\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/47",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/47/receive-return",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACSs=\u0022,\u0022operationKey\u0022:\u002220ab679e-d4c6-43a8-8286-bd4a97938daf\u0022,\u0022reason\u0022:\u0022QA matrix reason\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/47",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/47",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/48",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/48/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACS8=\u0022,\u0022operationKey\u0022:\u002219b0ddd7-861b-4936-b875-86458c283a66\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/48",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/48/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACTI=\u0022,\u0022operationKey\u0022:\u0022cbb688cb-da70-413b-a062-73cb63d8ab58\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/48",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/48/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACTU=\u0022,\u0022operationKey\u0022:\u00226115712c-6043-4e3b-aa12-3d85ce3be7e5\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/48",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/48/invoice",
+      "Status": 409,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/49",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/49/cancel",
+      "Status": 400,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACTc=\u0022,\u0022operationKey\u0022:\u0022e80d29b4-c53e-4128-ad21-b521b0bf2164\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/50",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/50/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACTo=\u0022,\u0022operationKey\u0022:\u0022af6290f8-6892-404a-975b-31dfb626e1ee\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/50",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/50/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACT0=\u0022,\u0022operationKey\u0022:\u002286245db5-64fa-457c-aca3-91bdb09f4da2\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/50",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/50/fail",
+      "Status": 400,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUA=\u0022,\u0022operationKey\u0022:\u0022425cb3cd-8633-4d35-a7b6-a96ab080299f\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/51",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/51/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUE=\u0022,\u0022operationKey\u0022:\u00223027b46a-61ec-4342-bf7d-18977cdb4b70\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/51",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/51/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUQ=\u0022,\u0022operationKey\u0022:\u0022c82194c0-e020-40da-82cf-62b12d60f04a\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/51",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/51/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUc=\u0022,\u0022operationKey\u0022:\u0022f4deadf5-ae6d-484f-8f25-549667a55d49\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/51",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/51/receive-return",
+      "Status": 400,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUg=\u0022,\u0022operationKey\u0022:\u0022d70c14e8-b5e0-4e5c-8dc0-9281e50014cb\u0022,\u0022reason\u0022:\u0022xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/52",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/52/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUk=\u0022,\u0022operationKey\u0022:\u00220d5e5fab-945e-4b7a-953a-45fbf32c3acd\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/52",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/52/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACUw=\u0022,\u0022operationKey\u0022:\u0022c9255819-de8e-4662-aecc-70975023e9e2\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/52",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/52/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACU8=\u0022,\u0022operationKey\u0022:\u00222e7edab3-a5c9-4c30-a48a-99b43cca8193\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/52",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/52/receive-return",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVA=\u0022,\u0022operationKey\u0022:\u002201967fed-bbe6-4306-b42d-447407c1a790\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/52",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/52/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVA=\u0022,\u0022operationKey\u0022:\u002201967fed-bbe6-4306-b42d-447407c1a790\u0022}"
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/52/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVM=\u0022,\u0022operationKey\u0022:\u0022ff0678f7-f5c7-4862-9264-efcaca5a978b\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/53",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/53/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVQ=\u0022,\u0022operationKey\u0022:\u00225d116e81-876b-44fa-8a87-704d15f656d9\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/53",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/53/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVc=\u0022,\u0022operationKey\u0022:\u002272071f5d-f359-4e09-b671-7454c21c16e8\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/53",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/53/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVo=\u0022,\u0022operationKey\u0022:\u0022a52afee4-0aee-43d7-88d4-9178f6cc06d9\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/53",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/53/receive-return",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVs=\u0022,\u0022operationKey\u0022:\u002263b830fa-6782-4728-8e0f-65a5395e9597\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/53",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/53/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACVs=\u0022,\u0022operationKey\u0022:\u002263b830fa-6782-4728-8e0f-65a5395e9597\u0022}"
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/53/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACV4=\u0022,\u0022operationKey\u0022:\u0022a7aff4e6-28ba-4697-aab0-7973b3933898\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/54",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/54/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACV8=\u0022,\u0022operationKey\u0022:\u00228ba38653-146a-4655-a828-a5fb07c4e504\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/54",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/54/dispatch",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACWI=\u0022,\u0022operationKey\u0022:\u00222292846e-7539-407f-b3d2-2f9397a92c62\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/54",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/54/fail",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACWU=\u0022,\u0022operationKey\u0022:\u002242f13eec-4c07-4dfb-89c9-593267bf6f88\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/54",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/54/receive-return",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACWY=\u0022,\u0022operationKey\u0022:\u002292b85f4c-0634-4f0c-9c44-72ce8d33cc39\u0022,\u0022reason\u0022:\u0022H\\u00E0ng th\\u1EF1c nh\\u1EADn QA\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/54",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/54/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACWY=\u0022,\u0022operationKey\u0022:\u002292b85f4c-0634-4f0c-9c44-72ce8d33cc39\u0022,\u0022reason\u0022:\u0022H\\u00E0ng th\\u1EF1c nh\\u1EADn QA\u0022}"
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/54/receive-return",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACWk=\u0022,\u0022operationKey\u0022:\u002209fe0258-b1aa-4942-bed1-ac76d9f3f39e\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/55",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/55/confirm",
+      "Status": 409,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACWo=\u0022,\u0022operationKey\u0022:\u00222c481929-e2f8-469f-b83b-ffc12d7808bf\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/55",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/56",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/57",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/58",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/59",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=W5-DATE-QA\u0026page=1\u0026pageSize=100\u0026from=2026-06-10\u0026to=2026-06-10",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=\u0026page=1\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=\u0026page=2\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=DH75c0a214497946e4b29894bcff64b637\u0026page=1\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=snapshot\u0026page=1\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=Kh%C3%A1ch%20QA\u0026page=1\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=0938123591\u0026page=1\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=no-match-4aec1e21-9e44-43d5-ab8b-be74784e49ed\u0026page=1\u0026pageSize=20",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders?query=\u0026page=1\u0026pageSize=20\u0026status=HOAN_TAT",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/60",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/60/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACYA=\u0022,\u0022operationKey\u0022:\u0022fbdcf121-61ed-4c27-ad5a-dd3ca261b2d0\u0022,\u0022reason\u0022:\u0022QA fixture\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/60",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/60/invoice",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/61",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/61/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACYQ=\u0022,\u0022operationKey\u0022:\u002220956567-12e7-45c3-805c-ba9ac8f85fb1\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/61",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/62",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/62",
+      "Status": 200,
+      "Body": ""
+    },
+    {
+      "Method": "POST",
+      "Path": "/api/admin/orders/62/confirm",
+      "Status": 204,
+      "Body": "{\u0022version\u0022:\u0022AAAAAAAACYg=\u0022,\u0022operationKey\u0022:\u002207babc53-8226-4a50-8d95-7949529ae2ac\u0022}"
+    },
+    {
+      "Method": "GET",
+      "Path": "/api/admin/orders/62",
+      "Status": 200,
+      "Body": ""
+    }
+  ],
+  "snapshotFile": "sql-states.json",
+  "sqlSnapshotCount": 68
+}

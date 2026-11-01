@@ -61,7 +61,7 @@ public sealed class CustomerDetailsForm:Form
         root.Controls.Add(AdminTheme.Label("Chi tiết khách hàng",22,true),0,0);root.Controls.Add(DetailsBox,0,1);root.Controls.Add(MessageLabel,0,2);root.Controls.Add(CatalogUi.Toolbar(EditButton,StateButton,OrdersButton,ReloadButton),0,3);Controls.Add(root);Actions();
         Shown+=async(_,_)=>await LoadAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();StateButton.Click+=async(_,_)=>await ChangeStateAsync();
         EditButton.Click+=async(_,_)=>{if(Current is not null){using var form=new CustomerProfileEditor(api,id);form.ShowDialog(this);await LoadAsync();}};
-        OrdersButton.Click+=(_,_)=>{if(Current is not null){using var form=new CustomerOrdersForm(api,id);form.ShowDialog(this);}};
+        OrdersButton.Click+=(_,_)=>{if(Current is not null){using var form=new CustomerOrdersForm(api,id);form.OrderRequested+=async handoff=>{using var detail=new OrderDetailForm(api,handoff.OrderId);detail.ShowDialog(form);await form.LoadAsync();};form.ShowDialog(this);}};
     }
     private void Bind(CustomerRecord row){Current=row;StateButton.Text=row.Active?"Khóa khách":"Mở khách";DetailsBox.Text=$"Tài khoản: {row.Username}\r\nHọ tên: {row.FullName}\r\nĐiện thoại: {row.Phone}\r\nEmail: {row.Email}\r\nĐịa chỉ: {row.Address}\r\nTrạng thái: {(row.Active?"Đang hoạt động":"Đã khóa")}\r\nNgày tạo: {AdminFormatting.Time(row.CreatedAt)}";}
     private void Actions(){StateButton.Visible=Current is not null;EditButton.Enabled=StateButton.Enabled=OrdersButton.Enabled=!busy&&Current is not null;ReloadButton.Enabled=!busy;}
@@ -99,14 +99,14 @@ public sealed class CustomerOrdersForm:Form
         this.api=api;workspace=new(api);this.customerId=customerId;AdminTheme.Frame(this,"Đơn của khách");Grid.ReadOnly=true;
         foreach(var (p,t) in new[]{("Code","Mã đơn"),("Status","Trạng thái"),("CreatedAt","Thời gian UTC+7"),("Total","Tổng tiền"),("Payment","COD")})CatalogUi.Column(Grid,p,t,true,180);
         CatalogUi.Layout(this,"Đơn của khách",CatalogUi.Toolbar(DetailsButton),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
-        Grid.SelectionChanged+=(_,_)=>Actions();Shown+=async(_,_)=>await LoadAsync();PreviousButton.Click+=async(_,_)=>{if(page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(page*20<total){page++;await LoadAsync();}};
+        Grid.SelectionChanged+=(_,_)=>Actions();Shown+=async(_,_)=>await LoadAsync();PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};
         DetailsButton.Click+=(_,_)=>{if(Grid.CurrentRow?.Tag is CustomerOrder row){if(OrderRequested is not null)OrderRequested(new(row.Id));else{using var detail=new OrderPeekForm(api,row.Id);detail.ShowDialog(this);}}};
     }
     private void Actions(){DetailsButton.Enabled=!busy&&Grid.CurrentRow?.Tag is CustomerOrder;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải đơn…";
-        try{var batch=await workspace.Orders(customerId,page);total=batch.Total;Grid.Rows.Clear();foreach(var row in batch.Items){var index=Grid.Rows.Add(row.Code,ContactForms.OrderState(row.Status),AdminFormatting.Time(row.CreatedAt),AdminFormatting.Money(row.Total),ContactForms.Payment(row.Payment));Grid.Rows[index].Tag=row;}MessageLabel.Text=total==0?"Khách chưa có đơn hàng.":$"Trang {page} · {total} đơn · Cửa sổ chi tiết chỉ xem thông tin, không đổi trạng thái đơn.";}
+        try{var batch=await workspace.Orders(customerId,page);total=batch.Total;Grid.Rows.Clear();foreach(var row in batch.Items){var index=Grid.Rows.Add(row.Code,ContactForms.OrderState(row.Status),AdminFormatting.Time(row.CreatedAt),AdminFormatting.Money(row.Total),ContactForms.Payment(row.Payment));Grid.Rows[index].Tag=row;}MessageLabel.Text=total==0?"Khách chưa có đơn hàng.":$"Trang {page} · {total} đơn · Chọn đơn để xem chi tiết.";}
         catch(Exception error){Grid.Rows.Clear();MessageLabel.Text=AdminTheme.Failure(error);}finally{busy=false;Actions();}
     }
 }

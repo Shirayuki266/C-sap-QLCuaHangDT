@@ -1,0 +1,10 @@
+13 admin client checks passed.
+11 admin W2 client checks passed.
+9 admin W3 client checks passed.
+13 admin W4 client checks passed.
+PASS WIN.A19.01/A20.01/02/04 matrix48 actual API cells; denied SQL unchanged; exact two-variant H/R/COD/history effects
+PASS WIN.A19.02/03/A20.03/05 optional return reason, repeat/stale denial and required cancel/failure reasons atomic
+PASS WIN.A19.04 RACE customer cancel/admin confirm both gated on distinct SQL connections; loser409 then authoritative refresh
+PASS WIN.A18.01/02/03/A21.01/02 actual query/status/date boundaries/page and invoice snapshot reads leave SQL unchanged
+PASS WIN.A18.04 actual customer gets403; client maps403 without private text; lost write reply resolves GET once
+5 admin W5 client checks passed (48 matrix cells).

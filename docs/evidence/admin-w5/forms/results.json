@@ -1,0 +1,151 @@
+{
+  "fakeApi": true,
+  "qaOnly": true,
+  "checks": 6,
+  "captures": [
+    {
+      "name": "UI02-order-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI02-order-empty",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI02-order-forbidden",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-state-CHO_XAC_NHAN",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-state-DA_XAC_NHAN",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-state-DANG_GIAO",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-state-HOAN_TAT",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-state-DA_HUY",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-state-GIAO_THAT_BAI",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-return-received",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-reason-required",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-error-reason-retained",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-command-busy",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "order-cancel-confirmation",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI11-customer-conflict-refreshed",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "invoice-view",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "PrintPreview-no-installed-printer",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "customer-to-full-order",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}
