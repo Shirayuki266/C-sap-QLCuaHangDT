@@ -26,7 +26,13 @@ public sealed class MainForm : Form
         foreach (var name in new[] { "Tổng quan", "Điện thoại", "Khách hàng", "Nhập hàng", "Tồn kho", "Đơn hàng", "Báo cáo", "Hãng", "Danh mục", "Nhà cung cấp", "Tài khoản" })
         {
             var button = AdminTheme.Button(name, false); button.Width = 190; button.Height = 40; navigation.Add(button); side.Controls.Add(button);
-            button.Click += (_, _) => { TitleLabel.Text = name; ContentLabel.Text = name == "Tài khoản" ? "Quản lý phiên và mật khẩu của bạn" : "Chưa triển khai"; foreach (var item in navigation) item.BackColor = item == button ? Color.FromArgb(234, 240, 255) : Color.White; };
+            button.Click += (_, _) =>
+            {
+                TitleLabel.Text = name; ContentLabel.Text = name == "Tài khoản" ? "Quản lý phiên và mật khẩu của bạn" : name is "Điện thoại" or "Hãng" or "Danh mục" ? "Chọn mục này để mở cửa sổ quản lý." : "Chưa triển khai";
+                foreach (var item in navigation) item.BackColor = item == button ? Color.FromArgb(234, 240, 255) : Color.White;
+                if(name=="Điện thoại"){using var form=new ProductListForm(api);form.ShowDialog(this);}
+                else if(name is "Hãng" or "Danh mục"){using var form=new LookupForm(api,name=="Hãng"?"brands":"categories");form.ShowDialog(this);}
+            };
         }
         var body = AdminTheme.Stack(32); body.BackColor = AdminTheme.Canvas;
         AdminTheme.Add(body, TitleLabel); AdminTheme.Add(body, AdminTheme.Label("Chào " + api.Identity?.Username + ". Phiên quản trị đang hoạt động."));

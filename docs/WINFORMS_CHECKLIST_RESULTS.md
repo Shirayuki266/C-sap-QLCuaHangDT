@@ -1,24 +1,24 @@
-# WinForms acceptance ledger — W1
+# WinForms acceptance ledger — W1–W2
 
-Official latest08: **113 unique IDs /48 P0 /59 P1 /6 P2**. Source SHA256: ae7962fe17cd92aacd1445b203b319c0e6d47859827a9fda6ddbadffca89ae29. W1 planned31 IDs; BASE15 has partial shared-dialog proof and remains NOT RUN until W2–W5 integrations. No unexecuted criteria marked PASS.
-
-13 actual client/SQL QA checks,8 Windows STA form checks,1 real WinForms/Kestrel QA smoke, unchanged322 backend/MVC regression groups. [W1 report](WINFORMS_W1.md); [machine-readable113 rows](evidence/admin-w1/checklist-results.json). Final exact-head CI is bound in PR verification; any new commit requires fresh checks.
+Official latest08:113 unique IDs, **48 P0 /59 P1 /6 P2**. Source SHA256 ae7962fe17cd92aacd1445b203b319c0e6d47859827a9fda6ddbadffca89ae29. W1 accepted PR103; W2 has16 executed IDs (6 P0/10 P1). [W2 report](WINFORMS_W2.md); [W1 historical report](WINFORMS_W1.md). Exact final-head CI is bound in PR verification.
 
 ## Whole phase
 
 | Priority | Total | PASS | FAIL | BLOCKED | NOT RUN | N/A |
 |---|---:|---:|---:|---:|---:|---:|
-|P0|48|15|0|0|33|0|
-|P1|59|13|0|0|46|0|
+|P0|48|21|0|0|27|0|
+|P1|59|23|0|0|36|0|
 |P2|6|2|0|0|4|0|
 
-## W1 subset
+## W2 subset
 
 | Priority | Total | PASS | FAIL | BLOCKED | NOT RUN | N/A |
 |---|---:|---:|---:|---:|---:|---:|
-|P0|15|15|0|0|0|0|
-|P1|14|13|0|0|1|0|
-|P2|2|2|0|0|0|0|
+|P0|6|6|0|0|0|0|
+|P1|10|10|0|0|0|0|
+|P2|0|0|0|0|0|0|
+
+All67 remaining NOT RUN IDs are listed below with scope/reasons. A05.04 remains W4; BASE15 remains partial until later confirmations. No whole-phase gate is passed.
 
 ## P0
 
@@ -39,12 +39,12 @@ Official latest08: **113 unique IDs /48 P0 /59 P1 /6 P2**. Source SHA256: ae7962
 |WIN.A01.03|W1|PASS|Actual controls clear submitted password before pending task; error/close clears again; shipping settings and code have no default credential or remember-password option.|
 |WIN.A02.01|W1|PASS|Actual client and real WinForms/Kestrel logout revoke current SQL session and clear local identity/cookies; application context returns Login and closes owned screens.|
 |WIN.A03.01|W1|PASS|Two real ADMIN sessions; valid own-password change updates hash and deletes every SQL session; old session401, old password rejected, new password accepted.|
-|WIN.A05.01|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A05.02|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A06.01|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A06.02|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A07.01|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A08.02|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
+|WIN.A05.01|W2|PASS|Real POST201 -> GET; two variants server price12,000,000; SQL initial H0/R0, no journal. Actual QA ProductEditor creates and reads back independently.|
+|WIN.A05.02|W2|PASS|Real duplicate code/SKU/variant-combination and invalid cost/rates/images rejected400 with identical ordered SQL snapshots; actual form retains fields/variants and re-enables save.|
+|WIN.A06.01|W2|PASS|GET -> dedicated complete PUT with old IDs/versions; direct incomplete PUT400 leaves SQL unchanged. Cost/price read-only, old cost retained by DTO binder; new variant zero stock.|
+|WIN.A06.02|W2|PASS|Real stale PUT409 CONCURRENT_UPDATE after competing valid update; rejected SQL snapshot unchanged, form retains draft and tells user to reload.|
+|WIN.A07.01|W2|PASS|GET full aggregate -> confirmed PUT active=false/true -> GET; cancellation sends no write. Product/history retained; variant state edits also ask confirmation.|
+|WIN.A08.02|W2|PASS|Real duplicate create/update lookup400 leaves SQL unchanged; stopping does not remove product/orders/history. No delete operation.|
 |WIN.A10.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A11.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A14.01|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
@@ -81,7 +81,7 @@ Official latest08: **113 unique IDs /48 P0 /59 P1 /6 P2**. Source SHA256: ae7962
 |WIN.BASE.12|W1|PASS|Exact23.980.000 đ and UTC+7 next-day boundary asserted; DateOnly request formatter is invariant yyyy-MM-dd. Future money/table displays remain their function tests.|
 |WIN.BASE.13|W1|PASS|Actual MainForm navigation has11 named entries,1280x800 minimum, server/user status and honest unimplemented-module text; native sidebar scroll enabled. Real API Main capture retained.|
 |WIN.BASE.14|W1|PASS|Readiness/login/password/logout use async HTTP; held fake login proves live busy state, disabled submit and error recovery on actual controls. Only W1 screens are assessed; later data screens remain NOT RUN.|
-|WIN.BASE.15|W1|NOT RUN|Partial evidence: shared safe-default confirmation dialog is implemented and tested/captured. Actual cancellation/failure/customer-lock/purchase/stock/product/lookup wiring belongs to W2–W5; entire cross-module criterion remains NOT RUN.|
+|WIN.BASE.15|W1|NOT RUN|Partial W1 shared dialog plus W2 product/variant/lookup confirmations proven; customer/order/purchase/stock integrations remain W3–W5, so whole criterion stays NOT RUN.|
 |WIN.BASE.16|W1|PASS|Invalid login/settings retain username/configuration; password fields deliberately blank. Safe form errors shown without guessing fields from backend message text. Later domain forms not yet implemented.|
 |WIN.BASE.17|W1|PASS|Independent Client SQL QA checks13 and Windows STA form checks8 pass locally; both CI jobs must be successful. CI SUCCESS snapshot 4b5f3d940fcf0291edeeb9c2da9267355ced47ff; exact final head must be reverified after docs amendment.|
 |WIN.BASE.18|W1|PASS|Actual settings form rejects remoteHTTP without losing input; allowlisted URL/environment/fingerprint roundtrip through QA settings file, with no password/cookie/token properties.|
@@ -91,17 +91,17 @@ Official latest08: **113 unique IDs /48 P0 /59 P1 /6 P2**. Source SHA256: ae7962
 |WIN.A02.02|W1|PASS|Actual already-revoked session logout safely clears local state; repeated logout is harmless.|
 |WIN.A03.02|W1|PASS|Actual wrong current/short/overlong new password rejected with hash unchanged; form error keeps fields empty and shows controlled summary.|
 |WIN.A03.03|W1|PASS|No accountId/role/foreign target in PasswordInput or UI; test logs exclude generated passwords; form only invokes self-password API.|
-|WIN.A04.01|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A04.02|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A04.03|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A05.03|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A05.04|W4|NOT RUN|W4: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A05.05|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A06.03|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A06.04|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A07.02|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A08.01|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
-|WIN.A08.03|W2|NOT RUN|W2: outside W1; no implementation or real acceptance evidence yet.|
+|WIN.A04.01|W2|PASS|Actual query/brand/state paging and distinct page2; UI controls list inactive rows/names from ADMIN.20 default, bounded100 lookup pages; no invented category filter.|
+|WIN.A04.02|W2|PASS|Actual ADMIN detail DTO and server price/cost/profit/H/R/version; actual STA details/editor show description/image URLs and available presentation. Real QA captures retained.|
+|WIN.A04.03|W2|PASS|Actual404 and no-match wrapper; form fake503 displays genuine failure feedback rather than an empty/zero success.|
+|WIN.A05.03|W2|PASS|Client required code/name/SKU/color, positive storage/cost/integer suggested quantity and percent bounds asserted; actual controls block invalid draft, server independently rejects bad values.|
+|WIN.A05.04|W4|NOT RUN|W4 NOT RUN: typed purchase handoff/event exists, button disabled; actual draft opening/saving/stock workflow not implemented or accepted.|
+|WIN.A05.05|W2|PASS|Main image optional; HTTPS and /images accepted; invalid schemes/credentials/traversal/blank Images[]/overlong rejected; form retains invalid URL without sending.|
+|WIN.A06.03|W2|PASS|Actual checkout snapshot before rate PUT retains line price12,000,000/payment/history/H5R1/journal; live server price12,500,000 after25%. Form renders returned price.|
+|WIN.A06.04|W2|PASS|No variant delete action or DELETE request; grid disallows row deletion, retains every old variant and offers active state only.|
+|WIN.A07.02|W2|PASS|Actual inactive filter and rendered text Đã ngừng; status does not rely on color.|
+|WIN.A08.01|W2|PASS|Actual lookup POST201/list and PUT204/list, dedicated name+active, ADMIN inactive retention/paging; actual form new/edit selection paths tested.|
+|WIN.A08.03|W2|PASS|Actual confirmation cancellation blocks write, warning explicitly mentions website visibility; actual public detail404 when either brand/category inactive, ADMIN retained.|
 |WIN.A09.01|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A09.02|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|
 |WIN.A10.02|W3|NOT RUN|W3: outside W1; no implementation or real acceptance evidence yet.|

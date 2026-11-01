@@ -122,11 +122,43 @@ public sealed class ApiClient : IAdminApi
         await readAuthoritativeResult(cancellationToken); NeedsReconciliation = false;
     }
 
-    private async Task<HttpResponseMessage> WriteAsync<T>(string path, T input, CancellationToken cancellationToken)
+    public async Task<long> CreateAsync<T>(string path, T input, CancellationToken cancellationToken = default)
+    {
+        ValidatePath(path); await writes.WaitAsync(cancellationToken);
+        try
+        {
+            RequireSession(); if (NeedsReconciliation) throw new AdminApiException("UNCERTAIN");
+            using var response = await WriteAsync(path, input, cancellationToken);
+            try
+            {
+                if (response.StatusCode != HttpStatusCode.Created) throw new AdminApiException("INVALID_RESPONSE");
+                var created = await Deserialize<CreatedId>(response, cancellationToken);
+                if (created.Id <= 0) throw new AdminApiException("INVALID_RESPONSE");
+                return created.Id;
+            }
+            catch (AdminApiException) { NeedsReconciliation = true; throw new AdminApiException("UNCERTAIN"); }
+        }
+        finally { writes.Release(); }
+    }
+
+    public async Task PutAsync<T>(string path, T input, CancellationToken cancellationToken = default)
+    {
+        ValidatePath(path); await writes.WaitAsync(cancellationToken);
+        try
+        {
+            RequireSession(); if (NeedsReconciliation) throw new AdminApiException("UNCERTAIN");
+            using var response = await WriteAsync(path, input, cancellationToken, HttpMethod.Put);
+            if (response.StatusCode != HttpStatusCode.NoContent) { NeedsReconciliation = true; throw new AdminApiException("UNCERTAIN"); }
+        }
+        finally { writes.Release(); }
+    }
+    private sealed record CreatedId(long Id);
+
+    private async Task<HttpResponseMessage> WriteAsync<T>(string path, T input, CancellationToken cancellationToken, HttpMethod? method = null)
     {
         var token = await ReadAsync<TokenResult>("/api/security/token", false, cancellationToken);
         if (string.IsNullOrWhiteSpace(token.Token)) throw new AdminApiException("INVALID_RESPONSE");
-        using var request = new HttpRequestMessage(HttpMethod.Post, path) { Content = JsonContent.Create(input) };
+        using var request = new HttpRequestMessage(method ?? HttpMethod.Post, path) { Content = JsonContent.Create(input) };
         request.Headers.Add("X-CSRF-TOKEN", token.Token);
         try
         {

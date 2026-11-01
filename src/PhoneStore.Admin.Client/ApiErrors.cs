@@ -23,6 +23,7 @@ public sealed class AdminApiException(string code, int status = 0, string? trace
             "SERVER_MISMATCH" => "Môi trường hoặc dấu nhận dạng máy chủ không khớp cấu hình. Đăng nhập đã bị chặn.",
             "INVALID_RESPONSE" => "Phản hồi máy chủ chưa hợp lệ. Vui lòng tải lại hoặc liên hệ quản trị.",
             "UNCERTAIN" => "Chưa xác định yêu cầu đã được xử lý hay chưa. Hãy đối soát dữ liệu trước khi gửi lệnh tiếp theo.",
+            "READBACK_REQUIRED" => "Máy chủ đã nhận lệnh lưu nhưng chưa tải lại được dữ liệu. Chọn Tải lại / đối soát trước khi lưu tiếp.",
             "NETWORK" => "Không kết nối được máy chủ. Kiểm tra địa chỉ và kết nối rồi thử lại.",
             "TIMEOUT" => "Máy chủ phản hồi quá lâu. Vui lòng thử tải lại.",
             _ => "Không thể thực hiện yêu cầu. Vui lòng kiểm tra và thử lại."

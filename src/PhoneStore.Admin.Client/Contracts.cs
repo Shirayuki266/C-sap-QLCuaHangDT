@@ -23,6 +23,8 @@ public interface IAdminApi : IDisposable
     Task ChangePasswordAsync(string currentPassword, string newPassword, CancellationToken cancellationToken = default);
     Task<T> GetAsync<T>(string path, CancellationToken cancellationToken = default);
     Task CommandAsync<T>(string path, T input, CommandIntent intent, CancellationToken cancellationToken = default);
+    Task<long> CreateAsync<T>(string path, T input, CancellationToken cancellationToken = default) => throw new NotSupportedException();
+    Task PutAsync<T>(string path, T input, CancellationToken cancellationToken = default) => throw new NotSupportedException();
     Task ReconcileAsync(Func<CancellationToken, Task> readAuthoritativeResult, CancellationToken cancellationToken = default);
 }
 
