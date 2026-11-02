@@ -29,7 +29,6 @@ public sealed class LoginForm : Form
         center.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25)); center.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50)); center.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
         center.RowStyles.Add(new RowStyle(SizeType.Percent, 50)); center.RowStyles.Add(new RowStyle(SizeType.AutoSize)); center.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
         var card = AdminTheme.Stack(32); card.Dock = DockStyle.Top; card.AutoSize = true;
-        var brand = AdminTheme.Label("MONOPHONE · QUẢN TRỊ", 11, true); brand.ForeColor = AdminTheme.Blue; AdminTheme.Add(card, brand);
         AdminTheme.Add(card, AdminTheme.Label("Đăng nhập quản trị", 24, true)); AdminTheme.Add(card, AdminTheme.Label("Tiếp tục với tài khoản của bạn."));
         var endpoint = AdminTheme.Label(settings.BaseUrl); endpoint.MaximumSize = new Size(550, 0); AdminTheme.Add(card, endpoint);
         ServerLabel.MaximumSize = new Size(550, 0); ServerLabel.ForeColor = AdminTheme.Muted; AdminTheme.Add(card, ServerLabel);

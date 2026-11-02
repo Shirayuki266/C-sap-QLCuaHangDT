@@ -57,6 +57,13 @@ jobs:
         run: dotnet run --project tests/PhoneStore.Checks -c Release --no-build -- --integration
       - name: Run new Admin Client checks against isolated SQL QA
         run: dotnet run --project tests/PhoneStore.Admin.Client.Checks -c Release
+      - name: Upload W6 Admin Client SQL evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: admin-client-w6-sql
+          path: .artifacts/admin-w6/sql-results.json
+          if-no-files-found: warn
 
   admin-windows:
     name: Windows Admin build and form checks
@@ -76,6 +83,8 @@ jobs:
           Get-DisplayResolution
       - name: Run STA form checks with fake API
         run: dotnet run --project tests/PhoneStore.Admin.Tests -c Release --no-build
+      - name: Check native DPI layouts and text at minimum window size
+        run: dotnet run --project tests/PhoneStore.Admin.Tests -c Release --no-build -- --dpi-closeout
       - name: Upload WinForms evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -87,4 +96,6 @@ jobs:
             .artifacts/admin-w3/forms/
             .artifacts/admin-w4/forms/
             .artifacts/admin-w5/forms/
+            .artifacts/admin-w6/forms/
+            .artifacts/admin-w6/dpi/
           if-no-files-found: error

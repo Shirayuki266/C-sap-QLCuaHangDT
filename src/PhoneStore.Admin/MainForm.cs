@@ -6,10 +6,11 @@ public sealed class MainForm : Form
 {
     private readonly IAdminApi api;
     private bool ending;
+    public DashboardView Dashboard { get; private set; }=null!;
     public bool ClosingApplication { get; private set; }
     public event Action? LoggedOut;
     public Label TitleLabel { get; } = AdminTheme.Label("Tổng quan", 23, true);
-    public Label ContentLabel { get; } = AdminTheme.Label("Chưa triển khai", 18, true);
+    public Label ContentLabel { get; } = AdminTheme.Label("Mở chức năng từ điều hướng bên trái.", 12);
     public Label StatusLabel { get; } = AdminTheme.Label("");
     public Button LogoutButton { get; } = AdminTheme.Button("Đăng &xuất", false);
     public Button PasswordButton { get; } = AdminTheme.Button("Đổi &mật khẩu", false);
@@ -22,15 +23,17 @@ public sealed class MainForm : Form
         root.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230)); root.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         root.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); root.RowStyles.Add(new RowStyle(SizeType.Absolute, 36));
         var side = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false, AutoScroll = true, BackColor = AdminTheme.Navy, Padding = new Padding(16) };
-        var brand = AdminTheme.Label("Monophone.", 18, true); brand.AutoSize = false; brand.Size = new Size(190, 54); brand.ForeColor = Color.White; side.Controls.Add(brand);
+        var brand = AdminTheme.Label("Monophone", 17, true); brand.AutoSize = false; brand.Size = new Size(190, 54); brand.ForeColor = Color.White; side.Controls.Add(brand);
         foreach (var name in new[] { "Tổng quan", "Điện thoại", "Khách hàng", "Nhập hàng", "Tồn kho", "Đơn hàng", "Báo cáo", "Hãng", "Danh mục", "Nhà cung cấp", "Tài khoản" })
         {
-            var button = AdminTheme.Button(name, false); button.Width = 190; button.Height = 40; navigation.Add(button); side.Controls.Add(button);
+            var button = AdminTheme.Button(name, false); button.AutoSize=false;button.MinimumSize=new Size(160,36);button.Padding=new Padding(6,2,6,2);button.Margin=new Padding(0,5,0,0);button.Width = 190; button.Height = 40; navigation.Add(button); side.Controls.Add(button);
             button.Click += (_, _) =>
             {
-                TitleLabel.Text = name; ContentLabel.Text = name == "Tài khoản" ? "Quản lý phiên và mật khẩu của bạn" : name is "Điện thoại" or "Hãng" or "Danh mục" or "Khách hàng" or "Nhà cung cấp" or "Nhập hàng" or "Tồn kho" or "Đơn hàng" ? "Chọn mục này để mở cửa sổ quản lý." : "Chưa triển khai";
+                TitleLabel.Text = name; ContentLabel.Text = name == "Tài khoản" ? "Quản lý phiên và mật khẩu của bạn" : name is "Điện thoại" or "Hãng" or "Danh mục" or "Khách hàng" or "Nhà cung cấp" or "Nhập hàng" or "Tồn kho" or "Đơn hàng" ? "Chọn mục này để mở cửa sổ quản lý." : "Tải số liệu tổng quan bằng nút Tải tổng quan.";
                 foreach (var item in navigation) item.BackColor = item == button ? Color.FromArgb(234, 240, 255) : Color.White;
-                if(name=="Điện thoại"){using var form=new ProductListForm(api);form.ShowDialog(this);}
+                if(name=="Báo cáo"){using var form=new ReportScreen(api);form.ShowDialog(this);}
+                else if(name=="Tổng quan"){TitleLabel.Text="Tổng quan";_ = Dashboard.LoadAsync();}
+                else if(name=="Điện thoại"){using var form=new ProductListForm(api);form.ShowDialog(this);}
                 else if(name is "Hãng" or "Danh mục"){using var form=new LookupForm(api,name=="Hãng"?"brands":"categories");form.ShowDialog(this);}
                 else if(name=="Khách hàng"){using var form=new CustomerListForm(api);form.ShowDialog(this);}
                 else if(name=="Nhà cung cấp"){using var form=new SupplierListForm(api);form.ShowDialog(this);}
@@ -39,11 +42,8 @@ public sealed class MainForm : Form
                 else if(name=="Tồn kho"){var settings=new StockPreferenceStore();using var form=new StockListForm(api,settings.Load(),settings.Save);form.ShowDialog(this);}
             };
         }
-        var body = AdminTheme.Stack(32); body.BackColor = AdminTheme.Canvas;
-        AdminTheme.Add(body, TitleLabel); AdminTheme.Add(body, AdminTheme.Label("Chào " + api.Identity?.Username + ". Phiên quản trị đang hoạt động."));
-        var account = new FlowLayoutPanel { AutoSize = true, Dock = DockStyle.Fill }; account.Controls.Add(PasswordButton); account.Controls.Add(LogoutButton); AdminTheme.Add(body, account);
-        var panel = AdminTheme.Stack(28); panel.Dock = DockStyle.Top; panel.Margin = new Padding(0, 32, 0, 0);
-        AdminTheme.Add(panel, ContentLabel); var note = AdminTheme.Label("Các chức năng quản lý sẽ được mở ở những bước tiếp theo.\nBạn có thể đổi mật khẩu hoặc đăng xuất bằng các nút phía trên."); note.MaximumSize = new Size(740, 0); AdminTheme.Add(panel, note); AdminTheme.Add(body, panel);
+        var body=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=3,Padding=new Padding(16)};body.RowStyles.Add(new RowStyle(SizeType.AutoSize));body.RowStyles.Add(new RowStyle(SizeType.AutoSize));body.RowStyles.Add(new RowStyle(SizeType.Percent,100));
+        var accountBar=CatalogUi.Toolbar(PasswordButton,LogoutButton);accountBar.Padding=new Padding(4);body.Controls.Add(TitleLabel,0,0);body.Controls.Add(accountBar,0,1);Dashboard=new(api);body.Controls.Add(Dashboard,0,2);Shown+=async(_,_)=>await Dashboard.LoadAsync();
         root.Controls.Add(side, 0, 0); root.Controls.Add(body, 1, 0);
         StatusLabel.Text = ready.Environment + " · " + ready.Fingerprint + "   |   " + api.Identity?.Username + "   |   ADMIN"; StatusLabel.Padding = new Padding(16, 0, 0, 0); root.Controls.Add(StatusLabel, 0, 1); root.SetColumnSpan(StatusLabel, 2); Controls.Add(root);
         PasswordButton.Click += (_, _) => { using var form = new PasswordForm(api); form.ShowDialog(this); };
