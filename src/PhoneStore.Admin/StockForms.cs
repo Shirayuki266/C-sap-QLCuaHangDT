@@ -18,9 +18,9 @@ public sealed class StockListForm:Form
     public CheckBox BelowBox { get; }=new(){Text="Chỉ sắp hết, khả dụng ≤",AutoSize=true};public NumericUpDown ThresholdBox { get; }=new(){Minimum=0,Maximum=int.MaxValue,Width=90,AccessibleName="Ngưỡng sắp hết tường minh"};
     public DataGridView Grid { get; }=CatalogUi.Grid();public Button SearchButton { get; }=AdminTheme.Button("Tìm kiếm");public Button CountButton { get; }=AdminTheme.Button("Kiểm kê",false);public Button JournalButton { get; }=AdminTheme.Button("Nhật ký kho",false);
     public Button PreviousButton { get; }=AdminTheme.Button("Trang trước",false);public Button NextButton { get; }=AdminTheme.Button("Trang sau",false);public Label MessageLabel { get; }=AdminTheme.Label("");
-    public StockListForm(IAdminApi api,int threshold=5,Action<int>? saveThreshold=null)
+    public StockListForm(IAdminApi api,int threshold=5,Action<int>? saveThreshold=null,bool initialLow=false)
     {
-        this.api=api;workspace=new(api);this.saveThreshold=saveThreshold;AdminTheme.Frame(this,"Tồn kho");QueryBox.Dock=DockStyle.None;QueryBox.Width=240;QueryBox.MaxLength=100;ThresholdBox.Value=Math.Max(0,threshold);Grid.ReadOnly=true;
+        this.api=api;workspace=new(api);this.saveThreshold=saveThreshold;AdminTheme.Frame(this,"Tồn kho");QueryBox.Dock=DockStyle.None;QueryBox.Width=240;QueryBox.MaxLength=100;ThresholdBox.Value=Math.Max(0,threshold);BelowBox.Checked=initialLow;Grid.ReadOnly=true;
         foreach(var(p,t)in new[]{("Sku","SKU"),("Name","Điện thoại"),("Variant","Phiên bản"),("OnHand","Tồn thực"),("Reserved","Đang giữ"),("Available","Có thể bán")})CatalogUi.Column(Grid,p,t,true,p=="Name"?260:150);
         CatalogUi.Layout(this,"Tồn kho",CatalogUi.Toolbar(QueryBox,BrandBox,BelowBox,ThresholdBox,SearchButton,CountButton,JournalButton),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
         SearchButton.Click+=async(_,_)=>{page=1;await LoadAsync();};PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};

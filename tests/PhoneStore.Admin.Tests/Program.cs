@@ -34,6 +34,7 @@ internal static partial class Program
     private static string FindRoot() { var root = new DirectoryInfo(AppContext.BaseDirectory); while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent; return root?.FullName ?? throw new InvalidOperationException("Root missing"); }
     private static async Task Run(string[] args)
     {
+        if (args.Contains("--dpi-closeout")) { await DpiCloseoutChecks(); return; }
         if (args.Contains("--real-api")) { await RealApi(); return; }
         if (args.Contains("--real-catalog")) { await RealCatalog(); return; }
         if (args.Contains("--real-contacts")) { await RealContacts(); return; }
@@ -63,12 +64,12 @@ internal static partial class Program
             Assert(form.SubmitButton.Enabled && form.UsernameBox.Text == "qa-admin" && form.PasswordBox.Text.Length == 0 && form.MessageLabel.Text.Contains("Tên đăng nhập"), "Failed login retention/recovery failed"); await Capture(form, "UI01-login-error");
             fake.ReadyError = new AdminApiException("NETWORK"); await form.CheckAsync(); Assert(form.MessageLabel.Text.Contains("Không kết nối"), "Network recovery missing"); await Capture(form, "UI01-offline"); fake.ReadyError = null; form.Close();
         });
-        await Test("WIN.BASE.13 shell navigation placeholders no fake commerce; account controls and QA status", async () =>
+        await Test("WIN.BASE.13 shell structure/account controls; delivered W6 navigation checked separately", async () =>
         {
             fake.Identity = new(1, "qa-admin", "ADMIN", DateTimeOffset.UtcNow.AddHours(8)); using var form = new MainForm(fake, FakeApi.Ready); form.Show(); await Task.Delay(40);
             Assert(form.Navigation.Count == 11 && form.MinimumSize.Width >= 1280 && form.MinimumSize.Height >= 800 && form.Width >= 1280 && form.Height >= 800,
                 $"Shell structure missing: navigation={form.Navigation.Count};minimum={form.MinimumSize};size={form.Size};dpi={form.DeviceDpi}");
-            foreach (var button in form.Navigation.Where(b=>b.Text is not ("Điện thoại" or "Hãng" or "Danh mục" or "Khách hàng" or "Nhà cung cấp" or "Nhập hàng" or "Tồn kho" or "Đơn hàng"))) { button.PerformClick(); Assert(form.TitleLabel.Text == button.Text, "Navigation not operational"); if (button.Text != "Tài khoản") Assert(form.ContentLabel.Text == "Chưa triển khai", "Placeholder invents delivered capability"); }
+            foreach (var button in form.Navigation.Where(b=>b.Text is not ("Điện thoại" or "Hãng" or "Danh mục" or "Khách hàng" or "Nhà cung cấp" or "Nhập hàng" or "Tồn kho" or "Đơn hàng" or "Báo cáo" or "Tổng quan"))) { button.PerformClick(); Assert(form.TitleLabel.Text == button.Text, "Navigation not operational"); if (button.Text != "Tài khoản") Assert(form.ContentLabel.Text == "Chưa triển khai", "Placeholder invents delivered capability"); }
             form.Navigation[0].PerformClick(); Assert(form.StatusLabel.Text.Contains("QA") && form.StatusLabel.Text.Contains("qa-admin"), "Session/server status absent"); await Capture(form, "UI02-main-1280");
             form.EndSession();
         });
@@ -112,6 +113,8 @@ internal static partial class Program
         await ContactFormsChecks();
         await SupplyFormsChecks();
         await OrderFormsChecks();
+        await ReportFormsChecks();
+        await BaseCloseoutChecks();
     }
     private static async Task RealApi()
     {

@@ -11,6 +11,8 @@ if(args.Contains("--desktop-contacts")){await DesktopQaChecks.Run(contacts:true)
 if(args.Contains("--desktop-supply")){await DesktopQaChecks.Run(supply:true);return;}
 
 if(args.Contains("--desktop-orders")){await OrderDesktopQaChecks.Run();return;}
+if(args.Contains("--walkthrough-release")){await ReleaseWalkthroughChecks.Run();return;}
+if(args.Contains("--reports-only")){await ReportChecks.Run();return;}
 if(args.Contains("--orders-only")){await OrderChecks.Run();return;}
 
 var passed = 0;
@@ -149,6 +151,7 @@ await CatalogChecks.Run();
 await ContactChecks.Run();
 await SupplyChecks.Run();
 await OrderChecks.Run();
+await ReportChecks.Run();
 
 internal sealed class Probe : DelegatingHandler
 {

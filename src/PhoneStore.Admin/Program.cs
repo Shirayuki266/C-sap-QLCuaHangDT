@@ -50,9 +50,10 @@ public sealed class AdminApplication : ApplicationContext
     private void ReturnToLogin()
     {
         if (disposing || shell is null) return;
-        var oldShell = shell; var exit = oldShell.ClosingApplication; shell = null; MainForm = null; oldShell.EndSession();
+        var oldShell = shell; if(HasPurchaseWindow(oldShell))MessageBox.Show(oldShell,"Phiên quản trị đã kết thúc. Cửa sổ phiếu nhập sẽ đóng; nội dung chưa lưu không được giữ. Hãy đăng nhập lại và nhập lại nháp. Ứng dụng không tự gửi lại lệnh ghi bằng phiên cũ.","Nháp chưa lưu",MessageBoxButtons.OK,MessageBoxIcon.Warning); var exit = oldShell.ClosingApplication; shell = null; MainForm = null; oldShell.EndSession();
         if (exit) { disposing = true; api?.Dispose(); ExitThread(); } else ShowLogin();
     }
+    private static bool HasPurchaseWindow(Form owner)=>owner.OwnedForms.Any(f=>f is PurchaseEditor||HasPurchaseWindow(f));
     protected override void Dispose(bool disposing)
     { this.disposing = true; if (disposing) { api?.Dispose(); login?.Dispose(); shell?.Dispose(); } base.Dispose(disposing); }
 }

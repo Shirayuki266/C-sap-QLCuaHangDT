@@ -1,0 +1,11 @@
+{
+  "label": "agent-assisted UI walkthrough",
+  "actualReleaseApplication": true,
+  "formHarness": false,
+  "fakeApi": false,
+  "qaOnly": true,
+  "appSha256": "1F3917CF960CA85F3DF8C760D41A3ADAEE1DF8460AC9A51FB929694465BB7816",
+  "dllSha256": "676CEC066BF3E517E2149AF8EAE8CB7928554F3A10F2A8ADA5B0FECDB5E94B64",
+  "userWillRunManuallyAgain": true,
+  "customerSteps": "Real customer API permitted by official08; every Admin operation through actual Release UI"
+}

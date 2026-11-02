@@ -34,6 +34,8 @@ All customer mutations run on the server except the guest browser cart. Record I
 
 Every row requires a live active ADMIN session. WinForms calls the same backend through HTTP; it never accesses SQL Server directly.
 
+The native implementation and official113-ID acceptance mapping are in [WINFORMS_CHECKLIST_RESULTS](WINFORMS_CHECKLIST_RESULTS.md). W1–W5 cover accounts/catalog/contacts/supply/orders; [W6](WINFORMS_W6.md) maps A22 to UI12 reports and UI02 overview, with real SQL/race checks and accepted Release walkthrough evidence. [WINFORMS_HANDOVER](WINFORMS_HANDOVER.md) records execution commands and accepted DPI/manual-follow-up limits; correct-head CI gates are verified separately. The server traces below remain unchanged.
+
 | ID / future UI | Additional PRE | Server/data and POST | Alternative / exception | Service verification |
 | --- | --- | --- | --- | --- |
 | A01 / WinForms login | Ready backend, active ADMIN account | Account service verifies password and ADMIN role, creates session | E1 credentials/role/locked/network failure | CUSTOMER and locked accounts denied; no session on failure; [executable evidence](../tests/PhoneStore.Checks/SessionHttpChecks.cs) |
