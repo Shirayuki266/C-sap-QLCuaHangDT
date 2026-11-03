@@ -6,6 +6,8 @@ namespace PhoneStore.DemoData.Cli;
 
 public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, string ImagesDirectory, string Output)
 {
+    public bool VerifyOnly { get; init; }
+    public string? ManifestPath { get; init; }
     public static Options Parse(string[] args, DateOnly today)
     {
         var flags = new HashSet<string>(StringComparer.Ordinal);
@@ -13,19 +15,22 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
         for (var i = 0; i < args.Length; i++)
         {
             var key = args[i];
-            if (key is "--seed-demo-large" or "--confirm" or "--reset")
+            if (key is "--seed-demo-large" or "--confirm" or "--reset" or "--verify-demo-data")
             {
                 if (!flags.Add(key)) throw new ArgumentException("Cờ bị lặp.");
             }
-            else if (key is "--seed" or "--as-of" or "--scale" or "--images-dir" or "--output")
+            else if (key is "--seed" or "--as-of" or "--scale" or "--images-dir" or "--output" or "--manifest")
             {
                 if (++i >= args.Length || args[i].StartsWith("--", StringComparison.Ordinal) || !values.TryAdd(key, args[i]))
                     throw new ArgumentException("Tham số thiếu giá trị hoặc bị lặp.");
             }
-            else throw new ArgumentException("Tham số không được hỗ trợ. D1 chỉ tạo dữ liệu nền; chưa có --verify-demo-data.");
+            else throw new ArgumentException("Tham số không được hỗ trợ.");
         }
-        if (!flags.Contains("--seed-demo-large") || !flags.Contains("--confirm"))
+        var verify = flags.Contains("--verify-demo-data");
+        if (verify && flags.Any(x => x != "--verify-demo-data")) throw new ArgumentException("Kiểm chứng chỉ đọc không được kèm cờ seed/confirm/reset.");
+        if (!verify && (!flags.Contains("--seed-demo-large") || !flags.Contains("--confirm")))
             throw new ArgumentException("Cần --seed-demo-large và --confirm.");
+        if (verify && !values.ContainsKey("--manifest")) throw new ArgumentException("Kiểm chứng cần --manifest từ lần tạo dữ liệu.");
         var seed = 2611;
         if (values.TryGetValue("--seed", out var rawSeed) && !int.TryParse(rawSeed, NumberStyles.Integer, CultureInfo.InvariantCulture, out seed))
             throw new ArgumentException("--seed cần là số nguyên.");
@@ -37,7 +42,10 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
         if (scale is not ("small" or "full")) throw new ArgumentException("--scale chỉ nhận small hoặc full.");
         if (!values.TryGetValue("--images-dir", out var images) || !values.TryGetValue("--output", out var output))
             throw new ArgumentException("Cần --images-dir và --output rõ ràng.");
-        return new(seed, asOf, scale, flags.Contains("--reset"), Path.GetFullPath(images), Path.GetFullPath(output));
+        var outputPath = Path.GetFullPath(output);
+        var manifestPath = values.TryGetValue("--manifest", out var manifest) ? Path.GetFullPath(manifest) : null;
+        if (verify && string.Equals(outputPath, manifestPath, StringComparison.OrdinalIgnoreCase)) throw new ArgumentException("Không ghi đè manifest bằng báo cáo kiểm chứng.");
+        return new(seed, asOf, scale, flags.Contains("--reset"), Path.GetFullPath(images), outputPath) { VerifyOnly = verify, ManifestPath = manifestPath };
     }
 
     public static string GuardConnection(string? connection)

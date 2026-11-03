@@ -59,6 +59,8 @@ public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime St
         var customerCount = full ? 60 : 6;
         var cutoff = options.AsOf.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc).AddHours(-7);
         var customerStart = new DateTimeOffset(cutoff).AddMonths(-24).UtcDateTime;
+        var firstCustomerLocalMonth = customerStart.AddHours(7);
+        var foundingCustomer = new DateTime(firstCustomerLocalMonth.Year, firstCustomerLocalMonth.Month, 1, 0, 0, 0, DateTimeKind.Utc).AddHours(-7);
         var customers = Enumerable.Range(0, customerCount).Select(i =>
         {
             // Convex spacing increases registrations toward the end, while spanning 24 months.
@@ -68,7 +70,7 @@ public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime St
             return new PlannedCustomer($"demo.customer.{i + 1:00}", $"{lastNames[i % 10]} {givenNames[i / 10]}", phone,
                 i % 7 == 0 ? null : $"customer{i + 1:00}@example.com",
                 $"{1000 + Number(options.Seed, $"address/{i}", 8000)} Đường Minh Họa {i + 1}, Khu Dân Cư Mẫu, {cities[i % 10]}",
-                customerStart.AddDays(days).AddHours(1), i >= customerCount - (full ? 4 : 1));
+                (i == 0 ? foundingCustomer : customerStart.AddDays(days)).AddHours(1), i >= customerCount - (full ? 4 : 1));
         }).ToArray();
         var suppliers = Enumerable.Range(0, full ? 12 : 3).Select(i => new PlannedSupplier($"NCCDM{i + 1:00}",
             $"Phân phối hư cấu {i + 1:00}", $"0289000{i + 1:000}", $"{9000 + i} Khu Kho Minh Họa, {cities[i % 10]}")).ToArray();
