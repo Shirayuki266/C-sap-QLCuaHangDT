@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../tools/PhoneStore.DemoData/PhoneStore.DemoData.csproj" />
+    <ProjectReference Include="../../src/PhoneStore.Web/PhoneStore.Web.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+</Project>
