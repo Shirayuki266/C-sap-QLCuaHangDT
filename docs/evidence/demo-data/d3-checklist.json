@@ -1,0 +1,260 @@
+[
+    {
+        "Id":  "DATA.SAFE.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.04",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.05",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.06",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SCALE.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.SCALE.02",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.TIME.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.TIME.02",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.TIME.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.TIME.04",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.04",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.05",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.06",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.07",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.CUST.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CUST.02",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.CUST.03",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.PURCH.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.PURCH.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.PURCH.03",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.04",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.05",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.06",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.07",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.ORDER.08",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.VERIFY.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D2 full SQL verification, real chronological services and reproducibility evidence: d2-summary.json and d2-verification.json."
+    },
+    {
+        "Id":  "DATA.VERIFY.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D3: unchanged Web --audit-db CLI before and after actual full-demo smoke; Valid=true, Errors=[], 19 table counts, PHIEN=0 (d3/audit-*.json)."
+    },
+    {
+        "Id":  "DATA.VERIFY.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D3: real Kestrel ADMIN login, two disjoint 20-order pages, nine SQL-matched nonzero/distinct quarter revenues, bestsellers, low/zero stock, completed invoice; actual MVC browser covers all 46 active products/images/descriptions/specifications and authenticated owned customer history (d3/http.json, d3/browser/results.json, screenshots)."
+    },
+    {
+        "Id":  "DATA.VERIFY.04",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D3: actual Release PhoneStore.Admin.exe, standard Win32 button input/UIAutomation, no fake API/form fixture; SQL-matched dashboard, reports, order pages, stock and invoice; nine application-only screenshots (d3/winforms/results.json)."
+    },
+    {
+        "Id":  "DATA.VERIFY.05",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D3: full local dataset; HTTP \u003c2000ms, browser/native \u003c5000ms; actual per-operation measurements, five additional warm HTTP list/report pairs and five browser catalog samples retained. Native list 696.97ms, report 186.87ms."
+    },
+    {
+        "Id":  "DATA.VERIFY.06",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D3: clean Release solution build, 322 backend/SQL checks, 63 W1-W6 client checks, 36 form checks, 56 DPI captures, five MVC browser modes, five real desktop modes, previous Release walkthrough/19 SQL checkpoints, 24 D1/D2 groups. Runtime and earlier regression sources unchanged; d3/regression.json."
+    },
+    {
+        "Id":  "DATA.DOC.01",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D3: docs/DEMO_DATA.md documents creation/reset, environment names without credential values, full/small scale, temporal assumptions, safety/recovery, verification, actual UI smoke and limitations."
+    },
+    {
+        "Id":  "DATA.DOC.02",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D3: summary.json plus 14 actual application screenshots, sanitized audit/SQL/HTTP/browser/native/regression evidence. No passwords, hashes of passwords, cookies or connection strings exported."
+    },
+    {
+        "Id":  "DATA.GATE.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "Pre-CI repository snapshot: all other 23 P0 pass and runtime/old-test diff is empty. Final PASS is withheld until both required CI jobs succeed on the exact latest PR head; final PR verification supplies the SHA/run URL and supersedes this pending snapshot."
+    },
+    {
+        "Id":  "DATA.GATE.02",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D3: exact 43 source IDs, 24 P0 /19 P1 /0 P2; pre-CI snapshot distinguishes the pending final gate. Final counts must be published in the PR verification tied to its latest head."
+    }
+]

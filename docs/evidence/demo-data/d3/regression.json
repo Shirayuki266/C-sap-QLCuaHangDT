@@ -1,0 +1,254 @@
+[
+    {
+        "name":  "Backend/domain/SQL/MVC foundation and acceptance",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integration",
+        "checksOrCaptures":  322,
+        "proof":  "322 checks passed.",
+        "logSha256":  "4CEA225CE4301ABBB8C36BAD1347DDB0BA056388E4A2094694BBDB3048C3B025",
+        "output":  [
+                       "PASS WEB.K15.01 successful cancellation releases exact R leaves H and unpaid COD unchanged and ignores forged command fields",
+                       "PASS WEB.K15.04 stale replay fresh-version repeat and all post-confirmation states reject with identical SQL",
+                       "PASS WEB.K14.03 WEB.K14.04 timeline all states is actor-free encoded and cancel form exists only pending",
+                       "PASS WEB.K15.03 true admin API confirmation holds SQL lock while stale MVC cancellation waits then cannot cancel",
+                       "PASS WEB.BASE.07 all personal GET routes no-store no ETag no304 and no read mutations",
+                       "PASS WEB.BASE.08 real ADMIN cookie cannot use any protected customer GET or mutation",
+                       "PASS WEB.BASE.13 all form families retain safe attempted data and never passwords on failure",
+                       "PASS WEB.BASE.11 actual MVC controllers map all proposal and backend aliases without accidental500",
+                       "322 checks passed."
+                   ]
+    },
+    {
+        "name":  "Admin Client W1-W6",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks",
+        "checksOrCaptures":  63,
+        "proof":  "12 admin W6 report/flow checks passed.",
+        "logSha256":  "821C3650FC83E6ECA83D9BBD6200AB29C187F401CA69EF66F30B8451ADD63923",
+        "output":  [
+                       "PASS WIN.FLOW.01 Complete",
+                       "PASS WIN.A22.01/02/03/04/05/06 same report source; variant bestsellers; monthly sums; readonly report/empty/error",
+                       "PASS WIN.FLOW.02 failed delivery does not return stock; return once; cancel confirmed releases R",
+                       "PASS WIN.A22.01/03 UTC+7 inclusive final-day boundaries; completedAt and COD collectedAt fixture timestamps",
+                       "PASS WIN.FLOW.03 two distinct Admin accounts real gated contention then refresh; no overwrite",
+                       "PASS WIN.FLOW.04 expired draft save401; second write blocked before HTTP",
+                       "PASS WIN.FLOW.05 absolute stock count and explicit low threshold",
+                       "PASS WIN.A22.07 all failed pages; page2 failure must not return partial count",
+                       "12 admin W6 report/flow checks passed."
+                   ]
+    },
+    {
+        "name":  "Native Admin forms",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Tests",
+        "checksOrCaptures":  36,
+        "proof":  "36 admin form checks passed.",
+        "logSha256":  "D4512F93086934B85E072C637FA69E5593B0309A53EB65C3D4EC67F38A23861B",
+        "output":  [
+                       "PASS WIN.A09.02/A12.01 actual customer drilldown opens full order detail from production handoff",
+                       "6 admin W5 form checks passed.",
+                       "PASS WIN.A22.01/02/03/04/07 one report table/chart/month grouping/paging, real GDI bar selection and explicit errors",
+                       "PASS WIN.A22.05/06 separate dashboard loads, all failed pages, no partial count on failure and actual filtered drilldowns",
+                       "2 admin W6 form checks passed.",
+                       "PASS WIN.BASE.15 every destructive confirmation can dismiss with zero writes",
+                       "PASS WIN.UI.03 native Tab/Enter/Escape/CtrlS; safe confirmation default; clear input names",
+                       "PASS WIN.BASE.13/14/16 W6 native navigation/report hold-load and retained date controls",
+                       "36 admin form checks passed."
+                   ]
+    },
+    {
+        "name":  "Native DPI/layout",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Tests -- --dpi-closeout",
+        "checksOrCaptures":  56,
+        "proof":  "56 captures",
+        "logSha256":  "802B3019843B4B2B88DE9C75CB4449E9AB09F4C0A2952AFD99EFE57C771A603F",
+        "output":  [
+                       "PASS WIN.UI.01/02/03 native DPI/layout/labels 56 captures",
+                       "0 admin form checks passed."
+                   ]
+    },
+    {
+        "name":  "MVC Chromium catalog",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --mvc-catalog-browser",
+        "checksOrCaptures":  1,
+        "proof":  "PASS Chromium",
+        "logSha256":  "392C1BCC66DBBC397116991E9A08980962E54C526E40C0F8DF9546CF6E4738DD",
+        "output":  [
+                       "PASS Chromium UI03 UI04 UI13 desktop/mobile,3/2/1 grids, filters, variants, availability, no-JS fallback and keyboard; Cart/Add not submitted",
+                       "PASS browser host closed; generated QA fixture disposed; no shipping QA route/configuration was added."
+                   ]
+    },
+    {
+        "name":  "MVC Chromium cart",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --mvc-cart-browser",
+        "checksOrCaptures":  1,
+        "proof":  "PASS real Chromium",
+        "logSha256":  "D7CD7E05DA49E280D0C586368247DADABC34F690BE88D566379E110F4F653C6C",
+        "output":  [
+                       "PASS real Chromium guest storage/quote/tamper; login merge network+500 retention/retry; max/cap/drop/duplicate+parallel replay; badge; update/remove; desktop/mobile UI05",
+                       "PASS browser SQL oracle: protected inventory/journal/orders/payments unchanged; final own cart one line quantity5 at server price12m.",
+                       "PASS browser host closed; generated QA fixture disposed; no shipping QA route/configuration was added."
+                   ]
+    },
+    {
+        "name":  "MVC Chromium checkout",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --mvc-checkout-browser",
+        "checksOrCaptures":  1,
+        "proof":  "PASS real Chromium",
+        "logSha256":  "000219AC78186007191C899C885A16A21BEA3A5B68ABB8584C5B853BF276BC77",
+        "output":  [
+                       "PASS real Chromium fresh GUID; reprice no order until confirmation; duplicate guard; F5/Back/original-key replay; expiry/login/cart recovery; old-cookie denial; desktop/mobile UI06/receipt",
+                       "PASS real Chromium SQL oracle: first order2 at13m; expired-session flow leaves SQL unchanged; new-session order1 at13m; exact H/R/order/payment/history/journal deltas.",
+                       "PASS browser host closed; generated QA fixture disposed; no shipping QA route/configuration was added."
+                   ]
+    },
+    {
+        "name":  "MVC Chromium orders",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --mvc-orders-browser",
+        "checksOrCaptures":  1,
+        "proof":  "PASS Chromium",
+        "logSha256":  "6E0C251537D0A7D639AFDA69B4E72067AEA88404C656B11D2A9AAAF083688B89",
+        "output":  [
+                       "PASS Chromium own orders/filter/pagination/empty/error/mobile; timeline privacy/encoding; pending-only cancel; reason form; native dismiss/accept; one POST double guard; SQL oracle",
+                       "PASS real Chromium SQL oracle: list/filter/validation/dismiss read-only; one cancellation releases R once, H and unpaid COD unchanged; repeat unchanged.",
+                       "PASS browser host closed; generated QA fixture disposed; no shipping QA route/configuration was added."
+                   ]
+    },
+    {
+        "name":  "MVC Chromium acceptance",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --mvc-acceptance-browser",
+        "checksOrCaptures":  1,
+        "proof":  "PASS Chromium",
+        "logSha256":  "404B578D67EEC22D5A8B983F138DFEA75E779C1BF153494D66295E15D1FD019F",
+        "output":  [
+                       "PASS Chromium FLOW01-05; real admin lifecycle/profit/active APIs; current desktop/mobile UI03-07/UI13; keyboard/labels/alt; loading/empty/error; busy4 forms",
+                       "PASS SQL per-step FLOW trace: H/R/Available, exact orders/COD/history/journal assertions; no shipping QA endpoint.",
+                       "PASS browser host closed; generated QA fixture disposed; no shipping QA route/configuration was added."
+                   ]
+    },
+    {
+        "name":  "Real desktop smoke",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks -- --desktop-smoke",
+        "checksOrCaptures":  1,
+        "proof":  "1 admin form checks passed.",
+        "logSha256":  "6BEC4838547CB75A8C2E260F855A0DAEBD716A757D04798C3A8188EA05F58D67",
+        "output":  [
+                       "PASS actual WinForms controls -\u003e real loopback Kestrel -\u003e SQL QA login/logout; captured both screens",
+                       "1 admin form checks passed.",
+                       "PASS real WinForms/Kestrel/SQL QA: login session created then logout removed; orders/inventory unchanged"
+                   ]
+    },
+    {
+        "name":  "Real desktop catalog",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks -- --desktop-catalog",
+        "checksOrCaptures":  1,
+        "proof":  "1 admin form checks passed.",
+        "logSha256":  "106949971A5BBE2E970474FEB2B1FDC9057CBFBC6E0FE56BBB666EE22E3E8C67",
+        "output":  [
+                       "PASS WIN.A05.01/A04.01 real controls -\u003e HTTP API -\u003e isolated SQL QA",
+                       "1 admin form checks passed.",
+                       "PASS real W2 WinForms/Kestrel/SQL QA: editor created product, server price12000000, stock H0/R0; list displayed; session removed"
+                   ]
+    },
+    {
+        "name":  "Real desktop contacts",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks -- --desktop-contacts",
+        "checksOrCaptures":  1,
+        "proof":  "1 admin form checks passed.",
+        "logSha256":  "8FA91C7AA1FCD244390FFD7F30097154B29F60E5C70E721B76BEA4EBCB2CE073",
+        "output":  [
+                       "PASS WIN.A10/A13 real controls -\u003e HTTP API -\u003e isolated SQL QA",
+                       "1 admin form checks passed.",
+                       "PASS real W3 WinForms/Kestrel/SQL QA: profile saved, supplier created/listed/selected; orders/inventory unchanged; admin session removed"
+                   ]
+    },
+    {
+        "name":  "Real desktop supply",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks -- --desktop-supply",
+        "checksOrCaptures":  1,
+        "proof":  "1 admin form checks passed.",
+        "logSha256":  "18EE62C0EC00A1E7A321B10B8AB5C3A6D577FB51846A9FD0B73264E43C478F2A",
+        "output":  [
+                       "PASS WIN.A05.04/A14/A15/A17 actual product-to-purchase/confirm/count with parent SQL barrier per step",
+                       "1 admin form checks passed.",
+                       "PASS real W4 WinForms/Kestrel/SQL QA: product hints4 -\u003e unsaved receipt0 -\u003e saved draft H0 -\u003e confirmed H4 -\u003e counted H5; journal2; logout revoked"
+                   ]
+    },
+    {
+        "name":  "Real desktop orders",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks -- --desktop-orders",
+        "checksOrCaptures":  1,
+        "proof":  "1 admin form checks passed.",
+        "logSha256":  "299036A2B7679FA88682EFA8DB0B359DE51C6D7120F24DDADBC21D1AC899C9E2",
+        "output":  [
+                       "PASS W5 actual WinForms order transitions/invoice/installed-driver PrintPreview with SQL step barriers",
+                       "1 admin form checks passed.",
+                       "PASS W5 real WinForms/Kestrel/SQL: confirm/dispatch/complete COD, invoice/PrintPreview read-only, fail/receive/cancel;9 SQL checkpoints; logout revoked"
+                   ]
+    },
+    {
+        "name":  "Previous actual Release walkthrough",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.Admin.Client.Checks -- --walkthrough-release",
+        "checksOrCaptures":  19,
+        "proof":  "PASS actual Release agent-assisted UI walkthrough FLOW01/02",
+        "logSha256":  "EF5957A12C29A4AEF13B30AFFD8328B57B02C54ED0B48432E4E81CA96A8010BC",
+        "output":  [
+                       "PASS actual Release UI checkpoint order2-dispatched",
+                       "PASS actual Release UI checkpoint order2-failed",
+                       "PASS actual Release UI checkpoint order2-returned",
+                       "PASS actual Release UI checkpoint customer-order3",
+                       "PASS actual Release UI checkpoint order3-confirmed",
+                       "PASS actual Release UI checkpoint order3-cancelled",
+                       "PASS actual Release UI checkpoint expire-before-save",
+                       "PASS actual Release UI checkpoint expired-returned-login",
+                       "PASS actual Release agent-assisted UI walkthrough FLOW01/02 and expired-draft warning with per-step SQL/screenshots; no form harness or fake API"
+                   ]
+    },
+    {
+        "name":  "D1/D2 demo-data real SQL/CLI/Kestrel and corruption checks",
+        "result":  "PASS",
+        "exitCode":  0,
+        "command":  "dotnet run --no-build -c Release --project tests/PhoneStore.DemoData.Checks -- --integration",
+        "checksOrCaptures":  24,
+        "proof":  "PASS 24 groups (real SQL + Kestrel)",
+        "logSha256":  "0074EB1F9095D4A259718371F5FE16D7C81FD7F166150AD8478A29D80822C69D",
+        "output":  [
+                       "PASS D2 deliberate QA corruption detected: Historical order snapshot prices and immutable descriptions",
+                       "PASS D2 deliberate QA corruption detected: Strict history timestamps and order creation",
+                       "PASS D2 deliberate QA corruption detected: Historical stock never negative or over-reserved",
+                       "PASS D2 deliberate QA corruption detected: Future or out-of-horizon timestamps",
+                       "PASS D2 all corruption fixtures restored; read-only verification passes again",
+                       "PASS D2 real SQL first-of-month/quarter or quarter-end completion window: 2026-11-01",
+                       "PASS D2 real SQL first-of-month/quarter or quarter-end completion window: 2026-10-01",
+                       "PASS D2 real SQL first-of-month/quarter or quarter-end completion window: 2026-09-30",
+                       "PASS 24 groups (real SQL + Kestrel)"
+                   ]
+    }
+]

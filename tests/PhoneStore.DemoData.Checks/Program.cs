@@ -31,6 +31,7 @@ internal static class Program
 
     public static async Task<int> Main(string[] args)
     {
+        if (args.SequenceEqual(new[] { "--demo-smoke" })) return await D3Smoke.Run();
         try
         {
             Check("DATA.SAFE.01 full identifier allowlist, no file attachment", () =>
