@@ -21,8 +21,9 @@ public sealed class SeedStore(string connection)
     public StoreDbContext Open() => new(new DbContextOptionsBuilder<StoreDbContext>()
         .UseSqlServer(Options.GuardConnection(connection)).Options);
 
-    public async Task Seed(DemoPlan plan, Secrets secrets, bool reset)
+    public async Task Seed(DemoPlan plan, Secrets secrets, bool reset, SalesTimeline? timeline = null)
     {
+        timeline ??= SalesTimeline.Create(plan);
         // Serialize competing tool instances, including reset, using a dedicated session lock.
         await using var lease = new SqlConnection(Options.GuardConnection(connection));
         await lease.OpenAsync();
@@ -94,14 +95,9 @@ public sealed class SeedStore(string connection)
                             Enumerable.Range(1, 3).Select(v => new ImageInput(SvgAssets.Url(product.Code, v), v - 1)).ToList()));
                         db.ChangeTracker.Clear();
                     }
-                    foreach (var customer in plan.Customers.Where(x => x.Locked))
-                    {
-                        var id = await db.Accounts.Where(x => x.Username == customer.Username).Select(x => x.Id).SingleAsync();
-                        await new CustomerAdminService(kernel).SetActive(actor, id, new(false, true));
-                        db.ChangeTracker.Clear();
-                    }
                     return true;
                 });
+                await new TimelineWriter(db, clock, plan, secrets).Write(timeline);
             }
             finally
             {

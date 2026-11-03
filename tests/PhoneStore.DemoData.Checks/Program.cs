@@ -58,6 +58,11 @@ internal static class Program
                 Refuses(() => Options.Parse(valid.Where(x => x != "--confirm").ToArray(), Today));
                 foreach (var bad in new[] { new[] { "--confirm" }, new[] { "--scale", "large" }, new[] { "--as-of", Today.AddDays(1).ToString("yyyy-MM-dd") }, new[] { "--as-of", "not-date" }, new[] { "--seed", "x" }, new[] { "--password", "hidden" }, new[] { "--seed" } })
                     Refuses(() => Options.Parse([.. valid, .. bad], Today));
+                string[] verification = ["--verify-demo-data", "--manifest", ".artifacts/manifest.json", "--images-dir", ".artifacts/images", "--output", ".artifacts/verification.json"];
+                Require(Options.Parse(verification, Today).VerifyOnly, "Read-only mode not selected.");
+                foreach (var mutation in new[] { "--confirm", "--reset", "--seed-demo-large" }) Refuses(() => Options.Parse([.. verification, mutation], Today));
+                Refuses(() => Options.Parse(["--verify-demo-data", "--images-dir", ".artifacts/images", "--output", ".artifacts/verification.json"], Today));
+                Refuses(() => Options.Parse(["--verify-demo-data", "--manifest", ".artifacts/same.json", "--images-dir", ".artifacts/images", "--output", ".artifacts/same.json"], Today));
             });
             Check("full/small plan unique identities, limits, segments, history, independent operation keys", () =>
             {
@@ -93,6 +98,24 @@ internal static class Program
                 try { SvgAssets.WriteNew(directory, new Dictionary<string, string> { ["new.svg"] = "new", ["keep.svg"] = "different" }); }
                 catch (InvalidOperationException) { refused = true; }
                 Require(refused && File.ReadAllText(Path.Combine(directory, "keep.svg")) == "existing" && !File.Exists(Path.Combine(directory, "new.svg")), "Image overwrite or partial preflight.");
+            });
+            Check("D2 complete chronological plans including first-of-month/quarter and seed variation", () =>
+            {
+                var quarterStart = new DateOnly(Today.Year, (Today.Month - 1) / 3 * 3 + 1, 1);
+                var dates = new[] { Today, new DateOnly(Today.Year, Today.Month, 1), quarterStart, quarterStart.AddDays(-1) }.Distinct();
+                foreach (var date in dates)
+                foreach (var scale in new[] { "small", "full" })
+                foreach (var seed in new[] { 2611, 7 })
+                {
+                    var timeline = SalesTimeline.Create(DemoPlan.Create(OptionsFor(scale) with { AsOf = date, Seed = seed }));
+                    Require(timeline.Sales.Count == (scale == "full" ? 601 : 60), "Order quota.");
+                    Require(timeline.Receipts.Count == (scale == "full" ? 56 : 22), "Purchase quota.");
+                    Require(timeline.Events.All(x => x.At <= timeline.Context.Cutoff), "Future event.");
+                    Require(timeline.Sales.Count(x => x.CreatedAt >= timeline.Context.Cutoff.AddDays(-30)) >= (scale == "full" ? 20 : 6), "Recent window at month/quarter end.");
+                    Require(timeline.Sales.All(x => x.Lines.Count is >= 1 and <= 3), "Missing order lines.");
+                    Require(timeline.Counts.Count == (scale == "full" ? 10 : 6), "Count scenarios.");
+                    Require(timeline.Carts.Count == (scale == "full" ? 25 : 6), "Cart scenarios.");
+                }
             });
             if (args.Contains("--integration")) await Integration();
             Console.WriteLine($"PASS {passed} groups" + (args.Contains("--integration") ? " (real SQL + Kestrel)" : " (unit; SQL NOT RUN)"));
@@ -190,6 +213,7 @@ internal static class Program
                 Require(BusinessManifest.Hash(await BusinessManifest.Read(db)) == hash, "Safety refusal changed data.");
             });
             await Check("real Kestrel serves all 150 committed SVGs with HTTP 200", async () => await HttpImages(root, target.ConnectionString));
+            passed += await D2VerificationChecks.Run(store, summary, images, secrets);
         }
         finally
         {
@@ -204,7 +228,7 @@ internal static class Program
         }
     }
 
-    private static async Task<int> RunCli(string[] args, Secrets secrets)
+    internal static async Task<int> RunCli(string[] args, Secrets secrets)
     {
         var stdout = Console.Out;
         var stderr = Console.Error;
@@ -213,6 +237,7 @@ internal static class Program
         try { Console.SetOut(captured); Console.SetError(captured); code = await PhoneStore.DemoData.Program.Main(args); }
         finally { Console.SetOut(stdout); Console.SetError(stderr); }
         Require(!captured.ToString().Contains(secrets.Admin, StringComparison.Ordinal) && !captured.ToString().Contains(secrets.Customer, StringComparison.Ordinal), "CLI log secret leak.");
+        if (code != 0) stdout.WriteLine("CLI nonzero: " + string.Join(" | ", captured.ToString().Split('\n', StringSplitOptions.RemoveEmptyEntries).TakeLast(8)));
         return code;
     }
 

@@ -1,0 +1,205 @@
+﻿{
+    "Stage":  "D2",
+    "Issue":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/115",
+    "BaseDevelop":  "e4ad5d678b4c189be0c6696e2fd34ab6079735d2",
+    "Seed":  2611,
+    "AsOf":  "2026-11-03",
+    "Scale":  "full",
+    "ReferenceCutoffUtc":  "2026-11-02T17:00:00Z",
+    "Build":  {
+                  "Warnings":  0,
+                  "Command":  "dotnet build PhoneStore.slnx -c Release --no-restore",
+                  "Errors":  0,
+                  "Result":  "PASS"
+              },
+    "Checks":  {
+                   "BoundaryDates":  [
+                                         "2026-11-01",
+                                         "2026-10-01",
+                                         "2026-09-30"
+                                     ],
+                   "Result":  "PASS",
+                   "CliNonzeroOnAllCorruptions":  true,
+                   "DeliberateQaCorruptions":  [
+                                                   "Inventory/journal balance",
+                                                   "Order totals/required lines/payment",
+                                                   "Historical order snapshot prices and immutable descriptions",
+                                                   "Strict history timestamps and order creation",
+                                                   "Historical stock never negative or over-reserved",
+                                                   "Future or out-of-horizon timestamps"
+                                               ],
+                   "Command":  "dotnet run --project tests/PhoneStore.DemoData.Checks -c Release --no-build -- --integration",
+                   "Groups":  24,
+                   "ReadOnlyVerificationWithoutPasswords":  true,
+                   "AllMutationsRestored":  true
+               },
+    "FullRuns":  {
+                     "Scope":  "Recorded persistence/SQL verification/manifest durations, excluding image preflight and pure planning",
+                     "SameNormalizedHash":  true,
+                     "ElapsedMilliseconds":  [
+                                                 153530,
+                                                 153599
+                                             ],
+                     "Hash":  "893e60ed6331bc6f2c194022bed4bea2564a28b09b6de7fb5f183fa547168a82",
+                     "Database":  "PhoneStore_Demo_D2_ed24583d96"
+                 },
+    "Verification":  {
+                         "Valid":  true,
+                         "Counts":  {
+                                        "__PhoneStoreMigrations":  1,
+                                        "BIEN_THE":  125,
+                                        "DANH_MUC":  6,
+                                        "DON_HANG":  601,
+                                        "DON_HANG_CT":  813,
+                                        "GIO_HANG_CT":  25,
+                                        "HANG":  10,
+                                        "KHACH_HANG":  60,
+                                        "LICH_SU_DON":  2314,
+                                        "NHA_CUNG_CAP":  12,
+                                        "NHAT_KY_KHO":  1904,
+                                        "PHIEN":  0,
+                                        "PHIEU_NHAP":  56,
+                                        "PHIEU_NHAP_CT":  275,
+                                        "SAN_PHAM":  50,
+                                        "SAN_PHAM_ANH":  150,
+                                        "TAI_KHOAN":  61,
+                                        "THANH_TOAN":  601,
+                                        "TON_KHO":  125
+                                    },
+                         "Quarters":  [
+                                          {
+                                              "Year":  2024,
+                                              "Quarter":  4,
+                                              "Target":  70,
+                                              "Orders":  70,
+                                              "Revenue":  344712500.00
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  1,
+                                              "Target":  62,
+                                              "Orders":  62,
+                                              "Revenue":  401301900.00
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  2,
+                                              "Target":  58,
+                                              "Orders":  58,
+                                              "Revenue":  468560061.25
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  3,
+                                              "Target":  66,
+                                              "Orders":  66,
+                                              "Revenue":  584290385.12
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  4,
+                                              "Target":  84,
+                                              "Orders":  84,
+                                              "Revenue":  826276115.78
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  1,
+                                              "Target":  76,
+                                              "Orders":  76,
+                                              "Revenue":  818459041.09
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  2,
+                                              "Target":  70,
+                                              "Orders":  70,
+                                              "Revenue":  770357705.00
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  3,
+                                              "Target":  80,
+                                              "Orders":  80,
+                                              "Revenue":  867539917.56
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  4,
+                                              "Target":  35,
+                                              "Orders":  35,
+                                              "Revenue":  118158255.52
+                                          }
+                                      ],
+                         "Statuses":  {
+                                          "CHO_XAC_NHAN":  6,
+                                          "DA_HUY":  48,
+                                          "DA_XAC_NHAN":  6,
+                                          "DANG_GIAO":  6,
+                                          "GIAO_THAT_BAI":  23,
+                                          "HOAN_TAT":  512
+                                      },
+                         "Metrics":  {
+                                         "RecentOrders":  31,
+                                         "CurrentMonthEligibleProducts":  12,
+                                         "LowStockVariants":  8,
+                                         "OutOfStockVariants":  3,
+                                         "TypicalStockVariants":  118,
+                                         "FailedOrders":  23,
+                                         "FailedWithReturn":  20,
+                                         "Adjustments":  10,
+                                         "NoOrderCustomers":  2,
+                                         "Repeat5To10Customers":  27,
+                                         "OneOrderCustomers":  20,
+                                         "Drafts":  3,
+                                         "EmptyDrafts":  1,
+                                         "CancelledPurchases":  1,
+                                         "InactiveSuppliers":  2,
+                                         "InactiveProductsWithHistory":  4,
+                                         "CartCustomers":  12
+                                     },
+                         "Errors":  [
+
+                                    ]
+                     },
+    "SqlSupplement":  {
+                          "InterveningPhysicalCounts":  2,
+                          "AverageOrderValueVnd":  10242482.03,
+                          "PeakDateOrders":  {
+                                                 "2024-11-11":  8,
+                                                 "2025-11-28":  8,
+                                                 "2024-11-29":  6,
+                                                 "2024-12-12":  11,
+                                                 "2025-12-12":  4,
+                                                 "2025-11-11":  11
+                                             }
+                      },
+    "Acceptance":  {
+                       "P1":  {
+                                  "PASS":  13,
+                                  "NOT_RUN":  6,
+                                  "Total":  19
+                              },
+                       "Total":  43,
+                       "PASS":  34,
+                       "NOT_RUN":  9,
+                       "P0":  {
+                                  "PASS":  21,
+                                  "NOT_RUN":  3,
+                                  "Total":  24
+                              },
+                       "FAIL":  0,
+                       "P2":  {
+                                  "Total":  0
+                              },
+                       "PerId":  "d2-checklist.json",
+                       "BLOCKED":  0
+                   },
+    "Correction":  "Source quarter rows total 601. Prior D1 note of 701 was incorrect; all original targets are retained.",
+    "ScopeLimits":  [
+                        "No runtime services/schema/migrations/API/MVC/WinForms/earlier regression tests changed",
+                        "No D3 UI walkthrough/performance/final gate",
+                        "No merge/tag"
+                    ],
+    "Secrets":  "No passwords, connection strings, password hashes or session IDs in this evidence."
+}
