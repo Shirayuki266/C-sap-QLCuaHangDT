@@ -13,6 +13,7 @@ public sealed record PlannedSupplier(string Code, string Name, string Phone, str
 public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime Start, string[] Brands, string[] Categories,
     PlannedProduct[] Products, PlannedCustomer[] Customers, PlannedSupplier[] Suppliers)
 {
+    public string Catalog { get; init; } = "fictional";
     // Counter-based SHA256 avoids dependence on runtime Random implementation or invocation order.
     public static int Number(int seed, string domain, int maximum)
     {
@@ -74,6 +75,7 @@ public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime St
         }).ToArray();
         var suppliers = Enumerable.Range(0, full ? 12 : 3).Select(i => new PlannedSupplier($"NCCDM{i + 1:00}",
             $"Phân phối hư cấu {i + 1:00}", $"0289000{i + 1:000}", $"{9000 + i} Khu Kho Minh Họa, {cities[i % 10]}")).ToArray();
-        return new(options.Seed, options.AsOf, options.Scale, start, brands, categories, products, customers, suppliers);
+        var plan = new DemoPlan(options.Seed, options.AsOf, options.Scale, start, brands, categories, products, customers, suppliers);
+        return options.Catalog == "real" ? RealCatalog.Apply(plan) : plan;
     }
 }

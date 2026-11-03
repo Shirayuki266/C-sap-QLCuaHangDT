@@ -1,0 +1,3885 @@
+[
+  {
+    "code": "RL001",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A05",
+    "sourceUrl": "https://www.samsung.com/ph/smartphones/galaxy-a/galaxy-a05-black-128gb-sm-a055fzkgphl/",
+    "sourcePageSha256": "75fdc0e9bb211cd788b0a7176e1cbba232f1ce177f1324697aa1245c694c1174",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=ph&modelList=SM-A055FZKGPHL&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.7 inch PLS LCD, HD+",
+    "chip": "MediaTek Helio G85",
+    "ram": "4/6 GB",
+    "storage": [
+      64,
+      128
+    ],
+    "colors": [
+      "Black",
+      "Silver",
+      "Light Green"
+    ],
+    "camera": "50 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl001-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a055fzkgphl/gallery/ph-galaxy-a05-sm-a055-sm-a055fzkgphl-538437007?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "c02a2ce7f5bbc1ed57354979267747407a0efc53f9b0c4b7193b1ef718153e10",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 151,
+          "y": 213,
+          "width": 296,
+          "height": 372
+        },
+        "view": "original",
+        "wrapperSha256": "8eedf467852e6becbf46aebe2e564d516572dc0828ca717620f263d826e037b2",
+        "sourceAlt": "Galaxy A05 overview"
+      },
+      {
+        "file": "rl001-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a055fzkgphl/gallery/ph-galaxy-a05-sm-a055-sm-a055fzkgphl-538436990?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "25dc33ce46308bb4e816cd5ef1ba0a3114ad2e5aee4c1e2417c7b61965d73396",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 207,
+          "y": 213,
+          "width": 186,
+          "height": 372
+        },
+        "view": "original",
+        "wrapperSha256": "93cc1090f0d776e5b6f2db62aef5327cad30bc4da084785d12e0d92b6621cacc",
+        "sourceAlt": "Galaxy A05 Front view of Galaxy A05 in Black color and 128GB storage"
+      },
+      {
+        "file": "rl001-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a055fzkgphl/gallery/ph-galaxy-a05-sm-a055-sm-a055fzkgphl-538436991?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "90b7e3e7a01004bc08ee829ba00301477cad5d2523a8c60e1c6d83063b2aad72",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 211,
+          "y": 203,
+          "width": 172,
+          "height": 392
+        },
+        "view": "original",
+        "wrapperSha256": "4b9817980e60852f768ee119f74a318923da3fdb0bd392504da385cc8ea90f2a",
+        "sourceAlt": "Galaxy A05 Buy the Samsung Galaxy A05 smartphone online with the latest offers at Samsung Philippines"
+      }
+    ]
+  },
+  {
+    "code": "RL002",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A05s",
+    "sourceUrl": "https://www.samsung.com/ph/smartphones/galaxy-a/galaxy-a05s-black-128gb-sm-a057fzkgphl/",
+    "sourcePageSha256": "5a81db0983e77f5fbae442aa62d46543ca95538cdaec79e3d075fada2a339681",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=ph&modelList=SM-A057FZKGPHL&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.7 inch PLS LCD, FHD+, 90 Hz",
+    "chip": "Snapdragon 680",
+    "ram": "4/6 GB",
+    "storage": [
+      64,
+      128
+    ],
+    "colors": [
+      "Black",
+      "Silver",
+      "Light Violet"
+    ],
+    "camera": "50 MP + 2 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl002-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a057fzkgphl/gallery/ph-galaxy-a05s-sm-a057-sm-a057fzkgphl-538436211?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "3565f63eacdfcecf9cf7c4f4d9305aec5c517de956ee4b6699eed47830d48937",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 151,
+          "y": 215,
+          "width": 296,
+          "height": 370
+        },
+        "view": "original",
+        "wrapperSha256": "f5f2de3f12e8c1451b55d908e6740d6c3dbfb7dd650c1022b0ef6caec0a4e3c6",
+        "sourceAlt": "Galaxy A05s overview"
+      },
+      {
+        "file": "rl002-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a057fzkgphl/gallery/ph-galaxy-a05s-sm-a057-sm-a057fzkgphl-538436201?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "d28836214a0046b81282b5d8bbc65c786bb7571d7a5125227eac333eb5404e6f",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 207,
+          "y": 215,
+          "width": 186,
+          "height": 370
+        },
+        "view": "original",
+        "wrapperSha256": "e8489f6e22c410618ace975c5e7af2c481fe6a46aece6087a6903a7cc696d6ea",
+        "sourceAlt": "Galaxy A05s Front view of Galaxy A05s in Black color and 128GB storage"
+      },
+      {
+        "file": "rl002-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a057fzkgphl/gallery/ph-galaxy-a05s-sm-a057-sm-a057fzkgphl-538436194?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "87da55b82ffbe834fdb1b5d80336f99e5e2422dac04ed4f80d5ced7e187143db",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 211,
+          "y": 205,
+          "width": 172,
+          "height": 388
+        },
+        "view": "original",
+        "wrapperSha256": "910e3ab1e3a632f7644258db999774fff002514a0d852ce22b0afe60264e7971",
+        "sourceAlt": "Galaxy A05s Buy the Samsung Galaxy A05s smartphone online with the latest offers at Samsung Philippines"
+      }
+    ]
+  },
+  {
+    "code": "RL003",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A06",
+    "sourceUrl": "https://news.samsung.com/id/samsung-galaxy-a06-mulai-dari-harga-rp-15-jutaan-dengan-fast-charging",
+    "sourcePageSha256": "338aede42cf46bb44679888796293fcb1a77b36b2bbc7b3dc564e32eaa5b8b27",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=ph&modelList=SM-A065FLBDPHL&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.7 inch PLS LCD, HD+",
+    "chip": "MediaTek Helio G85",
+    "ram": "4 GB",
+    "storage": [
+      64,
+      128
+    ],
+    "colors": [
+      "Blue Black",
+      "Light Blue"
+    ],
+    "camera": "50 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl003-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a065flbdphl/gallery/ph-galaxy-a06-sm-a065-sm-a065flbdphl-543066245?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "de1b9d39e22b9e3aa6370ed336d5cc638d74468c814edae310644a9a868ba6f7",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 149,
+          "y": 209,
+          "width": 298,
+          "height": 382
+        },
+        "view": "original",
+        "wrapperSha256": "81d0d14a37d113ada0295b10db943b678a48378d823239c248728e0c82ee7be8",
+        "sourceAlt": "Galaxy A06 overview"
+      },
+      {
+        "file": "rl003-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a065flbdphl/gallery/ph-galaxy-a06-sm-a065-sm-a065flbdphl-543066232?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "e7189b9bd3b773ce85e2e6c07357d7d2602056b5818277ad7c7fc58ffd32880b",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 203,
+          "y": 209,
+          "width": 194,
+          "height": 382
+        },
+        "view": "original",
+        "wrapperSha256": "74657fdde530e44628b2dcd4a8db8ca8c44acd7c36d6602c2e66f5fd3a8e128f",
+        "sourceAlt": "Galaxy A06 Display of Samsung Galaxy A06 64GB Light Blue smartphone"
+      },
+      {
+        "file": "rl003-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a065flbdphl/gallery/ph-galaxy-a06-sm-a065-sm-a065flbdphl-543066233?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "ad6e30c0ab0dc4968d92f0f2b8decebba57189ebbc89cef13cfca01fb0d58c17",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 211,
+          "y": 205,
+          "width": 174,
+          "height": 388
+        },
+        "view": "original",
+        "wrapperSha256": "c6b599ea4abc16e380996ca99e181a7fd8453b7a438970bbb9bb507fe2198189",
+        "sourceAlt": "Galaxy A06 Samsung Galaxy A06 Light Blue 64GB front view"
+      }
+    ]
+  },
+  {
+    "code": "RL004",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A14",
+    "sourceUrl": "https://www.samsung.com/co/smartphones/galaxy-a/galaxy-a14-silver-128gb-sm-a145mzsecom/",
+    "sourcePageSha256": "580993206072aa7b40e93709371981d6ef2ffdac66295f509f80f77e0a7980bd",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=co&modelList=SM-A145MZSECOM&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.6 inch PLS LCD, FHD+",
+    "chip": "CPU 8 nhân, tối đa 2 GHz",
+    "ram": "4 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Black",
+      "Silver",
+      "Dark Red"
+    ],
+    "camera": "50 MP + 5 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "15 W",
+    "os": "Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl004-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/sm-a145mzsecom/gallery/co-galaxy-a14-sm-a145-454764-sm-a145mzsecom-545365564?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "8e6f70f0bbbfb12c30bad2ce7a83aace082d0ee0dcfa41d4180a89ff8b70f8f8",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 140,
+          "y": 198,
+          "width": 318,
+          "height": 402
+        },
+        "view": "original",
+        "wrapperSha256": "fb72b317b60242b227a053d7e9ac0c6e9c559d35c4c7fdc6da175cd2f4350608",
+        "sourceAlt": "Galaxy A14 overview"
+      },
+      {
+        "file": "rl004-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/sm-a145mzsecom/gallery/co-galaxy-a14-sm-a145-454764-sm-a145mzsecom-545365551?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "c90f7dd23cf9334a8581ce56f58063fd7c4bb6f3425afcc9a868ba89a4619c15",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 198,
+          "y": 198,
+          "width": 204,
+          "height": 402
+        },
+        "view": "original",
+        "wrapperSha256": "2eab507ebabe2b42fede0fae9d94a16419ac2d8cb30d6d8a0d0eabb207fb8882",
+        "sourceAlt": "Galaxy A14 front2 Silver"
+      },
+      {
+        "file": "rl004-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/sm-a145mzsecom/gallery/co-galaxy-a14-sm-a145-454764-sm-a145mzsecom-545365552?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "3447d127d93e8ae9fdde1bc68639a0ba6b528161932398218484bec585eedaee",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 210,
+          "y": 198,
+          "width": 178,
+          "height": 402
+        },
+        "view": "original",
+        "wrapperSha256": "684d057c0e63d8f44d6fb5a28c2c0d64e6ea781bca91ee76ea424aabb8194af9",
+        "sourceAlt": "Galaxy A14 front-l30 Silver"
+      }
+    ]
+  },
+  {
+    "code": "RL005",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A15",
+    "sourceUrl": "https://news.samsung.com/vn/samsung-galaxy-a15-va-galaxy-a25-5g-ra-mat-voi-thiet-ke-vien-noi-key-island-moi-va-man-hinh-super-amoled-muot-ma",
+    "sourcePageSha256": "4b48b671ffee93a712f737b007376ac4336907e2ab760a969acdbf3acf898785",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=ph&modelList=SM-A155FZKDPHL&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.5 inch Super AMOLED, FHD+, 90 Hz",
+    "chip": "MediaTek Helio G99",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Blue Black",
+      "Blue",
+      "Yellow"
+    ],
+    "camera": "50 MP + 5 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl005-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a155fzkdphl/gallery/ph-galaxy-a15-sm-a155-sm-a155fzkdphl-539376838?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "0b8e7a430619c570d4b6c48dab6ed02de7c5fe51b9ebafb8d21b6fac421b05f4",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 154,
+          "y": 224,
+          "width": 290,
+          "height": 352
+        },
+        "view": "original",
+        "wrapperSha256": "31de1361fc3a7a5358d411f2f2fd626f998affc9eb3addabec78eca6dba2732c",
+        "sourceAlt": "Galaxy A15 overview"
+      },
+      {
+        "file": "rl005-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a155fzkdphl/gallery/ph-galaxy-a15-sm-a155-sm-a155fzkdphl-539376821?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "7e6a38c3c738fac6f14c44195ebda39caacbcb3e9b34b4f711965e628512ace9",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 208,
+          "y": 224,
+          "width": 182,
+          "height": 352
+        },
+        "view": "original",
+        "wrapperSha256": "a5ce3d4a366d616237e53d289cad738f609424963668ef53a4573a36293a0dc1",
+        "sourceAlt": "Galaxy A15 front2 Blue Black"
+      },
+      {
+        "file": "rl005-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a155fzkdphl/gallery/ph-galaxy-a15-sm-a155-sm-a155fzkdphl-539376822?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "c81ed79c44f15b5749657cbbe5212e4a50db7c5b5f0de55a867d80c980e55a3c",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 216,
+          "y": 218,
+          "width": 166,
+          "height": 362
+        },
+        "view": "original",
+        "wrapperSha256": "23fb88a85c50e8f6b7602ab535f795c465d83abc52deada8584b765023fa830a",
+        "sourceAlt": "Galaxy A15 front-l30 Blue Black"
+      }
+    ]
+  },
+  {
+    "code": "RL006",
+    "brand": "Xiaomi",
+    "name": "Redmi 12",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-12/specs/",
+    "sourcePageSha256": "b5b3a8dd0d0ae5fab67c6572e0197ee184e2fd983a48cf3e82d889cdb97698aa",
+    "photoApiUrl": null,
+    "display": "6.79 inch LCD, FHD+, 90 Hz",
+    "chip": "MediaTek Helio G88",
+    "ram": "4/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Sky Blue",
+      "Polar Silver"
+    ],
+    "camera": "50 MP + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "18 W",
+    "os": "MIUI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl006-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/180_operatorx_operatorx_opx/15/06/2023/32cd73d5451f1a9b26d439b30f7cef7d.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "885abfbe75a7a5030642915a36c5ef8bc189c94a4f91d8868148ddc330d9d776",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 53,
+          "width": 588,
+          "height": 692
+        },
+        "view": "original",
+        "wrapperSha256": "9feee4e1863b2c214e84c8841299e8b0dbb6b78a5cb8f1bc3992361011f81dda",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl006-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/286_operator_sg/09/06/2023/0cf683db2feaaeb3b6a7682b1508064c.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "0f30f6a8080cab38dae752f4be6842d29ec1df909a64ee797c718d7f459257be",
+        "width": 800,
+        "height": 440,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 168,
+          "y": 0,
+          "width": 464,
+          "height": 440
+        },
+        "view": "original",
+        "wrapperSha256": "0c2cb3a7f36526104996bd4946f63bdec6cd6ea1a2194356bfbd470913fa362d",
+        "sourceAlt": "Redmi 12"
+      },
+      {
+        "file": "rl006-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/mi-com-product/fly-birds/redmi-12/pc/overview/bg8.17.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "01cedebd6988b7af98c23942cf7b12781ff5a76a15d65ee281809fdfca872d33",
+        "width": 800,
+        "height": 308,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 308
+        },
+        "view": "original",
+        "wrapperSha256": "f906301d59df471bd8fd4c5964f0a1bb3cbe816d473fefb7439008596016e9aa",
+        "sourceAlt": "Redmi 12"
+      }
+    ]
+  },
+  {
+    "code": "RL007",
+    "brand": "Xiaomi",
+    "name": "Redmi 13",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-13/specs/",
+    "sourcePageSha256": "4419793ff26893d5a80ce90519a4c144799aa51232e1ca148249d1ccadcfa9f6",
+    "photoApiUrl": null,
+    "display": "6.79 inch LCD, FHD+, 90 Hz",
+    "chip": "MediaTek Helio G91-Ultra",
+    "ram": "6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Ocean Blue",
+      "Pearl Pink"
+    ],
+    "camera": "108 MP + 2 MP",
+    "battery": "5030 mAh",
+    "charging": "33 W",
+    "os": "Xiaomi HyperOS / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl007-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/580_operatorx_operatorx_opx/05/06/2024/b6ab95ebbd9fb402b423ba9963522a80.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "a6a5f0cbfe6f783e22f4dc9a9ef404bf7c71056845c6442046d8d621b85af0df",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 53,
+          "width": 588,
+          "height": 692
+        },
+        "view": "original",
+        "wrapperSha256": "25c21fbc7489c88ec957c43b948d9a00401c2c55215b4a2cfc3e8fa80ac7fd32",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl007-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/2_operator_sg/10/05/2024/a8b16bba895dd3ec1b333d4613ceccd0.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "8469eff3c600457e292dcf27951695a8ed27fc1c9ac8c9d560b91314e222cc71",
+        "width": 800,
+        "height": 440,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 29,
+          "y": 0,
+          "width": 742,
+          "height": 440
+        },
+        "view": "original",
+        "wrapperSha256": "c0f877330961a63541626f712211f3f06cf51b0c241ce00280ad694ea38c63c9",
+        "sourceAlt": "Redmi 13"
+      },
+      {
+        "file": "rl007-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/mi-com-product/fly-birds/redmi-13/pc/5a5c-pc-1-photography-ec15.webp?thumb=1&w=800&f=webp&q=85",
+        "sha256": "3e3c57c0f79ece67986d87e1565dc4f13978b024288a7c08092a7aec2cf12a4a",
+        "width": 800,
+        "height": 600,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "23a9b098917ac0244e298dd415631b0d2ec65a2aacd42843a739eca07209f159",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL008",
+    "brand": "Xiaomi",
+    "name": "Redmi 13C",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-13c/specs/",
+    "sourcePageSha256": "1725f237ab682579cd4584a7d6424c31810951a30f83e62667561f0f4bc3a393",
+    "photoApiUrl": null,
+    "display": "6.74 inch LCD, HD+, 90 Hz",
+    "chip": "MediaTek Helio G85",
+    "ram": "4/6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Navy Blue",
+      "Glacier White"
+    ],
+    "camera": "50 MP",
+    "battery": "5000 mAh",
+    "charging": "18 W",
+    "os": "MIUI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl008-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/477_operatorx_operatorx_opx/08/11/2023/a69b2ced4a4e2403fbfd446994c26a06.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "6be4adabe025d1047b2764af99722ed4494cbf7b823cb7a0be06592c55841d78",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 55,
+          "width": 588,
+          "height": 690
+        },
+        "view": "original",
+        "wrapperSha256": "6452fd6ac443dbd95256e5370bacd6b5d33521d6d9435ed0cc7a43c6c4efaa64",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl008-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/109_operator_sg/01/11/2023/cab4a08e90bf692cfd6d08d550862fbd.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "26cbe310a038c9775fa4b8c6886ffd9627eb907e1567b78a135b8185bd002d97",
+        "width": 800,
+        "height": 440,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 158,
+          "y": 0,
+          "width": 484,
+          "height": 440
+        },
+        "view": "original",
+        "wrapperSha256": "3933a03bad3a0a68583e0a94246806d69867e77626b2c10233685ce7e6f3b8eb",
+        "sourceAlt": "Redmi 13c"
+      },
+      {
+        "file": "rl008-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/mi-com-product/fly-birds/redmi-13c/PC/webBanner1.jpg?thumb=1&w=800&f=webp&q=85",
+        "sha256": "d5e7f1320e216232b300cb030c18d4744054750580c2198eecfabc5f57be0f11",
+        "width": 800,
+        "height": 416,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 673,
+          "height": 416
+        },
+        "view": "original",
+        "wrapperSha256": "64632533fd6148047760b509b009041d623c3bf477452f14b360d8a66f5e52df",
+        "sourceAlt": "Redmi 13c"
+      }
+    ]
+  },
+  {
+    "code": "RL009",
+    "brand": "Xiaomi",
+    "name": "Redmi 14C",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-14-c/specs/",
+    "sourcePageSha256": "3d9c7e4b1a7408133174be38fe8d7b88a4adf624aaf2492385eeff62895c7081",
+    "photoApiUrl": null,
+    "display": "6.88 inch LCD, HD+, 120 Hz",
+    "chip": "MediaTek Helio G81-Ultra",
+    "ram": "4/6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Starry Blue",
+      "Dreamy Purple"
+    ],
+    "camera": "50 MP",
+    "battery": "5160 mAh",
+    "charging": "18 W",
+    "os": "Xiaomi HyperOS / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl009-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/10_operatorx_operatorx_opx/30/08/2024/d1c6e1733370c9ac6182ab5613bfde2c.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "2c45ead55c615397452a9fdd7b2a61e1f7f80f584aeb51a7292bb9ca8e2acb94",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 53,
+          "width": 588,
+          "height": 692
+        },
+        "view": "original",
+        "wrapperSha256": "c18c2aae324dfe888e36e29dc65970d198df9de64ec5ce0111261002d761aea8",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl009-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/877_operator_sg/20/08/2024/6249826c4ca37bf8f843561ae919e229.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "fa14c6a2e6150ab15b3fcd30e9ef9db848ebbb5ba31e622e5ffe603a6e172628",
+        "width": 800,
+        "height": 400,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 100,
+          "y": 0,
+          "width": 600,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "20f16c9115c388d71415f89533ec979de98ede8dfab8730c600fc4868fa896f9",
+        "sourceAlt": "Redmi 14 C"
+      },
+      {
+        "file": "rl009-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/mi-com-product/fly-birds/redmi-14-c/pc/img/img01.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "b86696c4ab7f02697e1bfe1327fa1bb89cc358b5a9c15c82f127dab600d943a0",
+        "width": 800,
+        "height": 475,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 475
+        },
+        "view": "original",
+        "wrapperSha256": "ee83c1fc3e679298c4e468f9aa3bc0a7ed20ce3a22a165222d37b5422d93973d",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL010",
+    "brand": "realme",
+    "name": "realme C51",
+    "sourceUrl": "https://www.realme.com/global/realme-c51/specs",
+    "sourcePageSha256": "106b5ef59d47033e5da35e26f4a02e52b6c087313a3c66574671db87b63bb2bd",
+    "photoApiUrl": null,
+    "display": "6.74 inch LCD, HD+, 90 Hz",
+    "chip": "CPU 8 nhân, tối đa 1.82 GHz",
+    "ram": "8 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Carbon Black",
+      "Mint Green"
+    ],
+    "camera": "50 MP",
+    "battery": "5000 mAh",
+    "charging": "33 W",
+    "os": "realme UI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl010-1.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c51/images/specs/m/green-1112a5906e.jpg",
+        "sha256": "0cd03f99a84601b66f13f0792915f45feeea9bcc753d341f10ee85189541a686",
+        "width": 1080,
+        "height": 2415,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 214,
+          "y": 244,
+          "width": 653,
+          "height": 773
+        },
+        "view": "original",
+        "wrapperSha256": "6328efd31f79d1f98e78bd7d56691bf27a1b08b163aeec343ea2ae471c77728e",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl010-2.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c51/images/specs/green-ac30786073.jpg",
+        "sha256": "ed94658a1f9c48252ef20ddc193696dd927c4b499039af1d4c50f487b5f53999",
+        "width": 5120,
+        "height": 1600,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 1305,
+          "y": 230,
+          "width": 884,
+          "height": 1037
+        },
+        "view": "original",
+        "wrapperSha256": "96e1b8ff206110c4bb04fd53cabd5b82af6ab61fbfc02a494a715d7221c6fe02",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl010-3.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c51/images/specs/m/black-73a5335fa1.jpg",
+        "sha256": "a6bd01f57c2f8c44cb6126010672d3d6ab6096f937dd812e987d9ee2e6a1130a",
+        "width": 1080,
+        "height": 2415,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 214,
+          "y": 244,
+          "width": 653,
+          "height": 773
+        },
+        "view": "original",
+        "wrapperSha256": "eb59a72ca26654ab0736c2ae4201644e8685a7b5592b75b0eaf06ad66c06d33c",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL011",
+    "brand": "realme",
+    "name": "realme C53",
+    "sourceUrl": "https://www.realme.com/global/realme-c53/specs",
+    "sourcePageSha256": "2acae7952bed8713a3cc3650dd5fe38289fbeec6867b7d85869d00af90c295a4",
+    "photoApiUrl": null,
+    "display": "6.74 inch LCD, HD+, 90 Hz",
+    "chip": "CPU 8 nhân, tối đa 1.82 GHz",
+    "ram": "6/8 GB",
+    "storage": [
+      256
+    ],
+    "colors": [
+      "Champion Gold",
+      "Mighty Black"
+    ],
+    "camera": "50 MP",
+    "battery": "5000 mAh",
+    "charging": "33 W",
+    "os": "realme UI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl011-1.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c53/images/specs/m/g-dd4df46435.jpg",
+        "sha256": "e321a89d87b6452784529ff670c5df4696ad09dae30425f42b86f65dc309066a",
+        "width": 1080,
+        "height": 2415,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 214,
+          "y": 244,
+          "width": 653,
+          "height": 773
+        },
+        "view": "original",
+        "wrapperSha256": "1030b41ff7a0f77851c5a6893db329280684bb9d59caa2e87e2ba3996fe620c7",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl011-2.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c53/images/specs/g-b47b9c0e71.jpg",
+        "sha256": "064a9cc064b48f1cd8588b8ebb58f1508cdd057b4d171f2a08e383272a04821c",
+        "width": 5120,
+        "height": 1600,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 1305,
+          "y": 230,
+          "width": 884,
+          "height": 1037
+        },
+        "view": "original",
+        "wrapperSha256": "8cf25bcf262847f66139a2073b2909d29b264535f74e40e312b35b1044332b2a",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl011-3.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c53/images/specs/m/b-72ac9546f7.jpg",
+        "sha256": "07212ce5ea13aea1d740ac84322fcb1db8e1581bc2c70ddb3cb908db890a2b1c",
+        "width": 1080,
+        "height": 2415,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 214,
+          "y": 244,
+          "width": 653,
+          "height": 773
+        },
+        "view": "original",
+        "wrapperSha256": "50f2cabd958230a92eefc0c3e19c38e7bb3cc9f7bc3de1d9ff4801bbd54a4790",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL012",
+    "brand": "realme",
+    "name": "realme C55",
+    "sourceUrl": "https://www.realme.com/global/realme-c55/specs",
+    "sourcePageSha256": "5a8114e670ef00ae3657b9d89d160c6074f21f5506970493646b79dba227e92a",
+    "photoApiUrl": null,
+    "display": "6.72 inch LCD, FHD+, 90 Hz",
+    "chip": "MediaTek Helio G88",
+    "ram": "6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Sunshower",
+      "Rainy Night"
+    ],
+    "camera": "64 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "33 W",
+    "os": "realme UI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl012-1.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c55/images/specs/m/gold-af57fa58ae.jpg",
+        "sha256": "4749f797dfda8e0d6591dd8e16fdcc09f99f9fcfad8fc18b9897fc1af82acdec",
+        "width": 1080,
+        "height": 2415,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 214,
+          "y": 244,
+          "width": 647,
+          "height": 773
+        },
+        "view": "original",
+        "wrapperSha256": "0df2d6b4dfa8d50314f8f19181e10385b66ea28db8565de4e459e9a7676564bd",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl012-2.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c55/images/specs/gold-917b134da5.jpg",
+        "sha256": "1b3f218849fd0cc3b8d42d44e33ab3dbfc6e0a25b9dbc579ef42b00dfe320ad7",
+        "width": 5120,
+        "height": 1600,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 1305,
+          "y": 230,
+          "width": 884,
+          "height": 1037
+        },
+        "view": "original",
+        "wrapperSha256": "17da51b29bd46a64b77cd53393837f44583ce745aa0fd64b9164d9b039887772",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl012-3.svg",
+        "sourceUrl": "https://static.realme.net/v2/realme-c55/images/specs/m/black-905a210e5d.jpg",
+        "sha256": "8a0288a9982664f9ec0fd93d351ac20d822be725afdc4dc50319efa6d31bc8df",
+        "width": 1080,
+        "height": 2415,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 214,
+          "y": 244,
+          "width": 653,
+          "height": 773
+        },
+        "view": "original",
+        "wrapperSha256": "c60f59ea1e3432f862cc838e9850d0f6e0fbdb79bfdb1e084b2e84f9682f4201",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL013",
+    "brand": "OPPO",
+    "name": "OPPO A18",
+    "sourceUrl": "https://www.oppo.com/en/smartphones/series-a/a18/specs/",
+    "sourcePageSha256": "a3e3878d8e618b550ee3c7ff5429f4b04afe17e0107d951b31fae5a6cc3a466b",
+    "photoApiUrl": null,
+    "display": "6.56 inch LCD, HD+, 90 Hz",
+    "chip": "MediaTek Helio G85",
+    "ram": "4 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Glowing Black",
+      "Glowing Blue"
+    ],
+    "camera": "8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "USB-C",
+    "os": "ColorOS / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl013-1.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a18-en/specs/a18-black-blue.png",
+        "sha256": "6867f0514b7e9268fcc6f8164e27ab73d3be67b31a67f582696639de99047e06",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 731,
+          "height": 721
+        },
+        "view": "original",
+        "wrapperSha256": "bc0042f2a43d3bbbc4bb3c05c4c8c38da0e3ab62025750f67c438cf6033af5d7",
+        "sourceAlt": "OPPO A18"
+      },
+      {
+        "file": "rl013-2.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a18-en/specs/a18-black-blue.png",
+        "sha256": "6867f0514b7e9268fcc6f8164e27ab73d3be67b31a67f582696639de99047e06",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 439,
+          "height": 721
+        },
+        "view": "left-detail",
+        "wrapperSha256": "117586a90f3dd1728475bdf8014d865818bce823cbcd3fbf3cea975eb27cb116",
+        "sourceAlt": "Verified manufacturer photograph: OPPO A18"
+      },
+      {
+        "file": "rl013-3.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a18-en/listpage/a18-427_600-blue.png",
+        "sha256": "b63e4d562a3d3ca736953ac523d956484b3c885e7a5e87fc734fad8c4ca4ddeb",
+        "width": 427,
+        "height": 600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 427,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "5b72db6abda08ceba2ec37b09da2b8d1043da5a89020514680c3cdd2abe585ac",
+        "sourceAlt": "official social preview"
+      }
+    ]
+  },
+  {
+    "code": "RL014",
+    "brand": "OPPO",
+    "name": "OPPO A38",
+    "sourceUrl": "https://www.oppo.com/en/smartphones/series-a/a38/specs/",
+    "sourcePageSha256": "7a5666be2ec69c01c7ff8eeaeeda0d855d560f949da6a669fd290f07e61a49c5",
+    "photoApiUrl": null,
+    "display": "6.56 inch LCD, HD+, 90 Hz",
+    "chip": "MediaTek Helio G85",
+    "ram": "4 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Glowing Black",
+      "Glowing Gold"
+    ],
+    "camera": "50 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "33 W",
+    "os": "ColorOS / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl014-1.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a38-en/specs/a38.png",
+        "sha256": "b09ebfb94fc6c3ec4ceb04f9bef14ec6ff15599e97517185b63ee22899e76ae6",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 731,
+          "height": 721
+        },
+        "view": "original",
+        "wrapperSha256": "e232350f4288b363a3e3e60b98a129fade38b3edb02aeadcda925fcdd819365f",
+        "sourceAlt": "OPPO A38"
+      },
+      {
+        "file": "rl014-2.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a38-en/specs/a38.png",
+        "sha256": "b09ebfb94fc6c3ec4ceb04f9bef14ec6ff15599e97517185b63ee22899e76ae6",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 439,
+          "height": 721
+        },
+        "view": "left-detail",
+        "wrapperSha256": "f21d77318f92fbd5505e7f91eae9c9a31c466c2ef3581eefeddb81449594782e",
+        "sourceAlt": "Verified manufacturer photograph: OPPO A38"
+      },
+      {
+        "file": "rl014-3.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a38-en/listpage/a38-427_600-gold.png",
+        "sha256": "ec9751dad0da3a6405b18888ac9539d54c84982deb560127d97ab87c2f39112a",
+        "width": 427,
+        "height": 600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 427,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "5ffbdc3ca602261f6b1d2601c09b6ee767f082077b13824b916f21f333ad7ee6",
+        "sourceAlt": "official social preview"
+      }
+    ]
+  },
+  {
+    "code": "RL015",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A24",
+    "sourceUrl": "https://news.samsung.com/my/samsung-malaysia-redefines-awesome-with-new-and-improved-galaxy-a24",
+    "sourcePageSha256": "f91c20bcfb9e6f9f5e3f9c859b8bd164fdfa1ca20eb1c3036e209121cca5c7ba",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=id&modelList=SM-A245FZKWXID&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.5 inch Super AMOLED, FHD+, 90 Hz",
+    "chip": "MediaTek Helio G99",
+    "ram": "8 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Black",
+      "Light Green",
+      "Dark Red"
+    ],
+    "camera": "50 MP OIS + 5 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl015-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a245fzkwxid/gallery/id-galaxy-a24-sm-a245-sm-a245fzkwxid-536326892?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "cc2c4a8af32c0b0124bb0c98168b0db8f52dd1b1d1f0984926bd42de40458fa9",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 140,
+          "y": 198,
+          "width": 318,
+          "height": 404
+        },
+        "view": "original",
+        "wrapperSha256": "f0e3eaae829b1ac0febe74d42b4958503d929be23709a07b38cc3d12c24ecbad",
+        "sourceAlt": "Galaxy A24 overview"
+      },
+      {
+        "file": "rl015-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a245fzkwxid/gallery/id-galaxy-a24-sm-a245-sm-a245fzkwxid-536326875?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "894f37dec669c3d596f219c72cb6cb9c432a082dc2383b26279d32b98dffaeda",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 196,
+          "y": 198,
+          "width": 208,
+          "height": 404
+        },
+        "view": "original",
+        "wrapperSha256": "f27afad6576cfc9aa8d89960330bdda8ef396eda11a95bca786c175573cd78cf",
+        "sourceAlt": "Galaxy A24 front2 Black"
+      },
+      {
+        "file": "rl015-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a245fzkwxid/gallery/id-galaxy-a24-sm-a245-sm-a245fzkwxid-536326876?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "07dc2a6cae30b5df8c00140655f635730f1c7ab03f9ef5fcfe6806584ee61786",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 208,
+          "y": 196,
+          "width": 184,
+          "height": 408
+        },
+        "view": "original",
+        "wrapperSha256": "d749230af5115ce20dcf0741e31458a9eb8d7e70707d30e828043d8076b72cae",
+        "sourceAlt": "Galaxy A24 front-l30 Black"
+      }
+    ]
+  },
+  {
+    "code": "RL016",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A25 5G",
+    "sourceUrl": "https://news.samsung.com/vn/samsung-galaxy-a15-va-galaxy-a25-5g-ra-mat-voi-thiet-ke-vien-noi-key-island-moi-va-man-hinh-super-amoled-muot-ma",
+    "sourcePageSha256": "4b48b671ffee93a712f737b007376ac4336907e2ab760a969acdbf3acf898785",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=ph&modelList=SM-A256EZKHPHL&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.5 inch Super AMOLED, FHD+, 120 Hz",
+    "chip": "Exynos 1280",
+    "ram": "6/8 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Blue Black",
+      "Blue",
+      "Yellow"
+    ],
+    "camera": "50 MP OIS + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl016-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a256ezkhphl/gallery/ph-galaxy-a25-5g-sm-a256-sm-a256ezkhphl-539208257?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "39138c67a28daec5327864497ff724dad9e6dddaca2fdf6783e07d520d5d268a",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 154,
+          "y": 222,
+          "width": 290,
+          "height": 354
+        },
+        "view": "original",
+        "wrapperSha256": "dd9066fad386279529dd69516b1f4fc4e9ce70079ac3fe79fc8b9fe8ed23231e",
+        "sourceAlt": "Galaxy A25 5G overview"
+      },
+      {
+        "file": "rl016-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a256ezkhphl/gallery/ph-galaxy-a25-5g-sm-a256-sm-a256ezkhphl-539208240?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "1bfbfceea00a06e77002c58b299ae72a281664ad0ba7a7aca6191a98b01f932c",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 208,
+          "y": 222,
+          "width": 182,
+          "height": 354
+        },
+        "view": "original",
+        "wrapperSha256": "c27c75182e9d1e75c5c693243c81b3ebd8aabf985de062c2e138cb5e47f3eae9",
+        "sourceAlt": "Galaxy A25 5G front2--l- Blue Black"
+      },
+      {
+        "file": "rl016-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a256ezkhphl/gallery/ph-galaxy-a25-5g-sm-a256-sm-a256ezkhphl-539208241?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "6ab3b52b19ceb04dc6dd843d0391f4d02e4ac441401fee2d4438144353af4d46",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 218,
+          "y": 218,
+          "width": 164,
+          "height": 364
+        },
+        "view": "original",
+        "wrapperSha256": "a29bd0a66a21aa3f3f48907bf6e838131ee5325ba74ad37011f89553017f847b",
+        "sourceAlt": "Galaxy A25 5G frontl30--l- Blue Black"
+      }
+    ]
+  },
+  {
+    "code": "RL017",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A34 5G",
+    "sourceUrl": "https://www.samsung.com/es/smartphones/galaxy-a/galaxy-a34-5g-graphite-128gb-sm-a346bzkaeub/",
+    "sourcePageSha256": "96896d025e43ea02687b2a01fe55180e539f9b2b83012ce43caa87a6fd1b919d",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=es&modelList=SM-A346BZKAEUB&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.6 inch Super AMOLED, FHD+, 120 Hz",
+    "chip": "MediaTek Dimensity 1080",
+    "ram": "6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Awesome Graphite",
+      "Awesome Silver",
+      "Awesome Violet"
+    ],
+    "camera": "48 MP OIS + 8 MP + 5 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl017-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/sm-a346bzkaeub/gallery/es-galaxy-a34-5g-sm-a346-sm-a346bzkaeub-535603630?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "107cebb5192ba31ab66c6c8fbddff0a5ad76745e4e2a5ca1fe9a325fe8eb70c9",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 140,
+          "y": 200,
+          "width": 318,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "e7e332a147dfa35645c5c6926ad5200ecd5d4ac1bd69deab0525c6251ebc94cf",
+        "sourceAlt": "Galaxy A34 5G overview"
+      },
+      {
+        "file": "rl017-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/sm-a346bzkaeub/gallery/es-galaxy-a34-5g-sm-a346-sm-a346bzkaeub-535603613?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "f5f9532a46c918bc5a234332dcda76464e2ab557e291e5770c23643d821c214c",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 196,
+          "y": 200,
+          "width": 208,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "c23b1d5b436d3d6ee1c0fc75995f8d840656287d671561daad08edc0930bdf98",
+        "sourceAlt": "Galaxy A34 5G front-2 Graphite"
+      },
+      {
+        "file": "rl017-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/sm-a346bzkaeub/gallery/es-galaxy-a34-5g-sm-a346-sm-a346bzkaeub-535603614?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "557a7f01f4dd73f285377c4d890fee9c04483e99bb4cc27de3a8e034f904488c",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 208,
+          "y": 198,
+          "width": 184,
+          "height": 402
+        },
+        "view": "original",
+        "wrapperSha256": "77cfc78dc433b9071f26e4a7aa772203d981922e93e6b4da965fd0d9ef83810e",
+        "sourceAlt": "Galaxy A34 5G front-l30 Graphite"
+      }
+    ]
+  },
+  {
+    "code": "RL018",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy A54 5G",
+    "sourceUrl": "https://www.samsung.com/id/smartphones/galaxy-a/galaxy-a54-5g-awesome-black-128gb-sm-a546ezkcxid/",
+    "sourcePageSha256": "1f17234ce5ab6e9f054bfa7fe7a1b7b2b05ad7a8261926d26edad467167fcb4d",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=id&modelList=SM-A546EZKCXID&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.4 inch Super AMOLED, FHD+, 120 Hz",
+    "chip": "Exynos 1380",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Awesome Black",
+      "Awesome White",
+      "Awesome Violet"
+    ],
+    "camera": "50 MP OIS + 12 MP + 5 MP",
+    "battery": "5000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl018-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a546ezkcxid/gallery/id-galaxy-a54-5g-sm-a546-sm-a546ezkcxid-535684242?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "7f54006b057099fe4287841432548bc92b423453bd8fee0af407fe2483ab4863",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 140,
+          "y": 198,
+          "width": 318,
+          "height": 402
+        },
+        "view": "original",
+        "wrapperSha256": "c5b9d599369c2823d338848edba106eedb9c3e2d62d252400301ca7f54568c37",
+        "sourceAlt": "Galaxy A54 5G overview"
+      },
+      {
+        "file": "rl018-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a546ezkcxid/gallery/id-galaxy-a54-5g-sm-a546-sm-a546ezkcxid-535684225?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "25ceae41692ce5416a2420545e7362de3d699841964aefd3f9f3e21a39e14ead",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 196,
+          "y": 200,
+          "width": 208,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "b93ae5a1b18394f66c850b4927043fff1b8c77f5d5a5f4229bc2350e74f970c2",
+        "sourceAlt": "Galaxy A54 5G front2 Awesome Black"
+      },
+      {
+        "file": "rl018-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a546ezkcxid/gallery/id-galaxy-a54-5g-sm-a546-sm-a546ezkcxid-535684226?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "b59dd636e006fa618b11311b31d92f3ad9f69399155437ae6589b390f0e942b6",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 208,
+          "y": 198,
+          "width": 184,
+          "height": 402
+        },
+        "view": "original",
+        "wrapperSha256": "6b81b3db111e529e3ca227d1219f5fe6bee474cb8c20fa9b9dfab2fba65e46ab",
+        "sourceAlt": "Galaxy A54 5G front-l30 Awesome Black"
+      }
+    ]
+  },
+  {
+    "code": "RL019",
+    "brand": "Xiaomi",
+    "name": "Redmi Note 12",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-note-12/specs/",
+    "sourcePageSha256": "5a3093026f8cbac3821fc63d72b71244ba05267154d67317c1014e4ae1b722a6",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, FHD+, 120 Hz",
+    "chip": "Snapdragon 685",
+    "ram": "4/6/8 GB",
+    "storage": [
+      128
+    ],
+    "colors": [
+      "Onyx Gray",
+      "Mint Green",
+      "Ice Blue"
+    ],
+    "camera": "50 MP + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "33 W",
+    "os": "MIUI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl019-1.svg",
+        "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1679574037.40791067.png",
+        "sha256": "c981a36512d4d6044993d93b9ad4c702941ada9d293ce12879459f61183f8c74",
+        "width": 1600,
+        "height": 1600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 210,
+          "y": 106,
+          "width": 1176,
+          "height": 1384
+        },
+        "view": "original",
+        "wrapperSha256": "a8dc5f835c1c784885b02ed27895cb3c69e2f6435a397f97724c9c90a44e3652",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl019-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/236_operator_sg/06/06/2023/225094d28d4a8035144ab36d8cebd99c.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "cf87871813ccdc191f7cbcd9056ee22c8f9d4becef41b27ec8a6422240a5802d",
+        "width": 800,
+        "height": 440,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 117,
+          "y": 0,
+          "width": 566,
+          "height": 440
+        },
+        "view": "original",
+        "wrapperSha256": "58b4736b38ff7bb6aa66b7b67975a22d4773be74e8dc1d6a721b6053f11240f1",
+        "sourceAlt": "Redmi Note 12"
+      },
+      {
+        "file": "rl019-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/mi-com-product/fly-birds/redmi-note-12/pc/orangebg.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "e2c17d44a82fe2261fee01fb63a3b24f86c1edb930cd1949b3eac0b1bd8f5358",
+        "width": 800,
+        "height": 403,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 410,
+          "height": 388
+        },
+        "view": "original",
+        "wrapperSha256": "e8e40ecb8d12be148fe32403e1c9d45de99226642abb9f571752563d19b08b86",
+        "sourceAlt": "Redmi Note 12"
+      }
+    ]
+  },
+  {
+    "code": "RL020",
+    "brand": "Xiaomi",
+    "name": "Redmi Note 12 Pro 5G",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-note-12-pro-5g/specs/",
+    "sourcePageSha256": "d654e6eff378c1641f9d7154b8000a0df79f4047dda7f3aa0beb824d047bf56c",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, FHD+, 120 Hz",
+    "chip": "MediaTek Dimensity 1080",
+    "ram": "6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Polar White",
+      "Sky Blue"
+    ],
+    "camera": "50 MP OIS + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "67 W",
+    "os": "MIUI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl020-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/859_operatorx_operatorx_opx/06/08/2024/318bdfdf898def1dd06f83a039ce4470.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "207d7b3fdd6f8cd9149467ee5990297e58147139fa67415ac60adc3de659409f",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 103,
+          "y": 53,
+          "width": 594,
+          "height": 692
+        },
+        "view": "original",
+        "wrapperSha256": "26c08c2910d719ca006fab17f8831488288d0ea1408b9f832e0ad0b231eda8f1",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl020-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/422_operator_sg/06/03/2023/fb534121a67ef1e7be6c7fe773ab2398.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "b390ad1d6f3a1072f07d8ec525bd970a9cd65e4b64016f4318236e3343c0ec3d",
+        "width": 800,
+        "height": 440,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 132,
+          "y": 0,
+          "width": 526,
+          "height": 440
+        },
+        "view": "original",
+        "wrapperSha256": "e5c5572ce669a6915c0cb53442038a293727eb23fdd7ca465ec876764e714042",
+        "sourceAlt": "Redmi Note 12 Pro 5g"
+      },
+      {
+        "file": "rl020-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/589_operatorx_operatorx_xm/15/03/2023/2cd8da58d131f097e6fb58a24a372d3e.jpg?thumb=1&w=800&f=webp&q=85",
+        "sha256": "49d91341b2290d18fde16e9decdb18f17c03f474c8819042a196baa2b4ccb0a3",
+        "width": 800,
+        "height": 689,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 689
+        },
+        "view": "original",
+        "wrapperSha256": "a751930ac0ef2ba10b0b1238ca61181d4a64f7a0301f88eef159ccde0c16e78f",
+        "sourceAlt": "Redmi Note 12 Pro 5g"
+      }
+    ]
+  },
+  {
+    "code": "RL021",
+    "brand": "Xiaomi",
+    "name": "Redmi Note 13",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-note-13/specs/",
+    "sourcePageSha256": "37001903a0aa4fb47054f08d5c24dad38c227947443b06ace62eff69b90ab180",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, FHD+, 120 Hz",
+    "chip": "Snapdragon 685",
+    "ram": "6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Mint Green",
+      "Ice Blue"
+    ],
+    "camera": "108 MP + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "33 W",
+    "os": "MIUI / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl021-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/994_operatorx_operatorx_opx/11/01/2024/72a71b312950178179eeb71425ef8def.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "9c652428cbc4880ea475c9f95dcd49ebdc85afad73fc19e7c39f613fef6381ed",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 55,
+          "width": 588,
+          "height": 690
+        },
+        "view": "original",
+        "wrapperSha256": "7ded4f60b830c8920179bc482999663e5eda41cd5fc3da170e3ef4a1780f7d3d",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl021-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/88_operator_sg/02/01/2024/e686aff23778a7698d906887dabafc1b.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "eed57c29613adc75ef1dab73fca0f7693b0dc92593231276f6b38e5fa88d3e13",
+        "width": 800,
+        "height": 400,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 117,
+          "y": 0,
+          "width": 566,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "73f4bb19a2d57599ee3952d7848eb2205a74c7824038c60dfebf7b1ec0476142",
+        "sourceAlt": "Redmi Note 13"
+      },
+      {
+        "file": "rl021-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/994_operatorx_operatorx_opx/11/01/2024/72a71b312950178179eeb71425ef8def.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "9c652428cbc4880ea475c9f95dcd49ebdc85afad73fc19e7c39f613fef6381ed",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 340,
+          "y": 55,
+          "width": 353,
+          "height": 690
+        },
+        "view": "right-detail",
+        "wrapperSha256": "03288559668e563ba7de904ce2aa78f448ead42527a73f31a22b3f00759d312b",
+        "sourceAlt": "Verified manufacturer photograph: Redmi Note 13"
+      }
+    ]
+  },
+  {
+    "code": "RL022",
+    "brand": "Xiaomi",
+    "name": "Redmi Note 13 Pro 5G",
+    "sourceUrl": "https://www.mi.com/global/product/redmi-note-13-pro-5g/specs/",
+    "sourcePageSha256": "c5974ae10335d49cf2faf3a45980ef45eec64411fcba67f8c3433ddf6d61ea2e",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, 1.5K, 120 Hz",
+    "chip": "Snapdragon 7s Gen 2",
+    "ram": "8/12 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Midnight Black",
+      "Aurora Purple",
+      "Ocean Teal"
+    ],
+    "camera": "200 MP OIS + 8 MP + 2 MP",
+    "battery": "5100 mAh",
+    "charging": "67 W",
+    "os": "MIUI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl022-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/855_operatorx_operatorx_opx/11/01/2024/4fad3c8039e37a4fa97f8be0462e88e5.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "ab2fc1ae4c521ddb08a4c3ffd40fbe1ee1b197c62db574287fc93aae483d1840",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 53,
+          "width": 588,
+          "height": 692
+        },
+        "view": "original",
+        "wrapperSha256": "887a6135fcc576943dad6782b3c2c2d252d49c59a235e9c6a63da22bfbcf2cf6",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl022-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/12_operator_sg/07/06/2024/b31b8ef38f5350a6a37e8734b5c374eb.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "55d0d8d0a51c722626047395912d973e361d4c0d651d4173d6e2e6e777fb55e5",
+        "width": 800,
+        "height": 400,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 164,
+          "y": 0,
+          "width": 472,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "e1aabfe9b89bc958209fd1c90d8df293136b59b540a5ae906479894d8d34e7a9",
+        "sourceAlt": "Redmi Note 13 Pro 5g"
+      },
+      {
+        "file": "rl022-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/mi-com-product/fly-birds/redmi-note-13-pro-5g/pc/pro-5g.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "50c397c67e329152dc52dc30e0f506dea6cfa561573a646d8a071e3b3abee5f5",
+        "width": 799,
+        "height": 414,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 799,
+          "height": 414
+        },
+        "view": "original",
+        "wrapperSha256": "a243dec196db1435277dac5bc95f36dd137d90126bbabc25ef10a807da085340",
+        "sourceAlt": "Redmi Note 13 Pro 5g"
+      }
+    ]
+  },
+  {
+    "code": "RL023",
+    "brand": "Xiaomi",
+    "name": "Xiaomi 13 Lite",
+    "sourceUrl": "https://www.mi.com/global/product/xiaomi-13-lite/specs/",
+    "sourcePageSha256": "b4b2bf5b3c047afdbcd4f5e070db63b8dfc95a3e10937f247fab59b37be8d361",
+    "photoApiUrl": null,
+    "display": "6.55 inch AMOLED, FHD+, 120 Hz",
+    "chip": "Snapdragon 7 Gen 1",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Black",
+      "Lite Blue",
+      "Lite Pink"
+    ],
+    "camera": "50 MP + 8 MP + 2 MP",
+    "battery": "4500 mAh",
+    "charging": "67 W",
+    "os": "MIUI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl023-1.svg",
+        "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1677429532.40596257.png",
+        "sha256": "8aa66a059aae310b104e2e5e7396b9c1fbd60a45389c50ca546e4c7ff6a326b4",
+        "width": 1600,
+        "height": 1600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 206,
+          "y": 106,
+          "width": 1188,
+          "height": 1388
+        },
+        "view": "original",
+        "wrapperSha256": "cdb7573220b23aa0b1d986a23f5e37a1611874e7a01a1b7038b434f21ac5f993",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl023-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/658_operator_sg/18/01/2023/4891b9639a364a9f189e26862a2e9464.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "d6b38867177f1ae897edc9eac83fc6b22f89d49258892da302a70eea82eb0bc7",
+        "width": 800,
+        "height": 440,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 176,
+          "y": 0,
+          "width": 448,
+          "height": 440
+        },
+        "view": "original",
+        "wrapperSha256": "836aae720d14455872558678a6153f6824ff2ba74ebb6e115dcac4e8bf7794e2",
+        "sourceAlt": "Xiaomi 13 Lite"
+      },
+      {
+        "file": "rl023-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/729_operatorx_operatorx_xm/20/02/2023/81b35db87148a6857b09f8fe11a030b5.jpeg?thumb=1&w=800&f=webp&q=85",
+        "sha256": "db8c5a594dbd5e136b9e1277573765bdbe01833fd009784cf40df59d8dbdce17",
+        "width": 800,
+        "height": 406,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 14,
+          "width": 518,
+          "height": 392
+        },
+        "view": "original",
+        "wrapperSha256": "f5bae8cbdda2a980d7b438a5d828a2574da083b6de9db7bcf62881939d2f0097",
+        "sourceAlt": "Xiaomi 13 Lite"
+      }
+    ]
+  },
+  {
+    "code": "RL024",
+    "brand": "Xiaomi",
+    "name": "POCO X5 Pro 5G",
+    "sourceUrl": "https://www.po.co/global/product/poco-x5-pro-5g/specs/",
+    "sourcePageSha256": "fff331397b0836fc562643b5c269c52a7c4d89b8af0a21bb2acbb8f4560278f1",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, FHD+, 120 Hz",
+    "chip": "Snapdragon 778G",
+    "ram": "6/8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Black",
+      "Blue",
+      "Yellow"
+    ],
+    "camera": "108 MP + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "67 W",
+    "os": "MIUI for POCO / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl024-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/796_operator_sg/09/01/2023/298be3a9e161369fc0874bb23d839939.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "b2d07f72c513e5cf6ba0ed7d6cc29ea8fc1feac502577636c79ae6156c54ae7e",
+        "width": 792,
+        "height": 712,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 792,
+          "height": 712
+        },
+        "view": "original",
+        "wrapperSha256": "0b0ffa4a47ab6a160d80a93494692b2c67e1138c97f0086e2573083aed939aa4",
+        "sourceAlt": "Poco X5 Pro 5g"
+      },
+      {
+        "file": "rl024-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/796_operator_sg/09/01/2023/298be3a9e161369fc0874bb23d839939.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "b2d07f72c513e5cf6ba0ed7d6cc29ea8fc1feac502577636c79ae6156c54ae7e",
+        "width": 792,
+        "height": 712,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 476,
+          "height": 712
+        },
+        "view": "left-detail",
+        "wrapperSha256": "097d2343156df27ad23fcd1055e2442fcf0f55791063edb2cc0c57658a8e9cb6",
+        "sourceAlt": "Verified manufacturer photograph: POCO X5 Pro 5G"
+      },
+      {
+        "file": "rl024-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/796_operator_sg/09/01/2023/298be3a9e161369fc0874bb23d839939.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "b2d07f72c513e5cf6ba0ed7d6cc29ea8fc1feac502577636c79ae6156c54ae7e",
+        "width": 792,
+        "height": 712,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 316,
+          "y": 0,
+          "width": 476,
+          "height": 712
+        },
+        "view": "right-detail",
+        "wrapperSha256": "c9a6414f19e83e2df09dee8294ce3f3182d57f5408e6f9bb6193c9777d25e523",
+        "sourceAlt": "Verified manufacturer photograph: POCO X5 Pro 5G"
+      }
+    ]
+  },
+  {
+    "code": "RL025",
+    "brand": "Xiaomi",
+    "name": "POCO X6 Pro",
+    "sourceUrl": "https://www.po.co/global/product/poco-x6-pro/specs/",
+    "sourcePageSha256": "1b9620709e3c032ff5e8d010a26e48fe496992f759a7392afa600c1a00fb1b9b",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, 1.5K, 120 Hz",
+    "chip": "MediaTek Dimensity 8300-Ultra",
+    "ram": "8/12 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Black",
+      "Grey",
+      "Yellow"
+    ],
+    "camera": "64 MP OIS + 8 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "67 W",
+    "os": "Xiaomi HyperOS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl025-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/117_operator_sg/11/12/2023/9beac802a13acc28e63b66a240607bde.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "ef3c43471bda5fafb973f2e863e79ee4da397b5c58830e96a43def225b4fc65e",
+        "width": 727,
+        "height": 660,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 727,
+          "height": 660
+        },
+        "view": "original",
+        "wrapperSha256": "1cf47eda62a0075c1fbc99fd6a041b63a1f65b2b62789473ada3e149fd7c4a52",
+        "sourceAlt": "Poco X6 Pro"
+      },
+      {
+        "file": "rl025-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/567_operatorx_operatorx_xm/08/01/2024/6c0583d5826b96a0c0baa738684e3189.jpg?thumb=1&w=800&f=webp&q=85",
+        "sha256": "d5cadafb8a6379e69199ac6679fe121ac10d4d8734ac32e99b780f14c1678ecf",
+        "width": 799,
+        "height": 584,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 799,
+          "height": 584
+        },
+        "view": "original",
+        "wrapperSha256": "4bd4e7f80c3ae650f275db5488c767269529b31ea947be29cb0ef9d4b26729b7",
+        "sourceAlt": "Poco X6 Pro"
+      },
+      {
+        "file": "rl025-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/285_operatorx_operatorx_xm/08/01/2024/9ea2a47f582c69b30d719283652c5b0d.jpg?thumb=1&w=800&f=webp&q=85",
+        "sha256": "f217341acb2b3afc19c3fb26e5fd21a71c2426ecce4309dad7f23921d4693b1a",
+        "width": 800,
+        "height": 606,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 606
+        },
+        "view": "original",
+        "wrapperSha256": "7c6f0c7564963d037543c0fe1873d0981bf7ad7f7704425fd0e4a9140d1497ef",
+        "sourceAlt": "Poco X6 Pro"
+      }
+    ]
+  },
+  {
+    "code": "RL026",
+    "brand": "OPPO",
+    "name": "OPPO A78",
+    "sourceUrl": "https://www.oppo.com/en/smartphones/series-a/a78/specs/",
+    "sourcePageSha256": "c04afe0e5f75dde39bf0f6374e85893b00718eeee3e7fc0a62b57ec198245056",
+    "photoApiUrl": null,
+    "display": "6.43 inch AMOLED, FHD+, 90 Hz",
+    "chip": "Snapdragon 680",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Aqua Green",
+      "Mist Black"
+    ],
+    "camera": "50 MP + 2 MP",
+    "battery": "5000 mAh",
+    "charging": "67 W",
+    "os": "ColorOS / Android",
+    "network": "4G",
+    "photos": [
+      {
+        "file": "rl026-1.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/product-asset-library/specs/a78-4g/a78-bg.png",
+        "sha256": "e8e4b34e84024e27671f9037eb8d19d2b2c7dfe9c11aba20e08089bb08386ae4",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 706,
+          "height": 721
+        },
+        "view": "original",
+        "wrapperSha256": "0afaa5fc16f458fd5a51f4bdc9a83c34677c17c73e7803081c4c7d7189f575ea",
+        "sourceAlt": "OPPO A78"
+      },
+      {
+        "file": "rl026-2.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/product-asset-library/specs/a78-4g/a78-bg.png",
+        "sha256": "e8e4b34e84024e27671f9037eb8d19d2b2c7dfe9c11aba20e08089bb08386ae4",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 424,
+          "height": 721
+        },
+        "view": "left-detail",
+        "wrapperSha256": "8f3b31da491aea7107161d5d3ed66ec51335e3540387ee5df64f3226f1570628",
+        "sourceAlt": "Verified manufacturer photograph: OPPO A78"
+      },
+      {
+        "file": "rl026-3.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a78-en/listpage/a78-427_600-green.png",
+        "sha256": "d1846dc9f448205a1851558c2741568f6ef250ea96c58bf1076f467ff23b0109",
+        "width": 427,
+        "height": 600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 427,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "696fa910c8f388cb3b88da1b493c70e77482664d4df0ab6fc57167a58ac763f9",
+        "sourceAlt": "official social preview"
+      }
+    ]
+  },
+  {
+    "code": "RL027",
+    "brand": "OPPO",
+    "name": "OPPO Reno10 5G",
+    "sourceUrl": "https://www.oppo.com/en/smartphones/series-reno/reno10/specs/",
+    "sourcePageSha256": "05dda2abf829a9a82aebb8d52b20d20764ca29acd85ab58e8c6c075931a3d5ec",
+    "photoApiUrl": null,
+    "display": "6.7 inch AMOLED, FHD+, 120 Hz",
+    "chip": "MediaTek Dimensity 7050",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Silvery Grey",
+      "Ice Blue"
+    ],
+    "camera": "64 MP + 32 MP + 8 MP",
+    "battery": "5000 mAh",
+    "charging": "67 W",
+    "os": "ColorOS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl027-1.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/reno10-5g-en/specs/reno10-5g-860_720.png",
+        "sha256": "fa11ea128a9598a33230f923bba1af72d05d46b7718c0f264c46ee0de926581b",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 860,
+          "height": 721
+        },
+        "view": "original",
+        "wrapperSha256": "499c7b5011a1a4bc8a2b2ca62c1a8edb5aea10d2939e9a415aa34c2fcb4ce579",
+        "sourceAlt": "OPPO Reno 10 5G"
+      },
+      {
+        "file": "rl027-2.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/reno10-5g-en/specs/reno10-5g-860_720.png",
+        "sha256": "fa11ea128a9598a33230f923bba1af72d05d46b7718c0f264c46ee0de926581b",
+        "width": 860,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 516,
+          "height": 721
+        },
+        "view": "left-detail",
+        "wrapperSha256": "8989663b8bbae93617c77917310a636f19d1102a42cc659b9616158e17c6f8b7",
+        "sourceAlt": "Verified manufacturer photograph: OPPO Reno10 5G"
+      },
+      {
+        "file": "rl027-3.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/reno10-5g-en/listpage/reno10-5g-427_600-blue.png",
+        "sha256": "c05e11764e33518e13f4adf6036d266e7e1029e4955816573889e1c3af74c4b9",
+        "width": 427,
+        "height": 600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 427,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "ddee7ca365a3cbfba823fdf4c7534d5be1c0f9d6e87f5ce3a6bb6b29edc9563a",
+        "sourceAlt": "official social preview"
+      }
+    ]
+  },
+  {
+    "code": "RL028",
+    "brand": "vivo",
+    "name": "vivo V29",
+    "sourceUrl": "https://www.vivo.com/en/products/param/v29",
+    "sourcePageSha256": "92828ee3b94cce5a03defe2f129a07ec3f33105ee4abe9d9ddb7d31115f839c0",
+    "photoApiUrl": null,
+    "display": "6.78 inch AMOLED, 2800 x 1260, 120 Hz",
+    "chip": "Snapdragon 778G",
+    "ram": "8/12 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Space Black",
+      "Himalayan Blue",
+      "Purple Fairy"
+    ],
+    "camera": "50 MP OIS + 8 MP + 2 MP",
+    "battery": "4600 mAh",
+    "charging": "80 W",
+    "os": "Funtouch OS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl028-1.svg",
+        "sourceUrl": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1691045445057/2f0dc7d462c0735128b0ce362b53394b.png",
+        "sha256": "a5ac1d0fc1432091d53e8a38ba0b1e92096bc19bf2d604a7cdfee8c2d33fbb9f",
+        "width": 640,
+        "height": 640,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 76,
+          "y": 14,
+          "width": 486,
+          "height": 610
+        },
+        "view": "original",
+        "wrapperSha256": "91b7eaee2e46290df780405f71161f69eb857b0a8b203b4cc9539121da836147",
+        "sourceAlt": "vivo  (Space Black)"
+      },
+      {
+        "file": "rl028-2.svg",
+        "sourceUrl": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1691045449121/61091d03be48bd4f2f428192ae2c0f40.png",
+        "sha256": "4c8cb0dbd7f1c59fc07faf9d80845833ecd92916072f4b7c80286760a55bbda4",
+        "width": 640,
+        "height": 640,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 76,
+          "y": 14,
+          "width": 486,
+          "height": 610
+        },
+        "view": "original",
+        "wrapperSha256": "a006bd2582989e125037dcecd9c3f370b70301eb20b88f6ed1b61903f039285d",
+        "sourceAlt": "vivo  (Himalayan Blue)"
+      },
+      {
+        "file": "rl028-3.svg",
+        "sourceUrl": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1691045462828/3776939750666cfdd37697726aba8032.png",
+        "sha256": "bc20afc4453361a74a7edce691d99ba9e7b68bb782af3335456a33ea07e87000",
+        "width": 640,
+        "height": 640,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 76,
+          "y": 14,
+          "width": 486,
+          "height": 610
+        },
+        "view": "original",
+        "wrapperSha256": "90dc0d6bc03c818fc47b8443018380c05a1037fae3f807d4e6923cb5b4e7cd24",
+        "sourceAlt": "vivo  (Purple Fairy)"
+      }
+    ]
+  },
+  {
+    "code": "RL029",
+    "brand": "vivo",
+    "name": "vivo V30",
+    "sourceUrl": "https://www.vivo.com/en/products/param/v30",
+    "sourcePageSha256": "9d2c7c5af93e69f9888da826833182aa7b5ed2e63ca83df280875bedb47be9ec",
+    "photoApiUrl": null,
+    "display": "6.78 inch AMOLED, 2800 x 1260, 120 Hz",
+    "chip": "Snapdragon 7 Gen 3",
+    "ram": "12 GB",
+    "storage": [
+      256
+    ],
+    "colors": [
+      "Black",
+      "Green",
+      "White"
+    ],
+    "camera": "50 MP OIS + 50 MP",
+    "battery": "5000 mAh",
+    "charging": "80 W",
+    "os": "Funtouch OS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl029-1.svg",
+        "sourceUrl": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1709209809479/14d0527ff5b2d011971f978f72a7ee80.png",
+        "sha256": "49e8e1dbbdba20ba2b105a0eaa3ef3721607bc3d11fa17fae3271a90bae0311b",
+        "width": 640,
+        "height": 640,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 76,
+          "y": 14,
+          "width": 488,
+          "height": 610
+        },
+        "view": "original",
+        "wrapperSha256": "c0f0861b4972a7c46b94e56b93a5f1e922c874b665a72ebde44dcf4226eaf36d",
+        "sourceAlt": "vivo  (Black)"
+      },
+      {
+        "file": "rl029-2.svg",
+        "sourceUrl": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1709209814057/1b674778f808441a1df914595cc76efa.png",
+        "sha256": "01076c3cc892c672f85744eff4ada9dea791718b52b8b89718f03816c4f3f835",
+        "width": 640,
+        "height": 640,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 76,
+          "y": 14,
+          "width": 488,
+          "height": 610
+        },
+        "view": "original",
+        "wrapperSha256": "dcf420543dc3dcad082f317c6a0a2999c82e6d906117d5531e68eac344c2a7aa",
+        "sourceAlt": "vivo  (Green)"
+      },
+      {
+        "file": "rl029-3.svg",
+        "sourceUrl": "https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1709209819605/5ddc19ac671fb0e1d8b0f92a96336f32.png",
+        "sha256": "fb0369de0259a5f8cb6ab3b3d9750e7101cc788fb7c37a2efc545107fcdb913a",
+        "width": 640,
+        "height": 640,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 76,
+          "y": 14,
+          "width": 488,
+          "height": 610
+        },
+        "view": "original",
+        "wrapperSha256": "77e311fb1ae711037d342dc33bd2fdde1bc6a81cc2c3ab547ce78fd4d5133549",
+        "sourceAlt": "vivo  (White)"
+      }
+    ]
+  },
+  {
+    "code": "RL030",
+    "brand": "HONOR",
+    "name": "HONOR X9b",
+    "sourceUrl": "https://www.honor.com/global/phones/honor-x9b/spec/",
+    "sourcePageSha256": "916301fd2bd22640c7fba77d9609728a316c760636d691fc251300a6e7d9df69",
+    "photoApiUrl": null,
+    "display": "6.78 inch AMOLED, 2652 x 1200, 120 Hz",
+    "chip": "Snapdragon 6 Gen 1",
+    "ram": "8/12 GB",
+    "storage": [
+      256
+    ],
+    "colors": [
+      "Midnight Black",
+      "Emerald Green",
+      "Sunrise Orange"
+    ],
+    "camera": "108 MP + 5 MP + 2 MP",
+    "battery": "5800 mAh",
+    "charging": "35 W",
+    "os": "MagicOS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl030-1.svg",
+        "sourceUrl": "https://www-file.honor.com/content/dam/honor/global/specs/smartphone/honor-x9b/honor-x9b-spec-orange.png",
+        "sha256": "3de5f471dbebd662cdfc896936e799c235840114e87690ee5ebdd76fb5360c0f",
+        "width": 266,
+        "height": 571,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 266,
+          "height": 571
+        },
+        "view": "original",
+        "wrapperSha256": "4f16c494841679125f0a54241f2921a32141384ace5c27898a83cfc78add73e1",
+        "sourceAlt": " Sunrise Orange(Vegan leather)"
+      },
+      {
+        "file": "rl030-2.svg",
+        "sourceUrl": "https://www-file.honor.com/content/dam/honor/global/specs/smartphone/honor-x9b/honor-x9b-spec-black.png",
+        "sha256": "53c51a07c7befb00e2815ed96ef3a5927a89ffea2be10ad305985e39d4b40932",
+        "width": 266,
+        "height": 571,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 266,
+          "height": 571
+        },
+        "view": "original",
+        "wrapperSha256": "4bba62ebb8976f84136b40e286b7535fac6485371fc884e0ed7c9ff2a857977c",
+        "sourceAlt": "Midnight Black"
+      },
+      {
+        "file": "rl030-3.svg",
+        "sourceUrl": "https://www-file.honor.com/content/dam/honor/global/specs/smartphone/honor-x9b/honor-x9b-spec-green.png",
+        "sha256": "587e4b616e4dc5ebd6cbc637ee30c58e21863f53fc93e2ae1b22841119765b16",
+        "width": 266,
+        "height": 571,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 266,
+          "height": 571
+        },
+        "view": "original",
+        "wrapperSha256": "0d0ff2f828b2827946597d016b2c7577ad5e668cafe6b93b35b92623b60cb522",
+        "sourceAlt": "Emerald Green"
+      }
+    ]
+  },
+  {
+    "code": "RL031",
+    "brand": "Apple",
+    "name": "Apple iPhone 13",
+    "sourceUrl": "https://support.apple.com/en-us/111872",
+    "sourcePageSha256": "3e22cb7599532e043b3884d17980d2d3b3da26980bcf07f4074d74a5c7797a32",
+    "photoApiUrl": null,
+    "display": "6.1 inch OLED Super Retina XDR",
+    "chip": "A15 Bionic",
+    "ram": "Apple không công bố trên trang thông số",
+    "storage": [
+      128,
+      256,
+      512
+    ],
+    "colors": [
+      "Midnight",
+      "Starlight",
+      "Blue"
+    ],
+    "camera": "12 MP + 12 MP",
+    "battery": "Phát video tối đa 19 giờ",
+    "charging": "Sạc nhanh với bộ sạc 20 W trở lên",
+    "os": "iOS",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl031-1.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111872_iphone13-colors-480.png",
+        "sha256": "bdad53b93e3a00850cded1b5b655dda5f551fb33003f42d75c6db92c4f0dacf9",
+        "width": 472,
+        "height": 288,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 472,
+          "height": 288
+        },
+        "view": "original",
+        "wrapperSha256": "df9b4cab815b31ffbfefe32fae6d19c7e36423919e78c97baedaf2337a865d1b",
+        "sourceAlt": "No alt supplied for Image"
+      },
+      {
+        "file": "rl031-2.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111872_sp847-connector.png",
+        "sha256": "d112edafe62d0737fa85e4a8548b195413cacd5e57d60f0e5e2d6c2aa3bfa551",
+        "width": 994,
+        "height": 916,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 26,
+          "y": 8,
+          "width": 940,
+          "height": 898
+        },
+        "view": "original",
+        "wrapperSha256": "fe56ccce15ab2a3698bcf103b6f7dcdf9a35dbd91df1f2b7d8308a1e9a6c0a9e",
+        "sourceAlt": "No alt supplied for Image"
+      },
+      {
+        "file": "rl031-3.svg",
+        "sourceUrl": "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.large.jpg",
+        "sha256": "e333b4dabdbefaddce758c879b8d02bda926d42cf83edf00466e0d3d5d81dd2e",
+        "width": 653,
+        "height": 914,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 92,
+          "y": 30,
+          "width": 467,
+          "height": 853
+        },
+        "view": "original",
+        "wrapperSha256": "93d0294564632faa46a22038098e2bbe7b1464428f1748107489c3c04f611a6e",
+        "sourceAlt": "Front and back of iPhone 13 and iPhone 13 mini in pink."
+      }
+    ]
+  },
+  {
+    "code": "RL032",
+    "brand": "Apple",
+    "name": "Apple iPhone 14",
+    "sourceUrl": "https://support.apple.com/en-us/111850",
+    "sourcePageSha256": "833b87431ea9114ca83b309f6b02d1c1441e7ed9eca9d34747bb49aeea72e455",
+    "photoApiUrl": null,
+    "display": "6.1 inch OLED Super Retina XDR",
+    "chip": "A15 Bionic",
+    "ram": "Apple không công bố trên trang thông số",
+    "storage": [
+      128,
+      256,
+      512
+    ],
+    "colors": [
+      "Midnight",
+      "Starlight",
+      "Blue"
+    ],
+    "camera": "12 MP + 12 MP",
+    "battery": "Phát video tối đa 20 giờ",
+    "charging": "Sạc nhanh với bộ sạc 20 W trở lên",
+    "os": "iOS",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl032-1.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111850_iphone-14_1.png",
+        "sha256": "f0a8cbde4bb43a657c9e0bed5bde3d1baf516da48bfe4cfcaf8cacbc56edb4d6",
+        "width": 916,
+        "height": 646,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 916,
+          "height": 647
+        },
+        "view": "original",
+        "wrapperSha256": "ad8d9d2fd90f6fcf562151ac3c9750cd56a6fd5af06274797c0ad2c31ed12ad0",
+        "sourceAlt": "No alt supplied for Image"
+      },
+      {
+        "file": "rl032-2.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111850_iphone14-14plus.png",
+        "sha256": "3672039b7045c0ccdf5ce572596d915761d21fc7491d7dc6788440035c8bed9d",
+        "width": 875,
+        "height": 817,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 875,
+          "height": 818
+        },
+        "view": "original",
+        "wrapperSha256": "096f7ef0a3c8b6df2eb5305d40666cb6f50f07ded5f292d30dedc97722b2cff4",
+        "sourceAlt": "No alt supplied for Image"
+      },
+      {
+        "file": "rl032-3.svg",
+        "sourceUrl": "https://www.apple.com/newsroom/images/product/iphone/gallery/Apple-iPhone-14-iPhone-14-Plus-Emergency-SOS-01-220907_inline.jpg.large.jpg",
+        "sha256": "524901ca683211b6f679b0b7329828e1d1a2566b9aed7806a783ef9137bf808d",
+        "width": 653,
+        "height": 914,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 101,
+          "y": 33,
+          "width": 448,
+          "height": 846
+        },
+        "view": "original",
+        "wrapperSha256": "208bbd8e4b2b350934b8cdcef79bdc410b70c9a2eb50f8405d1cdd70c95f904d",
+        "sourceAlt": "An iPhone screen reading “Emergency SOS via Satellite” instructs the user to be outside to get a connection, cautions that messages will take longer to send, and prompts users to answer questions to help get a faster response."
+      }
+    ]
+  },
+  {
+    "code": "RL033",
+    "brand": "Apple",
+    "name": "Apple iPhone 15",
+    "sourceUrl": "https://support.apple.com/en-us/111831",
+    "sourcePageSha256": "b044af7e127cde2cd117f533a4aedd345b20dd95e8e8fa1547f4adaf1015e668",
+    "photoApiUrl": null,
+    "display": "6.1 inch OLED Super Retina XDR",
+    "chip": "A16 Bionic",
+    "ram": "Apple không công bố trên trang thông số",
+    "storage": [
+      128,
+      256,
+      512
+    ],
+    "colors": [
+      "Black",
+      "Blue",
+      "Pink"
+    ],
+    "camera": "48 MP + 12 MP",
+    "battery": "Phát video tối đa 20 giờ",
+    "charging": "Sạc nhanh với bộ sạc 20 W trở lên",
+    "os": "iOS",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl033-1.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_hero.png",
+        "sha256": "34580254d9f89c699c970108cf684aac8a76df6b36265d535f2d68fd9eda618b",
+        "width": 1000,
+        "height": 1000,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 138,
+          "width": 1000,
+          "height": 720
+        },
+        "view": "original",
+        "wrapperSha256": "d7aa881111f8aef95d34676e8a8f5f837519b5b6f5c4e0301bce6413de833b81",
+        "sourceAlt": "iphone_15_hero"
+      },
+      {
+        "file": "rl033-2.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111831-iphone-15-port-image1.png",
+        "sha256": "e018e850f1948b853462b88b909e7866f0f53668eeb28ae26c0edb1eec984293",
+        "width": 378,
+        "height": 666,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 378,
+          "height": 666
+        },
+        "view": "original",
+        "wrapperSha256": "fd94bfbdfe94f4532f685d7a1082aa58e7c7616fe95ddca41f1a2f742c64a50f",
+        "sourceAlt": "111831-iphone-15-port-image1"
+      },
+      {
+        "file": "rl033-3.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111831-iphone-15-port-image2.png",
+        "sha256": "2c7132910fa10d4a32ce15ab9f1bf2f2b6776b7543acd9f4193ff73453795e07",
+        "width": 378,
+        "height": 328,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 9,
+          "y": 0,
+          "width": 328,
+          "height": 321
+        },
+        "view": "original",
+        "wrapperSha256": "ae7218ae773bcebd452637c18367f10925a278db4332f259d6a74b5bf5e086d7",
+        "sourceAlt": "111831-iphone-15-port-image2"
+      }
+    ]
+  },
+  {
+    "code": "RL034",
+    "brand": "Apple",
+    "name": "Apple iPhone 15 Plus",
+    "sourceUrl": "https://support.apple.com/en-us/111830",
+    "sourcePageSha256": "8d9320f88a7be456d81a17390757bad21884af0738e9975726af085f6b662b0d",
+    "photoApiUrl": null,
+    "display": "6.7 inch OLED Super Retina XDR",
+    "chip": "A16 Bionic",
+    "ram": "Apple không công bố trên trang thông số",
+    "storage": [
+      128,
+      256,
+      512
+    ],
+    "colors": [
+      "Black",
+      "Blue",
+      "Pink"
+    ],
+    "camera": "48 MP + 12 MP",
+    "battery": "Phát video tối đa 26 giờ",
+    "charging": "Sạc nhanh với bộ sạc 20 W trở lên",
+    "os": "iOS",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl034-1.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_plus_hero.png",
+        "sha256": "a0e410a3288c12a62e216ac6c1fcf3e9d435e8741cc39ae4fe5519e607ce3846",
+        "width": 1000,
+        "height": 1000,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 128,
+          "width": 1000,
+          "height": 743
+        },
+        "view": "original",
+        "wrapperSha256": "bdf03b3a17a5c4f1c609ad1507c348804ed9269ba1036626c93ca6f8f89f46b5",
+        "sourceAlt": "iphone_15_plus_hero"
+      },
+      {
+        "file": "rl034-2.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111830-iphone-15-plus-portimage-1.png",
+        "sha256": "a8ddfc20a13a0022c3274a0e798901ebedef8bd5b2a778bb3c6ba3f806c0873c",
+        "width": 378,
+        "height": 666,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 378,
+          "height": 666
+        },
+        "view": "original",
+        "wrapperSha256": "2678ae2fa6cbe62267b2aa96c7bbba5c546c7897c8c2ebb4e1f7ffddda27c2ff",
+        "sourceAlt": "111830-iphone-15-plus-portimage-1"
+      },
+      {
+        "file": "rl034-3.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111830-iphone-15-plus-portimage-2.png",
+        "sha256": "2ba6b2c5c331aaabb6367076cf30945225d511288f40069f20a9e730b760a9b6",
+        "width": 378,
+        "height": 328,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 9,
+          "y": 0,
+          "width": 328,
+          "height": 321
+        },
+        "view": "original",
+        "wrapperSha256": "97a88d8438fe4b85d2dbf869fa62c1b3a44d91a234817272bc1264131016824a",
+        "sourceAlt": "111830-iphone-15-plus-portimage-2"
+      }
+    ]
+  },
+  {
+    "code": "RL035",
+    "brand": "Apple",
+    "name": "Apple iPhone 15 Pro",
+    "sourceUrl": "https://support.apple.com/en-us/111829",
+    "sourcePageSha256": "bace41634ea459d87affcb4d41a0c29125a3578eef47c7b7aaafae20df3c68b0",
+    "photoApiUrl": null,
+    "display": "6.1 inch OLED Super Retina XDR, ProMotion",
+    "chip": "A17 Pro",
+    "ram": "Apple không công bố trên trang thông số",
+    "storage": [
+      128,
+      256,
+      512,
+      1024
+    ],
+    "colors": [
+      "Black Titanium",
+      "White Titanium",
+      "Natural Titanium"
+    ],
+    "camera": "48 MP + 12 MP + 12 MP",
+    "battery": "Phát video tối đa 23 giờ",
+    "charging": "Sạc nhanh với bộ sạc 20 W trở lên",
+    "os": "iOS",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl035-1.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone_15_pro.png",
+        "sha256": "83343a797fba7a78001f486ba9cc3c66191efa229a84d7dc932a654bbb720e77",
+        "width": 1000,
+        "height": 1000,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 51,
+          "width": 1000,
+          "height": 898
+        },
+        "view": "original",
+        "wrapperSha256": "16201a4368e2ee1ef7bff62aa20b1bd1b7175986e5230c6df75ff0cc966d73d8",
+        "sourceAlt": "iphone_15_pro"
+      },
+      {
+        "file": "rl035-2.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111828-iphone-15-pro-max-portimage-1.png",
+        "sha256": "ee21077ebdf5421a3b956e96c0d8c898dec588e931be95265d3e61d18f5d1d90",
+        "width": 406,
+        "height": 718,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 406,
+          "height": 718
+        },
+        "view": "original",
+        "wrapperSha256": "c1824a99f5a537a806a7360052b9f45ada81753d23faec66807037e4a99cd197",
+        "sourceAlt": "111828-iphone-15-pro-portimage-1"
+      },
+      {
+        "file": "rl035-3.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111828-iphone-15-pro-max-portimage-2.png",
+        "sha256": "53783cacf85460a22ac0a67a50fadd4fe102f503923df633514f4398ba6c84b7",
+        "width": 406,
+        "height": 336,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 14,
+          "y": 0,
+          "width": 354,
+          "height": 330
+        },
+        "view": "original",
+        "wrapperSha256": "7ac029f056b55c41b9ab2ff4250898c4b2898d0f45c192aee1226745e25846b4",
+        "sourceAlt": "111828-iphone-15-pro-portimage-2"
+      }
+    ]
+  },
+  {
+    "code": "RL036",
+    "brand": "Apple",
+    "name": "Apple iPhone 15 Pro Max",
+    "sourceUrl": "https://support.apple.com/en-us/111828",
+    "sourcePageSha256": "c9f1d265f53a60fe3f83bdea20e7e7c5fc462b2805f4806a06fc2e67b766050d",
+    "photoApiUrl": null,
+    "display": "6.7 inch OLED Super Retina XDR, ProMotion",
+    "chip": "A17 Pro",
+    "ram": "Apple không công bố trên trang thông số",
+    "storage": [
+      256,
+      512,
+      1024
+    ],
+    "colors": [
+      "Black Titanium",
+      "White Titanium",
+      "Natural Titanium"
+    ],
+    "camera": "48 MP + 12 MP + 12 MP",
+    "battery": "Phát video tối đa 29 giờ",
+    "charging": "Sạc nhanh với bộ sạc 20 W trở lên",
+    "os": "iOS",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl036-1.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-15-pro-max.png",
+        "sha256": "556a6464acef55d220831fdfcb6d80c8eb77131c802275ccdaa69f0dd4c435c4",
+        "width": 1000,
+        "height": 1000,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 28,
+          "width": 1000,
+          "height": 940
+        },
+        "view": "original",
+        "wrapperSha256": "828909c812f6ccc708486ba3fca9b88a04018277e006344a5bd060ab8bd04629",
+        "sourceAlt": "iphone-15-pro-max"
+      },
+      {
+        "file": "rl036-2.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111828-iphone-15-pro-max-portimage-1.png",
+        "sha256": "ee21077ebdf5421a3b956e96c0d8c898dec588e931be95265d3e61d18f5d1d90",
+        "width": 406,
+        "height": 718,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 406,
+          "height": 718
+        },
+        "view": "original",
+        "wrapperSha256": "2a151dbcedc9539d1d4583a8ce9d58484cc8987fdfb928920020cf144684ab49",
+        "sourceAlt": "111828-iphone-15-pro-max-portimage-1"
+      },
+      {
+        "file": "rl036-3.svg",
+        "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/111828-iphone-15-pro-max-portimage-2.png",
+        "sha256": "53783cacf85460a22ac0a67a50fadd4fe102f503923df633514f4398ba6c84b7",
+        "width": 406,
+        "height": 336,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 14,
+          "y": 0,
+          "width": 354,
+          "height": 330
+        },
+        "view": "original",
+        "wrapperSha256": "5e203fe09a4ac313dd88a6c95b0d294c707c1ab21fc120a330d0962e78678980",
+        "sourceAlt": "111828-iphone-15-pro-max-portimage-2"
+      }
+    ]
+  },
+  {
+    "code": "RL037",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S23",
+    "sourceUrl": "https://www.samsung.com/id/smartphones/galaxy-s/galaxy-s23-phantom-black-128gb-sm-s911bzkbxid/",
+    "sourcePageSha256": "a3b2cf699114a6f9c1ce1718b11b88308dc5de6074dff5716cff103a6aa4ea5a",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=id&modelList=SM-S911BZKBXID&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.1 inch Dynamic AMOLED 2X, FHD+, 120 Hz",
+    "chip": "Snapdragon 8 Gen 2 for Galaxy",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Phantom Black",
+      "Cream",
+      "Green"
+    ],
+    "camera": "50 MP + 12 MP + 10 MP",
+    "battery": "3900 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl037-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/2302/gallery/id-galaxy-s23-s911-sm-s911bzkbxid-534842566?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "25f377c087bb2fdc53e1541924fb0f070ba6bfe44e31b8fa607173e5fbbd15d6",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 161,
+          "y": 233,
+          "width": 278,
+          "height": 332
+        },
+        "view": "original",
+        "wrapperSha256": "e42cf72b635464779fa6af92a3e95718e3a360941400848eb9437049ae44107f",
+        "sourceAlt": "Galaxy S23 overview"
+      },
+      {
+        "file": "rl037-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/2302/gallery/id-galaxy-s23-s911-sm-s911bzkbxid-534842549?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "015827038ed2186729ebf567d3b5418b2e5ab391bf901e050b2e452dd6074d12",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 213,
+          "y": 233,
+          "width": 174,
+          "height": 332
+        },
+        "view": "original",
+        "wrapperSha256": "a762ed5095474226ea07032b6ce092f096471703187c9a0e82683366ab39b8ad",
+        "sourceAlt": "Galaxy S23 front2 Phantom Black"
+      },
+      {
+        "file": "rl037-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/2302/gallery/id-galaxy-s23-s911-sm-s911bzkbxid-534842550?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "08d485b5744cded60a5c799b8b98e99404b2935446ba84e24a130b53b1f4839a",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 220,
+          "y": 226,
+          "width": 160,
+          "height": 346
+        },
+        "view": "original",
+        "wrapperSha256": "5b50d15ed00fd1adad2b78a6519983fa596c7e8f5f66f07145c0ab7bc353352a",
+        "sourceAlt": "Galaxy S23 frontl30 Phantom Black"
+      }
+    ]
+  },
+  {
+    "code": "RL038",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S23 Ultra",
+    "sourceUrl": "https://www.samsung.com/co/smartphones/galaxy-s/galaxy-s23-ultra-phantom-black-256gb-sm-s918bzkkltc/",
+    "sourcePageSha256": "2e4fd3fee3ac0e7000547b65fc8075f30c9fa64cee290ed4ed17839a057d7b8c",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=co&modelList=SM-S918BZKKLTC&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.8 inch Dynamic AMOLED 2X, QHD+, 120 Hz",
+    "chip": "Snapdragon 8 Gen 2 for Galaxy",
+    "ram": "8/12 GB",
+    "storage": [
+      256,
+      512,
+      1024
+    ],
+    "colors": [
+      "Phantom Black",
+      "Cream",
+      "Green"
+    ],
+    "camera": "200 MP + 12 MP + 10 MP + 10 MP",
+    "battery": "5000 mAh",
+    "charging": "45 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl038-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/2302/gallery/co-galaxy-s23-s918-sm-s918bzkkltc-534860569?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "fb818495f9d9e81543c076ed2fba74e3135479c6581478cc6ea50b34997631b7",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 117,
+          "y": 213,
+          "width": 364,
+          "height": 372
+        },
+        "view": "original",
+        "wrapperSha256": "1f09a09fa083c5930a5e14d3fea4fe2e51f358b3d93d988b2683e145dbc7b0ff",
+        "sourceAlt": "Galaxy S23 Ultra 5G overview"
+      },
+      {
+        "file": "rl038-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/2302/gallery/co-galaxy-s23-s918-sm-s918bzkkltc-534860548?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "a84246bcc58cc72af59836b13c881db51309c2d54b70f284dfa2810b737d3674",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 175,
+          "y": 213,
+          "width": 250,
+          "height": 372
+        },
+        "view": "original",
+        "wrapperSha256": "1807e62c52c2ac11b1ef399a09335cf666de2dbdfd9f8af6825d49f1205e7708",
+        "sourceAlt": "Galaxy S23 Ultra 5G devicepenfront Phantom Black"
+      },
+      {
+        "file": "rl038-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/2302/gallery/co-galaxy-s23-s918-sm-s918bzkkltc-534860549?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "7b33b8abf82adf2288520608070464e616b764a694de5a1787050fbedf25d413",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 180,
+          "y": 202,
+          "width": 234,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "58637228a8f9bb835fe67cd88f8d53f99a67a13a04cf445be3835e3ad646aee7",
+        "sourceAlt": "Galaxy S23 Ultra 5G devicepenfrontl30 Phantom Black"
+      }
+    ]
+  },
+  {
+    "code": "RL039",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S24",
+    "sourceUrl": "https://www.samsung.com/latin/business/smartphones/galaxy-s/galaxy-s24-onyx-black-128gb-sm-s921bzkjl15/",
+    "sourcePageSha256": "d768fe818c58c412eeec525783dcc9238d3895e76cb555e8a3249b0800364c67",
+    "photoApiUrl": null,
+    "display": "6.2 inch Dynamic AMOLED 2X, FHD+, 120 Hz",
+    "chip": "Exynos 2400",
+    "ram": "8 GB",
+    "storage": [
+      128,
+      256
+    ],
+    "colors": [
+      "Onyx Black",
+      "Marble Gray",
+      "Cobalt Violet"
+    ],
+    "camera": "50 MP + 12 MP + 10 MP",
+    "battery": "4000 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl039-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/latin/sm-s921bzkjl15/gallery/latin-galaxy-s24-sm-s921bzkjl15-547613678?$Q90_684_547_JPG$",
+        "sha256": "75f9fc01e8032b500f3d928f71c276ba5c3e528229a736db56d337bee4643fee",
+        "width": 684,
+        "height": 547,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 179,
+          "y": 79,
+          "width": 324,
+          "height": 386
+        },
+        "view": "original",
+        "wrapperSha256": "cf985c361221d4acfd4c1eddcbf2a9a53763269edefe949fac9c1dcbbb0e8847",
+        "sourceAlt": "front Onyx Black, Galaxy S24"
+      },
+      {
+        "file": "rl039-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/latin/sm-s921bzkjl15/gallery/latin-galaxy-s24-sm-s921bzkjl15-547613663?$Q90_684_547_JPG$",
+        "sha256": "e661f2dd2e254e876b7d8a85470fde4d7609da518044bb76d2e459afbea059ad",
+        "width": 684,
+        "height": 547,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 243,
+          "y": 79,
+          "width": 200,
+          "height": 386
+        },
+        "view": "original",
+        "wrapperSha256": "08ef60104c7ba385f1d96681a5b0d4062ea05e83f7e3e496ea82a06abb954721",
+        "sourceAlt": "front2 Onyx Black, Galaxy S24"
+      },
+      {
+        "file": "rl039-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/latin/sm-s921bzkjl15/gallery/latin-galaxy-s24-sm-s921bzkjl15-547613664?$Q90_684_547_JPG$",
+        "sha256": "58c9a843e670567598c9c96783c8451c04aa1dbb68d90c3db6e6ed2815326265",
+        "width": 684,
+        "height": 547,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 250,
+          "y": 72,
+          "width": 184,
+          "height": 400
+        },
+        "view": "original",
+        "wrapperSha256": "b1ad928a724261d47820caa23ff3d0c434ae883979a28f63b6f97d8cc0a3ebf8",
+        "sourceAlt": "frontl30 Onyx Black, Galaxy S24"
+      }
+    ]
+  },
+  {
+    "code": "RL040",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S24 Ultra",
+    "sourceUrl": "https://www.samsung.com/es/business/smartphones/galaxy-s/galaxy-s24-ultra-sm-s928bzkgeub/",
+    "sourcePageSha256": "caa202f0e511519dec2de85b622eb9545f41d1120feeccbb73c77bd466749c64",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=es&modelList=SM-S928BZKGEUB&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.8 inch Dynamic AMOLED 2X, QHD+, 120 Hz",
+    "chip": "Snapdragon 8 Gen 3 for Galaxy",
+    "ram": "12 GB",
+    "storage": [
+      256,
+      512,
+      1024
+    ],
+    "colors": [
+      "Titanium Gray",
+      "Titanium Black",
+      "Titanium Violet"
+    ],
+    "camera": "200 MP + 12 MP + 50 MP + 10 MP",
+    "battery": "5000 mAh",
+    "charging": "45 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl040-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/2401/gallery/es-galaxy-s24-s928-491123-sm-s928bzkgeub-539444197?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "0a25123d6d4553661b189f92297608a567aa614824d759ce74bd8fc133a466aa",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 97,
+          "y": 211,
+          "width": 374,
+          "height": 378
+        },
+        "view": "original",
+        "wrapperSha256": "c3347b5739fb63919a1e7bf4a38c3818d683ef65a72dc5df25819218764ba8bc",
+        "sourceAlt": "Galaxy S24 Ultra overview"
+      },
+      {
+        "file": "rl040-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/2401/gallery/es-galaxy-s24-s928-491123-sm-s928bzkgeub-539444162?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "5d352f5c0c63cc869d458b1d8a615ca4e342d21c4045cf11ae9480efb7b1e4ef",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 201,
+          "y": 211,
+          "width": 196,
+          "height": 378
+        },
+        "view": "original",
+        "wrapperSha256": "42abe5911bc56b3b83c79f965672aa7f151e4155613f5108df18313492f7fa7e",
+        "sourceAlt": "Galaxy S24 Ultra deviceback Titanium Black"
+      },
+      {
+        "file": "rl040-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/2401/gallery/es-galaxy-s24-s928-491123-sm-s928bzkgeub-539444163?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "6841edd565c6c2eb3b2c101c53a4ae528f7356343597e631dfcdfb86a60bf920",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 211,
+          "y": 205,
+          "width": 176,
+          "height": 390
+        },
+        "view": "original",
+        "wrapperSha256": "be3bda342d354e0d5c2158fbebd6ed770654fffb7c2314309e6d286c1278d0eb",
+        "sourceAlt": "Galaxy S24 Ultra devicebackl30 Titanium Black"
+      }
+    ]
+  },
+  {
+    "code": "RL041",
+    "brand": "Xiaomi",
+    "name": "Xiaomi 13T Pro",
+    "sourceUrl": "https://www.mi.com/global/product/xiaomi-13t-pro-leica/specs/",
+    "sourcePageSha256": "1e387b864b4144edadb5ed2d0bdfbf6b0ee9a426e5d9fe2907676757670ada72",
+    "photoApiUrl": null,
+    "display": "6.67 inch AMOLED, 2712 x 1220, 144 Hz",
+    "chip": "MediaTek Dimensity 9200+",
+    "ram": "12/16 GB",
+    "storage": [
+      256,
+      512,
+      1024
+    ],
+    "colors": [
+      "Black",
+      "Meadow Green",
+      "Alpine Blue"
+    ],
+    "camera": "50 MP + 50 MP + 12 MP",
+    "battery": "5000 mAh",
+    "charging": "120 W",
+    "os": "MIUI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl041-1.svg",
+        "sourceUrl": "https://i02.appmifile.com/308_operatorx_operatorx_opx/26/09/2023/4796e703846ff6b8afdca74fc2755a10.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "7f4d619ca96e6c9625a67a0448fef86c56c0e8fd23b2b59180f6e918697c85b2",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 105,
+          "y": 53,
+          "width": 588,
+          "height": 694
+        },
+        "view": "original",
+        "wrapperSha256": "9fd92010ff3622ddf6b8f7f8266373108455f1df3f49e897e164b68069b30ab3",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl041-2.svg",
+        "sourceUrl": "https://i02.appmifile.com/329_operator_sg/14/08/2023/3fcfdc0e83081349795e70056be19e35.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "eb52dc3ec9f45ce04a4a9be7125010d9ac8d8d26d03d1c128863e02ca08ef0d5",
+        "width": 800,
+        "height": 320,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 196,
+          "y": 0,
+          "width": 406,
+          "height": 320
+        },
+        "view": "original",
+        "wrapperSha256": "ceb144f5d7d2daf689d5bcdba9b82f12639e2312f0c56899ce003088a53e094a",
+        "sourceAlt": "Xiaomi 13t Pro Leica"
+      },
+      {
+        "file": "rl041-3.svg",
+        "sourceUrl": "https://i02.appmifile.com/308_operatorx_operatorx_opx/26/09/2023/4796e703846ff6b8afdca74fc2755a10.png?thumb=1&w=800&f=webp&q=85",
+        "sha256": "7f4d619ca96e6c9625a67a0448fef86c56c0e8fd23b2b59180f6e918697c85b2",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 340,
+          "y": 53,
+          "width": 353,
+          "height": 694
+        },
+        "view": "right-detail",
+        "wrapperSha256": "c6b8d66f97c8fb005de210891dd32ffca57b91f1f1047a326dacd6ed5967f111",
+        "sourceAlt": "Verified manufacturer photograph: Xiaomi 13T Pro"
+      }
+    ]
+  },
+  {
+    "code": "RL042",
+    "brand": "OnePlus",
+    "name": "OnePlus 12",
+    "sourceUrl": "https://www.oneplus.com/global/12/specs",
+    "sourcePageSha256": "e7e39d945aeba35dddd62e74229d23124111a66275210bca9eb128cb364e5183",
+    "photoApiUrl": null,
+    "display": "6.82 inch LTPO AMOLED, QHD+, 120 Hz",
+    "chip": "Snapdragon 8 Gen 3",
+    "ram": "12/16 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Silky Black",
+      "Flowy Emerald"
+    ],
+    "camera": "50 MP + 48 MP + 64 MP",
+    "battery": "5400 mAh",
+    "charging": "100 W",
+    "os": "OxygenOS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl042-1.svg",
+        "sourceUrl": "https://www.oneplus.com/content/dam/oasis/page/2024/global/product/waffle/share.jpg",
+        "sha256": "01a3445cbba6d7c490565786638e127e2bf4c221a536ad49a9c8e440c3815d98",
+        "width": 1200,
+        "height": 630,
+        "mediaType": "image/jpeg",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 1200,
+          "height": 630
+        },
+        "view": "original",
+        "wrapperSha256": "3d472955d9657b5109d499c6fb1fa7da74c202541e7c960e196f54a23ee2c573",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl042-2.svg",
+        "sourceUrl": "https://oasis.opstatics.com/content/dam/oasis/page/2023/cn/12/12-green.png",
+        "sha256": "dc8dabf6c1b7c8fc2e748ecc2b7e82b74753c79958252b4ad70f8d7b895e4a78",
+        "width": 1080,
+        "height": 1080,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 167,
+          "y": 91,
+          "width": 743,
+          "height": 897
+        },
+        "view": "original",
+        "wrapperSha256": "92a3f9413f892f33c13e1ee822e817f7e2fe15bd266477b938a8ebc54877ab9a",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl042-3.svg",
+        "sourceUrl": "https://oasis.opstatics.com/content/dam/oasis/page/2023/cn/12/12-black.png",
+        "sha256": "fe3c6a09448a96befd17fdfba6ef0d98850603bca7b99fc7d69d1ce9344dcaa8",
+        "width": 1080,
+        "height": 1080,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 167,
+          "y": 91,
+          "width": 743,
+          "height": 897
+        },
+        "view": "original",
+        "wrapperSha256": "6f4cd3ff604ff7b6f7ebc73b564e9fd530b06f5ede663506d5a20169c315331c",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL043",
+    "brand": "ASUS",
+    "name": "ASUS ROG Phone 6",
+    "sourceUrl": "https://rog.asus.com/phones/rog-phone-6-model/spec/",
+    "sourcePageSha256": "7202347b6c477e63cc76a3615414def3edaab4366cc72c7171cbdd00338c936b",
+    "photoApiUrl": null,
+    "display": "6.78 inch AMOLED, FHD+, 165 Hz",
+    "chip": "Snapdragon 8+ Gen 1",
+    "ram": "12/16 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Phantom Black",
+      "Storm White"
+    ],
+    "camera": "50 MP + 13 MP + 5 MP",
+    "battery": "6000 mAh",
+    "charging": "65 W",
+    "os": "ROG UI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl043-1.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/B46BEF43-3A3C-4A30-B73A-7A1434566EC8/w800/fwebp",
+        "sha256": "76bdd7c967ef0aef2d34df6b57151a00f7d07b51353cc0a39166c53b56090061",
+        "width": 800,
+        "height": 588,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 154,
+          "y": 0,
+          "width": 492,
+          "height": 588
+        },
+        "view": "original",
+        "wrapperSha256": "a99279494e20798c1bc94d064167ab78f7bf4965a3877736d30bd42b8aa6c7ec",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl043-2.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/B46BEF43-3A3C-4A30-B73A-7A1434566EC8/w800/fwebp",
+        "sha256": "76bdd7c967ef0aef2d34df6b57151a00f7d07b51353cc0a39166c53b56090061",
+        "width": 800,
+        "height": 588,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 154,
+          "y": 0,
+          "width": 296,
+          "height": 588
+        },
+        "view": "left-detail",
+        "wrapperSha256": "02abdb15aad9948669a47b580d074aabf42ee8a946751e6db6a58877fd40d997",
+        "sourceAlt": "Verified manufacturer photograph: ASUS ROG Phone 6"
+      },
+      {
+        "file": "rl043-3.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/B46BEF43-3A3C-4A30-B73A-7A1434566EC8/w800/fwebp",
+        "sha256": "76bdd7c967ef0aef2d34df6b57151a00f7d07b51353cc0a39166c53b56090061",
+        "width": 800,
+        "height": 588,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 350,
+          "y": 0,
+          "width": 296,
+          "height": 588
+        },
+        "view": "right-detail",
+        "wrapperSha256": "edfb882751d455c8cf7b05273453c80071720a0e1d0f521ff64abbeddb954357",
+        "sourceAlt": "Verified manufacturer photograph: ASUS ROG Phone 6"
+      }
+    ]
+  },
+  {
+    "code": "RL044",
+    "brand": "ASUS",
+    "name": "ASUS ROG Phone 7",
+    "sourceUrl": "https://rog.asus.com/phones/rog-phone-7/spec/",
+    "sourcePageSha256": "dbf4324d68b8243447c2e909d4e07d8115000530d252329a3be00b85b5cf39ad",
+    "photoApiUrl": null,
+    "display": "6.78 inch AMOLED, FHD+, 165 Hz",
+    "chip": "Snapdragon 8 Gen 2",
+    "ram": "12/16 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Phantom Black",
+      "Storm White"
+    ],
+    "camera": "50 MP + 13 MP + 5 MP",
+    "battery": "6000 mAh",
+    "charging": "65 W",
+    "os": "ROG UI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl044-1.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/4A2BCCC6-B9D8-47A5-AD7F-501E30A462A9/w800/fwebp",
+        "sha256": "f7d81f1203e6a72bfc2c788f44288c3bab3e818f66e810f1dbb115eb99240924",
+        "width": 800,
+        "height": 588,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 165,
+          "y": 7,
+          "width": 468,
+          "height": 572
+        },
+        "view": "original",
+        "wrapperSha256": "67f35a7002077e1061ebd714372a8af351e6ba23f6f71f96b6cfff93f4e3aa3c",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl044-2.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/4A2BCCC6-B9D8-47A5-AD7F-501E30A462A9/w800/fwebp",
+        "sha256": "f7d81f1203e6a72bfc2c788f44288c3bab3e818f66e810f1dbb115eb99240924",
+        "width": 800,
+        "height": 588,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 165,
+          "y": 7,
+          "width": 281,
+          "height": 572
+        },
+        "view": "left-detail",
+        "wrapperSha256": "2d04fbf76934435e862d09a077585a02fc58e512c098d9d0a7f8841350ad9084",
+        "sourceAlt": "Verified manufacturer photograph: ASUS ROG Phone 7"
+      },
+      {
+        "file": "rl044-3.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/files/media/2FB39932-532C-4338-B71B-8C0E3E9B7370/v1.1/features/images/large/1x/animation/kv/phone_right.png",
+        "sha256": "679b550726a2edaded2f730f6849891011d9986672e00d4da6b28028b0f9807c",
+        "width": 310,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 4,
+          "y": 6,
+          "width": 294,
+          "height": 786
+        },
+        "view": "original",
+        "wrapperSha256": "86a4889fe65146691571607133e51e46dd456dedd533020963f7df432e3469cf",
+        "sourceAlt": ""
+      }
+    ]
+  },
+  {
+    "code": "RL045",
+    "brand": "ASUS",
+    "name": "ASUS ROG Phone 8",
+    "sourceUrl": "https://rog.asus.com/phones/rog-phone-8/spec/",
+    "sourcePageSha256": "aa5dc95d3354db4ee84fb2b3c8a0dd002b1ed6fdbf119279ccad11da53f2d58d",
+    "photoApiUrl": null,
+    "display": "6.78 inch LTPO AMOLED, FHD+, 165 Hz",
+    "chip": "Snapdragon 8 Gen 3",
+    "ram": "12/16 GB",
+    "storage": [
+      256
+    ],
+    "colors": [
+      "Phantom Black",
+      "Rebel Grey"
+    ],
+    "camera": "50 MP + 13 MP + 32 MP",
+    "battery": "5500 mAh",
+    "charging": "65 W",
+    "os": "ROG UI / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl045-1.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6CC77851-95F8-4910-808D-E0F94C840EB7/w800/fwebp",
+        "sha256": "e2cf640726882e7bfbbed66df6d55d81a27761b449cd15ef8df7619bf9af65ef",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 70,
+          "y": 14,
+          "width": 658,
+          "height": 770
+        },
+        "view": "original",
+        "wrapperSha256": "b3deee9a10fcc3d19fcbe793447190bc7e1140c9b8c0d949128e537ec1950ed6",
+        "sourceAlt": "official social preview"
+      },
+      {
+        "file": "rl045-2.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/1720EB0F-6BFA-440F-B5D1-F7A5673C75DD/w250/fwebp",
+        "sha256": "8d26f9063c6c3d36825533bfadb1955e4228ead054857df25ef8576990ce53da",
+        "width": 250,
+        "height": 250,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 22,
+          "y": 4,
+          "width": 204,
+          "height": 240
+        },
+        "view": "original",
+        "wrapperSha256": "a351fe0f92543202ae120a83444579a42dc49653d2bff6daa7457b3e33eba23e",
+        "sourceAlt": ""
+      },
+      {
+        "file": "rl045-3.svg",
+        "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6CC77851-95F8-4910-808D-E0F94C840EB7/w800/fwebp",
+        "sha256": "e2cf640726882e7bfbbed66df6d55d81a27761b449cd15ef8df7619bf9af65ef",
+        "width": 800,
+        "height": 800,
+        "mediaType": "image/webp",
+        "crop": {
+          "x": 333,
+          "y": 14,
+          "width": 395,
+          "height": 770
+        },
+        "view": "right-detail",
+        "wrapperSha256": "8748453359b7e79afb1a302be191f006a04978cbfcef1220a08e72682bfead00",
+        "sourceAlt": "Verified manufacturer photograph: ASUS ROG Phone 8"
+      }
+    ]
+  },
+  {
+    "code": "RL046",
+    "brand": "REDMAGIC",
+    "name": "REDMAGIC 9 Pro",
+    "sourceUrl": "https://global.redmagic.gg/pages/redmagic-9-pro-specs",
+    "sourcePageSha256": "a60f634ce6d668f9ac17a1bff99db50d7dc94941513e5c1cd51ddcad313727f9",
+    "photoApiUrl": null,
+    "display": "6.8 inch AMOLED, 2480 x 1116, 120 Hz",
+    "chip": "Snapdragon 8 Gen 3",
+    "ram": "12/16 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Sleet",
+      "Snowfall",
+      "Cyclone"
+    ],
+    "camera": "50 MP + 50 MP + 2 MP",
+    "battery": "6500 mAh",
+    "charging": "80 W",
+    "os": "REDMAGIC OS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl046-1.svg",
+        "sourceUrl": "https://global.redmagic.gg/cdn/shop/files/2560_780_2x_3.png?v=1702623038&width=1600",
+        "sha256": "c30611a7ce61e3cc349c404b2880a7530ee34c6e4b2563534ca9140d7ec926a7",
+        "width": 1600,
+        "height": 488,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 700,
+          "y": 25,
+          "width": 510,
+          "height": 435
+        },
+        "view": "original",
+        "wrapperSha256": "60438260d55475543d75d8f16898c1ebd24d2fdcd1991d9f3072446e4748b00d",
+        "sourceAlt": "Official REDMAGIC 9 Pro photograph detail"
+      },
+      {
+        "file": "rl046-2.svg",
+        "sourceUrl": "https://global.redmagic.gg/cdn/shop/files/2560_780_2x_3.png?v=1702623038&width=1600",
+        "sha256": "c30611a7ce61e3cc349c404b2880a7530ee34c6e4b2563534ca9140d7ec926a7",
+        "width": 1600,
+        "height": 488,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 715,
+          "y": 30,
+          "width": 155,
+          "height": 420
+        },
+        "view": "original",
+        "wrapperSha256": "667d83172328df59f46bcd25a0e729fbae256ed65265d80c16256f9254cf1149",
+        "sourceAlt": "Official REDMAGIC 9 Pro photograph detail"
+      },
+      {
+        "file": "rl046-3.svg",
+        "sourceUrl": "https://global.redmagic.gg/cdn/shop/files/2560_780_2x_3.png?v=1702623038&width=1600",
+        "sha256": "c30611a7ce61e3cc349c404b2880a7530ee34c6e4b2563534ca9140d7ec926a7",
+        "width": 1600,
+        "height": 488,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 1020,
+          "y": 30,
+          "width": 160,
+          "height": 420
+        },
+        "view": "original",
+        "wrapperSha256": "c4c1ab8d8448d60b2cef3ce066195a13b7ef3b07948c7e2117c835f962ed1096",
+        "sourceAlt": "Official REDMAGIC 9 Pro photograph detail"
+      }
+    ]
+  },
+  {
+    "code": "RL047",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy Z Flip5",
+    "sourceUrl": "https://www.samsung.com/africa_en/smartphones/galaxy-z/galaxy-z-flip5-graphite-256gb-sm-f731bzaaafa/",
+    "sourcePageSha256": "6ce09b8ad3ed85e2ea4381855acdb13f45f220f44bdc344316885398ebd49a37",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=africa_en&modelList=SM-F731BZAAAFA&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "6.7 inch AMOLED, 120 Hz; màn ngoài 3.4 inch",
+    "chip": "Snapdragon 8 Gen 2 for Galaxy",
+    "ram": "8 GB",
+    "storage": [
+      256,
+      512
+    ],
+    "colors": [
+      "Graphite",
+      "Cream",
+      "Mint"
+    ],
+    "camera": "12 MP + 12 MP",
+    "battery": "3700 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl047-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/africa_en/sm-f731bzaaafa/gallery/africa-en-galaxy-z-flip5-f731-467794-sm-f731bzaaafa-538007207?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "fc915a6683731a84d878a54b7ef1829f84e56fb16c44cc77090cc632166d0a05",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 138,
+          "y": 196,
+          "width": 322,
+          "height": 406
+        },
+        "view": "original",
+        "wrapperSha256": "a3ca3d4c40463f77f212ba974efcba62444cce9573fdc9362cad668762be2c3f",
+        "sourceAlt": "Galaxy Z Flip5 overview"
+      },
+      {
+        "file": "rl047-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/africa_en/sm-f731bzaaafa/gallery/africa-en-galaxy-z-flip5-f731-467794-sm-f731bzaaafa-538007188?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "4038501f6020770b743fdb2fa4945cede6d538317edffba05c43ee0443b269cc",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 212,
+          "y": 298,
+          "width": 176,
+          "height": 204
+        },
+        "view": "original",
+        "wrapperSha256": "e04a6c85d003ba95d207025aed6dfa35f448daf51da081cf149881b88aa1a59f",
+        "sourceAlt": "Galaxy Z Flip5 closedfront Graphite"
+      },
+      {
+        "file": "rl047-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/africa_en/sm-f731bzaaafa/gallery/africa-en-galaxy-z-flip5-f731-467794-sm-f731bzaaafa-538007189?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "51682d035910092a2c54893c8bc77807fc6ca4d6504cfd30df3f0659da6221e9",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 212,
+          "y": 298,
+          "width": 176,
+          "height": 204
+        },
+        "view": "original",
+        "wrapperSha256": "b9395d652fa03daddb9ffecde3b7941e80e013a0c56d8e5579b2a9fb4128f8ba",
+        "sourceAlt": "Galaxy Z Flip5 closedback Graphite"
+      }
+    ]
+  },
+  {
+    "code": "RL048",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy Z Fold5",
+    "sourceUrl": "https://www.samsung.com/ph/smartphones/galaxy-z/galaxy-z-fold5-icy-blue-256gb-sm-f946blbdphl/buy/",
+    "sourcePageSha256": "93bc8e14932b010af3f29898b73fcab8548e103335ec304714c8c44f15641c1e",
+    "photoApiUrl": "https://searchapi.samsung.com/v6/front/b2c/product/card/detail/global?siteCode=ph&modelList=SM-F946BLBDPHL&saleSkuYN=N&onlyRequestSkuYN=Y",
+    "display": "7.6 inch AMOLED, 120 Hz; màn ngoài 6.2 inch",
+    "chip": "Snapdragon 8 Gen 2 for Galaxy",
+    "ram": "12 GB",
+    "storage": [
+      256,
+      512,
+      1024
+    ],
+    "colors": [
+      "Phantom Black",
+      "Icy Blue"
+    ],
+    "camera": "50 MP + 12 MP + 10 MP",
+    "battery": "4400 mAh",
+    "charging": "25 W",
+    "os": "Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl048-1.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/2307/gallery/ph-galaxy-z-fold5-f946-sm-f946blbdphl-537227533?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "a503d2e2c948650caf09f917cd0e460cb416f385afb771c037ec74c3db61aca1",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 157,
+          "y": 203,
+          "width": 286,
+          "height": 394
+        },
+        "view": "original",
+        "wrapperSha256": "a7b9d6736f9ecb641a5b61c67e50f0a28d103fb6946082f7c308b7667ef5e35b",
+        "sourceAlt": "Galaxy Z Fold5 overview"
+      },
+      {
+        "file": "rl048-2.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/2307/gallery/ph-galaxy-z-fold5-f946-sm-f946blbdphl-537227518?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "8f0f9b3fd9eb38d08ce88b775a707c596ce2e932e6b5ce8c1cba07b02c785371",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 203,
+          "y": 203,
+          "width": 186,
+          "height": 394
+        },
+        "view": "original",
+        "wrapperSha256": "2150e217d84d95a3fbe4d61a98f15246efed6a52db53b2bd32af66ed790715c9",
+        "sourceAlt": "Galaxy Z Fold5 front2 Icy Blue"
+      },
+      {
+        "file": "rl048-3.svg",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/2307/gallery/ph-galaxy-z-fold5-f946-sm-f946blbdphl-537227519?wid=600&hei=800&fmt=png-alpha",
+        "sha256": "220a0af33ec64a6b72e94af6dd3e0e317ebf59c900c39909b7ce5d05a0706c10",
+        "width": 600,
+        "height": 800,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 215,
+          "y": 203,
+          "width": 170,
+          "height": 394
+        },
+        "view": "original",
+        "wrapperSha256": "e64ff566edee7e684a4bde951e044c6eaa5dbe4b9e92f4f8c3ff0ddfd016c75d",
+        "sourceAlt": "Galaxy Z Fold5 frontl30 Icy Blue"
+      }
+    ]
+  },
+  {
+    "code": "RL049",
+    "brand": "OPPO",
+    "name": "OPPO Find N3",
+    "sourceUrl": "https://www.oppo.com/en/smartphones/series-find-n/find-n3/specs/",
+    "sourcePageSha256": "8d8ac2015ea113381039851fdfd83d44f020906939a5444f7275a7863f4bc861",
+    "photoApiUrl": null,
+    "display": "7.82 inch AMOLED, 120 Hz; màn ngoài 6.31 inch",
+    "chip": "Snapdragon 8 Gen 2",
+    "ram": "16 GB",
+    "storage": [
+      512
+    ],
+    "colors": [
+      "Classic Black",
+      "Champagne Gold"
+    ],
+    "camera": "48 MP + 48 MP + 64 MP",
+    "battery": "4805 mAh",
+    "charging": "67 W",
+    "os": "ColorOS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl049-1.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-en/specs/find-n3.png",
+        "sha256": "852f35226e6de095952d07ca0e6669943d978541762be18fe9b1008f1692cdb6",
+        "width": 920,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 920,
+          "height": 722
+        },
+        "view": "original",
+        "wrapperSha256": "ca600676ad0a5e7ff9839f8d3d9ade024f3a5db7cf0cb9474e4e263fdc4ae45c",
+        "sourceAlt": "OPPO Find N3"
+      },
+      {
+        "file": "rl049-2.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-en/specs/find-n3.png",
+        "sha256": "852f35226e6de095952d07ca0e6669943d978541762be18fe9b1008f1692cdb6",
+        "width": 920,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 552,
+          "height": 722
+        },
+        "view": "left-detail",
+        "wrapperSha256": "408e3d4e8a97c2acbd3d85f0c78dae02b6bb375932e6e0328e9334750b6e94c5",
+        "sourceAlt": "Verified manufacturer photograph: OPPO Find N3"
+      },
+      {
+        "file": "rl049-3.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-cn/listpage/find-n3-427_600-gold.png",
+        "sha256": "fc1ba6da80a2174b63e7f22fd8211d712731462950188ee1f2332673ce2ed488",
+        "width": 427,
+        "height": 600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 427,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "6c6429d2c76376d270121c97f7b6135cf6a99cc136ef7a9ec3a2529337906e2b",
+        "sourceAlt": "official social preview"
+      }
+    ]
+  },
+  {
+    "code": "RL050",
+    "brand": "OPPO",
+    "name": "OPPO Find N3 Flip",
+    "sourceUrl": "https://www.oppo.com/en/smartphones/series-find-n/find-n3-flip/specs/",
+    "sourcePageSha256": "9f9bfc8cb94f1a1fbfce921e055a64b5f1fd4fdb179b142ad64bced76842261f",
+    "photoApiUrl": null,
+    "display": "6.8 inch AMOLED, 120 Hz; màn ngoài 3.26 inch",
+    "chip": "MediaTek Dimensity 9200",
+    "ram": "12 GB",
+    "storage": [
+      256
+    ],
+    "colors": [
+      "Sleek Black",
+      "Cream Gold"
+    ],
+    "camera": "50 MP + 48 MP + 32 MP",
+    "battery": "4300 mAh",
+    "charging": "44 W",
+    "os": "ColorOS / Android",
+    "network": "5G",
+    "photos": [
+      {
+        "file": "rl050-1.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-flip-en/specs/find-n3-flip.png",
+        "sha256": "f1f5770826b7c828930fa0d153d532fdfbce8361e0acca8a99ccda28ec58c760",
+        "width": 984,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 984,
+          "height": 721
+        },
+        "view": "original",
+        "wrapperSha256": "e9cfa162be8b5e348de446b9fa72ac49363e60556eb9e896bcc16d55d35cc599",
+        "sourceAlt": "OPPO Find N3 Flip"
+      },
+      {
+        "file": "rl050-2.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-flip-en/specs/find-n3-flip.png",
+        "sha256": "f1f5770826b7c828930fa0d153d532fdfbce8361e0acca8a99ccda28ec58c760",
+        "width": 984,
+        "height": 720,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 591,
+          "height": 721
+        },
+        "view": "left-detail",
+        "wrapperSha256": "b65a188e709ddee4effcda20e479a2da194130d43d3589f939099bb254d87ca6",
+        "sourceAlt": "Verified manufacturer photograph: OPPO Find N3 Flip"
+      },
+      {
+        "file": "rl050-3.svg",
+        "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-flip-en/listpage/find-n3-flip-427_600-gold.png",
+        "sha256": "b8f9c1c890cd92b2cb831467c4dfb4cddda38d4a1eed1a2471e731851d4ff742",
+        "width": 427,
+        "height": 600,
+        "mediaType": "image/png",
+        "crop": {
+          "x": 0,
+          "y": 0,
+          "width": 427,
+          "height": 600
+        },
+        "view": "original",
+        "wrapperSha256": "5ef7b2156a10983126c06e7e4c7f2946a61d6ce0919a3c54fc3dcde052b0635b",
+        "sourceAlt": "official social preview"
+      }
+    ]
+  }
+]

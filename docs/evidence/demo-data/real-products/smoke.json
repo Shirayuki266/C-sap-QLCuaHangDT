@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "actualFullDemo": true,
+  "realKestrel": true,
+  "actualReleaseWinForms": true,
+  "fakeApi": false,
+  "agentAssisted": true,
+  "baselineBusinessHash": "7eb6f8aa9ccc6a765bff547b70bdce7322848ddd333f050605bacedc953286ab",
+  "afterBusinessHash": "7eb6f8aa9ccc6a765bff547b70bdce7322848ddd333f050605bacedc953286ab",
+  "zeroSessions": true,
+  "webDllSha256": "02BCE2971FE4A89C6B3B0DC8A657F5EDED6CB4053A5455FB3254587A3A38AF46",
+  "adminExeSha256": "0861208CEF4096D280F53382320FB13EEC84AF959420EC882E89F8FAB51E2EDA",
+  "adminDllSha256": "B69609F5A271CDB9510B7E6C00D18F4CA523CF8055AC96344F5B6A8C5396565D"
+}

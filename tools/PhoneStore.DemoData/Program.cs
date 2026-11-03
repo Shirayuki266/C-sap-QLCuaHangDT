@@ -67,7 +67,7 @@ public static class Program
                 }).ToArray()
             };
             var hash = BusinessManifest.Hash(canonical);
-            var summary = new { Stage = "D2", plan.Seed, plan.AsOf, plan.Scale, Hash = hash,
+            var summary = new { Stage = "D2", plan.Catalog, plan.Seed, plan.AsOf, plan.Scale, Hash = hash,
                 ElapsedMilliseconds = timer.ElapsedMilliseconds, Manifest = canonical, Verification = report };
             await Save(options.Output, summary);
             Print(report);
