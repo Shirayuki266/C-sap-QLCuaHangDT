@@ -1,0 +1,327 @@
+{
+  "result": "PASS",
+  "realBrowser": true,
+  "realHost": true,
+  "fakeApi": false,
+  "checks": [
+    {
+      "name": "current-month home bestsellers",
+      "products": 8
+    },
+    {
+      "name": "all active products, actual photos/descriptions/specifications",
+      "products": 46
+    },
+    {
+      "name": "real MVC login and owned history",
+      "orders": 153,
+      "visible": 20
+    }
+  ],
+  "timings": [
+    {
+      "label": "home",
+      "route": "/Home/Index",
+      "milliseconds": 315.5758000000001
+    },
+    {
+      "label": "catalog-page-1",
+      "route": "/Catalog/Index?page=1",
+      "milliseconds": 291.6794
+    },
+    {
+      "label": "catalog-page-2",
+      "route": "/Catalog/Index?page=2",
+      "milliseconds": 142.04050000000007
+    },
+    {
+      "label": "catalog-page-3",
+      "route": "/Catalog/Index?page=3",
+      "milliseconds": 91.38090000000011
+    },
+    {
+      "label": "catalog-page-4",
+      "route": "/Catalog/Index?page=4",
+      "milliseconds": 153.19320000000016
+    },
+    {
+      "label": "product-5",
+      "route": "/Catalog/Details/5",
+      "milliseconds": 103.5658999999996
+    },
+    {
+      "label": "product-6",
+      "route": "/Catalog/Details/6",
+      "milliseconds": 64.85510000000068
+    },
+    {
+      "label": "product-7",
+      "route": "/Catalog/Details/7",
+      "milliseconds": 57.168799999999464
+    },
+    {
+      "label": "product-8",
+      "route": "/Catalog/Details/8",
+      "milliseconds": 57.879800000000614
+    },
+    {
+      "label": "product-9",
+      "route": "/Catalog/Details/9",
+      "milliseconds": 56.98419999999987
+    },
+    {
+      "label": "product-10",
+      "route": "/Catalog/Details/10",
+      "milliseconds": 71.92799999999988
+    },
+    {
+      "label": "product-11",
+      "route": "/Catalog/Details/11",
+      "milliseconds": 58.36570000000029
+    },
+    {
+      "label": "product-12",
+      "route": "/Catalog/Details/12",
+      "milliseconds": 58.48729999999978
+    },
+    {
+      "label": "product-13",
+      "route": "/Catalog/Details/13",
+      "milliseconds": 56.00120000000061
+    },
+    {
+      "label": "product-14",
+      "route": "/Catalog/Details/14",
+      "milliseconds": 54.29809999999998
+    },
+    {
+      "label": "product-15",
+      "route": "/Catalog/Details/15",
+      "milliseconds": 62.02360000000044
+    },
+    {
+      "label": "product-16",
+      "route": "/Catalog/Details/16",
+      "milliseconds": 58.79230000000007
+    },
+    {
+      "label": "product-17",
+      "route": "/Catalog/Details/17",
+      "milliseconds": 56.537100000000464
+    },
+    {
+      "label": "product-18",
+      "route": "/Catalog/Details/18",
+      "milliseconds": 55.63120000000072
+    },
+    {
+      "label": "product-19",
+      "route": "/Catalog/Details/19",
+      "milliseconds": 70.07420000000002
+    },
+    {
+      "label": "product-20",
+      "route": "/Catalog/Details/20",
+      "milliseconds": 57.67120000000068
+    },
+    {
+      "label": "product-21",
+      "route": "/Catalog/Details/21",
+      "milliseconds": 57.01409999999942
+    },
+    {
+      "label": "product-22",
+      "route": "/Catalog/Details/22",
+      "milliseconds": 58.97929999999997
+    },
+    {
+      "label": "product-23",
+      "route": "/Catalog/Details/23",
+      "milliseconds": 56.84339999999975
+    },
+    {
+      "label": "product-24",
+      "route": "/Catalog/Details/24",
+      "milliseconds": 56.87029999999959
+    },
+    {
+      "label": "product-25",
+      "route": "/Catalog/Details/25",
+      "milliseconds": 57.97099999999955
+    },
+    {
+      "label": "product-26",
+      "route": "/Catalog/Details/26",
+      "milliseconds": 55.78570000000036
+    },
+    {
+      "label": "product-27",
+      "route": "/Catalog/Details/27",
+      "milliseconds": 42.0618000000004
+    },
+    {
+      "label": "product-28",
+      "route": "/Catalog/Details/28",
+      "milliseconds": 55.72789999999986
+    },
+    {
+      "label": "product-29",
+      "route": "/Catalog/Details/29",
+      "milliseconds": 57.807300000000396
+    },
+    {
+      "label": "product-30",
+      "route": "/Catalog/Details/30",
+      "milliseconds": 56.1287999999995
+    },
+    {
+      "label": "product-31",
+      "route": "/Catalog/Details/31",
+      "milliseconds": 59.41789999999946
+    },
+    {
+      "label": "product-32",
+      "route": "/Catalog/Details/32",
+      "milliseconds": 59.030799999999545
+    },
+    {
+      "label": "product-33",
+      "route": "/Catalog/Details/33",
+      "milliseconds": 55.504399999999805
+    },
+    {
+      "label": "product-34",
+      "route": "/Catalog/Details/34",
+      "milliseconds": 58.85239999999976
+    },
+    {
+      "label": "product-35",
+      "route": "/Catalog/Details/35",
+      "milliseconds": 57.069000000000415
+    },
+    {
+      "label": "product-36",
+      "route": "/Catalog/Details/36",
+      "milliseconds": 57.488000000000284
+    },
+    {
+      "label": "product-37",
+      "route": "/Catalog/Details/37",
+      "milliseconds": 53.894499999999425
+    },
+    {
+      "label": "product-38",
+      "route": "/Catalog/Details/38",
+      "milliseconds": 53.8734000000004
+    },
+    {
+      "label": "product-39",
+      "route": "/Catalog/Details/39",
+      "milliseconds": 70.98599999999988
+    },
+    {
+      "label": "product-40",
+      "route": "/Catalog/Details/40",
+      "milliseconds": 71.02089999999953
+    },
+    {
+      "label": "product-41",
+      "route": "/Catalog/Details/41",
+      "milliseconds": 66.45750000000044
+    },
+    {
+      "label": "product-42",
+      "route": "/Catalog/Details/42",
+      "milliseconds": 71.65380000000005
+    },
+    {
+      "label": "product-43",
+      "route": "/Catalog/Details/43",
+      "milliseconds": 55.73649999999907
+    },
+    {
+      "label": "product-44",
+      "route": "/Catalog/Details/44",
+      "milliseconds": 55.53019999999924
+    },
+    {
+      "label": "product-45",
+      "route": "/Catalog/Details/45",
+      "milliseconds": 57.006100000000515
+    },
+    {
+      "label": "product-46",
+      "route": "/Catalog/Details/46",
+      "milliseconds": 93.01190000000133
+    },
+    {
+      "label": "product-47",
+      "route": "/Catalog/Details/47",
+      "milliseconds": 58.13559999999961
+    },
+    {
+      "label": "product-48",
+      "route": "/Catalog/Details/48",
+      "milliseconds": 55.679299999999785
+    },
+    {
+      "label": "product-49",
+      "route": "/Catalog/Details/49",
+      "milliseconds": 74.9427999999989
+    },
+    {
+      "label": "product-50",
+      "route": "/Catalog/Details/50",
+      "milliseconds": 56.79570000000058
+    },
+    {
+      "label": "catalog-timing-0",
+      "route": "/Catalog/Index",
+      "milliseconds": 71.47799999999916
+    },
+    {
+      "label": "catalog-timing-1",
+      "route": "/Catalog/Index",
+      "milliseconds": 67.54650000000038
+    },
+    {
+      "label": "catalog-timing-2",
+      "route": "/Catalog/Index",
+      "milliseconds": 65.75520000000142
+    },
+    {
+      "label": "catalog-timing-3",
+      "route": "/Catalog/Index",
+      "milliseconds": 67.47509999999966
+    },
+    {
+      "label": "catalog-timing-4",
+      "route": "/Catalog/Index",
+      "milliseconds": 67.54310000000078
+    },
+    {
+      "label": "customer-login",
+      "route": "/Account/Login",
+      "milliseconds": 98.55329999999958
+    },
+    {
+      "label": "customer-history",
+      "route": "/Orders/Index",
+      "milliseconds": 105.507599999999
+    },
+    {
+      "label": "customer-order",
+      "route": "/Orders/Details/379",
+      "milliseconds": 93.07769999999982
+    }
+  ],
+  "screens": [
+    "mvc-home.png",
+    "mvc-catalog.png",
+    "mvc-product.png",
+    "mvc-customer-history.png",
+    "mvc-customer-order.png"
+  ],
+  "pageErrors": [],
+  "thresholdMilliseconds": 5000
+}

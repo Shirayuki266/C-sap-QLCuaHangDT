@@ -1,0 +1,25 @@
+{
+  "Counts": {
+    "__PhoneStoreMigrations": 1,
+    "BIEN_THE": 125,
+    "DANH_MUC": 6,
+    "DON_HANG": 601,
+    "DON_HANG_CT": 813,
+    "GIO_HANG_CT": 25,
+    "HANG": 10,
+    "KHACH_HANG": 60,
+    "LICH_SU_DON": 2314,
+    "NHA_CUNG_CAP": 12,
+    "NHAT_KY_KHO": 1904,
+    "PHIEN": 0,
+    "PHIEU_NHAP": 56,
+    "PHIEU_NHAP_CT": 275,
+    "SAN_PHAM": 50,
+    "SAN_PHAM_ANH": 150,
+    "TAI_KHOAN": 61,
+    "THANH_TOAN": 601,
+    "TON_KHO": 125
+  },
+  "Errors": [],
+  "Valid": true
+}

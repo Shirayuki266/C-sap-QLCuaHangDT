@@ -1,6 +1,6 @@
-# Demo data — D2 chronological sales
+# Demo data — creation, verification and D3 acceptance
 
-D2 extends the separate `net10.0` executable with eight complete quarters and the current partial quarter of purchases, COD orders, history, stock and carts. Full uses the original quarter targets, totaling **601 orders**, plus 56 purchases. All business effects go through existing services with a simulated `TimeProvider`. D3 UI acceptance and the final gate remain separate.
+The separate `net10.0` executable creates eight complete quarters and the current partial quarter of purchases, COD orders, history, stock and carts. Full uses the original quarter targets, totaling **601 orders**, plus 56 purchases. All business effects go through existing services with a simulated `TimeProvider`. D3 verifies the resulting full database through the unchanged applications; the evidence below records actual browser and Release WinForms runs.
 
 The approved sources are preserved verbatim in [file 11](demo-data/sources/11_DAC_TA_DU_LIEU_DEMO.md) and [file 12](demo-data/sources/12_PROMPT_DU_LIEU_DEMO.md), including section 2b. Option A uses fictional brand/model names, original Vietnamese descriptions and programmatically drawn SVG illustrations. All people/contact/address records are fictional; email is `example.com` or NULL. Phone-format validity does not assert that a generated number is allocated or contactable.
 
@@ -100,10 +100,57 @@ dotnet run --project tests/PhoneStore.DemoData.Checks -c Release -- --integratio
 
 The integration runner creates a unique `PhoneStore_QA_DemoD1_<GUID>` database (the retained D1 fixture prefix), injects random test-only passwords through the environment and removes only its database. It retains D1 safety/SQL/image coverage and adds standalone verification without secrets, six deliberate QA corruption cases and real first-of-month/quarter service runs. The historical stock corruption is balanced at the end: old `DataAudit` passes while the new prefix-balance SQL correctly rejects the invalid history. Every mutation is restored. The existing demo-data CI step runs the extended small tests; no old CI step or earlier backend/MVC/Admin regression test is changed.
 
-## Evidence and remaining D3 work
+## Environment variables
 
-See the historical [D1 checklist](demo-data/D1_CHECKLIST.md), current [D2 checklist](demo-data/D2_CHECKLIST.md), [SQL coverage map](demo-data/D2_VERIFICATION.md), and [D2 evidence](evidence/demo-data/d2-summary.json). Build/run measurements refer to data generation and SQL acceptance, not the later application performance smoke.
+Configure these externally. This table intentionally contains names and purposes only, without values or credentials.
+
+| Name | Purpose |
+|---|---|
+| `ConnectionStrings__Store` | Explicit dedicated demo/QA SQL target for migration, generation, verification and the real Web host |
+| `PHONESTORE_DEMO_ADMIN_PASSWORD` | Required administrator password during generation and authenticated D3 smoke |
+| `PHONESTORE_DEMO_CUSTOMER_PASSWORD` | Required customer password during generation and authenticated D3 smoke |
+| `ASPNETCORE_ENVIRONMENT`, `DOTNET_ENVIRONMENT` | Environment selection for application commands; the D3 child host selects its isolated test environment |
+| `PHONESTORE_TEST_CONNECTION`, `PHONESTORE_QA_SERVER`, `PHONESTORE_QA_DATABASE` | Matching allowlisted QA configuration for existing regression and demo-data integration runners |
+| `PHONESTORE_PLAYWRIGHT_MODULE` | Optional path to the locally installed Playwright module |
+| `PHONESTORE_DEMO_SMOKE_OUTPUT` | Optional destination for D3 sanitized results and screenshots |
+
+The D3 parent supplies `PHONESTORE_DEMO_CONTEXT`, `PHONESTORE_WALK_APP`, `PHONESTORE_WALK_OUTPUT`, `PHONESTORE_WALK_SIGNALS`, `PHONESTORE_ADMIN_QA_URL`, `PHONESTORE_ADMIN_QA_USERNAME` and `PHONESTORE_ADMIN_QA_PASSWORD` to its child observers. They are implementation inputs, not saved configuration. Never capture environment dumps, login HAR files, cookie jars or browser storage states as evidence.
+
+## D3 real application smoke and performance
+
+Use an interactive Windows desktop, .NET 10, SQL Server, Node and the same local Playwright/Chromium installation used by the existing MVC browser checks. First run the existing `--mvc-catalog-browser` check if that installation is missing. Build the solution in Release. Create and migrate a fresh dedicated database whose name starts with `PhoneStore_Demo_D3_`; seed it with **full** scale and today's default `--as-of`. Keep the two passwords in the parent environment for the authenticated smoke, then clear them. Do not use the databases owned by earlier test suites.
+
+```powershell
+dotnet build PhoneStore.slnx -c Release
+# Connection and password variables must already be supplied externally.
+# Run the migration and full seed commands above, with today's default --as-of.
+dotnet run --no-build -c Release --project tests/PhoneStore.DemoData.Checks -- --demo-smoke
+# Then run the read-only --verify-demo-data command above against the seed manifest.
+```
+
+`--demo-smoke` belongs to the new demo-data test executable, not to the shipping application or seeder. It requires 601 orders, the current schema, no existing sessions and a dedicated D3 target. It starts the real Release Web DLL on loopback, calls the existing `--audit-db` before and after, and checks authenticated ADMIN paging, all nine quarterly revenues against independent SQL, bestsellers, low/zero stock, a completed-order invoice and all 150 image URLs. Chromium visits all 46 active products, verifies their descriptions/specifications/images, and signs in through the MVC form to view a customer's own history and detail.
+
+The native observer launches the actual Release `PhoneStore.Admin.exe`; it does not inject an API or construct test forms. Standard Win32 button input and UI Automation inspect dashboard values, two order pages, a completed order/invoice, revenue/bestseller/stock reports and the stock list. Application-only `PrintWindow` captures avoid photographing unrelated desktop windows. The helper temporarily points public Admin server/stock settings at this demo, restores their original bytes afterwards, and refuses to disturb an already running Admin process. Normal UI logout removes the real sessions. Independent normalized business hashes before/after and SQL verification establish that these reads did not alter the seeded business data.
+
+Recorded on the local Windows/SQL machine with 601 orders, 813 order lines, 125 stock variants and 150 SVGs. HTTP timings include response-body parsing, browser timings include navigation through two animation frames, and WinForms timings include button input and observation of rendered server data. Five extra warm HTTP list/report pairs and five warm browser catalog samples are retained in JSON. Limits were selected before measurement: HTTP < 2 seconds; browser/native < 5 seconds. These are local acceptance measurements, not concurrent-load or remote-network benchmarks.
+
+| Actual operation | Recorded elapsed time |
+|---|---:|
+| ADMIN HTTP first / second order page | 333.7 / 62.8 ms |
+| ADMIN HTTP quarterly revenue, maximum of nine | 121.3 ms |
+| MVC catalog first page, 46 active products across four pages | 291.7 ms |
+| WinForms first / second order page | 697.0 / 307.1 ms |
+| WinForms revenue / bestsellers / stock report | 186.9 / 186.7 / 181.9 ms |
+| WinForms stock list | 405.6 ms |
+
+The real dashboard shows zero revenue **today** because the deterministic snapshot stops at the beginning of `--as-of`; its 30-day revenue and current-month bestsellers are populated. The eight displayed homepage bestsellers are the application's display limit; SQL finds twelve eligible products in this recorded month. The physical low-stock metric uses `OnHand <= 5`, while the UI uses available stock `OnHand - Reserved <= 5`; both happen to be eight in this snapshot, including three physically empty variants. Four retired products remain in historical orders and inventory but are absent from the 46-product public catalog. Recreate with the current date before a later demonstration, otherwise time-based homepage/report windows naturally move beyond this historical snapshot.
+
+## Evidence and final gate
+
+See the historical [D1 checklist](demo-data/D1_CHECKLIST.md), [D2 checklist](demo-data/D2_CHECKLIST.md), [SQL coverage map](demo-data/D2_VERIFICATION.md), [D2 evidence](evidence/demo-data/d2-summary.json), and final [D3 checklist](demo-data/D3_CHECKLIST.md). [summary.json](evidence/demo-data/summary.json) links the full SQL report, audit results, per-operation measurements, real screenshots and regression results. The D1/D2 documents remain historical records.
 
 Correction to the D1 report: the source quarter rows sum to **601**, exactly as the user stated. The earlier note saying 701 was an arithmetic mistake. D2 uses every original target exactly, without raising the total to 630 or altering the source documents.
 
-D3 still owns the explicit Web `--audit-db` CLI evidence, real Admin/MVC/WinForms walkthroughs, application performance measurements and final acceptance. No deployment, merge, release or tag is included. The legacy Web `--seed-demo` command and `DemoSeeder` are unchanged.
+D3 reran the unchanged backend/SQL suites, all five previous MVC browser suites, Admin Client W1–W6 checks, native forms/DPI checks, all five real desktop integration modes, the earlier actual Release walkthrough, and the 24-group D1/D2 demo-data integration suite. That suite again proved nonzero verification exits for six deliberate QA corruptions, restored each mutation, and exercised three month/quarter boundary dates. The fresh full D3 seed and its post-UI verification retain the D2 normalized manifest hash.
+
+The repository evidence is an explicitly **pre-CI snapshot**: 42 PASS, with `DATA.GATE.01` NOT RUN until remote CI is green on the final PR head. The PR's final verification supplies that exact head SHA, both CI results/URL and the final 43-ID counts; it supersedes this single pre-CI status without pretending a commit can embed its own future CI result. A failed or superseded head cannot pass the gate. Scope follows file 11's precise gate and file 12 section 2b decision 8 (new tool/tests, docs, solution registration, additive CI and new static images), which clarify the D3 prompt's abbreviated scope sentence. This D3 diff changes only demo-data tests and documentation/evidence; no runtime source, old regression, schema, migration, API, MVC, WinForms or CI step changes. No deployment, merge, release or tag is included. The legacy Web `--seed-demo` and `DemoSeeder` are unchanged.
