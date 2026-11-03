@@ -1,0 +1,260 @@
+﻿[
+    {
+        "Id":  "DATA.SAFE.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.04",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.05",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SAFE.06",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.SCALE.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.SCALE.02",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.TIME.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.TIME.02",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.TIME.03",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.TIME.04",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.CATALOG.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.02",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.03",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.04",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.05",
+        "Priority":  "P1",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CATALOG.06",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.CATALOG.07",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.CUST.01",
+        "Priority":  "P0",
+        "Status":  "PASS",
+        "Reason":  "D1: persisted SQL, CLI safety/reset/reproducibility and real HTTP evidence; see d1-summary.json."
+    },
+    {
+        "Id":  "DATA.CUST.02",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D1 profile/date/lock/address portion delivered. Order frequency and exactly two customers without orders require D2; no orders created in D1."
+    },
+    {
+        "Id":  "DATA.CUST.03",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D1 profile/date/lock/address portion delivered. Order frequency and exactly two customers without orders require D2; no orders created in D1."
+    },
+    {
+        "Id":  "DATA.PURCH.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.PURCH.02",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.PURCH.03",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.02",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.03",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.04",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.05",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.06",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.07",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.ORDER.08",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "D2 historical transactions, stock, timeline or lifecycle not implemented in D1."
+    },
+    {
+        "Id":  "DATA.VERIFY.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.VERIFY.02",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.VERIFY.03",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.VERIFY.04",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.VERIFY.05",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.VERIFY.06",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.DOC.01",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.DOC.02",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.GATE.01",
+        "Priority":  "P0",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    },
+    {
+        "Id":  "DATA.GATE.02",
+        "Priority":  "P1",
+        "Status":  "NOT RUN",
+        "Reason":  "Final acceptance belongs to D2/D3; D1 foundation checks/documentation do not establish the complete criterion."
+    }
+]

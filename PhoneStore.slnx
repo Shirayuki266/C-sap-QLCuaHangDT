@@ -7,8 +7,12 @@
     <Project Path="src/PhoneStore.Web/PhoneStore.Web.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/PhoneStore.DemoData.Checks/PhoneStore.DemoData.Checks.csproj" />
     <Project Path="tests/PhoneStore.Admin.Client.Checks/PhoneStore.Admin.Client.Checks.csproj" />
     <Project Path="tests/PhoneStore.Admin.Tests/PhoneStore.Admin.Tests.csproj" />
     <Project Path="tests/PhoneStore.Checks/PhoneStore.Checks.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/PhoneStore.DemoData/PhoneStore.DemoData.csproj" />
   </Folder>
 </Solution>
