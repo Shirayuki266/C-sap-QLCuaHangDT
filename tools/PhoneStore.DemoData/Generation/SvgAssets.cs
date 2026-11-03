@@ -10,6 +10,7 @@ public static class SvgAssets
 
     public static Dictionary<string, string> Render(DemoPlan plan)
     {
+        if (plan.Catalog == "real") return RealCatalog.Render(plan);
         var assets = new Dictionary<string, string>(StringComparer.Ordinal);
         string[] palette = ["#273f65", "#43684c", "#66466e", "#856042", "#355e69", "#635d3c", "#774754", "#425a7a", "#56683e", "#675b80"];
         foreach (var product in plan.Products)

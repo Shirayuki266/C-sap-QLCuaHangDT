@@ -1,8 +1,10 @@
 # Demo data — creation, verification and D3 acceptance
 
+The current requested catalog is **real manufacturers/models and manufacturer images**, selected with `--catalog real`. This follows the user's instruction after D3 and supersedes the earlier fictional option A for the new preview. The original `fictional` profile remains the CLI default for backwards compatibility with D1–D3 commands/evidence. Always pass `--catalog real` for the new dataset. See [REAL_CATALOG.md](demo-data/REAL_CATALOG.md) for provenance and synchronization evidence.
+
 The separate `net10.0` executable creates eight complete quarters and the current partial quarter of purchases, COD orders, history, stock and carts. Full uses the original quarter targets, totaling **601 orders**, plus 56 purchases. All business effects go through existing services with a simulated `TimeProvider`. D3 verifies the resulting full database through the unchanged applications; the evidence below records actual browser and Release WinForms runs.
 
-The approved sources are preserved verbatim in [file 11](demo-data/sources/11_DAC_TA_DU_LIEU_DEMO.md) and [file 12](demo-data/sources/12_PROMPT_DU_LIEU_DEMO.md), including section 2b. Option A uses fictional brand/model names, original Vietnamese descriptions and programmatically drawn SVG illustrations. All people/contact/address records are fictional; email is `example.com` or NULL. Phone-format validity does not assert that a generated number is allocated or contactable.
+The historical approved sources are preserved verbatim in [file 11](demo-data/sources/11_DAC_TA_DU_LIEU_DEMO.md) and [file 12](demo-data/sources/12_PROMPT_DU_LIEU_DEMO.md), including section 2b. Their original option A uses fictional brand/model names, original Vietnamese descriptions and programmatically drawn SVG illustrations. The new explicit `real` profile uses frozen manufacturer facts and real product images instead. In both profiles, people/contact/address records remain fictional; email is `example.com` or NULL. Phone-format validity does not assert that a generated number is allocated or contactable. Orders, costs, prices and stock are illustrative simulated transactions rather than actual manufacturer sales or current retail quotes.
 
 ## Prepare and run
 
@@ -21,7 +23,7 @@ $env:PHONESTORE_DEMO_ADMIN_PASSWORD = [Net.NetworkCredential]::new('', (Read-Hos
 $env:PHONESTORE_DEMO_CUSTOMER_PASSWORD = [Net.NetworkCredential]::new('', (Read-Host 'Demo customer password' -AsSecureString)).Password
 try {
     dotnet run --no-build -c Release --project tools/PhoneStore.DemoData -- `
-        --seed-demo-large --confirm --seed 2611 --as-of 2026-11-03 --scale full `
+        --seed-demo-large --confirm --catalog real --seed 2611 --as-of 2026-11-03 --scale full `
         --images-dir src/PhoneStore.Web/wwwroot/images/demo `
         --output .artifacts/demo-data/dataset.json
 } finally {
@@ -39,6 +41,8 @@ Set `ConnectionStrings__Store` externally before migration/seed. There are no em
 |---|---|
 | `--seed-demo-large --confirm` | Both required when generating data |
 | `--seed <integer>` | Deterministic seed; default 2611 |
+| `--catalog real` | Current requested catalog: genuine models/specifications and locally packaged manufacturer images; requires `--as-of` from 2026-10-01 so the eight-quarter history starts after these 2022–2024 models were introduced |
+| `--catalog fictional` | Historical option A; retained default for compatibility with earlier commands/manifests |
 | `--as-of YYYY-MM-DD` | UTC+7 calendar reference date |
 | `--scale full` | Default: 601 orders, 56 purchases, 50 products/125 variants/150 images, 60 customers + ADMIN, 10 brands, 6 categories, 12 suppliers |
 | `--scale small` | 60 orders, 22 purchases, 6 products/15 variants/18 images, 6 customers + ADMIN, 10 brands, 6 categories, 3 suppliers |

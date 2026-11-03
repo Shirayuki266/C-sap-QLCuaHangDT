@@ -118,6 +118,7 @@ internal static class Program
                     Require(timeline.Carts.Count == (scale == "full" ? 25 : 6), "Cart scenarios.");
                 }
             });
+            RealCatalogChecks.Run(Check);
             if (args.Contains("--integration")) await Integration();
             Console.WriteLine($"PASS {passed} groups" + (args.Contains("--integration") ? " (real SQL + Kestrel)" : " (unit; SQL NOT RUN)"));
             return 0;
@@ -215,6 +216,36 @@ internal static class Program
             });
             await Check("real Kestrel serves all 150 committed SVGs with HTTP 200", async () => await HttpImages(root, target.ConnectionString));
             passed += await D2VerificationChecks.Run(store, summary, images, secrets);
+            await Check("real catalog CLI seeds and verifies isolated SQL with sourced photos and deterministic reset", async () =>
+            {
+                Require(await RunCli([.. cli, "--catalog", "real", "--reset"], secrets) == 0, "Real catalog seed failed.");
+                using var first = JsonDocument.Parse(await File.ReadAllTextAsync(summary));
+                var firstHash = first.RootElement.GetProperty("Hash").GetString();
+                await using (var realDb = store.Open())
+                {
+                    Require(await realDb.Products.CountAsync(x => x.Code.StartsWith("RL")) == 6 && await realDb.Products.AnyAsync(x => x.Name == "Samsung Galaxy A05"), "Real catalog not persisted.");
+                    Require((await new DataAudit(realDb).Run()).Valid && !await realDb.Sessions.AnyAsync(), "Real catalog audit/sessions failed.");
+                }
+                Require(await RunCli([.. cli, "--catalog", "real", "--reset"], secrets) == 0, "Real catalog repeat failed.");
+                using var repeat = JsonDocument.Parse(await File.ReadAllTextAsync(summary));
+                Require(repeat.RootElement.GetProperty("Hash").GetString() == firstHash, "Real catalog normalized hash differs after reset.");
+                Require(await RunCli(["--verify-demo-data", "--manifest", summary, "--images-dir", images, "--output", Path.Combine(directory, "real-verification.json")], secrets) == 0, "Real read-only verification failed.");
+                await using (var realDb = store.Open())
+                {
+                    var original = await realDb.Products.AsNoTracking().SingleAsync(x => x.Code == "RL001");
+                    try
+                    {
+                        await realDb.Products.Where(x => x.Id == original.Id).ExecuteUpdateAsync(s => s.SetProperty(x => x.Name, "Tên model bị sửa sai trong QA"));
+                        var reportPath = Path.Combine(directory, "real-desync.json");
+                        Require(await RunCli(["--verify-demo-data", "--manifest", summary, "--images-dir", images, "--output", reportPath], secrets) != 0, "Real model desynchronization accepted.");
+                        using var failure = JsonDocument.Parse(await File.ReadAllTextAsync(reportPath));
+                        Require(failure.RootElement.GetProperty("Errors").EnumerateArray().Any(x => x.GetString() == "RealProductMismatches"), "Independent real fact/name check not exercised.");
+                    }
+                    finally { await realDb.Products.Where(x => x.Id == original.Id).ExecuteUpdateAsync(s => s.SetProperty(x => x.Name, original.Name)); }
+                }
+                Require(await RunCli(["--verify-demo-data", "--manifest", summary, "--images-dir", images, "--output", Path.Combine(directory, "real-restored.json")], secrets) == 0, "Real model restoration failed.");
+                await HttpImages(root, target.ConnectionString, "real");
+            });
         }
         finally
         {
@@ -249,7 +280,7 @@ internal static class Program
         return path?.FullName ?? throw new InvalidOperationException("Repository root missing.");
     }
 
-    private static async Task HttpImages(string root, string connection)
+    private static async Task HttpImages(string root, string connection, string catalog = "fictional")
     {
         using var listener = new TcpListener(IPAddress.Loopback, 0);
         listener.Start(); var port = ((IPEndPoint)listener.LocalEndpoint).Port; listener.Stop();
@@ -273,7 +304,7 @@ internal static class Program
                 await Task.Delay(200);
             }
             Require(ready, "Host readiness timeout.");
-            var plan = DemoPlan.Create(OptionsFor());
+            var plan = DemoPlan.Create(OptionsFor() with { Catalog = catalog });
             foreach (var (file, svg) in SvgAssets.Render(plan))
             {
                 var physical = Path.Combine(root, "src", "PhoneStore.Web", "wwwroot", "images", "demo", file);

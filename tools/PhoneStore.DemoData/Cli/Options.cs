@@ -8,6 +8,7 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
 {
     public bool VerifyOnly { get; init; }
     public string? ManifestPath { get; init; }
+    public string Catalog { get; init; } = "fictional";
     public static Options Parse(string[] args, DateOnly today)
     {
         var flags = new HashSet<string>(StringComparer.Ordinal);
@@ -19,7 +20,7 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
             {
                 if (!flags.Add(key)) throw new ArgumentException("Cờ bị lặp.");
             }
-            else if (key is "--seed" or "--as-of" or "--scale" or "--images-dir" or "--output" or "--manifest")
+            else if (key is "--seed" or "--as-of" or "--scale" or "--images-dir" or "--output" or "--manifest" or "--catalog")
             {
                 if (++i >= args.Length || args[i].StartsWith("--", StringComparison.Ordinal) || !values.TryAdd(key, args[i]))
                     throw new ArgumentException("Tham số thiếu giá trị hoặc bị lặp.");
@@ -40,12 +41,16 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
         if (asOf > today || asOf.Year < 2002) throw new ArgumentException("--as-of không được ở tương lai hoặc trước năm 2002.");
         var scale = values.GetValueOrDefault("--scale", "full");
         if (scale is not ("small" or "full")) throw new ArgumentException("--scale chỉ nhận small hoặc full.");
+        var catalog = values.GetValueOrDefault("--catalog", "fictional");
+        if (catalog is not ("fictional" or "real")) throw new ArgumentException("--catalog chỉ nhận fictional hoặc real.");
+        if (!verify && catalog == "real" && asOf < new DateOnly(2026, 10, 1))
+            throw new ArgumentException("Danh mục thật cần --as-of từ 2026-10-01 để toàn bộ lịch sử bắt đầu sau khi các model đã ra mắt.");
         if (!values.TryGetValue("--images-dir", out var images) || !values.TryGetValue("--output", out var output))
             throw new ArgumentException("Cần --images-dir và --output rõ ràng.");
         var outputPath = Path.GetFullPath(output);
         var manifestPath = values.TryGetValue("--manifest", out var manifest) ? Path.GetFullPath(manifest) : null;
         if (verify && string.Equals(outputPath, manifestPath, StringComparison.OrdinalIgnoreCase)) throw new ArgumentException("Không ghi đè manifest bằng báo cáo kiểm chứng.");
-        return new(seed, asOf, scale, flags.Contains("--reset"), Path.GetFullPath(images), outputPath) { VerifyOnly = verify, ManifestPath = manifestPath };
+        return new(seed, asOf, scale, flags.Contains("--reset"), Path.GetFullPath(images), outputPath) { VerifyOnly = verify, ManifestPath = manifestPath, Catalog = catalog };
     }
 
     public static string GuardConnection(string? connection)

@@ -1,0 +1,306 @@
+{
+    "Stage":  "Real product catalog synchronization",
+    "Issue":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/119",
+    "BaseDevelop":  "f3130c96079f0c2a49dc353ffdba23399f3b74bf",
+    "Branch":  "feature/demo-real-products-sync",
+    "Catalog":  "real",
+    "SourceOverride":  "User explicitly replaced fictional option A after D3; earlier evidence remains historical",
+    "Seed":  2611,
+    "AsOf":  "2026-11-03",
+    "Scale":  "full",
+    "Database":  "PhoneStore_Demo_D3_Real_d510b70512",
+    "CurrentPreview":  "http://localhost:5080",
+    "CatalogFacts":  {
+                         "Models":  50,
+                         "ManufacturerFamilies":  10,
+                         "Variants":  125,
+                         "ImageViews":  150,
+                         "DistinctManufacturerBitmaps":  132,
+                         "StaticBytes":  31057382,
+                         "Source":  "tools/PhoneStore.DemoData/Catalog/real-products.json",
+                         "SourceSha256":  "C843CD7F68B3F044E3FA929EE42E21F6095FE22E7EB787720C4324E328F14E29",
+                         "RetrievalDate":  "2026-11-03",
+                         "RemoteFetchDuringSeedOrCi":  false,
+                         "OriginalBitmapBytesVerified":  true,
+                         "AiGeneratedPhones":  false,
+                         "GalleryReview":  "All three source contact sheets inspected; unrelated OPPO navigation watches, generic POCO logo, empty feature backgrounds and neighboring ASUS models removed. Detail viewports use the same verified manufacturer rendering where separate valid images were unavailable."
+                     },
+    "Synchronization":  {
+                            "RealProductMismatches":  0,
+                            "RealVariantMismatches":  0,
+                            "RealPhotoMismatches":  0,
+                            "RealSnapshotMismatches":  0,
+                            "RealPhotoDigestMismatches":  0
+                        },
+    "Verification":  {
+                         "Valid":  true,
+                         "Counts":  {
+                                        "__PhoneStoreMigrations":  1,
+                                        "BIEN_THE":  125,
+                                        "DANH_MUC":  6,
+                                        "DON_HANG":  601,
+                                        "DON_HANG_CT":  813,
+                                        "GIO_HANG_CT":  25,
+                                        "HANG":  10,
+                                        "KHACH_HANG":  60,
+                                        "LICH_SU_DON":  2314,
+                                        "NHA_CUNG_CAP":  12,
+                                        "NHAT_KY_KHO":  1904,
+                                        "PHIEN":  0,
+                                        "PHIEU_NHAP":  56,
+                                        "PHIEU_NHAP_CT":  275,
+                                        "SAN_PHAM":  50,
+                                        "SAN_PHAM_ANH":  150,
+                                        "TAI_KHOAN":  61,
+                                        "THANH_TOAN":  601,
+                                        "TON_KHO":  125
+                                    },
+                         "Quarters":  [
+                                          {
+                                              "Year":  2024,
+                                              "Quarter":  4,
+                                              "Target":  70,
+                                              "Orders":  70,
+                                              "Revenue":  352130000.00
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  1,
+                                              "Target":  62,
+                                              "Orders":  62,
+                                              "Revenue":  377508925.00
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  2,
+                                              "Target":  58,
+                                              "Orders":  58,
+                                              "Revenue":  464769356.25
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  3,
+                                              "Target":  66,
+                                              "Orders":  66,
+                                              "Revenue":  590311346.06
+                                          },
+                                          {
+                                              "Year":  2025,
+                                              "Quarter":  4,
+                                              "Target":  84,
+                                              "Orders":  84,
+                                              "Revenue":  708971762.58
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  1,
+                                              "Target":  76,
+                                              "Orders":  76,
+                                              "Revenue":  667350502.29
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  2,
+                                              "Target":  70,
+                                              "Orders":  70,
+                                              "Revenue":  637975109.20
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  3,
+                                              "Target":  80,
+                                              "Orders":  80,
+                                              "Revenue":  777492501.90
+                                          },
+                                          {
+                                              "Year":  2026,
+                                              "Quarter":  4,
+                                              "Target":  35,
+                                              "Orders":  35,
+                                              "Revenue":  127629282.83
+                                          }
+                                      ],
+                         "Statuses":  {
+                                          "CHO_XAC_NHAN":  6,
+                                          "DA_HUY":  48,
+                                          "DA_XAC_NHAN":  6,
+                                          "DANG_GIAO":  6,
+                                          "GIAO_THAT_BAI":  23,
+                                          "HOAN_TAT":  512
+                                      },
+                         "Metrics":  {
+                                         "RecentOrders":  31,
+                                         "CurrentMonthEligibleProducts":  12,
+                                         "LowStockVariants":  8,
+                                         "OutOfStockVariants":  3,
+                                         "TypicalStockVariants":  118,
+                                         "FailedOrders":  23,
+                                         "FailedWithReturn":  20,
+                                         "Adjustments":  10,
+                                         "NoOrderCustomers":  2,
+                                         "Repeat5To10Customers":  27,
+                                         "OneOrderCustomers":  20,
+                                         "Drafts":  3,
+                                         "EmptyDrafts":  1,
+                                         "CancelledPurchases":  1,
+                                         "InactiveSuppliers":  2,
+                                         "InactiveProductsWithHistory":  4,
+                                         "CartCustomers":  12,
+                                         "RealProductMismatches":  0,
+                                         "RealVariantMismatches":  0,
+                                         "RealPhotoMismatches":  0,
+                                         "RealSnapshotMismatches":  0,
+                                         "RealPhotoDigestMismatches":  0
+                                     },
+                         "Errors":  [
+
+                                    ]
+                     },
+    "Reproducibility":  {
+                            "SameHash":  true,
+                            "NormalizedHash":  "e9ee4c008b49c529f2eab5957216b5f1d17fe72a0390f860edcbc7ef76e44386",
+                            "Runs":  [
+                                         {
+                                             "ElapsedMilliseconds":  123937,
+                                             "Hash":  "e9ee4c008b49c529f2eab5957216b5f1d17fe72a0390f860edcbc7ef76e44386"
+                                         },
+                                         {
+                                             "ElapsedMilliseconds":  124360,
+                                             "Hash":  "e9ee4c008b49c529f2eab5957216b5f1d17fe72a0390f860edcbc7ef76e44386"
+                                         }
+                                     ],
+                            "Scope":  "Two full persistence runs with same seed/date/catalog/assets, second uses explicit reset; normalized hash excludes identity IDs/password salts/rowversions/sessions"
+                        },
+    "QaRegression":  {
+                         "Result":  "PASS",
+                         "Groups":  28,
+                         "Command":  "dotnet run --no-build -c Release --project tests/PhoneStore.DemoData.Checks -- --integration",
+                         "LogSha256":  "63E802239CC8C1EE8E54B3DDBA5F634105EDEC1C4B55C6EAE70006B7048E14F1",
+                         "DeliberateRealNameDesynchronizationDetected":  true,
+                         "FailureLabel":  "RealProductMismatches",
+                         "NonzeroCliExit":  true,
+                         "RestoredAndVerified":  true,
+                         "HistoricalSixCorruptionCasesRetained":  true,
+                         "BoundaryDates":  [
+                                               "2026-11-01",
+                                               "2026-10-01",
+                                               "2026-09-30"
+                                           ],
+                         "Output":  [
+                                        "PASS real catalog CLI: explicit profile, invalid profile and pre-release history refused; original profile retained",
+                                        " | FAIL: RealProductMismatches",
+                                        "PASS real catalog CLI seeds and verifies isolated SQL with sourced photos and deterministic reset",
+                                        "PASS 28 groups (real SQL + Kestrel)"
+                                    ]
+                     },
+    "ActualApplicationSmoke":  {
+                                   "Result":  "PASS",
+                                   "RealKestrel":  true,
+                                   "ActualReleaseWinForms":  true,
+                                   "AgentAssisted":  true,
+                                   "FakeApi":  false,
+                                   "Admin":  "Authenticated paging, all nine SQL-matched quarter revenues, bestseller/stock/invoice",
+                                   "Mvc":  "46 active products, exact descriptions/specifications, actual images, eight home bestsellers, real customer owned history/detail",
+                                   "ImagesHttp200":  150,
+                                   "Screenshots":  14,
+                                   "BusinessUnchanged":  true,
+                                   "ZeroSessions":  true,
+                                   "Proof":  "real-products/smoke.json",
+                                   "Http":  "real-products/http.json",
+                                   "Browser":  "real-products/browser/results.json",
+                                   "WinForms":  "real-products/winforms/results.json"
+                               },
+    "Build":  {
+                  "Command":  "dotnet build PhoneStore.slnx -c Release --no-restore",
+                  "Warnings":  0,
+                  "Errors":  0,
+                  "LogSha256":  "DA193C52D803D4193CDB73D37B2C6DBC48992FB16CF2961730905A582BE4560D"
+              },
+    "Scope":  {
+                  "RuntimeSourceChanges":  0,
+                  "SchemaMigrationChanges":  0,
+                  "EarlierRegressionChanges":  0,
+                  "CiChanges":  0,
+                  "OriginalDmImagesModified":  0,
+                  "Allowed":  "demo tool and its tests, new rl SVG image assets, docs/evidence",
+                  "LegacyFictionalProfileRetained":  true,
+                  "MergeTagDeployment":  false
+              },
+    "Secrets":  {
+                    "EnvironmentOnlyPasswords":  true,
+                    "ExportedPasswords":  false,
+                    "ExportedPasswordHashes":  false,
+                    "ExportedCookies":  false,
+                    "ExportedConnectionStrings":  false
+                },
+    "Screenshots":  [
+                        {
+                            "File":  "real-products/browser/mvc-catalog.png",
+                            "Sha256":  "A964FA39F6EF9F9459480361FF59A95CD8C7F7EA4F0ABC7EFC923261423BF3C1"
+                        },
+                        {
+                            "File":  "real-products/browser/mvc-customer-history.png",
+                            "Sha256":  "93E3E870A4122239B186639C85AE897A0CDFF6FCD015813DA891F562BD79A954"
+                        },
+                        {
+                            "File":  "real-products/browser/mvc-customer-order.png",
+                            "Sha256":  "FFE2D617BC3D32F8B16095CA859A0FBC1986B2D84835BC63C00E964DC8319F7B"
+                        },
+                        {
+                            "File":  "real-products/browser/mvc-home.png",
+                            "Sha256":  "D3CD7D3D7C72EF4A2E4039CAAB8A7504199B9E8C53A5FABD8E227F16DE1756DB"
+                        },
+                        {
+                            "File":  "real-products/browser/mvc-product.png",
+                            "Sha256":  "5503548499AB6DE3057D50DCF2F52C694E92B5176B686457C68A898F8A9EA870"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-bestsellers.png",
+                            "Sha256":  "C9192456150EC193F061BE27276A8252381252B0104C8C982CCA59AACA91F7EB"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-completed-order.png",
+                            "Sha256":  "63446E0DCB0D173D63042BF03DADA845FACCB5ED6A2721EBCB2509CCD6EC37A5"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-dashboard.png",
+                            "Sha256":  "266BF8F5100D6A799DEF92B1F88BBED0F16BF8E638DCE887C47779C3A5F9F595"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-invoice.png",
+                            "Sha256":  "5EA0A61ACB5C6FDFC8E8B85A5A9FD7094B62C98D355AEDE19A70487CEDAAFBCC"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-orders.png",
+                            "Sha256":  "CA1BCC62245D030D10353521E6F59371D4F8FACA255B5FA334D566365738F2D8"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-orders-page2.png",
+                            "Sha256":  "1411E4DCF1116397576CA7A07E427D95769C6187382CDBA9BD3D8513C1FB21C8"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-revenue.png",
+                            "Sha256":  "6026101117E043F105086B1146D9D55A1A0EEE7B99B0EC4B1460E761054FBF4F"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-stock.png",
+                            "Sha256":  "36F29C3139AC3A66DD07D879F5B8A751C93756C3CC9CAFE5B942D6CF2BB5B0A3"
+                        },
+                        {
+                            "File":  "real-products/winforms/winforms-stock-report.png",
+                            "Sha256":  "1B845DB6B22E6663390B93EEDADB3291BFFAE86E42C79998162E66664BE5EB5D"
+                        }
+                    ],
+    "Ci":  {
+               "Status":  "NOT RUN at committed evidence snapshot",
+               "FinalResult":  "Exact latest-head PR verification must supply CI SHA and run URL after both required jobs succeed"
+           },
+    "Assumptions":  [
+                        "Product identities/specifications/images are real; customers, orders, prices/costs, suppliers and stock remain synthetic.",
+                        "POCO is grouped under Xiaomi; linked manufacturer regional configurations are not a Vietnam availability promise.",
+                        "Schema has storage/color variants, not per-variant RAM; RAM describes the linked manufacturer listing.",
+                        "Store introduction/retirement dates are simulation dates, not manufacturer discontinuation claims.",
+                        "150 local views use 132 distinct original manufacturer bitmaps, including explicitly framed detail views and technical illustrations.",
+                        "Full dataset is recreated with the current-date UTC+7 cutoff; latest preview uses the same dedicated verified database."
+                    ]
+}

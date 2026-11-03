@@ -1,0 +1,161 @@
+{
+  "realHost": true,
+  "authenticatedAdmin": true,
+  "orders": 601,
+  "pages": 2,
+  "quarters": [
+    {
+      "from": "2024-10-01",
+      "to": "2024-12-31",
+      "revenue": 352130000.00
+    },
+    {
+      "from": "2025-01-01",
+      "to": "2025-03-31",
+      "revenue": 377508925.00
+    },
+    {
+      "from": "2025-04-01",
+      "to": "2025-06-30",
+      "revenue": 464769356.25
+    },
+    {
+      "from": "2025-07-01",
+      "to": "2025-09-30",
+      "revenue": 590311346.06
+    },
+    {
+      "from": "2025-10-01",
+      "to": "2025-12-31",
+      "revenue": 708971762.58
+    },
+    {
+      "from": "2026-01-01",
+      "to": "2026-03-31",
+      "revenue": 667350502.29
+    },
+    {
+      "from": "2026-04-01",
+      "to": "2026-06-30",
+      "revenue": 637975109.20
+    },
+    {
+      "from": "2026-07-01",
+      "to": "2026-09-30",
+      "revenue": 777492501.90
+    },
+    {
+      "from": "2026-10-01",
+      "to": "2026-11-03",
+      "revenue": 127629282.83
+    }
+  ],
+  "stockVariants": 125,
+  "lowStock": 8,
+  "outOfStock": 3,
+  "invoiceOrder": "DHa785f61c3637f471765a116550c805e3",
+  "imagesHttp200": 150,
+  "measurements": [
+    {
+      "path": "/api/admin/orders?page=1\u0026pageSize=20",
+      "milliseconds": 324.942
+    },
+    {
+      "path": "/api/admin/orders?page=2\u0026pageSize=20",
+      "milliseconds": 63.4825
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2024-10-01\u0026to=2024-12-31",
+      "milliseconds": 112.2441
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2025-01-01\u0026to=2025-03-31",
+      "milliseconds": 14.2933
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2025-04-01\u0026to=2025-06-30",
+      "milliseconds": 15.0294
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2025-07-01\u0026to=2025-09-30",
+      "milliseconds": 16.1289
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2025-10-01\u0026to=2025-12-31",
+      "milliseconds": 11.0141
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2026-01-01\u0026to=2026-03-31",
+      "milliseconds": 22.2535
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2026-04-01\u0026to=2026-06-30",
+      "milliseconds": 10.5219
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2026-07-01\u0026to=2026-09-30",
+      "milliseconds": 9.6018
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2026-10-01\u0026to=2026-11-03",
+      "milliseconds": 12.508
+    },
+    {
+      "path": "/api/admin/reports?kind=bestsellers\u0026from=2026-11-01\u0026to=2026-11-03",
+      "milliseconds": 23.8398
+    },
+    {
+      "path": "/api/admin/reports?kind=stock",
+      "milliseconds": 21.8696
+    },
+    {
+      "path": "/api/admin/stock?below=5\u0026page=1\u0026pageSize=100",
+      "milliseconds": 49.0781
+    },
+    {
+      "path": "/api/admin/orders/602/invoice",
+      "milliseconds": 16.8054
+    },
+    {
+      "path": "/api/admin/orders?page=1\u0026pageSize=20",
+      "milliseconds": 62.5927
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2024-11-03\u0026to=2026-11-03",
+      "milliseconds": 31.0755
+    },
+    {
+      "path": "/api/admin/orders?page=1\u0026pageSize=20",
+      "milliseconds": 65.0375
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2024-11-03\u0026to=2026-11-03",
+      "milliseconds": 16.6203
+    },
+    {
+      "path": "/api/admin/orders?page=1\u0026pageSize=20",
+      "milliseconds": 56.7244
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2024-11-03\u0026to=2026-11-03",
+      "milliseconds": 16.9203
+    },
+    {
+      "path": "/api/admin/orders?page=1\u0026pageSize=20",
+      "milliseconds": 51.3225
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2024-11-03\u0026to=2026-11-03",
+      "milliseconds": 16.0225
+    },
+    {
+      "path": "/api/admin/orders?page=1\u0026pageSize=20",
+      "milliseconds": 69.8185
+    },
+    {
+      "path": "/api/admin/reports?kind=revenue\u0026from=2024-11-03\u0026to=2026-11-03",
+      "milliseconds": 14.3794
+    }
+  ],
+  "thresholdMilliseconds": 2000
+}

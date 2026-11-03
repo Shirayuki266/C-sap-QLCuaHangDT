@@ -71,6 +71,11 @@ public static class DatasetVerifier
                 while (reader.Read()) result[reader.GetString(0)] = reader.GetInt64(1);
                 return result;
             });
+            foreach (var (label, mismatches) in await RealCatalogVerifier.Run(db, context.Scale, imagesDirectory))
+            {
+                metrics.Add(label, mismatches);
+                if (mismatches != 0) errors.Add(label);
+            }
             if (metrics["RecentOrders"] < (full ? 20 : 6)) errors.Add("Recent 30-day orders");
             if (metrics["CurrentMonthEligibleProducts"] < (full ? 8 : 5)) errors.Add("Current-month eligible completed products");
             if (metrics["LowStockVariants"] < (full ? 8 : 3) || metrics["OutOfStockVariants"] < (full ? 3 : 1)) errors.Add("Low/out-of-stock examples");
