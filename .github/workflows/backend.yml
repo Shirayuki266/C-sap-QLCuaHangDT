@@ -59,6 +59,17 @@ jobs:
         run: dotnet run --project tests/PhoneStore.Admin.Client.Checks -c Release
       - name: Run D1 demo-data checks against their own isolated SQL QA and real static host
         run: dotnet run --project tests/PhoneStore.DemoData.Checks -c Release -- --integration
+      - name: Verify licensed image credits, crop bounds and acceptance gate logic
+        run: |
+          node scripts/verify-demo-images.mjs --output .artifacts/demo-data/image-verification.json
+          node scripts/verify-data-closeout.mjs --self-test
+      - name: Upload licensed image verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-licensed-images
+          path: .artifacts/demo-data/image-verification.json
+          if-no-files-found: error
       - name: Upload W6 Admin Client SQL evidence
         if: always()
         uses: actions/upload-artifact@v4

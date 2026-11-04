@@ -40,6 +40,12 @@ const assert=(value,message)=>{if(!value)throw Error(message);};
    if(product===data.products[0])await capture('mvc-product');
   }
   checks.push({name:'all active products, actual photos/descriptions/specifications',products:productIds.size});
+  for(const query of ['Samsung','Auvora','Lumetrix','DM001']){
+   await go('/Catalog/Index?Q='+encodeURIComponent(query),'search-'+query);
+   const count=Number(await page.locator('[data-result-total]').getAttribute('data-result-total'));
+   assert(query==='Samsung'?count>0:count===0,'Current/legacy search mismatch');
+   checks.push({name:'catalog name search',query,count});
+  }
   for(let sample=0;sample<5;sample++)await go('/Catalog/Index','catalog-timing-'+sample);
   await go('/Account/Login','customer-login');
   await page.locator('[name=Username]').fill(data.customerUsername);await page.locator('[name=Password]').fill(process.env.PHONESTORE_DEMO_CUSTOMER_PASSWORD);
@@ -53,6 +59,15 @@ const assert=(value,message)=>{if(!value)throw Error(message);};
   const first=owned.items[0];await go('/Orders/Details/'+first.id,'customer-order');
   assert((await page.locator('main').innerText()).includes(first.code),'Owned order detail missing');await capture('mvc-customer-order');
   checks.push({name:'real MVC login and owned history',orders:owned.total,visible:owned.items.length});
+  for(const order of data.customerQuarterOrders){
+   await go('/Orders/Details/'+order.id,'customer-history-'+order.quarter);
+   assert((await page.locator('main').innerText()).includes(order.code),'Historical owned order missing');
+   await capture('mvc-owned-'+order.quarter);
+  }
+  await go('/Cart/Index','customer-current-cart');await capture('mvc-cart');
+  await go('/Cart/Checkout','customer-read-only-checkout');
+  assert(page.url().includes('/Cart/Checkout'),'Checkout was not rendered');await capture('mvc-checkout');
+  checks.push({name:'read-only historical quarters/cart/checkout',quarters:data.customerQuarterOrders.length,ordersPlaced:0});
   await page.locator('form[action="/Account/Logout"] button').click();await page.waitForLoadState('networkidle');
   assert(await page.locator('form[action="/Account/Logout"]').count()===0,'Customer logout failed');
   assert(pageErrors.length===0,'Browser script errors');

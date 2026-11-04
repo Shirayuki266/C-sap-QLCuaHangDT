@@ -8,7 +8,7 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
 {
     public bool VerifyOnly { get; init; }
     public string? ManifestPath { get; init; }
-    public string Catalog { get; init; } = "fictional";
+    public string Catalog { get; init; } = "real";
     public static Options Parse(string[] args, DateOnly today)
     {
         var flags = new HashSet<string>(StringComparer.Ordinal);
@@ -41,8 +41,8 @@ public sealed record Options(int Seed, DateOnly AsOf, string Scale, bool Reset, 
         if (asOf > today || asOf.Year < 2002) throw new ArgumentException("--as-of không được ở tương lai hoặc trước năm 2002.");
         var scale = values.GetValueOrDefault("--scale", "full");
         if (scale is not ("small" or "full")) throw new ArgumentException("--scale chỉ nhận small hoặc full.");
-        var catalog = values.GetValueOrDefault("--catalog", "fictional");
-        if (catalog is not ("fictional" or "real")) throw new ArgumentException("--catalog chỉ nhận fictional hoặc real.");
+        var catalog = values.GetValueOrDefault("--catalog", "real");
+        if (catalog != "real") throw new ArgumentException("Công cụ demo chỉ hỗ trợ --catalog real; catalog lịch sử không được sinh lại.");
         if (!verify && catalog == "real" && asOf < new DateOnly(2026, 10, 1))
             throw new ArgumentException("Danh mục thật cần --as-of từ 2026-10-01 để toàn bộ lịch sử bắt đầu sau khi các model đã ra mắt.");
         if (!values.TryGetValue("--images-dir", out var images) || !values.TryGetValue("--output", out var output))

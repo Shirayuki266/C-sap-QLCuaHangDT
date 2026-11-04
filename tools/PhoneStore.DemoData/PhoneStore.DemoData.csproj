@@ -3,6 +3,6 @@
   <ItemGroup><ProjectReference Include="../../src/PhoneStore.Infrastructure/PhoneStore.Infrastructure.csproj" /></ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Catalog/real-products.json" LogicalName="PhoneStore.DemoData.RealCatalog.json" />
-    <EmbeddedResource Include="../../src/PhoneStore.Web/wwwroot/images/demo/rl*.svg" LogicalName="PhoneStore.DemoData.RealImages.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../src/PhoneStore.Web/wwwroot/images/demo/lc*.svg" LogicalName="PhoneStore.DemoData.RealImages.%(Filename)%(Extension)" />
   </ItemGroup>
 </Project>

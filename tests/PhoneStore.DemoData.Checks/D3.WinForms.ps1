@@ -55,7 +55,7 @@ $originalSettings=if($hadSettings){[IO.File]::ReadAllBytes($settingsPath)}else{$
 $app=$null;$captures=[Collections.Generic.List[object]]::new()
 function WaitUntil([scriptblock]$action,[string]$tag){$until=[DateTime]::UtcNow.AddSeconds(35);while([DateTime]::UtcNow -lt $until){try{$value=&$action;if($value -is [IntPtr]){if($value -ne [IntPtr]::Zero){return $value}}elseif($value){return $value}}catch{};Start-Sleep -Milliseconds 100};throw "UI wait failed: $tag"}
 function Windows(){foreach($h in [NativeWalk]::TopWindows($app.Id)){$r=[NativeWalk]::Bounds($h);[pscustomobject]@{Current=[pscustomobject]@{Name=[NativeWalk]::Text($h);NativeWindowHandle=$h;BoundingRectangle=[pscustomobject]@{X=$r.Left;Y=$r.Top;Width=$r.Right-$r.Left;Height=$r.Bottom-$r.Top}}}}}
-function Window([string]$prefix){WaitUntil {foreach($w in (Windows)){if($w.Current.Name.StartsWith($prefix)){return $w}}} "window $prefix"}
+function Window([string]$prefix){WaitUntil {foreach($w in (Windows)){if($w.Current.Name.StartsWith($prefix) -and [NativeWalk]::Class([IntPtr]$w.Current.NativeWindowHandle).StartsWith('WINDOWSFORMS10.WINDOW')){return $w}}} "window $prefix"}
 function Nodes($root){([Windows.Automation.AutomationElement]::FromHandle([IntPtr]$root.Current.NativeWindowHandle)).FindAll([Windows.Automation.TreeScope]::Descendants,[Windows.Automation.Condition]::TrueCondition)}
 function SetValue($root,[string]$name,[string]$value){[IO.File]::AppendAllText((Join-Path $output 'ui-trace.txt'),"Set native $name`r`n");$h=WaitUntil {[NativeWalk]::Labeled([IntPtr]$root.Current.NativeWindowHandle,$name,$false)} "native input $name";WaitUntil {[NativeWalk]::IsWindowEnabled($h)} "enabled input $name"|Out-Null;$node=[Windows.Automation.AutomationElement]::FromHandle($h);($node.GetCurrentPattern([Windows.Automation.ValuePattern]::Pattern)).SetValue($value);[IO.File]::AppendAllText((Join-Path $output 'ui-trace.txt'),"Updated $name`r`n")}
 function TextContains($root,[string]$text){foreach($h in [NativeWalk]::Children([IntPtr]$root.Current.NativeWindowHandle)){if([NativeWalk]::ReadText($h).Contains($text)){return $true}};return $false}
@@ -80,11 +80,26 @@ function Click($root,[string]$name){
  if(-not [NativeWalk]::PostMessage($button,0x00F5,[IntPtr]::Zero,[IntPtr]::Zero)){throw ('Native button input failed: '+$name)}
  Start-Sleep -Milliseconds 180
 }
-function WaitText($window,[string]$value){WaitUntil {(TextContains $window $value) -or @((Nodes $window)|Where-Object {-not $_.Current.IsPassword -and $_.Current.Name.Contains($value)}).Count -gt 0} ('render '+$value)|Out-Null}
+function WaitText($window,[string]$value){
+ try{WaitUntil {if(TextContains $window $value){return $true};@(DisplayTexts $window)|Where-Object {$_.Contains($value)}} ('render '+$value)|Out-Null}
+ catch{
+  @{expected=$value;title=[NativeWalk]::Text([IntPtr]$window.Current.NativeWindowHandle);class=[NativeWalk]::Class([IntPtr]$window.Current.NativeWindowHandle);texts=@(DisplayTexts $window)}|ConvertTo-Json -Depth 5|Set-Content (Join-Path $output 'render-wait-failure.json') -Encoding UTF8
+  throw
+ }
+}
+function DisplayTexts($window){
+ foreach($h in [NativeWalk]::Children([IntPtr]$window.Current.NativeWindowHandle)){if([NativeWalk]::IsWindowVisible($h)){[NativeWalk]::ReadText($h)}}
+ foreach($node in (Nodes $window)){
+  if($node.Current.IsPassword -or $node.Current.IsOffscreen){continue}
+  $node.Current.Name
+  if($node.Current.ControlType -ne [Windows.Automation.ControlType]::Edit -and $node.GetCurrentPropertyValue([Windows.Automation.AutomationElement]::IsValuePatternAvailableProperty)){
+   try{($node.GetCurrentPattern([Windows.Automation.ValuePattern]::Pattern)).Current.Value}catch{}
+  }
+ }
+}
 function Observe($window,[string]$name,[string[]]$expected){
- foreach($value in $expected){WaitUntil {(TextContains $window $value) -or @((Nodes $window)|Where-Object {-not $_.Current.IsPassword -and $_.Current.Name.Contains($value)}).Count -gt 0} ('SQL value '+$name)|Out-Null}
- $texts=@([NativeWalk]::Children([IntPtr]$window.Current.NativeWindowHandle)|Where-Object {[NativeWalk]::IsWindowVisible($_)}|ForEach-Object {[NativeWalk]::ReadText($_)}|Where-Object {$_})
- $texts+=@((Nodes $window)|Where-Object {-not $_.Current.IsPassword -and -not $_.Current.IsOffscreen}|ForEach-Object {$_.Current.Name})
+ foreach($value in $expected){WaitUntil {if(TextContains $window $value){return $true};@(DisplayTexts $window)|Where-Object {$_.Contains($value)}} ('SQL value '+$name)|Out-Null}
+ $texts=@(DisplayTexts $window)
  foreach($value in $expected){if(-not ($texts|Where-Object {$_.Contains($value)})){throw ('Missing rendered SQL value in '+$name)}}
  $observations.Add(@{name=$name;expected=$expected;texts=$texts})
  Capture $window $name
@@ -96,6 +111,33 @@ function ChooseReport($window,[int]$index){
  $control=[NativeWalk]::GetDlgCtrlID($combo)
  [NativeWalk]::PostMessage([NativeWalk]::GetParent($combo),0x0111,[IntPtr](($control -band 0xffff) -bor 0x10000),$combo)|Out-Null
  Start-Sleep -Milliseconds 150
+}
+function SetReportDate($window,[string]$name,[string]$iso){
+ $dateHandles=@([NativeWalk]::Children([IntPtr]$window.Current.NativeWindowHandle)|ForEach-Object {@{handle=$_.ToInt64();class=[NativeWalk]::Class($_);visible=[NativeWalk]::IsWindowVisible($_)}})
+ @{stage='report-date';name=$name;root=([IntPtr]$window.Current.NativeWindowHandle).ToInt64();appExited=$app.HasExited;children=$dateHandles}|ConvertTo-Json -Depth 5|Set-Content (Join-Path $output 'date-picker-diagnostics.json') -Encoding UTF8
+ $inputs=@(WaitUntil {$found=@([NativeWalk]::Children([IntPtr]$window.Current.NativeWindowHandle)|Where-Object {[NativeWalk]::IsWindowVisible($_) -and [NativeWalk]::Class($_).Contains('SYSDATETIMEPICK32')}|Sort-Object {([NativeWalk]::Bounds($_)).Left});if($found.Count -eq 2){return $found}} ('two native report date inputs'))
+ $handle=$inputs[$(if($name.StartsWith('Từ')){0}else{1})]
+ $date=[DateTime]::ParseExact($iso,'yyyy-MM-dd',[Globalization.CultureInfo]::InvariantCulture)
+ $node=[Windows.Automation.AutomationElement]::FromHandle([IntPtr]$handle)
+ $mode='MSAA date value'
+ try {($node.GetCurrentPattern([Windows.Automation.LegacyIAccessiblePattern]::Pattern)).SetValue($iso)}
+ catch {
+  $mode='keyboard date fields'
+  [NativeWalk]::SetForegroundWindow([IntPtr]$window.Current.NativeWindowHandle)|Out-Null;$node.SetFocus()
+  # Actual keyboard input; never pass a local SYSTEMTIME pointer into another process.
+  # Select the day segment explicitly. DateTimePicker retains its active segment
+  # between visits; Home changes that segment's value rather than resetting focus.
+  $bounds=[NativeWalk]::Bounds([IntPtr]$handle)
+  $point=(([int](($bounds.Bottom-$bounds.Top)/2)) -shl 16) -bor [int](($bounds.Right-$bounds.Left)*0.21)
+  [NativeWalk]::SendMessage([IntPtr]$handle,0x0201,[IntPtr]1,[IntPtr]$point)|Out-Null
+  [NativeWalk]::SendMessage([IntPtr]$handle,0x0202,[IntPtr]::Zero,[IntPtr]$point)|Out-Null
+  # Set a safe day before the month/year, then the requested day (including 31/12
+  # and leap days). Typing 31 while the old month is November would clamp it.
+  [Windows.Forms.SendKeys]::SendWait('01{RIGHT}'+$date.ToString('MM')+'{RIGHT}'+$date.ToString('yyyy')+'{LEFT}{LEFT}'+$date.ToString('dd')+'{TAB}')
+ }
+ $accessibleValue='';try{$accessibleValue=($node.GetCurrentPattern([Windows.Automation.LegacyIAccessiblePattern]::Pattern)).Current.Value}catch{}
+ @{name=$name;desired=$iso;mode=$mode;accessibleValue=$accessibleValue;appExited=$app.HasExited}|ConvertTo-Json|Add-Content (Join-Path $output 'date-input-results.txt') -Encoding UTF8
+ Capture $window ('date-input-'+$(if($name.StartsWith('Từ')){'from'}else{'to'}))
 }
 # Print only the application window; never fall back to an arbitrary desktop screenshot.
 function Capture($window,[string]$name){
@@ -135,6 +177,14 @@ try {
  Close $invoice;Close $detail;Close $orders
  $stage='revenue';$main=Window 'Quản trị cửa hàng';$timer.Restart();Click $main 'Báo cáo';$report=Window 'Báo cáo';WaitText $report (Money $context.expected.weekRevenue);Timed $timer 'report-revenue'
  Observe $report 'winforms-revenue' @((Money $context.expected.weekRevenue),($context.expected.weekOrders.ToString()+' đơn hoàn tất'))
+ $sample=0
+ foreach($quarter in $context.quarters){
+  SetReportDate $report 'Từ ngày UTC+7' $quarter.from;SetReportDate $report 'Đến hết ngày UTC+7' $quarter.to
+  $timer.Restart();Click $report 'Tải báo cáo';WaitText $report (Money $quarter.revenue);Timed $timer ('quarter-report-'+$sample)
+  Observe $report ('quarter-report-'+$sample) @((Money $quarter.revenue));$sample++
+ }
+ SetReportDate $report 'Từ ngày UTC+7' ([DateTime]::ParseExact($context.today,'yyyy-MM-dd',[Globalization.CultureInfo]::InvariantCulture).AddDays(-6).ToString('yyyy-MM-dd'))
+ SetReportDate $report 'Đến hết ngày UTC+7' $context.today
  $stage='bestsellers';ChooseReport $report 1;$timer.Restart();Click $report 'Tải báo cáo';WaitText $report 'đơn hoàn tất';Timed $timer 'report-bestsellers'
  Observe $report 'winforms-bestsellers' @((Money $context.expected.weekRevenue),'SKU biến thể')
  $stage='stock-report';ChooseReport $report 2;$timer.Restart();Click $report 'Tải báo cáo';WaitText $report '125 biến thể';Timed $timer 'report-stock'
@@ -142,7 +192,30 @@ try {
  Close $report
  $stage='stock';$main=Window 'Quản trị cửa hàng';$timer.Restart();Click $main 'Tồn kho';$stock=Window 'Tồn kho';WaitText $stock '125 biến thể';Timed $timer 'stock-list'
  Observe $stock 'winforms-stock' @('125 biến thể')
+ Click $stock 'Nhật ký kho';$journal=Window 'Nhật ký kho';WaitText $journal 'Chứng từ';Observe $journal 'stock-journal' @('Người thực hiện');Close $journal
  Close $stock
+ $stage='historical-purchases';Click (Window 'Quản trị cửa hàng') 'Nhập hàng';$purchases=Window 'Nhập hàng';WaitText $purchases '56 phiếu';$sample=0
+ foreach($purchase in $context.historicalPurchases){
+  SetValue $purchases 'Tìm mã phiếu hoặc tên NCC' $purchase.code;Click $purchases 'Tìm kiếm';WaitText $purchases '1 phiếu';Click $purchases 'Mở phiếu'
+  $receipt=Window 'Phiếu nhập hàng';WaitText $receipt $purchase.code;Observe $receipt ('old-purchase-'+$sample) @($purchase.code,(Money $purchase.total));Close $receipt;$sample++
+ }
+ Close $purchases
+ $stage='historical-invoices';Click (Window 'Quản trị cửa hàng') 'Đơn hàng';$orders=Window 'Đơn hàng';WaitText $orders '601 đơn'
+ $sample=0
+ foreach($old in $context.historicalInvoices){
+  SetValue $orders 'Tìm mã đơn, người nhận, khách hoặc điện thoại' $old.code;Click $orders 'Tìm kiếm';WaitText $orders '1 đơn';Click $orders 'Mở chi tiết'
+  $detail=Window 'Chi tiết đơn hàng';WaitText $detail $old.code
+  Observe $detail ('old-order-'+$sample) @($old.code,$old.name,$old.sku)
+  Click $detail 'Xem hóa đơn';$invoice=Window 'Hóa đơn bán hàng';WaitText $invoice $old.code
+  Observe $invoice ('old-invoice-'+$sample) @($old.code,$old.name,$old.sku,(Money $old.total))
+  if($sample -eq 0){Click $invoice 'PrintPreview · Xem trước in';$preview=Window 'Xem trước in';Capture $preview 'old-invoice-print-preview';Close $preview;WaitText $invoice 'Đã đóng xem trước'}
+  Close $invoice;Close $detail;$sample++
+ }
+ Close $orders
+ $stage='real-legacy-search';Click (Window 'Quản trị cửa hàng') 'Điện thoại';$catalog=Window 'Điện thoại';WaitText $catalog 'điện thoại'
+ SetValue $catalog 'Tìm mã, tên hoặc SKU' 'Samsung';Click $catalog 'Tìm kiếm';WaitText $catalog 'Samsung';Capture $catalog 'real-name-search'
+ foreach($query in @('Auvora','Lumetrix','DM001')){SetValue $catalog 'Tìm mã, tên hoặc SKU' $query;Click $catalog 'Tìm kiếm';WaitText $catalog 'Không có điện thoại phù hợp';Capture $catalog ('legacy-search-'+$query)}
+ Close $catalog
  $stage='logout';$main=Window 'Quản trị cửa hàng';Click $main 'Đăng xuất';$login=Window 'Đăng nhập quản trị';Close $login
  if(-not $app.WaitForExit(10000)){throw 'Release application did not exit gracefully'}
  @{result='PASS';actualReleaseApplication=$true;fakeApi=$false;agentAssisted=$true;expectedSqlMatched=$true;captures=$captures.ToArray();measurements=$measurements.ToArray();observations=$observations.ToArray();thresholdMilliseconds=$context.thresholds.nativeMilliseconds}|ConvertTo-Json -Depth 9|Set-Content (Join-Path $output 'results.json') -Encoding UTF8

@@ -31,7 +31,7 @@ internal static class RealCatalogChecks
                 Require(SalesTimeline.Create(plan).Sales.Count == (scale == "full" ? 601 : 60), "Real catalog chronological order quota.");
             }
         });
-        check("real photos: 150 offline embedded source photographs, digest verified, no scripts/external image dependencies", () =>
+        check("real photos: 150 licensed offline photograph views, digest and attribution verified", () =>
         {
             var plan = DemoPlan.Create(options);
             var assets = SvgAssets.Render(plan);
@@ -42,6 +42,10 @@ internal static class RealCatalogChecks
                 foreach (var photo in product.Photos)
                 {
                     Require(photo.Width >= 200 && photo.Height >= 200 && new Uri(photo.SourceUrl).Scheme == "https", "Photo source/size.");
+                    Require(!string.IsNullOrWhiteSpace(photo.Author) && !string.IsNullOrWhiteSpace(photo.Changes) &&
+                        new Uri(photo.SourcePage).Host == "commons.wikimedia.org" &&
+                        (photo.License.StartsWith("CC BY", StringComparison.Ordinal) || photo.License is "CC0" or "WTFPL") &&
+                        Uri.TryCreate(photo.LicenseUrl, UriKind.Absolute, out _), "Photo lacks a redistribution license or attribution.");
                     var document = XDocument.Parse(assets[photo.File]);
                     XNamespace ns = "http://www.w3.org/2000/svg";
                     var image = document.Root!.Elements(ns + "image").Single();
@@ -52,18 +56,29 @@ internal static class RealCatalogChecks
                     Require(!document.Descendants().Any(x => x.Name.LocalName is "script" or "foreignObject") && document.Root.Element(ns + "title")!.Value.Contains(product.Name, StringComparison.Ordinal), "Unsafe/incorrect photo wrapper.");
                 }
             }
+            var laterModel = plan.Products.Single(x => x.Code == "LC046");
+            Require(laterModel.LaunchAt >= new DateTime(2025, 12, 31, 17, 0, 0, DateTimeKind.Utc), "2025 model appears before conservative shop introduction.");
+            var licensed = RealCatalog.Products[0].Photos[0];
+            Require(RealCatalog.HasLicensedAttribution(licensed) &&
+                !RealCatalog.HasLicensedAttribution(licensed with { Author = "" }) &&
+                !RealCatalog.HasLicensedAttribution(licensed with { License = "unknown" }) &&
+                !RealCatalog.HasLicensedAttribution(licensed with { LicenseUrl = "https://example.com/license" }) &&
+                !RealCatalog.HasLicensedAttribution(licensed with { LicenseUrl = "https://creativecommons.org/licenses/by/4.0" }),
+                "Missing attribution, unsupported license or mismatched grant accepted.");
         });
-        check("real catalog CLI: explicit profile, invalid profile and pre-release history refused; original profile retained", () =>
+        check("real catalog CLI: real default, legacy/invalid profile and pre-release history refused", () =>
         {
             string[] args = ["--seed-demo-large", "--confirm", "--images-dir", ".artifacts/images", "--output", ".artifacts/report.json"];
-            Require(Options.Parse([.. args, "--catalog", "real"], date).Catalog == "real" && Options.Parse(args, date).Catalog == "fictional", "Catalog CLI routing.");
-            foreach (var extra in new[] { new[] { "--catalog", "unknown" }, new[] { "--catalog", "real", "--as-of", "2026-09-30" } })
+            Require(Options.Parse([.. args, "--catalog", "real"], date).Catalog == "real" && Options.Parse(args, date).Catalog == "real", "Catalog CLI routing.");
+            foreach (var extra in new[] { new[] { "--catalog", "unknown" }, new[] { "--catalog", "fictional" }, new[] { "--catalog", "real", "--as-of", "2026-09-30" } })
             {
                 var refused = false;
                 try { Options.Parse([.. args, .. extra], date); } catch (ArgumentException) { refused = true; }
                 Require(refused, "Unsupported real profile accepted.");
             }
-            Require(DemoPlan.Create(options with { Catalog = "fictional" }).Products[0].Code == "DM001", "Historical fictional profile changed.");
+            var legacyRefused = false;
+            try { DemoPlan.Create(options with { Catalog = "fictional" }); } catch (ArgumentException) { legacyRefused = true; }
+            Require(legacyRefused, "Legacy catalog bypassed CLI guard.");
         });
     }
 }

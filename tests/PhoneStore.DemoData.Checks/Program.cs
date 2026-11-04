@@ -103,7 +103,7 @@ internal static class Program
             Check("D2 complete chronological plans including first-of-month/quarter and seed variation", () =>
             {
                 var quarterStart = new DateOnly(Today.Year, (Today.Month - 1) / 3 * 3 + 1, 1);
-                var dates = new[] { Today, new DateOnly(Today.Year, Today.Month, 1), quarterStart, quarterStart.AddDays(-1) }.Distinct();
+                var dates = new[] { Today, new DateOnly(Today.Year, Today.Month, 1), quarterStart, quarterStart.AddDays(-1) }.Distinct().Where(x => x >= new DateOnly(2026, 10, 1));
                 foreach (var date in dates)
                 foreach (var scale in new[] { "small", "full" })
                 foreach (var seed in new[] { 2611, 7 })
@@ -232,7 +232,7 @@ internal static class Program
                 Require(await RunCli(["--verify-demo-data", "--manifest", summary, "--images-dir", images, "--output", Path.Combine(directory, "real-verification.json")], secrets) == 0, "Real read-only verification failed.");
                 await using (var realDb = store.Open())
                 {
-                    var original = await realDb.Products.AsNoTracking().SingleAsync(x => x.Code == "RL001");
+                    var original = await realDb.Products.AsNoTracking().SingleAsync(x => x.Code == "LC001");
                     try
                     {
                         await realDb.Products.Where(x => x.Id == original.Id).ExecuteUpdateAsync(s => s.SetProperty(x => x.Name, "Tên model bị sửa sai trong QA"));
@@ -280,7 +280,7 @@ internal static class Program
         return path?.FullName ?? throw new InvalidOperationException("Repository root missing.");
     }
 
-    private static async Task HttpImages(string root, string connection, string catalog = "fictional")
+    private static async Task HttpImages(string root, string connection, string catalog = "real")
     {
         using var listener = new TcpListener(IPAddress.Loopback, 0);
         listener.Start(); var port = ((IPEndPoint)listener.LocalEndpoint).Port; listener.Stop();
