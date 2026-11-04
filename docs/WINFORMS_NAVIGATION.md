@@ -29,6 +29,8 @@ Client/SQL và walkthrough vẫn yêu cầu các biến QA/guard của WINFORMS_
 
 ## Bằng chứng và giới hạn
 
+[Tóm tắt kiểm chứng và hash](evidence/admin-navigation/validation-summary.json). PR: [#125](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/125).
+
 - [Client W1–W6](evidence/admin-navigation/client/): 63 nhóm HTTP/SQL, gồm ma trận 48 ô xử lý đơn, cộng test lõi lịch sử.
 - [STA navigation](evidence/admin-navigation/results.json): 7 nhóm mới; bộ STA đầy đủ giữ 36 nhóm WIN cũ, tổng 43 nhóm. Fake API được ghi rõ; không gọi đây là bằng chứng SQL.
 - [Handles](evidence/admin-navigation/handles.json): đo tại 50 và 100 lần mở, giới hạn 30 trang sống và kiểm tra trang bị loại đã Dispose. Cũng kiểm tra số top-level và clear phiên.
@@ -39,9 +41,11 @@ Client/SQL và walkthrough vẫn yêu cầu các biến QA/guard của WINFORMS_
 
 Kiểm thử phím dùng message/handler WinForms trong STA và test UI thật bằng Win32 WM_COMMAND/BN_CLICKED và UIAutomation theo AccessibleName; bounds/ảnh dùng DPI PMv2 theo từng lời gọi; không gán nhãn là người dùng thao tác thủ công. Bằng chứng 150% và printer giữ đúng các giới hạn đã chấp nhận trong handover.
 
+Ảnh điều hướng: [125% thực](evidence/admin-navigation/navigation-1280-baseline.png), [150% native event](evidence/admin-navigation/navigation-1280-150-native-event.png), [Back/Forward](evidence/admin-navigation/navigation-back-forward-1280.png), [Home vô hiệu Back/Forward](evidence/admin-navigation/navigation-home-buttons-disabled.png), [10 trang](evidence/admin-navigation/navigation-ten-pages.png), [PrintPreview](evidence/admin-navigation/navigation-native-print-preview.png).
+
 ## Ledger NAV
 
-Trạng thái trong bảng chỉ được chốt theo bằng chứng chạy thật; cổng CI phải xác minh trên đúng head PR sau commit tài liệu cuối.
+Bản triển khai `59e3fd267d95e79b03f9d70efe07715a3ed19ed3` đã có [Ubuntu và Windows SUCCESS](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41920423375). Commit sau chỉ chốt tài liệu/bằng chứng phải chạy CI lại. Kết luận NAV.GATE.01 bên dưới chỉ có hiệu lực khi **mô tả PR #125** gắn đúng SHA head cuối với run SUCCESS bất biến; một commit mới làm xác nhận cũ hết hiệu lực.
 
 | ID | Mức | Trạng thái | Bằng chứng |
 |---|---|---|---|
@@ -63,16 +67,16 @@ Trạng thái trong bảng chỉ được chốt theo bằng chứng chạy th�
 | NAV.STATE.05 | P0 | PASS | Context thật expiry/relogin; Back không phục hồi; GET đến muộn |
 | NAV.STATE.06 | P1 | PASS | Ghi thành công rồi Back thấy trạng thái mới |
 | NAV.FLOW.01 | P0 | PASS | BaseCloseoutChecks: mọi xác nhận Hủy gửi 0 writes |
-| NAV.FLOW.02 | P1 | NOT RUN | Đợt 22 checkpoint đã đạt; đang chốt lại runner trên DLL cuối |
+| NAV.FLOW.02 | P1 | PASS | Release 22 checkpoint UI/SQL trên DLL cuối; đủ FLOW01–05 với Back/Home |
 | NAV.FLOW.03 | P1 | PASS | Invoice embedded/Back; PrintPreview native driver thật |
 | NAV.FLOW.04 | P1 | PASS | Hai tệp đo trước/sau, phương pháp nêu rõ |
 | NAV.FLOW.05 | P1 | PASS | Ảnh 1280×800 baseline120/native144; DPI56 |
-| NAV.GATE.01 | P0 | NOT RUN | Chờ Ubuntu/Windows trên đúng head PR cuối |
+| NAV.GATE.01 | P0 | PASS | Source CI SUCCESS; xác minh head cuối trong [mô tả PR125](https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/125), điều kiện nêu trên |
 | NAV.GATE.02 | P1 | PASS | Ledger24 ô, handover điều hướng, chỉ đề xuất admin-v1.1 |
 
 | Mức | Tổng | PASS | FAIL | BLOCKED | NOT RUN | N/A |
 |---|---:|---:|---:|---:|---:|---:|
-| P0 | 9 | 8 | 0 | 0 | 1 | 0 |
-| P1 | 13 | 12 | 0 | 0 | 1 | 0 |
+| P0 | 9 | 9 | 0 | 0 | 0 | 0 |
+| P1 | 13 | 13 | 0 | 0 | 0 | 0 |
 | P2 | 2 | 2 | 0 | 0 | 0 | 0 |
-| Tổng | 24 | 22 | 0 | 0 | 2 | 0 |
+| Tổng | 24 | 24 | 0 | 0 | 0 | 0 |

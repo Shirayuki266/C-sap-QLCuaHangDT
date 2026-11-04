@@ -1,0 +1,41 @@
+﻿{
+    "clientDate":  "2026-11-05",
+    "timeZone":  "Asia/Bangkok",
+    "adminSourceTree":  "fa1793e9ee9a916654abf2ba5c8ac47a2379bb23",
+    "clientSqlGroups":  63,
+    "historyCoreGroups":  1,
+    "staGroups":  43,
+    "retainedWinStaGroups":  36,
+    "newNavigationStaGroups":  7,
+    "retainedDpiCaptures":  56,
+    "actualBaselineDpi":  120,
+    "simulatedDpi":  144,
+    "releaseUiSqlCheckpoints":  22,
+    "nativePrintPreviewWithInstalledDriver":  true,
+    "noPrinterOutput":  true,
+    "historyCapacity":  30,
+    "pageOpenStress":  100,
+    "legacyModalCloseActions":  10,
+    "newOverviewClicks":  1,
+    "baselineMethod":  "Archived develop; controlled STA window-mechanics fixture, not a10-level business route",
+    "hashes":  [
+                   {
+                       "artifact":  "PhoneStore.Admin.exe",
+                       "sha256":  "2D259458B7B54BD63D1E7C03F076E3CCA7D4E7C4CA352722067BC59D79C8FF56"
+                   },
+                   {
+                       "artifact":  "PhoneStore.Admin.dll",
+                       "sha256":  "AE407C0D4E2DBE15E5BD47879046848927B5A348A6DADA7E5FEC7997738F1B6B"
+                   },
+                   {
+                       "artifact":  "PhoneStore.Admin.Tests.dll",
+                       "sha256":  "8D7740C89A94BF41EB379FF442A190E546D91FBEDAEF03AE89468244B2585962"
+                   },
+                   {
+                       "artifact":  "PhoneStore.Admin.Client.Checks.dll",
+                       "sha256":  "5FC31B8900057F001F0F83574DF5C518BEFCB00F5C9B50512D4DFC5D413321C0"
+                   }
+               ],
+    "ciRecord":  "Implementation59e3fd2 passed Ubuntu/Windows run41920423375; final acceptance is bound to the final head SHA and successful immutable run in PR125 description",
+    "implementationCi":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41920423375"
+}
