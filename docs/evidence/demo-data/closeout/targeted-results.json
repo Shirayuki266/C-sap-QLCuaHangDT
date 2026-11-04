@@ -1,0 +1,153 @@
+{
+  "subjectSha": "842e0dfb33f19b36a96a0ad40f2f3c3d08a695e0",
+  "fullSeedRunsForThisCandidate": 1,
+  "fullManifest": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+  "fullSeedElapsedMilliseconds": 130191,
+  "smallReproducibility": {
+    "scale": "small",
+    "fullRerun": false,
+    "identical": true,
+    "asOf": "2026-11-04",
+    "second": "a3e02b605aba8a5f6f9a12aa399b899898f62520c836d67ee9857ca07d47ccca",
+    "first": "a3e02b605aba8a5f6f9a12aa399b899898f62520c836d67ee9857ca07d47ccca",
+    "seed": 2611,
+    "candidateSha": "842e0dfb33f19b36a96a0ad40f2f3c3d08a695e0"
+  },
+  "negativeAndRestore": {
+    "negativeExitCode": 1,
+    "restoreVerified": true,
+    "restoredInvariantPass": true,
+    "sourceDemo": "PhoneStore_Demo_D3_Closeout_69f7d7c207",
+    "backupChecksumVerified": true,
+    "ownedQa": "PhoneStore_QA_Closeout_Restore_c4f284a51ef84b708c414f063ab6c0ca"
+  },
+  "restoredQaDropped": true,
+  "smallSeedDbDropped": true,
+  "fullVerifierValid": true,
+  "sqlScan": {
+    "tables": 19,
+    "stringColumns": 40,
+    "terms": 571,
+    "matches": 0,
+    "snapshotMismatches": 0
+  },
+  "counts": {
+    "__PhoneStoreMigrations": 1,
+    "BIEN_THE": 125,
+    "DANH_MUC": 6,
+    "DON_HANG": 601,
+    "DON_HANG_CT": 813,
+    "GIO_HANG_CT": 25,
+    "HANG": 10,
+    "KHACH_HANG": 60,
+    "LICH_SU_DON": 2314,
+    "NHA_CUNG_CAP": 12,
+    "NHAT_KY_KHO": 1904,
+    "PHIEN": 0,
+    "PHIEU_NHAP": 56,
+    "PHIEU_NHAP_CT": 275,
+    "SAN_PHAM": 50,
+    "SAN_PHAM_ANH": 150,
+    "TAI_KHOAN": 61,
+    "THANH_TOAN": 601,
+    "TON_KHO": 125
+  },
+  "quarters": [
+    {
+      "Year": 2024,
+      "Quarter": 4,
+      "Target": 70,
+      "Orders": 70,
+      "Revenue": 344022500
+    },
+    {
+      "Year": 2025,
+      "Quarter": 1,
+      "Target": 62,
+      "Orders": 62,
+      "Revenue": 400709150
+    },
+    {
+      "Year": 2025,
+      "Quarter": 2,
+      "Target": 58,
+      "Orders": 58,
+      "Revenue": 486455890
+    },
+    {
+      "Year": 2025,
+      "Quarter": 3,
+      "Target": 66,
+      "Orders": 66,
+      "Revenue": 564293878.87
+    },
+    {
+      "Year": 2025,
+      "Quarter": 4,
+      "Target": 84,
+      "Orders": 84,
+      "Revenue": 760793309.62
+    },
+    {
+      "Year": 2026,
+      "Quarter": 1,
+      "Target": 76,
+      "Orders": 76,
+      "Revenue": 746243038.92
+    },
+    {
+      "Year": 2026,
+      "Quarter": 2,
+      "Target": 70,
+      "Orders": 70,
+      "Revenue": 714245862.34
+    },
+    {
+      "Year": 2026,
+      "Quarter": 3,
+      "Target": 80,
+      "Orders": 80,
+      "Revenue": 732111111.36
+    },
+    {
+      "Year": 2026,
+      "Quarter": 4,
+      "Target": 35,
+      "Orders": 35,
+      "Revenue": 121179905.89
+    }
+  ],
+  "states": {
+    "CHO_XAC_NHAN": 6,
+    "DA_HUY": 48,
+    "DA_XAC_NHAN": 6,
+    "DANG_GIAO": 6,
+    "GIAO_THAT_BAI": 23,
+    "HOAN_TAT": 512
+  },
+  "metrics": {
+    "RecentOrders": 31,
+    "CurrentMonthEligibleProducts": 11,
+    "LowStockVariants": 8,
+    "OutOfStockVariants": 3,
+    "TypicalStockVariants": 118,
+    "FailedOrders": 23,
+    "FailedWithReturn": 20,
+    "Adjustments": 10,
+    "NoOrderCustomers": 2,
+    "Repeat5To10Customers": 27,
+    "OneOrderCustomers": 20,
+    "Drafts": 3,
+    "EmptyDrafts": 1,
+    "CancelledPurchases": 1,
+    "InactiveSuppliers": 2,
+    "InactiveProductsWithHistory": 4,
+    "CartCustomers": 12,
+    "RealProductMismatches": 0,
+    "RealVariantMismatches": 0,
+    "RealPhotoMismatches": 0,
+    "RealSnapshotMismatches": 0,
+    "RealPhotoDigestMismatches": 0
+  },
+  "staAttemptCount": 1
+}

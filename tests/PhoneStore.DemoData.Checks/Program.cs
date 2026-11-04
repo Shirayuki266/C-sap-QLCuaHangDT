@@ -223,7 +223,7 @@ internal static class Program
                 var firstHash = first.RootElement.GetProperty("Hash").GetString();
                 await using (var realDb = store.Open())
                 {
-                    Require(await realDb.Products.CountAsync(x => x.Code.StartsWith("RL")) == 6 && await realDb.Products.AnyAsync(x => x.Name == "Samsung Galaxy A05"), "Real catalog not persisted.");
+                    Require(await realDb.Products.CountAsync(x => x.Code.StartsWith("LC")) == 6 && await realDb.Products.AnyAsync(x => x.Name == "Samsung Galaxy A05"), "Real catalog not persisted.");
                     Require((await new DataAudit(realDb).Run()).Valid && !await realDb.Sessions.AnyAsync(), "Real catalog audit/sessions failed.");
                 }
                 Require(await RunCli([.. cli, "--catalog", "real", "--reset"], secrets) == 0, "Real catalog repeat failed.");
