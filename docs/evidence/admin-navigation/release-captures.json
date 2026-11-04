@@ -1,194 +1,194 @@
 ﻿[
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "login-ready",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "login",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "product-created",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "draft-saved",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "receipt-confirmed",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "customer-order1",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order1-confirmed",
-        "width":  819,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  470
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order1-dispatched",
-        "width":  819,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  470
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order1-completed",
-        "width":  819,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  470
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "revenue-seen",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "customer-order2",
-        "width":  159,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  27
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order2-confirmed",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order2-dispatched",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order2-failed",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order2-returned",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "customer-order3",
-        "width":  159,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  27
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order3-confirmed",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "other-admin-cancelled",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "order3-cancelled",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "counted-with-navigation",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "low-stock-after-home",
-        "width":  161,
+        "width":  1024,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  1
+        "processId":  14112,
+        "height":  587
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "expire-before-save",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "expired-draft-warning",
-        "width":  454,
+        "width":  568,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  186
+        "processId":  14112,
+        "height":  232
     },
     {
-        "method":  "Win32 WM_COMMAND BN_CLICKED + UIAutomation named controls + PMv2 PrintWindow",
+        "method":  "Win32 button/text messages + UIAutomation selectors/grid + PMv2 PrintWindow",
         "name":  "expired-returned-login",
-        "width":  1024,
+        "width":  1280,
         "actualReleaseProcess":  true,
-        "processId":  25140,
-        "height":  640
+        "processId":  14112,
+        "height":  800
     }
 ]

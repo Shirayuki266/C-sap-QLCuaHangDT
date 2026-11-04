@@ -7,5 +7,7 @@
   "appSha256": "2D259458B7B54BD63D1E7C03F076E3CCA7D4E7C4CA352722067BC59D79C8FF56",
   "dllSha256": "AE407C0D4E2DBE15E5BD47879046848927B5A348A6DADA7E5FEC7997738F1B6B",
   "userWillRunManuallyAgain": true,
-  "customerSteps": "Real customer API permitted by official08; every Admin operation through actual Release UI"
+  "customerSteps": "Customer checkout uses the real API; primary Admin actions use actual Release UI",
+  "peerAdminSteps": "One cancellation via real API by a second Admin account supplies the external concurrent change",
+  "uiScriptSha256": "D6F3974462A0D87258BCAA4D23157CFC166CC20323312FC2918FA5B83589B079"
 }

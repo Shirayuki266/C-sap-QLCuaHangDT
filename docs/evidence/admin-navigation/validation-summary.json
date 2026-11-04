@@ -33,9 +33,10 @@
                    },
                    {
                        "artifact":  "PhoneStore.Admin.Client.Checks.dll",
-                       "sha256":  "5FC31B8900057F001F0F83574DF5C518BEFCB00F5C9B50512D4DFC5D413321C0"
+                       "sha256":  "AD5E2604BC7DD1509D11A7706B5A814B6DA21C22C4CB54FF2BB910D0C8AF040B"
                    }
                ],
     "ciRecord":  "Implementation59e3fd2 passed Ubuntu/Windows run41920423375; final acceptance is bound to the final head SHA and successful immutable run in PR125 description",
-    "implementationCi":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41920423375"
+    "implementationCi":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41920423375",
+    "uiScriptSha256":  "D6F3974462A0D87258BCAA4D23157CFC166CC20323312FC2918FA5B83589B079"
 }
