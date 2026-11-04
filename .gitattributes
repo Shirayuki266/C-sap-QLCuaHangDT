@@ -1,0 +1,11 @@
+* text=auto
+*.cs text eol=lf
+*.csproj text eol=lf
+*.props text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.sql text eol=lf
+*.yml text eol=lf
+
+# Frozen licensed image wrappers must keep identical bytes on Windows and Linux.
+/src/PhoneStore.Web/wwwroot/images/demo/lc*.svg text eol=lf

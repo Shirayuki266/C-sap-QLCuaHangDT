@@ -1,0 +1,36 @@
+PASS WIN.BASE.02 Windows restored application assets exclude backend/EF/SQL packages
+PASS WIN.A01/BASE.14 actual STA LoginForm clears password before await, guards duplicate, renders ready/busy/error
+PASS WIN.BASE.13 shell navigation placeholders no fake commerce; account controls and QA status
+PASS WIN.A03 form submits only self passwords, clears fields and retains controlled errors
+PASS WIN.BASE.18 user settings only allow public server configuration, validation preserves form
+PASS WIN.A02 bounded best-effort close and logout work without a live server
+PASS WIN.BASE.07 production application context returns to LoginForm on revoked session
+PASS WIN.BASE.15 reusable confirmation dialog defaults to safe dismissal
+PASS WIN.A04.01/03 actual list filters/paging, inactive label resolution and no-match/error
+PASS WIN.A05.01/02/03/05 new editor validation retains form, server errors retained, POST201 then GET
+PASS WIN.A06.01/02/03/04 editor GET complete PUT, old cost read-only, server price and stale retention
+PASS WIN.A07.01/02 and A08.01/02/03 confirmation gates full-state commands and retains rejected lookup draft
+PASS WIN.A04.02/03 actual details/read error and Main catalog navigation opens real child form
+5 admin W2 form checks passed.
+PASS WIN.A09.01/02 actual customer list filters/empty/error and safe detail
+PASS WIN.A10.01/02 actual four-field profile form retains duplicate errors, then PUT/readback
+PASS WIN.A11.01/02/03 confirmations/full state, stale reload message, ADMIN has no lock action
+PASS WIN.A12.01 actual customer orders/empty and handoff opens read-only HTTP detail
+PASS WIN.A13.01/02/03 supplier new/edit/duplicate retention, no deletion and active-only picker
+5 admin W3 form checks passed.
+PASS WIN.A14.01/03/04/05 actual purchase list/editor server totals, empty draft, duplicate validation and final-state buttons
+PASS WIN.A15.01/02/03 confirmation gates show server total/quantity, key+version, busy guard and server impact readback
+PASS WIN.A16.01/02/03 read-only stock/filter/explicit threshold, no-match versus failure, movement journal
+PASS WIN.A17.01/02/03/04 actual absolute-count dialog confirms delta/stock-version and reconciles lost response by key
+PASS WIN.A14.01 uncertain create retry keeps same requestKey and payload, no duplicate draft
+PASS WIN.A05.04 ProductEditor default handoff opens prefilled purchase, no write until explicit Save
+PASS W4 finish F1/F2 visible confirmation recovery and held journal/picker paging do not skip pages
+7 admin W4 form checks passed.
+PASS WIN.A18.01/03 list query/status/inclusive-day input, pending pager, empty/error and actual Main navigation
+PASS WIN.A19.01/A20.02/03/04 all6 states/buttons and forced forbidden commands report server errors
+PASS WIN.A19.02/03/A20.01/05 native confirmations, reason errors/retention and duplicate-submit guard
+PASS WIN.A19.04 stale409 auto-refresh, failed readback locks actions, unknown result retains intention
+PASS WIN.A21.01/02/03 invoice notice/snapshot and no-installed-printer/driver faults are recoverable on CI
+PASS WIN.A09.02/A12.01 actual customer drilldown opens full order detail from production handoff
+6 admin W5 form checks passed.
+31 admin form checks passed.

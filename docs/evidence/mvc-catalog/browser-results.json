@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-31T11:23:52.555Z",
+  "scope": "Step3 public read/selection only; Cart/Add action and K09 POST assertions explicitly NOT RUN until step4",
+  "fixtureImages": "Synthetic QA image files mounted in runner-owned webroot, never shipped as production product assets",
+  "gridColumns": [
+    3,
+    2,
+    1
+  ],
+  "filterPanel": true,
+  "combinedFilterAndPaging": true,
+  "variantSelection": true,
+  "quantityBoundsUi": true,
+  "outOfStockUi": true,
+  "noJsSelection": true,
+  "gallery": true,
+  "brokenImageFallback": true,
+  "keyboard": true,
+  "cartPostSubmitted": false,
+  "records": [
+    {
+      "name": "home-desktop",
+      "viewport": 1440,
+      "document": 1440,
+      "cards": 2,
+      "columns": 3,
+      "unlabelled": 0
+    },
+    {
+      "name": "home-mobile",
+      "viewport": 390,
+      "document": 390,
+      "cards": 2,
+      "columns": 1,
+      "unlabelled": 0
+    },
+    {
+      "name": "catalog-desktop",
+      "viewport": 1440,
+      "document": 1440,
+      "cards": 4,
+      "columns": 3,
+      "unlabelled": 0
+    },
+    {
+      "name": "catalog-mobile",
+      "viewport": 390,
+      "document": 390,
+      "cards": 4,
+      "columns": 1,
+      "unlabelled": 0
+    },
+    {
+      "name": "details-desktop",
+      "viewport": 1440,
+      "document": 1440,
+      "cards": 0,
+      "columns": 0,
+      "unlabelled": 0
+    },
+    {
+      "name": "details-mobile",
+      "viewport": 390,
+      "document": 390,
+      "cards": 0,
+      "columns": 0,
+      "unlabelled": 0
+    },
+    {
+      "name": "catalog-tablet",
+      "viewport": 768,
+      "document": 768,
+      "cards": 4,
+      "columns": 2,
+      "unlabelled": 0
+    }
+  ],
+  "errors": []
+}

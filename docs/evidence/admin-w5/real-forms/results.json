@@ -1,0 +1,134 @@
+{
+  "fakeApi": false,
+  "qaOnly": true,
+  "captures": [
+    {
+      "name": "UI02-real-order-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-real-CHO_XAC_NHAN",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "order-real-confirmation",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI11-real-DA_XAC_NHAN",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-real-DANG_GIAO",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "order-real-complete-COD-confirmation",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI11-real-HOAN_TAT",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI11-real-history-actors",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "invoice-real-snapshot",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "PrintPreview-real-installed-driver",
+      "width": 1886,
+      "height": 1266,
+      "dpi": 120,
+      "minimumWidth": 1184,
+      "minimumHeight": 971
+    },
+    {
+      "name": "order-real-failure-confirmation",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI11-real-GIAO_THAT_BAI",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "order-real-return-physical-confirmation",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI11-real-return-received",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "order-real-cancel-confirmation",
+      "width": 620,
+      "height": 330,
+      "dpi": 120,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    },
+    {
+      "name": "UI11-real-DA_HUY",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}

@@ -1,6 +1,28 @@
-﻿@model Page<OrderDto>
-@{ViewData["Title"]="Lịch sử đơn hàng";var statuses=new[]{"CHO_XAC_NHAN","DA_XAC_NHAN","DANG_GIAO","HOAN_TAT","DA_HUY","GIAO_THAT_BAI"};}
-<h1>Lịch sử đơn hàng</h1><div asp-validation-summary="All" class="text-danger" role="alert"></div><form method="get" class="filters"><label>Trạng thái<select name="status" class="form-select"><option value="">Tất cả</option>@foreach(var s in statuses){<option value="@s" selected="@(Context.Request.Query["status"]==s)">@Labels.Status(s)</option>}</select></label><label>Từ ngày<input type="date" name="from" value="@Context.Request.Query["from"]" class="form-control"/></label><label>Đến ngày<input type="date" name="to" value="@Context.Request.Query["to"]" class="form-control"/></label><button class="btn btn-primary">Lọc</button><a asp-action="Index">Xóa bộ lọc</a></form>
-<div class="table-responsive"><table class="table"><thead><tr><th>Mã đơn</th><th>Đặt lúc</th><th>Tổng tiền</th><th>Trạng thái</th><th>COD</th><th>Thao tác</th></tr></thead><tbody>@foreach(var o in Model.Items){<tr><td>@o.Code</td><td>@Labels.Local(o.CreatedAt).ToString("dd/MM/yyyy HH:mm")</td><td>@o.Total.FormatMoney() ₫</td><td>@Labels.Status(o.Status)</td><td>@Labels.Status(o.Payment)</td><td><a asp-action="Details" asp-route-id="@o.Id">Xem chi tiết</a></td></tr>}</tbody></table></div>@if(Model.Total==0){<p class="alert alert-info">Không có đơn phù hợp.</p>}
-<nav class="pagination-links" aria-label="Phân trang">@if(Model.PageNumber>1){<a href="@Url.Action("Index",new{page=Model.PageNumber-1,status=Context.Request.Query["status"].ToString(),from=Context.Request.Query["from"].ToString(),to=Context.Request.Query["to"].ToString()})">← Trước</a>}<span>Trang @Model.PageNumber · @Model.Total đơn</span>@if(Model.PageNumber*Model.PageSize<Model.Total){<a href="@Url.Action("Index",new{page=Model.PageNumber+1,status=Context.Request.Query["status"].ToString(),from=Context.Request.Query["from"].ToString(),to=Context.Request.Query["to"].ToString()})">Sau →</a>}</nav>
-
+@model PhoneStore.Web.Models.OrderListViewModel
+@{ ViewData["Title"] = "Đơn hàng của tôi"; }
+<div class="cart-heading"><div><h1>Đơn hàng của tôi</h1><p>Theo dõi thông tin và tiến trình đơn hàng của bạn.</p></div><a href="/Catalog/Index">Tiếp tục xem máy</a></div>
+<form method="get" action="/Orders/Index" class="orders-filter">
+    <div><label for="order-code">Tìm đơn</label><input id="order-code" name="code" value="@Model.Filter.Code" maxlength="100" placeholder="Mã đơn, tên hoặc số điện thoại" /></div>
+    <div><label for="order-status">Trạng thái</label><select id="order-status" name="status"><option value="">Tất cả</option>@foreach (var state in OrderLabels.States) { <option value="@state" selected="@(Model.Filter.Status == state)">@OrderLabels.Status(state)</option> }</select></div>
+    <div><label for="order-from">Từ ngày</label><input id="order-from" type="date" name="from" value="@Model.Filter.From" /></div>
+    <div><label for="order-to">Đến ngày</label><input id="order-to" type="date" name="to" value="@Model.Filter.To" /></div>
+    <div><label for="order-size">Mỗi trang</label><select id="order-size" name="pageSize">@foreach (var size in new[] { 5, 10, 20, 50 }) { <option value="@size" selected="@(Model.Filter.PageSize == size)">@size đơn</option> }</select></div>
+    <button type="submit" class="button button-primary">Lọc đơn</button><a href="/Orders/Index">Xóa bộ lọc</a>
+</form>
+<div asp-validation-summary="All" class="validation-summary" role="alert" tabindex="-1"></div>
+@if (Model.Results is null)
+{ <p>Chưa thể đọc danh sách theo bộ lọc này. Vui lòng kiểm tra thông tin phía trên.</p> }
+else if (Model.Results.Items.Count == 0)
+{ <div class="orders-empty" role="status"><h2>Chưa có đơn phù hợp</h2><p>Thử mã đơn khác hoặc xóa bớt bộ lọc. Bạn có thể tiếp tục chọn điện thoại khi cần.</p><a href="/Orders/Index">Xem tất cả đơn của tôi</a></div> }
+else
+{
+    <table class="orders-table" data-result-total="@Model.Results.Total"><caption class="visually-hidden">Danh sách đơn của bạn</caption>
+        <thead><tr><th scope="col">Mã đơn</th><th scope="col">Người nhận</th><th scope="col">Ngày đặt (UTC+7)</th><th scope="col">Tổng tiền</th><th scope="col">Trạng thái</th><th scope="col">Chi tiết</th></tr></thead>
+        <tbody>@foreach (var order in Model.Results.Items)
+        { <tr data-order-id="@order.Id"><td data-label="Mã đơn" class="order-code"><strong>@order.Code</strong></td><td data-label="Người nhận">@order.Recipient</td><td data-label="Ngày đặt"><time datetime="@order.CreatedAt.ToString("O")">@WebsiteFormatting.Time(order.CreatedAt.UtcDateTime)</time></td><td data-label="Tổng tiền">@WebsiteFormatting.Money(order.Total)</td><td data-label="Trạng thái"><span class="order-state">@OrderLabels.Status(order.Status)</span><span class="order-payment">COD · @OrderLabels.Payment(order.Payment)</span></td><td><a href="/Orders/Details/@order.Id" aria-label="Xem đơn @order.Code">Chi tiết</a></td></tr> }</tbody>
+    </table>
+}
+@if (Model.Results is not null)
+{
+    <nav class="orders-pagination" aria-label="Phân trang đơn hàng"><p>Trang @Model.Results.PageNumber · @Model.Results.Total đơn</p><div>@if (Model.Results.PageNumber > 1) { <a href="@Model.Filter.PageUrl(Model.Results.PageNumber - 1)" rel="prev">Trang trước</a> }@if (Model.Results.PageNumber < Model.TotalPages) { <a href="@Model.Filter.PageUrl(Model.Results.PageNumber + 1)" rel="next">Trang sau</a> }</div></nav>
+}

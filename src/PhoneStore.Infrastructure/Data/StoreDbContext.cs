@@ -1,45 +1,141 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
 namespace PhoneStore.Infrastructure.Data;
+
 public sealed class StoreDbContext(DbContextOptions<StoreDbContext> options) : DbContext(options)
 {
-    public DbSet<Account> Accounts => Set<Account>(); public DbSet<Customer> Customers => Set<Customer>();
-    public DbSet<LoginSession> Sessions => Set<LoginSession>(); public DbSet<Brand> Brands => Set<Brand>();
-    public DbSet<Category> Categories => Set<Category>(); public DbSet<Product> Products => Set<Product>();
-    public DbSet<Variant> Variants => Set<Variant>(); public DbSet<Inventory> Stock => Set<Inventory>();
-    public DbSet<CartLine> Cart => Set<CartLine>(); public DbSet<SalesOrder> Orders => Set<SalesOrder>();
-    public DbSet<SalesLine> OrderLines => Set<SalesLine>(); public DbSet<Payment> Payments => Set<Payment>();
-    public DbSet<OrderHistory> Histories => Set<OrderHistory>(); public DbSet<Supplier> Suppliers => Set<Supplier>();
-    public DbSet<Purchase> Purchases => Set<Purchase>(); public DbSet<PurchaseLine> PurchaseLines => Set<PurchaseLine>();
-    public DbSet<Movement> Movements => Set<Movement>();
-    protected override void OnModelCreating(ModelBuilder b)
+    public DbSet<Account> Accounts => Set<Account>();
+    public DbSet<Customer> Customers => Set<Customer>();
+    public DbSet<LoginSession> Sessions => Set<LoginSession>();
+    public DbSet<Brand> Brands => Set<Brand>();
+    public DbSet<Category> Categories => Set<Category>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<ProductImage> ProductImages => Set<ProductImage>();
+    public DbSet<Variant> Variants => Set<Variant>();
+    public DbSet<Inventory> Inventory => Set<Inventory>();
+    public DbSet<CartLine> Cart => Set<CartLine>();
+    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<OrderLine> OrderLines => Set<OrderLine>();
+    public DbSet<Payment> Payments => Set<Payment>();
+    public DbSet<OrderHistory> OrderHistory => Set<OrderHistory>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
+    public DbSet<Purchase> Purchases => Set<Purchase>();
+    public DbSet<PurchaseLine> PurchaseLines => Set<PurchaseLine>();
+    public DbSet<StockMovement> Movements => Set<StockMovement>();
+
+    protected override void OnModelCreating(ModelBuilder model)
     {
-        b.Entity<ProductImage>().ToTable("SAN_PHAM_ANH",t=>t.HasCheckConstraint("CK_ProductImages_Order","[SortOrder]>=0"));b.Entity<ProductImage>().Property(x=>x.Url).HasMaxLength(1000);b.Entity<ProductImage>().HasIndex(x=>new{x.ProductId,x.SortOrder});b.Entity<ProductImage>().HasOne(x=>x.Product).WithMany(x=>x.Images).HasForeignKey(x=>x.ProductId).OnDelete(DeleteBehavior.NoAction);
-        b.Entity<Account>().ToTable("TAI_KHOAN", t => t.HasCheckConstraint("CK_Account_Role", "[Role] IN ('ADMIN','CUSTOMER')"));
-        b.Entity<Account>().HasIndex(x=>x.Username).IsUnique(); b.Entity<Account>().Property(x=>x.Username).HasMaxLength(100);
-        b.Entity<Customer>().ToTable("KHACH_HANG"); b.Entity<Customer>().HasOne(x=>x.Account).WithOne().HasForeignKey<Customer>(x=>x.Id);
-        b.Entity<Customer>().HasIndex(x=>x.Phone).IsUnique(); b.Entity<Customer>().HasIndex(x=>x.Email).IsUnique().HasFilter("[Email] IS NOT NULL");
-        b.Entity<Customer>().Property(x=>x.Phone).HasMaxLength(20); b.Entity<Customer>().Property(x=>x.Email).HasMaxLength(254); b.Entity<Customer>().Property(x=>x.FullName).HasMaxLength(120);
-        b.Entity<LoginSession>().ToTable("PHIEN"); b.Entity<LoginSession>().HasIndex(x=>x.ExpiresAt);
-        b.Entity<Brand>().ToTable("HANG"); b.Entity<Brand>().HasIndex(x=>x.Name).IsUnique(); b.Entity<Brand>().Property(x=>x.Name).HasMaxLength(100);
-        b.Entity<Category>().ToTable("DANH_MUC"); b.Entity<Category>().HasIndex(x=>x.Name).IsUnique(); b.Entity<Category>().Property(x=>x.Name).HasMaxLength(100);
-        b.Entity<Product>().ToTable("SAN_PHAM"); b.Entity<Product>().HasIndex(x=>x.Code).IsUnique(); b.Entity<Product>().Property(x=>x.Code).HasMaxLength(30); b.Entity<Product>().Property(x=>x.Name).HasMaxLength(200); b.Entity<Product>().Property(x=>x.ImageUrl).HasMaxLength(1000); b.Entity<Product>().Property(x=>x.Specifications).HasColumnType("nvarchar(max)"); b.Entity<Product>().Property(x=>x.Description).HasColumnType("nvarchar(max)"); b.Entity<Product>().HasIndex(x=>new{x.BrandId,x.CategoryId});
-        b.Entity<Variant>().ToTable("BIEN_THE",t=>t.HasCheckConstraint("CK_Variant_Positive","[Price] > 0 AND [StorageGb] > 0")); b.Entity<Variant>().HasIndex(x=>x.Sku).IsUnique(); b.Entity<Variant>().HasIndex(x=>new{x.ProductId,x.Color,x.StorageGb}).IsUnique(); b.Entity<Variant>().Property(x=>x.Sku).HasMaxLength(50); b.Entity<Variant>().Property(x=>x.Color).HasMaxLength(50); b.Entity<Variant>().Property(x=>x.Version).IsRowVersion();
-        b.Entity<Inventory>().ToTable("TON_KHO",t=>t.HasCheckConstraint("CK_Stock_Balance","[OnHand] >= 0 AND [Reserved] >= 0 AND [Reserved] <= [OnHand]")); b.Entity<Inventory>().HasKey(x=>x.VariantId); b.Entity<Inventory>().HasOne(x=>x.Variant).WithOne(x=>x.Inventory).HasForeignKey<Inventory>(x=>x.VariantId); b.Entity<Inventory>().Property(x=>x.Version).IsRowVersion();
-        b.Entity<CartLine>().ToTable("GIO_HANG_CT",t=>t.HasCheckConstraint("CK_Cart_Quantity","[Quantity] > 0")); b.Entity<CartLine>().HasKey(x=>new{x.CustomerId,x.VariantId});
-        b.Entity<SalesOrder>().ToTable("DON_HANG",t=>{t.HasCheckConstraint("CK_Order_Total","[Total] > 0"); t.HasCheckConstraint("CK_Order_Status","[Status] IN ('CHO_XAC_NHAN','DA_XAC_NHAN','DANG_GIAO','HOAN_TAT','DA_HUY','GIAO_THAT_BAI')");}); b.Entity<SalesOrder>().HasIndex(x=>x.RequestKey).IsUnique(); b.Entity<SalesOrder>().HasIndex(x=>x.Code).IsUnique(); b.Entity<SalesOrder>().Property(x=>x.Code).HasMaxLength(30); b.Entity<SalesOrder>().Property(x=>x.Recipient).HasMaxLength(120); b.Entity<SalesOrder>().Property(x=>x.Phone).HasMaxLength(20); b.Entity<SalesOrder>().Property(x=>x.Version).IsRowVersion(); b.Entity<SalesOrder>().HasIndex(x=>new{x.CustomerId,x.CreatedAt}); b.Entity<SalesOrder>().HasIndex(x=>new{x.Status,x.CreatedAt});
-        b.Entity<SalesLine>().ToTable("DON_HANG_CT",t=>t.HasCheckConstraint("CK_OrderLine_Positive","[Quantity] > 0 AND [Price] > 0")); b.Entity<SalesLine>().HasIndex(x=>new{x.OrderId,x.VariantId}).IsUnique(); b.Entity<SalesLine>().Property(x=>x.Name).HasMaxLength(200); b.Entity<SalesLine>().Property(x=>x.Sku).HasMaxLength(50); b.Entity<SalesLine>().Property(x=>x.Description).HasMaxLength(100);
-        b.Entity<Payment>().ToTable("THANH_TOAN",t=>t.HasCheckConstraint("CK_Payment_COD","[Method] = 'COD' AND (([Status]='CHUA_THU' AND [Amount]=0 AND [CollectedAt] IS NULL AND [ActorId] IS NULL) OR ([Status]='DA_THU' AND [Amount]>0 AND [CollectedAt] IS NOT NULL AND [ActorId] IS NOT NULL))")); b.Entity<Payment>().HasKey(x=>x.OrderId); b.Entity<Payment>().HasOne(x=>x.Order).WithOne(x=>x.Payment).HasForeignKey<Payment>(x=>x.OrderId);
-        b.Entity<OrderHistory>().ToTable("LICH_SU_DON"); b.Entity<OrderHistory>().HasIndex(x=>new{x.OrderId,x.At});
-        b.Entity<Supplier>().ToTable("NHA_CUNG_CAP"); b.Entity<Supplier>().HasIndex(x=>x.Code).IsUnique(); b.Entity<Supplier>().Property(x=>x.Code).HasMaxLength(30); b.Entity<Supplier>().Property(x=>x.Name).HasMaxLength(200);
-        b.Entity<Purchase>().ToTable("PHIEU_NHAP",t=>t.HasCheckConstraint("CK_Purchase_State","[Total]>=0 AND [Status] IN ('NHAP','DA_XAC_NHAN','DA_HUY')")); b.Entity<Purchase>().HasIndex(x=>x.Code).IsUnique(); b.Entity<Purchase>().Property(x=>x.Code).HasMaxLength(30); b.Entity<Purchase>().Property(x=>x.Version).IsRowVersion(); b.Entity<Purchase>().HasOne(x=>x.Creator).WithMany().HasForeignKey(x=>x.CreatorId); b.Entity<Purchase>().HasOne(x=>x.Confirmer).WithMany().HasForeignKey(x=>x.ConfirmerId);
-        b.Entity<PurchaseLine>().ToTable("PHIEU_NHAP_CT",t=>t.HasCheckConstraint("CK_PurchaseLine_Positive","[Quantity] > 0 AND [Cost] > 0")); b.Entity<PurchaseLine>().HasIndex(x=>new{x.PurchaseId,x.VariantId}).IsUnique();
-        b.Entity<Movement>().ToTable("NHAT_KY_KHO",t=>{t.HasCheckConstraint("CK_Movement_Delta","([DeltaOnHand]<>0 OR [DeltaReserved]<>0) AND NOT ([OrderId] IS NOT NULL AND [PurchaseId] IS NOT NULL)"); t.HasCheckConstraint("CK_Movement_Kind","[Kind] IN ('GIU','HUY_GIU','XUAT_GIAO','NHAN_LAI','NHAP','DIEU_CHINH')");}); b.Entity<Movement>().HasIndex(x=>new{x.OperationKey,x.VariantId}).IsUnique(); b.Entity<Movement>().HasIndex(x=>new{x.OrderId,x.VariantId,x.Kind}).IsUnique().HasFilter("[OrderId] IS NOT NULL"); b.Entity<Movement>().Property(x=>x.Kind).HasMaxLength(20); b.Entity<Movement>().HasIndex(x=>new{x.VariantId,x.At});
-        foreach(var entity in b.Model.GetEntityTypes()) {
-            foreach(var fk in entity.GetForeignKeys()) fk.DeleteBehavior = DeleteBehavior.NoAction;
-            foreach(var property in entity.GetProperties()) {
-                if(property.ClrType==typeof(decimal)) { property.SetPrecision(18); property.SetScale(2); }
-                if(property.ClrType==typeof(string) && property.GetMaxLength()==null && property.GetColumnType()==null) property.SetMaxLength(500);
-            }
-        }
+        model.Entity<Account>(e =>
+        {
+            e.ToTable("TAI_KHOAN"); e.HasKey(x => x.Id);
+            e.Property(x => x.Username).HasMaxLength(100); e.HasIndex(x => x.Username).IsUnique();
+            e.Property(x => x.PasswordHash).HasMaxLength(1000); e.Property(x => x.Role).HasMaxLength(20).IsUnicode(false);
+        });
+        model.Entity<Customer>(e =>
+        {
+            e.ToTable("KHACH_HANG"); e.HasKey(x => x.Id); e.Property(x => x.Id).ValueGeneratedNever();
+            e.HasOne<Account>().WithOne().HasForeignKey<Customer>(x => x.Id);
+            e.Property(x => x.FullName).HasMaxLength(120); e.Property(x => x.Phone).HasMaxLength(20).IsUnicode(false);
+            e.Property(x => x.Email).HasMaxLength(254); e.Property(x => x.Address).HasMaxLength(500);
+            e.HasIndex(x => x.Phone).IsUnique(); e.HasIndex(x => x.Email).IsUnique().HasFilter("[Email] IS NOT NULL");
+        });
+        model.Entity<LoginSession>(e =>
+        {
+            e.ToTable("PHIEN"); e.HasKey(x => x.Id); e.Property(x => x.Id).ValueGeneratedNever();
+            e.HasOne<Account>().WithMany().HasForeignKey(x => x.AccountId); e.HasIndex(x => x.ExpiresAt);
+        });
+        model.Entity<Brand>(e => { e.ToTable("HANG"); e.HasKey(x => x.Id); e.Property(x => x.Name).HasMaxLength(100); e.HasIndex(x => x.Name).IsUnique(); });
+        model.Entity<Category>(e => { e.ToTable("DANH_MUC"); e.HasKey(x => x.Id); e.Property(x => x.Name).HasMaxLength(100); e.HasIndex(x => x.Name).IsUnique(); });
+        model.Entity<Product>(e =>
+        {
+            e.ToTable("SAN_PHAM"); e.HasKey(x => x.Id); e.Property(x => x.Code).HasMaxLength(30); e.HasIndex(x => x.Code).IsUnique();
+            e.Property(x => x.Name).HasMaxLength(200); e.Property(x => x.ImageUrl).HasMaxLength(1000);
+            e.Property(x => x.Specifications).HasMaxLength(20000); e.Property(x => x.Description).HasMaxLength(50000);
+            e.HasOne<Brand>().WithMany().HasForeignKey(x => x.BrandId); e.HasOne<Category>().WithMany().HasForeignKey(x => x.CategoryId);
+        });
+        model.Entity<ProductImage>(e =>
+        {
+            e.ToTable("SAN_PHAM_ANH"); e.HasKey(x => x.Id); e.HasOne<Product>().WithMany().HasForeignKey(x => x.ProductId);
+            e.Property(x => x.Url).HasMaxLength(1000);
+            e.Property<byte[]>("UrlHash").HasComputedColumnSql("CONVERT(binary(32),HASHBYTES('SHA2_256',[Url]))", stored: true);
+            e.HasIndex(nameof(ProductImage.ProductId), "UrlHash").IsUnique();
+        });
+        model.Entity<Variant>(e =>
+        {
+            e.ToTable("BIEN_THE"); e.HasKey(x => x.Id); e.HasOne<Product>().WithMany().HasForeignKey(x => x.ProductId);
+            e.Property(x => x.Sku).HasMaxLength(50); e.HasIndex(x => x.Sku).IsUnique(); e.Property(x => x.Color).HasMaxLength(50);
+            e.HasIndex(x => new { x.ProductId, x.Color, x.StorageGb }).IsUnique();
+            e.Property(x => x.Cost).HasPrecision(18, 2); e.Property(x => x.Price).HasPrecision(18, 2); e.Property(x => x.ProfitPercent).HasPrecision(7, 2);
+            e.Property(x => x.Version).IsRowVersion();
+        });
+        model.Entity<Inventory>(e =>
+        {
+            e.ToTable("TON_KHO"); e.HasKey(x => x.VariantId); e.Property(x => x.VariantId).ValueGeneratedNever();
+            e.HasOne<Variant>().WithOne().HasForeignKey<Inventory>(x => x.VariantId); e.Property(x => x.Version).IsRowVersion();
+        });
+        model.Entity<CartLine>(e =>
+        {
+            e.ToTable("GIO_HANG_CT"); e.HasKey(x => new { x.CustomerId, x.VariantId });
+            e.HasOne<Customer>().WithMany().HasForeignKey(x => x.CustomerId); e.HasOne<Variant>().WithMany().HasForeignKey(x => x.VariantId);
+        });
+        model.Entity<Order>(e =>
+        {
+            e.ToTable("DON_HANG"); e.HasKey(x => x.Id); e.Property(x => x.Code).HasMaxLength(40).IsUnicode(false); e.HasIndex(x => x.Code).IsUnique();
+            e.HasOne<Customer>().WithMany().HasForeignKey(x => x.CustomerId); e.Property(x => x.Recipient).HasMaxLength(120);
+            e.Property(x => x.Phone).HasMaxLength(20).IsUnicode(false); e.Property(x => x.Address).HasMaxLength(500);
+            e.Property(x => x.Status).HasMaxLength(30).IsUnicode(false); e.Property(x => x.Total).HasPrecision(18, 2);
+            e.HasIndex(x => x.RequestKey).IsUnique(); e.Property(x => x.Version).IsRowVersion();
+            e.HasIndex(x => new { x.CustomerId, x.CreatedAt }); e.HasIndex(x => new { x.Status, x.CompletedAt });
+        });
+        model.Entity<OrderLine>(e =>
+        {
+            e.ToTable("DON_HANG_CT"); e.HasKey(x => x.Id); e.HasOne<Order>().WithMany().HasForeignKey(x => x.OrderId);
+            e.HasOne<Variant>().WithMany().HasForeignKey(x => x.VariantId); e.Property(x => x.Name).HasMaxLength(200);
+            e.Property(x => x.Sku).HasMaxLength(50); e.Property(x => x.Description).HasMaxLength(500);
+            e.Property(x => x.Price).HasPrecision(18, 2); e.HasIndex(x => new { x.OrderId, x.VariantId }).IsUnique();
+        });
+        model.Entity<Payment>(e =>
+        {
+            e.ToTable("THANH_TOAN"); e.HasKey(x => x.OrderId); e.Property(x => x.OrderId).ValueGeneratedNever();
+            e.HasOne<Order>().WithOne().HasForeignKey<Payment>(x => x.OrderId); e.HasOne<Account>().WithMany().HasForeignKey(x => x.ActorId);
+            e.Property(x => x.Method).HasMaxLength(10).IsUnicode(false); e.Property(x => x.Status).HasMaxLength(20).IsUnicode(false); e.Property(x => x.Amount).HasPrecision(18, 2);
+        });
+        model.Entity<OrderHistory>(e =>
+        {
+            e.ToTable("LICH_SU_DON"); e.HasKey(x => x.Id); e.HasOne<Order>().WithMany().HasForeignKey(x => x.OrderId);
+            e.HasOne<Account>().WithMany().HasForeignKey(x => x.ActorId); e.Property(x => x.From).HasMaxLength(30).IsUnicode(false);
+            e.Property(x => x.To).HasMaxLength(30).IsUnicode(false); e.Property(x => x.Reason).HasMaxLength(1000);
+            e.HasIndex(x => new { x.OrderId, x.Id });
+        });
+        model.Entity<Supplier>(e =>
+        {
+            e.ToTable("NHA_CUNG_CAP"); e.HasKey(x => x.Id); e.Property(x => x.Code).HasMaxLength(30); e.HasIndex(x => x.Code).IsUnique();
+            e.Property(x => x.Name).HasMaxLength(200); e.Property(x => x.Phone).HasMaxLength(20).IsUnicode(false); e.Property(x => x.Address).HasMaxLength(500);
+        });
+        model.Entity<Purchase>(e =>
+        {
+            e.ToTable("PHIEU_NHAP"); e.HasKey(x => x.Id); e.Property(x => x.Code).HasMaxLength(40).IsUnicode(false); e.HasIndex(x => x.Code).IsUnique();
+            e.HasOne<Supplier>().WithMany().HasForeignKey(x => x.SupplierId); e.HasOne<Account>().WithMany().HasForeignKey(x => x.CreatorId);
+            e.HasOne<Account>().WithMany().HasForeignKey(x => x.ConfirmerId); e.Property(x => x.Status).HasMaxLength(30).IsUnicode(false);
+            e.Property(x => x.Total).HasPrecision(18, 2); e.Property(x => x.Version).IsRowVersion();
+        });
+        model.Entity<PurchaseLine>(e =>
+        {
+            e.ToTable("PHIEU_NHAP_CT"); e.HasKey(x => x.Id); e.HasOne<Purchase>().WithMany().HasForeignKey(x => x.PurchaseId);
+            e.HasOne<Variant>().WithMany().HasForeignKey(x => x.VariantId); e.Property(x => x.Cost).HasPrecision(18, 2);
+            e.HasIndex(x => new { x.PurchaseId, x.VariantId }).IsUnique();
+        });
+        model.Entity<StockMovement>(e =>
+        {
+            e.ToTable("NHAT_KY_KHO"); e.HasKey(x => x.Id); e.HasOne<Variant>().WithMany().HasForeignKey(x => x.VariantId);
+            e.HasOne<Account>().WithMany().HasForeignKey(x => x.ActorId); e.HasOne<Order>().WithMany().HasForeignKey(x => x.OrderId);
+            e.HasOne<Purchase>().WithMany().HasForeignKey(x => x.PurchaseId); e.Property(x => x.Kind).HasMaxLength(30).IsUnicode(false);
+            e.Property(x => x.Reason).HasMaxLength(1000); e.HasIndex(x => new { x.OperationKey, x.VariantId }).IsUnique();
+            e.HasIndex(x => new { x.OrderId, x.VariantId, x.Kind }).IsUnique().HasFilter("[OrderId] IS NOT NULL");
+            e.HasIndex(x => new { x.PurchaseId, x.VariantId, x.Kind }).IsUnique().HasFilter("[PurchaseId] IS NOT NULL");
+            e.HasIndex(x => new { x.VariantId, x.Id });
+        });
+        foreach (var relationship in model.Model.GetEntityTypes().SelectMany(entity => entity.GetForeignKeys()))
+            relationship.DeleteBehavior = DeleteBehavior.NoAction;
     }
 }

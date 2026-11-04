@@ -1,0 +1,1048 @@
+{
+  "stage": "draft-review-snapshot",
+  "notReleaseApproval": true,
+  "subjectSha": "842e0dfb33f19b36a96a0ad40f2f3c3d08a695e0",
+  "scopeNote": "Product/tool/runtime frozen at842e0df; later changes tests/docs/results only. Full and targeted SQL/MVC were executed on842. STA used this exact recorded test-source hash before its commit; final CI is linked separately on the PR, never predicted here.",
+  "staTestSourceSha256": "89f41908a8f8aecea1dde2a60aed5a83126d1a6d917a70f6fc75675d77f7ef4a",
+  "initialCi": {
+    "url": "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41798382546",
+    "sha": "842e0dfb33f19b36a96a0ad40f2f3c3d08a695e0",
+    "conclusion": "failure",
+    "reason": "Obsolete RL prefix assertion in demo integration test; shipping generator persisted correct LC rows"
+  },
+  "checklist": {
+    "DATA": 43,
+    "CLEAN": 33,
+    "total": 76,
+    "byPriority": {
+      "P0": {
+        "PASS": 37,
+        "FAIL": 0,
+        "BLOCKED": 0,
+        "NOT RUN": 6,
+        "ACCEPTED_EXCEPTION": 0
+      },
+      "P1": {
+        "PASS": 26,
+        "FAIL": 0,
+        "BLOCKED": 0,
+        "NOT RUN": 4,
+        "ACCEPTED_EXCEPTION": 1
+      },
+      "P2": {
+        "PASS": 2,
+        "FAIL": 0,
+        "BLOCKED": 0,
+        "NOT RUN": 0,
+        "ACCEPTED_EXCEPTION": 0
+      }
+    }
+  },
+  "evidence": {
+    "full": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/full-final/seed.json",
+      "executedSha": "842e0dfb33f19b36a96a0ad40f2f3c3d08a695e0",
+      "sha256": "983dd7856a196b2c4589f4c63aed63570d22be45cad69225b9e0073f44b59d88",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "sql": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/closeout/full-verify-after-sta.json",
+      "sha256": "132df1c5f13f96bf8f36518eab7c58e2c54c78d8e7f3b8db480ed7d8551e1993",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "audit": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/closeout/audit-after-sta.txt",
+      "sha256": "e607d20431f13ff8b69f84a9f38fa9b2e8baeb3ef0aab5d3d254bd0bdf0035a4",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "http": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/full-final/smoke/http.json",
+      "sha256": "b9d96199bc2aaad4454086419f78319d4714b0460a4ebd17287a6ba5ccf3791d",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "mvc": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/full-final/smoke/browser/results.json",
+      "sha256": "1b826ed7d5705e75b9c66ce6bf653b3da3e09aa583d0cc64cf4e7636ab2cc8f6",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "sta": {
+      "path": ".artifacts/data-closeout/sta-once/demo-sta-results.json",
+      "sha256": "959b9be135f7316e21a463d19912a498ed17551663430596de1f1b2eb14a4a33",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "small": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/small/reproducibility.json",
+      "sha256": "4c37794582e72887cd9c63fecbfcbce6dc6beec88ca4cf1bf6774cb346f4c9e5",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "negative": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/small/backup-restore-negative-proof.json",
+      "sha256": "e0ef160786977444ccc3a2be8ac14f4c59ad05d377e4b59cebf06d0ad94112f7",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "cleanup": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/small/small-qa-cleanup.txt",
+      "sha256": "3ba6830da18707b72b85c052f6a1750b1599d866f85562a1b2b97e2a564030db",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "denyScan": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/data-closeout/current-legacy-scan.json",
+      "sha256": "a87e6d1b1a8f0db4b7d94501d0f404dbf731a51b07a99aa59ca4ab7278d32825",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "image": {
+      "path": ".artifacts/data-closeout/clean-842e0df/.artifacts/closeout/images.json",
+      "sha256": "48bc5efe58bdbe0cdcb430ed1e15c6cc7477e79de73503b3cab5c7b336587263",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "imageReview": {
+      "path": "docs/demo-data/IMAGE_REVIEW.json",
+      "sha256": "2c3274a7fedac97b1a35d43a28c15005f84f990aea9e806a152272e3a6b0dfdc",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "credits": {
+      "path": "docs/demo-data/IMAGE_CREDITS.md",
+      "sha256": "47dedc83de8b5c1c412cc66dff5c73a5a26a8bc0a221bc04a7680253ade525d0",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "facts": {
+      "path": "docs/demo-data/MODEL_SOURCES.md",
+      "sha256": "ea3eace16020bdadc04c5d945c61b45abae45b342a7c185e21842e056f76366d",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "prices": {
+      "path": "docs/demo-data/PRICE_ASSUMPTIONS.md",
+      "sha256": "f4a4cebd6f78df670d82c0daea1b66272ddcbc5f47770efac505c898bae054a8",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "history": {
+      "path": "docs/demo-data/PUBLIC_IMAGE_HISTORY.md",
+      "sha256": "f6b377cb70a0ef67a389877ba7e814982705ad0744be038613440007ac9eb7e4",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "files": {
+      "path": ".artifacts/data-closeout/clean-042f487/.artifacts/closeout/files-scan.json",
+      "sha256": "2feb1a34198f15637aa32d1fe46ae775e069a211329d3c71f8094972998b2680",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "backups": {
+      "path": ".artifacts/data-closeout/backup-basename-inventory.json",
+      "sha256": "6caa67a0b030908cc265d6a81203982d7b9461d3e70f954a3ec320c5795f919d",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "docs": {
+      "path": "docs/DEMO_DATA.md",
+      "sha256": "d5c48b4c27702d82f1831e915bb5216708234ac86b925de4d458f241ede0cb86",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "exception": {
+      "path": "docs/demo-data/RELEASE_CLOSEOUT.md",
+      "sha256": "abf473fc778c38f9902774616fb5c053c8566533d5888ffd7203792ec97b2287",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "secretBase": {
+      "path": ".artifacts/data-closeout/gitleaks-final-review.json",
+      "sha256": "d72079084e26faf953dd43d8e29d808b94ec015919309611bab7d29765e936a5",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    },
+    "secretDelta": {
+      "path": ".artifacts/data-closeout/gitleaks-incremental-exit.json",
+      "sha256": "5923430cef991a51fad37c40e583ff92d4c76f6bc01d21979725b95f5ea3c5e4",
+      "executed": true,
+      "scope": "Executed evidence or source/document inspection; execution SHA and scope remain explicit, not relabelled as a future commit run"
+    }
+  },
+  "records": [
+    {
+      "id": "DATA.SAFE.01",
+      "priority": "P0",
+      "criterion": "Công cụ chỉ chạy khi tên CSDL bắt đầu bằng `PhoneStore_Demo_` (hoặc `PhoneStore_QA_`); từ chối `PhoneStore_Rebuild`, CSDL thật và mọi tên khác. Có test cho cả trường hợp được phép và bị từ chối.",
+      "status": "NOT RUN",
+      "reason": "Await exact latest-head CI for safety/refusal tests; no repeated local regression",
+      "evidence": [
+        "small"
+      ]
+    },
+    {
+      "id": "DATA.SAFE.02",
+      "priority": "P0",
+      "criterion": "Mật khẩu (admin và khách demo) chỉ lấy từ biến môi trường, không có mặc định, không in ra log, không nằm trong mã hay file kết quả; thiếu biến thì công cụ dừng với thông báo rõ.",
+      "status": "NOT RUN",
+      "reason": "Await exact latest-head CI for safety/refusal tests; no repeated local regression",
+      "evidence": [
+        "small"
+      ]
+    },
+    {
+      "id": "DATA.SAFE.03",
+      "priority": "P0",
+      "criterion": "Cần cờ chủ động (`--seed-demo-large` kèm `--confirm`); không bao giờ chạy lúc khởi động server hoặc khi migrate.",
+      "status": "NOT RUN",
+      "reason": "Await exact latest-head CI for safety/refusal tests; no repeated local regression",
+      "evidence": [
+        "small"
+      ]
+    },
+    {
+      "id": "DATA.SAFE.04",
+      "priority": "P0",
+      "criterion": "Từ chối CSDL đã có dữ liệu nghiệp vụ, trừ khi có `--reset` và tên CSDL qua được kiểm tra ở DATA.SAFE.01.",
+      "status": "NOT RUN",
+      "reason": "Await exact latest-head CI for safety/refusal tests; no repeated local regression",
+      "evidence": [
+        "small"
+      ]
+    },
+    {
+      "id": "DATA.SAFE.05",
+      "priority": "P1",
+      "criterion": "Tái lập được: cùng `--seed` và `--as-of` cho dữ liệu giống hệt (so sánh băm của bản kê chuẩn hóa).",
+      "status": "PASS",
+      "reason": "Approved reduced scope: identical seed/as-of small manifests; full generated once, no new full rerun",
+      "evidence": [
+        "small",
+        "full"
+      ]
+    },
+    {
+      "id": "DATA.SAFE.06",
+      "priority": "P1",
+      "criterion": "Có chế độ `--scale small` (vài chục dòng, dùng cho CI) và `--scale full` (dùng cho demo).",
+      "status": "PASS",
+      "reason": "Small and full both seeded and independently SQL-verified",
+      "evidence": [
+        "small",
+        "full"
+      ]
+    },
+    {
+      "id": "DATA.SCALE.01",
+      "priority": "P0",
+      "criterion": "Số dòng của từng bảng nằm trong khoảng mục tiêu ở mục 2 của tài liệu này.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Số dòng của từng bảng nằm trong khoảng mục tiêu ở mục 2 của tài liệu này.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.SCALE.02",
+      "priority": "P1",
+      "criterion": "Cả 19 bảng đều có dữ liệu hợp lý (bảng `PHIEN` có thể 0; sổ migration 1 dòng).",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Cả 19 bảng đều có dữ liệu hợp lý (bảng `PHIEN` có thể 0; sổ migration 1 dòng).",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.TIME.01",
+      "priority": "P0",
+      "criterion": "Có đủ 8 quý đầy đủ cộng quý hiện tại đến ngày `--as-of`; số đơn mỗi quý đúng mục tiêu ±15%.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Có đủ 8 quý đầy đủ cộng quý hiện tại đến ngày `--as-of`; số đơn mỗi quý đúng mục tiêu ±15%.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.TIME.02",
+      "priority": "P1",
+      "criterion": "Có mùa vụ: quý 4 > quý 2; tháng 11–12 và đợt trước Tết nổi bật; năm sau tăng trưởng so với năm trước.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Có mùa vụ: quý 4 > quý 2; tháng 11–12 và đợt trước Tết nổi bật; năm sau tăng trưởng so với năm trước.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.TIME.03",
+      "priority": "P0",
+      "criterion": "Có ít nhất 20 đơn đặt trong 30 ngày gần nhất và ít nhất 8 sản phẩm khác nhau có đơn `HOAN_TAT`/`DA_THU` với thời điểm hoàn tất trong tháng hiện tại (UTC+7, kể cả đơn đặt cuối tháng trước), để mục \"bán chạy\" ở trang chủ (DEC.07, tính theo hoàn tất, không lấy kỳ trước) không rỗng. Nếu `--as-of` rơi vào vài ngày đầu tháng, công cụ điều chỉnh thời điểm hoàn tất của các đơn cuối tháng trước để điều kiện vẫn đạt.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Có ít nhất 20 đơn đặt trong 30 ngày gần nhất và ít nhất 8 sản phẩm khác nhau có đơn `HOAN_TAT`/`DA_THU` với thời điểm hoàn tất trong tháng hiện tại (UTC+7, kể cả đơn đặt cuối tháng trước), để mục \"bán chạy\" ở trang chủ (DEC.07, tính theo hoàn tất, không lấy kỳ trước) không rỗng. Nếu `--as-of` rơi vào vài ngày đầu tháng, công cụ điều chỉnh thời điểm hoàn tất của các đơn cuối tháng trước để điều kiện vẫn đạt.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.TIME.04",
+      "priority": "P0",
+      "criterion": "Mọi mốc thời gian lưu UTC, không có mốc tương lai, thứ tự hợp lý: sản phẩm tạo trước nhập hàng, nhập hàng trước bán; khách tạo tài khoản trước đơn đầu tiên; tài khoản ADMIN tạo trước phiếu nhập đầu tiên.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Mọi mốc thời gian lưu UTC, không có mốc tương lai, thứ tự hợp lý: sản phẩm tạo trước nhập hàng, nhập hàng trước bán; khách tạo tài khoản trước đơn đầu tiên; tài khoản ADMIN tạo trước phiếu nhập đầu tiên.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.01",
+      "priority": "P0",
+      "criterion": "50 sản phẩm, 10 hãng, 6 danh mục, khoảng 125 biến thể; mã sản phẩm và SKU duy nhất; tên hãng/model thật nhất quán với nguồn đã ghi; dữ liệu cá nhân/đơn hàng vẫn minh họa.",
+      "status": "PASS",
+      "reason": "Real catalog SQL constraints and licensed offline photographs/source-backed original prose; approved simulated price bands",
+      "evidence": [
+        "sql",
+        "image",
+        "imageReview",
+        "credits",
+        "facts",
+        "prices"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.02",
+      "priority": "P0",
+      "criterion": "Mỗi sản phẩm có `ImageUrl` hợp lệ (`https://` hoặc `/images/...`) và ít nhất 2 ảnh trong `SAN_PHAM_ANH` có `SortOrder`. Mọi tệp `/images/demo/...` phản hồi HTTP 200 từ website. Dùng ảnh chụp/ảnh sản phẩm thật; mỗi ảnh có nguồn, tác giả, giấy phép/điều khoản phù hợp và ghi công. Không dùng nhãn hãng thay cho ảnh thiết bị.",
+      "status": "PASS",
+      "reason": "Real catalog SQL constraints and licensed offline photographs/source-backed original prose; approved simulated price bands",
+      "evidence": [
+        "sql",
+        "image",
+        "imageReview",
+        "credits",
+        "facts",
+        "prices"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.03",
+      "priority": "P0",
+      "criterion": "Mỗi sản phẩm có `Description` tiếng Việt (2–4 câu) và `Specifications` nhiều dòng; không rỗng, không trùng nguyên văn giữa các sản phẩm, nằm trong giới hạn độ dài cột; viết lại từ thông số thật có nguồn.",
+      "status": "PASS",
+      "reason": "Real catalog SQL constraints and licensed offline photographs/source-backed original prose; approved simulated price bands",
+      "evidence": [
+        "sql",
+        "image",
+        "imageReview",
+        "credits",
+        "facts",
+        "prices"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.04",
+      "priority": "P0",
+      "criterion": "Mọi biến thể thỏa `Price = Round(Cost × (1 + ProfitPercent/100), 2, AwayFromZero)`, `Cost > 0`, `ProfitPercent` trong 0–10.000.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Mọi biến thể thỏa `Price = Round(Cost × (1 + ProfitPercent/100), 2, AwayFromZero)`, `Cost > 0`, `ProfitPercent` trong 0–10.000.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.05",
+      "priority": "P1",
+      "criterion": "Phân bổ phân khúc: giá rẻ 14, tầm trung 16, cao cấp 12, gaming 4, màn hình gập 4; khoảng giá hợp lý theo phân khúc.",
+      "status": "PASS",
+      "reason": "Real catalog SQL constraints and licensed offline photographs/source-backed original prose; approved simulated price bands",
+      "evidence": [
+        "sql",
+        "image",
+        "imageReview",
+        "credits",
+        "facts",
+        "prices"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.06",
+      "priority": "P1",
+      "criterion": "Có vòng đời sản phẩm: khoảng 24 sản phẩm có từ đầu, phần còn lại ra mắt dần; 4 sản phẩm ngừng kinh doanh nhưng giữ lịch sử; model cũ giảm giá vốn theo thời gian.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Có vòng đời sản phẩm: khoảng 24 sản phẩm có từ đầu, phần còn lại ra mắt dần; 4 sản phẩm ngừng kinh doanh nhưng giữ lịch sử; model cũ giảm giá vốn theo thời gian.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.CATALOG.07",
+      "priority": "P1",
+      "criterion": "Tồn cuối kỳ đa dạng: phần lớn 5–40; ít nhất 8 biến thể sắp hết (≤ 5) và 3 biến thể hết hàng; không có tồn âm.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Tồn cuối kỳ đa dạng: phần lớn 5–40; ít nhất 8 biến thể sắp hết (≤ 5) và 3 biến thể hết hàng; không có tồn âm.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.CUST.01",
+      "priority": "P0",
+      "criterion": "60 khách hàng cùng tài khoản `CUSTOMER` tương ứng: username viết thường duy nhất, điện thoại duy nhất, email `@example.com` hoặc NULL (không chuỗi rỗng), mật khẩu băm từ biến môi trường, không có dữ liệu cá nhân thật.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: 60 khách hàng cùng tài khoản `CUSTOMER` tương ứng: username viết thường duy nhất, điện thoại duy nhất, email `@example.com` hoặc NULL (không chuỗi rỗng), mật khẩu băm từ biến môi trường, không có dữ liệu cá nhân thật.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.CUST.02",
+      "priority": "P1",
+      "criterion": "Ngày tạo tài khoản rải đều 18–24 tháng và tăng dần; 4 tài khoản bị khóa; 2 khách chưa có đơn nào.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Ngày tạo tài khoản rải đều 18–24 tháng và tăng dần; 4 tài khoản bị khóa; 2 khách chưa có đơn nào.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.CUST.03",
+      "priority": "P1",
+      "criterion": "Số đơn theo khách phân bố lệch (có khách mua lặp 5–10 lần); địa chỉ đa dạng tỉnh/thành, số nhà là hư cấu.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Số đơn theo khách phân bố lệch (có khách mua lặp 5–10 lần); địa chỉ đa dạng tỉnh/thành, số nhà là hư cấu.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.PURCH.01",
+      "priority": "P0",
+      "criterion": "Ít nhất 56 phiếu nhập từ 12 nhà cung cấp, rải đều các quý; đa số đã xác nhận; có phiếu nháp (kể cả 1 phiếu rỗng) và phiếu đã hủy.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Ít nhất 56 phiếu nhập từ 12 nhà cung cấp, rải đều các quý; đa số đã xác nhận; có phiếu nháp (kể cả 1 phiếu rỗng) và phiếu đã hủy.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.PURCH.02",
+      "priority": "P0",
+      "criterion": "Mỗi phiếu đã xác nhận: tổng = Σ dòng; tồn tăng đúng; `Cost` biến thể bằng giá vốn của phiếu xác nhận gần nhất; có người và thời điểm xác nhận. Phiếu nháp và phiếu hủy không ảnh hưởng tồn hay giá.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Mỗi phiếu đã xác nhận: tổng = Σ dòng; tồn tăng đúng; `Cost` biến thể bằng giá vốn của phiếu xác nhận gần nhất; có người và thời điểm xác nhận. Phiếu nháp và phiếu hủy không ảnh hưởng tồn hay giá.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.PURCH.03",
+      "priority": "P1",
+      "criterion": "Nhà cung cấp: 12, trong đó một vài nhà đã ngừng hoạt động nhưng còn lịch sử.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Nhà cung cấp: 12, trong đó một vài nhà đã ngừng hoạt động nhưng còn lịch sử.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.01",
+      "priority": "P0",
+      "criterion": "Khoảng 600 đơn (±10%), 1–3 dòng mỗi đơn (khoảng 800 dòng); `Total = Σ(số lượng × giá snapshot)`; giá snapshot bằng giá hiệu lực tại thời điểm đặt.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Khoảng 600 đơn (±10%), 1–3 dòng mỗi đơn (khoảng 800 dòng); `Total = Σ(số lượng × giá snapshot)`; giá snapshot bằng giá hiệu lực tại thời điểm đặt.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.02",
+      "priority": "P0",
+      "criterion": "Tỷ lệ trạng thái hợp lý: `HOAN_TAT` ~85%, `DA_HUY` ~8%, `GIAO_THAT_BAI` ~4% (đa số đã nhận lại hàng); đơn đang xử lý chỉ ở vài ngày gần nhất.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Tỷ lệ trạng thái hợp lý: `HOAN_TAT` ~85%, `DA_HUY` ~8%, `GIAO_THAT_BAI` ~4% (đa số đã nhận lại hàng); đơn đang xử lý chỉ ở vài ngày gần nhất.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.03",
+      "priority": "P0",
+      "criterion": "Mỗi đơn đúng 1 dòng thanh toán COD; `DA_THU` khi và chỉ khi `HOAN_TAT`; `Amount = Total` khi đã thu, 0 khi chưa thu; `CollectedAt = CompletedAt`.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Mỗi đơn đúng 1 dòng thanh toán COD; `DA_THU` khi và chỉ khi `HOAN_TAT`; `Amount = Total` khi đã thu, 0 khi chưa thu; `CollectedAt = CompletedAt`.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.04",
+      "priority": "P0",
+      "criterion": "Lịch sử đơn tuân theo ma trận trạng thái: chuyển hợp lệ, thời điểm tăng dần, trạng thái cuối khớp trạng thái hiện tại; người xử lý hợp lệ.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Lịch sử đơn tuân theo ma trận trạng thái: chuyển hợp lệ, thời điểm tăng dần, trạng thái cuối khớp trạng thái hiện tại; người xử lý hợp lệ.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.05",
+      "priority": "P0",
+      "criterion": "Tồn kho khớp nhật ký: `OnHand = Σ ΔOnHand`, `Reserved = Σ ΔReserved`; `Reserved` bằng tổng số lượng các đơn đang ở `CHO_XAC_NHAN`/`DA_XAC_NHAN`; `OnHand ≥ Reserved ≥ 0`.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Tồn kho khớp nhật ký: `OnHand = Σ ΔOnHand`, `Reserved = Σ ΔReserved`; `Reserved` bằng tổng số lượng các đơn đang ở `CHO_XAC_NHAN`/`DA_XAC_NHAN`; `OnHand ≥ Reserved ≥ 0`.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.06",
+      "priority": "P1",
+      "criterion": "Có ít nhất 6–10 lần kiểm kê (điều chỉnh tồn) kèm lý do trong 2 năm.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Có ít nhất 6–10 lần kiểm kê (điều chỉnh tồn) kèm lý do trong 2 năm.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.07",
+      "priority": "P1",
+      "criterion": "Giờ và ngày đặt hàng phân bố hợp lý; đỉnh ở đầu tháng, 11/11, 12/12, Black Friday và trước Tết.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Giờ và ngày đặt hàng phân bố hợp lý; đỉnh ở đầu tháng, 11/11, 12/12, Black Friday và trước Tết.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.ORDER.08",
+      "priority": "P1",
+      "criterion": "Khoảng 25 dòng giỏ hàng của khoảng 12 khách (giỏ đang hoạt động, cập nhật gần đây); không có phiên đăng nhập còn hạn.",
+      "status": "PASS",
+      "reason": "Executed full SQL verifier and foundation checks: Khoảng 25 dòng giỏ hàng của khoảng 12 khách (giỏ đang hoạt động, cập nhật gần đây); không có phiên đăng nhập còn hạn.",
+      "evidence": [
+        "full",
+        "sql"
+      ]
+    },
+    {
+      "id": "DATA.VERIFY.01",
+      "priority": "P0",
+      "criterion": "Lệnh `--verify-demo-data` chạy mọi bất biến SQL ở mục 8 và trả mã thoát khác 0 khi vi phạm; in tóm tắt đếm theo bảng, theo quý (số đơn, doanh thu) và theo trạng thái.",
+      "status": "PASS",
+      "reason": "Full SQL verifier PASS; one restored-small-QA stock mutation made verifier exit1, exact reversal passed",
+      "evidence": [
+        "sql",
+        "negative",
+        "cleanup"
+      ]
+    },
+    {
+      "id": "DATA.VERIFY.02",
+      "priority": "P0",
+      "criterion": "Công cụ `--audit-db` hiện có chạy thành công trên CSDL demo.",
+      "status": "PASS",
+      "reason": "Existing --audit-db passes after real application reads",
+      "evidence": [
+        "audit"
+      ]
+    },
+    {
+      "id": "DATA.VERIFY.03",
+      "priority": "P0",
+      "criterion": "Smoke đầu-cuối trên CSDL demo: ADMIN đăng nhập, danh sách đơn phân trang, báo cáo doanh thu của từng quý có số liệu khác 0 và khác nhau, bán chạy, tồn kho, hóa đơn của một đơn hoàn tất; website: trang chủ có \"bán chạy\", danh mục hiển thị đủ sản phẩm đang bán kèm ảnh và mô tả, một khách demo đăng nhập xem được lịch sử đơn.",
+      "status": "PASS",
+      "reason": "Real ADMIN login/paging/nine SQL-matched quarter revenues, bestsellers, stock, invoice; MVC real customer/history/catalog/photos",
+      "evidence": [
+        "http",
+        "mvc"
+      ]
+    },
+    {
+      "id": "DATA.VERIFY.04",
+      "priority": "P1",
+      "criterion": "WinForms mở với CSDL demo: tổng quan và báo cáo hiển thị đúng; có ảnh chụp.",
+      "status": "NOT RUN",
+      "reason": "chờ kiểm tra thủ công bởi người dùng — one STA attempt passed dashboard/reports and historical forms, but comprehensive native navigation/journal/search acceptance is not established; do not retry",
+      "evidence": [
+        "sta",
+        "mvc"
+      ]
+    },
+    {
+      "id": "DATA.VERIFY.05",
+      "priority": "P1",
+      "criterion": "Hiệu năng chấp nhận được với dữ liệu đầy đủ: danh sách và báo cáo mở nhanh; ghi số đo.",
+      "status": "PASS",
+      "reason": "Measured actual HTTP, MVC and STA form/report times; measurements retained, no substituted synthetic API",
+      "evidence": [
+        "http",
+        "mvc",
+        "sta"
+      ]
+    },
+    {
+      "id": "DATA.VERIFY.06",
+      "priority": "P1",
+      "criterion": "Toàn bộ regression và test các giai đoạn trước vẫn đạt; không đổi mã chạy thật.",
+      "status": "NOT RUN",
+      "reason": "Await actual CI SUCCESS on final exact PR head; initial842 CI failed on obsolete RL-only assertion, corrected only in test",
+      "evidence": [
+        "exception"
+      ]
+    },
+    {
+      "id": "DATA.DOC.01",
+      "priority": "P1",
+      "criterion": "Có `docs/DEMO_DATA.md`: cách tạo và đặt lại CSDL demo, các biến môi trường (không kèm giá trị), quy mô, giả định, giới hạn.",
+      "status": "PASS",
+      "reason": "Runbook and sanitized summary describe environment names, scale, limitations and evidence scope",
+      "evidence": [
+        "docs",
+        "credits"
+      ]
+    },
+    {
+      "id": "DATA.DOC.02",
+      "priority": "P1",
+      "criterion": "Bằng chứng tóm tắt không chứa bí mật: `docs/evidence/demo-data/summary.json` và ảnh chụp.",
+      "status": "PASS",
+      "reason": "Runbook and sanitized summary describe environment names, scale, limitations and evidence scope",
+      "evidence": [
+        "docs",
+        "credits"
+      ]
+    },
+    {
+      "id": "DATA.GATE.01",
+      "priority": "P0",
+      "criterion": "Mọi ô P0 là `PASS`; CI xanh trên đúng commit mới nhất; diff chứng minh không đổi dịch vụ, schema, migrations, API, website MVC hay WinForms. Phạm vi cho phép chỉ gồm: công cụ mới, test mới, tài liệu, đăng ký dự án vào solution, thêm bước vào CI (không sửa bước cũ) và tệp ảnh tĩnh mới.",
+      "status": "NOT RUN",
+      "reason": "Draft remains open: manual P0 CLEAN.REPORT.03 and exact latest-head CI acceptance are not complete; no release/tag authorization",
+      "evidence": [
+        "exception",
+        "sta"
+      ]
+    },
+    {
+      "id": "DATA.GATE.02",
+      "priority": "P1",
+      "criterion": "Báo cáo theo nhãn P0/P1/P2 của tài liệu này; ô chưa chạy giữ `NOT RUN` kèm lý do.",
+      "status": "PASS",
+      "reason": "Exact76 IDs and original priority labels; PASS/NOT RUN/exception counted separately",
+      "evidence": [
+        "exception"
+      ]
+    },
+    {
+      "id": "CLEAN.METHOD.01",
+      "priority": "P0",
+      "criterion": "Ghi rõ phương án đã dùng để chuyển sang sản phẩm thật: (a) dựng lại CSDL từ đầu bằng catalog thật, (b) sửa tại chỗ rồi cập nhật snapshot, hoặc (c) khác. Nêu lý do. Nếu sửa tại chỗ, liệt kê bảng/cột đã `UPDATE` và nêu rõ việc sửa snapshot lịch sử chỉ chấp nhận cho dữ liệu demo, không áp dụng cho dữ liệu thật.",
+      "status": "PASS",
+      "reason": "Fresh tool-owned real full demo, trusted frozen denylist, verified pre/post backups and restored-small-QA negative/cleanup proof",
+      "evidence": [
+        "full",
+        "negative",
+        "backups",
+        "exception"
+      ]
+    },
+    {
+      "id": "CLEAN.METHOD.02",
+      "priority": "P0",
+      "criterion": "Lập **danh sách dấu vết cũ** (denylist) từ nguồn đáng tin: giá trị khác biệt của CSDL trước khi sửa (tên hãng, tên model, mã sản phẩm, SKU, URL ảnh, cụm từ đặc trưng trong mô tả/cấu hình), mã và lịch sử git của công cụ sinh dữ liệu, tệp `demo-phone.svg`. Lưu ở tệp không chứa bí mật; không dựa vào trí nhớ.",
+      "status": "PASS",
+      "reason": "Fresh tool-owned real full demo, trusted frozen denylist, verified pre/post backups and restored-small-QA negative/cleanup proof",
+      "evidence": [
+        "full",
+        "negative",
+        "backups",
+        "exception"
+      ]
+    },
+    {
+      "id": "CLEAN.METHOD.03",
+      "priority": "P0",
+      "criterion": "Có bản sao lưu CSDL trước khi sửa và cách quay lại; mọi thao tác chạy trên CSDL demo/QA có tên hợp lệ (`PhoneStore_Demo_...`/`PhoneStore_QA_...`), không đụng CSDL khác.",
+      "status": "PASS",
+      "reason": "Fresh tool-owned real full demo, trusted frozen denylist, verified pre/post backups and restored-small-QA negative/cleanup proof",
+      "evidence": [
+        "full",
+        "negative",
+        "backups",
+        "exception"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.01",
+      "priority": "P0",
+      "criterion": "`HANG.Name`, `DANH_MUC.Name` không còn tên hư cấu cũ (nếu giữ lại danh mục cũ có chủ ý thì nêu lý do).",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.02",
+      "priority": "P0",
+      "criterion": "`SAN_PHAM`: `Code`, `Name`, `Description`, `Specifications`, `ImageUrl` không còn dấu vết cũ; mô tả không dùng lại câu chữ mẫu cũ.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.03",
+      "priority": "P0",
+      "criterion": "`SAN_PHAM_ANH.Url` không còn đường dẫn `/images/demo/...` hay `demo-phone.svg` (trừ khi giữ có chủ ý); mỗi sản phẩm có ít nhất 2 ảnh thật hợp lệ và có `SortOrder`.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.04",
+      "priority": "P0",
+      "criterion": "`BIEN_THE.Sku` không còn mã cũ; SKU mới duy nhất; màu và dung lượng khớp sản phẩm thật.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.05",
+      "priority": "P0",
+      "criterion": "**Snapshot dòng đơn:** `DON_HANG_CT` (tên, mô tả và mọi cột snapshot khác) không còn tên/mô tả hư cấu; tên snapshot khớp sản phẩm thật của biến thể liên kết, hoặc có danh sách ngoại lệ kèm lý do.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.06",
+      "priority": "P0",
+      "criterion": "Phiếu nhập: `PHIEU_NHAP`, `PHIEU_NHAP_CT` không còn tham chiếu dữ liệu hư cấu (tên, ghi chú, mã); mọi dòng nhập trỏ tới biến thể thuộc sản phẩm thật.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.07",
+      "priority": "P1",
+      "criterion": "Lịch sử và nhật ký: `LICH_SU_DON.Reason`, `NHAT_KY_KHO.Reason` và các ghi chú khác không chứa tên model cũ.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.08",
+      "priority": "P1",
+      "criterion": "Nhà cung cấp: tên và mã không gắn với hãng hư cấu cũ (nếu nhà cung cấp mang tên thương hiệu).",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.09",
+      "priority": "P0",
+      "criterion": "Quét tự động toàn bộ cột chuỗi bằng denylist (mục 4): kết quả 0 khớp, hoặc có danh sách ngoại lệ kèm lý do.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.DB.10",
+      "priority": "P0",
+      "criterion": "Không còn dòng mồ côi hoặc sản phẩm/hãng cũ ở trạng thái ngừng kinh doanh, trừ khi giữ có chủ ý và nêu rõ.",
+      "status": "PASS",
+      "reason": "All19 tables/all40 string columns scanned with571 frozen hard terms: zero hits; snapshot name/SKU mismatches0; intentional shared /images/demo/ path documented",
+      "evidence": [
+        "denyScan",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.REPORT.01",
+      "priority": "P0",
+      "criterion": "API báo cáo (doanh thu từng quý, bán chạy, tồn kho) trả tên sản phẩm thật; số đơn và doanh thu theo quý không đổi so với trước nếu chỉ đổi tên, hoặc khớp kế hoạch nếu dữ liệu được tạo lại.",
+      "status": "PASS",
+      "reason": "Nine actual API quarter reports match SQL; real labels in bestsellers/stock; regenerated dataset matches plan",
+      "evidence": [
+        "http",
+        "sql"
+      ]
+    },
+    {
+      "id": "CLEAN.REPORT.02",
+      "priority": "P0",
+      "criterion": "Website: trang chủ (bán chạy), danh mục, chi tiết (ảnh, mô tả, cấu hình), giỏ, đặt hàng và \"đơn của tôi\" (chi tiết đơn cũ ở nhiều quý) hiển thị tên và ảnh thật; không còn ảnh hỏng.",
+      "status": "PASS",
+      "reason": "Actual MVC covers all46 active products, photos/descriptions/specifications, cart, GET checkout and customer old orders across six quarters; no order placed",
+      "evidence": [
+        "mvc",
+        "http"
+      ]
+    },
+    {
+      "id": "CLEAN.REPORT.03",
+      "priority": "P0",
+      "criterion": "WinForms: tổng quan, danh sách và chi tiết đơn cũ, hóa đơn của một số đơn ở mỗi quý, phiếu nhập cũ, tồn kho, nhật ký kho và báo cáo từng quý hiển thị tên thật.",
+      "status": "NOT RUN",
+      "reason": "chờ kiểm tra thủ công bởi người dùng — STA real API proved nine quarter reports, eighteen old orders/invoices, four receipts and low/zero stock; stock-journal navigation was not exercised in the single attempt",
+      "evidence": [
+        "sta",
+        "mvc"
+      ]
+    },
+    {
+      "id": "CLEAN.REPORT.04",
+      "priority": "P1",
+      "criterion": "Hóa đơn (form xem và PrintPreview) của đơn cũ hiển thị tên thật.",
+      "status": "PASS",
+      "reason": "Single STA attempt: eighteen old invoice forms across nine quarters and actual PrintPreview captured; no fake printer",
+      "evidence": [
+        "sta"
+      ]
+    },
+    {
+      "id": "CLEAN.REPORT.05",
+      "priority": "P1",
+      "criterion": "Tìm kiếm theo tên mới ra kết quả; tên cũ không còn tìm thấy ở website và WinForms.",
+      "status": "NOT RUN",
+      "reason": "chờ kiểm tra thủ công bởi người dùng — MVC positive/negative search passed; native product search was not exercised in the single STA attempt",
+      "evidence": [
+        "sta",
+        "mvc"
+      ]
+    },
+    {
+      "id": "CLEAN.FILES.01",
+      "priority": "P0",
+      "criterion": "Thư mục ảnh tĩnh không còn tệp `/images/demo/*.svg` của sản phẩm cũ (hoặc không còn được tham chiếu); tệp `demo-phone.svg` giữ hay xóa được nêu rõ; mọi URL ảnh trong CSDL trả HTTP 200; không có tệp ảnh mồ côi.",
+      "status": "PASS",
+      "reason": "Current tracked files inspected; archived screenshots explicitly obsolete, denylist/assertions explained; frozen licensed asset checks and all150 HTTP200",
+      "evidence": [
+        "files",
+        "credits",
+        "history",
+        "http"
+      ]
+    },
+    {
+      "id": "CLEAN.FILES.02",
+      "priority": "P0",
+      "criterion": "Quét repo (mã, test, README, `docs/DEMO_DATA.md`, `docs/evidence`, JSON tóm tắt, fixtures) bằng denylist: không còn tên cũ ngoài lịch sử git; mọi chỗ còn lại có lý do.",
+      "status": "PASS",
+      "reason": "Current tracked files inspected; archived screenshots explicitly obsolete, denylist/assertions explained; frozen licensed asset checks and all150 HTTP200",
+      "evidence": [
+        "files",
+        "credits",
+        "history",
+        "http"
+      ]
+    },
+    {
+      "id": "CLEAN.FILES.03",
+      "priority": "P1",
+      "criterion": "Ảnh chụp màn hình và bằng chứng cũ có hiển thị sản phẩm hư cấu được thay mới hoặc đánh dấu lỗi thời; liệt kê các ảnh trong báo cáo Word cần chụp lại.",
+      "status": "PASS",
+      "reason": "Current tracked files inspected; archived screenshots explicitly obsolete, denylist/assertions explained; frozen licensed asset checks and all150 HTTP200",
+      "evidence": [
+        "files",
+        "credits",
+        "history",
+        "http"
+      ]
+    },
+    {
+      "id": "CLEAN.FILES.04",
+      "priority": "P1",
+      "criterion": "Công cụ sinh dữ liệu/seeder: catalog cũ được thay hoặc xóa; không còn tạo sản phẩm hư cấu; test và `--verify-demo-data` dùng bộ catalog mới.",
+      "status": "ACCEPTED_EXCEPTION",
+      "reason": "User approved preserving unchanged Infrastructure legacy DemoSeeder and demo-phone.svg to honor runtime freeze; separate current demo tool is real-only",
+      "evidence": [
+        "exception"
+      ],
+      "approvalRef": "docs/demo-data/RELEASE_CLOSEOUT.md#approval-legacy-seeder-2026-11-04"
+    },
+    {
+      "id": "CLEAN.FILES.05",
+      "priority": "P1",
+      "criterion": "Các bản sao lưu (`.bak`) cũ chứa dữ liệu hư cấu được ghi nhận và thay bằng bản sao lưu mới sau khi xong.",
+      "status": "PASS",
+      "reason": "Demo/QA backup basenames and workspace .bak inventoried; old backups are historical, not current evidence. New verified licensed backup and restore/cleanup proven; no backups in Git",
+      "evidence": [
+        "backups",
+        "negative",
+        "cleanup"
+      ]
+    },
+    {
+      "id": "CLEAN.INTEG.01",
+      "priority": "P0",
+      "criterion": "`--audit-db` và `--verify-demo-data` đạt sau khi đổi; bất biến tồn kho, giá, COD, lịch sử vẫn đúng; số dòng từng bảng không đổi ngoài chủ ý.",
+      "status": "PASS",
+      "reason": "Full independent SQL/foundation verifier and existing audit pass; hashes unchanged after read-only apps; approved simulation price policy",
+      "evidence": [
+        "sql",
+        "audit",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.INTEG.02",
+      "priority": "P0",
+      "criterion": "Giá bán thỏa `Round(Cost × (1 + ProfitPercent/100), 2, AwayFromZero)`; tổng đơn = Σ dòng; không có giá hoặc giá vốn bằng 0; giá thật nằm trong khoảng hợp lý.",
+      "status": "PASS",
+      "reason": "Full independent SQL/foundation verifier and existing audit pass; hashes unchanged after read-only apps; approved simulation price policy",
+      "evidence": [
+        "sql",
+        "audit",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.INTEG.03",
+      "priority": "P0",
+      "criterion": "Mã sản phẩm, SKU, URL ảnh duy nhất và trong giới hạn cột: mã sản phẩm 30, SKU 50, tên 200, mô tả 50.000, cấu hình 20.000, URL ảnh 1.000.",
+      "status": "PASS",
+      "reason": "Full independent SQL/foundation verifier and existing audit pass; hashes unchanged after read-only apps; approved simulation price policy",
+      "evidence": [
+        "sql",
+        "audit",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.INTEG.04",
+      "priority": "P1",
+      "criterion": "Ảnh phụ duy nhất theo (`ProductId`, `UrlHash`); `SortOrder ≥ 0`.",
+      "status": "PASS",
+      "reason": "Full independent SQL/foundation verifier and existing audit pass; hashes unchanged after read-only apps; approved simulation price policy",
+      "evidence": [
+        "sql",
+        "audit",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.INTEG.05",
+      "priority": "P1",
+      "criterion": "Regression và test các giai đoạn trước vẫn đạt; CI xanh; nếu có đổi mã chạy thật thì nêu rõ phần nào và vì sao.",
+      "status": "NOT RUN",
+      "reason": "Await actual CI SUCCESS on final exact PR head; initial842 CI failed on obsolete RL-only assertion, corrected only in test",
+      "evidence": [
+        "exception"
+      ]
+    },
+    {
+      "id": "CLEAN.REAL.01",
+      "priority": "P1",
+      "criterion": "Mỗi sản phẩm có nguồn dữ liệu được ghi lại (nguồn thông số, nguồn ảnh, điều khoản sử dụng) trong tài liệu; ghi rõ ảnh dùng cho mục đích học tập.",
+      "status": "PASS",
+      "reason": "Per-model manufacturer sources, original Vietnamese prose, per-image author/license/version/crop and approved dated simulated price bands",
+      "evidence": [
+        "facts",
+        "credits",
+        "imageReview",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.REAL.02",
+      "priority": "P1",
+      "criterion": "Mô tả không chép nguyên văn từ trang bán hàng; tự viết hoặc trích ngắn có ghi nguồn.",
+      "status": "PASS",
+      "reason": "Per-model manufacturer sources, original Vietnamese prose, per-image author/license/version/crop and approved dated simulated price bands",
+      "evidence": [
+        "facts",
+        "credits",
+        "imageReview",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.REAL.03",
+      "priority": "P1",
+      "criterion": "Giá nhập và giá bán phù hợp thị trường; `ProfitPercent` hợp lệ (0–10.000%).",
+      "status": "PASS",
+      "reason": "Per-model manufacturer sources, original Vietnamese prose, per-image author/license/version/crop and approved dated simulated price bands",
+      "evidence": [
+        "facts",
+        "credits",
+        "imageReview",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.REAL.04",
+      "priority": "P2",
+      "criterion": "Tên hãng và model đúng chính tả, nhất quán giữa `Name`, SKU, màu và ảnh.",
+      "status": "PASS",
+      "reason": "Per-model manufacturer sources, original Vietnamese prose, per-image author/license/version/crop and approved dated simulated price bands",
+      "evidence": [
+        "facts",
+        "credits",
+        "imageReview",
+        "prices"
+      ]
+    },
+    {
+      "id": "CLEAN.REAL.05",
+      "priority": "P2",
+      "criterion": "Các tiêu chí `DATA.CATALOG.01–03` trong file 11 (phương án hư cấu, \"không dùng logo/ảnh thương hiệu thật\") được cập nhật cho phương án dữ liệu thật.",
+      "status": "PASS",
+      "reason": "Official DATA.CATALOG.01–03 explicitly updated for approved real catalog; historical instructions identified as context",
+      "evidence": [
+        "exception",
+        "facts"
+      ]
+    }
+  ]
+}

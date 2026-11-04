@@ -1,0 +1,24 @@
+@model PhoneStore.Web.Models.CatalogIndexViewModel
+@{ var filter = Model.Filter; }
+<form action="/Catalog/Index" method="get" class="catalog-filter-form">
+    <div asp-validation-summary="All" role="alert" tabindex="-1"></div>
+    <label for="filter-q">Từ khóa</label>
+    <input id="filter-q" name="q" value="@filter.Q" maxlength="100" type="search" placeholder="Tên, mã máy hoặc cấu hình" />
+    <label for="filter-brand">Hãng</label>
+    <select id="filter-brand" name="brandId"><option value="">Tất cả hãng</option>@foreach (var brand in Model.Brands) { <option value="@brand.Id" selected="@(filter.BrandId == brand.Id)">@brand.Name</option> }</select>
+    <label for="filter-storage">Dung lượng (GB)</label>
+    <input id="filter-storage" name="storageGb" type="number" value="@filter.StorageGb" min="1" step="1" placeholder="Tất cả dung lượng" />
+    <label for="filter-color">Màu sắc</label>
+    <input id="filter-color" name="color" value="@filter.Color" maxlength="50" placeholder="Tất cả màu" />
+    <div class="catalog-price-range">
+        <div><label for="filter-min">Giá từ (đ)</label><input id="filter-min" name="minPrice" type="number" value="@filter.MinPrice?.ToString(System.Globalization.CultureInfo.InvariantCulture)" min="0" step="0.01" /></div>
+        <div><label for="filter-max">Đến (đ)</label><input id="filter-max" name="maxPrice" type="number" value="@filter.MaxPrice?.ToString(System.Globalization.CultureInfo.InvariantCulture)" min="0" step="0.01" /></div>
+    </div>
+    <label for="filter-sort">Sắp xếp</label>
+    <select id="filter-sort" name="sort">
+        <option value="name" selected="@(filter.Sort == "name")">Tên sản phẩm</option><option value="newest" selected="@(filter.Sort == "newest")">Mới nhất</option><option value="price-asc" selected="@(filter.Sort == "price-asc")">Giá tăng dần</option><option value="price-desc" selected="@(filter.Sort == "price-desc")">Giá giảm dần</option>
+    </select>
+    <label for="filter-size">Số sản phẩm mỗi trang</label><input id="filter-size" name="pageSize" type="number" value="@filter.PageSize" min="1" max="100" step="1" />
+    <button class="button" type="submit">Áp dụng</button>
+    <a class="filter-reset" href="@filter.PageUrl(remove: "filters")">Xóa bộ lọc</a>
+</form>

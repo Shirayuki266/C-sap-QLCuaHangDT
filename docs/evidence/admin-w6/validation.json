@@ -1,0 +1,151 @@
+{
+    "qaOnly":  true,
+    "regression":  322,
+    "adminClientGroups":  63,
+    "formGroups":  36,
+    "dpiCaptures":  56,
+    "releaseSqlCheckpoints":  19,
+    "releaseCaptures":  21,
+    "ci":  {
+               "sourceImplementationHead":  "a223fb6a9437cdea5a2bd95aad99ff6434061778",
+               "sourceImplementationRun":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41390309010",
+               "sourceConclusion":  "SUCCESS",
+               "finalHeadVerification":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/pull/113#issuecomment-6569365089",
+               "requirement":  "Both required jobs must be SUCCESS on actual PR head; the source run alone does not certify an amended head"
+           },
+    "backendBase":  "f6d80c7d91d99bef06bbe0c9a2c44bc717a5fbc4",
+    "protectedRuntimeDiff":  [
+
+                             ],
+    "sourceNormalization":  "UTF8 text with LF, excludes bin/obj; application source fingerprints, not a claim that git metadata in rebuilt binaries is identical",
+    "applicationSource":  [
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/ApiClient.cs",
+                                  "sha256":  "CEC03D2E0BB5F4AFFF0458BCE0B5CCAE7681CB5D4F9B5F8A2B99919AED527103"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/ApiErrors.cs",
+                                  "sha256":  "25447C38B59808103E0F17D797AF7D4D778259227954247D497ED7D857548E66"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/Catalog.cs",
+                                  "sha256":  "4EBB9398EE54566C9BC1DD0D1D0416EC82298C971E4DD45A55FD9B745A7D2D89"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/Contacts.cs",
+                                  "sha256":  "7D66C8A9A7DDAAD95B24E18CF51BF847287CE3D648B7BA79618065434E9A2AF5"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/Contracts.cs",
+                                  "sha256":  "171BDF474471C08CD5860F33311C0655A18BF2D4999A5F38A18D41B2DC395CC0"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/Orders.cs",
+                                  "sha256":  "03A5395D9FF8BC0CD4A5B7CB631CC760C58FB4C5B020A5AF6664C44BE7A7781B"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/PhoneStore.Admin.Client.csproj",
+                                  "sha256":  "8D654C44B7BEBB6B31A9F2F606927F45B5072193ADC4EEF8CCE3F3CF3B278DF3"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/Reports.cs",
+                                  "sha256":  "0A2EA8F3E37FE412CC29C1A66B7C26A8227C4B69AC4EBD52A6442562E4897915"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin.Client/Supply.cs",
+                                  "sha256":  "B1F0EB6A954971E5187B64478046E400ABEC80DD732576788EB78ADEDB7C42EE"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/AdminTheme.cs",
+                                  "sha256":  "A918EC1F4E06B88989F04E22A584B484B62C10EE8DA8358855F47A427AAB1FEC"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/CatalogUi.cs",
+                                  "sha256":  "844D234B2ED212B657BC09005F53B617B6598319E6C262CB1225BB931ADBFADB"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/ConfirmationDialog.cs",
+                                  "sha256":  "B03E3C0550F85A9316D6697450629626065D39EBD6EAA3709E4E8243C165F94A"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/ContactLists.cs",
+                                  "sha256":  "9BE7A4A6C5CB7F85F28D7605ABC80802F0EEFA84ED232D1CF5D1BE9380422B58"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/CustomerForms.cs",
+                                  "sha256":  "9DA1A44355E9E2289A6D2C08A8E2C1D2728B4FF517419DFF2C0DFD80692D8861"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/DashboardView.cs",
+                                  "sha256":  "B573AEB59B6853BCE5071B354634B6074CF3A9ABCDD3B3EC755576766DB7BAFF"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/InvoiceForm.cs",
+                                  "sha256":  "0B6C4ADF2424A6C63AF4F41EDD984C8BA12D414F5AD0B62F7BA75C498FA5B57B"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/LoginForm.cs",
+                                  "sha256":  "9AF17A06B4226E98B75C1054A6630B2B9DAF8328108F2969E2BBA7D6C956081D"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/LookupForm.cs",
+                                  "sha256":  "0155880F2659AAA455A267CC801CBDB98E8ECF4E1E2511BC37C7AB32CB642B2F"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/MainForm.cs",
+                                  "sha256":  "6F0CB9BD1A94BA475B1D61B31FB163CA2E2220AC960EDFEB0FEA7FBC7C723932"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/OrderForms.cs",
+                                  "sha256":  "971298B178B0893C296A8D18818620EA202F2BFEF75EA7E93BBD0F9EB4E5DDA9"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/PasswordForm.cs",
+                                  "sha256":  "924A47EA0095A54A084F5DAF8101859A08EE752A81A336EFA9E297D31B7470AE"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/PhoneStore.Admin.csproj",
+                                  "sha256":  "CCF153B6D14F3D67045F593D5788C8AEC7572ADEA7A08D9E35189E46BB13F7C3"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/ProductEditor.cs",
+                                  "sha256":  "5788BFCED1E89590C92F8BAD49556DCC0099164F57983DCDCF4A677F63298917"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/ProductListForm.cs",
+                                  "sha256":  "C0E9850009DCD9BA33A116FB1FAB60F8C8B2FE2528A2FABDCBC4D0DBF8FDD82E"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/Program.cs",
+                                  "sha256":  "49493F2E9886D782A596DF396F40765984B4B082A92AC976F4BC839A61AEE2C6"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/PurchaseForms.cs",
+                                  "sha256":  "A7472EAAAF45BDB32B4B5D8C67395706483C1DDCDE91E4EA9E8AB3541FC056D6"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/ReportScreen.cs",
+                                  "sha256":  "094076F2E15FC31EFF7DEEC85A67CCCC1440988E8EB0C4858B81F336406D4B15"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/ServerSettingsForm.cs",
+                                  "sha256":  "7688C5E1C901AAA3479358B046D3C8027CCB730794EEE7E9B2B01CDCA3A7E65D"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/SettingsStore.cs",
+                                  "sha256":  "CD9199F76E0944EC41BAE5D763EBC6647348C13C88CD364D8D9D51509982675F"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/StockForms.cs",
+                                  "sha256":  "C79C67736E2F230E6AA6CF0E5720E36A69EA74CECAA2543FA3BAD27EB3B6BEB3"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/SupplierEditor.cs",
+                                  "sha256":  "BF2CAA4485E340CE91C82A3F4E53FF2FC8C713435FA70AD486F78A5DF392842F"
+                              },
+                              {
+                                  "path":  "src/PhoneStore.Admin/SupplyVariantPicker.cs",
+                                  "sha256":  "6B5364F3AD4FCDA77A698D45B65B715BFF7A5F5363F649CC2F883B17B716DFE5"
+                              }
+                          ]
+}

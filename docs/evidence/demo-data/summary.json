@@ -1,0 +1,189 @@
+{
+  "stage": "licensed-catalog-correction-development-evidence",
+  "asOf": "2026-11-04",
+  "seed": 2611,
+  "scale": "full",
+  "catalog": "real",
+  "catalogSha256": "db8beaca231a19012bf677a5763faef7dc3f8212e80ac16a1a5b3f816c262fe4",
+  "businessManifestSha256": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+  "seedElapsedMilliseconds": 118015,
+  "verification": {
+    "Valid": true,
+    "Counts": {
+      "__PhoneStoreMigrations": 1,
+      "BIEN_THE": 125,
+      "DANH_MUC": 6,
+      "DON_HANG": 601,
+      "DON_HANG_CT": 813,
+      "GIO_HANG_CT": 25,
+      "HANG": 10,
+      "KHACH_HANG": 60,
+      "LICH_SU_DON": 2314,
+      "NHA_CUNG_CAP": 12,
+      "NHAT_KY_KHO": 1904,
+      "PHIEN": 0,
+      "PHIEU_NHAP": 56,
+      "PHIEU_NHAP_CT": 275,
+      "SAN_PHAM": 50,
+      "SAN_PHAM_ANH": 150,
+      "TAI_KHOAN": 61,
+      "THANH_TOAN": 601,
+      "TON_KHO": 125
+    },
+    "Quarters": [
+      {
+        "Year": 2024,
+        "Quarter": 4,
+        "Target": 70,
+        "Orders": 70,
+        "Revenue": 344022500
+      },
+      {
+        "Year": 2025,
+        "Quarter": 1,
+        "Target": 62,
+        "Orders": 62,
+        "Revenue": 400709150
+      },
+      {
+        "Year": 2025,
+        "Quarter": 2,
+        "Target": 58,
+        "Orders": 58,
+        "Revenue": 486455890
+      },
+      {
+        "Year": 2025,
+        "Quarter": 3,
+        "Target": 66,
+        "Orders": 66,
+        "Revenue": 564293878.87
+      },
+      {
+        "Year": 2025,
+        "Quarter": 4,
+        "Target": 84,
+        "Orders": 84,
+        "Revenue": 760793309.62
+      },
+      {
+        "Year": 2026,
+        "Quarter": 1,
+        "Target": 76,
+        "Orders": 76,
+        "Revenue": 746243038.92
+      },
+      {
+        "Year": 2026,
+        "Quarter": 2,
+        "Target": 70,
+        "Orders": 70,
+        "Revenue": 714245862.34
+      },
+      {
+        "Year": 2026,
+        "Quarter": 3,
+        "Target": 80,
+        "Orders": 80,
+        "Revenue": 732111111.36
+      },
+      {
+        "Year": 2026,
+        "Quarter": 4,
+        "Target": 35,
+        "Orders": 35,
+        "Revenue": 121179905.89
+      }
+    ],
+    "Statuses": {
+      "CHO_XAC_NHAN": 6,
+      "DA_HUY": 48,
+      "DA_XAC_NHAN": 6,
+      "DANG_GIAO": 6,
+      "GIAO_THAT_BAI": 23,
+      "HOAN_TAT": 512
+    },
+    "Metrics": {
+      "RecentOrders": 31,
+      "CurrentMonthEligibleProducts": 11,
+      "LowStockVariants": 8,
+      "OutOfStockVariants": 3,
+      "TypicalStockVariants": 118,
+      "FailedOrders": 23,
+      "FailedWithReturn": 20,
+      "Adjustments": 10,
+      "NoOrderCustomers": 2,
+      "Repeat5To10Customers": 27,
+      "OneOrderCustomers": 20,
+      "Drafts": 3,
+      "EmptyDrafts": 1,
+      "CancelledPurchases": 1,
+      "InactiveSuppliers": 2,
+      "InactiveProductsWithHistory": 4,
+      "CartCustomers": 12,
+      "RealProductMismatches": 0,
+      "RealVariantMismatches": 0,
+      "RealPhotoMismatches": 0,
+      "RealSnapshotMismatches": 0,
+      "RealPhotoDigestMismatches": 0
+    },
+    "Errors": []
+  },
+  "realApplicationSmoke": {
+    "result": "PASS",
+    "actualFullDemo": true,
+    "realKestrel": true,
+    "actualReleaseWinForms": true,
+    "fakeApi": false,
+    "agentAssisted": true,
+    "baselineBusinessHash": "8c23d1bf51e3f6d501f7eabf400de35028d94953fde165992f7917f02da0cb05",
+    "afterBusinessHash": "8c23d1bf51e3f6d501f7eabf400de35028d94953fde165992f7917f02da0cb05",
+    "zeroSessions": true,
+    "webDllSha256": "C9C86D8357CF72AEB6C83A0F7AA29120BC2DDC7FDB1F8D6E5B60A9514EE6A991",
+    "adminExeSha256": "F5F16A3A38422395A45F3A1FED9D82CC57BEEC472A0531D2B5BA8E3E44933965",
+    "adminDllSha256": "B94614677B8577245070B0144B4F5908200E54AD207C2A2912AC229523CD842B"
+  },
+  "reproducibility": {
+    "second": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+    "first": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+    "identical": true,
+    "sameSeed": 2611,
+    "sameAsOf": "2026-11-04"
+  },
+  "checklist": {
+    "DATA": 43,
+    "CLEAN": 33,
+    "total": 76,
+    "priorities": {
+      "P0": 43,
+      "P1": 31,
+      "P2": 2
+    },
+    "requiredStatuses": {
+      "PASS": 75,
+      "ACCEPTED_EXCEPTION": 1
+    },
+    "acceptedException": {
+      "id": "CLEAN.FILES.04",
+      "status": "ACCEPTED_EXCEPTION",
+      "approvalRef": "docs/demo-data/RELEASE_CLOSEOUT.md#approval-legacy-seeder-2026-11-04",
+      "reason": "User explicitly approved keeping the unchanged Infrastructure legacy DemoSeeder and demo-phone.svg; the separate current demo tool must remain real-only."
+    }
+  },
+  "finalAcceptance": {
+    "status": "NOT RUN in this pre-commit development snapshot",
+    "authority": "The correction PR publishes the final76-record ledger and evidence bound to its exact head SHA and matching CI. This file cannot embed its own future commit SHA.",
+    "releaseApproval": false,
+    "mergePerformed": false,
+    "tagCreated": false
+  },
+  "evidence": "closeout/README.md",
+  "sources": {
+    "facts": "../../demo-data/MODEL_SOURCES.md",
+    "images": "../../demo-data/IMAGE_CREDITS.md",
+    "visualReview": "../../demo-data/IMAGE_REVIEW.json",
+    "historicalImageRisk": "../../demo-data/PUBLIC_IMAGE_HISTORY.md",
+    "prices": "../../demo-data/PRICE_ASSUMPTIONS.md"
+  },
+  "secrets": "No password, connection string, token, cookie or backup contents included"
+}

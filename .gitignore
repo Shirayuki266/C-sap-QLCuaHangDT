@@ -3,8 +3,35 @@
 .vs/
 *.user
 *.suo
-**/node_modules/
 .artifacts/
+dist/
+**/node_modules/
+.env
+.env.*
+!.env.example
+**/appsettings.Local.json
+**/appsettings.*.local.json
 *.bak
+*.mdf
+*.ldf
+*.pfx
+# Local authoring inputs and tool settings are not application source.
+*.docx
+*.zip
+PROMPT_*.md
+.agent/
+.agents/
+.claude/
+.codex/
+.gemini/
+.impeccable/
+.qoder/
 
-/dist/
+# Local editor settings and authoring inputs; never stage these for release.
+/.vscode/
+/TAI_LIEU_BACKEND/
+/ux-ui_design_Phuong_an_A/
+
+# Superseded manufacturer-photo cache retained only for an existing local preview.
+# Licensed release assets use lc*.svg; fresh clones do not contain this cache.
+/src/PhoneStore.Web/wwwroot/images/demo/rl*.svg

@@ -1,0 +1,79 @@
+{
+  "fakeApi": true,
+  "qaOnly": true,
+  "checks": 2,
+  "captures": [
+    {
+      "name": "UI12-revenue",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI12-monthly",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI12-date-error",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI12-stock",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI12-bestsellers",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI12-empty",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI12-read-error",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI02-dashboard",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 0,
+      "minimumHeight": 0
+    },
+    {
+      "name": "UI02-dashboard-partial-failure",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 0,
+      "minimumHeight": 0
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+@model WebsiteError
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>@Model.Title</title>
+    <link rel="stylesheet" href="/css/storefront.css" />
+</head>
+<body class="error-body">
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <main id="main" class="error-page" tabindex="-1">
+        <p class="error-code">@Model.Status</p>
+        <h1>@Model.Title</h1>
+        <p>@Model.Message</p>
+        @if (Model.TraceId is not null)
+        {
+            <p class="trace">Mã tra cứu: <code>@Model.TraceId</code></p>
+        }
+        <a class="button" href="/Home/Index">Về trang chủ</a>
+    </main>
+</body>
+</html>

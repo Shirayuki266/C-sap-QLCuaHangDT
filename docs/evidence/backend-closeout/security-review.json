@@ -1,0 +1,46 @@
+{
+  "scope": "Tracked working-tree text, including staged closeout files, plus locally reachable Git history. Exact scan counts below; no values exported.",
+  "headBeforeCloseoutCommit": "dbc888ab962bbfd9b3f19514ce06b00d0d328e1c",
+  "trackedTextFiles": 156,
+  "historyTextBlobs": 550,
+  "confirmedApplicationSecrets": 0,
+  "confirmedRealConnectionStrings": 0,
+  "currentQAFixtureMatches": 29,
+  "historicalNonQACandidatesReviewed": [
+    {
+      "path": "src/PhoneStore.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "line": 5590,
+      "kind": "literal_password_or_secret",
+      "classification": "FALSE_POSITIVE",
+      "blob": "6294dff3dfb3956b992065c7991d4083bc0b9d9b",
+      "reason": "Bootstrap DATA_API_KEY event namespace, not an application credential"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "line": 3747,
+      "kind": "literal_password_or_secret",
+      "classification": "FALSE_POSITIVE",
+      "blob": "8c83b36f8e0a639495f4a5cdb482cccf11026e85",
+      "reason": "Bootstrap DATA_API_KEY event namespace, not an application credential"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "line": 6,
+      "kind": "literal_password_or_secret",
+      "classification": "FALSE_POSITIVE",
+      "blob": "c573a34463763631ad17e6eda0ccbdfa388a6789",
+      "reason": "Bootstrap DATA_API_KEY event namespace, not an application credential"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "line": 3770,
+      "kind": "literal_password_or_secret",
+      "classification": "FALSE_POSITIVE",
+      "blob": "e3a59e3a1c3cd659a3475fe4128e7da427c5c223",
+      "reason": "Bootstrap DATA_API_KEY event namespace, not an application credential"
+    }
+  ],
+  "defaultApplicationPasswords": 0,
+  "acceptedSeederException": "Explicit QA/dev command only, externally supplied passwords, never live DB; runtime target-name guard deferred by user approval.",
+  "limitations": "Pattern inventory plus manual review; REVIEW is not a claim that a credential is live. No credential validation, values, source lines or secret fingerprints are exported."
+}

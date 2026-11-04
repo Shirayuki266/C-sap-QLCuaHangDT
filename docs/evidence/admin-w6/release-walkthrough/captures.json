@@ -1,0 +1,170 @@
+﻿[
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "login-ready",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "login",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "product-created",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "draft-saved",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "receipt-confirmed",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "customer-order1",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order1-confirmed",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order1-dispatched",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order1-completed",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "revenue-seen",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "customer-order2",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order2-confirmed",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order2-dispatched",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order2-failed",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order2-returned",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "customer-order3",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order3-confirmed",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "order3-cancelled",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "expire-before-save",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "expired-draft-warning",
+        "width":  568,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  232
+    },
+    {
+        "method":  "Win32 input + UIAutomation + PrintWindow",
+        "name":  "expired-returned-login",
+        "width":  1280,
+        "actualReleaseProcess":  true,
+        "processId":  24532,
+        "height":  800
+    }
+]

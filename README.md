@@ -1,151 +1,70 @@
-﻿# Phone Store — Quản lý và bán điện thoại di động
+# Phone Store backend
 
-C# / .NET 10: website khách hàng ASP.NET Core MVC, WinForms quản trị, API ASP.NET Core dùng chung và SQL Server. Các chức năng đọc/ghi CSDL thật; không còn adapter danh mục hard-code trong runtime. Dữ liệu seed là dữ liệu thử, giá và ảnh không đại diện cửa hàng thực tế.
+For the current full **real-product demo**, follow [DEMO_DATA.md](docs/DEMO_DATA.md) using the separate `tools/PhoneStore.DemoData` CLI and a new `PhoneStore_Demo_` database. It defaults to the real catalog and rejects the historical fictional profile. [Image sources/licenses](docs/demo-data/IMAGE_CREDITS.md) and [simulated price/cost assumptions](docs/demo-data/PRICE_ASSUMPTIONS.md) are recorded explicitly. The legacy Web `--seed-demo` described below is retained unchanged for compatibility; it is not the current full demo generator.
 
-## Yêu cầu môi trường
+.NET10 + ASP.NET Core API + EF Core/SQL Server. The accepted backend implements K01-K15/A01-A22 server behavior; MVC/WinForms UI is a separate stage. See [API mapping](docs/API_COMPATIBILITY.md), [final backend checklist](docs/BACKEND_CHECKLIST_FINAL.md) and [database details](docs/DATABASE.md).
 
-- Windows và .NET 10 SDK (máy triển khai đang dùng SDK 10.0.401).
-- SQL Server cục bộ hoặc máy chủ truy cập được. Mặc định instance `localhost`, Windows Authentication, CSDL `PhoneStore`.
-- Tài khoản chạy migration có quyền tạo DB/bảng; tài khoản chạy server cần quyền đọc/ghi DB và `sp_getapplock`. WinForms chỉ kết nối API, không cần quyền SQL.
-- Node.js 22+ và Chrome chỉ cần khi chạy bộ kiểm tra trình duyệt.
+## Run from a new database
 
-## Cài đặt và tạo CSDL
-
-Chạy PowerShell từ thư mục chứa `PhoneStore.slnx`:
+Requires the .NET10 SDK and SQL Server. Run at the repository root. The following is a **local Windows-authentication example**, not a production connection or credential:
 
 ```powershell
-dotnet restore PhoneStore.slnx
-dotnet build PhoneStore.slnx --no-restore
-
-# Tùy chọn, nếu dùng instance khác:
-$env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
-
-# Tạo CSDL nếu chưa có, áp dụng migration rồi nạp dữ liệu mẫu:
-dotnet run --project src/PhoneStore.Web -- --migrate --seed
+dotnet restore src/PhoneStore.Web/PhoneStore.Web.csproj
+dotnet restore tests/PhoneStore.Checks/PhoneStore.Checks.csproj
+dotnet build src/PhoneStore.Web/PhoneStore.Web.csproj -c Release --no-restore
+dotnet build tests/PhoneStore.Checks/PhoneStore.Checks.csproj -c Release --no-restore
+$env:ASPNETCORE_ENVIRONMENT = 'Development'
+$env:ConnectionStrings__Store = 'Server=localhost;Database=PhoneStore_Dev_New;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
+dotnet run --no-build -c Release --project src/PhoneStore.Web -- --migrate
+dotnet run --no-build -c Release --project src/PhoneStore.Web -- --urls http://localhost:5080
 ```
 
-Migration SQL tại `src/PhoneStore.Infrastructure/Migrations/001_Initial.sql`, gồm 16 bảng nghiệp vụ và bảng phiên `PHIEN`. Runner ghi phiên bản và SHA-256 trong `__PhoneStoreMigrations`, khóa transaction khi chạy và bỏ qua bản đã áp dụng. Chạy lại không tạo trùng bảng. Không chỉnh script đã áp dụng; thêm file migration có thứ tự tiếp theo khi thay đổi schema.
+Use a genuinely new DB name; never point this command at a legacy or live DB. `--migrate` explicitly creates/verifies the **rebuild001** lineage and checksum. It installs the final19-table schema, including BIEN_THE.Cost/ProfitPercent/Price; the actual ledger is **dbo.__PhoneStoreMigrations**. No002/003 migration is required or supplied for this rebuild. **Chỉ hỗ trợ dựng DB mới, không có đường nâng cấp từ DB cũ.** Legacy003 price-preserving upgrade coverage is N/A.
 
-Seed chỉ chạy khi bảng tài khoản trống, không ghi đè dữ liệu đang có. Có 2 tài khoản, 3 hãng, 1 danh mục, 3 điện thoại với 4 biến thể, 1 NCC và phiếu nhập đã xác nhận có nhật ký; một biến thể hết hàng để thử lỗi. Tồn ban đầu được ghi kèm phiếu nhập, không sửa từ website. Trên máy hiện tại đã có thêm đơn hoàn tất và đơn hủy từ kiểm thử HTTP/trình duyệt để xem báo cáo.
+Normal host startup does not migrate, seed or create accounts. Check `GET /health/live` and `GET /health/ready`; readiness is503 before migration and200 afterward. There are no default passwords. Stop the host with Ctrl+C. Use a trusted SQL certificate and `TrustServerCertificate=False` outside local development; remote application access requires HTTPS.
 
-| Vai trò | Tên đăng nhập | Mật khẩu mẫu |
-|---|---|---|
-| Admin — WinForms | `admin` | `Admin@12345` |
-| Khách hàng — website | `khachhang` | `Khach@12345` |
+## Configuration
 
-Có thể đặt `Seed__AdminPassword` và `Seed__CustomerPassword` trước lần seed đầu tiên. Mật khẩu trong CSDL được băm PBKDF2 với salt qua PasswordHasher; các mật khẩu trên chỉ phục vụ chạy thử. Đổi bằng màn hình Tài khoản trước khi sử dụng dữ liệu thật. Ngoài Development, seed yêu cầu cấu hình cả hai mật khẩu thay vì dùng mặc định.
+| Setting | Required use |
+| --- | --- |
+| `ConnectionStrings__Store` | Explicit application SQL target, supplied externally; never commit a real connection or password |
+| `ASPNETCORE_ENVIRONMENT` | Development locally; Production for a configured deployment |
+| `--urls` / `ASPNETCORE_URLS` | Host listening URL; local example above, HTTPS for remote use |
+| `PHONESTORE_QA_SERVER`, `PHONESTORE_QA_DATABASE`, `PHONESTORE_TEST_CONNECTION` | Matching explicit QA target for SQL checks; QA DB name must start with PhoneStore_QA_ |
+| `PHONESTORE_BACKEND_SMOKE_REPORT` | Optional path for sanitized smoke/schema JSON; never includes connection strings, cookies or tokens |
 
-## Chạy hai ứng dụng
+SQL-authentication deployments must inject credentials through environment/secret management. The repository contains no real application connection or production password; disposable QA fixture credentials are identified in the [security review](docs/BACKEND_SECURITY_REVIEW.md).
 
-Terminal thứ nhất:
+## Test and reproduce the empty-DB smoke
+
+The checks are an executable runner: use `dotnet run`, **not** `dotnet test`. This section requires the restore and Release build above before either `--no-build` command; do not start here in a fresh checkout without building first.
 
 ```powershell
-dotnet run --no-build --project src/PhoneStore.Web --urls http://localhost:5080
+$env:PHONESTORE_QA_SERVER = 'localhost'
+$env:PHONESTORE_QA_DATABASE = 'PhoneStore_QA_Local'
+$env:PHONESTORE_TEST_CONNECTION = 'Server=localhost;Database=PhoneStore_QA_Local;Integrated Security=True;Encrypt=True;TrustServerCertificate=True'
+dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --backend-smoke
+dotnet run --no-build -c Release --project tests/PhoneStore.Checks -- --integration
 ```
 
-Mở http://localhost:5080. API nằm tại `/api`, quản trị tại `/api/admin`. Terminal thứ hai:
+The smoke creates an isolated empty QA DB, proves startup does not migrate, runs the actual `--migrate` CLI twice, inspects INFORMATION_SCHEMA/sys, runs the read-only audit, starts the host and checks public/protected/CSRF behavior. All18 application/session tables stay empty. It removes only the unique DB it created. The full CI integration run also executes this smoke. No checks target PhoneStore_Rebuild or a demo/live database.
 
-```powershell
-$env:PHONESTORE_API_URL = 'http://localhost:5080'
-dotnet run --project src/PhoneStore.Admin
-```
+## Customer MVC
 
-WinForms mở màn hình đăng nhập có thể sửa địa chỉ API. Tài khoản Customer bị từ chối khi đăng nhập quản trị. Nếu dùng máy chủ từ xa, WinForms yêu cầu HTTPS. Khi build lại, dừng các tiến trình đang chạy để tránh khóa DLL.
+Customer MVC is delivered in separate reviewable steps. Foundation PR87, Account PR91, Catalog PR93, Cart PR95, Checkout PR97 and Orders PR99 are merged. Final step6 starts at `3bc247dd79ee3eab7919cdfe60fa34671a448f26` and adds complete browser/admin-API/SQL flow acceptance, shared loading/error feedback and whole-site checks. See [customer website handover and browser test commands](docs/MVC_HANDOVER.md), [source boundary audit](docs/MVC_ARCHITECTURE_AUDIT.md) and [all99 official MVC results](docs/MVC_CHECKLIST_RESULTS.md). Function-specific evidence remains in the accounts/catalog/cart/checkout/orders reports. Existing backend services, schema and admin API are unchanged. This acceptance PR awaits user review and does not merge itself.
 
-## Thử luồng chính
+## Windows Admin
 
-1. Đăng ký hoặc đăng nhập khách; mở điện thoại, chọn màu/dung lượng, thêm giỏ. Giỏ chưa đăng nhập nằm trong localStorage và hợp nhất sau login.
-2. Xem giỏ, sửa/xóa; mở checkout, nhập người nhận, SĐT, địa chỉ và đặt COD. Đơn mới giữ hàng, chưa trừ tồn thực.
-3. Mở WinForms → Đơn hàng → chọn đơn → Xem/Xử lý → Xác nhận → Xuất giao → Hoàn tất và thu COD.
-4. Xuất giao giảm cả tồn thực và giữ. Báo cáo chỉ tính đơn hoàn tất và đã thu, theo ngày hoàn tất UTC+7.
-5. Với đơn chờ, khách hoặc Admin hủy để hoàn giữ; Admin được hủy thêm ở trạng thái đã xác nhận. Hủy/giao thất bại cần lý do.
-6. Giao thất bại không tăng kho; bấm Nhận lại khi đã thực nhận toàn bộ hàng, chỉ được một lần.
-7. Điện thoại → Thêm → nhập biến thể và lượng cần nhập → lưu → phiếu nhập điền sẵn hàng/lượng. Chọn NCC và giá vốn, lưu nháp rồi xác nhận tại danh sách phiếu. Tồn chỉ tăng sau xác nhận.
-8. Tồn kho → kiểm kê có lý do; giá nhập quản lý ở phiếu, giá bán ở sản phẩm. Hãng/danh mục/NCC dùng ngừng hoạt động, không xóa lịch sử.
+W1 adds a separate HTTP-only native WinForms application and net10.0 client. W2 adds products, multi-variant editing, brands and categories; W3 adds customers/suppliers, an active-supplier picker and minimal read-only customer-order details. W4 adds purchase drafts/confirmation/cancellation, inventory, journal and absolute stock counting, including the ProductEditor purchase handoff. W5 adds order search/detail/fulfillment, separate COD, full customer-order drilldown and server invoice/native PrintPreview with no-printer recovery. On Windows: `dotnet run --project src/PhoneStore.Admin -c Release`. Configure the backend URL on Login; there are no default credentials. See [W1 setup/boundaries/tests](docs/WINFORMS_W1.md), [W2 catalog evidence](docs/WINFORMS_W2.md), [W3 contact/session/SQL/UI evidence](docs/WINFORMS_W3.md), [W4 purchase/stock/race/UI evidence and commands](docs/WINFORMS_W4.md), [W5 order/COD/matrix/invoice evidence](docs/WINFORMS_W5.md) and the [113-ID Admin ledger](docs/WINFORMS_CHECKLIST_RESULTS.md). W6 adds reports, separately timestamped overview metrics, integrated flows and native DPI/keyboard checks. See [W6 evidence](docs/WINFORMS_W6.md) and [WinForms handover/run commands](docs/WINFORMS_HANDOVER.md); the ledger is bound to the exact-head CI verification record in PR113. This PR does not merge itself.
 
-Website có hồ sơ, đổi mật khẩu, lọc lịch sử và chi tiết/timeline đơn. WinForms có hãng/danh mục, quản lý khách hàng và khóa/mở phiên, NCC, phiếu nháp nhiều dòng, nhật ký kho, tìm/lọc đơn, hóa đơn qua PrintPreview/Print và ba loại báo cáo có bảng/biểu đồ.
+The full solution now includes Windows targets and is built on Windows. The explicit backend commands above and unchanged Ubuntu CI build only Web/Checks; a new cross-platform Admin.Client.Checks step uses isolated SQL QA. Windows form checks run separately with a fake API and publish actual control captures.
 
-## Kiểm thử
+## Provisioning and sample data
 
-```powershell
-# 8 kiểm tra miền độc lập:
-dotnet run --project tests/PhoneStore.Checks
+ADMIN provisioning requires explicit credentials supplied externally via `PHONESTORE_ADMIN_USERNAME`/`PHONESTORE_ADMIN_PASSWORD` and the separate `--provision-admin` command. See [secure-input instructions](docs/DATABASE.md); do not put credentials in shell command arguments or source.
 
-# Thêm 20 nhóm kiểm thử SQL (cần quyền tạo CSDL):
-dotnet run --project tests/PhoneStore.Checks -- --integration
+The optional seeder runs **only by the explicit `--seed-demo` command**, only on a separate **QA/dev DB**, and **must never run on a live DB**. It has no default password: `PHONESTORE_DEMO_ADMIN_PASSWORD` and `PHONESTORE_DEMO_CUSTOMER_PASSWORD` must be supplied externally. The existing runtime does not enforce a QA-name restriction; adding that guard is an accepted later improvement, not part of this closeout. The empty-DB startup/smoke never invokes it.
 
-# Thêm 6 nhóm HTTP/MVC, cần server đang chạy:
-dotnet run --project tests/PhoneStore.Checks -- --api
+Private Word files and the prototype archive are ignored and untracked. The locally extracted prototype directory is untracked, but is not covered by the current ignore rules: never stage it. The full GitHub branch/tag history was checked separately from local Codex recovery refs; those local recovery trees contain prototype objects, so do not claim every local Git object is free of private inputs. No refs were removed or history rewritten. See [handover and review scope](docs/BACKEND_HANDOVER.md).
 
-# Mở ẩn và tải dữ liệu 11 màn hình WinForms, chụp các form:
-dotnet run --project src/PhoneStore.Admin -- --smoke
-
-# Chrome headless: 10 kiểm tra website desktop/mobile và luồng giỏ/COD/hủy:
-node scripts/browser-checks.mjs
-```
-
-SQL checks luôn tạo CSDL riêng `PhoneStore_Checks_<timestamp>_<suffix>` và giữ lại để đối chiếu. Không xóa DB ứng dụng. Có thể đặt `PHONESTORE_TEST_CONNECTION` cho server SQL khác; tên DB thử vẫn tự sinh. HTTP checks tạo tài khoản `verify...` và đơn COD hoàn tất trong DB của server đang chạy; chỉ chạy với dữ liệu thử. Chrome checks dùng tài khoản `khachhang`, tạo rồi hủy một đơn, giữ nhật ký. `PHONESTORE_ADMIN_PASSWORD` cho phép đổi mật khẩu đăng nhập của các bộ kiểm tra; Chrome sử dụng mật khẩu seed mẫu của khách.
-
-Log/ảnh lần chạy mới ở `.artifacts/` (gitignore). Bằng chứng đã lưu tại [docs/verification](docs/verification), [ảnh giao diện](docs/screenshots), và [báo cáo kiểm thử](docs/TESTING.md).
-
-## Sao lưu và khôi phục
-
-Chạy trên máy SQL Server bằng tài khoản có quyền backup/restore. Đường dẫn là đường dẫn phía SQL Server, tài khoản dịch vụ SQL cần đọc/ghi được.
-
-```powershell
-# Mặc định ghi file mới theo timestamp trong thư mục backup của SQL Server:
-./scripts/BackupRestore.ps1 -Mode Backup -Database PhoneStore
-
-./scripts/BackupRestore.ps1 -Mode Verify -BackupFile 'C:\SqlBackups\PhoneStore_20261025.bak'
-
-# Chỉ khôi phục vào CSDL mới, từ chối DB đích đã có; không dùng REPLACE:
-./scripts/BackupRestore.ps1 -Mode Restore -BackupFile 'C:\SqlBackups\PhoneStore_20261025.bak' -RestoreDatabase PhoneStore_Restored_Test
-```
-
-Thêm `-Server` nếu không dùng localhost. Đã thử backup+VERIFYONLY và restore trên DB kiểm thử riêng. Sau khôi phục, đối chiếu dữ liệu trước khi tự đổi cấu hình ứng dụng sang DB mới. Script không chuyển cấu hình hoặc ghi đè DB hiện hành.
-
-## Kiến trúc, phạm vi và giới hạn xác minh
-
-Xem [REQUIREMENTS.md](REQUIREMENTS.md), [PROGRESS.md](PROGRESS.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Không có quản trị website thay thế WinForms.
-
-Các luồng SQL/HTTP và Chrome đã chạy; WinForms đã kiểm tra tải dữ liệu, kết buộc dữ liệu và render form. Chưa tự động bấm mọi thao tác WinForms hay kiểm tra máy in vật lý; cần nghiệm thu tương tác desktop và in trên thiết bị đích. Chưa benchmark tải lớn hoặc triển khai HTTPS production. Development dùng khóa Data Protection tạm, nên restart server sẽ hủy cookie/token cũ; production cần kho khóa bền vững được bảo vệ, chứng chỉ hợp lệ và cấu hình kết nối riêng (không dùng TrustServerCertificate với máy chủ chưa được tin cậy).
-
-## QA mới nhất — 25/10/2026
-
-Đợt QA này sửa và kiểm tra lại 8 lỗi. Runner cách ly đạt 336/336 ca, gồm 6 E2E; Chrome 12 kiểm tra con, WinForms 4 kiểm tra con (đã nằm trong tổng runner), cùng 8 unit checks riêng. Build Release từng project và solution: 0 warning/error.
-
-Kết quả mới nhất: [TEST_REPORT.md](TEST_REPORT.md), [BUG_REPORT.md](BUG_REPORT.md), [QA_CHECKLIST.md](QA_CHECKLIST.md), [REQUIREMENTS_TRACEABILITY.md](REQUIREMENTS_TRACEABILITY.md), [API_INVENTORY.md](API_INVENTORY.md). Các nhận xét kiểm thử phía trên là lịch sử. Chưa nghiệm thu toàn bộ: 46 NOT RUN và 2 BLOCKED, chi tiết trong TEST_REPORT.
-
-Chạy QA trên Windows có .NET 10, SQL Server với quyền tạo CSDL, Node 22+ và Chrome:
-
-```powershell
-dotnet restore PhoneStore.slnx
-dotnet build PhoneStore.slnx -c Release --no-restore
-dotnet run --no-build -c Release --project tests/PhoneStore.Qa -- --children
-node scripts/qa-static.mjs
-node scripts/qa-report.mjs
-```
-
-Runner tạo CSDL PhoneStore_QA_..., credential ngẫu nhiên trong bộ nhớ và server trên cổng riêng; tự dừng process do nó tạo. Giữ DB QA để đối chiếu, không sửa PhoneStore. Có thể đặt PHONESTORE_TEST_CONNECTION cho server SQL kiểm thử; tên DB luôn được thay bằng tên QA mới. Chrome dùng profile/cổng debug riêng. Log an toàn ở .artifacts/qa và docs/qa; exit code khác 0 nếu FAIL. Có khoảng chờ để kiểm tra rate limit thực tế.
-
-Các lệnh API/HTTP/browser cũ có thể mặc định dùng PhoneStore, nên dùng runner mới cho hồi quy cách ly. Đợt này script backup bị ExecutionPolicy chặn; không thay đổi chính sách máy. In thiết bị vật lý chưa kiểm chứng.
-
-## Môi trường QA cấu hình riêng
-
-Hướng dẫn chuẩn và sáu hồ sơ mới ở [docs/qa/README.md](docs/qa/README.md). Dùng `node scripts/qa.mjs init`, `node scripts/qa.mjs serve`, `node scripts/qa.mjs test`; bộ cũ chạy qua `node scripts/qa.mjs legacy`. Các fallback test về PhoneStore/5080 đã bị loại bỏ; thiếu hoặc sai cấu hình QA thì dừng trước ghi. URL tương tác trong đợt này http://localhost:65377; đọc manifest để lấy URL mới nhất. Tài khoản ngẫu nhiên chỉ lưu cục bộ trong .artifacts/qa-env/private.json, không đưa vào báo cáo. Cleanup chỉ chạy khi gọi rõ ràng `node scripts/qa.mjs cleanup`, sau khi dừng server QA.
-
-Số liệu QA mới nhất nằm trong docs/qa/TEST_REPORT.md; các số liệu cũ ở phần trên là lịch sử.
-
-## Bản Admin Windows nhấp đúp
-
-Đã publish win-x64 self-contained tại `dist/Phone Store Admin/PhoneStore.Admin.exe` và tạo shortcut **Phone Store Admin** trên Desktop. Chỉ cần nhấp shortcut và đăng nhập; URL được lưu trong LocalAppData, không nhập mỗi lần. Backend local được tự mở từ bản publish, kiểm tra đúng môi trường/CSDL trước khi đăng nhập và được giữ khi đóng Admin để website tiếp tục dùng chung.
-
-Xem [hướng dẫn Windows](docs/ADMIN_WINDOWS.md) và [báo cáo đóng gói](docs/qa/ADMIN_PACKAGING_REPORT.md). Vẫn cần SQL Server và schema đã thiết lập; không tự seed/reset khi mở app. Script publish/thiết lập shortcut: `scripts/publish-admin.mjs`, `scripts/install-admin.mjs`. Không có tài khoản/mật khẩu QA trong thư mục phát hành. Các lệnh dotnet run ở trên chỉ dành cho phát triển.
-
-## Website khách hàng cập nhật
-
-Trang chủ: http://localhost:65377/ · Sản phẩm: http://localhost:65377/Catalog · Tìm kiếm: http://localhost:65377/Search?Query=iphone. Header chỉ có một link đăng nhập cho khách, có gợi ý từ SQL; trang chủ tách bộ lọc sang danh mục. Bán chạy tính theo đơn hoàn tất đã thu trong30 ngày lịch gần nhất (UTC+7), không hiển thị doanh thu nội bộ.
-
-Migration002 bổ sung SAN_PHAM_ANH, giữ cột ImageUrl và dữ liệu cũ. Ảnh mẫu HTTPS có nguồn/giấy phép tại /Home/ImageCredits; không gán ảnh sai cho model chưa xác minh được. COD giữ nguyên; QR chỉ là lựa chọn disabled “Sắp ra mắt”, request QR bị backend từ chối.
-
-Báo cáo đầy đủ và21 tiêu chí: [WEB_DISCOVERY_REPORT.md](docs/qa/WEB_DISCOVERY_REPORT.md). Đã chạy349/349 ca hồi quy,22 kiểm tra Chrome con và12 kiểm tra Chrome chỉ đọc trên website đã kích hoạt. Backend publish hiện tại nằm trong dist/Phone Store Customer Web; launcher Admin đã cấu hình dùng backend đó trên cùng DB QA. Không cần chạy seed/migrate mỗi lần mở ứng dụng.
+Backend tagging remains pending explicit user approval; this PR neither merges itself nor creates `backend-v1.0`. See [closeout evidence and tag procedure](docs/BACKEND_CLOSEOUT.md).

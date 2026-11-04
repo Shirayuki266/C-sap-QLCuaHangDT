@@ -1,0 +1,73 @@
+{
+  "platform": "Windows STA WinForms",
+  "fakeApi": true,
+  "checks": 8,
+  "logicalMinimum": "1280x800 for main/login; physical dimensions depend on DPI",
+  "captures": [
+    {
+      "name": "UI01-login-1280",
+      "width": 1280,
+      "height": 800,
+      "dpi": 96,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI01-login-busy",
+      "width": 1280,
+      "height": 800,
+      "dpi": 96,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI01-login-error",
+      "width": 1280,
+      "height": 800,
+      "dpi": 96,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI01-offline",
+      "width": 1280,
+      "height": 800,
+      "dpi": 96,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI02-main-1280",
+      "width": 1280,
+      "height": 800,
+      "dpi": 96,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "password-error",
+      "width": 660,
+      "height": 500,
+      "dpi": 96,
+      "minimumWidth": 660,
+      "minimumHeight": 500
+    },
+    {
+      "name": "settings-invalid",
+      "width": 720,
+      "height": 620,
+      "dpi": 96,
+      "minimumWidth": 720,
+      "minimumHeight": 620
+    },
+    {
+      "name": "confirmation-foundation",
+      "width": 620,
+      "height": 330,
+      "dpi": 96,
+      "minimumWidth": 620,
+      "minimumHeight": 330
+    }
+  ],
+  "notes": "Actual form controls/PerformClick/DrawToBitmap; actual backend/SQL proofs live in Admin.Client.Checks. No fake evidence is labeled as real API."
+}

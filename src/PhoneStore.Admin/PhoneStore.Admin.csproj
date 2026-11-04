@@ -1,19 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\PhoneStore.Core\PhoneStore.Core.csproj" />
-  </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Product>Phone Store Admin</Product>
-    <ApplicationIcon>Assets/phone-store.ico</ApplicationIcon>
-    <AssemblyTitle>Phone Store Admin</AssemblyTitle>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-  <ItemGroup><None Update="adminsettings.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" /></ItemGroup>
-
+  <ItemGroup><ProjectReference Include="../PhoneStore.Admin.Client/PhoneStore.Admin.Client.csproj" /></ItemGroup>
 </Project>

@@ -1,0 +1,420 @@
+{
+  "result": "PASS",
+  "realBrowser": true,
+  "realHost": true,
+  "fakeApi": false,
+  "checks": [
+    {
+      "name": "current-month home bestsellers",
+      "products": 8
+    },
+    {
+      "name": "all active products, actual photos/descriptions/specifications",
+      "products": 46
+    },
+    {
+      "name": "catalog name search",
+      "query": "Samsung",
+      "count": 11
+    },
+    {
+      "name": "catalog name search",
+      "query": "Auvora",
+      "count": 0
+    },
+    {
+      "name": "catalog name search",
+      "query": "Lumetrix",
+      "count": 0
+    },
+    {
+      "name": "catalog name search",
+      "query": "DM001",
+      "count": 0
+    },
+    {
+      "name": "real MVC login and owned history",
+      "orders": 153,
+      "visible": 20
+    },
+    {
+      "name": "read-only historical quarters/cart/checkout",
+      "quarters": 6,
+      "ordersPlaced": 0
+    }
+  ],
+  "timings": [
+    {
+      "label": "home",
+      "route": "/Home/Index",
+      "milliseconds": 429.24159999999995
+    },
+    {
+      "label": "catalog-page-1",
+      "route": "/Catalog/Index?page=1",
+      "milliseconds": 332.12760000000003
+    },
+    {
+      "label": "catalog-page-2",
+      "route": "/Catalog/Index?page=2",
+      "milliseconds": 128.51000000000022
+    },
+    {
+      "label": "catalog-page-3",
+      "route": "/Catalog/Index?page=3",
+      "milliseconds": 98.37089999999989
+    },
+    {
+      "label": "catalog-page-4",
+      "route": "/Catalog/Index?page=4",
+      "milliseconds": 88.38250000000016
+    },
+    {
+      "label": "product-155",
+      "route": "/Catalog/Details/155",
+      "milliseconds": 161.04550000000017
+    },
+    {
+      "label": "product-156",
+      "route": "/Catalog/Details/156",
+      "milliseconds": 67.27789999999914
+    },
+    {
+      "label": "product-157",
+      "route": "/Catalog/Details/157",
+      "milliseconds": 58.205799999999726
+    },
+    {
+      "label": "product-158",
+      "route": "/Catalog/Details/158",
+      "milliseconds": 56.71050000000014
+    },
+    {
+      "label": "product-159",
+      "route": "/Catalog/Details/159",
+      "milliseconds": 57.170900000000074
+    },
+    {
+      "label": "product-160",
+      "route": "/Catalog/Details/160",
+      "milliseconds": 49.96230000000014
+    },
+    {
+      "label": "product-161",
+      "route": "/Catalog/Details/161",
+      "milliseconds": 58.92649999999958
+    },
+    {
+      "label": "product-162",
+      "route": "/Catalog/Details/162",
+      "milliseconds": 41.14219999999932
+    },
+    {
+      "label": "product-163",
+      "route": "/Catalog/Details/163",
+      "milliseconds": 55.901200000000244
+    },
+    {
+      "label": "product-164",
+      "route": "/Catalog/Details/164",
+      "milliseconds": 40.59130000000005
+    },
+    {
+      "label": "product-165",
+      "route": "/Catalog/Details/165",
+      "milliseconds": 58.37219999999979
+    },
+    {
+      "label": "product-166",
+      "route": "/Catalog/Details/166",
+      "milliseconds": 58.12870000000021
+    },
+    {
+      "label": "product-167",
+      "route": "/Catalog/Details/167",
+      "milliseconds": 57.48199999999997
+    },
+    {
+      "label": "product-168",
+      "route": "/Catalog/Details/168",
+      "milliseconds": 41.30190000000039
+    },
+    {
+      "label": "product-169",
+      "route": "/Catalog/Details/169",
+      "milliseconds": 57.998499999999694
+    },
+    {
+      "label": "product-170",
+      "route": "/Catalog/Details/170",
+      "milliseconds": 41.79140000000007
+    },
+    {
+      "label": "product-171",
+      "route": "/Catalog/Details/171",
+      "milliseconds": 57.72050000000036
+    },
+    {
+      "label": "product-172",
+      "route": "/Catalog/Details/172",
+      "milliseconds": 57.558899999999994
+    },
+    {
+      "label": "product-173",
+      "route": "/Catalog/Details/173",
+      "milliseconds": 57.485999999999876
+    },
+    {
+      "label": "product-174",
+      "route": "/Catalog/Details/174",
+      "milliseconds": 66.85689999999977
+    },
+    {
+      "label": "product-175",
+      "route": "/Catalog/Details/175",
+      "milliseconds": 56.384399999999914
+    },
+    {
+      "label": "product-176",
+      "route": "/Catalog/Details/176",
+      "milliseconds": 57.400800000000345
+    },
+    {
+      "label": "product-177",
+      "route": "/Catalog/Details/177",
+      "milliseconds": 69.40589999999975
+    },
+    {
+      "label": "product-178",
+      "route": "/Catalog/Details/178",
+      "milliseconds": 70.91179999999986
+    },
+    {
+      "label": "product-179",
+      "route": "/Catalog/Details/179",
+      "milliseconds": 54.966199999999844
+    },
+    {
+      "label": "product-180",
+      "route": "/Catalog/Details/180",
+      "milliseconds": 55.82750000000033
+    },
+    {
+      "label": "product-181",
+      "route": "/Catalog/Details/181",
+      "milliseconds": 55.25839999999971
+    },
+    {
+      "label": "product-182",
+      "route": "/Catalog/Details/182",
+      "milliseconds": 58.21429999999964
+    },
+    {
+      "label": "product-183",
+      "route": "/Catalog/Details/183",
+      "milliseconds": 58.6866
+    },
+    {
+      "label": "product-184",
+      "route": "/Catalog/Details/184",
+      "milliseconds": 56.50450000000001
+    },
+    {
+      "label": "product-185",
+      "route": "/Catalog/Details/185",
+      "milliseconds": 57.891200000000026
+    },
+    {
+      "label": "product-186",
+      "route": "/Catalog/Details/186",
+      "milliseconds": 58.21190000000024
+    },
+    {
+      "label": "product-187",
+      "route": "/Catalog/Details/187",
+      "milliseconds": 59.08639999999923
+    },
+    {
+      "label": "product-188",
+      "route": "/Catalog/Details/188",
+      "milliseconds": 59.52469999999994
+    },
+    {
+      "label": "product-189",
+      "route": "/Catalog/Details/189",
+      "milliseconds": 59.884000000000015
+    },
+    {
+      "label": "product-190",
+      "route": "/Catalog/Details/190",
+      "milliseconds": 69.11849999999959
+    },
+    {
+      "label": "product-191",
+      "route": "/Catalog/Details/191",
+      "milliseconds": 57.76270000000022
+    },
+    {
+      "label": "product-192",
+      "route": "/Catalog/Details/192",
+      "milliseconds": 58.5007999999998
+    },
+    {
+      "label": "product-193",
+      "route": "/Catalog/Details/193",
+      "milliseconds": 98.3719000000001
+    },
+    {
+      "label": "product-194",
+      "route": "/Catalog/Details/194",
+      "milliseconds": 56.34139999999934
+    },
+    {
+      "label": "product-195",
+      "route": "/Catalog/Details/195",
+      "milliseconds": 59.40380000000005
+    },
+    {
+      "label": "product-196",
+      "route": "/Catalog/Details/196",
+      "milliseconds": 72.67100000000028
+    },
+    {
+      "label": "product-197",
+      "route": "/Catalog/Details/197",
+      "milliseconds": 71.91849999999977
+    },
+    {
+      "label": "product-198",
+      "route": "/Catalog/Details/198",
+      "milliseconds": 56.02009999999973
+    },
+    {
+      "label": "product-199",
+      "route": "/Catalog/Details/199",
+      "milliseconds": 58.25879999999961
+    },
+    {
+      "label": "product-200",
+      "route": "/Catalog/Details/200",
+      "milliseconds": 58.233000000000175
+    },
+    {
+      "label": "search-Samsung",
+      "route": "/Catalog/Index?Q=Samsung",
+      "milliseconds": 141.5783999999985
+    },
+    {
+      "label": "search-Auvora",
+      "route": "/Catalog/Index?Q=Auvora",
+      "milliseconds": 63.10820000000058
+    },
+    {
+      "label": "search-Lumetrix",
+      "route": "/Catalog/Index?Q=Lumetrix",
+      "milliseconds": 65.94760000000133
+    },
+    {
+      "label": "search-DM001",
+      "route": "/Catalog/Index?Q=DM001",
+      "milliseconds": 65.4326000000001
+    },
+    {
+      "label": "catalog-timing-0",
+      "route": "/Catalog/Index",
+      "milliseconds": 63.78979999999865
+    },
+    {
+      "label": "catalog-timing-1",
+      "route": "/Catalog/Index",
+      "milliseconds": 67.77499999999964
+    },
+    {
+      "label": "catalog-timing-2",
+      "route": "/Catalog/Index",
+      "milliseconds": 66.08339999999953
+    },
+    {
+      "label": "catalog-timing-3",
+      "route": "/Catalog/Index",
+      "milliseconds": 66.78559999999925
+    },
+    {
+      "label": "catalog-timing-4",
+      "route": "/Catalog/Index",
+      "milliseconds": 67.2494999999999
+    },
+    {
+      "label": "customer-login",
+      "route": "/Account/Login",
+      "milliseconds": 82.25619999999981
+    },
+    {
+      "label": "customer-history",
+      "route": "/Orders/Index",
+      "milliseconds": 107.00330000000031
+    },
+    {
+      "label": "customer-order",
+      "route": "/Orders/Details/2182",
+      "milliseconds": 72.371000000001
+    },
+    {
+      "label": "customer-history-2024-Q4",
+      "route": "/Orders/Details/1804",
+      "milliseconds": 57.813200000000506
+    },
+    {
+      "label": "customer-history-2025-Q1",
+      "route": "/Orders/Details/1874",
+      "milliseconds": 65.52590000000055
+    },
+    {
+      "label": "customer-history-2025-Q2",
+      "route": "/Orders/Details/1936",
+      "milliseconds": 61.55040000000008
+    },
+    {
+      "label": "customer-history-2025-Q3",
+      "route": "/Orders/Details/2007",
+      "milliseconds": 51.133599999999205
+    },
+    {
+      "label": "customer-history-2025-Q4",
+      "route": "/Orders/Details/2060",
+      "milliseconds": 50.82419999999911
+    },
+    {
+      "label": "customer-history-2026-Q1",
+      "route": "/Orders/Details/2151",
+      "milliseconds": 64.56550000000061
+    },
+    {
+      "label": "customer-current-cart",
+      "route": "/Cart/Index",
+      "milliseconds": 67.02459999999883
+    },
+    {
+      "label": "customer-read-only-checkout",
+      "route": "/Cart/Checkout",
+      "milliseconds": 116.64570000000094
+    }
+  ],
+  "screens": [
+    "mvc-home.png",
+    "mvc-catalog.png",
+    "mvc-product.png",
+    "mvc-customer-history.png",
+    "mvc-customer-order.png",
+    "mvc-owned-2024-Q4.png",
+    "mvc-owned-2025-Q1.png",
+    "mvc-owned-2025-Q2.png",
+    "mvc-owned-2025-Q3.png",
+    "mvc-owned-2025-Q4.png",
+    "mvc-owned-2026-Q1.png",
+    "mvc-cart.png",
+    "mvc-checkout.png"
+  ],
+  "pageErrors": [],
+  "thresholdMilliseconds": 5000
+}

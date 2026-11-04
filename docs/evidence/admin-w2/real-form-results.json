@@ -1,0 +1,22 @@
+{
+  "fakeApi": false,
+  "qaOnly": true,
+  "captures": [
+    {
+      "name": "UI08-real-qa-editor",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI08-real-qa-list",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}

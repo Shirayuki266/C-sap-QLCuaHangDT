@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-31T07:48:43.681Z",
+  "scope": "Account K01-K05 only; guest-cart merge and catalog/orders not covered",
+  "qaDatabase": "Generated PhoneStore_QA_MvcAccounts_GUID, removed in finally",
+  "registrationPosts": 1,
+  "loginDoubleSubmitPosts": 1,
+  "totalLoginPostsIncludingAfterPasswordChange": 2,
+  "registerBusy": {
+    "busy": "true",
+    "disabled": true,
+    "label": "Đang xử lý…"
+  },
+  "loginBusy": {
+    "busy": "true",
+    "disabled": true,
+    "label": "Đang xử lý…"
+  },
+  "sql": {
+    "accounts": 1,
+    "profiles": 1,
+    "sessionsAfterPasswordAndLogout": 0
+  },
+  "passwordsAbsentFromHostLogs": true,
+  "keyboardFormReachable": true,
+  "records": [
+    {
+      "screen": "register",
+      "viewport": 1440,
+      "width": 1440,
+      "document": 1440,
+      "unlabelled": 0
+    },
+    {
+      "screen": "register",
+      "viewport": 390,
+      "width": 390,
+      "document": 390,
+      "unlabelled": 0
+    },
+    {
+      "screen": "login",
+      "viewport": 1440,
+      "width": 1440,
+      "document": 1440,
+      "unlabelled": 0
+    },
+    {
+      "screen": "login",
+      "viewport": 390,
+      "width": 390,
+      "document": 390,
+      "unlabelled": 0
+    },
+    {
+      "screen": "profile",
+      "viewport": 1440,
+      "width": 1440,
+      "document": 1440,
+      "unlabelled": 0
+    },
+    {
+      "screen": "profile",
+      "viewport": 390,
+      "width": 390,
+      "document": 390,
+      "unlabelled": 0
+    },
+    {
+      "screen": "password",
+      "viewport": 1440,
+      "width": 1440,
+      "document": 1440,
+      "unlabelled": 0
+    },
+    {
+      "screen": "password",
+      "viewport": 390,
+      "width": 390,
+      "document": 390,
+      "unlabelled": 0
+    }
+  ],
+  "errors": []
+}

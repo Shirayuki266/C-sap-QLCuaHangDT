@@ -1,0 +1,46 @@
+using PhoneStore.Admin.Client;
+
+namespace PhoneStore.Admin.Tests;
+
+internal static partial class Program
+{
+    private static async Task ReportFormsChecks()
+    {
+        var previous=output;output=Path.Combine(FindRoot(),".artifacts","admin-w6","forms");Directory.CreateDirectory(output);var start=passed;var offset=captures.Count;
+        await Test("WIN.A22.01/02/03/04/07 one report table/chart/month grouping/paging, real GDI bar selection and explicit errors",async()=>
+        {
+            using var api=new ReportFake();using var form=new ReportScreen(api);form.Show();await Task.Delay(80);Assert(form.Current is not null&&form.Grid.Rows.Count==20&&form.Chart.Points.Count==20,"Report did not load");var calls=api.Paths.Count;var source=form.Current;form.NextButton.PerformClick();Assert(form.Grid.Rows.Count==20&&api.Paths.Count==calls,"Report paging refetched/filtered server result");var bar=form.Chart.BarBounds[1];typeof(Control).GetMethod("OnMouseDown",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic)!.Invoke(form.Chart.Canvas,[new MouseEventArgs(MouseButtons.Left,1,(int)(bar.Left+bar.Width/2),(int)(bar.Top+bar.Height/2),0)]);Assert(form.Chart.SelectionLabel.Text.StartsWith(form.Projection!.Rows[21].Key),"Mouse bar label wrong");typeof(Control).GetMethod("OnKeyDown",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic)!.Invoke(form.Chart.Canvas,[new KeyEventArgs(Keys.Right)]);Assert(form.Chart.SelectionLabel.Text.StartsWith(form.Projection.Rows[22].Key),"Chart arrow key wrong");form.Chart.SelectPoint(0);Assert(form.Chart.SelectionLabel.Text.Contains("2026-")&&form.Chart.SelectionLabel.Text.Contains("đ"),"Bar label missing");await Capture(form,"UI12-revenue");form.MonthlyBox.Checked=true;Assert(ReferenceEquals(form.Current,source)&&form.Projection!.Rows.Count==2&&form.Projection.Rows.Sum(r=>r.Revenue)==source!.Revenue&&api.Paths.Count==calls,"Month grouping changed overall server result");await Capture(form,"UI12-monthly");
+            form.FromBox.Checked=false;await form.LoadAsync();Assert(form.DateErrorLabel.Text.Contains("Chọn đủ")&&api.Paths.Count==calls,"Missing report period sent");form.FromBox.Checked=true;form.FromBox.Value=form.ToBox.Value.AddDays(1);await form.LoadAsync();Assert(form.DateErrorLabel.Text.Contains("không được sau")&&api.Paths.Count==calls,"Bad report dates sent");await Capture(form,"UI12-date-error");form.KindBox.SelectedIndex=2;await form.LoadAsync();Assert(api.Paths.Last()=="/api/admin/reports?kind=stock"&&form.Projection!.Rows.Count==23&&!form.FromBox.Enabled,"Stock sent dates");await Capture(form,"UI12-stock");form.KindBox.SelectedIndex=1;form.FromBox.Value=form.ToBox.Value.AddDays(-40);await form.LoadAsync();Assert(form.Projection!.Rows.Select(r=>r.Key).Distinct().Count()==2,"Bestsellers combined variants");await Capture(form,"UI12-bestsellers");api.HoldRead=new(TaskCreationOptions.RunContinuationsAsynchronously);var pending=form.LoadAsync();await Task.Delay(20);var during=api.Paths.Count;form.LoadButton.PerformClick();Assert(!form.LoadButton.Enabled&&form.MessageLabel.Text.Contains("Đang")&&api.Paths.Count==during,"Report busy state/duplicate guard missing");api.HoldRead.SetResult();await pending;api.HoldRead=null;api.Empty=true;await form.LoadAsync();Assert(form.Current!.Revenue==0&&form.MessageLabel.Text.Contains("Không có dữ liệu"),"Empty report not zero");await Capture(form,"UI12-empty");api.ReadError=new AdminApiException("DATABASE_UNAVAILABLE",503);await form.LoadAsync();Assert(form.Current is null&&form.Grid.Rows.Count==0&&form.SummaryLabel.Text=="Chưa có số liệu xác nhận."&&form.MessageLabel.Text.Contains("chưa sẵn sàng"),"Report failure converted to0");await Capture(form,"UI12-read-error");form.Close();
+        });
+        await Test("WIN.A22.05/06 separate dashboard loads, all failed pages, no partial count on failure and actual filtered drilldowns",async()=>
+        {
+            using var api=new ReportFake();using var owner=new Form{Size=new(1280,800)};using var view=new DashboardView(api);owner.Controls.Add(view);owner.Show();await view.LoadAsync();Assert(view.MetricLabels["returns"].Text.StartsWith("94")&&api.Paths.Any(p=>p.Contains("page=2&"))&&view.Chart.Points.Count==7,"Dashboard missed returned rows/page or7days");await Capture(owner,"UI02-dashboard");
+            using var timer=new System.Windows.Forms.Timer{Interval=60};var filtered=false;timer.Tick+=(_,_)=>{var list=Application.OpenForms.OfType<OrderListForm>().FirstOrDefault();if(list is null||list.Grid.Rows.Count==0)return;filtered=list.StateBox.SelectedIndex==1&&api.Paths.Any(p=>p.Contains("status=CHO_XAC_NHAN"));timer.Stop();list.Close();};timer.Start();view.MetricButtons["waiting"].PerformClick();Assert(filtered,"Waiting drilldown not filtered");
+            using var stockTimer=new System.Windows.Forms.Timer{Interval=60};var low=false;stockTimer.Tick+=(_,_)=>{var stock=Application.OpenForms.OfType<StockListForm>().FirstOrDefault();if(stock is null||stock.Grid.Rows.Count==0)return;low=stock.BelowBox.Checked&&stock.ThresholdBox.Value==3;stockTimer.Stop();stock.Close();};view.ThresholdBox.Value=3;Assert(!view.MetricButtons["stock"].Enabled,"Changed threshold retained stale metric");await view.LoadAsync();stockTimer.Start();view.MetricButtons["stock"].PerformClick();Assert(low,"Stock drilldown threshold missing");api.FailSecondPage=true;await view.LoadAsync();Assert(view.MetricLabels["returns"].Text.Contains("chưa sẵn sàng")&&!view.MetricLabels["returns"].Text.StartsWith("94")&&view.MetricLabels["waiting"].Text.StartsWith("20"),"Dashboard partial/error leaked or other task blocked");await Capture(owner,"UI02-dashboard-partial-failure");owner.Close();
+        });
+        File.WriteAllText(Path.Combine(output,"results.json"),System.Text.Json.JsonSerializer.Serialize(new{fakeApi=true,qaOnly=true,checks=passed-start,captures=captures.Skip(offset).ToArray()},new System.Text.Json.JsonSerializerOptions{WriteIndented=true}));output=previous;Console.WriteLine($"{passed-start} admin W6 form checks passed.");
+    }
+}
+
+internal sealed class ReportFake:IAdminApi
+{
+    public List<string> Paths { get; }=[];public bool Empty,FailSecondPage;public Exception? ReadError;public TaskCompletionSource? HoldRead;
+    public AdminIdentity? Identity=>new(90,"admin-qa","ADMIN",DateTimeOffset.UtcNow.AddHours(8));public bool NeedsReconciliation=>false;public event Action? SessionEnded{add{}remove{}}
+    public async Task<T> GetAsync<T>(string path,CancellationToken ct=default)
+    {
+        Paths.Add(path);if(HoldRead is not null)await HoldRead.Task.WaitAsync(ct);if(ReadError is not null)throw ReadError;object result;
+        if(path.StartsWith("/api/admin/reports"))
+        {
+            var kind=path.Contains("kind=stock")?"stock":path.Contains("kind=bestsellers")?"bestsellers":"revenue";var days=Empty?[]:Enumerable.Range(0,40).Select(i=>new ReportDay(new DateOnly(2026,1,1).AddDays(i),1,(i+1)*1000000m)).ToList();var best=Empty?[]:new List<ReportBestseller>{new(1,"Điện thoại QA","QA-A",11,490000000),new(2,"Điện thoại QA","QA-B",7,330000000)};var stock=Empty?[]:Enumerable.Range(0,23).Select(i=>new ReportStock(i+1,"Điện thoại QA","QA-"+i,i+10,2,i+8)).ToList();result=new AdminReport(kind,"UTC+07:00",kind=="stock"?null:"2026-01-01",kind=="stock"?null:"2026-02-09",kind=="stock"?0:days.Sum(d=>d.Revenue),kind=="stock"?stock.Sum(s=>(long)s.OnHand):Empty?0:18,kind=="stock"?0:days.Count,days,best,stock);
+        }
+        else if(path.StartsWith("/api/admin/orders"))
+        {
+            if(path.Contains("status=GIAO_THAT_BAI")){var second=path.Contains("page=2&");if(second&&FailSecondPage)throw new AdminApiException("DATABASE_UNAVAILABLE",503);var rows=Enumerable.Range(second?100:0,second?5:100).Select(i=>OrdersFake.Order("GIAO_THAT_BAI") with{Id=i+1,ReturnReceived=i%10==0}).ToList();result=new PageResult<AdminOrder>(rows,105,second?2:1,100);}
+            else result=new PageResult<AdminOrder>([OrdersFake.Order()],path.Contains("status=DANG_GIAO")?7:20,1,20);
+        }
+        else if(path.StartsWith("/api/admin/lookups/"))result=new PageResult<LookupRow>([new(1,"Hãng QA",true)],1,1,100);
+        else if(path.StartsWith("/api/admin/stock?"))result=new PageResult<StockRecord>([new(1,1,"Điện thoại QA","QA-A","Hãng QA","Đen",128,3,0,3,"AQAAAAAAAAA=")],1,1,20);
+        else throw new InvalidOperationException("Unexpected report fake route");return (T)result;
+    }
+    public Task<ReadyInfo> ReadinessAsync(CancellationToken ct=default)=>Task.FromResult(new ReadyInfo("ready","QA · API giả","reports-fixture-no-server"));public Task<AdminIdentity> LoginAsync(string u,string p,CancellationToken ct=default)=>Task.FromResult(Identity!);public Task<AdminIdentity?> RecoverSessionAsync(CancellationToken ct=default)=>Task.FromResult(Identity);public Task LogoutAsync(CancellationToken ct=default)=>Task.CompletedTask;public Task ChangePasswordAsync(string a,string b,CancellationToken ct=default)=>Task.CompletedTask;public Task CommandAsync<T>(string path,T input,CommandIntent intent,CancellationToken ct=default)=>throw new InvalidOperationException("Read-only reports wrote data");public Task ReconcileAsync(Func<CancellationToken,Task> read,CancellationToken ct=default)=>read(ct);public void Dispose(){}
+}

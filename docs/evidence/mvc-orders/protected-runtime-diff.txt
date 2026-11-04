@@ -1,0 +1,6 @@
+Base: develop / PR97 merge 41398139b8bbbb151fb48e27fc864e742a6494d6
+Command: git diff --exit-code origin/develop -- src/PhoneStore.Infrastructure src/PhoneStore.Web/Program.cs src/PhoneStore.Web/Endpoints src/PhoneStore.Web/Security src/PhoneStore.WinForms
+Observed: empty diff; exit0.
+Allowed changes: approved MVC Core interface/safe customer projections; adapter/controller/models/Razor/assets; QA tests and docs.
+No existing service, schema/migration, admin API, authentication implementation or WinForms changes. Internal cancel operation keys are generated in the MVC adapter, never accepted from forms.
+Local evidence:318 regression groups; focused8 and Chromium rerun after timeline wrapping fix; actual API-confirm versus MVC-cancel SQL lock wait observed. Final-head CI bound separately in PR verification.

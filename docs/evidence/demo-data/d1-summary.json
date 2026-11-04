@@ -1,0 +1,109 @@
+﻿{
+    "Stage":  "D1 foundation only",
+    "AsOf":  "2026-11-03",
+    "Seed":  2611,
+    "Scale":  "full",
+    "BaseDevelop":  "83a534a53428bced6de24b1fce18cb15012ee168",
+    "Sources":  {
+                    "File12Sha256":  "10c5b962756ddab26843f8e23f41e51d648b2e7987cc94bdcc7e248145064042",
+                    "File11Sha256":  "b524576bf5459e73f83dde06c5047cfc5628ec2688e2983196ac6bfeb954ab48"
+                },
+    "Build":  {
+                  "Command":  "dotnet build PhoneStore.slnx -c Release --no-restore",
+                  "Errors":  0,
+                  "Warnings":  0,
+                  "Result":  "PASS"
+              },
+    "Checks":  {
+                   "Coverage":  [
+                                    "name allowlist and attach refusal",
+                                    "environment passwords and redacted representation",
+                                    "explicit flags and argument validation",
+                                    "full/small plan limits and unique identities",
+                                    "deterministic plans and 150 SVG views",
+                                    "preflight collision without overwrite",
+                                    "real SQL CLI small, password hashes and zero sessions",
+                                    "nonempty refusal and reset persisted manifest equality",
+                                    "independent price tamper detection",
+                                    "SQL rejects duplicate SKU and 201-character name",
+                                    "CLI missing secret and forbidden target refusal without writes",
+                                    "150 real Kestrel HTTP 200 responses, content type and bytes"
+                                ],
+                   "Command":  "dotnet run --project tests/PhoneStore.DemoData.Checks -c Release --no-build -- --integration",
+                   "Result":  "PASS",
+                   "Groups":  12
+               },
+    "FullRuns":  {
+                     "Scope":  "D1 seed plus foundation verification, not D2 full-history benchmark",
+                     "SameHash":  true,
+                     "NormalizedHash":  "a1cea60e6b72840bdad781bd12912c59cfadb825fdaf3214c2d412eeeac539d4",
+                     "ElapsedMilliseconds":  [
+                                                 7532,
+                                                 7482
+                                             ],
+                     "TargetDatabases":  [
+                                             "PhoneStore_Demo_D1_ab514cc1_a",
+                                             "PhoneStore_Demo_D1_ab514cc1_b"
+                                         ]
+                 },
+    "Sql":  {
+                "NewestCustomerUtc":  "2026-10-12T18:00:00Z",
+                "Segments":  {
+                                 "Compact":  0,
+                                 "Budget":  14,
+                                 "Foldable":  4,
+                                 "Premium":  12,
+                                 "Gaming":  4,
+                                 "Midrange":  16
+                             },
+                "LockedCustomers":  4,
+                "OldestCustomerUtc":  "2024-11-02T18:00:00Z",
+                "PriceErrors":  0,
+                "Counts":  {
+                               "BIEN_THE":  125,
+                               "DON_HANG":  0,
+                               "DANH_MUC":  6,
+                               "HANG":  10,
+                               "SAN_PHAM_ANH":  150,
+                               "SAN_PHAM":  50,
+                               "PHIEN":  0,
+                               "TAI_KHOAN":  61,
+                               "TON_KHO":  125,
+                               "NHA_CUNG_CAP":  12,
+                               "KHACH_HANG":  60
+                           }
+            },
+    "Images":  {
+                   "Http200":  150,
+                   "Source":  "Original programmatically generated SVG, fictional model names, no manufacturer assets",
+                   "Files":  150
+               },
+    "Acceptance":  {
+                       "P0":  {
+                                  "PASS":  9,
+                                  "NOT_RUN":  15,
+                                  "Total":  24
+                              },
+                       "FAIL":  0,
+                       "P2":  {
+                                  "PASS":  0,
+                                  "NOT_RUN":  0,
+                                  "Total":  0
+                              },
+                       "Total":  43,
+                       "PerId":  "d1-checklist.json",
+                       "BLOCKED":  0,
+                       "P1":  {
+                                  "PASS":  3,
+                                  "NOT_RUN":  16,
+                                  "Total":  19
+                              }
+                   },
+    "Deferred":  [
+                     "D2 transactions/history/stock/lifecycle and full --verify-demo-data",
+                     "CUST.02/.03 order-dependent portions",
+                     "D3 UI smoke/performance/regression acceptance and final gate"
+                 ],
+    "KnownSourceConflict":  "Correction recorded in D2: the original quarter targets total 601. The D1 statement that they totaled 701 was an arithmetic error. D2 retains all source targets and does not raise the total to 630.",
+    "Secrets":  "No credentials, connection strings, password hashes, session IDs or cookies in this evidence."
+}

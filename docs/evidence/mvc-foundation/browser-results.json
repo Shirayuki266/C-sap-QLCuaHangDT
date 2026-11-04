@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-31T03:01:24.169Z",
+  "scope": "Foundation only; not UI03-UI07/UI13 acceptance; no catalog/cart/account flows implemented yet",
+  "database": "Guest preview makes no DB reads or writes; configured QA-only name, no demo database",
+  "records": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "metrics": {
+        "viewport": 1440,
+        "document": 1440,
+        "header": true,
+        "footer": true,
+        "h1": "Chạm công nghệ.Mở trải nghiệm."
+      },
+      "keyboardSkipLink": {
+        "focused": true,
+        "top": 12
+      },
+      "notFound": 404
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "metrics": {
+        "viewport": 390,
+        "document": 390,
+        "header": true,
+        "footer": true,
+        "h1": "Chạm công nghệ.Mở trải nghiệm."
+      },
+      "keyboardSkipLink": {
+        "focused": true,
+        "top": 10.287718772888184
+      },
+      "notFound": 404
+    }
+  ],
+  "guard": {
+    "sent": 1,
+    "busy": "true",
+    "reset": true,
+    "originalDisabled": true,
+    "value": "retained"
+  },
+  "errors": []
+}

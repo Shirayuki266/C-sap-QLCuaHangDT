@@ -1,0 +1,114 @@
+name: Backend
+
+on:
+  pull_request:
+    branches: [develop, staging, main]
+  push:
+    branches: [develop, staging, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Build and SQL Server checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      sql:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: Y
+          # Disposable service credential; never used by an application environment.
+          MSSQL_SA_PASSWORD: CiOnly_Str0ng!Pass1234
+        ports:
+          - 1433:1433
+        options: >-
+          --health-cmd="/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'CiOnly_Str0ng!Pass1234' -C -b -Q 'SELECT 1'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=12
+          --health-start-period=20s
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      PHONESTORE_QA_SERVER: localhost,1433
+      PHONESTORE_QA_DATABASE: PhoneStore_QA_CI
+      PHONESTORE_TEST_CONNECTION: Server=localhost,1433;Database=PhoneStore_QA_CI;User ID=sa;Password=CiOnly_Str0ng!Pass1234;Encrypt=True;TrustServerCertificate=True
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Restore backend and checks
+        run: |
+          dotnet restore src/PhoneStore.Web/PhoneStore.Web.csproj
+          dotnet restore tests/PhoneStore.Checks/PhoneStore.Checks.csproj
+      - name: Build backend and checks
+        run: |
+          dotnet build src/PhoneStore.Web/PhoneStore.Web.csproj -c Release --no-restore
+          dotnet build tests/PhoneStore.Checks/PhoneStore.Checks.csproj -c Release --no-restore
+      - name: Run domain and isolated SQL Server integration checks
+        run: dotnet run --project tests/PhoneStore.Checks -c Release --no-build -- --integration
+      - name: Run new Admin Client checks against isolated SQL QA
+        run: dotnet run --project tests/PhoneStore.Admin.Client.Checks -c Release
+      - name: Run D1 demo-data checks against their own isolated SQL QA and real static host
+        run: dotnet run --project tests/PhoneStore.DemoData.Checks -c Release -- --integration
+      - name: Verify licensed image credits, crop bounds and acceptance gate logic
+        run: |
+          node scripts/verify-demo-images.mjs --output .artifacts/demo-data/image-verification.json
+          node scripts/verify-data-closeout.mjs --self-test
+      - name: Upload licensed image verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-licensed-images
+          path: .artifacts/demo-data/image-verification.json
+          if-no-files-found: error
+      - name: Upload W6 Admin Client SQL evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: admin-client-w6-sql
+          path: .artifacts/admin-w6/sql-results.json
+          if-no-files-found: warn
+
+  admin-windows:
+    name: Windows Admin build and form checks
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Build new Admin and form checks
+        run: dotnet build tests/PhoneStore.Admin.Tests -c Release
+      - name: Configure desktop for minimum 1280x800 form surface
+        shell: powershell
+        run: |
+          Set-DisplayResolution -Width 1920 -Height 1080 -Force
+          Get-DisplayResolution
+      - name: Run STA form checks with fake API
+        run: dotnet run --project tests/PhoneStore.Admin.Tests -c Release --no-build
+      - name: Check native DPI layouts and text at minimum window size
+        run: dotnet run --project tests/PhoneStore.Admin.Tests -c Release --no-build -- --dpi-closeout
+      - name: Upload WinForms evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: admin-windows-forms
+          path: |
+            .artifacts/admin-w1/forms/
+            .artifacts/admin-w2/forms/
+            .artifacts/admin-w3/forms/
+            .artifacts/admin-w4/forms/
+            .artifacts/admin-w5/forms/
+            .artifacts/admin-w6/forms/
+            .artifacts/admin-w6/dpi/
+          if-no-files-found: error

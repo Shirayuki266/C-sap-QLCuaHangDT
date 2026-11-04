@@ -1,0 +1,1388 @@
+{
+  "at": "2026-11-01T00:18:23.939Z",
+  "scope": "Final MVC step6; awaiting user review; no auto merge",
+  "base": "3bc247dd79ee3eab7919cdfe60fa34671a448f26",
+  "branch": "feature/100-mvc-acceptance",
+  "sourceSha256": "28d3546ffab80960d3e64dfa6bde1c112c5815d51342c957f88e52dcb0149305",
+  "localChecks": 322,
+  "focusedChecks": 4,
+  "ci": {
+    "conclusion": "success",
+    "observedChecks": 322,
+    "headSha": "1e7f8f5852bb0638276a2f665e87e221ce5e6798",
+    "url": "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41240516979"
+  },
+  "groups": {
+    "P0": {
+      "total": 48,
+      "PASS": 48,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 0
+    },
+    "P1": {
+      "total": 43,
+      "PASS": 43,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 0
+    },
+    "P2": {
+      "total": 8,
+      "PASS": 8,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT RUN": 0,
+      "N/A": 0
+    }
+  },
+  "p0PassIds": [
+    "WEB.BASE.01",
+    "WEB.BASE.02",
+    "WEB.BASE.03",
+    "WEB.BASE.04",
+    "WEB.BASE.05",
+    "WEB.BASE.06",
+    "WEB.BASE.07",
+    "WEB.K01.01",
+    "WEB.K01.02",
+    "WEB.K01.03",
+    "WEB.K02.01",
+    "WEB.K02.02",
+    "WEB.K02.03",
+    "WEB.K03.01",
+    "WEB.K04.01",
+    "WEB.K05.01",
+    "WEB.K05.02",
+    "WEB.K06.01",
+    "WEB.K07.01",
+    "WEB.K09.01",
+    "WEB.K09.02",
+    "WEB.K10.01",
+    "WEB.K10.02",
+    "WEB.K10.03",
+    "WEB.K10.04",
+    "WEB.K11.01",
+    "WEB.K11.02",
+    "WEB.K12.01",
+    "WEB.K12.02",
+    "WEB.K12.03",
+    "WEB.K12.04",
+    "WEB.K12.05",
+    "WEB.K12.06",
+    "WEB.K12.07",
+    "WEB.K13.01",
+    "WEB.K14.01",
+    "WEB.K14.02",
+    "WEB.K15.01",
+    "WEB.K15.02",
+    "WEB.K15.03",
+    "WEB.K15.04",
+    "WEB.FLOW.01",
+    "WEB.FLOW.02",
+    "WEB.FLOW.03",
+    "WEB.GATE.01",
+    "WEB.GATE.02",
+    "WEB.GATE.03",
+    "WEB.GATE.04"
+  ],
+  "newlyExecutedIds": [
+    "WEB.BASE.01",
+    "WEB.BASE.07",
+    "WEB.BASE.08",
+    "WEB.BASE.10",
+    "WEB.BASE.11",
+    "WEB.BASE.12",
+    "WEB.BASE.13",
+    "WEB.BASE.16",
+    "WEB.FLOW.01",
+    "WEB.FLOW.02",
+    "WEB.FLOW.03",
+    "WEB.FLOW.04",
+    "WEB.FLOW.05",
+    "WEB.UI.01",
+    "WEB.UI.02",
+    "WEB.UI.03",
+    "WEB.GATE.05"
+  ],
+  "rows": [
+    {
+      "id": "WEB.BASE.01",
+      "priority": "P0",
+      "criterion": "Controller gọi dịch vụ trực tiếp trong cùng tiến trình qua một **adapter mỏng** (interface `IStoreService` gom các dịch vụ hiện có), không gọi lại HTTP API của chính mình; controller, view và adapter không chứa logic nghiệp vụ (giá, kho, trạng thái, quyền) và không sửa nghiệp vụ của dịch vụ cũ.",
+      "status": "PASS",
+      "reason": "Read all five controllers, adapter and quote-protection boundary; forbidden SQL/HTTP/cost/stock/raw-HTML search empty. Approved read-only association/display affordances distinguished from authoritative service decisions.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.02",
+      "priority": "P0",
+      "criterion": "Mọi action ghi (POST) có antiforgery (cấu hình toàn cục hoặc từng action); POST thiếu/sai token bị từ chối và không ghi dữ liệu. Hai action JSON `/Cart/Quote` và `/Cart/Merge` cũng bắt token (gửi qua header).",
+      "status": "PASS",
+      "reason": "Global MVC antiforgery plus actual Account and all five Cart POST routes reject missing/wrong tokens without SQL writes; Quote/Merge require header token. Recheck future checkout/orders when added.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.03",
+      "priority": "P0",
+      "criterion": "ViewModel và view **không** chứa giá vốn, `OnHand`, `Reserved`, hash mật khẩu, `ActorId`, `OperationKey`; kiểm bằng đọc mã và kiểm nội dung HTML của trang chi tiết, giỏ, đơn.",
+      "status": "PASS",
+      "reason": "Existing account/catalog/cart privacy evidence plus new customer-only order projection and actual receipt HTML: no Cost/OnHand/Reserved/hashes/ActorId/OperationKey; raw OrderView/history actors never enter MVC views.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.04",
+      "priority": "P0",
+      "criterion": "Dữ liệu người dùng và catalog được HTML-encode; không dùng `@Html.Raw` với dữ liệu người dùng. Thử `<script>` ở tên người nhận, địa chỉ, lý do hủy, từ khóa tìm kiếm → hiển thị như văn bản.",
+      "status": "PASS",
+      "reason": "Earlier actual search/recipient/address encoding plus new script-like cancellation/failed-delivery reasons remain literal in real Chromium timeline; no unexpected alert or raw script HTML. Cancel reason encoding branch is now covered.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.05",
+      "priority": "P0",
+      "criterion": "Trang cần đăng nhập chuyển hướng tới `/Account/Login?returnUrl=...`; `returnUrl` chỉ chấp nhận đường dẫn cục bộ (`Url.IsLocalUrl`). `returnUrl=https://evil.example` bị bỏ qua.",
+      "status": "PASS",
+      "reason": "Real Profile challenge and MVC Login GET/POST tested with local/external/protocol-relative/backslash destinations; Url.IsLocalUrl is used.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.06",
+      "priority": "P0",
+      "criterion": "Cookie phiên `HttpOnly`, `SameSite=Lax`, `Secure` khi chạy HTTPS; hạn 8 giờ không gia hạn trượt. Phiên hết hạn hoặc bị thu hồi → về trang đăng nhập, không lỗi 500.",
+      "status": "PASS",
+      "reason": "Cookie thực qua WAF: HttpOnly/SameSite=Lax/Secure HTTPS, SQL hết hạn8h, không sliding Set-Cookie; phiên hết hạn/thu hồi redirect. Dùng chính bộ validator phiên cũ.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.BASE.07",
+      "priority": "P0",
+      "criterion": "Không dùng cache làm nguồn chốt giá/kho/quyền: giá và tồn khả dụng đọc từ DB mỗi lần; trang giỏ, checkout, đơn, hồ sơ không bị cache (`no-store`).",
+      "status": "PASS",
+      "reason": "Actual HTTP every personal page: no-store, no ETag/Last-Modified, conditional request never304. Real admin price/stock changes reflected on subsequent reads; per-step SQL confirms no client cache authority.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.08",
+      "priority": "P1",
+      "criterion": "Phiên của tài khoản ADMIN (tạo qua API quản trị) không dùng được để đặt hàng/hủy đơn/sửa hồ sơ trên website khách; website không có đường vào chức năng quản trị.",
+      "status": "PASS",
+      "reason": "Actual ADMIN API session rejected on protected customer GET/POST routes; public cart remains guest mode. No admin navigation links. All denied writes preserve commerce SQL.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.09",
+      "priority": "P1",
+      "criterion": "Trang lỗi 403/404/500 thân thiện; 500 chỉ hiện mã tra cứu (`traceId`), không stack trace; môi trường Production tắt trang lỗi dành cho nhà phát triển.",
+      "status": "PASS",
+      "reason": "WAF HTML403/404/500 và500 môi trường Production; thông báo chung +traceId, không stack/private exception. Playwright chụp404 desktop/mobile.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.BASE.10",
+      "priority": "P1",
+      "criterion": "Tiền hiển thị dạng `23.980.000 đ`; thời gian hiển thị theo UTC+7, DB giữ UTC; số lượng là số nguyên.",
+      "status": "PASS",
+      "reason": "Shared Money/Time helpers reviewed; prior actual SQL/HTML UTC+7 boundary proofs retained. Current Chromium asserts exact13.000.000 đ after real admin profit update and integer quantity controls.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.11",
+      "priority": "P1",
+      "criterion": "Mọi mã lỗi dịch vụ được ánh xạ đúng bảng 4.1 trong `01_API_CONTRACT.md` (ModelState / redirect / trang lỗi); không mã lỗi dịch vụ nào biến thành 500.",
+      "status": "PASS",
+      "reason": "Actual MVC HTTP, test-only one-shot IStoreService faults and existing real failures prove proposal/backend aliases map to forms/redirects/statuses. Unknown business code400; intentional internal500 generic trace only.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.12",
+      "priority": "P1",
+      "criterion": "Nút gửi chuyển sang trạng thái đang xử lý và chống bấm lặp ở đăng ký, đăng nhập, đặt hàng, hủy đơn; server vẫn an toàn khi bị gửi lặp.",
+      "status": "PASS",
+      "reason": "Chromium observes busy/disabled feedback for Register/Login/Checkout/Cancel using browser-only submit pause; separately sends duplicate real submits and asserts one POST each. Prior SQL idempotency/replay/concurrency proofs retained.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.13",
+      "priority": "P1",
+      "criterion": "Form giữ nguyên dữ liệu đã nhập khi có lỗi (trừ mật khẩu).",
+      "status": "PASS",
+      "reason": "Actual HTTP invalid/duplicate Register/Login/Profile/Password/Cart/Checkout/Cancel retain safe form input; passwords absent. Invalid requests leave ordered commerce snapshot unchanged.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.BASE.14",
+      "priority": "P1",
+      "criterion": "Test tích hợp chạy trên CSDL QA riêng, không dùng CSDL demo/`PhoneStore_Rebuild`; CI chạy được toàn bộ.",
+      "status": "PASS",
+      "reason": "322 full SQL QA groups pass; CI SUCCESS at implementation snapshot 1e7f8f5852bb0638276a2f665e87e221ce5e6798. Final exact-head SUCCESS must be rechecked in PR verification after any docs-only amendment.",
+      "evidence": [
+        "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41240516979"
+      ]
+    },
+    {
+      "id": "WEB.BASE.15",
+      "priority": "P1",
+      "criterion": "Cấu hình và bí mật không nằm trong mã hoặc trang; log không chứa mật khẩu, cookie, token.",
+      "status": "PASS",
+      "reason": "Diff mới không thêm bí mật; Razor/HTML không có cấu hình nhạy cảm; logger không ghi body/cookie/token/password. Snapshot account/session/hash chỉ giữ trong RAM, không xuất.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.BASE.16",
+      "priority": "P1",
+      "criterion": "Layout và điều hướng thống nhất theo thiết kế: header (Trang chủ, Sản phẩm, Giỏ kèm số lượng, menu tài khoản), footer; màu xanh cho thao tác chính (phương án A).",
+      "status": "PASS",
+      "reason": "Same-build six-screen desktop/mobile matrix retains shared header, account/cart navigation, footer and blue primary actions; actual navigation and keyboard checks executed.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.01",
+      "priority": "P0",
+      "criterion": "Đăng ký hợp lệ → tạo đúng một tài khoản `CUSTOMER`, chuyển tới `/Account/Login` kèm thông báo; **không** tự đăng nhập.",
+      "status": "PASS",
+      "reason": "Real POST Register redirects to Login + TempData; SQL account/profile +1, sessions unchanged; repeat creates no second account.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.02",
+      "priority": "P0",
+      "criterion": "Trùng tên đăng nhập/điện thoại/email → hiển thị lỗi trùng **ở mức form** (thông báo chung, không bắt buộc đúng trường vì dịch vụ chưa trả thông tin trường), giữ dữ liệu form, không tạo dữ liệu dở dang. Không đoán trường bằng cách phân tích chuỗi thông báo.",
+      "status": "PASS",
+      "reason": "Three real duplicate POSTs (username/phone/email): summary only, safe input retained, passwords absent, exact accounts/profiles/sessions/business snapshot unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.03",
+      "priority": "P0",
+      "criterion": "Form bị gắn thêm `role=ADMIN`, `active`, `id` → bị bỏ qua (kiểm bằng request HTTP thật).",
+      "status": "PASS",
+      "reason": "HTTP form role=ADMIN, active=false, id=other ignored; SQL proves new active CUSTOMER with its own profile.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.04",
+      "priority": "P1",
+      "criterion": "Email để trống được chấp nhận (nhiều tài khoản không có email); email sai định dạng báo lỗi.",
+      "status": "PASS",
+      "reason": "Two registrations without email store NULL; malformed email produces field error and identical SQL snapshot.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K01.05",
+      "priority": "P1",
+      "criterion": "Chính sách mật khẩu theo backend (10–128 ký tự, có chữ và số) được nêu trước khi gửi; mật khẩu không bao giờ xuất hiện trong HTML trả về.",
+      "status": "PASS",
+      "reason": "Policy visible before submission; 10/128-character valid boundaries accepted; short/129/no-letter/no-digit rejected without mutation or echoed password.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.01",
+      "priority": "P0",
+      "criterion": "Đăng nhập đúng → tạo phiên; chuyển tới `returnUrl` cục bộ hoặc trang chủ.",
+      "status": "PASS",
+      "reason": "Real MVC login creates fixed eight-hour SQL session and secure cookie; local Profile redirect; external/protocol-relative/backslash return URLs ignored.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.02",
+      "priority": "P0",
+      "criterion": "Sai thông tin hoặc tài khoản khóa → lỗi chung trên form; không lộ tài khoản có tồn tại hay không; trạng thái khóa chỉ báo sau khi mật khẩu đúng.",
+      "status": "PASS",
+      "reason": "Nonexistent/wrong/locked (wrong and correct password) requests render identical generic summary and create no session or partial SQL changes.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.03",
+      "priority": "P0",
+      "criterion": "Tài khoản `ADMIN` đăng nhập ở form khách bị từ chối bằng lỗi chung, không có phiên.",
+      "status": "PASS",
+      "reason": "ADMIN credentials on actual customer form produce the same generic summary and no SQL session.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.04",
+      "priority": "P1",
+      "criterion": "Đăng nhập xong gọi hợp nhất giỏ guest (xem WEB.K10.04) và số lượng giỏ trên header được cập nhật.",
+      "status": "PASS",
+      "reason": "Real Chromium login returns to Cart/Index, merges guest cart, refreshes header to8, and preserves data on injected network/500 failures before retry.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K02.05",
+      "priority": "P2",
+      "criterion": "Mở trang đăng nhập khi đã có phiên: xử lý có kiểm soát (chuyển về trang chủ hoặc báo đã đăng nhập).",
+      "status": "PASS",
+      "reason": "Authenticated GET Login/Register redirects home with unchanged session count.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K03.01",
+      "priority": "P0",
+      "criterion": "Đăng xuất bằng `POST` + antiforgery thu hồi phiên hiện tại; cookie cũ không dùng được; `GET /Account/Logout` không đăng xuất.",
+      "status": "PASS",
+      "reason": "GET Logout returns405 without revocation; tokened POST revokes exactly one session; replay of actual old cookie redirects to login.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K03.02",
+      "priority": "P1",
+      "criterion": "Đăng xuất không xóa hồ sơ, giỏ máy chủ hay đơn; sau đăng xuất người dùng không thấy dữ liệu giỏ máy chủ của người trước.",
+      "status": "PASS",
+      "reason": "Logout preserves exact profiles/cart/orders/lines/payments/history/stock/variants snapshot; other device works, anonymous header hides previous cart count.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K03.03",
+      "priority": "P1",
+      "criterion": "Đăng xuất khi phiên đã hết hạn → về đăng nhập, không lỗi 500.",
+      "status": "PASS",
+      "reason": "Expired SQL session POST Logout redirects to Login; exact SQL snapshot unchanged; no500.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.01",
+      "priority": "P0",
+      "criterion": "Chỉ sửa được hồ sơ của chính mình; `customerId`, `role`, `active` trong form bị bỏ qua.",
+      "status": "PASS",
+      "reason": "Real profile POST ignores foreign customerId/id/Username/role/active; only own profile changes, other customer and account role unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.02",
+      "priority": "P1",
+      "criterion": "Trùng điện thoại/email với người khác → lỗi trùng ở mức form (như `WEB.K01.02`); giữ nguyên giá trị của chính mình không bị báo trùng.",
+      "status": "PASS",
+      "reason": "Duplicate phone/email render summary only with retained input and identical complete SQL snapshot; own unchanged phone/email accepted.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.03",
+      "priority": "P1",
+      "criterion": "Lưu thành công hiển thị lại đúng; đơn cũ vẫn giữ snapshot người nhận cũ.",
+      "status": "PASS",
+      "reason": "PRG Profile displays saved fields + TempData; serialized old order recipient/address/phone and stock unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K04.04",
+      "priority": "P1",
+      "criterion": "Chưa đăng nhập vào trang hồ sơ → chuyển tới đăng nhập.",
+      "status": "PASS",
+      "reason": "Anonymous actual Profile/Password routes redirect to local Login and carry no-store.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K05.01",
+      "priority": "P0",
+      "criterion": "Sai mật khẩu hiện tại hoặc mật khẩu mới không đạt → lỗi tại trường, không đổi mật khẩu.",
+      "status": "PASS",
+      "reason": "Wrong current/weak new password yields correct field error; both password inputs cleared; exact SQL snapshot/hash/sessions unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K05.02",
+      "priority": "P0",
+      "criterion": "Đổi thành công → mọi phiên của tài khoản bị thu hồi (kể cả thiết bị khác), chuyển tới đăng nhập kèm thông báo.",
+      "status": "PASS",
+      "reason": "Valid change removes every SQL session (multiple real devices); both cookies challenged; login notice appears; old password fails, new succeeds.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K05.03",
+      "priority": "P1",
+      "criterion": "Mật khẩu không xuất hiện trong response hoặc log.",
+      "status": "PASS",
+      "reason": "Submitted passwords absent from HTTP response bodies, browser password inputs and actual Kestrel host logs; no body/secret logging added.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcAccountChecks.cs",
+        "tests/browser/mvc-accounts.mjs",
+        "docs/evidence/mvc-accounts/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K06.01",
+      "priority": "P0",
+      "criterion": "`/Catalog/Index` chỉ hiện sản phẩm đang bán (đúng DEC.03); phân trang và tổng số đúng; không lộ giá vốn hay tồn thực.",
+      "status": "PASS",
+      "reason": "Real anonymous Catalog HTTP: four public products, exact total and disjoint2-item pages. Inactive product/brand/category/all-inactive variants excluded. Full business snapshot unchanged; no forbidden stock/cost/identity fields in HTML.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K06.02",
+      "priority": "P1",
+      "criterion": "Trạng thái rỗng thân thiện, gợi ý đổi từ khóa hoặc xóa bộ lọc.",
+      "status": "PASS",
+      "reason": "Actual no-match200 HTML contains recovery suggestions and zero cards. Controlled QA table-name fault returns real500/trace HTML, never empty success; table restored and snapshot unchanged.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K06.03",
+      "priority": "P1",
+      "criterion": "`page`/`pageSize` ngoài khoảng được xử lý nhất quán, không lỗi 500.",
+      "status": "PASS",
+      "reason": "Zero/negative/noninteger/overflow page and invalid pageSize consistently return400 HTML; valid positive page beyond last returns200 empty with original total. No500 or SQL writes.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K06.04",
+      "priority": "P2",
+      "criterion": "Thẻ sản phẩm có ảnh, tên, giá từ biến thể đang bán, trạng thái hàng; lưới 3 cột thu về 1–2 cột trên màn hình nhỏ.",
+      "status": "PASS",
+      "reason": "Real cards show supplied/fallback images, name, filtered public-variant price and stock text. Chromium verifies desktop3/tablet2/mobile1 columns and no overflow; QA image panels are test fixtures, not shipping assets.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K07.01",
+      "priority": "P0",
+      "criterion": "Từ khóa chứa ký tự đặc biệt, SQL-like hoặc HTML không gây lỗi 500 và được hiển thị lại an toàn (đã encode).",
+      "status": "PASS",
+      "reason": "HTTP special/SQL-like/HTML search retained safely and literal; product name/spec/description script-like metadata also encoded. No executing markup,500 or snapshot changes.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K07.02",
+      "priority": "P1",
+      "criterion": "Từ khóa trống hoặc toàn khoảng trắng = không lọc; từ khóa không khớp → tập rỗng đúng cấu trúc.",
+      "status": "PASS",
+      "reason": "Empty/whitespace query returns all four public products; no-match returns friendly zero-card/zero-total structure without writes.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K08.01",
+      "priority": "P1",
+      "criterion": "Kết hợp hãng + khoảng giá + dung lượng + màu + sắp xếp cho kết quả đúng; dung lượng và màu cùng thỏa trên **một** biến thể; bộ lọc được giữ khi đổi trang.",
+      "status": "PASS",
+      "reason": "Combined brand+price+storage+color+sort excludes split-variant trap; main filtered card24m versus unfiltered12m. Page2 keeps every condition and shows22m. Real browser confirms equivalent interactions.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K08.02",
+      "priority": "P1",
+      "criterion": "Nút xóa bộ lọc trở về danh sách theo điều kiện còn lại, tổng số và phân trang khớp.",
+      "status": "PASS",
+      "reason": "Actual generated remove-color URL preserves price/storage/brand/query/sort and returns total3; reset filters preserves remaining search and coherent total/page1.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K08.03",
+      "priority": "P1",
+      "criterion": "Khoảng giá đảo hoặc `sort` lạ → báo lỗi nhẹ trên bộ lọc, không 500.",
+      "status": "PASS",
+      "reason": "Inverted price, unknown sort, malformed/negative/over-precision amounts and invalid IDs render soft200 filter errors without false results or SQL writes. Decimal annotation uses invariant limits; mobile errors auto-open panel.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K08.04",
+      "priority": "P2",
+      "criterion": "Màn hình nhỏ: bộ lọc chuyển thành bảng mở.",
+      "status": "PASS",
+      "reason": "Chromium390px filter is closed initially, opens by summary/keyboard; error state opens with visible summary; desktop sidebar remains available.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K09.01",
+      "priority": "P0",
+      "criterion": "`/Catalog/Details/{id}`: chọn dung lượng/màu cập nhật giá và số lượng có thể bán; chỉ hiển thị khả dụng (`OnHand − Reserved`), không hiển thị tồn thực.",
+      "status": "PASS",
+      "reason": "Real server-rendered variant GET and Chromium storage/color changes show exact server prices and availability. SQL Blue256 has H8/R8 but UI available0; active selections have limits6/7. No-JS selection also works.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K09.02",
+      "priority": "P0",
+      "criterion": "Sản phẩm không tồn tại hoặc ngừng bán → 404; cặp (`productId`, `variantId`) không khớp bị chặn **ở adapter MVC** (đọc `CatalogService` trước khi gọi dịch vụ giỏ); giá, tồn, quyền vẫn do dịch vụ cũ quyết định.",
+      "status": "PASS",
+      "reason": "Prior read/UI evidence plus actual shipping Cart/Add rejects missing/inactive products and mismatched pair404 with zero cart SQL commands; association stays in adapter.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K09.03",
+      "priority": "P1",
+      "criterion": "Hết hàng: nút Thêm vào giỏ bị vô hiệu kèm chữ \"Hết hàng\"; gửi thẳng request vẫn bị server từ chối.",
+      "status": "PASS",
+      "reason": "Existing sold-out button/text browser proof plus real authenticated Cart/Add rejects sold-out variant and leaves SQL unchanged.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K09.04",
+      "priority": "P1",
+      "criterion": "Số lượng là số nguyên dương và bị giới hạn theo khả dụng; server kiểm tra lại.",
+      "status": "PASS",
+      "reason": "Existing min/max/integer UI plus real POST zero/negative/fraction/text/int overflow/int-max/excess quantities reject with form errors and identical cart SQL.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.HOME.01",
+      "priority": "P1",
+      "criterion": "Trang chủ có giới thiệu, sản phẩm bán chạy (đúng DEC.07 qua dịch vụ), liên hệ và footer; danh sách bán chạy rỗng thì ẩn mục.",
+      "status": "PASS",
+      "reason": "Actual Home reads current-month PublicBestsellerService: QA product ranking2 then1, current server min prices, intro/contact/footer. Empty monthly data hides entire section; public reads preserve business SQL.",
+      "evidence": [
+        "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+        "tests/browser/mvc-catalog.mjs",
+        "docs/evidence/mvc-catalog/browser-results.json"
+      ]
+    },
+    {
+      "id": "WEB.HOME.02",
+      "priority": "P2",
+      "criterion": "Thông tin cửa hàng/liên hệ là dữ liệu mẫu và cấu hình được, không hard-code rải rác.",
+      "status": "PASS",
+      "reason": "StorefrontOptions cấu hình tập trung tên/giới thiệu/liên hệ; Razor render nội dung được cấu hình trong WAF và encode script-like input. Đây là ô cấu hình, không nghiệm thu toàn UI13.",
+      "evidence": [
+        "docs/MVC_FOUNDATION.md"
+      ]
+    },
+    {
+      "id": "WEB.K10.01",
+      "priority": "P0",
+      "criterion": "Khách đăng nhập thêm vào giỏ máy chủ: cộng dồn dòng cùng biến thể; vượt khả dụng hoặc ngừng bán → lỗi tại dòng; `Reserved` không đổi.",
+      "status": "PASS",
+      "reason": "Authenticated Add accumulates2+2; stock/excess/inactive-selection rejection is explicit; full inventory H/R/versions, journal, orders and payments unchanged.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K10.02",
+      "priority": "P0",
+      "criterion": "Giá luôn lấy từ server: sửa giá/số lượng giả trong form hoặc `localStorage` không ảnh hưởng giá hiển thị và tiền tính.",
+      "status": "PASS",
+      "reason": "Forged form price/total/customerId and browser localStorage price/identity ignored; Quote/unit prices/totals use server values.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K10.03",
+      "priority": "P0",
+      "criterion": "**Giỏ guest:** khi chưa đăng nhập, giỏ nằm ở `localStorage`; `/Cart/Quote` định giá và kiểm tồn mà không lưu server; dữ liệu giả (giá, userId) trong `localStorage` bị bỏ qua. *(Ô K10.03 của checklist backend được chuyển sang đây.)*",
+      "status": "PASS",
+      "reason": "Real guest double-submit, reload, quoted edits and last removal use localStorage; public Quote creates no SQL cart row and exposes only availability.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K10.04",
+      "priority": "P0",
+      "criterion": "Sau đăng nhập, `/Cart/Merge` hợp nhất theo `max`, cắt theo khả dụng, bỏ dòng ngừng bán và hiển thị các dòng bị điều chỉnh; gọi lặp (F5, bấm hai lần) không nhân đôi số lượng; `localStorage` được dọn khi thành công.",
+      "status": "PASS",
+      "reason": "SQL+Chromium prove max, duplicate-ID max, current-stock caps, discontinued/missing/zero-stock removal, adjustment text, repeated/parallel merge and clearing storage only on success.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K10.05",
+      "priority": "P1",
+      "criterion": "Hợp nhất lỗi (mạng, 500) → giỏ guest không bị mất và thử lại được.",
+      "status": "PASS",
+      "reason": "Playwright aborts first merge and injects500 next; storage survives both; Retry succeeds and clears original snapshot.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K10.06",
+      "priority": "P1",
+      "criterion": "Số lượng giỏ trên header đúng cho cả guest và khách đăng nhập.",
+      "status": "PASS",
+      "reason": "Guest badge2/0, merged customer8, F5 still8, update/remove5 verified in Chromium; customer badge is initially server-rendered.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K11.01",
+      "priority": "P0",
+      "criterion": "Sửa số lượng/xóa dòng → tổng cập nhật theo phản hồi của server; xóa dòng cuối cho giỏ rỗng hợp lệ.",
+      "status": "PASS",
+      "reason": "HTTP own-cart update/last removal; Chromium guest quote/update/last removal and customer PRG update/remove; totals match server and empty cart is valid.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K11.02",
+      "priority": "P0",
+      "criterion": "Cập nhật/xóa chỉ tác động giỏ của chính khách đang đăng nhập; không sửa được giỏ người khác bằng cách đổi tham số.",
+      "status": "PASS",
+      "reason": "Two SQL QA customers; forged identity fields cannot update/remove another customer cart; other row remains1.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K11.03",
+      "priority": "P1",
+      "criterion": "Số lượng vượt tồn, mặt hàng ngừng bán hoặc giá đổi được hiển thị tại đúng dòng liên quan.",
+      "status": "PASS",
+      "reason": "Failed update retains99 with affected variant association; actual SQL price change and discontinued state appear on exact server-rendered lines; live shortages shown by Quote.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K11.04",
+      "priority": "P1",
+      "criterion": "Nút Đặt hàng yêu cầu đăng nhập; guest đăng nhập xong được đưa về giỏ.",
+      "status": "PASS",
+      "reason": "Actual guest sign-in entry uses local returnUrl Cart/Index and browser returns there after login/merge. Signed-in checkout remains disabled explicitly for step4b.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K11.05",
+      "priority": "P2",
+      "criterion": "Màn hình nhỏ: giỏ thành từng thẻ.",
+      "status": "PASS",
+      "reason": "Actual UI05 guest/customer screenshots390px; one-column cards, no horizontal overflow and labeled controls; desktop1440px retained.",
+      "evidence": [
+        "docs/MVC_CART.md",
+        "docs/evidence/mvc-cart/checks.txt",
+        "docs/evidence/mvc-cart/browser-results.json",
+        "docs/evidence/mvc-cart/sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.01",
+      "priority": "P0",
+      "criterion": "`GET /Cart/Checkout` chỉ cho khách đăng nhập; giỏ rỗng → về giỏ; mỗi lần mở trang sinh `requestKey` mới (GUID, trường ẩn).",
+      "status": "PASS",
+      "reason": "Guest challenge and empty-cart redirect; two actual GETs generate distinct nonempty hidden GUIDs; editable profile defaults and commerce SQL unchanged.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.02",
+      "priority": "P0",
+      "criterion": "`POST /Cart/Checkout` thành công → một đơn `CHO_XAC_NHAN`, COD `CHUA_THU`, `Reserved` tăng đúng, giỏ được xóa; chuyển tới `/Orders/Details/{id}` hiển thị mã đơn, tổng tiền, trạng thái và liên kết Xem đơn.",
+      "status": "PASS",
+      "reason": "Real POST PRG to receipt with code/total/text status/COD/unpaid; exact SQL order/line/payment/history/GIU +1, H unchanged, R +quantity, own cart cleared and unrelated rows unchanged.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.03",
+      "priority": "P0",
+      "criterion": "Giá đổi giữa lúc xem và lúc đặt → trang hiển thị giá mới và yêu cầu xác nhận lại; chưa tạo đơn, chưa giữ kho.",
+      "status": "PASS",
+      "reason": "SQL price change produces fresh displayed/protected quote, preserves shipping and explicitly requires another submit. HTTP and browser SQL checkpoints prove no order/reservation before confirmation.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.04",
+      "priority": "P0",
+      "criterion": "Thiếu hàng, ngừng bán hoặc giỏ rỗng → quay lại với lỗi theo dòng; transaction thất bại không bao giờ hiện \"thành công\" và không để lại đơn dở dang.",
+      "status": "PASS",
+      "reason": "Empty/inactive/shortage and injected late SQL payment failure show safe form/line errors and no success; ordered full H/R/cart/order/line/payment/history/journal snapshots unchanged.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.05",
+      "priority": "P0",
+      "criterion": "Gửi form hai lần (bấm đúp, F5, Back rồi gửi lại) cùng `requestKey` → chỉ một đơn, `Reserved` tăng một lần; người dùng được chuyển tới đơn đã tạo.",
+      "status": "PASS",
+      "reason": "Concurrent original-key HTTP replay, browser double-submit guard and receipt F5 keep one order/reservation. Chromium Back to no-store POST gives ERR_CACHE_MISS; captured form/key is then replayed through browser HTTP, same receipt/SQL. Stale DOM form restoration is not claimed.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.06",
+      "priority": "P0",
+      "criterion": "Hai khách cùng đặt món cuối cùng → chỉ một thành công; người kia nhận lỗi thiếu hàng và giỏ không bị mất.",
+      "status": "PASS",
+      "reason": "Two real WAF POSTs overlap at a gated SQL write-lock boundary:2 arrivals,2 independent SQL connections, both incomplete before release. Exactly1 winner; H3→3/R2→3; losing cart retained and no partial losing document.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.07",
+      "priority": "P0",
+      "criterion": "Form bị gắn thêm `total`, `price`, `paymentStatus`, `customerId` → bị bỏ qua; chỉ chấp nhận `paymentMethod = COD`.",
+      "status": "PASS",
+      "reason": "Forged total/price/Lines price/paymentStatus/customerId/role ignored; account-bound protected server quote supplies confirmation. Only exact COD accepted; wrong/tampered/cross-account confirmation rejected with no SQL effects.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.08",
+      "priority": "P1",
+      "criterion": "Người nhận, điện thoại, địa chỉ bắt buộc; sai → lỗi tại trường và giữ form; cho sửa địa chỉ mặc định lấy từ hồ sơ.",
+      "status": "PASS",
+      "reason": "Required recipient/phone/address produce field errors and retain safe entered values; defaults originate from profile and are editable. Shipping remains through price reconfirmation.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.09",
+      "priority": "P1",
+      "criterion": "Phiên hết hạn khi đang ở trang đặt hàng → đăng nhập lại rồi quay lại không mất giỏ; không có đơn nào được tạo bằng phiên cũ.",
+      "status": "PASS",
+      "reason": "SQL expires session mid-flow; old POST redirects login with local Checkout return. Real Chromium relogin retains cart/fresh GET key; expired cookie still denied afterward; SQL unchanged until authorized new-session submit.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K12.10",
+      "priority": "P2",
+      "criterion": "Màn hình nhỏ: tóm tắt tiền đặt dưới thông tin giao hàng.",
+      "status": "PASS",
+      "reason": "Actual390px checkout/reprice/resumed captures measure summary below shipping, submit afterward, zero overflow/unnamed inputs.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K13.01",
+      "priority": "P0",
+      "criterion": "`/Orders/Index` chỉ có đơn của khách hiện tại; lọc theo trạng thái, thời gian, mã; phân trang; chưa đăng nhập → đăng nhập.",
+      "status": "PASS",
+      "reason": "Real guest challenge, own11-order scope, forged customerId ignored, exact totals/disjoint pages, combined status/code/date filters and UTC+7 day boundaries on SQL QA.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K13.02",
+      "priority": "P1",
+      "criterion": "Trạng thái rỗng thân thiện; khoảng ngày đảo báo lỗi nhẹ, không 500.",
+      "status": "PASS",
+      "reason": "No-match and beyond-last pages show friendly empty recovery; reversed/invalid dates, unknown status and malformed/out-of-range pagination render gentle errors, no500.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K13.03",
+      "priority": "P1",
+      "criterion": "Xem danh sách không đổi trạng thái, ngày hoàn tất hay thanh toán (đối soát DB trước/sau).",
+      "status": "PASS",
+      "reason": "Full ordered commerce snapshots before/after list/filter/error/timeline reads are identical, including order status/CompletedAt, payments, H/R, history and movements.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K14.01",
+      "priority": "P0",
+      "criterion": "`/Orders/Details/{id}` với đơn của khách khác hoặc ID không tồn tại → 404 giống nhau (không lộ tồn tại); đã thử bằng ID đơn của khách khác.",
+      "status": "PASS",
+      "reason": "Actual other-customer order ID and nonexistent ID both404 with byte-identical HTML; ordered commerce SQL unchanged.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K14.02",
+      "priority": "P0",
+      "criterion": "Hiển thị snapshot (sản phẩm, giá, số lượng, người nhận, tổng, COD, trạng thái thanh toán, timeline); đổi catalog hoặc hồ sơ rồi xem lại vẫn không đổi.",
+      "status": "PASS",
+      "reason": "Catalog name/price/color and profile are changed in QA; full customer snapshot/timeline DTO remains identical, actual receipt still shows original line/recipient/price/address. Browser also verifies COD/payment status and UTC+7.",
+      "evidence": [
+        "docs/MVC_CHECKOUT.md",
+        "docs/evidence/mvc-checkout/checks.txt",
+        "docs/evidence/mvc-checkout/browser-results.json",
+        "docs/evidence/mvc-checkout/race-results.json",
+        "docs/evidence/mvc-checkout/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K14.03",
+      "priority": "P1",
+      "criterion": "Timeline chỉ có thời điểm, từ/đến, lý do; không lộ `ActorId` hay tài khoản quản trị.",
+      "status": "PASS",
+      "reason": "All six order states read through safe customer projection: timeline only time/from/to/reason; no ActorId/admin username/private fields. Script-like reasons stay text; valid1000-char unbroken reason fits390px.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K14.04",
+      "priority": "P1",
+      "criterion": "Nút Hủy chỉ hiện khi `CHO_XAC_NHAN`, có hộp xác nhận trước khi gửi; trạng thái hiển thị bằng chữ, không chỉ bằng màu.",
+      "status": "PASS",
+      "reason": "Real state fixtures show cancel panel only CHO_XAC_NHAN; status is textual. Chromium native confirm dismiss sends no POST; accept then duplicate submit produces1POST.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K15.01",
+      "priority": "P0",
+      "criterion": "`POST /Orders/Cancel` hợp lệ (chủ đơn, `CHO_XAC_NHAN`, có lý do, đúng `version`) → `DA_HUY`, `Reserved` giảm đúng, `OnHand` không đổi, COD vẫn `CHUA_THU`.",
+      "status": "PASS",
+      "reason": "Exact SQL cancel: DA_HUY, H7→7/R6→5, COD CHUA_THU amount0 unchanged; one history/HUY_GIU movement with trimmed reason; snapshots/unrelated data unchanged. Forged identity/status/operation fields ignored.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K15.02",
+      "priority": "P0",
+      "criterion": "Hủy đơn của người khác hoặc ID giả → 404 và không đổi dữ liệu.",
+      "status": "PASS",
+      "reason": "Direct POST foreign/missing/zero/negative IDs return byte-identical404 even with invalid reason; ordered commerce SQL unchanged.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K15.03",
+      "priority": "P0",
+      "criterion": "Admin vừa xác nhận (version cũ) → khách nhận thông báo \"đơn đã thay đổi, vui lòng tải lại\"; đơn không bị hủy.",
+      "status": "PASS",
+      "reason": "Real admin API login/token/read/confirm and MVC Cancel overlap on2 SQL sessions. Admin holds actual application lock; DMV observes customer blocked by it before admin commits. Admin204/customer302, exact reload notice, final DA_XAC_NHAN; H/R/payment/journal unchanged, only admin confirmation history added.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K15.04",
+      "priority": "P0",
+      "criterion": "Gửi hủy hai lần hoặc hủy đơn đã `DA_XAC_NHAN` trở đi → từ chối; `Reserved` không giảm lần hai.",
+      "status": "PASS",
+      "reason": "Old-version replay, fresh-version repeat on DA_HUY and all post-confirmation states reject without any SQL changes; R is not released twice. Browser F5 also read-only.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.K15.05",
+      "priority": "P1",
+      "criterion": "Thiếu lý do → lỗi tại trường, giữ form.",
+      "status": "PASS",
+      "reason": "Empty/whitespace/overlong reason gives field error with form/version retained; malformed version preserves entered reason. Missing/wrong CSRF rejected without writes; browser exercises actual server validation.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checks.txt",
+        "docs/evidence/mvc-orders/race-results.json",
+        "docs/evidence/mvc-orders/browser-results.json",
+        "docs/evidence/mvc-orders/browser-sql-results.json"
+      ]
+    },
+    {
+      "id": "WEB.FLOW.01",
+      "priority": "P0",
+      "criterion": "Guest xem trang chủ → danh mục → chi tiết → thêm giỏ (`localStorage`) → Đặt hàng → đăng nhập → giỏ được hợp nhất → đặt COD → xem đơn → hủy → `Reserved` được trả lại.",
+      "status": "PASS",
+      "reason": "Real Chromium home/catalog/detail→guest localStorage→login/merge→COD order→receipt→cancel. SQL checkpoints for every step: place R+1, cancel R−1, H unchanged; COD remains unpaid, exact history/journal.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.FLOW.02",
+      "priority": "P0",
+      "criterion": "Khách đặt hàng → Admin (API quản trị) xác nhận, xuất giao, hoàn tất → khách thấy đúng trạng thái, timeline, COD \"Đã thu\"; tổng tiền khớp từng bước.",
+      "status": "PASS",
+      "reason": "Real admin APIs confirm/dispatch/complete; customer refresh verifies each textual status/timeline and collected COD. SQL: confirm unchangedH/R; dispatch H−1/R−1; complete payment collected for exact total.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.FLOW.03",
+      "priority": "P0",
+      "criterion": "Admin đổi tỷ lệ lợi nhuận giữa lúc có giỏ và lúc đặt → khách xác nhận lại giá mới → đơn lưu giá mới; giỏ không lưu giá cũ.",
+      "status": "PASS",
+      "reason": "Real admin product PUT changes profit to30%; old checkout renders13.000.000 đ and requires reconfirmation without order/reservation. Second confirmation creates exact new-price snapshot and R+1.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.FLOW.04",
+      "priority": "P1",
+      "criterion": "Sản phẩm bị ngừng bán khi đang trong giỏ → giỏ báo dòng không hợp lệ; checkout bị chặn.",
+      "status": "PASS",
+      "reason": "Real admin stops product already in cart; invalid line remains visible and checkout disabled. SQL checkpoints prove no order/payment/history/journal/stock mutation.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.FLOW.05",
+      "priority": "P1",
+      "criterion": "Hết phiên giữa luồng → đăng nhập lại → quay lại đúng trang, giỏ còn nguyên.",
+      "status": "PASS",
+      "reason": "Real SQL session expiry between checkout GET/POST challenges login with local checkout returnUrl; no order by expired session. Actual relogin returns checkout with persisted cart intact.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.UI.01",
+      "priority": "P1",
+      "criterion": "Có ảnh chụp UI03, UI04, UI05, UI06, UI07, UI13 ở màn hình rộng và rộng ≤ 480 px; bố cục khớp thiết kế: màu xanh cho thao tác chính, thẻ 3 cột thu còn 1–2 cột, bộ lọc thành bảng mở, giỏ thành thẻ.",
+      "status": "PASS",
+      "reason": "Fresh same-build UI03–UI07/UI13 full-page captures at1440px and390px;768px catalog grid. All audited widths fit, labels/alt present, product grid3/2/1 columns.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.UI.02",
+      "priority": "P2",
+      "criterion": "Bàn phím dùng được (thứ tự Tab, focus rõ), form có nhãn, ảnh có `alt`.",
+      "status": "PASS",
+      "reason": "Real Chromium Tab/focus checks on all six screens, keyboard filter expansion and variant arrows; labels/alt and textual states. Independent rendered finish review recorded separately.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.UI.03",
+      "priority": "P2",
+      "criterion": "Mỗi màn hình có trạng thái rỗng, đang tải và lỗi rõ ràng.",
+      "status": "PASS",
+      "reason": "Fresh catalog/cart/order empty, inactive/out-of-stock, field/validation404/500 and all-six navigation-loading captures. Form-only screens use missing-input states; actual server500 template transported by browser interception, no shipping fault route.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.GATE.01",
+      "priority": "P0",
+      "criterion": "Đủ 15 chức năng khách (K01–K15) có trang/action chạy được và bằng chứng; phần chưa làm được ghi rõ.",
+      "status": "PASS",
+      "reason": "All official K01-K15 individual criteria now PASS with real evidence across foundation/accounts/catalog/cart/checkout/orders PRs. This confirms15 implemented functions, not complete WEB.FLOW/site acceptance.",
+      "evidence": [
+        "docs/MVC_ORDERS.md",
+        "docs/evidence/mvc-orders/checklist-results.json"
+      ]
+    },
+    {
+      "id": "WEB.GATE.02",
+      "priority": "P0",
+      "criterion": "Mọi ô P0 là `PASS` (hoặc `BLOCKED` có lý do được bạn duyệt).",
+      "status": "PASS",
+      "reason": "All other47 official P0 IDs PASS with evidence; no priority relabeling or approved-BLOCKED shortcut.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.GATE.03",
+      "priority": "P0",
+      "criterion": "CI chạy đúng commit mới nhất và xanh; test chạy trên CSDL QA.",
+      "status": "PASS",
+      "reason": "322 full SQL QA groups pass; CI SUCCESS at implementation snapshot 1e7f8f5852bb0638276a2f665e87e221ce5e6798. Final exact-head SUCCESS must be rechecked in PR verification after any docs-only amendment.",
+      "evidence": [
+        "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/actions/runs/41240516979"
+      ]
+    },
+    {
+      "id": "WEB.GATE.04",
+      "priority": "P0",
+      "criterion": "Không đổi dịch vụ, schema, API quản trị ngoài phạm vi được duyệt (diff chứng minh). **Ngoại lệ đã duyệt:** thêm mới interface `IStoreService` và adapter MVC (chỉ thêm file, không sửa file dịch vụ cũ) cùng cấu hình host MVC; hồi quy của API quản trị phải giữ nguyên kết quả. Mọi lỗ hổng phát hiện ở dịch vụ được báo cáo, không tự sửa.",
+      "status": "PASS",
+      "reason": "Protected Core/Infrastructure/Program/admin Endpoints/Security diff empty from merged PR99 base3bc247d. Existing services/schema/admin API unchanged; MVC presentation/error translation and tests only.",
+      "evidence": [
+        "docs/evidence/mvc-acceptance/protected-runtime-diff.txt",
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.GATE.05",
+      "priority": "P1",
+      "criterion": "Ảnh chụp hoặc video chạy tay các luồng `WEB.FLOW.01`–`03`.",
+      "status": "PASS",
+      "reason": "Actual FLOW01–03 screenshots and SQL checkpoints retained, including confirm/dispatch/complete and price reconfirmation.",
+      "evidence": [
+        "docs/MVC_HANDOVER.md",
+        "docs/MVC_ARCHITECTURE_AUDIT.md",
+        "docs/evidence/mvc-acceptance/checks.txt",
+        "docs/evidence/mvc-acceptance/browser-results.json",
+        "docs/evidence/mvc-acceptance/stock-trace.json"
+      ]
+    },
+    {
+      "id": "WEB.GATE.06",
+      "priority": "P1",
+      "criterion": "Báo cáo theo đúng nhãn P0/P1/P2 trong file này, kèm bảng bằng chứng.",
+      "status": "PASS",
+      "reason": "All99 official IDs retained with exactly48P0/43P1/8P2, per-ID evidence/limits and counts.",
+      "evidence": [
+        "docs/MVC_CHECKLIST_RESULTS.md"
+      ]
+    }
+  ]
+}

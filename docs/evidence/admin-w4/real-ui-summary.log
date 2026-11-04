@@ -1,0 +1,3 @@
+PASS WIN.A05.04/A14/A15/A17 actual product-to-purchase/confirm/count with parent SQL barrier per step
+1 admin form checks passed.
+PASS real W4 WinForms/Kestrel/SQL QA: product hints4 -> unsaved receipt0 -> saved draft H0 -> confirmed H4 -> counted H5; journal2; logout revoked

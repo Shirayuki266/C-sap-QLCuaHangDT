@@ -1,0 +1,2151 @@
+{
+  "qaOnly": true,
+  "records": [
+    {
+      "stage": "opened",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": null,
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB9Q="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB90="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 18,
+            "Reserved": 4,
+            "Version": "AAAAAAAAB9w="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          }
+        ]
+      }
+    },
+    {
+      "stage": "confirmed",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DA_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": null,
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB94="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB90="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 18,
+            "Reserved": 4,
+            "Version": "AAAAAAAAB9w="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          }
+        ]
+      }
+    },
+    {
+      "stage": "dispatched",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": null,
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+A="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB90="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 16,
+            "Reserved": 2,
+            "Version": "AAAAAAAAB98="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          }
+        ]
+      }
+    },
+    {
+      "stage": "completed",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": "2026-11-01T22:06:25.7117968",
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+I="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB90="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "DA_THU",
+            "Amount": 24000000.00,
+            "CollectedAt": "2026-11-01T22:06:25.7117968",
+            "ActorId": 1
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 16,
+            "Reserved": 2,
+            "Version": "AAAAAAAAB98="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          },
+          {
+            "Id": 8,
+            "OrderId": 1,
+            "From": "DANG_GIAO",
+            "To": "HOAN_TAT",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.7119539",
+            "Reason": null
+          }
+        ]
+      }
+    },
+    {
+      "stage": "invoice-read",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": "2026-11-01T22:06:25.7117968",
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+I="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB90="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "DA_THU",
+            "Amount": 24000000.00,
+            "CollectedAt": "2026-11-01T22:06:25.7117968",
+            "ActorId": 1
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 16,
+            "Reserved": 2,
+            "Version": "AAAAAAAAB98="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          },
+          {
+            "Id": 8,
+            "OrderId": 1,
+            "From": "DANG_GIAO",
+            "To": "HOAN_TAT",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.7119539",
+            "Reason": null
+          }
+        ]
+      }
+    },
+    {
+      "stage": "preview-closed",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": "2026-11-01T22:06:25.7117968",
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+I="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DANG_GIAO",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB90="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "DA_THU",
+            "Amount": 24000000.00,
+            "CollectedAt": "2026-11-01T22:06:25.7117968",
+            "ActorId": 1
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 16,
+            "Reserved": 2,
+            "Version": "AAAAAAAAB98="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          },
+          {
+            "Id": 8,
+            "OrderId": 1,
+            "From": "DANG_GIAO",
+            "To": "HOAN_TAT",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.7119539",
+            "Reason": null
+          }
+        ]
+      }
+    },
+    {
+      "stage": "failed",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": "2026-11-01T22:06:25.7117968",
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+I="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "GIAO_THAT_BAI",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB+M="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "DA_THU",
+            "Amount": 24000000.00,
+            "CollectedAt": "2026-11-01T22:06:25.7117968",
+            "ActorId": 1
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 16,
+            "Reserved": 2,
+            "Version": "AAAAAAAAB98="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          },
+          {
+            "Id": 8,
+            "OrderId": 1,
+            "From": "DANG_GIAO",
+            "To": "HOAN_TAT",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.7119539",
+            "Reason": null
+          },
+          {
+            "Id": 9,
+            "OrderId": 2,
+            "From": "DANG_GIAO",
+            "To": "GIAO_THAT_BAI",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:28.8564892",
+            "Reason": "Kh\u00E1ch kh\u00F4ng nh\u1EADn h\u00E0ng QA"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "returned",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": "2026-11-01T22:06:25.7117968",
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+I="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "GIAO_THAT_BAI",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB+U="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "CHO_XAC_NHAN",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB9g="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "DA_THU",
+            "Amount": 24000000.00,
+            "CollectedAt": "2026-11-01T22:06:25.7117968",
+            "ActorId": 1
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 18,
+            "Reserved": 2,
+            "Version": "AAAAAAAAB+Q="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          },
+          {
+            "Id": 7,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "NHAN_LAI",
+            "DeltaOnHand": 2,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:29.3467409",
+            "Reason": "",
+            "OperationKey": "4544ef1c-81fc-4e34-9a6a-ef91bd750b63"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          },
+          {
+            "Id": 8,
+            "OrderId": 1,
+            "From": "DANG_GIAO",
+            "To": "HOAN_TAT",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.7119539",
+            "Reason": null
+          },
+          {
+            "Id": 9,
+            "OrderId": 2,
+            "From": "DANG_GIAO",
+            "To": "GIAO_THAT_BAI",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:28.8564892",
+            "Reason": "Kh\u00E1ch kh\u00F4ng nh\u1EADn h\u00E0ng QA"
+          },
+          {
+            "Id": 10,
+            "OrderId": 2,
+            "From": "GIAO_THAT_BAI",
+            "To": "GIAO_THAT_BAI",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:29.348844",
+            "Reason": ""
+          }
+        ]
+      }
+    },
+    {
+      "stage": "cancelled",
+      "data": {
+        "orders": [
+          {
+            "Id": 1,
+            "Code": "DHec5fe4d702ad4724b00cc53d8eec35ee",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 0",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "HOAN_TAT",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.0493153",
+            "CompletedAt": "2026-11-01T22:06:25.7117968",
+            "RequestKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee",
+            "Version": "AAAAAAAAB+I="
+          },
+          {
+            "Id": 2,
+            "Code": "DH43ce2911b2f84dbaa7d8eb456d1bd086",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 1",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "GIAO_THAT_BAI",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.225958",
+            "CompletedAt": null,
+            "RequestKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086",
+            "Version": "AAAAAAAAB+U="
+          },
+          {
+            "Id": 3,
+            "Code": "DHbfe1ee8b25ca41cfb8d486977fa7eb69",
+            "CustomerId": 2,
+            "Recipient": "Ng\u01B0\u1EDDi nh\u1EADn UI QA 2",
+            "Phone": "0938123591",
+            "Address": "\u0110\u1ECBa ch\u1EC9 snapshot UI QA",
+            "Status": "DA_HUY",
+            "Total": 24000000.00,
+            "CreatedAt": "2026-11-01T22:06:19.271372",
+            "CompletedAt": null,
+            "RequestKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69",
+            "Version": "AAAAAAAAB+c="
+          }
+        ],
+        "payments": [
+          {
+            "OrderId": 1,
+            "Method": "COD",
+            "Status": "DA_THU",
+            "Amount": 24000000.00,
+            "CollectedAt": "2026-11-01T22:06:25.7117968",
+            "ActorId": 1
+          },
+          {
+            "OrderId": 2,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          },
+          {
+            "OrderId": 3,
+            "Method": "COD",
+            "Status": "CHUA_THU",
+            "Amount": 0.00,
+            "CollectedAt": null,
+            "ActorId": null
+          }
+        ],
+        "stock": [
+          {
+            "VariantId": 1,
+            "OnHand": 18,
+            "Reserved": 0,
+            "Version": "AAAAAAAAB+Y="
+          }
+        ],
+        "journal": [
+          {
+            "Id": 1,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": null,
+            "PurchaseId": null,
+            "Kind": "DIEU_CHINH",
+            "DeltaOnHand": 20,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:18.7208415",
+            "Reason": "QA initial desktop stock",
+            "OperationKey": "7ba7dc2f-3ee1-4a8a-bc1b-e89578f243ed"
+          },
+          {
+            "Id": 2,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.0939398",
+            "Reason": null,
+            "OperationKey": "ec5fe4d7-02ad-4724-b00c-c53d8eec35ee"
+          },
+          {
+            "Id": 3,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2273596",
+            "Reason": null,
+            "OperationKey": "43ce2911-b2f8-4dba-a7d8-eb456d1bd086"
+          },
+          {
+            "Id": 4,
+            "VariantId": 1,
+            "ActorId": 2,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": 2,
+            "At": "2026-11-01T22:06:19.2727722",
+            "Reason": null,
+            "OperationKey": "bfe1ee8b-25ca-41cf-b8d4-86977fa7eb69"
+          },
+          {
+            "Id": 5,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:19.3857729",
+            "Reason": null,
+            "OperationKey": "2291cbd8-62a0-428e-adf3-c17971ae640c"
+          },
+          {
+            "Id": 6,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 1,
+            "PurchaseId": null,
+            "Kind": "XUAT_GIAO",
+            "DeltaOnHand": -2,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:25.1342231",
+            "Reason": null,
+            "OperationKey": "ca27f614-8fbd-437d-b573-ffac17b6d181"
+          },
+          {
+            "Id": 7,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 2,
+            "PurchaseId": null,
+            "Kind": "NHAN_LAI",
+            "DeltaOnHand": 2,
+            "DeltaReserved": 0,
+            "At": "2026-11-01T22:06:29.3467409",
+            "Reason": "",
+            "OperationKey": "4544ef1c-81fc-4e34-9a6a-ef91bd750b63"
+          },
+          {
+            "Id": 8,
+            "VariantId": 1,
+            "ActorId": 1,
+            "OrderId": 3,
+            "PurchaseId": null,
+            "Kind": "HUY_GIU",
+            "DeltaOnHand": 0,
+            "DeltaReserved": -2,
+            "At": "2026-11-01T22:06:29.9450266",
+            "Reason": "H\u1EE7y \u0111\u01A1n QA",
+            "OperationKey": "d445990b-83d8-45eb-9884-c3c7ccbdbc95"
+          }
+        ],
+        "history": [
+          {
+            "Id": 1,
+            "OrderId": 1,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.0951018",
+            "Reason": null
+          },
+          {
+            "Id": 2,
+            "OrderId": 2,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2274226",
+            "Reason": null
+          },
+          {
+            "Id": 3,
+            "OrderId": 3,
+            "From": null,
+            "To": "CHO_XAC_NHAN",
+            "ActorId": 2,
+            "At": "2026-11-01T22:06:19.2728138",
+            "Reason": null
+          },
+          {
+            "Id": 4,
+            "OrderId": 2,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.335871",
+            "Reason": null
+          },
+          {
+            "Id": 5,
+            "OrderId": 2,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:19.3858942",
+            "Reason": null
+          },
+          {
+            "Id": 6,
+            "OrderId": 1,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_XAC_NHAN",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:24.6212466",
+            "Reason": null
+          },
+          {
+            "Id": 7,
+            "OrderId": 1,
+            "From": "DA_XAC_NHAN",
+            "To": "DANG_GIAO",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.1538099",
+            "Reason": null
+          },
+          {
+            "Id": 8,
+            "OrderId": 1,
+            "From": "DANG_GIAO",
+            "To": "HOAN_TAT",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:25.7119539",
+            "Reason": null
+          },
+          {
+            "Id": 9,
+            "OrderId": 2,
+            "From": "DANG_GIAO",
+            "To": "GIAO_THAT_BAI",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:28.8564892",
+            "Reason": "Kh\u00E1ch kh\u00F4ng nh\u1EADn h\u00E0ng QA"
+          },
+          {
+            "Id": 10,
+            "OrderId": 2,
+            "From": "GIAO_THAT_BAI",
+            "To": "GIAO_THAT_BAI",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:29.348844",
+            "Reason": ""
+          },
+          {
+            "Id": 11,
+            "OrderId": 3,
+            "From": "CHO_XAC_NHAN",
+            "To": "DA_HUY",
+            "ActorId": 1,
+            "At": "2026-11-01T22:06:29.9452624",
+            "Reason": "H\u1EE7y \u0111\u01A1n QA"
+          }
+        ]
+      }
+    }
+  ]
+}

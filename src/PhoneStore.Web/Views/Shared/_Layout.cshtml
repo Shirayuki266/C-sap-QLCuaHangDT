@@ -1,4 +1,83 @@
+@using Microsoft.Extensions.Options
+@inject IOptions<StorefrontOptions> Storefront
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
-<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(Context).RequestToken"/><title>@ViewData["Title"] · Phone Store</title><link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/><link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/></head>
-<body data-customer="@(User.IsInRole("CUSTOMER") ? "true" : "false")"><header><nav class="container site-nav"><a asp-controller="Home" asp-action="Index" class="brand">PHONE STORE</a><div class="nav-pages"><a asp-controller="Home" asp-action="Index">Trang chủ</a><a asp-controller="Catalog" asp-action="Index">Sản phẩm</a></div><form action="/Search" method="get" class="header-search" role="search" autocomplete="off"><label class="visually-hidden" for="header-query">Tìm điện thoại</label><div class="search-input"><input id="header-query" name="Query" maxlength="100" value="@Context.Request.Query["Query"]" placeholder="Bạn đang tìm điện thoại nào?" role="combobox" aria-autocomplete="list" aria-controls="search-suggestions" aria-expanded="false"/><button aria-label="Tìm kiếm" type="submit">Tìm</button></div><div id="search-suggestions" role="listbox" hidden></div><span id="search-status" class="visually-hidden" role="status" aria-live="polite"></span></form><div class="nav-links"><a asp-controller="Cart" asp-action="Index">Giỏ hàng</a>@if(User.Identity?.IsAuthenticated==true){<details class="account-menu"><summary>Tài khoản</summary><div><a asp-controller="Account" asp-action="Profile">Hồ sơ</a><a asp-controller="Orders" asp-action="Index">Đơn hàng</a><a asp-controller="Account" asp-action="Password">Đổi mật khẩu</a><form asp-controller="Account" asp-action="Logout" method="post"><button class="btn btn-outline-secondary btn-sm">Đăng xuất</button></form></div></details>}else{<a asp-controller="Account" asp-action="Login">Đăng nhập</a>}</div></nav></header>
-<main class="container py-4"><div id="guest-notice" role="status" aria-live="polite"></div>@if(TempData["Success"] is string success){<div class="alert alert-success" role="status">@success</div>}@if(TempData["Error"] is string error){<div class="alert alert-danger" role="alert">@error</div>}@RenderBody()</main><footer class="container py-4">Phone Store · Thanh toán khi nhận hàng (COD) · <a href="/Home/ImageCredits">Nguồn ảnh</a></footer><script src="~/js/site.js" asp-append-version="true" defer></script><script src="~/js/discovery.js" asp-append-version="true" defer></script>@await RenderSectionAsync("Scripts",required:false)</body></html>
+@{
+    var shop = Storefront.Value;
+    var home = Context.Request.Path == "/" || Context.Request.Path == "/Home/Index";
+    var catalog = Context.Request.Path.StartsWithSegments("/Catalog");
+}
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="@Antiforgery.GetAndStoreTokens(Context).RequestToken" />
+    <title>@ViewData["Title"] · @shop.Name</title>
+    <link rel="stylesheet" href="~/css/storefront.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/accounts.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/catalog.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/checkout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/orders.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ui-feedback.css" asp-append-version="true" />
+    <script src="~/js/storefront.js" asp-append-version="true" defer></script>
+    <script src="~/js/catalog.js" asp-append-version="true" defer></script>
+    <script src="~/js/cart.js" asp-append-version="true" defer></script>
+    <script src="~/js/checkout.js" asp-append-version="true" defer></script>
+    <script src="~/js/orders.js" asp-append-version="true" defer></script>
+    @if (Context.Request.Path.StartsWithSegments("/Account"))
+    {
+        <script src="~/js/accounts.js" asp-append-version="true" defer></script>
+    }
+</head>
+<body data-customer="@(User.IsInRole("CUSTOMER") ? "true" : "false")">
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div class="topnote">Chọn đúng máy · Kết nối điều bạn yêu · Thanh toán khi nhận hàng</div>
+    <header class="site-header">
+        <div class="masthead container">
+            <a href="/Home/Index" class="brand" aria-label="@shop.Name — Trang chủ">@shop.Name<span>.</span></a>
+            <form action="/Catalog/Index" method="get" class="site-search" role="search">
+                <label class="visually-hidden" for="site-q">Tìm điện thoại</label>
+                <input id="site-q" name="q" type="search" value="@ViewData["CatalogQuery"]" placeholder="Tìm iPhone, Samsung, Xiaomi…" maxlength="100" />
+                <button type="submit" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+            </form>
+            <nav class="account-links" aria-label="Tài khoản và mua hàng">
+                <a href="/Orders/Index">Đơn hàng</a>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a href="/Account/Profile">Tài khoản của tôi</a>
+                    <form asp-controller="Account" asp-action="Logout" method="post"><button class="text-button" type="submit">Đăng xuất</button></form>
+                }
+                else
+                {
+                    <a href="/Account/Login">Đăng nhập</a>
+                }
+                <a href="/Cart/Index" id="cart-badge">@await Component.InvokeAsync("CartBadge")</a>
+            </nav>
+        </div>
+        <nav class="primary-nav container" aria-label="Điều hướng chính">
+            <a href="/Home/Index" aria-current="@(home ? "page" : null)">Trang chủ</a>
+            <a href="/Catalog/Index" aria-current="@(catalog ? "page" : null)">Sản phẩm</a>
+            <a href="/Home/Index#about">Về cửa hàng</a>
+            <a href="/Home/Index#contact">Liên hệ</a>
+        </nav>
+    </header>
+    <div id="navigation-progress" class="container navigation-progress" role="status" aria-live="polite" hidden>Đang tải trang…</div>
+    <main id="main" class="container main-content" tabindex="-1">
+        <div id="cart-sync" class="cart-feedback" role="status" aria-live="polite"></div>
+        @if (TempData["Notice"] is string notice)
+        {
+            <div class="notice" role="status">@notice</div>
+        }
+        @RenderBody()
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="/Home/Index" class="brand">@shop.Name<span>.</span></a>
+            <p>Chọn điện thoại phù hợp. Thanh toán khi nhận hàng.</p>
+            <a href="/Home/Index#contact">Liên hệ cửa hàng</a>
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

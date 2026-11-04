@@ -1,9 +1,56 @@
-﻿@model CartDto
-@{ViewData["Title"]="Giỏ hàng";}
-<h1>Giỏ hàng</h1><div id="guest-cart"></div>
-@if(User.IsInRole("CUSTOMER")){
-@if(Model.Lines.Count==0){<div class="alert alert-info">Giỏ hàng của bạn đang trống. <a asp-controller="Catalog" asp-action="Index">Chọn điện thoại</a>.</div>}
-<div class="cart-lines">@foreach(var line in Model.Lines){<article class="product cart-line"><div><h2>@line.Name</h2><p>@line.Sku · @line.Color · @line.StorageGb GB</p><strong>@line.Price.FormatMoney() ₫</strong>@if(!line.Active||line.Quantity>line.Available){<p class="text-danger" role="alert">@(line.Active?"Số lượng vượt tồn hiện hành. Vui lòng sửa giỏ.":"Mặt hàng đã ngừng bán. Vui lòng xóa khỏi giỏ.")</p>}</div><form asp-action="Update" method="post"><input type="hidden" name="VariantId" value="@line.VariantId"/><label>Số lượng<input type="number" class="form-control" name="Quantity" min="1" max="10000" value="@line.Quantity" required/></label><button class="btn btn-outline-primary">Cập nhật</button></form><form asp-action="Update" method="post" data-confirm="Xóa mặt hàng khỏi giỏ?"><input type="hidden" name="VariantId" value="@line.VariantId"/><input type="hidden" name="Quantity" value="0"/><button class="btn btn-outline-danger">Xóa</button></form><p>Thành tiền: @line.Total.FormatMoney() ₫</p></article>}</div>
-<h2 class="mt-4">Tổng tiền: @Model.Total.FormatMoney() ₫</h2>@if(Model.Lines.Count>0&&Model.Lines.All(x=>x.Active&&x.Quantity<=x.Available)){<a class="btn btn-primary" asp-action="Checkout">Tiến hành đặt hàng COD</a>}
-}else{<p>Giỏ tạm được lưu trên trình duyệt. <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="/Cart">Đăng nhập</a> để đồng bộ và đặt hàng.</p>}
-
+@model PhoneStore.Web.Models.CartPageViewModel
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn";
+}
+<div class="cart-heading"><h1>Giỏ hàng của bạn</h1><a href="/Catalog/Index">Tiếp tục xem máy</a></div>
+<section id="cart-feedback" class="cart-feedback" role="status" aria-live="polite"></section>
+<div asp-validation-summary="All" class="validation-summary" role="alert" data-error-variant="@Model.ErrorVariant"></div>
+<section id="cart-page" data-guest="@(Model.Guest ? "true" : "false")" aria-label="Sản phẩm trong giỏ">
+    @if (Model.Guest)
+    {
+        <p id="guest-loading">Đang đọc giỏ hàng trên trình duyệt…</p>
+        <noscript><p>Giỏ khách cần JavaScript. Bạn có thể <a href="/Account/Login?returnUrl=%2FCart%2FIndex">đăng nhập</a> để dùng giỏ tài khoản.</p></noscript>
+    }
+    <div class="cart-layout" id="cart-content">
+        <div class="cart-lines">
+            @foreach (var line in Model.Cart.Lines)
+            {
+                <article class="cart-line" data-variant-id="@line.VariantId">
+                    <div class="cart-line-heading"><h2>@(line.Name ?? "Sản phẩm không còn tồn tại")</h2><strong>@(line.Price.HasValue ? WebsiteFormatting.Money(line.Price.Value) : "Chưa có giá")</strong></div>
+                    <p>@line.StorageGb GB · @line.Color</p>
+                    <p>Khả dụng: @line.Available</p>
+                    @if (line.Issue is not null)
+                    { <p class="cart-line-issue">@(line.Issue == "OUT_OF_STOCK" ? "Số lượng vượt khả dụng. Vui lòng cập nhật hoặc xóa dòng này." : "Sản phẩm không còn bán. Vui lòng xóa dòng này.")</p> }
+                    @if (Model.ErrorVariant == line.VariantId && !ViewData.ModelState.IsValid)
+                    { <p class="cart-line-issue">Chưa cập nhật dòng này. Vui lòng kiểm tra số lượng và thông báo phía trên.</p> }
+                    <div class="cart-line-actions">
+                        <form action="/Cart/Update" method="post" asp-antiforgery="false">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="variantId" value="@line.VariantId" />
+                            <label for="quantity-@line.VariantId">Số lượng</label>
+                            <input id="quantity-@line.VariantId" name="quantity" type="number" min="1" max="@Math.Max(1, line.Available)" step="1" value="@(Model.ErrorVariant == line.VariantId && Model.AttemptedQuantity is not null ? Model.AttemptedQuantity : line.Quantity.ToString())" required />
+                            <button class="button button-light" type="submit">Cập nhật</button>
+                        </form>
+                        <form action="/Cart/Remove" method="post" asp-antiforgery="false">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="variantId" value="@line.VariantId" />
+                            <button class="text-button" type="submit" aria-label="Xóa @line.Name khỏi giỏ">Xóa</button>
+                        </form>
+                    </div>
+                    <p class="cart-line-total">Thành tiền: <strong>@WebsiteFormatting.Money((line.Price ?? 0) * line.Quantity)</strong></p>
+                </article>
+            }
+            @if (!Model.Guest && Model.Cart.Lines.Count == 0)
+            { <div class="cart-empty"><h2>Giỏ hàng đang trống</h2><p>Chọn chiếc điện thoại phù hợp để bắt đầu.</p><a class="button button-primary" href="/Catalog/Index">Xem điện thoại</a></div> }
+        </div>
+        @if (!Model.Guest && Model.Cart.Lines.Count > 0)
+        {
+            <aside class="cart-summary" aria-label="Tóm tắt giỏ hàng">
+                <h2>Tóm tắt giỏ hàng</h2><p>Thanh toán khi nhận hàng (COD)</p>
+                <div class="cart-total"><span>Tổng tiền hàng</span><strong id="cart-total">@WebsiteFormatting.Money(Model.Cart.Total)</strong></div>
+                <p>Giá được cập nhật từ cửa hàng. Hàng chưa được giữ khi ở trong giỏ.</p>
+                <a class="button button-primary" href="/Cart/Checkout">Tiếp tục đặt hàng</a>
+            </aside>
+        }
+    </div>
+</section>

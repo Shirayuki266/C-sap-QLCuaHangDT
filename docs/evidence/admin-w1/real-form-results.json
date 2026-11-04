@@ -1,0 +1,22 @@
+{
+  "fakeApi": false,
+  "qaOnly": true,
+  "captures": [
+    {
+      "name": "UI01-real-qa-login",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "UI02-real-qa-main",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ]
+}

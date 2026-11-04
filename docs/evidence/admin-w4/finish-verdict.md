@@ -1,0 +1,12 @@
+# W4 finish verdict — fix batch 1
+
+Disposition: **ship**, limited to the F1/F2 verdict pass. Both material findings from `finish-review.md` are resolved. This does not replace that full review or expand its scope.
+
+| Finding | Score | Evidence |
+|---|---|---|
+| F1 — disabled-confirm recovery | **Resolved** | Opened `forms/UI09-empty-draft.png`, `UI09-unsaved-confirm-hint.png`, `UI09-purchase-error-retained.png` and `UI09-purchase-editor.png`. Empty and changed drafts now show readable recovery text above the lines; confirmation remains disabled. Clean saved draft enables confirmation without an incorrect warning. Separate `ConfirmHintLabel` leaves the retained quantity and public error visible. The text and actions fit the captured 1280×800 frame at 120 DPI. Source derives the hint in `Actions()` independently of `MessageLabel`; form assertions cover empty and actual grid-edited drafts. |
+| F2 — paging during pending reads | **Resolved** | Opened `forms/UI10-journal-loading.png` and `UI09-picker-loading.png`. Both pagers disable during loading; picker selection/query also disable. `StockJournalForm` and `SupplyVariantPicker` now guard handlers with `!busy` before changing page and restore controls in `finally`, including exception paths. Read the held-response tests with total 45: repeated Next/Previous add no request, then release produces footer Trang 2 with request page=2. `forms.log` records the new group passing, seven W4 groups and 25 total form checks. |
+
+Evidence validity: the six named affected PNGs were opened individually with `view_image` and show their stated state without blank regions or clipping. Source and targeted tests were inspected; the reviewer did not independently rerun the executables. The latest `real-ui.log` also records a passing real WinForms/Kestrel/SQL smoke run after the batch. Fake loading captures establish control behavior, not SQL effects. Error recovery for F2 is supported by the `finally` source path; the new held-read scenario itself tests successful release.
+
+No further fix is owed for F1/F2. Continue to ordinary-extension documentation. Preserve the original review's boundaries: incumbent Option A, desktop minimum size at the supplied DPI, no fresh private Word comparison, no HTML/CSS detector applicable to native C#, separate financial/concurrency artifacts, and W6 accessibility/DPI/device work and cumulative acceptance still deferred. Only this verdict file was written; no unrelated design audit was reopened.
