@@ -11,7 +11,7 @@ public sealed class StockPreferenceStore(string? directory=null)
     private sealed record Threshold(int Below);
 }
 
-public sealed class StockListForm:Form
+public sealed class StockListForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly SupplyWorkspace workspace;private readonly Action<int>? saveThreshold;private int page=1,total;private bool busy;
     public TextBox QueryBox { get; }=AdminTheme.Input("Tìm SKU, tên hoặc màu");public ComboBox BrandBox { get; }=new(){DropDownStyle=ComboBoxStyle.DropDownList,Width=190,AccessibleName="Hãng"};
@@ -24,10 +24,10 @@ public sealed class StockListForm:Form
         foreach(var(p,t)in new[]{("Sku","SKU"),("Name","Điện thoại"),("Variant","Phiên bản"),("OnHand","Tồn thực"),("Reserved","Đang giữ"),("Available","Có thể bán")})CatalogUi.Column(Grid,p,t,true,p=="Name"?260:150);
         CatalogUi.Layout(this,"Tồn kho",CatalogUi.Toolbar(QueryBox,BrandBox,BelowBox,ThresholdBox,SearchButton,CountButton,JournalButton),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
         SearchButton.Click+=async(_,_)=>{page=1;await LoadAsync();};PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};
-        CountButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is StockRecord row){using var form=new StockCountDialog(api,row);form.ShowDialog(this);await LoadAsync();}};JournalButton.Click+=(_,_)=>{if(Grid.CurrentRow?.Tag is StockRecord row){using var form=new StockJournalForm(api,row);form.ShowDialog(this);}};
-        Grid.SelectionChanged+=(_,_)=>Actions();ThresholdBox.ValueChanged+=(_,_)=>{try{this.saveThreshold?.Invoke((int)ThresholdBox.Value);}catch(Exception){MessageLabel.Text="Chưa lưu được ngưỡng trong cấu hình người dùng; vẫn có thể tìm theo giá trị đang nhập.";}};Shown+=async(_,_)=>await LoadAsync();
+        CountButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is StockRecord row){using var form=new StockCountDialog(api,row);form.ShowDialog(PageNavigation.Owner(this));await LoadAsync();}};JournalButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is StockRecord row)await PageNavigation.OpenAsync(this,new StockJournalForm(api,row));};
+        Grid.SelectionChanged+=(_,_)=>Actions();ThresholdBox.ValueChanged+=(_,_)=>{try{this.saveThreshold?.Invoke((int)ThresholdBox.Value);}catch(Exception){MessageLabel.Text="Chưa lưu được ngưỡng trong cấu hình người dùng; vẫn có thể tìm theo giá trị đang nhập.";}};ConfigurePageLoad(LoadAsync,()=>busy);
     }
-    private void Actions(){SearchButton.Enabled=QueryBox.Enabled=BrandBox.Enabled=BelowBox.Enabled=ThresholdBox.Enabled=Grid.Enabled=!busy;CountButton.Enabled=JournalButton.Enabled=!busy&&Grid.CurrentRow?.Tag is StockRecord;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
+    private void Actions(){PageNavigation.StateChanged(this);SearchButton.Enabled=QueryBox.Enabled=BrandBox.Enabled=BelowBox.Enabled=ThresholdBox.Enabled=Grid.Enabled=!busy;CountButton.Enabled=JournalButton.Enabled=!busy&&Grid.CurrentRow?.Tag is StockRecord;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải tồn kho…";
@@ -51,17 +51,17 @@ public sealed class StockCountDialog:Form
     {
         this.api=api;this.stock=stock;workspace=new(api);confirm=confirmation??((t,m)=>CatalogUi.Confirm(this,t,m));AdminTheme.Frame(this,"Kiểm kê tồn kho");ReasonBox.MaxLength=1000;ReasonBox.Multiline=true;ReasonBox.Height=110;CountedBox.Value=stock.OnHand;
         var body=AdminTheme.Stack(28);body.Dock=DockStyle.Top;AdminTheme.Add(body,AdminTheme.Label("Kiểm kê tồn kho",22,true));AdminTheme.Add(body,SummaryLabel);AdminTheme.Add(body,AdminTheme.Label("Số thực tế tuyệt đối *"));AdminTheme.Add(body,CountedBox);AdminTheme.Field(body,"Lý do *",ReasonBox);AdminTheme.Add(body,MessageLabel);AdminTheme.Add(body,CatalogUi.Toolbar(SubmitButton,ReloadButton));Controls.Add(body);
-        CountedBox.ValueChanged+=(_,_)=>Summary();SubmitButton.Click+=async(_,_)=>await SubmitAsync();ReloadButton.Click+=async(_,_)=>await ResolveAsync();Summary();Actions();
+        CountedBox.ValueChanged+=(_,_)=>Summary();SubmitButton.Click+=async(_,_)=>await SubmitAsync();ReloadButton.Click+=async(_,_)=>await ResolveAsync();Summary();Actions();UnsavedChanges.Attach(this,()=>System.Text.Json.JsonSerializer.Serialize(new{CountedBox.Value,ReasonBox.Text}),()=>busy,SubmitAsync);
     }
     private void Summary()=>SummaryLabel.Text=SupplyPresentation.CountSummary(stock,(int)CountedBox.Value);
-    private void Actions(){var pending=operation?.NeedsReadback==true||api.NeedsReconciliation;SubmitButton.Enabled=!busy&&!pending&&operation?.Finished!=true;CountedBox.Enabled=ReasonBox.Enabled=!busy&&!pending&&operation?.Finished!=true;ReloadButton.Enabled=!busy;}
+    private void Actions(){PageNavigation.StateChanged(this);var pending=operation?.NeedsReadback==true||api.NeedsReconciliation;SubmitButton.Enabled=!busy&&!pending&&operation?.Finished!=true;CountedBox.Enabled=ReasonBox.Enabled=!busy&&!pending&&operation?.Finished!=true;ReloadButton.Enabled=!busy;}
     public async Task SubmitAsync()
     {
         if(busy||!SubmitButton.Enabled)return;var counted=(int)CountedBox.Value;var invalid=SupplyPresentation.CountError(stock,counted,ReasonBox.Text);if(invalid is not null){MessageLabel.Text=invalid;return;}
         if(!confirm("Xác nhận kiểm kê",SupplyPresentation.CountSummary(stock,counted)+"\nLý do: "+ReasonBox.Text.Trim()+"\nMáy chủ kiểm tra phiên bản và số đang giữ trước khi lưu."))return;
         if(operation is null||operation.Counted!=counted||operation.Reason!=ReasonBox.Text.Trim())operation=new(stock,counted,ReasonBox.Text);
         busy=true;Actions();MessageLabel.Text="Đang ghi nhận kiểm kê…";
-        try{stock=await workspace.Adjust(operation);Summary();MessageLabel.Text="Đã ghi nhận. Tồn hiện tại đã tải từ máy chủ.";}
+        try{stock=await workspace.Adjust(operation);Summary();UnsavedChanges.MarkClean(this);MessageLabel.Text="Đã ghi nhận. Tồn hiện tại đã tải từ máy chủ.";}
         catch(Exception error){MessageLabel.Text=SupplyPresentation.Failure(error)+(operation.NeedsReadback?" Chọn đối soát để xác định kết quả mới.":"");}finally{busy=false;Actions();}
     }
     public async Task ResolveAsync()
@@ -76,14 +76,14 @@ public sealed class StockCountDialog:Form
     }
 }
 
-public sealed class StockJournalForm:Form
+public sealed class StockJournalForm:NavigationPageForm
 {
     private readonly SupplyWorkspace workspace;private readonly StockRecord stock;private int page=1,total;private bool busy;
     public DataGridView Grid { get; }=CatalogUi.Grid();public Label MessageLabel { get; }=AdminTheme.Label("");public Button PreviousButton { get; }=AdminTheme.Button("Trang trước",false);public Button NextButton { get; }=AdminTheme.Button("Trang sau",false);
     public StockJournalForm(IAdminApi api,StockRecord stock)
     {
         this.stock=stock;workspace=new(api);AdminTheme.Frame(this,"Nhật ký kho");Grid.ReadOnly=true;foreach(var(p,t)in new[]{("At","Thời gian UTC+7"),("Kind","Loại"),("DeltaH","Chênh tồn"),("DeltaR","Chênh giữ"),("Document","Chứng từ"),("Actor","Người thực hiện"),("Reason","Lý do")})CatalogUi.Column(Grid,p,t,true,p=="At"?200:150);
-        CatalogUi.Layout(this,"Nhật ký · "+stock.Sku,CatalogUi.Toolbar(AdminTheme.Label(stock.Name)),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));Shown+=async(_,_)=>await LoadAsync();PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};
+        CatalogUi.Layout(this,"Nhật ký · "+stock.Sku,CatalogUi.Toolbar(AdminTheme.Label(stock.Name)),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));ConfigurePageLoad(LoadAsync,()=>busy);PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};
     }
     public async Task LoadAsync()
     {

@@ -1,0 +1,1322 @@
+{
+  "qaOnly": true,
+  "checks": 13,
+  "rejectedWrites": [
+    {
+      "code": "INVALID_STATE",
+      "status": 409,
+      "before": "84DBFE4638AB38596274627F5CB58E7F52D2CFEC1A69D2335EDC5BA2ACC319CE",
+      "after": "84DBFE4638AB38596274627F5CB58E7F52D2CFEC1A69D2335EDC5BA2ACC319CE",
+      "unchanged": true
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "status": 409,
+      "before": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "after": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "after": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "after": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "after": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "unchanged": true
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "status": 409,
+      "before": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "after": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_STATE",
+      "status": 409,
+      "before": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "after": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_STATE",
+      "status": 409,
+      "before": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "after": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "unchanged": true
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "status": 409,
+      "before": "206111BECC918D329E81372FC7DD731E7666C43ACD855623CA9407DDDF130EC9",
+      "after": "206111BECC918D329E81372FC7DD731E7666C43ACD855623CA9407DDDF130EC9",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_STATE",
+      "status": 409,
+      "before": "206111BECC918D329E81372FC7DD731E7666C43ACD855623CA9407DDDF130EC9",
+      "after": "206111BECC918D329E81372FC7DD731E7666C43ACD855623CA9407DDDF130EC9",
+      "unchanged": true
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "status": 409,
+      "before": "19EDCE33FEB846A6A8F4EA56443D25604C547D3D30EFD8D311BE22977EBCD8E7",
+      "after": "19EDCE33FEB846A6A8F4EA56443D25604C547D3D30EFD8D311BE22977EBCD8E7",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_STATE",
+      "status": 409,
+      "before": "19EDCE33FEB846A6A8F4EA56443D25604C547D3D30EFD8D311BE22977EBCD8E7",
+      "after": "19EDCE33FEB846A6A8F4EA56443D25604C547D3D30EFD8D311BE22977EBCD8E7",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "CADABCEBB0FF426E7A740F1EF3B01F3E0012369F54833E06DE41ED12932485F1",
+      "after": "CADABCEBB0FF426E7A740F1EF3B01F3E0012369F54833E06DE41ED12932485F1",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "B725F68E2E664B53BAA1A5E0BFF5A17F71944E3E4C218E38408B6579EC7D18DF",
+      "after": "B725F68E2E664B53BAA1A5E0BFF5A17F71944E3E4C218E38408B6579EC7D18DF",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "after": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "after": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "after": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "unchanged": true
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "status": 409,
+      "before": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "after": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "unchanged": true
+    },
+    {
+      "code": "CONCURRENT_UPDATE",
+      "status": 409,
+      "before": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "after": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_INPUT",
+      "status": 400,
+      "before": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "after": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "unchanged": true
+    },
+    {
+      "code": "INVALID_STATE",
+      "status": 409,
+      "before": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "after": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "unchanged": true
+    }
+  ],
+  "facts": [
+    {
+      "sameKeyReplayStatus": 201,
+      "sameId": true,
+      "purchases": 1,
+      "stockUnchanged": true
+    },
+    {
+      "raceArrivals": 2,
+      "distinctConnections": 2,
+      "outcomes": [
+        "CONCURRENT_UPDATE",
+        "SUCCESS"
+      ],
+      "stockA": 10,
+      "stockB": 5,
+      "receiptJournals": 2
+    },
+    {
+      "variantId": 3,
+      "productId": 2,
+      "stockVersion": "AAAAAAAACA4=",
+      "variantVersion": "AAAAAAAAB94=",
+      "operationKey": "147616dd-3d6c-4d51-a727-37390f99d589",
+      "counted": 12,
+      "deltaH": 2,
+      "reserved": 2
+    }
+  ],
+  "records": [
+    {
+      "ids": "WIN.A14.01/03 draft POST requestKey,201/GET; server metadata/total and no stock change; same-key replay201 same id",
+      "status": "PASS",
+      "before": "88313CC74F4547E3F3440AC9F79F5EC97D9B33269779FD3B99E02021FC121F18",
+      "after": "84DBFE4638AB38596274627F5CB58E7F52D2CFEC1A69D2335EDC5BA2ACC319CE",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:10,\u0022cost\u0022:8000000},{\u0022variantId\u0022:4,\u0022quantity\u0022:5,\u0022cost\u0022:9000000}],\u0022requestKey\u0022:\u0022df258f1a-abfd-4c67-814d-e7da3e8a449b\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:10,\u0022cost\u0022:8000000},{\u0022variantId\u0022:4,\u0022quantity\u0022:5,\u0022cost\u0022:9000000}],\u0022requestKey\u0022:\u0022df258f1a-abfd-4c67-814d-e7da3e8a449b\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:11,\u0022cost\u0022:8000000},{\u0022variantId\u0022:4,\u0022quantity\u0022:5,\u0022cost\u0022:9000000}],\u0022requestKey\u0022:\u0022df258f1a-abfd-4c67-814d-e7da3e8a449b\u0022}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A14.02 stale PUT rejects atomically, complete versioned edit; validation no partial rows",
+      "status": "PASS",
+      "before": "84DBFE4638AB38596274627F5CB58E7F52D2CFEC1A69D2335EDC5BA2ACC319CE",
+      "after": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "http": [
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/1",
+          "status": 204,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:10,\u0022cost\u0022:8000000},{\u0022variantId\u0022:4,\u0022quantity\u0022:5,\u0022cost\u0022:9000000}],\u0022version\u0022:\u0022AAAAAAAAB9k=\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/1",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:1}],\u0022version\u0022:\u0022AAAAAAAAB9k=\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 400,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:1},{\u0022variantId\u0022:3,\u0022quantity\u0022:2,\u0022cost\u0022:1}],\u0022requestKey\u0022:\u0022386a847c-3f18-4e2f-a964-384651032e16\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 400,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:0,\u0022cost\u0022:1}],\u0022requestKey\u0022:\u0022c71cd083-1e5e-4d19-b559-0598400c8cbe\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 400,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:0}],\u0022requestKey\u0022:\u0022029ec7a7-9e1e-43c4-b5ca-1c52cd07e914\u0022}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A15.01/03 RACE two gated real confirmations on distinct connections: one204 one409, one stock/price/journal effect",
+      "status": "PASS",
+      "before": "60C2CAF2F172328DF5AC73D07BDA3E2B49982DAEEFFCA47B3363B7251148EDA2",
+      "after": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/1/confirm",
+          "status": 409,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB9o=\u0022,\u0022operationKey\u0022:\u002226ff74fb-f7de-4571-bbcd-71686efd733a\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-B\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/1/confirm",
+          "status": 409,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB9o=\u0022,\u0022operationKey\u0022:\u002226ff74fb-f7de-4571-bbcd-71686efd733a\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/1/confirm",
+          "status": 409,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002BA=\u0022,\u0022operationKey\u0022:\u002286531a62-be98-448b-9764-1984265b54b5\u0022}"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/1",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022version\u0022:\u0022AAAAAAAAB\\u002BA=\u0022}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A15.02 cancel nonempty/empty drafts sends version\u002BoperationKey, no stock/price changes",
+      "status": "PASS",
+      "before": "D1B603EA7A88A04079423AE92CFCF0E2358B2287FD39D3ABB5422B7D85AF6084",
+      "after": "19EDCE33FEB846A6A8F4EA56443D25604C547D3D30EFD8D311BE22977EBCD8E7",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:3,\u0022cost\u0022:7000000}],\u0022requestKey\u0022:\u0022efa5b4cd-9e4f-4097-b451-fcb91a1317ad\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/2",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/2/cancel",
+          "status": 400,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002BI=\u0022,\u0022operationKey\u0022:\u002200000000-0000-0000-0000-000000000000\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/2/cancel",
+          "status": 204,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002BI=\u0022,\u0022operationKey\u0022:\u002222b8853c-5801-43d1-b6e6-836be5800d1e\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/2",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/2",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:3,\u0022cost\u0022:7000000}],\u0022version\u0022:\u0022AAAAAAAAB\\u002BI=\u0022}"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/2",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:3,\u0022cost\u0022:7000000}],\u0022version\u0022:\u0022AAAAAAAAB\\u002BM=\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u002243abb044-0862-438f-a7b8-862267b5ae58\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/3",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/3/cancel",
+          "status": 400,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002BY=\u0022,\u0022operationKey\u0022:\u002200000000-0000-0000-0000-000000000000\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/3/cancel",
+          "status": 204,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB\\u002BY=\u0022,\u0022operationKey\u0022:\u00227f0244d4-32a3-46c8-a369-85a38227aac5\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/3",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/3",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022version\u0022:\u0022AAAAAAAAB\\u002BY=\u0022}"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/purchases/3",
+          "status": 409,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022version\u0022:\u0022AAAAAAAAB\\u002Bc=\u0022}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A14.04/A15.04 empty/stopped supplier/overflow-price confirm400, draft and prior line stock rollback",
+      "status": "PASS",
+      "before": "19EDCE33FEB846A6A8F4EA56443D25604C547D3D30EFD8D311BE22977EBCD8E7",
+      "after": "93216CCEBD404906A4417BEDFE8B4D4FA5E7C457984E79525EE578A20889131B",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022a1b78f21-4030-43b0-9aad-fed2eab0201b\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/4",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/4/confirm",
+          "status": 400,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB/A=\u0022,\u0022operationKey\u0022:\u002243a63e0c-acec-4765-b9d9-d5cb0a308b4d\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:1}],\u0022requestKey\u0022:\u0022a79023a8-0a14-43c2-9c98-79f6fa383be6\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/5",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/5/confirm",
+          "status": 400,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB/E=\u0022,\u0022operationKey\u0022:\u0022bf315298-65fb-4247-8183-da5ec3ce039d\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 400,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u002213678b08-3467-4196-a7f9-23a76bd9d8b2\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:4000000},{\u0022variantId\u0022:4,\u0022quantity\u0022:1,\u0022cost\u0022:8500000000000000}],\u0022requestKey\u0022:\u002274d107e0-cbdd-4dd2-8dac-7dfeb0c2c6b2\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/6",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/6/confirm",
+          "status": 400,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAAB/I=\u0022,\u0022operationKey\u0022:\u00223beb07e5-a9fa-4bfe-8b6e-ef5a258d96d2\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/6",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A14.05 purchase query/status/paging only; empty draft metadata remains authoritative",
+      "status": "PASS",
+      "before": "93216CCEBD404906A4417BEDFE8B4D4FA5E7C457984E79525EE578A20889131B",
+      "after": "6469BC15EC10E553DE20D88276D67470795704914D882A0821ABA4D365A60F09",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022efb69905-fe4b-43b2-b6af-11339c1fc27a\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/7",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022f5feae4e-db5e-4034-bbbf-ce8a3076e7ce\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/8",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u00221529d054-53d6-4913-8fd6-1ba1b09439a6\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/9",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u00224b7c59b6-f379-4880-b807-157b4b27c91d\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/10",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u00224ec0925e-2d2d-4bcb-8656-241f8223df91\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/11",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022aa6ff571-65df-46a9-abb4-f58de0469992\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/12",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022f30861d8-0e9d-4827-86fb-16f8fd7a1f12\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/13",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u00224613291d-4cb1-44a3-922e-753908b3a41a\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/14",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u002239acd0e5-76e4-47a8-bc5f-7e05872a354f\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/15",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022a9dcfa94-17ca-4e9c-a3c6-d3244b31ed18\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/16",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022b7754225-d9b1-49bd-b93a-44498ad2e814\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/17",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022ec63dbb1-b7a2-43ad-adf7-e9a274e00711\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/18",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u002273903bf5-868a-4621-8742-8a6382614f53\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/19",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u002208aa7fe8-91f5-45f0-a3a7-2ecfc77394c7\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/20",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u00225f7d2a0f-869b-4481-9d6e-f0a551b3eaba\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/21",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022b692f0e5-c76c-4bf4-9975-5b6feab1ca69\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/22",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022f1128548-89bc-478c-82b5-5462d376569f\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/23",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022f78ccc00-e2ef-4472-8916-0c275f1eb20d\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/24",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u00228b4a1f4a-9c88-4332-9b63-4f98abbd302a\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/25",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022f8eda796-84f3-44db-b517-9a61bd2747b1\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/26",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u0022fac9c9c7-5018-4f44-a0a3-05fcf8fb9271\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/27",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases?query=\u0026page=1\u0026pageSize=20\u0026status=NHAP",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases?query=\u0026page=2\u0026pageSize=20\u0026status=NHAP",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases?query=PNdf258f1aabfd4c67814de7da3e8a449b\u0026page=1\u0026pageSize=20",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases?query=no-match-583d4188-2be6-4951-b272-3397d172ae23\u0026page=1\u0026pageSize=20",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A16.01/02 stock query/brand/explicit below/page/no-match; actual injected SQL failure is error, never zero",
+      "status": "PASS",
+      "before": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "after": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "http": [
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=20\u0026brandId=1\u0026below=8",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=20\u0026brandId=1\u0026below=7",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=\u0026page=1\u0026pageSize=1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=\u0026page=2\u0026pageSize=1",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=no-match\u0026page=1\u0026pageSize=20",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=\u0026page=1\u0026pageSize=20",
+          "status": 500,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A17.01/02/04 absolute count uses variantId and stock version; below reserved/negative/stale reject",
+      "status": "PASS",
+      "before": "7288ED3B52E634D43E1D0388BE320331C2C22AD7D2523C96A84280C8B276276C",
+      "after": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 400,
+          "body": "{\u0022counted\u0022:-1,\u0022reason\u0022:\u0022QA reject\u0022,\u0022version\u0022:\u0022AAAAAAAACA4=\u0022,\u0022operationKey\u0022:\u002265804615-178c-4baf-8aad-f6d747468e0e\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 400,
+          "body": "{\u0022counted\u0022:1,\u0022reason\u0022:\u0022QA reject\u0022,\u0022version\u0022:\u0022AAAAAAAACA4=\u0022,\u0022operationKey\u0022:\u0022b3527450-0e2b-49ed-a1e6-57110edc898e\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 400,
+          "body": "{\u0022counted\u0022:10,\u0022reason\u0022:\u0022QA reject\u0022,\u0022version\u0022:\u0022AAAAAAAACA4=\u0022,\u0022operationKey\u0022:\u0022f282a3f4-8c44-41b3-bd60-beb7447927a2\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 409,
+          "body": "{\u0022counted\u0022:12,\u0022reason\u0022:\u0022Wrong version QA\u0022,\u0022version\u0022:\u0022AAAAAAAAB94=\u0022,\u0022operationKey\u0022:\u00227aa7e41a-c9cf-4933-bac7-baffaec0a423\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:12,\u0022reason\u0022:\u0022Ki\\u1EC3m k\\u00EA QA\u0022,\u0022version\u0022:\u0022AAAAAAAACA4=\u0022,\u0022operationKey\u0022:\u0022147616dd-3d6c-4d51-a727-37390f99d589\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 409,
+          "body": "{\u0022counted\u0022:12,\u0022reason\u0022:\u0022Ki\\u1EC3m k\\u00EA QA\u0022,\u0022version\u0022:\u0022AAAAAAAACA4=\u0022,\u0022operationKey\u0022:\u0022147616dd-3d6c-4d51-a727-37390f99d589\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 400,
+          "body": "{\u0022counted\u0022:12,\u0022reason\u0022:\u0022Ki\\u1EC3m k\\u00EA QA\u0022,\u0022version\u0022:\u0022AAAAAAAACA8=\u0022,\u0022operationKey\u0022:\u0022147616dd-3d6c-4d51-a727-37390f99d589\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 409,
+          "body": "{\u0022counted\u0022:13,\u0022reason\u0022:\u0022Ki\\u1EC3m k\\u00EA QA\u0022,\u0022version\u0022:\u0022AAAAAAAACA8=\u0022,\u0022operationKey\u0022:\u0022147616dd-3d6c-4d51-a727-37390f99d589\u0022}"
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A17.03 lost count response reconciles journal operationKey, no retry effect; new intention new key",
+      "status": "PASS",
+      "before": "8E3A2ADD0ACA03CBFC63275FF9517DAED11C5DEF34C16821A378E1D50688CA96",
+      "after": "69CC777019B88E79B4E88D82AD682FD1814B295DD243140EBA27A28A91169952",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:13,\u0022reason\u0022:\u0022QA lost stock reply\u0022,\u0022version\u0022:\u0022AAAAAAAACA8=\u0022,\u0022operationKey\u0022:\u0022ccdef840-77cd-47ee-97be-544198d61363\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock/movements?page=1\u0026pageSize=100\u0026operationKey=ccdef840-77cd-47ee-97be-544198d61363",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock/movements?page=1\u0026pageSize=20\u0026variantId=3\u0026operationKey=ccdef840-77cd-47ee-97be-544198d61363",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:14,\u0022reason\u0022:\u0022QA new stock intention\u0022,\u0022version\u0022:\u0022AAAAAAAACBA=\u0022,\u0022operationKey\u0022:\u0022a1db9cf2-0521-4f60-8a6a-45b9f275406c\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A16.03 movement variant/key paging, actor/document/time and read-only SQL",
+      "status": "PASS",
+      "before": "69CC777019B88E79B4E88D82AD682FD1814B295DD243140EBA27A28A91169952",
+      "after": "CEBD233CED1EF1DA079889B2107B8BD842637998DBBB10952423848A1ED8581A",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:15,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBE=\u0022,\u0022operationKey\u0022:\u0022f9a79b64-7747-48f0-ac26-21319972084d\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:16,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBI=\u0022,\u0022operationKey\u0022:\u00221a5190d6-646f-473f-bc0c-028210409acb\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:17,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBM=\u0022,\u0022operationKey\u0022:\u00225d505b9a-3b1f-4b45-af54-c762858f7feb\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:18,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBQ=\u0022,\u0022operationKey\u0022:\u0022d476e05f-999f-4f3f-b1a1-d9f574534df8\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:19,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBU=\u0022,\u0022operationKey\u0022:\u0022a0c9f368-ecd4-4bdd-bada-6fc57ba489b2\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:20,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBY=\u0022,\u0022operationKey\u0022:\u0022a124f920-4ad5-4c98-8d67-4ea7fd5f3edb\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:21,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBc=\u0022,\u0022operationKey\u0022:\u00224e418cbe-74b5-4599-8d8b-5942c2a34bb7\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:22,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBg=\u0022,\u0022operationKey\u0022:\u00226136bfd4-f296-48d8-9c4f-9f53ee77bb44\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:23,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBk=\u0022,\u0022operationKey\u0022:\u002207a671af-1f05-41a7-b261-30083362bf33\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:24,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBo=\u0022,\u0022operationKey\u0022:\u00227a1a34a7-3f26-4011-a395-c40e5c2aa220\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:25,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBs=\u0022,\u0022operationKey\u0022:\u00221d9220d1-dddc-46cf-adfc-3a263773725c\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:26,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACBw=\u0022,\u0022operationKey\u0022:\u002202b71dec-0599-4f73-b916-0feb28c776e2\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:27,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACB0=\u0022,\u0022operationKey\u0022:\u00222fe8060b-651c-4c23-aab5-56e351887244\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:28,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACB4=\u0022,\u0022operationKey\u0022:\u0022c0a551ac-ca45-41c0-bb21-225bc7633aa5\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:29,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACB8=\u0022,\u0022operationKey\u0022:\u0022b35482d6-c9e7-46d4-b59c-dec686eab3ae\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:30,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACCA=\u0022,\u0022operationKey\u0022:\u00227833dfdb-1356-4b96-ac63-6f461b51ad7a\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:31,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACCE=\u0022,\u0022operationKey\u0022:\u0022fc6bfbba-660a-4302-9395-13185d574a3b\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:32,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACCI=\u0022,\u0022operationKey\u0022:\u0022041672c4-d22c-42a1-995a-9c759fd97fb6\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:33,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACCM=\u0022,\u0022operationKey\u0022:\u002241e0c5f6-a94a-4102-b175-d97605a5f1f5\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:34,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACCQ=\u0022,\u0022operationKey\u0022:\u0022c2bf3727-1cd0-4831-9fa3-1b37832b1256\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/stock/3/adjust",
+          "status": 204,
+          "body": "{\u0022counted\u0022:35,\u0022reason\u0022:\u0022QA journal paging\u0022,\u0022version\u0022:\u0022AAAAAAAACCY=\u0022,\u0022operationKey\u0022:\u0022953e1f56-48bb-4e58-8fc4-3de375dd523d\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-A\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock/movements?page=1\u0026pageSize=20\u0026variantId=3",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock/movements?page=2\u0026pageSize=20\u0026variantId=3",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock/movements?page=1\u0026pageSize=20\u0026variantId=4",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A14.01 same requestKey uncertain creation retry: changed body blocked,201 same id, readback failures guarded",
+      "status": "PASS",
+      "before": "CEBD233CED1EF1DA079889B2107B8BD842637998DBBB10952423848A1ED8581A",
+      "after": "D66559E4AEBDA6796B097DF8A670EF0B45346600953E78387AF680EAD64D7D08",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:2}],\u0022requestKey\u0022:\u0022ca0e327c-a9ee-4657-83a3-eaaf31cbb750\u0022}"
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:1,\u0022cost\u0022:2}],\u0022requestKey\u0022:\u0022ca0e327c-a9ee-4657-83a3-eaaf31cbb750\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/28",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[],\u0022requestKey\u0022:\u002208ff2179-65f0-4fba-b332-38e4f64d4d79\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/29",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/29",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A15.01/02 uncertain confirm/cancel reconciles GET; same operationKey frozen, no second stock effect",
+      "status": "PASS",
+      "before": "D66559E4AEBDA6796B097DF8A670EF0B45346600953E78387AF680EAD64D7D08",
+      "after": "5DFA832B85BBB1468F03C41828251BC1B678742FFF334E9DB74EF20679A8F94E",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:4,\u0022quantity\u0022:1,\u0022cost\u0022:9000000}],\u0022requestKey\u0022:\u00220716fd9f-8fca-428a-9ac6-907134848036\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/30",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/30/confirm",
+          "status": 204,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAACCw=\u0022,\u0022operationKey\u0022:\u0022d02b8afb-e394-4725-8c5c-caece8bd3b60\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/30",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stock?query=W4-TARGET-B\u0026page=1\u0026pageSize=100",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:4,\u0022quantity\u0022:1,\u0022cost\u0022:9000000}],\u0022requestKey\u0022:\u0022514add5c-b4b6-46ad-b1b6-8d572bebb0e6\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/31",
+          "status": 200,
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases/31/cancel",
+          "status": 204,
+          "body": "{\u0022version\u0022:\u0022AAAAAAAACDE=\u0022,\u0022operationKey\u0022:\u00222798dce7-6d69-4f62-bc20-d2a10ed5ac32\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/31",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    },
+    {
+      "ids": "WIN.A05.04 handoff reads persisted variant/cost, hints local until explicit draft save, stock unchanged",
+      "status": "PASS",
+      "before": "5DFA832B85BBB1468F03C41828251BC1B678742FFF334E9DB74EF20679A8F94E",
+      "after": "1FD02D7026A5E01A107B3C999EC5CA916B8FA6B523C12EEFB986200805D0DBCB",
+      "http": [
+        {
+          "method": "POST",
+          "path": "/api/admin/purchases",
+          "status": 201,
+          "body": "{\u0022supplierId\u0022:1,\u0022lines\u0022:[{\u0022variantId\u0022:3,\u0022quantity\u0022:7,\u0022cost\u0022:8000000.00},{\u0022variantId\u0022:4,\u0022quantity\u0022:3,\u0022cost\u0022:9000000.00}],\u0022requestKey\u0022:\u0022662f71ef-79ed-4d40-9d00-38b4f420fd00\u0022}"
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/purchases/32",
+          "status": 200,
+          "body": ""
+        }
+      ]
+    }
+  ],
+  "snapshotFile": "sql-states.json",
+  "sqlSnapshotCount": 18
+}

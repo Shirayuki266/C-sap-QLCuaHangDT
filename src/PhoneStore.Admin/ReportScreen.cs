@@ -37,7 +37,7 @@ public sealed class ReportChart:UserControl
     }
 }
 
-public sealed class ReportScreen:Form
+public sealed class ReportScreen:NavigationPageForm
 {
     private readonly ReportsWorkspace workspace;private bool busy;private int page=1;
     public AdminReport? Current { get; private set; }public ReportProjection? Projection { get; private set; }
@@ -52,9 +52,9 @@ public sealed class ReportScreen:Form
     {
         workspace=new(api);AdminTheme.Frame(this,"Báo cáo");KindBox.Items.AddRange(["Doanh thu","Bán chạy theo biến thể","Tồn hiện tại"]);KindBox.SelectedIndex=0;FromBox.Value=ReportPresentation.Today().AddDays(-6).ToDateTime(TimeOnly.MinValue);ToBox.Value=ReportPresentation.Today().ToDateTime(TimeOnly.MinValue);Grid.ReadOnly=true;
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=8,Padding=new Padding(16)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,48));root.RowStyles.Add(new RowStyle(SizeType.Percent,52));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label("Báo cáo",22,true),0,0);root.Controls.Add(CatalogUi.Toolbar(KindBox,AdminTheme.Label("Từ ngày"),FromBox,AdminTheme.Label("Đến hết ngày"),ToBox,MonthlyBox,LoadButton),0,1);root.Controls.Add(DateErrorLabel,0,2);root.Controls.Add(SummaryLabel,0,3);root.Controls.Add(Chart,0,4);root.Controls.Add(Grid,0,5);root.Controls.Add(MessageLabel,0,6);root.Controls.Add(CatalogUi.Toolbar(PreviousButton,NextButton),0,7);Controls.Add(root);
-        LoadButton.Click+=async(_,_)=>await LoadAsync();KindBox.SelectedIndexChanged+=(_,_)=>{Current=null;Projection=null;Grid.Rows.Clear();Chart.Bind([],"Chọn Tải báo cáo");SummaryLabel.Text="";Actions();};MonthlyBox.CheckedChanged+=(_,_)=>{if(Current is null)return;page=1;Projection=ReportPresentation.Project(Current,MonthlyBox.Checked);RenderPage();};PreviousButton.Click+=(_,_)=>{if(!busy&&page>1){page--;RenderPage();}};NextButton.Click+=(_,_)=>{if(!busy&&page*20<(Projection?.Rows.Count??0)){page++;RenderPage();}};Grid.SelectionChanged+=(_,_)=>{if(Grid.CurrentRow is{} row)Chart.SelectPoint(row.Index);};Shown+=async(_,_)=>await LoadAsync();AcceptButton=LoadButton;Actions();
+        LoadButton.Click+=async(_,_)=>await LoadAsync();KindBox.SelectedIndexChanged+=(_,_)=>{Current=null;Projection=null;Grid.Rows.Clear();Chart.Bind([],"Chọn Tải báo cáo");SummaryLabel.Text="";Actions();};MonthlyBox.CheckedChanged+=(_,_)=>{if(Current is null)return;page=1;Projection=ReportPresentation.Project(Current,MonthlyBox.Checked);RenderPage();};PreviousButton.Click+=(_,_)=>{if(!busy&&page>1){page--;RenderPage();}};NextButton.Click+=(_,_)=>{if(!busy&&page*20<(Projection?.Rows.Count??0)){page++;RenderPage();}};Grid.SelectionChanged+=(_,_)=>{if(Grid.CurrentRow is{} row)Chart.SelectPoint(row.Index);};ConfigurePageLoad(LoadAsync,()=>busy);AcceptButton=LoadButton;Actions();
     }
-    private void Actions(){LoadButton.Enabled=KindBox.Enabled=!busy;FromBox.Enabled=ToBox.Enabled=!busy&&Kind!="stock";MonthlyBox.Enabled=!busy&&Kind=="revenue";PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<(Projection?.Rows.Count??0);}
+    private void Actions(){PageNavigation.StateChanged(this);LoadButton.Enabled=KindBox.Enabled=!busy;FromBox.Enabled=ToBox.Enabled=!busy&&Kind!="stock";MonthlyBox.Enabled=!busy&&Kind=="revenue";PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<(Projection?.Rows.Count??0);}
     private void RenderPage()
     {
         if(Projection is null)return;Grid.Rows.Clear();Grid.Columns.Clear();var kind=Projection.Source.Kind;
@@ -66,7 +66,7 @@ public sealed class ReportScreen:Form
     {
         if(busy)return;DateOnly? from=FromBox.Checked?DateOnly.FromDateTime(FromBox.Value):null,to=ToBox.Checked?DateOnly.FromDateTime(ToBox.Value):null;DateErrorLabel.Text=ReportPresentation.DateError(Kind,from,to)??"";DateErrorLabel.Visible=DateErrorLabel.Text.Length>0;if(DateErrorLabel.Text.Length>0)return;
         busy=true;Actions();MessageLabel.Text="Đang tải báo cáo…";
-        try{Current=await workspace.Read(Kind,from,to);Projection=ReportPresentation.Project(Current,MonthlyBox.Checked&&Kind=="revenue");page=1;RenderPage();}
+        try{Current=await workspace.Read(Kind,from,to);Projection=ReportPresentation.Project(Current,MonthlyBox.Checked&&Kind=="revenue");page=Math.Clamp(page,1,Math.Max(1,(Projection.Rows.Count+19)/20));RenderPage();}
         catch(Exception error){Current=null;Projection=null;Grid.Rows.Clear();Chart.Bind([],"Chưa tải được dữ liệu");SummaryLabel.Text="Chưa có số liệu xác nhận.";MessageLabel.Text=AdminTheme.Failure(error);}finally{busy=false;Actions();}
     }
 }

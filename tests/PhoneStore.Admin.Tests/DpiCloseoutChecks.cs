@@ -33,7 +33,7 @@ internal static partial class Program
                 }
                 var name=test.Name+"-"+(dpi==120?((form.DeviceDpi*100/96)+"-real"):"150-native")+"-tab"+page;await Capture(form,name);evidence.Add(new{name,actualDeviceDpi=form.DeviceDpi,nativeEventDpi=dpi==144?144:(int?)null,fontBefore=before,fontAfter=form.Font.SizeInPoints,form.Width,form.Height,findings});issues.AddRange(findings.Select(x=>name+": "+x));
             }
-            if(form is MainForm main)main.EndSession();else form.Close();
+            if(form is MainForm main)main.EndSession();else UnsavedChanges.DiscardAndClose(form);
         }
         File.WriteAllText(Path.Combine(output,"results.json"),System.Text.Json.JsonSerializer.Serialize(new{method="Actual desktop baseline (local120DPI=125%; CI may96DPI=100%);150% simulated WM_DPICHANGED native event; no bitmap resize; minimum1280x800",fakeApi=true,evidence,issues},new System.Text.Json.JsonSerializerOptions{WriteIndented=true}));output=old;Assert(issues.Count==0,$"DPI layout/text issues: {issues.Count}; see results.json");Console.WriteLine("PASS WIN.UI.01/02/03 native DPI/layout/labels "+evidence.Count+" captures");
     }

@@ -28,10 +28,11 @@ public sealed class AdminApplication : ApplicationContext
     {
         if (disposing) return;
         var settings = store.Load(); api?.Dispose(); api = factory(settings);
+        var sessionApi = api;
         api.SessionEnded += () =>
         {
-            if (shell is not { IsDisposed: false }) return;
-            shell.BeginInvoke(ReturnToLogin);
+            if (!ReferenceEquals(api, sessionApi) || shell is not { IsDisposed: false } current) return;
+            current.BeginInvoke(() => { if (ReferenceEquals(shell, current) && ReferenceEquals(api, sessionApi)) ReturnToLogin(); });
         };
         login = new LoginForm(api, settings); MainForm = login;
         login.ConfigurationChanged += changed =>
@@ -50,7 +51,7 @@ public sealed class AdminApplication : ApplicationContext
     private void ReturnToLogin()
     {
         if (disposing || shell is null) return;
-        var oldShell = shell; if(HasPurchaseWindow(oldShell))MessageBox.Show(oldShell,"Phiên quản trị đã kết thúc. Cửa sổ phiếu nhập sẽ đóng; nội dung chưa lưu không được giữ. Hãy đăng nhập lại và nhập lại nháp. Ứng dụng không tự gửi lại lệnh ghi bằng phiên cũ.","Nháp chưa lưu",MessageBoxButtons.OK,MessageBoxIcon.Warning); var exit = oldShell.ClosingApplication; shell = null; MainForm = null; oldShell.EndSession();
+        var oldShell = shell; oldShell.Navigator.Dispose(); if(HasPurchaseWindow(oldShell))MessageBox.Show(oldShell,"Phiên quản trị đã kết thúc. Cửa sổ phiếu nhập sẽ đóng; nội dung chưa lưu không được giữ. Hãy đăng nhập lại và nhập lại nháp. Ứng dụng không tự gửi lại lệnh ghi bằng phiên cũ.","Nháp chưa lưu",MessageBoxButtons.OK,MessageBoxIcon.Warning); var exit = oldShell.ClosingApplication; shell = null; MainForm = null; oldShell.EndSession();
         if (exit) { disposing = true; api?.Dispose(); ExitThread(); } else ShowLogin();
     }
     private static bool HasPurchaseWindow(Form owner)=>owner.OwnedForms.Any(f=>f is PurchaseEditor||HasPurchaseWindow(f));

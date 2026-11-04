@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Admin.Client;
 using PhoneStore.Admin.Client.Checks;
 
+NavigationChecks.Run();
+if(args.Contains("--navigation-only"))return;
+
 if(args.Contains("--desktop-smoke")){await DesktopQaChecks.Run();return;}
 if(args.Contains("--desktop-catalog")){await DesktopQaChecks.Run(catalog:true);return;}
 if(args.Contains("--desktop-contacts")){await DesktopQaChecks.Run(contacts:true);return;}

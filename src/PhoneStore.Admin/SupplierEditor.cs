@@ -24,10 +24,10 @@ public sealed class SupplierEditor:Form
         CodeBox.MaxLength=30;NameBox.MaxLength=200;PhoneBox.MaxLength=20;AddressBox.MaxLength=500;AddressBox.Multiline=true;AddressBox.Height=100;
         var body=AdminTheme.Stack(24);body.Dock=DockStyle.Top;AdminTheme.Add(body,AdminTheme.Label(supplier is null?"Thêm nhà cung cấp":"Sửa nhà cung cấp",22,true));
         AdminTheme.Field(body,"Mã NCC *",CodeBox);AdminTheme.Field(body,"Tên nhà cung cấp *",NameBox);AdminTheme.Field(body,"Điện thoại *",PhoneBox);AdminTheme.Field(body,"Địa chỉ *",AddressBox);AdminTheme.Add(body,ActiveBox);AdminTheme.Add(body,MessageLabel);AdminTheme.Add(body,CatalogUi.Toolbar(SaveButton,ReloadButton));Controls.Add(body);
-        SaveButton.Enabled=supplier is null;SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
+        UnsavedChanges.Attach(this,()=>System.Text.Json.JsonSerializer.Serialize(Input()),()=>busy,SaveAsync);SaveButton.Enabled=supplier is null;SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
     }
     public SupplierRequest Input()=>new(CodeBox.Text,NameBox.Text,PhoneBox.Text,AddressBox.Text,ActiveBox.Checked);
-    private void Bind(SupplierRecord row){original=Saved=row;loaded=true;CodeBox.Text=row.Code;NameBox.Text=row.Name;PhoneBox.Text=row.Phone;AddressBox.Text=row.Address;ActiveBox.Checked=row.Active;}
+    private void Bind(SupplierRecord row){original=Saved=row;loaded=true;CodeBox.Text=row.Code;NameBox.Text=row.Name;PhoneBox.Text=row.Phone;AddressBox.Text=row.Address;ActiveBox.Checked=row.Active;UnsavedChanges.MarkClean(this);}
     public async Task LoadAsync()
     {
         if(busy)return;if(loaded&&!api.NeedsReconciliation&&!workspace.PendingSupplier.HasValue&&!confirm("Tải lại NCC","Thay các thay đổi chưa lưu bằng dữ liệu máy chủ?"))return;SetBusy(true);

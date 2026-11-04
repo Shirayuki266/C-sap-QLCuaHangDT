@@ -2,7 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
-public abstract class PagedContactsForm:Form
+public abstract class PagedContactsForm:NavigationPageForm
 {
     protected bool Busy;
     protected int Page=1,Total;
@@ -21,16 +21,16 @@ public abstract class PagedContactsForm:Form
         StateBox.Items.AddRange(["Tất cả trạng thái","Đang hoạt động","Đã khóa / ngừng"]);StateBox.SelectedIndex=0;Grid.ReadOnly=true;
         Toolbar=CatalogUi.Toolbar(QueryBox,StateBox,SearchButton);CatalogUi.Layout(this,title,Toolbar,Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
         SearchButton.Click+=async(_,_)=>{Page=1;await LoadAsync();};PreviousButton.Click+=async(_,_)=>{if(Page>1){Page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(Page*20<Total){Page++;await LoadAsync();}};
-        Grid.SelectionChanged+=(_,_)=>Actions();Shown+=async(_,_)=>await LoadAsync();AcceptButton=SearchButton;
+        Grid.SelectionChanged+=(_,_)=>Actions();ConfigurePageLoad(LoadAsync,()=>Busy);AcceptButton=SearchButton;
     }
     protected abstract Task ReadRows();
     protected virtual void Actions(){}
     public async Task LoadAsync()
     {
-        if(Busy)return;Busy=true;SearchButton.Enabled=QueryBox.Enabled=StateBox.Enabled=Grid.Enabled=false;PreviousButton.Enabled=NextButton.Enabled=false;Actions();MessageLabel.Text="Đang tải…";
+        if(Busy)return;Busy=true;PageNavigation.StateChanged(this);SearchButton.Enabled=QueryBox.Enabled=StateBox.Enabled=Grid.Enabled=false;PreviousButton.Enabled=NextButton.Enabled=false;Actions();MessageLabel.Text="Đang tải…";
         try{await ReadRows();MessageLabel.Text=Total==0?"Không có dữ liệu phù hợp. Thử đổi từ khóa hoặc trạng thái.":$"Trang {Page} · {Total} mục · 20 dòng/trang";}
         catch(Exception error){Grid.Rows.Clear();MessageLabel.Text=AdminTheme.Failure(error);}
-        finally{Busy=false;SearchButton.Enabled=QueryBox.Enabled=StateBox.Enabled=Grid.Enabled=true;PreviousButton.Enabled=Page>1;NextButton.Enabled=Page*20<Total;Actions();}
+        finally{Busy=false;PageNavigation.StateChanged(this);SearchButton.Enabled=QueryBox.Enabled=StateBox.Enabled=Grid.Enabled=true;PreviousButton.Enabled=Page>1;NextButton.Enabled=Page*20<Total;Actions();}
     }
 }
 
@@ -43,7 +43,7 @@ public sealed class CustomerListForm:PagedContactsForm
     {
         this.api=api;workspace=new(api);QueryBox.PlaceholderText="Tên, điện thoại hoặc email";QueryBox.AccessibleName="Tìm khách theo tên, điện thoại, email";Toolbar.Controls.Add(DetailsButton);
         foreach(var (property,title) in new[]{("Username","Tài khoản"),("FullName","Họ tên"),("Phone","Điện thoại"),("Email","Email"),("State","Trạng thái")})CatalogUi.Column(Grid,property,title,true,property=="FullName"?240:150);
-        DetailsButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is CustomerRecord row){using var form=new CustomerDetailsForm(api,row.Id);form.ShowDialog(this);await LoadAsync();}};
+        DetailsButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is CustomerRecord row){await PageNavigation.OpenAsync(this,new CustomerDetailsForm(api,row.Id));if(TopLevel)await LoadAsync();}};
     }
     protected override async Task ReadRows()
     {
@@ -64,9 +64,9 @@ public sealed class SupplierListForm:PagedContactsForm
     {
         this.api=api;workspace=new(api);Toolbar.Controls.AddRange([NewButton,EditButton,PickerButton]);
         foreach(var (property,title) in new[]{("Code","Mã NCC"),("Name","Nhà cung cấp"),("Phone","Điện thoại"),("Address","Địa chỉ"),("State","Trạng thái")})CatalogUi.Column(Grid,property,title,true,property is "Name" or "Address"?240:150);
-        NewButton.Click+=async(_,_)=>{using var form=new SupplierEditor(api);form.ShowDialog(this);await LoadAsync();};
-        EditButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is SupplierRecord row){using var form=new SupplierEditor(api,row);form.ShowDialog(this);await LoadAsync();}};
-        PickerButton.Click+=(_,_)=>{using var form=new SupplierPickerForm(api);form.ShowDialog(this);};
+        NewButton.Click+=async(_,_)=>{using var form=new SupplierEditor(api);form.ShowDialog(PageNavigation.Owner(this));await LoadAsync();};
+        EditButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is SupplierRecord row){using var form=new SupplierEditor(api,row);form.ShowDialog(PageNavigation.Owner(this));await LoadAsync();}};
+        PickerButton.Click+=(_,_)=>{using var form=new SupplierPickerForm(api);form.ShowDialog(PageNavigation.Owner(this));};
     }
     protected override async Task ReadRows()
     {

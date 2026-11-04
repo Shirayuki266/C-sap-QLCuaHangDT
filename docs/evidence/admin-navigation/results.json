@@ -1,0 +1,56 @@
+{
+  "fakeApi": true,
+  "platform": "Windows STA",
+  "checks": 7,
+  "captures": [
+    {
+      "name": "navigation-back-forward-1280",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "navigation-home-buttons-disabled",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "navigation-back-version-conflict",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "navigation-ten-pages",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "navigation-1280-baseline",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    },
+    {
+      "name": "navigation-1280-150-native-event",
+      "width": 1280,
+      "height": 800,
+      "dpi": 120,
+      "minimumWidth": 1280,
+      "minimumHeight": 800
+    }
+  ],
+  "dpiMethod": "Baseline records actual DeviceDpi;150% uses native WM_DPICHANGED144, not physical monitor certification"
+}
