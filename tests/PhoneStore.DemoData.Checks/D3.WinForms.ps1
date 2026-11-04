@@ -128,12 +128,16 @@ function SetReportDate($window,[string]$name,[string]$iso){
   # Select the day segment explicitly. DateTimePicker retains its active segment
   # between visits; Home changes that segment's value rather than resetting focus.
   $bounds=[NativeWalk]::Bounds([IntPtr]$handle)
-  $point=(([int](($bounds.Bottom-$bounds.Top)/2)) -shl 16) -bor [int](($bounds.Right-$bounds.Left)*0.21)
-  [NativeWalk]::SendMessage([IntPtr]$handle,0x0201,[IntPtr]1,[IntPtr]$point)|Out-Null
-  [NativeWalk]::SendMessage([IntPtr]$handle,0x0202,[IntPtr]::Zero,[IntPtr]$point)|Out-Null
-  # Set a safe day before the month/year, then the requested day (including 31/12
-  # and leap days). Typing 31 while the old month is November would clamp it.
-  [Windows.Forms.SendKeys]::SendWait('01{RIGHT}'+$date.ToString('MM')+'{RIGHT}'+$date.ToString('yyyy')+'{LEFT}{LEFT}'+$date.ToString('dd')+'{TAB}')
+  # The native picker can advance automatically after the final digit. Arrow
+  # navigation therefore depends on the previous value and can skip a field.
+  # Click each displayed dd/MM/yyyy segment explicitly before typing it.
+  foreach($part in @(@{x=0.21;text='01'},@{x=0.38;text=$date.ToString('MM')},@{x=0.59;text=$date.ToString('yyyy')},@{x=0.21;text=$date.ToString('dd')})){
+   $point=(([int](($bounds.Bottom-$bounds.Top)/2)) -shl 16) -bor [int](($bounds.Right-$bounds.Left)*$part.x)
+   [NativeWalk]::SendMessage([IntPtr]$handle,0x0201,[IntPtr]1,[IntPtr]$point)|Out-Null
+   [NativeWalk]::SendMessage([IntPtr]$handle,0x0202,[IntPtr]::Zero,[IntPtr]$point)|Out-Null
+   [Windows.Forms.SendKeys]::SendWait($part.text)
+  }
+  [Windows.Forms.SendKeys]::SendWait('{TAB}')
  }
  $accessibleValue='';try{$accessibleValue=($node.GetCurrentPattern([Windows.Automation.LegacyIAccessiblePattern]::Pattern)).Current.Value}catch{}
  @{name=$name;desired=$iso;mode=$mode;accessibleValue=$accessibleValue;appExited=$app.HasExited}|ConvertTo-Json|Add-Content (Join-Path $output 'date-input-results.txt') -Encoding UTF8
