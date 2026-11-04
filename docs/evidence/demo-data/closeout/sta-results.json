@@ -1,0 +1,400 @@
+{
+  "result": "PASS",
+  "attempts": 1,
+  "realApi": true,
+  "fakeApi": false,
+  "sta": true,
+  "keyboardInput": false,
+  "programmaticDateTimePicker": true,
+  "stage": "quarter-reports",
+  "observations": [
+    {
+      "screen": "dashboard",
+      "name": "sta-dashboard",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "orders",
+      "name": "sta-orders-page1",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "orders",
+      "name": "sta-orders-page2",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-1",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-2",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-71",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-72",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-133",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-134",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-191",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-192",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-257",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-258",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-341",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-342",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-417",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-418",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-487",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-488",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-568",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-order-details",
+      "name": "sta-old-order-570",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-1",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-print-preview",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-2",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-71",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-72",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-133",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-134",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-191",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-192",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-257",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-258",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-341",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-342",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-417",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-418",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-487",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-488",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-568",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "invoices",
+      "name": "sta-invoice-570",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-purchases",
+      "name": "sta-purchase-1",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-purchases",
+      "name": "sta-purchase-2",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-purchases",
+      "name": "sta-purchase-3",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "old-purchases",
+      "name": "sta-purchase-4",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "stock",
+      "name": "sta-stock-low-and-zero",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-0",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-1",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-2",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-3",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-4",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-5",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-6",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-7",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-quarter-8",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-bestsellers",
+      "realApi": true,
+      "shippingForm": true
+    },
+    {
+      "screen": "quarter-reports",
+      "name": "sta-stock-report",
+      "realApi": true,
+      "shippingForm": true
+    }
+  ],
+  "timings": [
+    {
+      "screen": "orders",
+      "milliseconds": 486
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 0,
+      "milliseconds": 56
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 1,
+      "milliseconds": 68
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 2,
+      "milliseconds": 59
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 3,
+      "milliseconds": 62
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 4,
+      "milliseconds": 85
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 5,
+      "milliseconds": 52
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 6,
+      "milliseconds": 49
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 7,
+      "milliseconds": 55
+    },
+    {
+      "screen": "quarter-reports",
+      "quarter": 8,
+      "milliseconds": 38
+    }
+  ],
+  "manualNote": null
+}

@@ -1,5 +1,7 @@
 # Phone Store backend
 
+For the current full **real-product demo**, follow [DEMO_DATA.md](docs/DEMO_DATA.md) using the separate `tools/PhoneStore.DemoData` CLI and a new `PhoneStore_Demo_` database. It defaults to the real catalog and rejects the historical fictional profile. [Image sources/licenses](docs/demo-data/IMAGE_CREDITS.md) and [simulated price/cost assumptions](docs/demo-data/PRICE_ASSUMPTIONS.md) are recorded explicitly. The legacy Web `--seed-demo` described below is retained unchanged for compatibility; it is not the current full demo generator.
+
 .NET10 + ASP.NET Core API + EF Core/SQL Server. The accepted backend implements K01-K15/A01-A22 server behavior; MVC/WinForms UI is a separate stage. See [API mapping](docs/API_COMPATIBILITY.md), [final backend checklist](docs/BACKEND_CHECKLIST_FINAL.md) and [database details](docs/DATABASE.md).
 
 ## Run from a new database

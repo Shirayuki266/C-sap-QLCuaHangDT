@@ -97,6 +97,13 @@ internal static class D2VerificationChecks
         foreach (var date in new[] { new DateOnly(today.Year, today.Month, 1), quarterStart, quarterStart.AddDays(-1) }.Distinct())
         {
             string[] seed = ["--seed-demo-large", "--confirm", "--reset", "--seed", "2611", "--as-of", date.ToString("yyyy-MM-dd"), "--scale", "small", "--images-dir", images, "--output", manifest];
+            if (date < new DateOnly(2026, 10, 1))
+            {
+                Require(await Program.RunCli(seed, secrets) != 0,
+                    "Pre-release real catalog boundary was accepted.");
+                Console.WriteLine("PASS D2 unsupported pre-release boundary refused: " + date.ToString("yyyy-MM-dd"));
+                continue;
+            }
             Require(await Program.RunCli(seed, secrets) == 0, "Boundary-day real service simulation failed.");
             Require(await Program.RunCli(verify, secrets) == 0, "Boundary-day SQL verification failed.");
             Console.WriteLine("PASS D2 real SQL first-of-month/quarter or quarter-end completion window: " + date.ToString("yyyy-MM-dd"));

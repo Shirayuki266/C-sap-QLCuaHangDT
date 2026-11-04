@@ -13,7 +13,7 @@ public sealed record PlannedSupplier(string Code, string Name, string Phone, str
 public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime Start, string[] Brands, string[] Categories,
     PlannedProduct[] Products, PlannedCustomer[] Customers, PlannedSupplier[] Suppliers)
 {
-    public string Catalog { get; init; } = "fictional";
+    public string Catalog { get; init; } = "real";
     // Counter-based SHA256 avoids dependence on runtime Random implementation or invocation order.
     public static int Number(int seed, string domain, int maximum)
     {
@@ -26,33 +26,24 @@ public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime St
 
     public static DemoPlan Create(Options options)
     {
+        if (options.Catalog != "real") throw new ArgumentException("Công cụ demo chỉ tạo catalog thật.");
         var quarter = new DateOnly(options.AsOf.Year, (options.AsOf.Month - 1) / 3 * 3 + 1, 1).AddMonths(-24);
         var start = quarter.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc).AddHours(-7);
-        string[] brands = ["Auvora", "Velunex", "Nerivon", "Solvexa", "Kelovian", "Orvexia", "Tavirel", "Miravex", "Lumetrix", "Zenvora"];
+        var brands = RealCatalog.Products.Select(x => x.Brand).Distinct(StringComparer.Ordinal).ToArray();
         string[] categories = ["Giá rẻ", "Tầm trung", "Cao cấp", "Gaming", "Màn hình gập", "Thiết kế gọn nhẹ"];
         var full = options.Scale == "full";
         var count = full ? 50 : 6;
         var products = Enumerable.Range(0, count).Select(i =>
         {
             var category = full ? i < 14 ? 0 : i < 30 ? 1 : i < 42 ? 2 : i < 46 ? 3 : 4 : i % 5;
-            var code = $"DM{i + 1:000}";
-            var name = $"{brands[i % brands.Length]} {new[] { "Lani", "Vela", "Oryn", "Kiro", "Fovia" }[category]} {i + 1:00}";
+            var fact = RealCatalog.Products[i];
             var baseCost = new[] { 2500000m, 5000000m, 14000000m, 12000000m, 20000000m }[category];
             var step = new[] { 100000m, 200000m, 500000m, 350000m, 500000m }[category];
             var cost = baseCost + Number(options.Seed, $"cost/{i}", 18) * step;
             var profit = new[] { 15m, 12m, 10m, 11m, 9m }[category];
-            var variants = Enumerable.Range(0, i % 2 == 0 ? 3 : 2).Select(v => new PlannedVariant(
-                $"{code}-{new[] { 128, 256, 512 }[v]}", new[] { "Đen than", "Xanh lam", "Bạc sương" }[v],
-                new[] { 128, 256, 512 }[v], cost + v * 250000m, profit)).ToArray();
-            var purpose = new[] { "liên lạc và học tập hằng ngày", "làm việc và giải trí linh hoạt", "chụp ảnh và xử lý đa nhiệm", "trò chơi và các tác vụ đồ họa", "làm việc trên không gian hiển thị rộng" }[category];
-            var description = $"{name} được thiết kế cho nhu cầu {purpose}. " +
-                $"Thân máy màu sắc tinh tế kết hợp bộ nhớ {variants[0].StorageGb} GB, thuận tiện mang theo trong ngày. " +
-                $"Dòng {i + 1:00} ưu tiên {new[] { "thời lượng sử dụng", "thao tác mượt mà", "khả năng kết nối", "trải nghiệm hình ảnh" }[i % 4]} với giao diện dễ làm quen.";
-            var specs = $"Màn hình: {(category == 4 ? "7.2 inch, gập" : "6.5 inch")}, {(category < 2 ? "90" : "120")} Hz\n" +
-                $"Chip: VX-{100 + i}\nRAM: {(category == 0 ? 6 : category == 1 ? 8 : 12)} GB\nBộ nhớ: 128/256/512 GB\n" +
-                $"Camera: {(category < 2 ? 48 : 64)} MP\nPin: {4800 + i % 5 * 100} mAh\nSạc: {(category < 2 ? 33 : 67)} W\nHệ điều hành: Vela OS {1 + i % 3}\nBảo hành: 12 tháng";
+            PlannedVariant[] variants = [new($"{fact.Code}-{fact.Storage[0]}-01", fact.Colors[0], fact.Storage[0], cost, profit)];
             var launch = i < (full ? 24 : 3) ? start : start.AddDays(30 + Number(options.Seed, $"launch/{i}", 540));
-            return new PlannedProduct(code, name, i % brands.Length, category, description, specs, launch, variants);
+            return new PlannedProduct(fact.Code, fact.Name, Array.IndexOf(brands, fact.Brand), category, "", "", launch, variants);
         }).ToArray();
         string[] lastNames = ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Vũ", "Đặng", "Bùi", "Đỗ", "Hồ"];
         string[] givenNames = ["Minh An", "Hoàng Bảo", "Ngọc Châu", "Anh Dũng", "Thu Giang", "Quang Hải"];
@@ -76,6 +67,6 @@ public sealed record DemoPlan(int Seed, DateOnly AsOf, string Scale, DateTime St
         var suppliers = Enumerable.Range(0, full ? 12 : 3).Select(i => new PlannedSupplier($"NCCDM{i + 1:00}",
             $"Phân phối hư cấu {i + 1:00}", $"0289000{i + 1:000}", $"{9000 + i} Khu Kho Minh Họa, {cities[i % 10]}")).ToArray();
         var plan = new DemoPlan(options.Seed, options.AsOf, options.Scale, start, brands, categories, products, customers, suppliers);
-        return options.Catalog == "real" ? RealCatalog.Apply(plan) : plan;
+        return RealCatalog.Apply(plan);
     }
 }

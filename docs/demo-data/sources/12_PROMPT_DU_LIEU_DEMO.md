@@ -1,3 +1,5 @@
+> **Cập nhật2026-11-04:** công cụ demo hiện tại chỉ tạo catalog thật; lệnh/đoạn phương án hư cấu trong tài liệu này là lịch sử. Không dùng Web --seed-demo cho bản demo thật. Xem [quyết định đóng sổ](../RELEASE_CLOSEOUT.md).
+
 # Prompt giao việc: tạo dữ liệu demo đầy đủ (khoảng 2 năm bán hàng)
 
 Bộ này gồm một bước khảo sát chỉ đọc (D0) và ba bước làm (D1–D3). Đặc tả và checklist nghiệm thu là `11_DAC_TA_DU_LIEU_DEMO.md` (43 ô: 24 P0 / 19 P1 / 0 P2).

@@ -13,7 +13,6 @@ public static class RealCatalogVerifier
     public static async Task<Dictionary<string, long>> Run(StoreDbContext db, string scale, string directory)
     {
         var result = new Dictionary<string, long>(StringComparer.Ordinal);
-        if (!await db.Products.AnyAsync(x => x.Code.StartsWith("RL"))) return result;
         using var stream = typeof(RealCatalogVerifier).Assembly.GetManifestResourceStream("PhoneStore.DemoData.RealCatalog.json")
             ?? throw new InvalidOperationException("Thiếu thông số nguồn.");
         using var reader = new StreamReader(stream);

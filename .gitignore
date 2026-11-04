@@ -26,3 +26,12 @@ PROMPT_*.md
 .gemini/
 .impeccable/
 .qoder/
+
+# Local editor settings and authoring inputs; never stage these for release.
+/.vscode/
+/TAI_LIEU_BACKEND/
+/ux-ui_design_Phuong_an_A/
+
+# Superseded manufacturer-photo cache retained only for an existing local preview.
+# Licensed release assets use lc*.svg; fresh clones do not contain this cache.
+/src/PhoneStore.Web/wwwroot/images/demo/rl*.svg

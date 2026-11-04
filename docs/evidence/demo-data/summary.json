@@ -1,366 +1,189 @@
 {
-    "Stage":  "D3",
-    "EvidenceSnapshot":  "Before remote CI; final DATA.GATE.01 evaluation is recorded in latest-head PR verification",
-    "Issue":  "https://github.com/Shirayuki266/C-sap-QLCuaHangDT/issues/117",
-    "BaseDevelop":  "70a80c4630c62031ebed17fdb0d758ea2b4b63dc",
-    "Branch":  "feature/demo-data-d3",
-    "Seed":  2611,
-    "AsOf":  "2026-11-03",
-    "Scale":  "full",
-    "ReferenceCutoffUtc":  "2026-11-02T17:00:00Z",
-    "Database":  "PhoneStore_Demo_D3_726c59c778",
-    "FullSeed":  {
-                     "ElapsedMilliseconds":  171890,
-                     "NormalizedManifestHash":  "893e60ed6331bc6f2c194022bed4bea2564a28b09b6de7fb5f183fa547168a82",
-                     "SameHashAsMergedD2":  true,
-                     "Note":  "Lifecycle-aware seed hash; the separate before/after read-only business hash in smoke.json omits lifecycle context, and is compared only with itself."
-                 },
-    "Verification":  {
-                         "Valid":  true,
-                         "Counts":  {
-                                        "__PhoneStoreMigrations":  1,
-                                        "BIEN_THE":  125,
-                                        "DANH_MUC":  6,
-                                        "DON_HANG":  601,
-                                        "DON_HANG_CT":  813,
-                                        "GIO_HANG_CT":  25,
-                                        "HANG":  10,
-                                        "KHACH_HANG":  60,
-                                        "LICH_SU_DON":  2314,
-                                        "NHA_CUNG_CAP":  12,
-                                        "NHAT_KY_KHO":  1904,
-                                        "PHIEN":  0,
-                                        "PHIEU_NHAP":  56,
-                                        "PHIEU_NHAP_CT":  275,
-                                        "SAN_PHAM":  50,
-                                        "SAN_PHAM_ANH":  150,
-                                        "TAI_KHOAN":  61,
-                                        "THANH_TOAN":  601,
-                                        "TON_KHO":  125
-                                    },
-                         "Quarters":  [
-                                          {
-                                              "Year":  2024,
-                                              "Quarter":  4,
-                                              "Target":  70,
-                                              "Orders":  70,
-                                              "Revenue":  344712500.00
-                                          },
-                                          {
-                                              "Year":  2025,
-                                              "Quarter":  1,
-                                              "Target":  62,
-                                              "Orders":  62,
-                                              "Revenue":  401301900.00
-                                          },
-                                          {
-                                              "Year":  2025,
-                                              "Quarter":  2,
-                                              "Target":  58,
-                                              "Orders":  58,
-                                              "Revenue":  468560061.25
-                                          },
-                                          {
-                                              "Year":  2025,
-                                              "Quarter":  3,
-                                              "Target":  66,
-                                              "Orders":  66,
-                                              "Revenue":  584290385.12
-                                          },
-                                          {
-                                              "Year":  2025,
-                                              "Quarter":  4,
-                                              "Target":  84,
-                                              "Orders":  84,
-                                              "Revenue":  826276115.78
-                                          },
-                                          {
-                                              "Year":  2026,
-                                              "Quarter":  1,
-                                              "Target":  76,
-                                              "Orders":  76,
-                                              "Revenue":  818459041.09
-                                          },
-                                          {
-                                              "Year":  2026,
-                                              "Quarter":  2,
-                                              "Target":  70,
-                                              "Orders":  70,
-                                              "Revenue":  770357705.00
-                                          },
-                                          {
-                                              "Year":  2026,
-                                              "Quarter":  3,
-                                              "Target":  80,
-                                              "Orders":  80,
-                                              "Revenue":  867539917.56
-                                          },
-                                          {
-                                              "Year":  2026,
-                                              "Quarter":  4,
-                                              "Target":  35,
-                                              "Orders":  35,
-                                              "Revenue":  118158255.52
-                                          }
-                                      ],
-                         "Statuses":  {
-                                          "CHO_XAC_NHAN":  6,
-                                          "DA_HUY":  48,
-                                          "DA_XAC_NHAN":  6,
-                                          "DANG_GIAO":  6,
-                                          "GIAO_THAT_BAI":  23,
-                                          "HOAN_TAT":  512
-                                      },
-                         "Metrics":  {
-                                         "RecentOrders":  31,
-                                         "CurrentMonthEligibleProducts":  12,
-                                         "LowStockVariants":  8,
-                                         "OutOfStockVariants":  3,
-                                         "TypicalStockVariants":  118,
-                                         "FailedOrders":  23,
-                                         "FailedWithReturn":  20,
-                                         "Adjustments":  10,
-                                         "NoOrderCustomers":  2,
-                                         "Repeat5To10Customers":  27,
-                                         "OneOrderCustomers":  20,
-                                         "Drafts":  3,
-                                         "EmptyDrafts":  1,
-                                         "CancelledPurchases":  1,
-                                         "InactiveSuppliers":  2,
-                                         "InactiveProductsWithHistory":  4,
-                                         "CartCustomers":  12
-                                     },
-                         "Errors":  [
-
-                                    ]
-                     },
-    "Audit":  {
-                  "Before":  "d3/audit-before.json",
-                  "After":  "d3/audit-after.json",
-                  "BothValid":  true,
-                  "Errors":  [
-
-                             ],
-                  "ZeroSessions":  true
-              },
-    "ActualApplications":  {
-                               "FullDemo":  true,
-                               "RealKestrel":  true,
-                               "ActualReleaseWinForms":  true,
-                               "Browser":  "Chromium via Playwright, no interception/mocks",
-                               "AgentAssisted":  true,
-                               "FakeApi":  false,
-                               "AdminPaging":  "two disjoint pages, 20 orders each, total 601",
-                               "QuarterReports":  "all nine nonzero, distinct and equal to independent SQL",
-                               "ActiveCatalogProducts":  46,
-                               "HomepageBestsellers":  8,
-                               "EligibleMonthProducts":  12,
-                               "AllImagesHttp200":  150,
-                               "CustomerHistoryOrders":  153,
-                               "CustomerHistoryVisible":  20,
-                               "BusinessUnchanged":  {
-                                                         "result":  "PASS",
-                                                         "actualFullDemo":  true,
-                                                         "realKestrel":  true,
-                                                         "actualReleaseWinForms":  true,
-                                                         "fakeApi":  false,
-                                                         "agentAssisted":  true,
-                                                         "baselineBusinessHash":  "d0ce3c5e8fd1bb085d2c093424984345373c52e8d5d73ebd94890585d2922cb6",
-                                                         "afterBusinessHash":  "d0ce3c5e8fd1bb085d2c093424984345373c52e8d5d73ebd94890585d2922cb6",
-                                                         "zeroSessions":  true,
-                                                         "webDllSha256":  "F17F4F06646A507A61AB84B96A1428069D48E427406CF7F3445C60DD84C5C10A",
-                                                         "adminExeSha256":  "99674E7E56899C959AF62C22C58C4B7BB45CCF42B43607AFEE42E721071C3CF9",
-                                                         "adminDllSha256":  "A74D123E5FEAE16A08D8614DB29C6C4F66A7D010249F7A37F925EDF8A01A574A"
-                                                     },
-                               "Http":  "d3/http.json",
-                               "BrowserResults":  "d3/browser/results.json",
-                               "WinFormsResults":  "d3/winforms/results.json"
-                           },
-    "Performance":  {
-                        "Scope":  "Single local Windows/SQL Server/Release run, full data; no concurrent-load/network benchmark",
-                        "HttpThresholdMilliseconds":  2000,
-                        "BrowserThresholdMilliseconds":  5000,
-                        "NativeThresholdMilliseconds":  5000,
-                        "HttpMaxMilliseconds":  333.7283,
-                        "BrowserMaxMilliseconds":  315.57580000000007,
-                        "Native":  [
-                                       {
-                                           "milliseconds":  696.9727,
-                                           "name":  "orders-first-page"
-                                       },
-                                       {
-                                           "milliseconds":  307.1403,
-                                           "name":  "orders-second-page"
-                                       },
-                                       {
-                                           "milliseconds":  186.86790000000002,
-                                           "name":  "report-revenue"
-                                       },
-                                       {
-                                           "milliseconds":  186.68380000000002,
-                                           "name":  "report-bestsellers"
-                                       },
-                                       {
-                                           "milliseconds":  181.9136,
-                                           "name":  "report-stock"
-                                       },
-                                       {
-                                           "milliseconds":  405.6284,
-                                           "name":  "stock-list"
-                                       }
-                                   ],
-                        "ExtraWarmHttpListReportPairs":  5,
-                        "ExtraWarmBrowserCatalogSamples":  5,
-                        "Raw":  "Per-operation timings retained in the three application result files; native includes input and rendered-value observation"
-                    },
-    "Regression":  {
-                       "Result":  "PASS",
-                       "Suites":  16,
-                       "Details":  "d3/regression.json",
-                       "Build":  {
-                                     "Command":  "dotnet build PhoneStore.slnx -c Release --no-restore",
-                                     "Warnings":  0,
-                                     "Errors":  0,
-                                     "LogSha256":  "AE90ED2A0C0506FBC527ACCED4C84B3DC9CA6D2154FD4A1D3DFD0B0855908A49"
-                                 },
-                       "BackendChecks":  322,
-                       "AdminClientChecks":  63,
-                       "AdminFormChecks":  36,
-                       "DpiCaptures":  56,
-                       "MvcBrowserModes":  5,
-                       "DesktopIntegrationModes":  5,
-                       "PreviousReleaseSqlCheckpoints":  19,
-                       "DemoDataGroups":  24,
-                       "DeliberateQaCorruptions":  6,
-                       "BoundaryDates":  [
-                                             "2026-11-01",
-                                             "2026-10-01",
-                                             "2026-09-30"
-                                         ],
-                       "AllCorruptionsRestored":  true
-                   },
-    "Diff":  {
-                 "Base":  "70a80c4630c62031ebed17fdb0d758ea2b4b63dc",
-                 "AllowedDecision":  "File 11 DATA.GATE.01 and file 12 section 2b decision 8",
-                 "D3Paths":  [
-                                 "tests/PhoneStore.DemoData.Checks/",
-                                 "docs/DEMO_DATA.md",
-                                 "docs/demo-data/D3_CHECKLIST.md",
-                                 "docs/evidence/demo-data/"
-                             ],
-                 "RuntimeChanges":  0,
-                 "EarlierRegressionChanges":  0,
-                 "SchemaMigrationChanges":  0,
-                 "CiChanges":  0,
-                 "MergeTagDeployment":  false,
-                 "IgnoredUserDirectoriesUntouched":  [
-                                                         ".vscode/",
-                                                         "TAI_LIEU_BACKEND/",
-                                                         "ux-ui_design_Phuong_an_A/"
-                                                     ]
-             },
-    "Checklist":  {
-                      "Path":  "d3-checklist.json",
-                      "Total":  43,
-                      "P0":  {
-                                 "Total":  24,
-                                 "PASS":  23,
-                                 "FAIL":  0,
-                                 "BLOCKED":  0,
-                                 "NOT_RUN":  1
-                             },
-                      "P1":  {
-                                 "Total":  19,
-                                 "PASS":  19,
-                                 "FAIL":  0,
-                                 "BLOCKED":  0,
-                                 "NOT_RUN":  0
-                             },
-                      "P2":  {
-                                 "Total":  0,
-                                 "PASS":  0,
-                                 "FAIL":  0,
-                                 "BLOCKED":  0,
-                                 "NOT_RUN":  0
-                             },
-                      "Pending":  [
-                                      {
-                                          "Id":  "DATA.GATE.01",
-                                          "Reason":  "Remote CI on final PR head not yet available at the time of this committed snapshot. Final PR verification must supply both green required jobs, exact latest head and final 43 PASS counts."
-                                      }
-                                  ]
-                  },
-    "Screenshots":  [
-                        {
-                            "path":  "d3/browser/mvc-catalog.png",
-                            "sha256":  "75C720080AB55E676823844931AC72F6A88BCDB8ED6B4E63A08EFCE3100C74BC"
-                        },
-                        {
-                            "path":  "d3/browser/mvc-customer-history.png",
-                            "sha256":  "2BEBC32DA1618F9FADB9C0D6067468259C8A48875F8B9B49E659F49D49556998"
-                        },
-                        {
-                            "path":  "d3/browser/mvc-customer-order.png",
-                            "sha256":  "7AEDE2FD9E7D98FFB2D3A70455CBC807FEA8BE5689F5D575DBF33614E4ECBF00"
-                        },
-                        {
-                            "path":  "d3/browser/mvc-home.png",
-                            "sha256":  "C8AED148FA8DF48D18078C628E060E86B3B9C36696C9FEBBAB0DC3D32EC570BA"
-                        },
-                        {
-                            "path":  "d3/browser/mvc-product.png",
-                            "sha256":  "EEAAC5B76C3E7536E5F0213B704BB603571994682C2D2A087D73FB1E236D132E"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-bestsellers.png",
-                            "sha256":  "FD6A33E1A5AECBDBDF15E0BA59D929A3CF42E03E1CF0167727C22F53F25962F1"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-completed-order.png",
-                            "sha256":  "40877C329CCA980D35BE67CA15516581C2845CE16FA3D2AD764E3A9555762805"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-dashboard.png",
-                            "sha256":  "B6606B4597D0613263083F7391E1C06FC865C07910537B308DADF3A2DDFF8712"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-invoice.png",
-                            "sha256":  "FEAE79228B8D7970B6E003179426C1077736A0686FF8885B8AB25AC23537A8C4"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-orders.png",
-                            "sha256":  "1F8F13BB091D14C3E8F437D7C41B6A16C190DB68CE7273972574AA39F24CE0B9"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-orders-page2.png",
-                            "sha256":  "C0B4AEFC8234BD2B05EFAA1CCF120BA314523F720DD2EF807F8E8C2CE981A9CB"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-revenue.png",
-                            "sha256":  "4E7339B0AB5CB5EEB5BC037EF5213F075C1E33A898965C869400653C563640A9"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-stock.png",
-                            "sha256":  "82F57A20528C2060C037A06B59F0BEFA4A4AC083A471DDFCBA7327914C5FD018"
-                        },
-                        {
-                            "path":  "d3/winforms/winforms-stock-report.png",
-                            "sha256":  "78939461B3536D7B2AF7800AABAA79123250D4008193FFAE0349AED07D3A9096"
-                        }
-                    ],
-    "Secrets":  {
-                    "CredentialsSource":  "Environment only; ephemeral random passwords for this fixture",
-                    "ExportedPasswords":  false,
-                    "ExportedPasswordHashes":  false,
-                    "ExportedCookies":  false,
-                    "ExportedConnectionStrings":  false,
-                    "RawFailureRetriesPublished":  false
-                },
-    "Limitations":  [
-                        "Recorded local timings do not predict production concurrency or WAN performance.",
-                        "Agent-assisted actual Release walkthrough, not an independent human sign-off.",
-                        "Snapshot ends at beginning of as-of UTC+7; today revenue is zero by design; recreate with current date for later live demos.",
-                        "No runtime, API, schema, migration, MVC or WinForms fixes are included.",
-                        "Committed ledger precedes remote CI; the exact-head PR verification is the final gate record."
-                    ]
+  "stage": "licensed-catalog-correction-development-evidence",
+  "asOf": "2026-11-04",
+  "seed": 2611,
+  "scale": "full",
+  "catalog": "real",
+  "catalogSha256": "db8beaca231a19012bf677a5763faef7dc3f8212e80ac16a1a5b3f816c262fe4",
+  "businessManifestSha256": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+  "seedElapsedMilliseconds": 118015,
+  "verification": {
+    "Valid": true,
+    "Counts": {
+      "__PhoneStoreMigrations": 1,
+      "BIEN_THE": 125,
+      "DANH_MUC": 6,
+      "DON_HANG": 601,
+      "DON_HANG_CT": 813,
+      "GIO_HANG_CT": 25,
+      "HANG": 10,
+      "KHACH_HANG": 60,
+      "LICH_SU_DON": 2314,
+      "NHA_CUNG_CAP": 12,
+      "NHAT_KY_KHO": 1904,
+      "PHIEN": 0,
+      "PHIEU_NHAP": 56,
+      "PHIEU_NHAP_CT": 275,
+      "SAN_PHAM": 50,
+      "SAN_PHAM_ANH": 150,
+      "TAI_KHOAN": 61,
+      "THANH_TOAN": 601,
+      "TON_KHO": 125
+    },
+    "Quarters": [
+      {
+        "Year": 2024,
+        "Quarter": 4,
+        "Target": 70,
+        "Orders": 70,
+        "Revenue": 344022500
+      },
+      {
+        "Year": 2025,
+        "Quarter": 1,
+        "Target": 62,
+        "Orders": 62,
+        "Revenue": 400709150
+      },
+      {
+        "Year": 2025,
+        "Quarter": 2,
+        "Target": 58,
+        "Orders": 58,
+        "Revenue": 486455890
+      },
+      {
+        "Year": 2025,
+        "Quarter": 3,
+        "Target": 66,
+        "Orders": 66,
+        "Revenue": 564293878.87
+      },
+      {
+        "Year": 2025,
+        "Quarter": 4,
+        "Target": 84,
+        "Orders": 84,
+        "Revenue": 760793309.62
+      },
+      {
+        "Year": 2026,
+        "Quarter": 1,
+        "Target": 76,
+        "Orders": 76,
+        "Revenue": 746243038.92
+      },
+      {
+        "Year": 2026,
+        "Quarter": 2,
+        "Target": 70,
+        "Orders": 70,
+        "Revenue": 714245862.34
+      },
+      {
+        "Year": 2026,
+        "Quarter": 3,
+        "Target": 80,
+        "Orders": 80,
+        "Revenue": 732111111.36
+      },
+      {
+        "Year": 2026,
+        "Quarter": 4,
+        "Target": 35,
+        "Orders": 35,
+        "Revenue": 121179905.89
+      }
+    ],
+    "Statuses": {
+      "CHO_XAC_NHAN": 6,
+      "DA_HUY": 48,
+      "DA_XAC_NHAN": 6,
+      "DANG_GIAO": 6,
+      "GIAO_THAT_BAI": 23,
+      "HOAN_TAT": 512
+    },
+    "Metrics": {
+      "RecentOrders": 31,
+      "CurrentMonthEligibleProducts": 11,
+      "LowStockVariants": 8,
+      "OutOfStockVariants": 3,
+      "TypicalStockVariants": 118,
+      "FailedOrders": 23,
+      "FailedWithReturn": 20,
+      "Adjustments": 10,
+      "NoOrderCustomers": 2,
+      "Repeat5To10Customers": 27,
+      "OneOrderCustomers": 20,
+      "Drafts": 3,
+      "EmptyDrafts": 1,
+      "CancelledPurchases": 1,
+      "InactiveSuppliers": 2,
+      "InactiveProductsWithHistory": 4,
+      "CartCustomers": 12,
+      "RealProductMismatches": 0,
+      "RealVariantMismatches": 0,
+      "RealPhotoMismatches": 0,
+      "RealSnapshotMismatches": 0,
+      "RealPhotoDigestMismatches": 0
+    },
+    "Errors": []
+  },
+  "realApplicationSmoke": {
+    "result": "PASS",
+    "actualFullDemo": true,
+    "realKestrel": true,
+    "actualReleaseWinForms": true,
+    "fakeApi": false,
+    "agentAssisted": true,
+    "baselineBusinessHash": "8c23d1bf51e3f6d501f7eabf400de35028d94953fde165992f7917f02da0cb05",
+    "afterBusinessHash": "8c23d1bf51e3f6d501f7eabf400de35028d94953fde165992f7917f02da0cb05",
+    "zeroSessions": true,
+    "webDllSha256": "C9C86D8357CF72AEB6C83A0F7AA29120BC2DDC7FDB1F8D6E5B60A9514EE6A991",
+    "adminExeSha256": "F5F16A3A38422395A45F3A1FED9D82CC57BEEC472A0531D2B5BA8E3E44933965",
+    "adminDllSha256": "B94614677B8577245070B0144B4F5908200E54AD207C2A2912AC229523CD842B"
+  },
+  "reproducibility": {
+    "second": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+    "first": "d03c876642bd8af48af642890cafbf40264ac8029ebd1c22e366e1873341532d",
+    "identical": true,
+    "sameSeed": 2611,
+    "sameAsOf": "2026-11-04"
+  },
+  "checklist": {
+    "DATA": 43,
+    "CLEAN": 33,
+    "total": 76,
+    "priorities": {
+      "P0": 43,
+      "P1": 31,
+      "P2": 2
+    },
+    "requiredStatuses": {
+      "PASS": 75,
+      "ACCEPTED_EXCEPTION": 1
+    },
+    "acceptedException": {
+      "id": "CLEAN.FILES.04",
+      "status": "ACCEPTED_EXCEPTION",
+      "approvalRef": "docs/demo-data/RELEASE_CLOSEOUT.md#approval-legacy-seeder-2026-11-04",
+      "reason": "User explicitly approved keeping the unchanged Infrastructure legacy DemoSeeder and demo-phone.svg; the separate current demo tool must remain real-only."
+    }
+  },
+  "finalAcceptance": {
+    "status": "NOT RUN in this pre-commit development snapshot",
+    "authority": "The correction PR publishes the final76-record ledger and evidence bound to its exact head SHA and matching CI. This file cannot embed its own future commit SHA.",
+    "releaseApproval": false,
+    "mergePerformed": false,
+    "tagCreated": false
+  },
+  "evidence": "closeout/README.md",
+  "sources": {
+    "facts": "../../demo-data/MODEL_SOURCES.md",
+    "images": "../../demo-data/IMAGE_CREDITS.md",
+    "visualReview": "../../demo-data/IMAGE_REVIEW.json",
+    "historicalImageRisk": "../../demo-data/PUBLIC_IMAGE_HISTORY.md",
+    "prices": "../../demo-data/PRICE_ASSUMPTIONS.md"
+  },
+  "secrets": "No password, connection string, token, cookie or backup contents included"
 }

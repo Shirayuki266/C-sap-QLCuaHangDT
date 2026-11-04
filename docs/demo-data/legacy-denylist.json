@@ -1,0 +1,4113 @@
+{
+  "entries": [
+    {
+      "kind": "brand",
+      "value": "Auvora",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Kelovian",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Lumetrix",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Miravex",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Nerivon",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Orvexia",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Solvexa",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Tavirel",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Velunex",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "brand",
+      "value": "Zenvora",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/HANG.Name"
+    },
+    {
+      "kind": "category",
+      "value": "Cao cấp",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DANH_MUC.Name"
+    },
+    {
+      "kind": "category",
+      "value": "Gaming",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DANH_MUC.Name"
+    },
+    {
+      "kind": "category",
+      "value": "Giá rẻ",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DANH_MUC.Name"
+    },
+    {
+      "kind": "category",
+      "value": "Màn hình gập",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DANH_MUC.Name"
+    },
+    {
+      "kind": "category",
+      "value": "Tầm trung",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DANH_MUC.Name"
+    },
+    {
+      "kind": "category",
+      "value": "Thiết kế gọn nhẹ",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DANH_MUC.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Auvora Lani 01",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Auvora Lani 11",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Auvora Oryn 31",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Auvora Oryn 41",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Auvora Vela 21",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Kelovian Kiro 45",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Kelovian Lani 05",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Kelovian Oryn 35",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Kelovian Vela 15",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Kelovian Vela 25",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Lumetrix Fovia 49",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Lumetrix Lani 09",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Lumetrix Oryn 39",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Lumetrix Vela 19",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Lumetrix Vela 29",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Miravex Fovia 48",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Miravex Lani 08",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Miravex Oryn 38",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Miravex Vela 18",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Miravex Vela 28",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Nerivon Kiro 43",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Nerivon Lani 03",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Nerivon Lani 13",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Nerivon Oryn 33",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Nerivon Vela 23",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Orvexia Kiro 46",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Orvexia Lani 06",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Orvexia Oryn 36",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Orvexia Vela 16",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Orvexia Vela 26",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Solvexa Kiro 44",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Solvexa Lani 04",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Solvexa Lani 14",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Solvexa Oryn 34",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Solvexa Vela 24",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Tavirel Fovia 47",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Tavirel Lani 07",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Tavirel Oryn 37",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Tavirel Vela 17",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Tavirel Vela 27",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Velunex Lani 02",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Velunex Lani 12",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Velunex Oryn 32",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Velunex Oryn 42",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Velunex Vela 22",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Zenvora Fovia 50",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Zenvora Lani 10",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Zenvora Oryn 40",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Zenvora Vela 20",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "model",
+      "value": "Zenvora Vela 30",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Name"
+    },
+    {
+      "kind": "code",
+      "value": "DM001",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM002",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM003",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM004",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM005",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM006",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM007",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM008",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM009",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM010",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM011",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM012",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM013",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM014",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM015",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM016",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM017",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM018",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM019",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM020",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM021",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM022",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM023",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM024",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM025",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM026",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM027",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM028",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM029",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM030",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM031",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM032",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM033",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM034",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM035",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM036",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM037",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM038",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM039",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM040",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM041",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM042",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM043",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM044",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM045",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM046",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM047",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM048",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM049",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "code",
+      "value": "DM050",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Code"
+    },
+    {
+      "kind": "sku",
+      "value": "DM001-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM001-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM001-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM002-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM002-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM003-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM003-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM003-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM004-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM004-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM005-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM005-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM005-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM006-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM006-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM007-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM007-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM007-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM008-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM008-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM009-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM009-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM009-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM010-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM010-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM011-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM011-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM011-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM012-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM012-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM013-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM013-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM013-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM014-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM014-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM015-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM015-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM015-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM016-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM016-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM017-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM017-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM017-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM018-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM018-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM019-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM019-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM019-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM020-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM020-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM021-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM021-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM021-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM022-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM022-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM023-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM023-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM023-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM024-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM024-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM025-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM025-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM025-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM026-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM026-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM027-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM027-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM027-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM028-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM028-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM029-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM029-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM029-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM030-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM030-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM031-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM031-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM031-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM032-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM032-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM033-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM033-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM033-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM034-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM034-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM035-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM035-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM035-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM036-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM036-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM037-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM037-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM037-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM038-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM038-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM039-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM039-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM039-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM040-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM040-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM041-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM041-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM041-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM042-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM042-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM043-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM043-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM043-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM044-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM044-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM045-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM045-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM045-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM046-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM046-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM047-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM047-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM047-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM048-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM048-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM049-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM049-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM049-512",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM050-128",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "sku",
+      "value": "DM050-256",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/BIEN_THE.Sku"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Auvora Lani 01",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Auvora Lani 11",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Auvora Oryn 31",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Auvora Oryn 41",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Auvora Vela 21",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Kelovian Kiro 45",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Kelovian Lani 05",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Kelovian Oryn 35",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Kelovian Vela 15",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Kelovian Vela 25",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Lumetrix Fovia 49",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Lumetrix Lani 09",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Lumetrix Oryn 39",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Lumetrix Vela 19",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Lumetrix Vela 29",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Miravex Fovia 48",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Miravex Lani 08",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Miravex Oryn 38",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Miravex Vela 18",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Miravex Vela 28",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Nerivon Kiro 43",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Nerivon Lani 03",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Nerivon Lani 13",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Nerivon Oryn 33",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Nerivon Vela 23",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Orvexia Kiro 46",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Orvexia Lani 06",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Orvexia Oryn 36",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Orvexia Vela 16",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Orvexia Vela 26",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Solvexa Kiro 44",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Solvexa Lani 04",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Solvexa Lani 14",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Solvexa Oryn 34",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Solvexa Vela 24",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Tavirel Fovia 47",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Tavirel Lani 07",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Tavirel Oryn 37",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Tavirel Vela 17",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Tavirel Vela 27",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Velunex Lani 02",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Velunex Lani 12",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Velunex Oryn 32",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Velunex Oryn 42",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Velunex Vela 22",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Zenvora Fovia 50",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Zenvora Lani 10",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Zenvora Oryn 40",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Zenvora Vela 20",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-name",
+      "value": "Zenvora Vela 30",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Name"
+    },
+    {
+      "kind": "snapshot-description",
+      "value": "Bạc sương / 512GB",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Description"
+    },
+    {
+      "kind": "snapshot-description",
+      "value": "Đen than / 128GB",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Description"
+    },
+    {
+      "kind": "snapshot-description",
+      "value": "Xanh lam / 256GB",
+      "classification": "shared",
+      "source": "PhoneStore_Demo_D3_726c59c778/DON_HANG_CT.Description"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm001-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm002-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm003-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm004-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm005-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm006-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm007-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm008-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm009-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm010-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm011-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm012-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm013-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm014-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm015-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm016-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm017-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm018-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm019-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm020-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm021-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm022-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm023-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm024-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm025-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm026-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm027-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm028-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm029-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm030-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm031-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm032-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm033-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm034-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm035-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm036-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm037-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm038-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm039-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm040-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm041-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm042-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm043-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm044-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm045-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm046-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm047-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm048-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm049-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image",
+      "value": "/images/demo/dm050-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.ImageUrl"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm001-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm001-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm001-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm002-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm002-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm002-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm003-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm003-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm003-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm004-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm004-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm004-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm005-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm005-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm005-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm006-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm006-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm006-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm007-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm007-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm007-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm008-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm008-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm008-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm009-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm009-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm009-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm010-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm010-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm010-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm011-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm011-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm011-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm012-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm012-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm012-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm013-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm013-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm013-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm014-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm014-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm014-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm015-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm015-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm015-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm016-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm016-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm016-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm017-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm017-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm017-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm018-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm018-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm018-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm019-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm019-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm019-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm020-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm020-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm020-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm021-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm021-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm021-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm022-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm022-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm022-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm023-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm023-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm023-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm024-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm024-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm024-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm025-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm025-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm025-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm026-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm026-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm026-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm027-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm027-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm027-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm028-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm028-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm028-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm029-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm029-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm029-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm030-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm030-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm030-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm031-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm031-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm031-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm032-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm032-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm032-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm033-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm033-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm033-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm034-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm034-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm034-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm035-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm035-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm035-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm036-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm036-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm036-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm037-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm037-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm037-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm038-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm038-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm038-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm039-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm039-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm039-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm040-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm040-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm040-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm041-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm041-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm041-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm042-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm042-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm042-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm043-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm043-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm043-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm044-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm044-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm044-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm045-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm045-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm045-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm046-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm046-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm046-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm047-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm047-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm047-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm048-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm048-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm048-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm049-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm049-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm049-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm050-1.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm050-2.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "image-detail",
+      "value": "/images/demo/dm050-3.svg",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM_ANH.Url"
+    },
+    {
+      "kind": "description",
+      "value": "Auvora Lani 01 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 01 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Auvora Lani 11 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 11 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Auvora Oryn 31 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 31 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Auvora Oryn 41 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 41 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Auvora Vela 21 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 21 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Kelovian Kiro 45 được thiết kế cho nhu cầu trò chơi và các tác vụ đồ họa. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 45 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Kelovian Lani 05 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 05 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Kelovian Oryn 35 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 35 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Kelovian Vela 15 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 15 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Kelovian Vela 25 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 25 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Lumetrix Fovia 49 được thiết kế cho nhu cầu làm việc trên không gian hiển thị rộng. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 49 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Lumetrix Lani 09 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 09 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Lumetrix Oryn 39 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 39 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Lumetrix Vela 19 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 19 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Lumetrix Vela 29 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 29 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Miravex Fovia 48 được thiết kế cho nhu cầu làm việc trên không gian hiển thị rộng. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 48 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Miravex Lani 08 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 08 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Miravex Oryn 38 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 38 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Miravex Vela 18 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 18 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Miravex Vela 28 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 28 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Nerivon Kiro 43 được thiết kế cho nhu cầu trò chơi và các tác vụ đồ họa. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 43 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Nerivon Lani 03 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 03 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Nerivon Lani 13 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 13 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Nerivon Oryn 33 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 33 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Nerivon Vela 23 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 23 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Orvexia Kiro 46 được thiết kế cho nhu cầu trò chơi và các tác vụ đồ họa. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 46 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Orvexia Lani 06 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 06 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Orvexia Oryn 36 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 36 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Orvexia Vela 16 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 16 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Orvexia Vela 26 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 26 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Solvexa Kiro 44 được thiết kế cho nhu cầu trò chơi và các tác vụ đồ họa. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 44 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Solvexa Lani 04 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 04 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Solvexa Lani 14 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 14 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Solvexa Oryn 34 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 34 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Solvexa Vela 24 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 24 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Tavirel Fovia 47 được thiết kế cho nhu cầu làm việc trên không gian hiển thị rộng. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 47 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Tavirel Lani 07 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 07 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Tavirel Oryn 37 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 37 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Tavirel Vela 17 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 17 ưu tiên thời lượng sử dụng với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Tavirel Vela 27 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 27 ưu tiên khả năng kết nối với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Velunex Lani 02 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 02 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Velunex Lani 12 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 12 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Velunex Oryn 32 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 32 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Velunex Oryn 42 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 42 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Velunex Vela 22 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 22 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Zenvora Fovia 50 được thiết kế cho nhu cầu làm việc trên không gian hiển thị rộng. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 50 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Zenvora Lani 10 được thiết kế cho nhu cầu liên lạc và học tập hằng ngày. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 10 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Zenvora Oryn 40 được thiết kế cho nhu cầu chụp ảnh và xử lý đa nhiệm. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 40 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Zenvora Vela 20 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 20 ưu tiên trải nghiệm hình ảnh với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "description",
+      "value": "Zenvora Vela 30 được thiết kế cho nhu cầu làm việc và giải trí linh hoạt. Thân máy màu sắc tinh tế kết hợp bộ nhớ 128 GB, thuận tiện mang theo trong ngày. Dòng 30 ưu tiên thao tác mượt mà với giao diện dễ làm quen.",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Description"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-130\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4800 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-131\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4900 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-132\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5000 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-133\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5100 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-134\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5200 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-135\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4800 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-136\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4900 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-137\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5000 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-138\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5100 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-139\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5200 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-140\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4800 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-141\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4900 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-142\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5000 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-143\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5100 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-144\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5200 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 120 Hz\nChip: VX-145\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4800 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-100\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4800 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-101\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4900 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-102\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5000 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-103\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5100 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-104\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5200 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-105\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4800 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-106\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4900 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-107\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5000 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-108\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5100 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-109\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5200 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-110\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4800 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-111\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4900 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-112\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5000 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-113\nRAM: 6 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5100 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-114\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5200 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-115\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4800 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-116\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4900 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-117\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5000 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-118\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5100 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-119\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5200 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-120\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4800 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-121\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4900 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-122\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5000 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-123\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5100 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-124\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5200 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-125\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4800 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-126\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 4900 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-127\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5000 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-128\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5100 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 6.5 inch, 90 Hz\nChip: VX-129\nRAM: 8 GB\nBộ nhớ: 128/256/512 GB\nCamera: 48 MP\nPin: 5200 mAh\nSạc: 33 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 7.2 inch, gập, 120 Hz\nChip: VX-146\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 4900 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 7.2 inch, gập, 120 Hz\nChip: VX-147\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5000 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 3\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 7.2 inch, gập, 120 Hz\nChip: VX-148\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5100 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 1\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "specifications",
+      "value": "Màn hình: 7.2 inch, gập, 120 Hz\nChip: VX-149\nRAM: 12 GB\nBộ nhớ: 128/256/512 GB\nCamera: 64 MP\nPin: 5200 mAh\nSạc: 67 W\nHệ điều hành: Vela OS 2\nBảo hành: 12 tháng",
+      "classification": "hard",
+      "source": "PhoneStore_Demo_D3_726c59c778/SAN_PHAM.Specifications"
+    },
+    {
+      "kind": "image-pattern",
+      "value": "/images/demo/",
+      "classification": "shared",
+      "source": "checklist"
+    },
+    {
+      "kind": "legacy-phrase",
+      "value": "demo-phone.svg",
+      "classification": "hard",
+      "source": "generators"
+    },
+    {
+      "kind": "legacy-phrase",
+      "value": "Vela OS",
+      "classification": "hard",
+      "source": "generators"
+    },
+    {
+      "kind": "legacy-phrase",
+      "value": "Chip VX-",
+      "classification": "hard",
+      "source": "generators"
+    },
+    {
+      "kind": "legacy-phrase",
+      "value": "Cấu hình minh họa:",
+      "classification": "hard",
+      "source": "generators"
+    },
+    {
+      "kind": "legacy-phrase",
+      "value": "Không phải thông số hãng xác nhận.",
+      "classification": "hard",
+      "source": "generators"
+    },
+    {
+      "kind": "legacy-phrase",
+      "value": "Sản phẩm dùng thử nghiệp vụ, không phải niêm yết thương mại.",
+      "classification": "hard",
+      "source": "generators"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO001",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Apple Mẫu 01 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO001-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO001-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO002",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Samsung Mẫu 02 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO002-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO002-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO003",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Xiaomi Mẫu 03 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO003-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO003-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO004",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Oppo Mẫu 04 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO004-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO004-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO005",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Vivo Mẫu 05 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO005-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO005-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO006",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Realme Mẫu 06 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO006-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO006-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO007",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "OnePlus Mẫu 07 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO007-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO007-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO008",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Nokia Mẫu 08 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO008-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO008-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO009",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Motorola Mẫu 09 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO009-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO009-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO010",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Sony Mẫu 10 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO010-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO010-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO011",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Asus Mẫu 11 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO011-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO011-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO012",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Google Mẫu 12 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO012-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO012-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO013",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Huawei Mẫu 13 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO013-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO013-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO014",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Honor Mẫu 14 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO014-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO014-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO015",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Tecno Mẫu 15 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO015-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO015-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO016",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Infinix Mẫu 16 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO016-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO016-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO017",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Nothing Mẫu 17 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO017-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO017-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO018",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "ZTE Mẫu 18 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO018-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO018-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO019",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Nubia Mẫu 19 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO019-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO019-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO020",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "Meizu Mẫu 20 (DEMO)",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO020-128",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    },
+    {
+      "kind": "legacy-seeder",
+      "value": "DEMO020-256",
+      "classification": "hard",
+      "source": "src/PhoneStore.Infrastructure/Data/DemoSeeder.cs"
+    }
+  ],
+  "trustedDatabase": "PhoneStore_Demo_D3_726c59c778",
+  "exceptions": [
+    "Shared categories and generic storage/color snapshots are intentional.",
+    "/images/demo/ is shared; current real catalog uses rl*.svg.",
+    "Synthetic customers and unbranded suppliers are excluded."
+  ],
+  "counts": {
+    "brand": 10,
+    "category": 6,
+    "model": 50,
+    "code": 50,
+    "sku": 125,
+    "snapshot-name": 50,
+    "snapshot-description": 3,
+    "image": 50,
+    "image-detail": 150,
+    "description": 50,
+    "specifications": 50,
+    "image-pattern": 1,
+    "legacy-phrase": 6,
+    "legacy-seeder": 80
+  },
+  "historicalCommit": "70a80c4630c62031ebed17fdb0d758ea2b4b63dc"
+}

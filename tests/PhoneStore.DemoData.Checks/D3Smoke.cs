@@ -50,6 +50,7 @@ internal static class D3Smoke
         var ownedOrders = await db.Orders.AsNoTracking().Where(x => x.CustomerId == customer.Id).Select(x => new { id=x.Id,code=x.Code }).ToArrayAsync();
         var completed = await db.Orders.AsNoTracking().Where(x => x.Status == "HOAN_TAT").OrderBy(x => x.Id).FirstAsync();
         var expectedQuarter = new List<object>();
+        var historicalInvoices = new List<object>();
         var localStart = new DateTime(today.Year, (today.Month - 1) / 3 * 3 + 1, 1).AddMonths(-24);
         for (var q = 0; q < 9; q++)
         {
@@ -60,7 +61,23 @@ internal static class D3Smoke
             var revenue = await db.Orders.Where(x => x.Status == "HOAN_TAT" && x.CompletedAt >= startUtc && x.CompletedAt < endUtc).SumAsync(x => x.Total);
             Require(revenue > 0, "Quarter revenue must be nonzero.");
             expectedQuarter.Add(new { from=from.ToString("yyyy-MM-dd"), to=to.ToString("yyyy-MM-dd"), revenue });
+            var invoices = await db.Orders.AsNoTracking().Where(x => x.Status == "HOAN_TAT" && x.CompletedAt >= startUtc && x.CompletedAt < endUtc)
+                .OrderBy(x => x.Id).Take(2).Select(x => new { id=x.Id, code=x.Code, total=x.Total }).ToArrayAsync();
+            Require(invoices.Length == 2, "Two historical invoices per quarter required.");
+            foreach (var invoice in invoices)
+            {
+                var line = await db.OrderLines.AsNoTracking().Where(x => x.OrderId == invoice.id).OrderBy(x => x.Id)
+                    .Select(x => new { name=x.Name, sku=x.Sku }).FirstAsync();
+                historicalInvoices.Add(new { invoice.id, invoice.code, invoice.total, line.name, line.sku, quarter=$"{from.Year}-Q{(from.Month-1)/3+1}" });
+            }
         }
+        var customerDates = await db.Orders.AsNoTracking().Where(x => x.CustomerId == customer.Id)
+            .Select(x => new { id=x.Id, code=x.Code, createdAt=x.CreatedAt }).ToArrayAsync();
+        var customerQuarterOrders = customerDates.GroupBy(x => (x.createdAt.AddHours(7).Year, Quarter:(x.createdAt.AddHours(7).Month-1)/3+1))
+            .Select(g => new { g.First().id, g.First().code, quarter=$"{g.Key.Year}-Q{g.Key.Quarter}" }).ToArray();
+        Require(customerQuarterOrders.Length >= 2, "Customer history must span quarters.");
+        var historicalPurchases = await db.Purchases.AsNoTracking().Where(x => x.Status == "DA_XAC_NHAN")
+            .OrderBy(x => x.CreatedAt).Take(4).Select(x => new { id=x.Id, code=x.Code, total=x.Total }).ToArrayAsync();
         var pending = await db.Orders.CountAsync(x => x.Status == "CHO_XAC_NHAN");
         var shipping = await db.Orders.CountAsync(x => x.Status == "DANG_GIAO");
         var returns = await db.Orders.CountAsync(x => x.Status == "GIAO_THAT_BAI" && !db.Movements.Any(m => m.OrderId == x.Id && m.Kind == "NHAN_LAI"));
@@ -75,6 +92,7 @@ internal static class D3Smoke
         var url = $"http://127.0.0.1:{port}";
         var context = new { url, database=target.InitialCatalog, today=today.ToString("yyyy-MM-dd"), products, customerUsername=customer.Username, customerOrders, ownedOrders,
             completedOrder=new { id=completed.Id, code=completed.Code, total=completed.Total }, quarters=expectedQuarter,
+            historicalInvoices, customerQuarterOrders, historicalPurchases,
             expected=new { activeProducts=products.Length, orders=601, stockVariants=125, pending, shipping, returns, periodRevenue, weekRevenue, weekOrders, todayRevenue, lowThreshold=5, lowCount=low, outCount=outs },
             thresholds=new { httpMilliseconds=2000, browserMilliseconds=5000, nativeMilliseconds=5000 } };
         var contextPath = Path.Combine(output, "context.json"); await Save(contextPath, context);
@@ -151,7 +169,7 @@ internal static class D3Smoke
             {
                 using var child=Process.Start(info)??throw new InvalidOperationException("Child launch failed.");
                 var stdout=child.StandardOutput.ReadToEndAsync();var stderr=child.StandardError.ReadToEndAsync();
-                try { await child.WaitForExitAsync().WaitAsync(TimeSpan.FromMinutes(5)); }
+                try { await child.WaitForExitAsync().WaitAsync(TimeSpan.FromMinutes(label == "winforms" ? 12 : 5)); }
                 finally { if(!child.HasExited){child.Kill(true);await child.WaitForExitAsync();} }
                 var text=await stdout;var error=await stderr;CheckSecrets(text+error,secrets);
                 await File.WriteAllTextAsync(Path.Combine(output,label+"-trace.txt"),text+error);

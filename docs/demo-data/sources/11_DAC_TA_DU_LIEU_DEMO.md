@@ -1,3 +1,5 @@
+ > **Phương án hiệu lực từ2026-11-04:** người dùng đã đổi sang sản phẩm/ảnh thật. Các phần mô tả phương án hư cấu bên dưới là lịch sử. DATA.CATALOG.01–03 được cập nhật theo quyết định này; ngoại lệ runtime seeder cũ và điều kiện đóng sổ ở [RELEASE_CLOSEOUT.md](../RELEASE_CLOSEOUT.md).
+
 # Đặc tả dữ liệu demo đầy đủ (khoảng 2 năm bán hàng)
 
 Tài liệu này mô tả bộ dữ liệu demo giống một cửa hàng điện thoại đã hoạt động 1–2 năm: nhiều sản phẩm có ảnh và mô tả, khách hàng, nhập hàng, đơn hàng với số lượng bán khác nhau theo từng quý. Đi kèm là checklist `DATA.*` để nghiệm thu.
@@ -130,9 +132,9 @@ Số dòng từng bảng xem mục 2; kế hoạch theo quý xem mục 3.
 
 ### C. Danh mục sản phẩm, ảnh, mô tả (DATA.CATALOG)
 
-- [ ] [P0] DATA.CATALOG.01 — 50 sản phẩm, 10 hãng, 6 danh mục, khoảng 125 biến thể; mã sản phẩm và SKU duy nhất; tên hãng/model nhất quán với lựa chọn đã chốt (hư cấu hoặc thật).
-- [ ] [P0] DATA.CATALOG.02 — Mỗi sản phẩm có `ImageUrl` hợp lệ (`https://` hoặc `/images/...`) và ít nhất 2 ảnh trong `SAN_PHAM_ANH` có `SortOrder`. Mọi tệp `/images/demo/...` phản hồi HTTP 200 từ website. Không dùng logo hay ảnh thương hiệu thật.
-- [ ] [P0] DATA.CATALOG.03 — Mỗi sản phẩm có `Description` tiếng Việt (2–4 câu) và `Specifications` nhiều dòng; không rỗng, không trùng nguyên văn giữa các sản phẩm, nằm trong giới hạn độ dài cột.
+- [ ] [P0] DATA.CATALOG.01 — 50 sản phẩm, 10 hãng, 6 danh mục, khoảng 125 biến thể; mã sản phẩm và SKU duy nhất; tên hãng/model thật nhất quán với nguồn đã ghi; dữ liệu cá nhân/đơn hàng vẫn minh họa.
+- [ ] [P0] DATA.CATALOG.02 — Mỗi sản phẩm có `ImageUrl` hợp lệ (`https://` hoặc `/images/...`) và ít nhất 2 ảnh trong `SAN_PHAM_ANH` có `SortOrder`. Mọi tệp `/images/demo/...` phản hồi HTTP 200 từ website. Dùng ảnh chụp/ảnh sản phẩm thật; mỗi ảnh có nguồn, tác giả, giấy phép/điều khoản phù hợp và ghi công. Không dùng nhãn hãng thay cho ảnh thiết bị.
+- [ ] [P0] DATA.CATALOG.03 — Mỗi sản phẩm có `Description` tiếng Việt (2–4 câu) và `Specifications` nhiều dòng; không rỗng, không trùng nguyên văn giữa các sản phẩm, nằm trong giới hạn độ dài cột; viết lại từ thông số thật có nguồn.
 - [ ] [P0] DATA.CATALOG.04 — Mọi biến thể thỏa `Price = Round(Cost × (1 + ProfitPercent/100), 2, AwayFromZero)`, `Cost > 0`, `ProfitPercent` trong 0–10.000.
 - [ ] [P1] DATA.CATALOG.05 — Phân bổ phân khúc: giá rẻ 14, tầm trung 16, cao cấp 12, gaming 4, màn hình gập 4; khoảng giá hợp lý theo phân khúc.
 - [ ] [P1] DATA.CATALOG.06 — Có vòng đời sản phẩm: khoảng 24 sản phẩm có từ đầu, phần còn lại ra mắt dần; 4 sản phẩm ngừng kinh doanh nhưng giữ lịch sử; model cũ giảm giá vốn theo thời gian.

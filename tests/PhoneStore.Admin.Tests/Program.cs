@@ -34,6 +34,7 @@ internal static partial class Program
     private static string FindRoot() { var root = new DirectoryInfo(AppContext.BaseDirectory); while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent; return root?.FullName ?? throw new InvalidOperationException("Root missing"); }
     private static async Task Run(string[] args)
     {
+        if (args.Contains("--demo-closeout-sta")) { await DemoCloseoutSta(); return; }
         if (args.Contains("--dpi-closeout")) { await DpiCloseoutChecks(); return; }
         if (args.Contains("--real-api")) { await RealApi(); return; }
         if (args.Contains("--real-catalog")) { await RealCatalog(); return; }
