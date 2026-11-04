@@ -3,7 +3,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
-public sealed class PurchaseListForm:Form
+public sealed class PurchaseListForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly SupplyWorkspace workspace;private int page=1,total;private bool busy;
     public TextBox QueryBox { get; }=AdminTheme.Input("Tìm mã phiếu hoặc tên NCC");
@@ -16,10 +16,10 @@ public sealed class PurchaseListForm:Form
         this.api=api;workspace=new(api);AdminTheme.Frame(this,"Nhập hàng");QueryBox.Dock=DockStyle.None;QueryBox.Width=300;QueryBox.MaxLength=100;QueryBox.PlaceholderText="Mã phiếu hoặc tên NCC";StateBox.Items.AddRange(["Tất cả trạng thái","Nháp","Đã xác nhận","Đã hủy"]);StateBox.SelectedIndex=0;Grid.ReadOnly=true;
         foreach(var(p,t)in new[]{("Code","Mã phiếu"),("Supplier","Nhà cung cấp"),("Status","Trạng thái"),("CreatedAt","Ngày lập UTC+7"),("Total","Tổng tiền")})CatalogUi.Column(Grid,p,t,true,p=="Supplier"?260:180);
         CatalogUi.Layout(this,"Nhập hàng",CatalogUi.Toolbar(QueryBox,StateBox,SearchButton,NewButton,OpenButton),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
-        SearchButton.Click+=async(_,_)=>{page=1;await LoadAsync();};NewButton.Click+=async(_,_)=>{using var f=new PurchaseEditor(api);f.ShowDialog(this);await LoadAsync();};OpenButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is PurchaseRecord p){using var f=new PurchaseEditor(api,p.Id);f.ShowDialog(this);await LoadAsync();}};
-        Grid.SelectionChanged+=(_,_)=>Actions();PreviousButton.Click+=async(_,_)=>{if(page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(page*20<total){page++;await LoadAsync();}};Shown+=async(_,_)=>await LoadAsync();AcceptButton=SearchButton;
+        SearchButton.Click+=async(_,_)=>{page=1;await LoadAsync();};NewButton.Click+=async(_,_)=>{using var f=new PurchaseEditor(api);f.ShowDialog(PageNavigation.Owner(this));await LoadAsync();};OpenButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is PurchaseRecord p){using var f=new PurchaseEditor(api,p.Id);f.ShowDialog(PageNavigation.Owner(this));await LoadAsync();}};
+        Grid.SelectionChanged+=(_,_)=>Actions();PreviousButton.Click+=async(_,_)=>{if(page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(page*20<total){page++;await LoadAsync();}};ConfigurePageLoad(LoadAsync,()=>busy);AcceptButton=SearchButton;
     }
-    private void Actions(){OpenButton.Enabled=!busy&&Grid.CurrentRow?.Tag is PurchaseRecord;SearchButton.Enabled=NewButton.Enabled=QueryBox.Enabled=StateBox.Enabled=Grid.Enabled=!busy;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
+    private void Actions(){PageNavigation.StateChanged(this);OpenButton.Enabled=!busy&&Grid.CurrentRow?.Tag is PurchaseRecord;SearchButton.Enabled=NewButton.Enabled=QueryBox.Enabled=StateBox.Enabled=Grid.Enabled=!busy;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải phiếu…";
@@ -48,8 +48,8 @@ public sealed class PurchaseEditor:Form
         var tabs=new TabControl{Dock=DockStyle.Fill};var detail=new TabPage("Dòng nhập");var impact=new TabPage("Tồn và giá từ máy chủ");tabs.TabPages.AddRange([detail,impact]);detail.Controls.Add(LinesGrid);impact.Controls.Add(ImpactGrid);
         var top=new TableLayoutPanel{AutoSize=true,Dock=DockStyle.Fill,ColumnCount=1};top.Controls.Add(AdminTheme.Label("Phiếu nhập hàng",22,true));top.Controls.Add(AdminTheme.Label("Nhà cung cấp đang hoạt động *"));top.Controls.Add(SupplierBox);top.Controls.Add(SummaryLabel);top.Controls.Add(ConfirmHintLabel);
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=5,Padding=new Padding(20)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(top,0,0);root.Controls.Add(CatalogUi.Toolbar(AddButton,RemoveButton),0,1);root.Controls.Add(tabs,0,2);root.Controls.Add(MessageLabel,0,3);root.Controls.Add(CatalogUi.Toolbar(SaveButton,ConfirmButton,CancelDraftButton,ReloadButton),0,4);Controls.Add(root);
-        SupplierBox.SelectedIndexChanged+=(_,_)=>Actions();LinesGrid.CellValueChanged+=(_,_)=>Actions();LinesGrid.RowsRemoved+=(_,_)=>Actions();
-        AddButton.Click+=(_,_)=>{using var picker=new SupplyVariantPicker(api);if(picker.ShowDialog(this)==DialogResult.OK&&picker.Selected is {} choice){if(Lines.Any(l=>l.VariantId==choice.VariantId)){MessageLabel.Text="Biến thể đã có trong phiếu. Hãy sửa lượng trên dòng đó.";return;}Lines.Add(new(){VariantId=choice.VariantId,Sku=choice.Sku,Name=choice.Name,Cost=choice.Cost});Actions();}};
+        UnsavedChanges.Attach(this,()=>System.Text.Json.JsonSerializer.Serialize(new{Supplier=SupplierId,Lines=Input()}),()=>busy,SaveAsync);SupplierBox.SelectedIndexChanged+=(_,_)=>Actions();LinesGrid.CellValueChanged+=(_,_)=>Actions();LinesGrid.RowsRemoved+=(_,_)=>Actions();
+        AddButton.Click+=(_,_)=>{using var picker=new SupplyVariantPicker(api);if(picker.ShowDialog(PageNavigation.Owner(this))==DialogResult.OK&&picker.Selected is {} choice){if(Lines.Any(l=>l.VariantId==choice.VariantId)){MessageLabel.Text="Biến thể đã có trong phiếu. Hãy sửa lượng trên dòng đó.";return;}Lines.Add(new(){VariantId=choice.VariantId,Sku=choice.Sku,Name=choice.Name,Cost=choice.Cost});Actions();}};
         RemoveButton.Click+=(_,_)=>{if(LinesGrid.CurrentRow?.DataBoundItem is PurchaseLineDraft line){Lines.Remove(line);Actions();}};
         SaveButton.Click+=async(_,_)=>await SaveAsync();ConfirmButton.Click+=async(_,_)=>await ActAsync("confirm");CancelDraftButton.Click+=async(_,_)=>await ActAsync("cancel");ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();Actions();
     }
@@ -67,7 +67,7 @@ public sealed class PurchaseEditor:Form
         binding=true;session.Adopt(read);Lines=new(read.Purchase.Lines.Select(l=>new PurchaseLineDraft{VariantId=l.VariantId,Sku=l.Sku,Name=l.Name,Quantity=l.Quantity,Cost=l.Cost}).ToList());LinesGrid.DataSource=Lines;
         SupplierBox.DataSource=suppliers;SupplierBox.SelectedItem=suppliers.SingleOrDefault(s=>s.Id==read.Purchase.SupplierId);
         SummaryLabel.Text=$"{read.Purchase.Code} · {SupplyPresentation.State(read.Purchase.Status)} · {AdminFormatting.Time(read.Purchase.CreatedAt)}\nNgười lập: {(api.Identity?.Id==read.Purchase.CreatorId?api.Identity.Username:$"Tài khoản #{read.Purchase.CreatorId}")} · Tổng tiền: {AdminFormatting.Money(read.Purchase.Total)} · NCC: {read.Purchase.Supplier}";
-        ImpactGrid.Rows.Clear();foreach(var row in read.CurrentStock)ImpactGrid.Rows.Add(row.Stock.Sku,row.Cost,row.Price,row.Stock.OnHand,row.Stock.Reserved,row.Stock.Available);binding=false;loaded=true;
+        ImpactGrid.Rows.Clear();foreach(var row in read.CurrentStock)ImpactGrid.Rows.Add(row.Stock.Sku,row.Cost,row.Price,row.Stock.OnHand,row.Stock.Reserved,row.Stock.Available);binding=false;loaded=true;UnsavedChanges.MarkClean(this);
     }
     public async Task LoadAsync()
     {
@@ -79,7 +79,7 @@ public sealed class PurchaseEditor:Form
             if(operation is not null){var read=await workspace.Resolve(operation);Bind(read);MessageLabel.Text=operation.Finished?"Đã đối soát trạng thái phiếu từ máy chủ.":"Phiếu chưa thay đổi. Có thể thử lại cùng thao tác đã xác nhận.";}
             else if(session.Id>0){Bind(await session.Load());MessageLabel.Text=SupplierId==0&&SupplyPresentation.Draft(Current)?"NCC của phiếu đã ngừng. Chọn NCC hoạt động và lưu nháp, hoặc hủy phiếu.":"Đã tải dữ liệu từ máy chủ.";}
             else if(session.PendingCreation is not null){Bind(await session.ResolveCreation());MessageLabel.Text="Đã đối soát tạo phiếu bằng cùng yêu cầu ban đầu.";}
-            else{binding=true;SupplierBox.DataSource=suppliers;if(handoff is not null&&!loaded){Lines=new(await workspace.FromProduct(handoff));LinesGrid.DataSource=Lines;}binding=false;loaded=true;MessageLabel.Text="Các dòng mới chưa được lưu. Lưu nháp để có tổng tiền từ máy chủ; có thể lưu nháp rỗng.";}
+            else{binding=true;SupplierBox.DataSource=suppliers;if(handoff is not null&&!loaded){Lines=new(await workspace.FromProduct(handoff));LinesGrid.DataSource=Lines;}binding=false;loaded=true;if(handoff is null)UnsavedChanges.MarkClean(this);MessageLabel.Text="Các dòng mới chưa được lưu. Lưu nháp để có tổng tiền từ máy chủ; có thể lưu nháp rỗng.";}
         }
         catch(Exception error){binding=false;MessageLabel.Text=SupplyPresentation.Failure(error);}finally{busy=false;Actions();}
     }

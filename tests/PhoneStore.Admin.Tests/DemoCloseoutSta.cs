@@ -30,19 +30,19 @@ internal static partial class Program
             {
                 form.Controls.Add(dashboard);form.Show();dashboard.ThresholdBox.Value=5;await dashboard.LoadAsync();
                 Assert(dashboard.MetricLabels["period"].Text.Contains(AdminFormatting.Money(c.GetProperty("expected").GetProperty("periodRevenue").GetDecimal())),"Dashboard revenue differs from SQL context");
-                Assert(dashboard.Chart.Points.Count==7,"Dashboard chart missing");await Observe(form,"sta-dashboard");form.Close();
+                Assert(dashboard.Chart.Points.Count==7,"Dashboard chart missing");await Observe(form,"sta-dashboard");UnsavedChanges.DiscardAndClose(form);
             }
             stage="orders";
             using(var form=new OrderListForm(api))
             {
                 var timer=Stopwatch.StartNew();form.Show();await Loaded(()=>form.Grid.Rows.Count>0);Assert(form.MessageLabel.Text.Contains("601 đơn"),"Full order count differs");
-                timings.Add(new{screen=stage,milliseconds=timer.ElapsedMilliseconds});await Observe(form,"sta-orders-page1");form.NextButton.PerformClick();await Loaded(()=>form.MessageLabel.Text.Contains("Trang 2"));await Observe(form,"sta-orders-page2");form.Close();
+                timings.Add(new{screen=stage,milliseconds=timer.ElapsedMilliseconds});await Observe(form,"sta-orders-page1");form.NextButton.PerformClick();await Loaded(()=>form.MessageLabel.Text.Contains("Trang 2"));await Observe(form,"sta-orders-page2");UnsavedChanges.DiscardAndClose(form);
             }
             stage="old-order-details";
             foreach(var old in c.GetProperty("historicalInvoices").EnumerateArray())
             {
                 using var form=new OrderDetailForm(api,old.GetProperty("id").GetInt64());form.Show();await Loaded(()=>form.Current is not null);
-                Assert(form.Current!.Code==old.GetProperty("code").GetString()&&form.HistoryGrid.Rows.Count>0,"Old detail/history differs");RealNames(form.Current.Lines.Select(x=>x.Name));await Observe(form,"sta-old-order-"+old.GetProperty("id").GetInt64());form.Close();
+                Assert(form.Current!.Code==old.GetProperty("code").GetString()&&form.HistoryGrid.Rows.Count>0,"Old detail/history differs");RealNames(form.Current.Lines.Select(x=>x.Name));await Observe(form,"sta-old-order-"+old.GetProperty("id").GetInt64());UnsavedChanges.DiscardAndClose(form);
             }
             stage="invoices";var previewed=false;
             foreach(var old in c.GetProperty("historicalInvoices").EnumerateArray())
@@ -52,21 +52,21 @@ internal static partial class Program
                 if(!previewed)
                 {
                     using var timer=new System.Windows.Forms.Timer{Interval=200};Exception? previewError=null;
-                    timer.Tick+=async(_,_)=>{var preview=Application.OpenForms.OfType<PrintPreviewDialog>().FirstOrDefault();if(preview is null)return;timer.Stop();try{await Observe(preview,"sta-invoice-print-preview");previewed=true;}catch(Exception e){previewError=e;}finally{preview.Close();}};
+                    timer.Tick+=async(_,_)=>{var preview=Application.OpenForms.OfType<PrintPreviewDialog>().FirstOrDefault();if(preview is null)return;timer.Stop();try{await Observe(preview,"sta-invoice-print-preview");previewed=true;}catch(Exception e){previewError=e;}finally{UnsavedChanges.DiscardAndClose(preview);}};
                     timer.Start();form.PreviewButton.PerformClick();timer.Stop();if(previewError is not null)throw previewError;Assert(previewed,"Actual PrintPreview unavailable");
                 }
-                form.Close();
+                UnsavedChanges.DiscardAndClose(form);
             }
             stage="old-purchases";
             foreach(var old in c.GetProperty("historicalPurchases").EnumerateArray())
             {
                 using var form=new PurchaseEditor(api,old.GetProperty("id").GetInt64());form.Show();await Loaded(()=>form.Current is not null);
-                Assert(form.Current!.Total==old.GetProperty("total").GetDecimal()&&form.LinesGrid.Rows.Count>0,"Old receipt differs");RealNames(form.Current.Lines.Select(x=>x.Name));await Observe(form,"sta-purchase-"+old.GetProperty("id").GetInt64());form.Close();
+                Assert(form.Current!.Total==old.GetProperty("total").GetDecimal()&&form.LinesGrid.Rows.Count>0,"Old receipt differs");RealNames(form.Current.Lines.Select(x=>x.Name));await Observe(form,"sta-purchase-"+old.GetProperty("id").GetInt64());UnsavedChanges.DiscardAndClose(form);
             }
             stage="stock";
             using(var form=new StockListForm(api,5,initialLow:true))
             {
-                form.Show();await Loaded(()=>form.Grid.Rows.Count>0);Assert(form.Grid.Rows.Cast<DataGridViewRow>().Any(r=>r.Tag is StockRecord s&&s.OnHand==0),"Out-of-stock row missing");await Observe(form,"sta-stock-low-and-zero");form.Close();
+                form.Show();await Loaded(()=>form.Grid.Rows.Count>0);Assert(form.Grid.Rows.Cast<DataGridViewRow>().Any(r=>r.Tag is StockRecord s&&s.OnHand==0),"Out-of-stock row missing");await Observe(form,"sta-stock-low-and-zero");UnsavedChanges.DiscardAndClose(form);
             }
             stage="quarter-reports";
             using(var form=new ReportScreen(api))
@@ -82,7 +82,7 @@ internal static partial class Program
                     Assert(form.SummaryLabel.Text.Contains(AdminFormatting.Money(form.Current!.Revenue))&&form.Grid.Rows.Count>0,"Quarter not rendered");timings.Add(new{screen=stage,quarter=index,milliseconds=timer.ElapsedMilliseconds});await Observe(form,"sta-quarter-"+index++);
                 }
                 form.KindBox.SelectedIndex=1;await form.LoadAsync();Assert(form.Current!.Bestsellers.Count>0,"Bestsellers empty");RealNames(form.Current.Bestsellers.Select(x=>x.Name));await Observe(form,"sta-bestsellers");
-                form.KindBox.SelectedIndex=2;await form.LoadAsync();Assert(form.Current!.Stock.Count==125,"Stock report count differs");RealNames(form.Current.Stock.Select(x=>x.Name));await Observe(form,"sta-stock-report");form.Close();
+                form.KindBox.SelectedIndex=2;await form.LoadAsync();Assert(form.Current!.Stock.Count==125,"Stock report count differs");RealNames(form.Current.Stock.Select(x=>x.Name));await Observe(form,"sta-stock-report");UnsavedChanges.DiscardAndClose(form);
             }
             success=true;Console.WriteLine("PASS one STA demo acceptance attempt: real API, programmatic dates, SQL-matched quarters and historical forms");
         }

@@ -2,7 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
-public sealed class ProductListForm : Form
+public sealed class ProductListForm:NavigationPageForm
 {
     private readonly IAdminApi api;
     private readonly CatalogWorkspace workspace;
@@ -30,10 +30,10 @@ public sealed class ProductListForm : Form
         var footer=CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel);
         CatalogUi.Layout(this,"Điện thoại",CatalogUi.Toolbar(QueryBox,BrandBox,StateBox,SearchButton,NewButton,DetailsButton,EditButton,StateButton),Grid,footer);
         SearchButton.Click+=async(_,_)=>{page=1;await LoadAsync();};PreviousButton.Click+=async(_,_)=>{if(page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(page*20<total){page++;await LoadAsync();}};
-        NewButton.Click+=async(_,_)=>{using var editor=new ProductEditor(api);editor.ShowDialog(this);await LoadAsync();};
-        EditButton.Click+=async(_,_)=>{if(Selected is {} p){using var editor=new ProductEditor(api,p.Id);editor.ShowDialog(this);await LoadAsync();}};
-        DetailsButton.Click+=(_,_)=>{if(Selected is {} p){using var detail=new ProductDetailsForm(api,p.Id);detail.ShowDialog(this);}};
-        StateButton.Click+=async(_,_)=>await ChangeStateAsync();Grid.SelectionChanged+=(_,_)=>UpdateActions();Shown+=async(_,_)=>await LoadAsync();AcceptButton=SearchButton;
+        NewButton.Click+=async(_,_)=>{using var editor=new ProductEditor(api);editor.ShowDialog(PageNavigation.Owner(this));await LoadAsync();};
+        EditButton.Click+=async(_,_)=>{if(Selected is {} p){using var editor=new ProductEditor(api,p.Id);editor.ShowDialog(PageNavigation.Owner(this));await LoadAsync();}};
+        DetailsButton.Click+=async(_,_)=>{if(Selected is {} p)await PageNavigation.OpenAsync(this,new ProductDetailsForm(api,p.Id));};
+        StateButton.Click+=async(_,_)=>await ChangeStateAsync();Grid.SelectionChanged+=(_,_)=>UpdateActions();ConfigurePageLoad(LoadAsync,()=>busy);AcceptButton=SearchButton;
     }
     public ProductRecord? Selected=>Grid.CurrentRow?.Tag as ProductRecord;
     public async Task LoadAsync()
@@ -65,11 +65,11 @@ public sealed class ProductListForm : Form
         finally{SetBusy(false);}
         await LoadAsync();
     }
-    private void UpdateActions(){DetailsButton.Enabled=EditButton.Enabled=StateButton.Enabled=!busy&&Selected is not null;}
-    private void SetBusy(bool value){busy=value;SearchButton.Enabled=NewButton.Enabled=Grid.Enabled=QueryBox.Enabled=BrandBox.Enabled=StateBox.Enabled=!value;PreviousButton.Enabled=!value&&page>1;NextButton.Enabled=!value&&page*20<total;UpdateActions();if(value)MessageLabel.Text="Đang tải…";}
+    private void UpdateActions(){PageNavigation.StateChanged(this);DetailsButton.Enabled=EditButton.Enabled=StateButton.Enabled=!busy&&Selected is not null;}
+    private void SetBusy(bool value){busy=value;PageNavigation.StateChanged(this);SearchButton.Enabled=NewButton.Enabled=Grid.Enabled=QueryBox.Enabled=BrandBox.Enabled=StateBox.Enabled=!value;PreviousButton.Enabled=!value&&page>1;NextButton.Enabled=!value&&page*20<total;UpdateActions();if(value)MessageLabel.Text="Đang tải…";}
 }
 
-public sealed class ProductDetailsForm : Form
+public sealed class ProductDetailsForm:NavigationPageForm
 {
     private readonly CatalogWorkspace workspace;
     private readonly long id;
@@ -81,8 +81,8 @@ public sealed class ProductDetailsForm : Form
         workspace=new(api);this.id=id;AdminTheme.Frame(this,"Chi tiết điện thoại");Grid.ReadOnly=true;
         foreach(var (property,title) in new[]{("Sku","SKU"),("Color","Màu"),("StorageGb","GB"),("Cost","Giá vốn (đ)"),("ProfitPercent","Lợi nhuận %"),("Price","Giá bán (đ)"),("OnHand","Tồn thực"),("Reserved","Đang giữ"),("Available","Có thể bán"),("Version","Version")})CatalogUi.Column(Grid,property,title,true);
         Grid.Columns["Available"]!.MinimumWidth=150;
-        var split=new SplitContainer{Dock=DockStyle.Fill,Orientation=Orientation.Horizontal,SplitterDistance=190};split.Panel1.Controls.Add(DetailsBox);split.Panel2.Controls.Add(Grid);
-        var root=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=3,ColumnCount=1,Padding=new Padding(20)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label("Chi tiết điện thoại",22,true),0,0);root.Controls.Add(split,0,1);root.Controls.Add(MessageLabel,0,2);Controls.Add(root);Shown+=async(_,_)=>await LoadAsync();
+        var split=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=2};split.RowStyles.Add(new RowStyle(SizeType.Percent,35));split.RowStyles.Add(new RowStyle(SizeType.Percent,65));split.Controls.Add(DetailsBox,0,0);split.Controls.Add(Grid,0,1);
+        var root=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=3,ColumnCount=1,Padding=new Padding(20)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label("Chi tiết điện thoại",22,true),0,0);root.Controls.Add(split,0,1);root.Controls.Add(MessageLabel,0,2);Controls.Add(root);ConfigurePageLoad(LoadAsync);
     }
     public async Task LoadAsync()
     {

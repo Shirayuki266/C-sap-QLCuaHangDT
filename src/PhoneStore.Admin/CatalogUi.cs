@@ -28,5 +28,5 @@ internal static class CatalogUi
         layout.Controls.Add(AdminTheme.Label(title,22,true),0,0);layout.Controls.Add(toolbar,0,1);layout.Controls.Add(grid,0,2);layout.Controls.Add(footer,0,3);form.Controls.Add(layout);return layout;
     }
     public static bool Confirm(IWin32Window owner,string title,string description)
-    {using var dialog=new ConfirmationDialog(title,description);return dialog.ShowDialog(owner)==DialogResult.OK;}
+    {using var dialog=new ConfirmationDialog(title,description);return dialog.ShowDialog(owner is Control control?PageNavigation.Owner(control):owner)==DialogResult.OK;}
 }

@@ -1,5 +1,11 @@
 # WinForms Admin handover
 
+## Điều hướng N1
+
+See [navigation design, NAV ledger and reproducible evidence](WINFORMS_NAVIGATION.md). Admin now hosts list/detail/report/invoice/journal forms inside one MainForm. Back/Forward and clickable breadcrumbs retain local filters, page, selection and scroll but reload authoritative data on reactivation. Overview clears both directions of history; capacity is30 and removed pages are disposed. Editors, confirmations, pickers and PrintPreview remain modal. Dirty editors and inline lookup edits have Save/Discard/Stay protection; an order reason without a selected command has Discard/Stay. Expiry discards the old history, closes dialogs without replaying a write, and starts a fresh overview after login.
+
+The pure history source stays in PhoneStore.Admin and is linked into Admin.Client.Checks for Ubuntu; PhoneStore.Admin.Client/API/backend are unchanged. The prior113 WIN IDs are retained. Updated STA harness teardown explicitly discards fixture edits; navigation integration tests assert hosted pages instead of assuming ShowDialog blocks. Native DPI150 remains an event simulation, not physical-monitor certification. Release walkthrough uses page descendants and Back/Home while retaining SQL checkpoints. The final NAV ledger and exact-head CI record govern acceptance; only propose `admin-v1.1`, do not create it.
+
 W1–W6 deliver A01–A22 through the existing HTTP API. [API_COMPATIBILITY](API_COMPATIBILITY.md) is authoritative; the proposed contract does not rename the server routes. Backend, schema, migrations, administrative endpoints, customer MVC and the previous regression runner are unchanged. W6 is issue112, branch `feature/112-admin-reporting-handover`, based on W5 merge `f6d80c7d91d99bef06bbe0c9a2c44bc717a5fbc4`. No merge, release or tag is authorized here.
 
 ## Run

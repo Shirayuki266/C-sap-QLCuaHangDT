@@ -21,7 +21,7 @@ public sealed class CustomerProfileEditor:Form
         this.api=api;workspace=new(api);id=customerId;AdminTheme.Frame(this,"Sửa hồ sơ khách hàng");FullNameBox.MaxLength=120;PhoneBox.MaxLength=20;EmailBox.MaxLength=254;AddressBox.MaxLength=500;AddressBox.Multiline=true;AddressBox.Height=100;
         var body=AdminTheme.Stack(24);body.Dock=DockStyle.Top;AdminTheme.Add(body,AdminTheme.Label("Sửa hồ sơ khách hàng",22,true));
         AdminTheme.Field(body,"Họ tên *",FullNameBox);AdminTheme.Field(body,"Điện thoại *",PhoneBox);AdminTheme.Field(body,"Email · tùy chọn",EmailBox);AdminTheme.Field(body,"Địa chỉ",AddressBox);AdminTheme.Add(body,MessageLabel);AdminTheme.Add(body,CatalogUi.Toolbar(SaveButton,ReloadButton));Controls.Add(body);
-        SaveButton.Enabled=false;SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
+        UnsavedChanges.Attach(this,()=>System.Text.Json.JsonSerializer.Serialize(Input()),()=>busy,SaveAsync);SaveButton.Enabled=false;SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
     }
     public CustomerProfileRequest Input()=>new(FullNameBox.Text,PhoneBox.Text,string.IsNullOrWhiteSpace(EmailBox.Text)?null:EmailBox.Text,AddressBox.Text);
     public async Task LoadAsync()
@@ -30,17 +30,17 @@ public sealed class CustomerProfileEditor:Form
         try{var row=api.NeedsReconciliation?await workspace.ReconcileCustomer(id):await workspace.Customer(id);Bind(row);MessageLabel.Text="Đã tải hồ sơ. Chỉ sửa bốn trường thông tin liên hệ.";}
         catch(Exception error){MessageLabel.Text=AdminTheme.Failure(error);}finally{SetBusy(false);}
     }
-    private void Bind(CustomerRecord row){Saved=row;loaded=true;FullNameBox.Text=row.FullName;PhoneBox.Text=row.Phone;EmailBox.Text=row.Email??"";AddressBox.Text=row.Address;}
+    private void Bind(CustomerRecord row){Saved=row;loaded=true;FullNameBox.Text=row.FullName;PhoneBox.Text=row.Phone;EmailBox.Text=row.Email??"";AddressBox.Text=row.Address;UnsavedChanges.MarkClean(this);}
     public async Task SaveAsync()
     {
         if(busy||!loaded)return;var request=Input();var error=ContactForms.ProfileError(request);if(error is not null){MessageLabel.Text=error;return;}SetBusy(true);
         try{Bind(await workspace.SaveProfile(id,request));MessageLabel.Text="Đã lưu hồ sơ. Thông tin người nhận ở đơn cũ được giữ nguyên.";}
         catch(Exception failure){MessageLabel.Text=AdminTheme.Failure(failure);}finally{SetBusy(false);}
     }
-    private void SetBusy(bool value){busy=value;SaveButton.Enabled=!value&&loaded;ReloadButton.Enabled=FullNameBox.Enabled=PhoneBox.Enabled=EmailBox.Enabled=AddressBox.Enabled=!value;if(value)MessageLabel.Text="Đang xử lý…";}
+    private void SetBusy(bool value){busy=value;PageNavigation.StateChanged(this);SaveButton.Enabled=!value&&loaded;ReloadButton.Enabled=FullNameBox.Enabled=PhoneBox.Enabled=EmailBox.Enabled=AddressBox.Enabled=!value;if(value)MessageLabel.Text="Đang xử lý…";}
 }
 
-public sealed class CustomerDetailsForm:Form
+public sealed class CustomerDetailsForm:NavigationPageForm
 {
     private readonly IAdminApi api;
     private readonly ContactsWorkspace workspace;
@@ -59,12 +59,12 @@ public sealed class CustomerDetailsForm:Form
         this.api=api;workspace=new(api);id=customerId;confirm=confirmation??((t,m)=>CatalogUi.Confirm(this,t,m));AdminTheme.Frame(this,"Chi tiết khách hàng");
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=4,Padding=new Padding(24)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         root.Controls.Add(AdminTheme.Label("Chi tiết khách hàng",22,true),0,0);root.Controls.Add(DetailsBox,0,1);root.Controls.Add(MessageLabel,0,2);root.Controls.Add(CatalogUi.Toolbar(EditButton,StateButton,OrdersButton,ReloadButton),0,3);Controls.Add(root);Actions();
-        Shown+=async(_,_)=>await LoadAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();StateButton.Click+=async(_,_)=>await ChangeStateAsync();
-        EditButton.Click+=async(_,_)=>{if(Current is not null){using var form=new CustomerProfileEditor(api,id);form.ShowDialog(this);await LoadAsync();}};
-        OrdersButton.Click+=(_,_)=>{if(Current is not null){using var form=new CustomerOrdersForm(api,id);form.OrderRequested+=async handoff=>{using var detail=new OrderDetailForm(api,handoff.OrderId);detail.ShowDialog(form);await form.LoadAsync();};form.ShowDialog(this);}};
+        ConfigurePageLoad(LoadAsync,()=>busy);ReloadButton.Click+=async(_,_)=>await LoadAsync();StateButton.Click+=async(_,_)=>await ChangeStateAsync();
+        EditButton.Click+=async(_,_)=>{if(Current is not null){using var form=new CustomerProfileEditor(api,id);form.ShowDialog(PageNavigation.Owner(this));await LoadAsync();}};
+        OrdersButton.Click+=async(_,_)=>{if(Current is not null){var form=new CustomerOrdersForm(api,id);form.OrderRequested+=async handoff=>{await PageNavigation.OpenAsync(form,new OrderDetailForm(api,handoff.OrderId));if(form.TopLevel&&!form.IsDisposed)await form.LoadAsync();};await PageNavigation.OpenAsync(this,form);}};
     }
-    private void Bind(CustomerRecord row){Current=row;StateButton.Text=row.Active?"Khóa khách":"Mở khách";DetailsBox.Text=$"Tài khoản: {row.Username}\r\nHọ tên: {row.FullName}\r\nĐiện thoại: {row.Phone}\r\nEmail: {row.Email}\r\nĐịa chỉ: {row.Address}\r\nTrạng thái: {(row.Active?"Đang hoạt động":"Đã khóa")}\r\nNgày tạo: {AdminFormatting.Time(row.CreatedAt)}";}
-    private void Actions(){StateButton.Visible=Current is not null;EditButton.Enabled=StateButton.Enabled=OrdersButton.Enabled=!busy&&Current is not null;ReloadButton.Enabled=!busy;}
+    private void Bind(CustomerRecord row){NavigationLabel=row.FullName;Current=row;StateButton.Text=row.Active?"Khóa khách":"Mở khách";DetailsBox.Text=$"Tài khoản: {row.Username}\r\nHọ tên: {row.FullName}\r\nĐiện thoại: {row.Phone}\r\nEmail: {row.Email}\r\nĐịa chỉ: {row.Address}\r\nTrạng thái: {(row.Active?"Đang hoạt động":"Đã khóa")}\r\nNgày tạo: {AdminFormatting.Time(row.CreatedAt)}";}
+    private void Actions(){PageNavigation.StateChanged(this);StateButton.Visible=Current is not null;EditButton.Enabled=StateButton.Enabled=OrdersButton.Enabled=!busy&&Current is not null;ReloadButton.Enabled=!busy;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải…";
@@ -81,7 +81,7 @@ public sealed class CustomerDetailsForm:Form
     }
 }
 
-public sealed class CustomerOrdersForm:Form
+public sealed class CustomerOrdersForm:NavigationPageForm
 {
     private readonly IAdminApi api;
     private readonly ContactsWorkspace workspace;
@@ -99,10 +99,10 @@ public sealed class CustomerOrdersForm:Form
         this.api=api;workspace=new(api);this.customerId=customerId;AdminTheme.Frame(this,"Đơn của khách");Grid.ReadOnly=true;
         foreach(var (p,t) in new[]{("Code","Mã đơn"),("Status","Trạng thái"),("CreatedAt","Thời gian UTC+7"),("Total","Tổng tiền"),("Payment","COD")})CatalogUi.Column(Grid,p,t,true,180);
         CatalogUi.Layout(this,"Đơn của khách",CatalogUi.Toolbar(DetailsButton),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
-        Grid.SelectionChanged+=(_,_)=>Actions();Shown+=async(_,_)=>await LoadAsync();PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};
-        DetailsButton.Click+=(_,_)=>{if(Grid.CurrentRow?.Tag is CustomerOrder row){if(OrderRequested is not null)OrderRequested(new(row.Id));else{using var detail=new OrderPeekForm(api,row.Id);detail.ShowDialog(this);}}};
+        Grid.SelectionChanged+=(_,_)=>Actions();ConfigurePageLoad(LoadAsync,()=>busy);PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};
+        DetailsButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is CustomerOrder row){if(OrderRequested is not null)OrderRequested(new(row.Id));else await PageNavigation.OpenAsync(this,new OrderPeekForm(api,row.Id));}};
     }
-    private void Actions(){DetailsButton.Enabled=!busy&&Grid.CurrentRow?.Tag is CustomerOrder;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
+    private void Actions(){PageNavigation.StateChanged(this);DetailsButton.Enabled=!busy&&Grid.CurrentRow?.Tag is CustomerOrder;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải đơn…";
@@ -111,7 +111,7 @@ public sealed class CustomerOrdersForm:Form
     }
 }
 
-public sealed class OrderPeekForm:Form
+public sealed class OrderPeekForm:NavigationPageForm
 {
     private readonly ContactsWorkspace workspace;
     private readonly long id;
@@ -119,7 +119,7 @@ public sealed class OrderPeekForm:Form
     public Label MessageLabel { get; }=AdminTheme.Label("");
     public OrderPeekForm(IAdminApi api,long orderId)
     {
-        workspace=new(api);id=orderId;AdminTheme.Frame(this,"Chi tiết đơn · chỉ đọc");var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=3,Padding=new Padding(24)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label("Chi tiết đơn · chỉ đọc",22,true),0,0);root.Controls.Add(DetailsBox,0,1);root.Controls.Add(MessageLabel,0,2);Controls.Add(root);Shown+=async(_,_)=>await LoadAsync();
+        workspace=new(api);id=orderId;AdminTheme.Frame(this,"Chi tiết đơn · chỉ đọc");var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=3,Padding=new Padding(24)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label("Chi tiết đơn · chỉ đọc",22,true),0,0);root.Controls.Add(DetailsBox,0,1);root.Controls.Add(MessageLabel,0,2);Controls.Add(root);ConfigurePageLoad(LoadAsync);
     }
     public async Task LoadAsync()
     {
