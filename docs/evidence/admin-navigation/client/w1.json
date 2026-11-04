@@ -1,0 +1,371 @@
+{
+  "qaOnly": true,
+  "checks": 13,
+  "allCommerceUnchanged": true,
+  "records": [
+    {
+      "name": "WIN.BASE.05 URL policy blocks remoteHTTP credentials path query fragment; permits HTTPS and loopback",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.A01.01 actual readiness fingerprint; expected mismatch prevents login request",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.A01.02 invalid CUSTOMER locked login create no session and use generic feedback",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.04 actual missing/wrong CSRF400 and per-write token refresh with same session cookie",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.07 expired or revoked SQL session401 clears client; subsequent command sends no POST",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.A01.04 lost login response requires session GET before explicit retry, never stuck",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 2,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.06 malformed successful login JSON reconciles received cookie instead of replaying credentials",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 2,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 2,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.A03 actual invalid password leaves hash/sessions; valid change revokes every session",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 2,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.A02 actual logout revokes session; repeated/expired logout is safe",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.08 post-commit response loss blocks blind retry until authoritative GET reconciliation",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.11/12/20 typed request and page JSON, exact Vietnamese money and UTC\u002B7, safe bounded query",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 0,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.06 controlled errors for HTTP business codes500 trace JSON network timeout",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    },
+    {
+      "name": "WIN.BASE.02/03 application architecture and secret boundary",
+      "status": "PASS",
+      "before": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      },
+      "after": {
+        "accounts": 3,
+        "sessions": 1,
+        "orders": 0,
+        "total": 0.00,
+        "inventoryRows": 0,
+        "H": 0,
+        "R": 0,
+        "payments": 0,
+        "history": 0,
+        "journal": 0
+      }
+    }
+  ]
+}

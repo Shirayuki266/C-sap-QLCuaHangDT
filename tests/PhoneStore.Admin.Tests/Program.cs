@@ -11,7 +11,7 @@ internal static partial class Program
     [STAThread]
     private static int Main(string[] args)
     {
-        ApplicationConfiguration.Initialize();
+        ApplicationConfiguration.Initialize(); Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
         output = Environment.GetEnvironmentVariable("PHONESTORE_ADMIN_UI_EVIDENCE") ?? Path.Combine(FindRoot(), ".artifacts", "admin-w1", "forms"); Directory.CreateDirectory(output);
         using var host = new Form { ShowInTaskbar = false, Size = new Size(1, 1), Opacity = 0 };
         var failed = false;
@@ -19,7 +19,7 @@ internal static partial class Program
         {
             try { await Run(args); Console.WriteLine($"{passed} admin form checks passed."); }
             catch (Exception error) { failed = true; Console.Error.WriteLine("FAIL form check: " + error.Message); }
-            finally { host.Close(); }
+            finally { UnsavedChanges.DiscardAndClose(host); }
         };
         Application.Run(host); return failed ? 1 : 0;
     }
@@ -34,8 +34,11 @@ internal static partial class Program
     private static string FindRoot() { var root = new DirectoryInfo(AppContext.BaseDirectory); while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent; return root?.FullName ?? throw new InvalidOperationException("Root missing"); }
     private static async Task Run(string[] args)
     {
+        if (args.Contains("--legacy-navigation-baseline")) { await LegacyNavigationBaseline(); return; }
         if (args.Contains("--demo-closeout-sta")) { await DemoCloseoutSta(); return; }
         if (args.Contains("--dpi-closeout")) { await DpiCloseoutChecks(); return; }
+        if (args.Contains("--navigation-only")) { await NavigationFormsChecks(); return; }
+        if (args.Contains("--navigation-print-preview")) { await NavigationPrintPreview(); return; }
         if (args.Contains("--real-api")) { await RealApi(); return; }
         if (args.Contains("--real-catalog")) { await RealCatalog(); return; }
         if (args.Contains("--real-contacts")) { await RealContacts(); return; }
@@ -63,7 +66,7 @@ internal static partial class Program
             Assert(fake.LoginCalls == 1 && form.PasswordBox.Text.Length == 0 && !form.SubmitButton.Enabled && form.SubmitButton.Text.Contains("Đang") && form.ProgressLabel.Visible && form.ProgressLabel.Text.Contains("Đang"), "Submit guard/secret clearing/readable status failed"); await Capture(form, "UI01-login-busy");
             fake.HoldLogin.SetException(new AdminApiException("LOGIN_FAILED", 401)); await Task.Delay(70);
             Assert(form.SubmitButton.Enabled && form.UsernameBox.Text == "qa-admin" && form.PasswordBox.Text.Length == 0 && form.MessageLabel.Text.Contains("Tên đăng nhập"), "Failed login retention/recovery failed"); await Capture(form, "UI01-login-error");
-            fake.ReadyError = new AdminApiException("NETWORK"); await form.CheckAsync(); Assert(form.MessageLabel.Text.Contains("Không kết nối"), "Network recovery missing"); await Capture(form, "UI01-offline"); fake.ReadyError = null; form.Close();
+            fake.ReadyError = new AdminApiException("NETWORK"); await form.CheckAsync(); Assert(form.MessageLabel.Text.Contains("Không kết nối"), "Network recovery missing"); await Capture(form, "UI01-offline"); fake.ReadyError = null; UnsavedChanges.DiscardAndClose(form);
         });
         await Test("WIN.BASE.13 shell structure/account controls; delivered W6 navigation checked separately", async () =>
         {
@@ -79,7 +82,7 @@ internal static partial class Program
             using var form = new PasswordForm(fake); form.Show(); fake.PasswordError = new AdminApiException("INVALID_INPUT", 400);
             form.CurrentBox.Text = "wrong-qa"; form.NewBox.Text = "short"; form.SaveButton.PerformClick(); await Task.Delay(50);
             Assert(form.CurrentBox.Text.Length == 0 && form.NewBox.Text.Length == 0 && form.MessageLabel.Text.Contains("Dữ liệu"), "Password fields or safe error wrong"); await Capture(form, "password-error");
-            fake.PasswordError = null; form.CurrentBox.Text = "current-qa"; form.NewBox.Text = "new-qa"; await form.SubmitAsync(); Assert(form.DialogResult == DialogResult.OK, "Password success failed"); form.Close();
+            fake.PasswordError = null; form.CurrentBox.Text = "current-qa"; form.NewBox.Text = "new-qa"; await form.SubmitAsync(); Assert(form.DialogResult == DialogResult.OK, "Password success failed"); UnsavedChanges.DiscardAndClose(form);
         });
         await Test("WIN.BASE.18 user settings only allow public server configuration, validation preserves form", async () =>
         {
@@ -87,12 +90,12 @@ internal static partial class Program
             Assert(form.Result is null && form.MessageLabel.Text.Contains("HTTPS") && form.AddressBox.Text == "http://remote.example", "Unsafe config accepted/lost input"); await Capture(form, "settings-invalid");
             form.AddressBox.Text = "http://localhost:5080"; form.EnvironmentBox.Text = "Testing"; form.FingerprintBox.Text = "qa-expected"; form.SaveButton.PerformClick(); Assert(form.Result is not null, "Valid configuration rejected");
             var directory = Path.Combine(output, "settings-qa"); var store = new SettingsStore(directory); store.Save(form.Result!); Assert(store.Load() == form.Result, "Settings roundtrip failed");
-            var text = File.ReadAllText(Path.Combine(directory, "settings.json")); Assert(!text.Contains("Password", StringComparison.OrdinalIgnoreCase) && !text.Contains("cookie", StringComparison.OrdinalIgnoreCase) && !text.Contains("token", StringComparison.OrdinalIgnoreCase), "Secret settings property"); form.Close();
+            var text = File.ReadAllText(Path.Combine(directory, "settings.json")); Assert(!text.Contains("Password", StringComparison.OrdinalIgnoreCase) && !text.Contains("cookie", StringComparison.OrdinalIgnoreCase) && !text.Contains("token", StringComparison.OrdinalIgnoreCase), "Secret settings property"); UnsavedChanges.DiscardAndClose(form);
         });
         await Test("WIN.A02 bounded best-effort close and logout work without a live server", async () =>
         {
             fake.Identity = new(1, "qa-admin", "ADMIN", DateTimeOffset.UtcNow.AddHours(8)); using var form = new MainForm(fake, FakeApi.Ready); form.Show();
-            fake.HangLogout = true; var watch = System.Diagnostics.Stopwatch.StartNew(); form.Close(); await Task.Delay(2200);
+            fake.HangLogout = true; var watch = System.Diagnostics.Stopwatch.StartNew(); UnsavedChanges.DiscardAndClose(form); await Task.Delay(2200);
             Assert(form.IsDisposed && fake.LogoutCalls == 1 && watch.Elapsed < TimeSpan.FromSeconds(4), "Best-effort close hung or duplicated logout"); fake.HangLogout = false;
         });
         await Test("WIN.BASE.07 production application context returns to LoginForm on revoked session", async () =>
@@ -107,7 +110,7 @@ internal static partial class Program
         {
             using var dialog = new ConfirmationDialog("Xác nhận thao tác", "Kiểm tra dữ liệu trước khi gửi. Chọn Quay lại để giữ nguyên."); dialog.Show();
             Assert(dialog.ActiveControl == dialog.DismissButton && dialog.CancelButton == dialog.DismissButton, "Confirmation lacks safe dismissal");
-            await Capture(dialog, "confirmation-foundation"); dialog.DismissButton.PerformClick(); Assert(dialog.DialogResult == DialogResult.Cancel, "Dismiss did not cancel"); dialog.Close();
+            await Capture(dialog, "confirmation-foundation"); dialog.DismissButton.PerformClick(); Assert(dialog.DialogResult == DialogResult.Cancel, "Dismiss did not cancel"); UnsavedChanges.DiscardAndClose(dialog);
         });
         File.WriteAllText(Path.Combine(output, "results.json"), JsonSerializer.Serialize(new { platform = "Windows STA WinForms", fakeApi = true, checks = passed, logicalMinimum = "1280x800 for main/login; physical dimensions depend on DPI", captures, notes = "Actual form controls/PerformClick/DrawToBitmap; actual backend/SQL proofs live in Admin.Client.Checks. No fake evidence is labeled as real API." }, new JsonSerializerOptions { WriteIndented = true }));
         await CatalogFormsChecks();
@@ -116,6 +119,7 @@ internal static partial class Program
         await OrderFormsChecks();
         await ReportFormsChecks();
         await BaseCloseoutChecks();
+        await NavigationFormsChecks();
     }
     private static async Task RealApi()
     {
@@ -127,7 +131,7 @@ internal static partial class Program
         for(var attempt=0;attempt<100&&!login.CheckButton.Enabled;attempt++)await Task.Delay(50);
         Assert(login.ServerLabel.Text.Contains("Testing"), "Real readiness not shown"); await Capture(login, "UI01-real-qa-login");
         login.UsernameBox.Text = username; login.PasswordBox.Text = password; password = ""; await login.SubmitAsync(); Assert(api.Identity?.Role == "ADMIN", "Real WinForms login failed");
-        using var main = new MainForm(api, await api.ReadinessAsync()); main.Show(); await Capture(main, "UI02-real-qa-main"); await main.LogoutAsync(); Assert(api.Identity is null, "Real UI logout left identity"); login.Close();
+        using var main = new MainForm(api, await api.ReadinessAsync()); main.Show(); await Capture(main, "UI02-real-qa-main"); await main.LogoutAsync(); Assert(api.Identity is null, "Real UI logout left identity"); UnsavedChanges.DiscardAndClose(login);
         passed++; Console.WriteLine("PASS actual WinForms controls -> real loopback Kestrel -> SQL QA login/logout; captured both screens");
         File.WriteAllText(Path.Combine(output,"results.json"),JsonSerializer.Serialize(new{fakeApi=false,qaOnly=true,captures},new JsonSerializerOptions{WriteIndented=true}));
     }

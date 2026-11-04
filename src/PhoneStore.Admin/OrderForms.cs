@@ -2,7 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
-public sealed class OrderListForm:Form
+public sealed class OrderListForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly OrdersWorkspace workspace;private bool busy;private int page=1,total;
     public TextBox QueryBox { get; }=AdminTheme.Input("Tìm mã đơn, người nhận, khách hoặc điện thoại");
@@ -16,9 +16,9 @@ public sealed class OrderListForm:Form
         this.api=api;workspace=new(api);AdminTheme.Frame(this,"Đơn hàng");QueryBox.Dock=DockStyle.None;QueryBox.Width=270;QueryBox.MaxLength=100;QueryBox.PlaceholderText="Mã, người nhận, khách, điện thoại";StateBox.Items.Add("Tất cả trạng thái");StateBox.Items.AddRange(OrderPresentation.States.Select(ContactForms.OrderState).ToArray());StateBox.SelectedIndex=initialStatus is null?0:Array.IndexOf(OrderPresentation.States,initialStatus)+1;Grid.ReadOnly=true;
         foreach(var(p,t)in new[]{("Code","Mã đơn"),("Recipient","Người nhận"),("Phone","Điện thoại"),("Status","Trạng thái đơn"),("Payment","COD"),("CreatedAt","Đặt lúc UTC+7"),("Total","Tổng tiền")})CatalogUi.Column(Grid,p,t,true,180);
         CatalogUi.Layout(this,"Đơn hàng",CatalogUi.Toolbar(QueryBox,StateBox,AdminTheme.Label("Từ ngày"),FromBox,AdminTheme.Label("Đến hết ngày"),ToBox,SearchButton,DetailsButton),Grid,CatalogUi.Toolbar(PreviousButton,NextButton,MessageLabel));
-        SearchButton.Click+=async(_,_)=>{if(busy)return;page=1;await LoadAsync();};PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};DetailsButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is AdminOrder row){using var form=new OrderDetailForm(api,row.Id);form.ShowDialog(this);await LoadAsync();}};Grid.SelectionChanged+=(_,_)=>Actions();Shown+=async(_,_)=>await LoadAsync();AcceptButton=SearchButton;Actions();
+        SearchButton.Click+=async(_,_)=>{if(busy)return;page=1;await LoadAsync();};PreviousButton.Click+=async(_,_)=>{if(!busy&&page>1){page--;await LoadAsync();}};NextButton.Click+=async(_,_)=>{if(!busy&&page*20<total){page++;await LoadAsync();}};DetailsButton.Click+=async(_,_)=>{if(Grid.CurrentRow?.Tag is AdminOrder row){await PageNavigation.OpenAsync(this,new OrderDetailForm(api,row.Id));if(TopLevel)await LoadAsync();}};Grid.SelectionChanged+=(_,_)=>Actions();ConfigurePageLoad(LoadAsync,()=>busy);AcceptButton=SearchButton;Actions();
     }
-    private void Actions(){SearchButton.Enabled=QueryBox.Enabled=StateBox.Enabled=FromBox.Enabled=ToBox.Enabled=Grid.Enabled=!busy;DetailsButton.Enabled=!busy&&Grid.CurrentRow?.Tag is AdminOrder;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
+    private void Actions(){PageNavigation.StateChanged(this);SearchButton.Enabled=QueryBox.Enabled=StateBox.Enabled=FromBox.Enabled=ToBox.Enabled=Grid.Enabled=!busy;DetailsButton.Enabled=!busy&&Grid.CurrentRow?.Tag is AdminOrder;PreviousButton.Enabled=!busy&&page>1;NextButton.Enabled=!busy&&page*20<total;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải đơn hàng…";
@@ -27,7 +27,7 @@ public sealed class OrderListForm:Form
     }
 }
 
-public sealed class OrderDetailForm:Form
+public sealed class OrderDetailForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly OrdersWorkspace workspace;private readonly long id;private readonly Func<string,string,bool> confirm;private bool busy;private OrderOperation? operation;
     public AdminOrder? Current { get; private set; }
@@ -44,10 +44,10 @@ public sealed class OrderDetailForm:Form
         var tabs=new TabControl{Dock=DockStyle.Fill};var items=new TabPage("Dòng hàng snapshot");items.Controls.Add(LinesGrid);var history=new TabPage("Lịch sử xử lý");history.Controls.Add(HistoryGrid);tabs.TabPages.AddRange([items,history]);
         var actions=new List<Control>();foreach(var action in Enum.GetValues<OrderAction>().Where(a=>a!=OrderAction.CustomerCancel)){var button=AdminTheme.Button(OrderPresentation.Label(action),action is not(OrderAction.Cancel or OrderAction.Fail));buttons.Add(action,button);actions.Add(button);button.Click+=async(_,_)=>{if(action==OrderAction.Invoice)await OpenInvoiceAsync();else await ActAsync(action);};}actions.Add(ReloadButton);
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=8,Padding=new Padding(20)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Absolute,155));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));for(var i=3;i<8;i++)root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label("Chi tiết đơn hàng",22,true),0,0);root.Controls.Add(SummaryBox,0,1);root.Controls.Add(tabs,0,2);root.Controls.Add(AdminTheme.Label("Lý do · bắt buộc khi hủy/giao thất bại; nhận lại tùy chọn"),0,3);root.Controls.Add(ReasonBox,0,4);root.Controls.Add(ReasonErrorLabel,0,5);root.Controls.Add(MessageLabel,0,6);root.Controls.Add(CatalogUi.Toolbar(actions.ToArray()),0,7);Controls.Add(root);
-        ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();Actions();
+        ReloadButton.Click+=async(_,_)=>await LoadAsync();ConfigurePageLoad(LoadAsync,()=>busy);Actions();UnsavedChanges.Attach(this,()=>ReasonBox.Text,()=>busy,null,()=>{ReasonBox.Clear();UnsavedChanges.MarkClean(this);});
     }
-    private void Bind(AdminOrder row){Current=row;SummaryBox.Text=OrderPresentation.Summary(row);LinesGrid.Rows.Clear();foreach(var line in row.Lines)LinesGrid.Rows.Add(line.Sku,line.Name,line.Description,line.Quantity,AdminFormatting.Money(line.Price),AdminFormatting.Money(line.Total));HistoryGrid.Rows.Clear();foreach(var h in row.History)HistoryGrid.Rows.Add(AdminFormatting.Time(h.At),h.From is null?"Đặt mới":ContactForms.OrderState(h.From),ContactForms.OrderState(h.To),h.Actor,h.Reason??"");}
-    private void Actions(){var pending=operation?.NeedsReadback==true||api.NeedsReconciliation;foreach(var(action,button)in buttons){button.Visible=Current is{} row&&OrderPresentation.Allowed(row.Status,row.ReturnReceived,action);button.Enabled=!busy&&!pending;}ReloadButton.Enabled=!busy;ReasonBox.Enabled=!busy&&!pending&&Current is not null;}
+    private void Bind(AdminOrder row){NavigationLabel="Đơn "+row.Code;Current=row;SummaryBox.Text=OrderPresentation.Summary(row);LinesGrid.Rows.Clear();foreach(var line in row.Lines)LinesGrid.Rows.Add(line.Sku,line.Name,line.Description,line.Quantity,AdminFormatting.Money(line.Price),AdminFormatting.Money(line.Total));HistoryGrid.Rows.Clear();foreach(var h in row.History)HistoryGrid.Rows.Add(AdminFormatting.Time(h.At),h.From is null?"Đặt mới":ContactForms.OrderState(h.From),ContactForms.OrderState(h.To),h.Actor,h.Reason??"");}
+    private void Actions(){PageNavigation.StateChanged(this);var pending=operation?.NeedsReadback==true||api.NeedsReconciliation;foreach(var(action,button)in buttons){button.Visible=Current is{} row&&OrderPresentation.Allowed(row.Status,row.ReturnReceived,action);button.Enabled=!busy&&!pending;}ReloadButton.Enabled=!busy;ReasonBox.Enabled=!busy&&!pending&&Current is not null;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải / đối soát đơn…";
@@ -59,12 +59,12 @@ public sealed class OrderDetailForm:Form
         if(busy||Current is null||operation?.NeedsReadback==true||api.NeedsReconciliation)return;var invalid=OrderPresentation.ReasonError(action,ReasonBox.Text);ReasonErrorLabel.Text=invalid??"";if(invalid is not null){ReasonBox.Focus();return;}
         var candidate=operation is{} old&&!old.Finished&&old.Action==action&&old.Reason==(string.IsNullOrWhiteSpace(ReasonBox.Text)?null:ReasonBox.Text.Trim())?old:new OrderOperation(Current,action,ReasonBox.Text);
         if(!confirm(OrderPresentation.Label(action),OrderPresentation.Confirmation(candidate)))return;operation=candidate;busy=true;Actions();MessageLabel.Text="Đang xử lý…";
-        try{Bind(await workspace.Execute(operation));ReasonBox.Clear();MessageLabel.Text="Đã xử lý. Trạng thái và COD đã tải lại từ máy chủ.";}
+        try{Bind(await workspace.Execute(operation));ReasonBox.Clear();UnsavedChanges.MarkClean(this);MessageLabel.Text="Đã xử lý. Trạng thái và COD đã tải lại từ máy chủ.";}
         catch(Exception error)
         {
             var message=AdminTheme.Failure(error);if(error is AdminApiException{Status:409}){try{Bind(await workspace.Resolve(operation));message+=" Đã tải lại dữ liệu mới; hãy kiểm tra trước khi thực hiện tiếp.";}catch(Exception){message+=" Chưa tải được bản mới. Chọn Tải lại / đối soát.";}}MessageLabel.Text=message;
         }
         finally{busy=false;Actions();}
     }
-    public Task OpenInvoiceAsync(){if(busy||Current is null)return Task.CompletedTask;using var form=new InvoiceForm(api,id);form.ShowDialog(this);return Task.CompletedTask;}
+    public Task OpenInvoiceAsync()=>busy||Current is null?Task.CompletedTask:PageNavigation.OpenAsync(this,new InvoiceForm(api,id));
 }

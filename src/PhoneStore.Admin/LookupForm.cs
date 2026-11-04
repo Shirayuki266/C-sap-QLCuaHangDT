@@ -2,7 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
-public sealed class LookupForm : Form
+public sealed class LookupForm:NavigationPageForm
 {
     private readonly CatalogWorkspace workspace;
     private readonly IAdminApi api;
@@ -23,13 +23,13 @@ public sealed class LookupForm : Form
         AdminTheme.Frame(this,kind=="brands"?"Hãng điện thoại":"Danh mục");NameBox.Width=360;NameBox.Dock=DockStyle.None;
         Grid.ReadOnly=true;CatalogUi.Column(Grid,"Id","Mã",true);CatalogUi.Column(Grid,"Name","Tên",true,250);CatalogUi.Column(Grid,"State","Trạng thái",true,150);
         CatalogUi.Layout(this,kind=="brands"?"Hãng điện thoại":"Danh mục",CatalogUi.Toolbar(NewButton,AdminTheme.Label("Tên *"),NameBox,ActiveBox,SaveButton,ReloadButton),Grid,MessageLabel);
-        Grid.SelectionChanged+=(_,_)=>SelectCurrent();
+        UnsavedChanges.Attach(this,()=>System.Text.Json.JsonSerializer.Serialize(new{NameBox.Text,ActiveBox.Checked}),()=>busy,SaveAsync);Grid.SelectionChanged+=(_,_)=>SelectCurrent();
         NewButton.Click+=(_,_)=>{Grid.CurrentCell=null;Grid.ClearSelection();selected=null;NameBox.Clear();ActiveBox.Checked=true;NameBox.Focus();};
-        ReloadButton.Click+=async(_,_)=>await ReloadAsync();SaveButton.Click+=async(_,_)=>await SaveAsync();Shown+=async(_,_)=>await ReloadAsync();
+        ReloadButton.Click+=async(_,_)=>await ReloadAsync();SaveButton.Click+=async(_,_)=>await SaveAsync();ConfigurePageLoad(ReloadAsync,()=>busy);
     }
     private void Display(List<LookupRow> rows)
     {selected=null;Grid.Rows.Clear();foreach(var row in rows){var index=Grid.Rows.Add(row.Id,row.Name,row.Active?"Đang kinh doanh":"Đã ngừng");Grid.Rows[index].Tag=row;}SelectCurrent();MessageLabel.Text=rows.Count==0?"Chưa có dữ liệu. Chọn Tạo mới để thêm.":$"{rows.Count} mục · Gồm cả mục đã ngừng";}
-    private void SelectCurrent(){if(Grid.CurrentRow?.Tag is LookupRow row){selected=row;NameBox.Text=row.Name;ActiveBox.Checked=row.Active;}}
+    private void SelectCurrent(){if(Grid.CurrentRow?.Tag is LookupRow row){selected=row;NameBox.Text=row.Name;ActiveBox.Checked=row.Active;UnsavedChanges.MarkClean(this);}}
     public async Task ReloadAsync()
     {
         if(busy)return;SetBusy(true);
@@ -51,9 +51,9 @@ public sealed class LookupForm : Form
                 var row=Grid.Rows.Cast<DataGridViewRow>().Single(r=>r.Tag is LookupRow value&&value.Id==saved.Id);
                 Grid.CurrentCell=row.Cells[0];Grid.ClearSelection();row.Selected=true;selected=saved;
             }
-            NameBox.Text=saved?.Name??name;ActiveBox.Checked=saved?.Active??active;MessageLabel.Text="Đã lưu và tải lại từ máy chủ.";
+            NameBox.Text=saved?.Name??name;ActiveBox.Checked=saved?.Active??active;MessageLabel.Text="Đã lưu và tải lại từ máy chủ.";UnsavedChanges.MarkClean(this);
         }
         catch(Exception error){NameBox.Text=name;ActiveBox.Checked=active;MessageLabel.Text=AdminTheme.Failure(error);}finally{SetBusy(false);}
     }
-    private void SetBusy(bool value){busy=value;SaveButton.Enabled=NewButton.Enabled=ReloadButton.Enabled=Grid.Enabled=NameBox.Enabled=ActiveBox.Enabled=!value;if(value)MessageLabel.Text="Đang xử lý…";}
+    private void SetBusy(bool value){busy=value;PageNavigation.StateChanged(this);SaveButton.Enabled=NewButton.Enabled=ReloadButton.Enabled=Grid.Enabled=NameBox.Enabled=ActiveBox.Enabled=!value;if(value)MessageLabel.Text="Đang xử lý…";}
 }

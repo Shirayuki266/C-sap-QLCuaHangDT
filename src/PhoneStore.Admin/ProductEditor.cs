@@ -49,11 +49,11 @@ public sealed class ProductEditor : Form
         var imageForm=AdminTheme.Stack(24);imageForm.Dock=DockStyle.Top;imageTab.Controls.Add(imageForm);AdminTheme.Field(imageForm,"Ảnh chính · HTTPS hoặc /images/ · có thể để trống",ImageBox);AdminTheme.Add(imageForm,AdminTheme.Label("Ảnh bổ sung · tối đa 12 URL, mỗi dòng một ảnh; thứ tự từ trên xuống"));AdminTheme.Add(imageForm,ImagesBox);
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=4,ColumnCount=1,Padding=new Padding(20)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.Controls.Add(AdminTheme.Label(id==0?"Thêm điện thoại":"Sửa điện thoại",22,true),0,0);root.Controls.Add(tabs,0,1);root.Controls.Add(MessageLabel,0,2);root.Controls.Add(CatalogUi.Toolbar(SaveButton,ReloadButton,PurchaseButton),0,3);Controls.Add(root);PurchaseButton.Enabled=false;
         AddVariantButton.Click+=(_,_)=>{Variants.Add(new());PurchaseAction();};SaveButton.Click+=async(_,_)=>await SaveAsync();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();
-        VariantGrid.CellEndEdit+=(_,_)=>PurchaseAction();
+        VariantGrid.CellEndEdit+=(_,_)=>PurchaseAction();UnsavedChanges.Attach(this,()=>System.Text.Json.JsonSerializer.Serialize(Input()),()=>busy,SaveAsync);
         PurchaseButton.Click+=async(_,_)=>
         {
             if(!VariantGrid.EndEdit()||Saved is null||!CatalogForms.SavedMatches(Saved,Input())||Variants.Any(v=>v.Id<=0||v.SuggestedQuantity<=0)){MessageLabel.Text="Lưu sản phẩm và các biến thể trước; lượng gợi ý phải dương.";return;}
-            var handoff=Handoff();if(PurchaseRequested is not null)PurchaseRequested(handoff);else{using var form=new PurchaseEditor(api,handoff:handoff);form.ShowDialog(this);}
+            var handoff=Handoff();if(PurchaseRequested is not null)PurchaseRequested(handoff);else{using var form=new PurchaseEditor(api,handoff:handoff);form.ShowDialog(PageNavigation.Owner(this));}
             try{Bind(await workspace.Product(Saved.Id));MessageLabel.Text="Đã tải lại giá và tồn từ máy chủ. Lượng gợi ý không được lưu vào kho.";}catch(Exception error){MessageLabel.Text=AdminTheme.Failure(error);}PurchaseAction();
         };
     }
@@ -82,7 +82,7 @@ public sealed class ProductEditor : Form
         var suggestions=Variants.GroupBy(v=>v.Sku.Trim(),StringComparer.OrdinalIgnoreCase).ToDictionary(g=>g.Key,g=>g.First().SuggestedQuantity,StringComparer.OrdinalIgnoreCase);
         original=Saved=product;BrandBox.DataSource=brands.Where(b=>b.Active||b.Id==product?.BrandId).ToList();CategoryBox.DataSource=categories.Where(c=>c.Active||c.Id==product?.CategoryId).ToList();
         if(product is not null){CodeBox.Text=product.Code;NameBox.Text=product.Name;BrandBox.SelectedItem=brands.SingleOrDefault(b=>b.Id==product.BrandId);CategoryBox.SelectedItem=categories.SingleOrDefault(c=>c.Id==product.CategoryId);SpecificationsBox.Text=product.Specifications;DescriptionBox.Text=product.Description;ImageBox.Text=product.ImageUrl;ImagesBox.Text=string.Join(Environment.NewLine,product.Images.OrderBy(i=>i.SortOrder).Select(i=>i.Url));ActiveBox.Checked=product.Active;}
-        Variants=new(CatalogForms.Drafts(product));foreach(var v in Variants)if(suggestions.TryGetValue(v.Sku,out var quantity))v.SuggestedQuantity=quantity;VariantGrid.DataSource=Variants;
+        Variants=new(CatalogForms.Drafts(product));foreach(var v in Variants)if(suggestions.TryGetValue(v.Sku,out var quantity))v.SuggestedQuantity=quantity;VariantGrid.DataSource=Variants;UnsavedChanges.MarkClean(this);
     }
     public async Task SaveAsync()
     {

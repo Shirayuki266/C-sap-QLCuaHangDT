@@ -22,16 +22,16 @@ internal static partial class Program
                 {
                     Assert(receipt.Lines.Single().Quantity==4,"Handoff quantity wrong");await Signal("handoff-open");await Capture(receipt,"UI09-real-handoff-unsaved");await receipt.SaveAsync();Assert(receipt.Current is{Status:"NHAP",Total:40000000},"Real draft save failed: "+receipt.MessageLabel.Text);await Signal("draft-saved");await Capture(receipt,"UI09-real-purchase-draft");approve.Start();await receipt.ActAsync("confirm");Assert(receipt.Current is{Status:"DA_XAC_NHAN"}&&receipt.ImpactGrid.Rows.Count==1,"Real confirm failed: "+receipt.MessageLabel.Text);await Signal("confirmed");var tabs=receipt.Controls.OfType<TableLayoutPanel>().Single().Controls.OfType<TabControl>().Single();tabs.SelectedIndex=1;await Capture(receipt,"UI09-real-confirmed-stock-price");
                 }
-                catch(Exception e){modalFailure=e;}finally{approve.Stop();receipt.Close();}
+                catch(Exception e){modalFailure=e;}finally{approve.Stop();UnsavedChanges.DiscardAndClose(receipt);}
             };
-            timer.Start();product.PurchaseButton.PerformClick();Assert(modalFailure is null,"Real handoff failed: "+modalFailure?.Message);product.Close();
+            timer.Start();product.PurchaseButton.PerformClick();Assert(modalFailure is null,"Real handoff failed: "+modalFailure?.Message);UnsavedChanges.DiscardAndClose(product);
         }
-        var supply=new SupplyWorkspace(api);var stock=(await supply.Stock(null,null,null)).Items.Single();using(var list=new StockListForm(api)){list.Show();for(var i=0;i<100&&list.Grid.Rows.Count==0;i++)await Task.Delay(50);await Capture(list,"UI10-real-stock-list");list.Close();}
+        var supply=new SupplyWorkspace(api);var stock=(await supply.Stock(null,null,null)).Items.Single();using(var list=new StockListForm(api)){list.Show();for(var i=0;i<100&&list.Grid.Rows.Count==0;i++)await Task.Delay(50);await Capture(list,"UI10-real-stock-list");UnsavedChanges.DiscardAndClose(list);}
         using(var count=new StockCountDialog(api,stock))
         {
-            count.Show();count.CountedBox.Value=5;count.ReasonBox.Text="Kiểm kê QA thực";await Capture(count,"UI10-real-count-input");using var approve=new System.Windows.Forms.Timer{Interval=100};approve.Tick+=async(_,_)=>{var dialog=Application.OpenForms.OfType<ConfirmationDialog>().FirstOrDefault();if(dialog is null)return;approve.Stop();await Capture(dialog,"UI10-real-count-confirm");dialog.ConfirmButton.PerformClick();};approve.Start();await count.SubmitAsync();Assert(!count.SubmitButton.Enabled&&count.MessageLabel.Text.StartsWith("Đã ghi nhận"),"Real count failed: "+count.MessageLabel.Text);await Signal("counted");await Capture(count,"UI10-real-count-saved");count.Close();
+            count.Show();count.CountedBox.Value=5;count.ReasonBox.Text="Kiểm kê QA thực";await Capture(count,"UI10-real-count-input");using var approve=new System.Windows.Forms.Timer{Interval=100};approve.Tick+=async(_,_)=>{var dialog=Application.OpenForms.OfType<ConfirmationDialog>().FirstOrDefault();if(dialog is null)return;approve.Stop();await Capture(dialog,"UI10-real-count-confirm");dialog.ConfirmButton.PerformClick();};approve.Start();await count.SubmitAsync();Assert(!count.SubmitButton.Enabled&&count.MessageLabel.Text.StartsWith("Đã ghi nhận"),"Real count failed: "+count.MessageLabel.Text);await Signal("counted");await Capture(count,"UI10-real-count-saved");UnsavedChanges.DiscardAndClose(count);
         }
-        using(var journal=new StockJournalForm(api,stock)){journal.Show();await Task.Delay(150);await Capture(journal,"UI10-real-journal");journal.Close();}
+        using(var journal=new StockJournalForm(api,stock)){journal.Show();await Task.Delay(150);await Capture(journal,"UI10-real-journal");UnsavedChanges.DiscardAndClose(journal);}
         await api.LogoutAsync();File.WriteAllText(Path.Combine(output,"results.json"),System.Text.Json.JsonSerializer.Serialize(new{fakeApi=false,qaOnly=true,captures},new System.Text.Json.JsonSerializerOptions{WriteIndented=true}));Console.WriteLine("PASS WIN.A05.04/A14/A15/A17 actual product-to-purchase/confirm/count with parent SQL barrier per step");passed++;
     }
 }

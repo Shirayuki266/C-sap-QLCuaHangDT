@@ -1,0 +1,9 @@
+{
+  "measured": true,
+  "sourceCommit": "045ffb388e10bce91537124c7191f8c8f3e11122",
+  "method": "Archived develop build; STA fixture opens ten real OrderListForm instances using legacy ShowDialog(owner); timer simulates ten separate close actions",
+  "businessRouteWalkthrough": false,
+  "peakModalPages": 10,
+  "topLevelWindowsIncludingShell": 11,
+  "closeActionsToOverview": 10
+}

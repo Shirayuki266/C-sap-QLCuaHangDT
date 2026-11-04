@@ -27,7 +27,7 @@ public sealed class InvoicePrinter:IInvoicePrinter
         preview.ShowDialog(owner);
     }
 }
-public sealed class InvoiceForm:Form
+public sealed class InvoiceForm:NavigationPageForm
 {
     private readonly OrdersWorkspace workspace;private readonly long id;private readonly IInvoicePrinter printer;private bool busy;
     public AdminInvoice? Current { get; private set; }
@@ -38,9 +38,9 @@ public sealed class InvoiceForm:Form
     {
         workspace=new(api);id=orderId;this.printer=printer??new InvoicePrinter();AdminTheme.Frame(this,"Hóa đơn bán hàng");
         var root=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=5,Padding=new Padding(24)};root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.Percent,100));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));root.RowStyles.Add(new RowStyle(SizeType.AutoSize));NoticeLabel.MaximumSize=new Size(1150,0);root.Controls.Add(TitleLabel,0,0);root.Controls.Add(NoticeLabel,0,1);root.Controls.Add(ContentBox,0,2);root.Controls.Add(MessageLabel,0,3);root.Controls.Add(CatalogUi.Toolbar(PreviewButton,ReloadButton),0,4);Controls.Add(root);
-        PreviewButton.Click+=(_,_)=>Preview();ReloadButton.Click+=async(_,_)=>await LoadAsync();Shown+=async(_,_)=>await LoadAsync();Actions();
+        PreviewButton.Click+=(_,_)=>Preview();ReloadButton.Click+=async(_,_)=>await LoadAsync();ConfigurePageLoad(LoadAsync,()=>busy);Actions();
     }
-    private void Actions(){PreviewButton.Enabled=!busy&&Current is not null;ReloadButton.Enabled=!busy;}
+    private void Actions(){PageNavigation.StateChanged(this);PreviewButton.Enabled=!busy&&Current is not null;ReloadButton.Enabled=!busy;}
     public async Task LoadAsync()
     {
         if(busy)return;busy=true;Actions();MessageLabel.Text="Đang tải hóa đơn…";
@@ -50,7 +50,7 @@ public sealed class InvoiceForm:Form
     public void Preview()
     {
         if(busy||Current is null)return;busy=true;Actions();
-        try{if(!printer.HasInstalledPrinter){MessageLabel.Text="Chưa có máy in hoặc driver nào được cài. Bạn vẫn có thể xem nội dung hóa đơn tại đây; cài máy in để dùng PrintPreview.";return;}printer.Preview(this,Current);MessageLabel.Text="Đã đóng xem trước. Không thay đổi đơn hàng hoặc COD.";}
+        try{if(!printer.HasInstalledPrinter){MessageLabel.Text="Chưa có máy in hoặc driver nào được cài. Bạn vẫn có thể xem nội dung hóa đơn tại đây; cài máy in để dùng PrintPreview.";return;}printer.Preview(PageNavigation.Owner(this),Current);MessageLabel.Text="Đã đóng xem trước. Không thay đổi đơn hàng hoặc COD.";}
         catch(Exception){MessageLabel.Text="Chưa mở được PrintPreview. Kiểm tra máy in hoặc driver; nội dung hóa đơn vẫn được giữ nguyên.";}
         finally{busy=false;Actions();}
     }

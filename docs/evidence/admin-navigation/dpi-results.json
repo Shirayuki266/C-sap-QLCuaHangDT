@@ -1,0 +1,567 @@
+{
+  "method": "Actual desktop baseline (local120DPI=125%; CI may96DPI=100%);150% simulated WM_DPICHANGED native event; no bitmap resize; minimum1280x800",
+  "fakeApi": true,
+  "evidence": [
+    {
+      "name": "UI01-login-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI02-dashboard-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-products-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-product-editor-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-product-editor-125-real-tab1",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-product-editor-125-real-tab2",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "lookups-brands-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "lookups-categories-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI09-purchases-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI09-purchase-editor-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI09-purchase-editor-125-real-tab1",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI10-stock-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI10-count-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI10-journal-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-customers-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-customer-detail-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-profile-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "suppliers-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "supplier-editor-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "supplier-picker-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-orders-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-order-detail-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-order-detail-125-real-tab1",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "invoice-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI12-reports-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "password-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "settings-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "confirmation-125-real-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": null,
+      "fontBefore": 10,
+      "fontAfter": 10,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI01-login-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI02-dashboard-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-products-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-product-editor-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-product-editor-150-native-tab1",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI08-product-editor-150-native-tab2",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "lookups-brands-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "lookups-categories-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI09-purchases-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI09-purchase-editor-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI09-purchase-editor-150-native-tab1",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI10-stock-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI10-count-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI10-journal-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-customers-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-customer-detail-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-profile-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "suppliers-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "supplier-editor-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "supplier-picker-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-orders-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-order-detail-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI11-order-detail-150-native-tab1",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "invoice-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "UI12-reports-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "password-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "settings-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    },
+    {
+      "name": "confirmation-150-native-tab0",
+      "actualDeviceDpi": 120,
+      "nativeEventDpi": 144,
+      "fontBefore": 10,
+      "fontAfter": 12,
+      "Width": 1280,
+      "Height": 800,
+      "findings": []
+    }
+  ],
+  "issues": []
+}
