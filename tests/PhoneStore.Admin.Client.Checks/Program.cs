@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using PhoneStore.Admin.Client;
 using PhoneStore.Admin.Client.Checks;
 
@@ -49,6 +50,21 @@ await Test("WIN.BASE.05 URL policy blocks remoteHTTP credentials path query frag
 {
     foreach (var address in new[] { "http://remote.example", "https://user:pass@example.test", "https://example.test/sub", "https://example.test?x=1", "file:///tmp/a", "//example.test", "https://example.test/#x" }) await Error("INVALID_SERVER", () => { ServerAddress.Validate(address); return Task.CompletedTask; });
     foreach (var address in new[] { "http://localhost:5080", "http://127.0.0.1:5080", "http://[::1]:5080", "https://example.test" }) ServerAddress.Validate(address);
+});
+await Test("Product image upload uses current ADMIN/CSRF and returns a public PNG without commerce writes", async () =>
+{
+    using var bitmap = new SkiaSharp.SKBitmap(32, 24); bitmap.Erase(SkiaSharp.SKColors.CornflowerBlue);
+    using var png = bitmap.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100);
+    using var probe = new Probe(); using var api = qa.Api(probe); await api.LoginAsync("admin-w1-qa", qa.Password);
+    var posts = probe.Posts;
+    var image = await api.UploadProductImageAsync(png.ToArray());
+    Assert(probe.Posts == posts + 1 && probe.WritesWithoutToken == 0 && image.Width == 32 && image.Height == 24 && image.Preview.Length > 0, "Upload contract/CSRF incorrect");
+    var files = Directory.GetFiles(qa.Services.GetRequiredService<PhoneStore.Web.ProductImages.ProductImageStorage>().DirectoryPath).Length;
+    var retry = await api.UploadProductImageAsync(png.ToArray());
+    Assert(retry.Url == image.Url && Directory.GetFiles(qa.Services.GetRequiredService<PhoneStore.Web.ProductImages.ProductImageStorage>().DirectoryPath).Length == files, "Repeated upload duplicated asset");
+    await Error("IMAGE_INVALID", () => api.UploadProductImageAsync("not an image"u8.ToArray()));
+    Assert(!api.NeedsReconciliation && await Commerce() == initialCommerce, "Upload changed commerce state or blocked product saves");
+    await api.LogoutAsync();
 });
 await Test("WIN.A01.01 actual readiness fingerprint; expected mismatch prevents login request", async () =>
 {

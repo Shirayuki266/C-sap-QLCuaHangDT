@@ -22,6 +22,8 @@ var migrate = modes.Contains("--migrate");
 var builder = WebApplication.CreateBuilder(args.Where(argument => !commandModes.Contains(argument)).ToArray());
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
 var backendFingerprint = BackendIdentity.Fingerprint(connection,builder.Environment.EnvironmentName);
+builder.Services.AddSingleton(new PhoneStore.Web.ProductImages.ProductImageStorage(
+    Path.Combine(builder.Environment.ContentRootPath, "App_Data", "product-images", backendFingerprint)));
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<BusinessKernel>();
@@ -117,6 +119,17 @@ app.UseStatusCodePages(async status =>
 });
 
 app.UseStaticFiles();
+var productImages = app.Services.GetRequiredService<PhoneStore.Web.ProductImages.ProductImageStorage>();
+Directory.CreateDirectory(productImages.DirectoryPath);
+var productImageFiles = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(productImages.DirectoryPath);
+app.Lifetime.ApplicationStopped.Register(productImageFiles.Dispose);
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = productImageFiles,
+    RequestPath = "/images/uploads/products",
+    OnPrepareResponse = context => context.Context.Response.Headers["X-Content-Type-Options"] = "nosniff"
+});
+app.MapProductImages();
 app.UseStorefrontMvc();
 app.UseAuthentication();
 app.UseAuthorization();

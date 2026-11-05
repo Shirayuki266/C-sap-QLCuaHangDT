@@ -155,6 +155,31 @@ public sealed class ApiClient : IAdminApi
     }
     private sealed record CreatedId(long Id);
 
+    public async Task<UploadedProductImage> UploadProductImageAsync(byte[] content, CancellationToken cancellationToken = default)
+    {
+        if (content.Length is 0 or > 5 * 1024 * 1024) throw new AdminApiException("IMAGE_TOO_LARGE", 400);
+        await writes.WaitAsync(cancellationToken);
+        try
+        {
+            RequireSession(); if (NeedsReconciliation) throw new AdminApiException("UNCERTAIN");
+            var token = await ReadAsync<TokenResult>("/api/security/token", false, cancellationToken);
+            if (string.IsNullOrWhiteSpace(token.Token)) throw new AdminApiException("INVALID_RESPONSE");
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/api/admin/product-images") { Content = JsonContent.Create(new { content }) };
+            request.Headers.Add("X-CSRF-TOKEN", token.Token);
+            using var response = await http.SendAsync(request, cancellationToken);
+            await Check(response, cancellationToken);
+            var result = await Deserialize<UploadedProductImage>(response, cancellationToken);
+            if (!System.Text.RegularExpressions.Regex.IsMatch(result.Url ?? "", @"\A/images/uploads/products/[a-f0-9]{64}\.png\z") ||
+                result.Preview is null || result.Preview.Length is 0 or > 512000 || result.Width is < 1 or > 1600 || result.Height is < 1 or > 1600)
+                throw new AdminApiException("INVALID_RESPONSE");
+            return result;
+        }
+        // Uploads are content-addressed and safe to retry; they never change a product.
+        catch (HttpRequestException) { throw new AdminApiException("NETWORK"); }
+        catch (OperationCanceledException) { throw new AdminApiException("TIMEOUT"); }
+        finally { writes.Release(); }
+    }
+
     public async Task<long> RetryPurchaseCreateAsync(PurchaseRequest input,CancellationToken cancellationToken=default)
     {
         await writes.WaitAsync(cancellationToken);

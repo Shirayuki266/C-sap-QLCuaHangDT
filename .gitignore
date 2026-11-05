@@ -11,6 +11,7 @@ dist/
 !.env.example
 **/appsettings.Local.json
 **/appsettings.*.local.json
+**/App_Data/
 *.bak
 *.mdf
 *.ldf
