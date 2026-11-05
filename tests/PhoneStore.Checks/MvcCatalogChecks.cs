@@ -25,6 +25,36 @@ internal static class MvcCatalogChecks
         await using (var db = Open(database.ConnectionString)) await new DatabaseMigrator(db).MigrateAsync();
         var root = new DirectoryInfo(AppContext.BaseDirectory); while (root is not null && !File.Exists(Path.Combine(root.FullName, "PhoneStore.slnx"))) root = root.Parent;
         if (root is null) throw new InvalidOperationException("Solution root missing.");
+        await Check.Run("WEB product image register binds all 50 current model names, paths and original bytes", async () =>
+        {
+            var directory = Path.Combine(root.FullName, "src", "PhoneStore.Web", "wwwroot", "images", "storefront");
+            using var manifest = JsonDocument.Parse(await File.ReadAllTextAsync(Path.Combine(directory, "sources.json")));
+            using var catalog = JsonDocument.Parse(await File.ReadAllTextAsync(Path.Combine(root.FullName, "tools", "PhoneStore.DemoData", "Catalog", "real-products.json")));
+            var expected = catalog.RootElement.EnumerateArray().ToDictionary(row => row.GetProperty("code").GetString()!, row => row.GetProperty("name").GetString()!);
+            var images = manifest.RootElement.GetProperty("models").EnumerateArray().ToArray();
+            Check.True(images.Length == 50 && images.Select(row => row.GetProperty("code").GetString()).Distinct().Count() == 50, "Incomplete/duplicate storefront image register.");
+            foreach (var row in images)
+            {
+                var code = row.GetProperty("code").GetString()!;
+                var name = row.GetProperty("name").GetString()!;
+                Check.True(expected[code] == name, "Selected image is bound to the wrong current model.");
+                var file = row.GetProperty("file").GetString()!;
+                Check.True(file == code.ToLowerInvariant() + ".svg", "Unexpected image filename.");
+                var bytes = await File.ReadAllBytesAsync(Path.Combine(directory, file));
+                Check.True(Convert.ToHexStringLower(System.Security.Cryptography.SHA256.HashData(bytes)) == row.GetProperty("wrapperSha256").GetString(), "Storefront asset digest mismatch.");
+                var svg = System.Xml.Linq.XDocument.Parse(System.Text.Encoding.UTF8.GetString(bytes));
+                var image = svg.Descendants(System.Xml.Linq.XName.Get("image", "http://www.w3.org/2000/svg")).Single();
+                var payload = image.Attribute("href")!.Value.Split(",", 2)[1];
+                Check.True(Convert.ToHexStringLower(System.Security.Cryptography.SHA256.HashData(Convert.FromBase64String(payload))) == row.GetProperty("sourceSha256").GetString(), "Original image bytes changed.");
+                for (var view = 1; view <= 3; view++)
+                    Check.True(PhoneStore.Web.Storefront.StorefrontProductImages.Resolve($"/images/demo/{code.ToLowerInvariant()}-{view}.svg", name) == $"/images/storefront/{file}", "Missing selected image mapping.");
+            }
+            const string sample = "/images/demo/lc001-1.svg";
+            Check.True(PhoneStore.Web.Storefront.StorefrontProductImages.Resolve(sample, "Custom model") == sample &&
+                PhoneStore.Web.Storefront.StorefrontProductImages.Resolve("/uploads/custom.png", "Samsung Galaxy A05") == "/uploads/custom.png" &&
+                PhoneStore.Web.Storefront.StorefrontProductImages.Resolve("", "Samsung Galaxy A05") == "" &&
+                PhoneStore.Web.Storefront.StorefrontProductImages.Resolve("/images/demo/lc020-1.svg", "Redmi Note 12") == "/images/demo/lc020-1.svg", "Custom/missing/mismatched image incorrectly overridden.");
+        });
         await using var factory = new MvcFoundationFactory(database.ConnectionString, root.FullName);
         using var guest = factory.Browser();
         async Task<(HttpResponseMessage Response, string Html)> Get(string path)

@@ -7,6 +7,22 @@ const output=path.join(process.cwd(),'.artifacts/mvc-cart/browser');fs.mkdirSync
 const browser=await chromium.launch({headless:true}),records=[],errors=[],key='phonestore.guest-cart.v1';
 const assert=(value,message)=>{if(!value)throw Error(message);};
 try{
+ // Listing quick-add must select a real variant and keep the guest cart local.
+ const quickContext=await browser.newContext();const quick=await quickContext.newPage();
+ const quickErrors=[];quick.on('pageerror',error=>quickErrors.push(error.message));
+ await quick.goto(`${url}/Catalog/Index`,{waitUntil:'networkidle'});
+ const card=quick.locator(`.product-card[data-product-id="${product}"]`);
+ await card.locator('[data-quick-cart]').click();
+ const choice=card.locator('.quick-cart-panel select');await choice.waitFor();
+ await choice.selectOption(String(sold));assert(await card.locator('.quick-cart-panel button[type=submit]').isDisabled(),'Quick-add allows sold-out variant');
+ await choice.selectOption(String(variant));assert(await card.locator('.quick-cart-panel button[type=submit]').isEnabled(),'Quick-add cannot recover to available variant');
+ await Promise.all([quick.waitForURL('**/Cart/Index'),card.locator('.quick-cart-panel button[type=submit]').click()]);
+ await quick.waitForLoadState('networkidle');
+ assert(await quick.locator('#cart-badge').innerText()==='Giỏ hàng (1)','Quick-add guest badge incorrect');
+ const saved=await quick.evaluate(key=>JSON.parse(localStorage.getItem(key)),key);
+ assert(saved.length===1&&saved[0].variantId===variant&&saved[0].quantity===1,'Quick-add used wrong variant');
+ assert(quickErrors.length===0,'Quick-add JavaScript error');records.push({name:'listing-quick-add',variantSelection:true,outOfStockBlocked:true,guestAdd:true});
+ await quickContext.close();
  const context=await browser.newContext();const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
  const desktop={width:1440,height:1000},mobile={width:390,height:844};await page.setViewportSize(desktop);
  async function settled(){await page.waitForLoadState('networkidle');}

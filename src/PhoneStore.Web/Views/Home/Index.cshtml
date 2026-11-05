@@ -9,7 +9,7 @@
         <h1 id="welcome-title">Chạm công nghệ.<br /><span>Mở trải nghiệm.</span></h1>
         <p>@Storefront.Value.Introduction</p>
         <a class="button button-light" href="/Catalog/Index">Khám phá sản phẩm <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>
-        <a class="welcome-link" href="#about">Về @Storefront.Value.Name</a>
+        <a class="welcome-link action-link" href="#about">Về @Storefront.Value.Name</a>
         <p class="welcome-note">Dễ chọn máy · Dễ đặt hàng · COD</p>
     </div>
     <div class="welcome-type" aria-hidden="true">mono<br /><span>phone.</span></div>
@@ -17,15 +17,24 @@
 @if (Model.Bestsellers.Items.Count > 0)
 {
     <section class="home-bestsellers" id="bestsellers" aria-labelledby="bestsellers-title">
-        <div class="catalog-section-heading"><div><h2 id="bestsellers-title">Điện thoại bán chạy</h2><p>Tháng @Model.Bestsellers.From.ToString("MM/yyyy") · Đơn hoàn tất đã thu COD</p></div><a href="/Catalog/Index">Xem tất cả điện thoại</a></div>
+        <div class="catalog-section-heading">
+            <div>
+                <h2 id="bestsellers-title">Điện thoại bán chạy</h2>
+                <p class="bestseller-context">
+                    <span class="bestseller-period"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/></svg>Tháng @Model.Bestsellers.From.ToString("MM/yyyy")</span>
+                    <span class="bestseller-caption">Đơn hoàn tất đã thu COD</span>
+                </p>
+            </div>
+            <a class="browse-all" href="/Catalog/Index"><partial name="_ShopIcon" model='@("phone")' />Xem tất cả điện thoại <partial name="_ShopIcon" model='@("arrow")' /></a>
+        </div>
         <div class="product-grid">@foreach (var product in Model.Bestsellers.Items) { <partial name="_ProductCard" model="new PhoneStore.Web.Models.ProductCardViewModel(product.ProductId, product.Name, null, product.ImageUrl, product.MinPrice, null, null)" /> }</div>
     </section>
 }
 <section class="about-section" id="about" aria-labelledby="about-title">
     <div><h2 id="about-title">Chọn chiếc máy<br />phù hợp với bạn.</h2></div>
-    <div><p>Tra cứu cấu hình, chọn dung lượng và màu sắc bạn cần. Giá và khả dụng được cập nhật khi bạn xem sản phẩm.</p><p>Thanh toán COD khi nhận hàng. Theo dõi đơn và thông tin giao hàng trong tài khoản của bạn.</p></div>
+    <div><p>Chúng tôi là nhóm sinh viên Đại học Sài Gòn, mong muốn mở một cửa hàng bán điện thoại. Tại đây, bạn có thể tra cứu cấu hình, chọn dung lượng và màu sắc phù hợp.</p><p>Thanh toán COD khi nhận hàng. Theo dõi đơn và thông tin giao hàng trong tài khoản của bạn.</p></div>
 </section>
 <section class="contact-section" id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title">Kết nối với @Storefront.Value.Name</h2>
-    <p>@Storefront.Value.ContactNote</p>
+    <p>Bạn cần tư vấn? <a class="action-link" href="https://www.facebook.com/hoang.le.923781/" target="_blank" rel="noopener noreferrer">Nhắn cho chúng tôi qua Facebook</a>.</p>
 </section>

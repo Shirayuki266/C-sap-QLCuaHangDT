@@ -1,0 +1,11 @@
+@model string
+<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+@switch (Model)
+{
+    case "cart": <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01" /> break;
+    case "orders": <rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 10h6M9 14h6"/> break;
+    case "user": <circle cx="12" cy="8" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/> break;
+    case "phone": <rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4M11 19h2"/> break;
+    default: <path d="M5 12h14m-6-6 6 6-6 6"/> break;
+}
+</svg>

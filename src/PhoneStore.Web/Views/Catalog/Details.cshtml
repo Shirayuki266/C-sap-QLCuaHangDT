@@ -1,7 +1,7 @@
 @model PhoneStore.Web.Models.ProductDetailsViewModel
 @{ ViewData["Title"] = Model.Product.Name; var product = Model.Product; var selected = Model.Selected;
-    var images = new[] { product.ImageUrl }.Concat(product.Images.Select(image => image.Url)).Where(url => !string.IsNullOrWhiteSpace(url)).Distinct().ToList(); }
-<nav class="breadcrumbs" aria-label="Đường dẫn"><a href="/Catalog/Index">Điện thoại</a><span aria-hidden="true">/</span><span>@product.Name</span></nav>
+    var images = new[] { product.ImageUrl }.Concat(product.Images.Select(image => image.Url)).Where(url => !string.IsNullOrWhiteSpace(url)).Select(url => StorefrontProductImages.Resolve(url!, product.Name)).Distinct().ToList(); }
+<nav class="breadcrumbs" aria-label="Đường dẫn"><a class="action-link" href="/Catalog/Index">Điện thoại</a><span aria-hidden="true">/</span><span>@product.Name</span></nav>
 <article class="product-detail" data-product-detail>
     <div class="product-gallery">
         <div class="product-main-image">

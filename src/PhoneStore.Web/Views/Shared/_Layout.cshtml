@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="~/css/ui-feedback.css" asp-append-version="true" />
     <script src="~/js/storefront.js" asp-append-version="true" defer></script>
     <script src="~/js/catalog.js" asp-append-version="true" defer></script>
+    <script src="~/js/quick-cart.js" asp-append-version="true" defer></script>
     <script src="~/js/cart.js" asp-append-version="true" defer></script>
     <script src="~/js/checkout.js" asp-append-version="true" defer></script>
     <script src="~/js/orders.js" asp-append-version="true" defer></script>
@@ -35,31 +36,31 @@
     <div class="topnote">Chọn đúng máy · Kết nối điều bạn yêu · Thanh toán khi nhận hàng</div>
     <header class="site-header">
         <div class="masthead container">
-            <a href="/Home/Index" class="brand" aria-label="@shop.Name — Trang chủ">@shop.Name<span>.</span></a>
+            <a href="/Home/Index" class="brand" aria-label="@shop.Name — Trang chủ"><span class="brand-mark"><partial name="_ShopIcon" model='@("phone")' /></span>@shop.Name<span>.</span></a>
             <form action="/Catalog/Index" method="get" class="site-search" role="search">
                 <label class="visually-hidden" for="site-q">Tìm điện thoại</label>
                 <input id="site-q" name="q" type="search" value="@ViewData["CatalogQuery"]" placeholder="Tìm iPhone, Samsung, Xiaomi…" maxlength="100" />
                 <button type="submit" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
             </form>
             <nav class="account-links" aria-label="Tài khoản và mua hàng">
-                <a href="/Orders/Index">Đơn hàng</a>
+                <a class="action-link" href="/Orders/Index"><partial name="_ShopIcon" model='@("orders")' />Đơn hàng</a>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
-                    <a href="/Account/Profile">Tài khoản của tôi</a>
+                    <a class="action-link" href="/Account/Profile"><partial name="_ShopIcon" model='@("user")' />Tài khoản</a>
                     <form asp-controller="Account" asp-action="Logout" method="post"><button class="text-button" type="submit">Đăng xuất</button></form>
                 }
                 else
                 {
-                    <a href="/Account/Login">Đăng nhập</a>
+                    <a class="action-link" href="/Account/Login"><partial name="_ShopIcon" model='@("user")' />Đăng nhập</a>
                 }
-                <a href="/Cart/Index" id="cart-badge">@await Component.InvokeAsync("CartBadge")</a>
+                <a href="/Cart/Index" class="header-cart action-link"><partial name="_ShopIcon" model='@("cart")' /><span id="cart-badge">@await Component.InvokeAsync("CartBadge")</span></a>
             </nav>
         </div>
         <nav class="primary-nav container" aria-label="Điều hướng chính">
-            <a href="/Home/Index" aria-current="@(home ? "page" : null)">Trang chủ</a>
-            <a href="/Catalog/Index" aria-current="@(catalog ? "page" : null)">Sản phẩm</a>
-            <a href="/Home/Index#about">Về cửa hàng</a>
-            <a href="/Home/Index#contact">Liên hệ</a>
+            <a class="action-link" href="/Home/Index" aria-current="@(home ? "page" : null)">Trang chủ</a>
+            <a class="action-link" href="/Catalog/Index" aria-current="@(catalog ? "page" : null)">Sản phẩm</a>
+            <a class="action-link" href="/Home/Index#about">Về cửa hàng</a>
+            <a class="action-link" href="/Home/Index#contact">Liên hệ</a>
         </nav>
     </header>
     <div id="navigation-progress" class="container navigation-progress" role="status" aria-live="polite" hidden>Đang tải trang…</div>
@@ -71,13 +72,7 @@
         }
         @RenderBody()
     </main>
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <a href="/Home/Index" class="brand">@shop.Name<span>.</span></a>
-            <p>Chọn điện thoại phù hợp. Thanh toán khi nhận hàng.</p>
-            <a href="/Home/Index#contact">Liên hệ cửa hàng</a>
-        </div>
-    </footer>
+    <partial name="_StoreFooter" />
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
