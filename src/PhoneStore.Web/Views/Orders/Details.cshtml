@@ -1,7 +1,7 @@
 @model PhoneStore.Web.Models.OrderDetailsViewModel
 @{ ViewData["Title"] = "Chi tiết đơn hàng"; }
-<div class="cart-heading"><h1>Chi tiết đơn hàng</h1><a href="/Orders/Index">Quay lại danh sách đơn</a></div>
-<div class="order-status"><p class="order-code">Mã đơn: <strong>@Model.Order.Code</strong></p><p><strong>@OrderLabels.Status(Model.Order.Status)</strong> · COD · @OrderLabels.Payment(Model.Order.Payment)</p><p>Đặt lúc <time datetime="@Model.Order.CreatedAt.ToString("O")">@WebsiteFormatting.Time(Model.Order.CreatedAt.UtcDateTime)</time> (UTC+7)</p><a href="/Orders/Details/@Model.Order.Id">Xem đơn</a></div>
+<div class="cart-heading"><h1>Chi tiết đơn hàng</h1><a class="action-link" href="/Orders/Index">Quay lại danh sách đơn</a></div>
+<div class="order-status"><p class="order-code">Mã đơn: <strong>@Model.Order.Code</strong></p><p><strong>@OrderLabels.Status(Model.Order.Status)</strong> · COD · @OrderLabels.Payment(Model.Order.Payment)</p><p>Đặt lúc <time datetime="@Model.Order.CreatedAt.ToString("O")">@WebsiteFormatting.Time(Model.Order.CreatedAt.UtcDateTime)</time> (UTC+7)</p><a class="action-link" href="/Orders/Details/@Model.Order.Id">Xem đơn</a></div>
 <div class="receipt-layout">
     <section class="receipt-section" aria-label="Thông tin người nhận"><h2>Giao đến</h2><p><strong>@Model.Order.Recipient</strong></p><p>@Model.Order.Phone</p><p class="receipt-address">@Model.Order.Address</p></section>
     <section class="receipt-section" aria-label="Sản phẩm đã đặt"><h2>Sản phẩm trong đơn</h2>

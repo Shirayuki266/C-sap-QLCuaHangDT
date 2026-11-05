@@ -1,0 +1,391 @@
+{
+  "date": "2026-11-05",
+  "scope": "Web/tests/docs only; current working source fingerprinted below",
+  "build": {
+    "configuration": "Release",
+    "warnings": 0,
+    "errors": 0
+  },
+  "integration": {
+    "command": "dotnet run --project tests/PhoneStore.Checks -c Release --no-build -- --integration",
+    "passed": 323
+  },
+  "browser": {
+    "accounts": {
+      "status": "PASS",
+      "screens": 8,
+      "errors": []
+    },
+    "catalog": "PASS",
+    "cart": {
+      "status": "PASS",
+      "listingVariantSelection": true,
+      "outOfStockBlocked": true
+    },
+    "flow": {
+      "status": "PASS",
+      "screens": 51,
+      "checks": 16,
+      "errors": [],
+      "sqlPerStepOracle": true
+    },
+    "framedActions": {
+      "status": "PASS",
+      "publicRouteViewportCombinations": 15,
+      "assertedDuringAccountAndFlowCaptures": true
+    },
+    "selectedImages": {
+      "status": "PASS",
+      "models": 50,
+      "publiclyListedModels": 46,
+      "assertions": 146,
+      "errors": []
+    }
+  },
+  "originalLicensedDemoAssets": {
+    "status": "PASS",
+    "files": 150,
+    "scope": "Original LC data assets only; not a license assessment of the new Web presentation images"
+  },
+  "ciGate": "Exact PR HEAD must pass Ubuntu and Windows before web-v1.0.1 tag; see PR for final run URLs",
+  "screenshots": [
+    {
+      "file": "cart-mobile.png",
+      "sha256": "4c861621e36f1c23cc7fa1cca5d7ea4a1578e9754e3bbc2dca39c26ccebdd38e"
+    },
+    {
+      "file": "catalog-mobile.png",
+      "sha256": "52a62802188c8192c5cb4cb57b38bde074750fd1d7ff28a8d8d3ab8c103448d8"
+    },
+    {
+      "file": "home-desktop.png",
+      "sha256": "bf0d6813fa87248e786c2e14bfa26e28a805998250efaedeabe669a07250a426"
+    },
+    {
+      "file": "orders-desktop.png",
+      "sha256": "b3e68c3b1ae3f5d989e107c6424faff49ace268daf33d09521a0c4bc9766f506"
+    },
+    {
+      "file": "profile-desktop.png",
+      "sha256": "eee07cbb9c75b8f4e7355921fac8ef986890d81a557ef2dbc148c6cb34f7d282"
+    },
+    {
+      "file": "profile-mobile.png",
+      "sha256": "a0fb8a23080ab0c48bbe8d9a814216cf130760fcd984ec68a292607ac0359f5c"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/PhoneStore.Web/Storefront/StorefrontProductImages.cs",
+      "sha256": "0995307bf46e94947aa64ee3479ee8ba08331580b5595d69a19997fff52d1910"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Account/Login.cshtml",
+      "sha256": "185955cdbedd812aa2b7e77634da28a345c5f60ca7dd2196269147442d2e4e82"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Account/Password.cshtml",
+      "sha256": "1906f0fb4b2d3966f2f78c4103d1777c1a790dd3ea5b77e98a4b7baf4e5962dd"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Account/Profile.cshtml",
+      "sha256": "6df4f0dd5f194dcc797cb82a83b9cc7f902571501da0416a40c64dccf7264d3a"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Account/Register.cshtml",
+      "sha256": "e73a21ab948dddadbc338a64437b28afc94740c92cf006b0bf3fbfdb7b6ed81f"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Cart/Checkout.cshtml",
+      "sha256": "a3fc8865c450cbce57088622da793ddff4c8d30d276890bd04c5edd152c5c2ed"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Cart/Index.cshtml",
+      "sha256": "7a012fbf8c6e390fa59c96faf752335dca7a3b768621ce89b967c2b511ce13f7"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Catalog/Details.cshtml",
+      "sha256": "fa8a001262f663a7a0d3d088e77f71d21ec9851050c1145f53261a9d90735e68"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Catalog/Index.cshtml",
+      "sha256": "187274e08372de98d1c4a44e99519c58ca2e3776462d2b7f450bc69a2e9d1b91"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Catalog/_Filters.cshtml",
+      "sha256": "6c1305addd2a2e809ea2147e48c718b55183f64696b34295f61f1be0edf18e73"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Home/Index.cshtml",
+      "sha256": "fdbc0a1313a04a3dec5760cde05f94231e1f822e1cacb605a860fe6755a393ac"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Orders/Details.cshtml",
+      "sha256": "9b0a07c7896a551eaa2055c84c92e5b65b92f3456bb7ef420799b14a9cf1f16f"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Orders/Index.cshtml",
+      "sha256": "fc2145e247130c47b3c5c52cf88bcbc4542d49fa420f1c8e7df59f331905d97f"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Shared/_Layout.cshtml",
+      "sha256": "4b0863adeb92867e5287ec107f2e75c5f22ef759cd8964df1a350ed03e6eff92"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Shared/_ProductCard.cshtml",
+      "sha256": "30c638b068808df92af1d82bd17de49f8a4303fa67d11443ef45be64a8d52587"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Shared/_ShopIcon.cshtml",
+      "sha256": "b90dc619be6d928c89dd41f2af973dea0ec0ad0f12009ef7f40b816a2d8a2ec8"
+    },
+    {
+      "path": "src/PhoneStore.Web/Views/Shared/_StoreFooter.cshtml",
+      "sha256": "75aecea6f6d7747277077b56ebd4e457f904aa95aabeded102d26aa27dfac50b"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/css/catalog.css",
+      "sha256": "1c9c34be6abbcf7255b8949d0cfe51c016a8c0ad5a36e9fd58f22e85db8de5b6"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/css/storefront.css",
+      "sha256": "bb4a81b0034d03d6570b307600a55b81714eb724d3435ecc2eb99332b3336c5b"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/css/ui-feedback.css",
+      "sha256": "f2b875113a434c0a205aa79a514d72adff30c025d0cb0a702a4e4bf8598e0797"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc001.svg",
+      "sha256": "535bdd6d2d86be26d95101a6fbf42fe428131f0b48b67a9faa9b5165ff82106a"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc002.svg",
+      "sha256": "c4dec1c3abf73866047681dab9b1d96f5ff74d3702e4d5e471002114664ef95b"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc003.svg",
+      "sha256": "a7777c9c4d55df3839343f9d6c2da11c13a8c2b4c648a4679b9cfa990ab6fa67"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc004.svg",
+      "sha256": "5bb7b4fe66893a6d032bf579edd46909ad36551b33e6a11915688f47920b8a0a"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc005.svg",
+      "sha256": "f1bdf86eb7c7624a561627a04c2b04ecb3585964ce5254867f5b3f118bf99af8"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc006.svg",
+      "sha256": "b94bda22d08930946d1378db414e3803d695b8a2cc467d6faa7022693babaf67"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc007.svg",
+      "sha256": "6d628e08998e1e334ab0b96e8e9ec8f3df85184744a4fb3e4600236ed12322b6"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc008.svg",
+      "sha256": "4f24887f86e19c2181342ed65fe55348749f5f40bbf9496a1a18f5e75970e386"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc009.svg",
+      "sha256": "31acf0e44ef7d1f7341456180b34a91ba810dc03420a977b5520811708cde5e3"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc010.svg",
+      "sha256": "8d5c0a6c53b62a23d94ce0327ab0d70ad7aebd1545e439c47977c2c558f45cc5"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc011.svg",
+      "sha256": "22c80d2c337330e66f7c08f5981e35d1fbc8ab1efd88c1ee6e85ce2880ec22cc"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc012.svg",
+      "sha256": "096061bccda6ec4ec5adc70bbe5cc45694f19d6f3f9bad91f5431f65a7fee30e"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc013.svg",
+      "sha256": "a1384da614bcbf8281be2e861443581d68691d00ce0c8630ac3c6831ee9d4b17"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc014.svg",
+      "sha256": "fc9e1b6791691dfd7881d5b657e32e174f902e372a7349b123c91d181b6336f4"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc015.svg",
+      "sha256": "495983062bdd36ca62a3bece0c1c08b8ffb150f0136879d8df217e8d91f22e33"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc016.svg",
+      "sha256": "628ea0234a539ccc712fcadc2f7fd988ea3155c2133a5ee8c0e95157bc679539"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc017.svg",
+      "sha256": "9e3744a16a3c8d1415ad3f90b9753de1e97ae3e838d4d44836e7cd80fb942712"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc018.svg",
+      "sha256": "29b694763fe5dcc9cf802fe648dbb7dd459ed864d2ef84119fb97b0ce915bb9e"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc019.svg",
+      "sha256": "e2dee3ff82a8501f06747a9235e04d2c1fc451ee8107caf5b8c9ce7bc573fd04"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc020.svg",
+      "sha256": "aafdb421358bd43a5b5f1f7958b43ba38fb8eb0348680255f1e391eceda618ff"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc021.svg",
+      "sha256": "00c1722add07dad35786682b1b220742ac9f8ddb2f9a3286cb17477d642ad787"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc022.svg",
+      "sha256": "958f12870d992b7c65220d228bbbf227b925177cd187c611a4ee79b169e9cb6a"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc023.svg",
+      "sha256": "276e3d46d86053f9525dcd5a837cfb01fe83bb8dcf12a06d761295efc6bcff7d"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc024.svg",
+      "sha256": "ca0e2f16e64e288dfd5511492506e5307be610390d67bce6f887c71f8bfa0906"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc025.svg",
+      "sha256": "69954c22dfdfbdddcc18cc8ba92c1b237fed88819eda10de2df962f08fceb423"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc026.svg",
+      "sha256": "ebc22e249bad7e156022f8346d7475bae1438a23ebec08576d5404018acf9069"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc027.svg",
+      "sha256": "0c00bfca4a4db4bfd31c4a170d5d98b2f157d15a21372744cceee0c49b7983d6"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc028.svg",
+      "sha256": "de809f08a7409691851fbc7c0db8434a6d98047236862295d5fac1955f51876a"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc029.svg",
+      "sha256": "229bd349a9fa15ebbb8a78c21ced49fbd58f1d73ebdf8634ae12f8419ac55c12"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc030.svg",
+      "sha256": "3078b3ef9b54a96bce702e40cbe56cd80e3ed50836f9a8d22618332c5e2c24aa"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc031.svg",
+      "sha256": "2cfb26b260235db9b5b77421c9aa409ba34dcbec046654bc1ded844474849157"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc032.svg",
+      "sha256": "1d8bb5471c94668f9e20f0e4f2c85dc4d030a70263d1ee55747d26ed863dec24"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc033.svg",
+      "sha256": "a193bc53d0027ab9a90b9739806fc672697f33bc1f8b6ecd7fa570567a2086fb"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc034.svg",
+      "sha256": "27a419eb6cf4e92b7711d587747c0133009ae56d2cea1991406adf7ffcb9c673"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc035.svg",
+      "sha256": "cc5f89ce2737829de968f103f0c7622a475a038bc14ce2a83401c5aab00ccffb"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc036.svg",
+      "sha256": "fdc369b325bd58135b90a687e29d88f3aea5b55dee478d9b39940240dbf46ba5"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc037.svg",
+      "sha256": "b27fbd9cefb1f41e4d909ec3b465d04b783fb64db61387b2195d392e0c63c7b5"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc038.svg",
+      "sha256": "94f2fbaca287df10d111748d69eaea95ad05c1d2a0482ccb8accb0cfb5c0d5f1"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc039.svg",
+      "sha256": "bff8949a39c715d9ba084e67bdeba45624f3e766d8db13ca432bbaf03989f95d"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc040.svg",
+      "sha256": "889720e73b6c6e8306223c762076842861532d6ebc7efd2fb9a202b39c46794f"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc041.svg",
+      "sha256": "3cfbe2e56ed2e1798bf99bf674d71d7212bc0838580b3d06023c0c7da8db2635"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc042.svg",
+      "sha256": "599227ac3810c429ada7d820bea7974786d1fa21328a64782e378bb21692ea2e"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc043.svg",
+      "sha256": "e10713ef940b1787411774350c312d6f232748bcd6f37c88a765cc3e370ebc8a"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc044.svg",
+      "sha256": "46d27b77a8837845740ceb8757f3493a0eee6cf1c1c5d19e96bb03fec2c234ab"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc045.svg",
+      "sha256": "f7ed70ea628ecb79f02a596f2c725c55a92d269792a57ab61bf0abf135b5758d"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc046.svg",
+      "sha256": "a0ba36b313f6c306308dc0898eee5035755d577337d30987e67480e8f66c3af0"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc047.svg",
+      "sha256": "2e07efeaf3d8bab56ec4002d394aa14bcd1cba2a4c9d94a1f3f5ab57903ed73c"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc048.svg",
+      "sha256": "fcada492f46afc9a6a1a39ff30938de7e30caa79988a2471fb8aa329b100769d"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc049.svg",
+      "sha256": "b01dc8dd90362bce5727328c771423c786f100cd963e271fa14f530c26947fc0"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/lc050.svg",
+      "sha256": "161d38a86878bb94b923293eb751510a82edd4681baca39c23484b0f05155c61"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/images/storefront/sources.json",
+      "sha256": "ac3e198bf529632c34eba97ce8cf0d8dd0bd3c6d11bee190810fbf4100135c83"
+    },
+    {
+      "path": "src/PhoneStore.Web/wwwroot/js/quick-cart.js",
+      "sha256": "9e59518816e94ec7125dddad187dd510c1d1116a671845acdeb12298a240c603"
+    },
+    {
+      "path": "tests/PhoneStore.Checks/MvcCatalogChecks.cs",
+      "sha256": "0b45049580ef93f32655d2c33fbda54fe312a77147f0e78f938919f05e2e7c62"
+    },
+    {
+      "path": "tests/PhoneStore.Checks/MvcFoundationFactory.cs",
+      "sha256": "00b5b4e46b6b9ea8bd51c0a7df6d9ed4883f640ba81b4a335f995a2959ca8e6b"
+    },
+    {
+      "path": "tests/browser/mvc-acceptance.mjs",
+      "sha256": "d5e48ef52bacfb0a929066fc33386f0bfbc2dcebbef6b69b6d44742a683ed0d3"
+    },
+    {
+      "path": "tests/browser/mvc-accounts.mjs",
+      "sha256": "2bd5439dd63e33a1b95a1c0376978d6da028a9f628a3d34ac4199978cee13067"
+    },
+    {
+      "path": "tests/browser/mvc-cart.mjs",
+      "sha256": "75fb273d82a995d9aafd0b3b9ebd97d6865d63265e6d90b284f915ebfb1fd9a9"
+    },
+    {
+      "path": "tests/browser/storefront-style-audit.mjs",
+      "sha256": "5fa0a653227b093bfb52c9a5f127e8265624cd6b272cd61b6b231829b0c8625c"
+    }
+  ]
+}

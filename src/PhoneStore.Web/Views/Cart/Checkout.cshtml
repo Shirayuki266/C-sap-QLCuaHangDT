@@ -1,6 +1,6 @@
 @model PhoneStore.Web.Models.CheckoutViewModel
 @{ ViewData["Title"] = "Đặt hàng COD"; }
-<div class="cart-heading"><h1>Đặt hàng COD</h1><a href="/Cart/Index">Quay lại giỏ hàng</a></div>
+<div class="cart-heading"><h1>Đặt hàng COD</h1><a class="action-link" href="/Cart/Index">Quay lại giỏ hàng</a></div>
 <form action="/Cart/Checkout" method="post" asp-antiforgery="false" class="checkout-form">
     @Html.AntiForgeryToken()
     <input asp-for="RequestKey" type="hidden" />
@@ -19,7 +19,7 @@
         <aside class="checkout-summary" aria-label="Tóm tắt đơn hàng">
             <h2>@(Model.PriceChanged ? "Kiểm tra giá mới" : "Tóm tắt đơn hàng")</h2>
             @if (Model.Cart.Lines.Count == 0)
-            { <p>Giỏ hàng đang rỗng. <a href="/Cart/Index">Quay lại giỏ hàng</a> để chọn sản phẩm.</p> }
+            { <p>Giỏ hàng đang rỗng. <a class="action-link" href="/Cart/Index">Quay lại giỏ hàng</a> để chọn sản phẩm.</p> }
             @foreach (var line in Model.Cart.Lines)
             {
                 <div class="checkout-line" data-variant-id="@line.VariantId">

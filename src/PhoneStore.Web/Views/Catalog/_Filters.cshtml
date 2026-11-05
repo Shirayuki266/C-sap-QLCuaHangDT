@@ -20,5 +20,5 @@
     </select>
     <label for="filter-size">Số sản phẩm mỗi trang</label><input id="filter-size" name="pageSize" type="number" value="@filter.PageSize" min="1" max="100" step="1" />
     <button class="button" type="submit">Áp dụng</button>
-    <a class="filter-reset" href="@filter.PageUrl(remove: "filters")">Xóa bộ lọc</a>
+    <a class="filter-reset action-link" href="@filter.PageUrl(remove: "filters")">Xóa bộ lọc</a>
 </form>

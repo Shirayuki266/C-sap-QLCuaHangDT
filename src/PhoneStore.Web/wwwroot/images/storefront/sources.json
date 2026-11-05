@@ -1,0 +1,956 @@
+{
+  "scope": "Web storefront presentation only; one selected image per current catalog model",
+  "rights": "Images belong to their original manufacturers/publishers; no Creative Commons license or independent permission is asserted by this register.",
+  "transformation": "Original downloaded raster bytes embedded unchanged in SVG; whitespace normalized by positioning and scaling, no generated device features.",
+  "models": [
+    {
+      "code": "LC001",
+      "name": "Samsung Galaxy A05",
+      "sourcePage": "https://www.samsung.com/ph/smartphones/galaxy-a/galaxy-a05-black-128gb-sm-a055fzkgphl/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a055fzkgphl/gallery/ph-galaxy-a05-sm-a055-sm-a055fzkgphl-538437007?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "c56a204b1e751f034b9ca2aeb7ae10c60e9185572189ece007c23fbbe02d9247",
+      "bytes": 350030,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 329,
+        "y": 453,
+        "width": 542,
+        "height": 694
+      },
+      "file": "lc001.svg",
+      "wrapperSha256": "535bdd6d2d86be26d95101a6fbf42fe428131f0b48b67a9faa9b5165ff82106a"
+    },
+    {
+      "code": "LC002",
+      "name": "Samsung Galaxy A05s",
+      "sourcePage": "https://www.samsung.com/ph/smartphones/galaxy-a/galaxy-a05s-black-128gb-sm-a057fzkgphl/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a057fzkgphl/gallery/ph-galaxy-a05s-sm-a057-sm-a057fzkgphl-538436211?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "84d1c0029280c96f6edc000bef5a7ae4934fdb1503684892e515ad0496318d2c",
+      "bytes": 432706,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 328,
+        "y": 455,
+        "width": 541,
+        "height": 690
+      },
+      "file": "lc002.svg",
+      "wrapperSha256": "c4dec1c3abf73866047681dab9b1d96f5ff74d3702e4d5e471002114664ef95b"
+    },
+    {
+      "code": "LC003",
+      "name": "Samsung Galaxy A06",
+      "sourcePage": "https://news.samsung.com/id/samsung-galaxy-a06-mulai-dari-harga-rp-15-jutaan-dengan-fast-charging",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a065flbdphl/gallery/ph-galaxy-a06-sm-a065-sm-a065flbdphl-543066245?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "fed91563366b469ce21ca09a9f2ce7e016a66a67c4a3af37908947b7c5326d0a",
+      "bytes": 270976,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 324,
+        "y": 442,
+        "width": 546,
+        "height": 716
+      },
+      "file": "lc003.svg",
+      "wrapperSha256": "a7777c9c4d55df3839343f9d6c2da11c13a8c2b4c648a4679b9cfa990ab6fa67"
+    },
+    {
+      "code": "LC004",
+      "name": "Samsung Galaxy A14",
+      "sourcePage": "https://www.samsung.com/co/smartphones/galaxy-a/galaxy-a14-silver-128gb-sm-a145mzsecom/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/sm-a145mzsecom/gallery/co-galaxy-a14-sm-a145-454764-sm-a145mzsecom-545365564?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "94c0cbfe5c32531266fd448a73ea4904eae448cd746eaea0f0000fd92636f7a5",
+      "bytes": 677990,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 308,
+        "y": 425,
+        "width": 585,
+        "height": 750
+      },
+      "file": "lc004.svg",
+      "wrapperSha256": "5bb7b4fe66893a6d032bf579edd46909ad36551b33e6a11915688f47920b8a0a"
+    },
+    {
+      "code": "LC005",
+      "name": "Samsung Galaxy A15",
+      "sourcePage": "https://news.samsung.com/vn/samsung-galaxy-a15-va-galaxy-a25-5g-ra-mat-voi-thiet-ke-vien-noi-key-island-moi-va-man-hinh-super-amoled-muot-ma",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a155fzkdphl/gallery/ph-galaxy-a15-sm-a155-sm-a155fzkdphl-539376838?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "8796843dd052bc9b3973d85de83b8e600349ad831df99d5e814579e1379161a9",
+      "bytes": 296008,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 333,
+        "y": 471,
+        "width": 534,
+        "height": 658
+      },
+      "file": "lc005.svg",
+      "wrapperSha256": "f1bdf86eb7c7624a561627a04c2b04ecb3585964ce5254867f5b3f118bf99af8"
+    },
+    {
+      "code": "LC006",
+      "name": "Redmi 12",
+      "sourcePage": "https://www.mi.com/global/product/redmi-12/specs/",
+      "sourceUrl": "https://i02.appmifile.com/180_operatorx_operatorx_opx/15/06/2023/32cd73d5451f1a9b26d439b30f7cef7d.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/webp",
+      "sourceSha256": "9105593adc91a64f1f970da88e53199d252289636bac6c759ea5a581e9ca4c42",
+      "bytes": 31850,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 160,
+        "y": 95,
+        "width": 680,
+        "height": 810
+      },
+      "file": "lc006.svg",
+      "wrapperSha256": "b94bda22d08930946d1378db414e3803d695b8a2cc467d6faa7022693babaf67"
+    },
+    {
+      "code": "LC007",
+      "name": "Redmi 13",
+      "sourcePage": "https://www.mi.com/global/product/redmi-13/specs/",
+      "sourceUrl": "https://i02.appmifile.com/580_operatorx_operatorx_opx/05/06/2024/b6ab95ebbd9fb402b423ba9963522a80.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/webp",
+      "sourceSha256": "645d1634ee27531bf907533f9cd40298897e557cc368547502aadde1039a3699",
+      "bytes": 34412,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 160,
+        "y": 95,
+        "width": 680,
+        "height": 810
+      },
+      "file": "lc007.svg",
+      "wrapperSha256": "6d628e08998e1e334ab0b96e8e9ec8f3df85184744a4fb3e4600236ed12322b6"
+    },
+    {
+      "code": "LC008",
+      "name": "Redmi 10C",
+      "sourcePage": "https://www.mi.com/global/product/redmi-10c/specs/",
+      "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666350617.15637957.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/png",
+      "sourceSha256": "551b05d917ec6c7b29596fb56061d07896780e83c4cbbb797b0f467a6b081cbb",
+      "bytes": 464381,
+      "width": 800,
+      "height": 800,
+      "bounds": {
+        "x": 126,
+        "y": 75,
+        "width": 546,
+        "height": 650
+      },
+      "file": "lc008.svg",
+      "wrapperSha256": "4f24887f86e19c2181342ed65fe55348749f5f40bbf9496a1a18f5e75970e386"
+    },
+    {
+      "code": "LC009",
+      "name": "Redmi 14C",
+      "sourcePage": "https://www.mi.com/global/product/redmi-14-c/specs/",
+      "sourceUrl": "https://i02.appmifile.com/10_operatorx_operatorx_opx/30/08/2024/d1c6e1733370c9ac6182ab5613bfde2c.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/webp",
+      "sourceSha256": "6f5ebebd1867e2543cb9a5256727238a1fc979c35ac412e0e2351f53e1ceb150",
+      "bytes": 92634,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 160,
+        "y": 95,
+        "width": 680,
+        "height": 810
+      },
+      "file": "lc009.svg",
+      "wrapperSha256": "31acf0e44ef7d1f7341456180b34a91ba810dc03420a977b5520811708cde5e3"
+    },
+    {
+      "code": "LC010",
+      "name": "realme C11 (2021)",
+      "sourcePage": "https://www.realme.com/eu/realme-c11-2021/specs",
+      "sourceUrl": "https://static.realme.net/v2/realme-c20/images/specs/silver-33c2e58016.png",
+      "mediaType": "image/png",
+      "sourceSha256": "395ea98c6fd9395ee7c01155b607ddbfd901fdc4b86ab622f7ca9eacc1d6c52b",
+      "bytes": 185107,
+      "width": 396,
+      "height": 486,
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 394,
+        "height": 485
+      },
+      "file": "lc010.svg",
+      "wrapperSha256": "8d5c0a6c53b62a23d94ce0327ab0d70ad7aebd1545e439c47977c2c558f45cc5"
+    },
+    {
+      "code": "LC011",
+      "name": "realme C21Y",
+      "sourcePage": "https://www.realme.com/ph/realme-c21-y/specs",
+      "sourceUrl": "https://static.realme.net/videos/pic/eu/c21y/specs/blue.png",
+      "mediaType": "image/png",
+      "sourceSha256": "2dee2e0914570f5cfa19b3670d1062c75766e0cba4641d190a625282f1845612",
+      "bytes": 898841,
+      "width": 794,
+      "height": 970,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 794,
+        "height": 970
+      },
+      "file": "lc011.svg",
+      "wrapperSha256": "22c80d2c337330e66f7c08f5981e35d1fbc8ab1efd88c1ee6e85ce2880ec22cc"
+    },
+    {
+      "code": "LC012",
+      "name": "realme C35",
+      "sourcePage": "https://www.realme.com/in/realme-c35/specs",
+      "sourceUrl": "https://static.realme.net/v2/realme-c35/images/specs/green-50348f5f9d.png",
+      "mediaType": "image/png",
+      "sourceSha256": "af97e4a016489ca820786d2816e21ceed038609f6524269304a12c1b0d149282",
+      "bytes": 896838,
+      "width": 794,
+      "height": 970,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 794,
+        "height": 970
+      },
+      "file": "lc012.svg",
+      "wrapperSha256": "096061bccda6ec4ec5adc70bbe5cc45694f19d6f3f9bad91f5431f65a7fee30e"
+    },
+    {
+      "code": "LC013",
+      "name": "OPPO A18",
+      "sourcePage": "https://www.oppo.com/en/smartphones/series-a/a18/specs/",
+      "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a18-en/specs/a18-black-blue.png",
+      "mediaType": "image/png",
+      "sourceSha256": "6867f0514b7e9268fcc6f8164e27ab73d3be67b31a67f582696639de99047e06",
+      "bytes": 161066,
+      "width": 860,
+      "height": 720,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 707,
+        "height": 720
+      },
+      "file": "lc013.svg",
+      "wrapperSha256": "a1384da614bcbf8281be2e861443581d68691d00ce0c8630ac3c6831ee9d4b17"
+    },
+    {
+      "code": "LC014",
+      "name": "OPPO A38",
+      "sourcePage": "https://www.oppo.com/en/smartphones/series-a/a38/specs/",
+      "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a38-en/specs/a38.png",
+      "mediaType": "image/png",
+      "sourceSha256": "b09ebfb94fc6c3ec4ceb04f9bef14ec6ff15599e97517185b63ee22899e76ae6",
+      "bytes": 160000,
+      "width": 860,
+      "height": 720,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 707,
+        "height": 720
+      },
+      "file": "lc014.svg",
+      "wrapperSha256": "fc9e1b6791691dfd7881d5b657e32e174f902e372a7349b123c91d181b6336f4"
+    },
+    {
+      "code": "LC015",
+      "name": "Samsung Galaxy A24",
+      "sourcePage": "https://news.samsung.com/my/samsung-malaysia-redefines-awesome-with-new-and-improved-galaxy-a24",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a245fzkwxid/gallery/id-galaxy-a24-sm-a245-sm-a245fzkwxid-536326892?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "67992fbc2873867a361e011696f051b1b060291a2814e7acae7abda7a7561df0",
+      "bytes": 416096,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 308,
+        "y": 421,
+        "width": 585,
+        "height": 758
+      },
+      "file": "lc015.svg",
+      "wrapperSha256": "495983062bdd36ca62a3bece0c1c08b8ffb150f0136879d8df217e8d91f22e33"
+    },
+    {
+      "code": "LC016",
+      "name": "Samsung Galaxy A25 5G",
+      "sourcePage": "https://news.samsung.com/vn/samsung-galaxy-a15-va-galaxy-a25-5g-ra-mat-voi-thiet-ke-vien-noi-key-island-moi-va-man-hinh-super-amoled-muot-ma",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/sm-a256ezkhphl/gallery/ph-galaxy-a25-5g-sm-a256-sm-a256ezkhphl-539208257?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "602e5529fb5f736414ca1ff409ac35471abd8c284cf8ae59600c72e3796a6a7b",
+      "bytes": 396330,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 333,
+        "y": 469,
+        "width": 534,
+        "height": 662
+      },
+      "file": "lc016.svg",
+      "wrapperSha256": "628ea0234a539ccc712fcadc2f7fd988ea3155c2133a5ee8c0e95157bc679539"
+    },
+    {
+      "code": "LC017",
+      "name": "Samsung Galaxy A34 5G",
+      "sourcePage": "https://www.samsung.com/es/smartphones/galaxy-a/galaxy-a34-5g-graphite-128gb-sm-a346bzkaeub/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/sm-a346bzkaeub/gallery/es-galaxy-a34-5g-sm-a346-sm-a346bzkaeub-535603630?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "ed1ce7bcbfac99febf1639416d53c91e06aff9fc8c9ae3cca12468b99b2464f1",
+      "bytes": 382002,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 308,
+        "y": 425,
+        "width": 584,
+        "height": 750
+      },
+      "file": "lc017.svg",
+      "wrapperSha256": "9e3744a16a3c8d1415ad3f90b9753de1e97ae3e838d4d44836e7cd80fb942712"
+    },
+    {
+      "code": "LC018",
+      "name": "Samsung Galaxy A54 5G",
+      "sourcePage": "https://www.samsung.com/id/smartphones/galaxy-a/galaxy-a54-5g-awesome-black-128gb-sm-a546ezkcxid/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/sm-a546ezkcxid/gallery/id-galaxy-a54-5g-sm-a546-sm-a546ezkcxid-535684242?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "d4b63a503608e635864109e7b54c708f7a235daa9ecc8d1b45cdb66f1d1d7e8e",
+      "bytes": 402588,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 308,
+        "y": 425,
+        "width": 584,
+        "height": 750
+      },
+      "file": "lc018.svg",
+      "wrapperSha256": "29b694763fe5dcc9cf802fe648dbb7dd459ed864d2ef84119fb97b0ce915bb9e"
+    },
+    {
+      "code": "LC019",
+      "name": "Redmi Note 12",
+      "sourcePage": "https://www.mi.com/global/product/redmi-note-12/specs/",
+      "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1679574037.40791067.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/png",
+      "sourceSha256": "b48ce66644b2acaf3caf9816e369c2d2dee88969dd02231e6b5db588bd19c05e",
+      "bytes": 1804406,
+      "width": 1600,
+      "height": 1600,
+      "bounds": {
+        "x": 256,
+        "y": 153,
+        "width": 1087,
+        "height": 1294
+      },
+      "file": "lc019.svg",
+      "wrapperSha256": "e2dee3ff82a8501f06747a9235e04d2c1fc451ee8107caf5b8c9ce7bc573fd04"
+    },
+    {
+      "code": "LC020",
+      "name": "Redmi Note 12 Pro (4G)",
+      "sourcePage": "https://www.mi.com/global/product/redmi-note-12-pro/specs/",
+      "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1681299637.34121266.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/png",
+      "sourceSha256": "0c37e910eccc4a5ffb438c88455c799d6b221e4d6eaedbb4c36ebe0fc14d2269",
+      "bytes": 1762180,
+      "width": 1600,
+      "height": 1600,
+      "bounds": {
+        "x": 256,
+        "y": 151,
+        "width": 1087,
+        "height": 1296
+      },
+      "file": "lc020.svg",
+      "wrapperSha256": "aafdb421358bd43a5b5f1f7958b43ba38fb8eb0348680255f1e391eceda618ff"
+    },
+    {
+      "code": "LC021",
+      "name": "Redmi Note 13 5G",
+      "sourcePage": "https://www.mi.com/global/product/redmi-note-13-5g/specs/",
+      "sourceUrl": "https://i02.appmifile.com/463_operatorx_operatorx_opx/11/01/2024/e02e51cd6efb5f2282e6921128b2618a.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/webp",
+      "sourceSha256": "421c8a218d216f926820043ba3b4e45689556451945f960f08b20306f9348f32",
+      "bytes": 55800,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 160,
+        "y": 95,
+        "width": 680,
+        "height": 809
+      },
+      "file": "lc021.svg",
+      "wrapperSha256": "00c1722add07dad35786682b1b220742ac9f8ddb2f9a3286cb17477d642ad787"
+    },
+    {
+      "code": "LC022",
+      "name": "Redmi Note 13 Pro+ 5G",
+      "sourcePage": "https://www.mi.com/global/product/redmi-note-13-pro-plus-5g/specs/",
+      "sourceUrl": "https://i02.appmifile.com/861_operatorx_operatorx_opx/06/09/2024/81bc431668bddec2805ee43d10624180.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/webp",
+      "sourceSha256": "8a72b1a945e0181a2d6fb7a2d49b7cd4ff92a90b94f8c3ee420feb406abc44cf",
+      "bytes": 19528,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 160,
+        "y": 95,
+        "width": 680,
+        "height": 810
+      },
+      "file": "lc022.svg",
+      "wrapperSha256": "958f12870d992b7c65220d228bbbf227b925177cd187c611a4ee79b169e9cb6a"
+    },
+    {
+      "code": "LC023",
+      "name": "Xiaomi 13 Lite",
+      "sourcePage": "https://www.mi.com/global/product/xiaomi-13-lite/specs/",
+      "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1677429532.40596257.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/png",
+      "sourceSha256": "cd967986a5169696ea330d8ec498db910e9763202bdfc26ebd3be53baadf71d0",
+      "bytes": 1233493,
+      "width": 1600,
+      "height": 1600,
+      "bounds": {
+        "x": 250,
+        "y": 150,
+        "width": 1100,
+        "height": 1299
+      },
+      "file": "lc023.svg",
+      "wrapperSha256": "276e3d46d86053f9525dcd5a837cfb01fe83bb8dcf12a06d761295efc6bcff7d"
+    },
+    {
+      "code": "LC024",
+      "name": "Redmi Note 10 Pro",
+      "sourcePage": "https://www.mi.com/global/product/redmi-note-10-pro/specs/",
+      "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666350318.27224311.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/png",
+      "sourceSha256": "008f6d97b4f5bbd7c215ecae4857b9f482228fd08f841dca26645d5763e39cba",
+      "bytes": 1478910,
+      "width": 1600,
+      "height": 1600,
+      "bounds": {
+        "x": 256,
+        "y": 153,
+        "width": 1087,
+        "height": 1294
+      },
+      "file": "lc024.svg",
+      "wrapperSha256": "ca0e2f16e64e288dfd5511492506e5307be610390d67bce6f887c71f8bfa0906"
+    },
+    {
+      "code": "LC025",
+      "name": "Xiaomi Mi 11 Lite (4G)",
+      "sourcePage": "https://www.mi.com/global/product/mi-11-lite/specs/",
+      "sourceUrl": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344986.57884237.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/png",
+      "sourceSha256": "238708907ac7b227f0e91256d50b781f63328a264e13712447c45d517146d99a",
+      "bytes": 829593,
+      "width": 1600,
+      "height": 1600,
+      "bounds": {
+        "x": 256,
+        "y": 151,
+        "width": 1088,
+        "height": 1299
+      },
+      "file": "lc025.svg",
+      "wrapperSha256": "69954c22dfdfbdddcc18cc8ba92c1b237fed88819eda10de2df962f08fceb423"
+    },
+    {
+      "code": "LC026",
+      "name": "OPPO A78",
+      "sourcePage": "https://www.oppo.com/en/smartphones/series-a/a78/specs/",
+      "sourceUrl": "https://www.oppo.com/content/dam/oppo/product-asset-library/specs/a78-4g/a78-bg.png",
+      "mediaType": "image/png",
+      "sourceSha256": "e8e4b34e84024e27671f9037eb8d19d2b2c7dfe9c11aba20e08089bb08386ae4",
+      "bytes": 754372,
+      "width": 860,
+      "height": 720,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 680,
+        "height": 720
+      },
+      "file": "lc026.svg",
+      "wrapperSha256": "ebc22e249bad7e156022f8346d7475bae1438a23ebec08576d5404018acf9069"
+    },
+    {
+      "code": "LC027",
+      "name": "OPPO Reno9 Pro+ 5G",
+      "sourcePage": "https://www.oppo.com/cn/smartphones/series-reno/reno9-pro-plus/",
+      "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/reno9-pro-plus-cn/listpage/reno9-pro-plus-list-gold.png",
+      "mediaType": "image/png",
+      "sourceSha256": "e50eb79ba732db63cb7a2a419adfc73ddeff6a97ad5e6b98ce18b2599419303b",
+      "bytes": 94998,
+      "width": 427,
+      "height": 600,
+      "bounds": {
+        "x": 2,
+        "y": 1,
+        "width": 425,
+        "height": 599
+      },
+      "file": "lc027.svg",
+      "wrapperSha256": "0c00bfca4a4db4bfd31c4a170d5d98b2f157d15a21372744cceee0c49b7983d6"
+    },
+    {
+      "code": "LC028",
+      "name": "vivo S18",
+      "sourcePage": "https://www.vivo.com.cn/vivo/param/s18",
+      "sourceUrl": "https://wwwstatic.vivo.com.cn/vivoportal/files/image/detail/20231207/43ce426ffb5c9576a35f3447ca99c44a.png",
+      "mediaType": "image/png",
+      "sourceSha256": "fd4583622959e3ba53b50c21e199c1d05e0d538a6357ba2cbb2c9e53db479bf6",
+      "bytes": 116083,
+      "width": 640,
+      "height": 640,
+      "bounds": {
+        "x": 65,
+        "y": 6,
+        "width": 510,
+        "height": 627
+      },
+      "file": "lc028.svg",
+      "wrapperSha256": "de809f08a7409691851fbc7c0db8434a6d98047236862295d5fac1955f51876a"
+    },
+    {
+      "code": "LC029",
+      "name": "vivo X100",
+      "sourcePage": "https://www.vivo.com/in/products/param/x100",
+      "sourceUrl": "https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1702983367485/d0467cb4099841dae725d707fce48b51.png",
+      "mediaType": "image/png",
+      "sourceSha256": "a5af0cdda2f9cb169e38ab58757df83295c6e1f7448a3292083cdb948f47c566",
+      "bytes": 410234,
+      "width": 640,
+      "height": 640,
+      "bounds": {
+        "x": 95,
+        "y": 34,
+        "width": 450,
+        "height": 572
+      },
+      "file": "lc029.svg",
+      "wrapperSha256": "229bd349a9fa15ebbb8a78c21ced49fbd58f1d73ebdf8634ae12f8419ac55c12"
+    },
+    {
+      "code": "LC030",
+      "name": "HONOR X9b",
+      "sourcePage": "https://www.honor.com/global/phones/honor-x9b/spec/",
+      "sourceUrl": "https://www-file.honor.com/content/dam/honor/global/specs/smartphone/honor-x9b/honor-x9b-spec-orange.png",
+      "mediaType": "image/png",
+      "sourceSha256": "3de5f471dbebd662cdfc896936e799c235840114e87690ee5ebdd76fb5360c0f",
+      "bytes": 257275,
+      "width": 266,
+      "height": 571,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 266,
+        "height": 571
+      },
+      "file": "lc030.svg",
+      "wrapperSha256": "3078b3ef9b54a96bce702e40cbe56cd80e3ed50836f9a8d22618332c5e2c24aa"
+    },
+    {
+      "code": "LC031",
+      "name": "Apple iPhone 13",
+      "sourcePage": "https://www.istudiobyspvi.com/products/iphone-13-mlqe3th-a",
+      "sourceUrl": "https://www.istudiobyspvi.com/cdn/shop/files/iPhone_13_Pink_PDP_Image_Position-1A__GBEN_2a6179bd-df98-4134-99ce-f1a6161302a3.jpg?v=1718111186&width=1000",
+      "mediaType": "image/jpeg",
+      "sourceSha256": "52b1c4b765517df4ccd686f164caa7b7da6e3730a3eccd0e839b32ddb1ec75b0",
+      "bytes": 49206,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 240,
+        "y": 151,
+        "width": 520,
+        "height": 709
+      },
+      "file": "lc031.svg",
+      "wrapperSha256": "2cfb26b260235db9b5b77421c9aa409ba34dcbec046654bc1ded844474849157"
+    },
+    {
+      "code": "LC032",
+      "name": "Apple iPhone 14",
+      "sourcePage": "https://istyle.ma/products/iphone-14-mpwp3aa-a",
+      "sourceUrl": "https://istyle.ma/cdn/shop/files/IMG-7325995_m_jpg_0_37a82986-342a-4757-be5e-e073b2bc344c.jpg?v=1748992600&width=1000",
+      "mediaType": "image/jpeg",
+      "sourceSha256": "74006ab2b57ea364a54fa6b8c16ac5be3f1ea921add8af11c8704e6697ae2dc3",
+      "bytes": 51859,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 249,
+        "y": 198,
+        "width": 502,
+        "height": 665
+      },
+      "file": "lc032.svg",
+      "wrapperSha256": "1d8bb5471c94668f9e20f0e4f2c85dc4d030a70263d1ee55747d26ed863dec24"
+    },
+    {
+      "code": "LC033",
+      "name": "Apple iPhone 15",
+      "sourcePage": "https://mediamart.vn/apple-iphone-15-128gb-hong",
+      "sourceUrl": "https://cdn.mediamart.vn/images/product/apple-iphone-15-128gb-hong_34e6a626.png",
+      "mediaType": "image/png",
+      "sourceSha256": "99f9571f4600fe6ced2d8423e56b5dc6a8cda8d4d6ac6431d93bace0742b4822",
+      "bytes": 291838,
+      "width": 600,
+      "height": 600,
+      "bounds": {
+        "x": 98,
+        "y": 22,
+        "width": 424,
+        "height": 558
+      },
+      "file": "lc033.svg",
+      "wrapperSha256": "a193bc53d0027ab9a90b9739806fc672697f33bc1f8b6ecd7fa570567a2086fb"
+    },
+    {
+      "code": "LC034",
+      "name": "Apple iPhone 15 Plus",
+      "sourcePage": "https://www.kaufland.fr/product/477311211/",
+      "sourceUrl": "https://media.cdn.kaufland.de/product-images/original/7c7614654a253cf9d1ac174118ba6a73.jpg",
+      "mediaType": "image/jpeg",
+      "sourceSha256": "49af21f641634abd14faf20f9ee8e596e3d956d6b462bd1777fa9ad42641054b",
+      "bytes": 2841063,
+      "width": 2165,
+      "height": 2896,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2165,
+        "height": 2896
+      },
+      "file": "lc034.svg",
+      "wrapperSha256": "27a419eb6cf4e92b7711d587747c0133009ae56d2cea1991406adf7ffcb9c673"
+    },
+    {
+      "code": "LC035",
+      "name": "Apple iPhone 15 Pro",
+      "sourcePage": "https://www.cimri.com/cep-telefonlari/en-ucuz-apple-iphone-15-pro-5g-128gb-naturel-titanyum-fiyatlari,2237890823",
+      "sourceUrl": "https://cdn.cimri.io/image/1000x1000/apple-iphone-15-pro-128gb-naturel-titanyum_825862481.jpg",
+      "mediaType": "image/jpeg",
+      "sourceSha256": "e3eef29a1160f59808cf1423d2f1187704f4069faf31264556b57429b286899c",
+      "bytes": 152201,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 97,
+        "y": 0,
+        "width": 807,
+        "height": 1000
+      },
+      "file": "lc035.svg",
+      "wrapperSha256": "cc5f89ce2737829de968f103f0c7622a475a038bc14ce2a83401c5aab00ccffb"
+    },
+    {
+      "code": "LC036",
+      "name": "Apple iPhone 15 Pro Max",
+      "sourcePage": "https://rozetka.com.ua/apple-iphone-15-pro-max-512gb-natural-titanium/p395461116/",
+      "sourceUrl": "https://content2.rozetka.com.ua/goods/images/original/364836847.jpg",
+      "mediaType": "image/jpeg",
+      "sourceSha256": "c9e7da8b2502397c76a6bf8269742cee8da33b2b1c79024320d50c57af38c94c",
+      "bytes": 1677762,
+      "width": 2352,
+      "height": 2912,
+      "bounds": {
+        "x": 6,
+        "y": 0,
+        "width": 2342,
+        "height": 2907
+      },
+      "file": "lc036.svg",
+      "wrapperSha256": "fdc369b325bd58135b90a687e29d88f3aea5b55dee478d9b39940240dbf46ba5"
+    },
+    {
+      "code": "LC037",
+      "name": "Samsung Galaxy S23",
+      "sourcePage": "https://www.samsung.com/id/smartphones/galaxy-s/galaxy-s23-phantom-black-128gb-sm-s911bzkbxid/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/id/2302/gallery/id-galaxy-s23-s911-sm-s911bzkbxid-534842566?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "7dc1a6606bd612c8b268bed7877861908306265393cccb86caaef80c31420e0e",
+      "bytes": 269158,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 342,
+        "y": 489,
+        "width": 515,
+        "height": 622
+      },
+      "file": "lc037.svg",
+      "wrapperSha256": "b27fbd9cefb1f41e4d909ec3b465d04b783fb64db61387b2195d392e0c63c7b5"
+    },
+    {
+      "code": "LC038",
+      "name": "Samsung Galaxy S23 Ultra",
+      "sourcePage": "https://www.samsung.com/co/smartphones/galaxy-s/galaxy-s23-ultra-phantom-black-256gb-sm-s918bzkkltc/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/co/2302/gallery/co-galaxy-s23-s918-sm-s918bzkkltc-534860569?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "e83452cae57add57200c7e39b86a8acea6c1b8337411daeb3fc44f5294e55d78",
+      "bytes": 353944,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 258,
+        "y": 452,
+        "width": 682,
+        "height": 696
+      },
+      "file": "lc038.svg",
+      "wrapperSha256": "94f2fbaca287df10d111748d69eaea95ad05c1d2a0482ccb8accb0cfb5c0d5f1"
+    },
+    {
+      "code": "LC039",
+      "name": "Samsung Galaxy S24",
+      "sourcePage": "https://www.samsung.com/latin/business/smartphones/galaxy-s/galaxy-s24-onyx-black-128gb-sm-s921bzkjl15/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/latin/sm-s921bzkjl15/gallery/latin-galaxy-s24-sm-s921bzkjl15-547613678?%24Q90_684_547_JPG%24=&wid=1200&hei=1600",
+      "mediaType": "image/png",
+      "sourceSha256": "4c411187cd1160b6314f09213fb961b9b66f4581b890d3d01a2a864b3112da53",
+      "bytes": 279447,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 337,
+        "y": 482,
+        "width": 526,
+        "height": 636
+      },
+      "file": "lc039.svg",
+      "wrapperSha256": "bff8949a39c715d9ba084e67bdeba45624f3e766d8db13ca432bbaf03989f95d"
+    },
+    {
+      "code": "LC040",
+      "name": "Samsung Galaxy S24 Ultra",
+      "sourcePage": "https://www.samsung.com/es/business/smartphones/galaxy-s/galaxy-s24-ultra-sm-s928bzkgeub/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/es/2401/gallery/es-galaxy-s24-s928-491123-sm-s928bzkgeub-539444197?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "bff6aef8c5f89be0e368c0c9814520ff63734f3f3e15d2d9ac94e4b1c72fae40",
+      "bytes": 354476,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 218,
+        "y": 449,
+        "width": 700,
+        "height": 704
+      },
+      "file": "lc040.svg",
+      "wrapperSha256": "889720e73b6c6e8306223c762076842861532d6ebc7efd2fb9a202b39c46794f"
+    },
+    {
+      "code": "LC041",
+      "name": "Xiaomi 13T Pro",
+      "sourcePage": "https://www.mi.com/global/product/xiaomi-13t-pro-leica/specs/",
+      "sourceUrl": "https://i02.appmifile.com/308_operatorx_operatorx_opx/26/09/2023/4796e703846ff6b8afdca74fc2755a10.png?thumb=1&w=1000&f=webp&q=90",
+      "mediaType": "image/webp",
+      "sourceSha256": "135eacb43616ff6f948f017392cc9ec42fb39740101c8d748293f178c0c6ea58",
+      "bytes": 52110,
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 160,
+        "y": 95,
+        "width": 680,
+        "height": 811
+      },
+      "file": "lc041.svg",
+      "wrapperSha256": "3cfbe2e56ed2e1798bf99bf674d71d7212bc0838580b3d06023c0c7da8db2635"
+    },
+    {
+      "code": "LC042",
+      "name": "OnePlus 9 Pro",
+      "sourcePage": "https://www.oneplus.in/9-pro/specs",
+      "sourceUrl": "https://oasis.opstatics.com/content/dam/oasis/page/2021/9-series/spec-image/9-pro/Morning%20mist-gallery.png",
+      "mediaType": "image/png",
+      "sourceSha256": "281b4b7afccaaf8f192205b4bb1a1b1347f43339cff70b11af3a4705d1e44e32",
+      "bytes": 118813,
+      "width": 1040,
+      "height": 1040,
+      "bounds": {
+        "x": 180,
+        "y": 116,
+        "width": 678,
+        "height": 808
+      },
+      "file": "lc042.svg",
+      "wrapperSha256": "599227ac3810c429ada7d820bea7974786d1fa21328a64782e378bb21692ea2e"
+    },
+    {
+      "code": "LC043",
+      "name": "ASUS ROG Phone 5 (Tencent edition)",
+      "sourcePage": "https://swiftronics.ca/blogs/news/factory-unlocked-smartphones-canada-toronto",
+      "sourceUrl": "https://swiftronics.ca/cdn/shop/articles/Asus_ROG_Phone_5_SDM888_8GB_RAM_128GB.png?v=1621623459",
+      "mediaType": "image/png",
+      "sourceSha256": "5234c5769091007f73db1faa9430554eb9555d6d3b58665b2e9c675b3cac886b",
+      "bytes": 925526,
+      "width": 1024,
+      "height": 1024,
+      "bounds": {
+        "x": 120,
+        "y": 26,
+        "width": 785,
+        "height": 972
+      },
+      "file": "lc043.svg",
+      "wrapperSha256": "e10713ef940b1787411774350c312d6f232748bcd6f37c88a765cc3e370ebc8a"
+    },
+    {
+      "code": "LC044",
+      "name": "ASUS ROG Phone II",
+      "sourcePage": "https://www.notebookcheck.com/Asus-ROG-Phone-II-Gaming-Smartphone-jetzt-auch-bei-Yourfone-und-1-1.439930.0.html",
+      "sourceUrl": "https://www.notebookcheck.com/fileadmin/_processed_/b/1/csm_Asus_ROG_Phone_II_Gaming_Smartphone_0b0c7824f1.jpg",
+      "mediaType": "image/jpeg",
+      "sourceSha256": "8d05d46d65389d5e06deb6fbd308281f7a5a8fe75cbc5f1e37e8e6f4d24f72be",
+      "bytes": 111904,
+      "width": 769,
+      "height": 1200,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 769,
+        "height": 1195
+      },
+      "file": "lc044.svg",
+      "wrapperSha256": "46d27b77a8837845740ceb8757f3493a0eee6cf1c1c5d19e96bb03fec2c234ab"
+    },
+    {
+      "code": "LC045",
+      "name": "ASUS ROG Phone 8",
+      "sourcePage": "https://rog.asus.com/phones/rog-phone-8/spec/",
+      "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6CC77851-95F8-4910-808D-E0F94C840EB7/w800/fwebp",
+      "mediaType": "image/webp",
+      "sourceSha256": "e2cf640726882e7bfbbed66df6d55d81a27761b449cd15ef8df7619bf9af65ef",
+      "bytes": 24542,
+      "width": 800,
+      "height": 800,
+      "bounds": {
+        "x": 96,
+        "y": 40,
+        "width": 608,
+        "height": 720
+      },
+      "file": "lc045.svg",
+      "wrapperSha256": "f7ed70ea628ecb79f02a596f2c725c55a92d269792a57ab61bf0abf135b5758d"
+    },
+    {
+      "code": "LC046",
+      "name": "nubia Z80 Ultra",
+      "sourceUrl": "https://eu.nubia.com/cdn/shop/files/Z80_Ultra-black-01.png?v=1773144030&width=1000",
+      "mediaType": "image/png",
+      "bytes": 509234,
+      "sourceSha256": "b39dd2570f5dc8c9aefff5e6b5820b79921e3035053e82f0ea40c9ebd2304722",
+      "width": 1000,
+      "height": 1000,
+      "bounds": {
+        "x": 253,
+        "y": 148,
+        "width": 501,
+        "height": 702
+      },
+      "file": "lc046.svg",
+      "wrapperSha256": "a0ba36b313f6c306308dc0898eee5035755d577337d30987e67480e8f66c3af0"
+    },
+    {
+      "code": "LC047",
+      "name": "Samsung Galaxy Z Flip5",
+      "sourcePage": "https://www.samsung.com/africa_en/smartphones/galaxy-z/galaxy-z-flip5-graphite-256gb-sm-f731bzaaafa/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/africa_en/sm-f731bzaaafa/gallery/africa-en-galaxy-z-flip5-f731-467794-sm-f731bzaaafa-538007207?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "899efb3bc02ccc5f6b530c3298b744065dc6c6df5ad4f9a8d376e5f13600a034",
+      "bytes": 310101,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 304,
+        "y": 420,
+        "width": 592,
+        "height": 760
+      },
+      "file": "lc047.svg",
+      "wrapperSha256": "2e07efeaf3d8bab56ec4002d394aa14bcd1cba2a4c9d94a1f3f5ab57903ed73c"
+    },
+    {
+      "code": "LC048",
+      "name": "Samsung Galaxy Z Fold5",
+      "sourcePage": "https://www.samsung.com/ph/smartphones/galaxy-z/galaxy-z-fold5-icy-blue-256gb-sm-f946blbdphl/buy/",
+      "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/ph/2307/gallery/ph-galaxy-z-fold5-f946-sm-f946blbdphl-537227533?wid=1200&hei=1600&fmt=png-alpha",
+      "mediaType": "image/png",
+      "sourceSha256": "3a1b27fdf11fe66d30bb1784b4fc989b053b3ad80b86ed956d6f98e4d7149740",
+      "bytes": 358495,
+      "width": 1200,
+      "height": 1600,
+      "bounds": {
+        "x": 339,
+        "y": 431,
+        "width": 523,
+        "height": 738
+      },
+      "file": "lc048.svg",
+      "wrapperSha256": "fcada492f46afc9a6a1a39ff30938de7e30caa79988a2471fb8aa329b100769d"
+    },
+    {
+      "code": "LC049",
+      "name": "OPPO Find N2",
+      "sourcePage": "https://www.oppo.com/cn/smartphones/series-find-n/find-n2/specs/",
+      "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n2-cn/listpage/Find-N2-listpage-green.png",
+      "mediaType": "image/png",
+      "sourceSha256": "ebb885ec254dc075324f962a22ec76f99f08b725a283294aa5d711a13046a7f4",
+      "bytes": 128622,
+      "width": 492,
+      "height": 600,
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 490,
+        "height": 600
+      },
+      "file": "lc049.svg",
+      "wrapperSha256": "b01dc8dd90362bce5727328c771423c786f100cd963e271fa14f530c26947fc0"
+    },
+    {
+      "code": "LC050",
+      "name": "OPPO Find N3 Flip",
+      "sourcePage": "https://www.oppo.com/en/smartphones/series-find-n/find-n3-flip/specs/",
+      "sourceUrl": "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n3-flip-en/listpage/find-n3-flip-427_600-gold.png",
+      "mediaType": "image/png",
+      "sourceSha256": "b8f9c1c890cd92b2cb831467c4dfb4cddda38d4a1eed1a2471e731851d4ff742",
+      "bytes": 395408,
+      "width": 427,
+      "height": 600,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 427,
+        "height": 600
+      },
+      "file": "lc050.svg",
+      "wrapperSha256": "161d38a86878bb94b923293eb751510a82edd4681baca39c23484b0f05155c61"
+    }
+  ]
+}

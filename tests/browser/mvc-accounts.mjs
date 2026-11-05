@@ -1,6 +1,7 @@
 // Local Windows browser evidence. Only a generated PhoneStore_QA_MvcAccounts_* DB is created/dropped.
 // Run after the Release build: node tests/browser/mvc-accounts.mjs
 import { createRequire } from 'node:module';
+import { assertFramedActions } from './storefront-style-audit.mjs';
 import { spawn } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
 import net from 'node:net';
@@ -39,7 +40,7 @@ try{
    const view=await session.newPage({viewport});await view.setViewportSize(viewport);await view.goto(url+route,{waitUntil:'networkidle'});
    const metrics=await view.evaluate(()=>({width:innerWidth,document:document.documentElement.scrollWidth,unlabelled:[...document.querySelectorAll('input:not([type=hidden])')].filter(x=>!x.labels?.length).length}));
    assert(metrics.document<=metrics.width&&metrics.unlabelled===0,'Overflow or unlabelled field '+label+viewport.name);
-   await view.screenshot({path:path.join(evidence,`${label}-${viewport.name}.png`),fullPage:true});records.push({screen:label,viewport:viewport.width,...metrics});await view.close();
+   Object.assign(metrics,await assertFramedActions(view));await view.screenshot({path:path.join(evidence,`${label}-${viewport.name}.png`),fullPage:true});records.push({screen:label,viewport:viewport.width,...metrics});await view.close();
   }
  }
  await capture('register','/Account/Register');await capture('login','/Account/Login');
