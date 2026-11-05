@@ -4,7 +4,7 @@
     <header class="account-intro">
         <h1>Thông tin tài khoản</h1>
         <p>Xin chào, <strong>@Model.Username</strong>. Cập nhật thông tin để thuận tiện khi đặt hàng.</p>
-        <nav class="account-navigation" aria-label="Quản lý tài khoản"><a href="/Account/Profile" aria-current="page">Thông tin cá nhân</a><a href="/Account/Password">Đổi mật khẩu</a><a href="/Orders/Index">Đơn hàng của tôi</a></nav>
+        <nav class="account-navigation" aria-label="Quản lý tài khoản"><a class="action-link" href="/Account/Profile" aria-current="page">Thông tin cá nhân</a><a class="action-link" href="/Account/Password">Đổi mật khẩu</a><a class="action-link" href="/Orders/Index">Đơn hàng của tôi</a></nav>
         <form asp-controller="Account" asp-action="Logout" method="post"><button class="text-button" type="submit">Đăng xuất</button></form>
     </header>
     <form asp-controller="Account" asp-action="Profile" method="post" class="account-form">

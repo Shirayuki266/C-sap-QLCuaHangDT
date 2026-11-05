@@ -39,7 +39,9 @@ internal sealed class MvcFoundationFactory(string connection, string root, strin
                 });
             }
             services.AddControllersWithViews().AddApplicationPart(typeof(MvcFoundationProbeController).Assembly);
-            services.Configure<StorefrontOptions>(options => options.ContactNote = "<script>private-html-probe</script>");
+            // The contact area now uses the requested fixed Facebook copy. Probe the
+            // configurable introduction, which is still rendered by the homepage.
+            services.Configure<StorefrontOptions>(options => options.Introduction = "<script>private-html-probe</script>");
         });
     }
     public HttpClient Browser() => CreateClient(new WebApplicationFactoryClientOptions

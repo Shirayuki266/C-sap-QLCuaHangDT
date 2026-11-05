@@ -2,14 +2,14 @@
 @{
     ViewData["Title"] = "Giỏ hàng của bạn";
 }
-<div class="cart-heading"><h1>Giỏ hàng của bạn</h1><a href="/Catalog/Index">Tiếp tục xem máy</a></div>
+<div class="cart-heading"><h1>Giỏ hàng của bạn</h1><a class="action-link" href="/Catalog/Index">Tiếp tục xem máy</a></div>
 <section id="cart-feedback" class="cart-feedback" role="status" aria-live="polite"></section>
 <div asp-validation-summary="All" class="validation-summary" role="alert" data-error-variant="@Model.ErrorVariant"></div>
 <section id="cart-page" data-guest="@(Model.Guest ? "true" : "false")" aria-label="Sản phẩm trong giỏ">
     @if (Model.Guest)
     {
         <p id="guest-loading">Đang đọc giỏ hàng trên trình duyệt…</p>
-        <noscript><p>Giỏ khách cần JavaScript. Bạn có thể <a href="/Account/Login?returnUrl=%2FCart%2FIndex">đăng nhập</a> để dùng giỏ tài khoản.</p></noscript>
+        <noscript><p>Giỏ khách cần JavaScript. Bạn có thể <a class="action-link" href="/Account/Login?returnUrl=%2FCart%2FIndex">đăng nhập</a> để dùng giỏ tài khoản.</p></noscript>
     }
     <div class="cart-layout" id="cart-content">
         <div class="cart-lines">
