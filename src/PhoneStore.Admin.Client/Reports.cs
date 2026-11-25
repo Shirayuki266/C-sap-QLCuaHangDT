@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin.Client;
 
+// [UC10.01] DTO, quy đổi số liệu bảng/biểu đồ và Workspace gọi GET /api/admin/reports (doanh thu, bán chạy, tồn kho) & chỉ số Tổng quan.
 public sealed record ReportDay(DateOnly Day,int Orders,decimal Revenue);
 public sealed record ReportBestseller(long VariantId,string Name,string Sku,long Quantity,decimal Revenue);
 public sealed record ReportStock(long VariantId,string Name,string Sku,int OnHand,int Reserved,int Available);

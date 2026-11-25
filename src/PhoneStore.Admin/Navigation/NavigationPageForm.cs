@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin;
 
+// Lớp cơ sở cho các màn hình nhúng trong ContentHost của MainForm, tự tải dữ liệu khi hiển thị lần đầu.
 public abstract class NavigationPageForm : Form
 {
     private Func<Task>? load;

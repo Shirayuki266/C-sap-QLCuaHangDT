@@ -3,6 +3,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC07.01 - UC07.03] Định tuyến Admin API tra cứu khách hàng, cập nhật hồ sơ và khóa/mở khóa tài khoản (/api/admin/customers).
 public static class CustomerAdminEndpoints
 {
     public static void MapCustomerAdmin(this WebApplication app)

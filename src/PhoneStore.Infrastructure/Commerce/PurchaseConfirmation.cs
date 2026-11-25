@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC08.03] Xác nhận nhập kho cho phiếu NHAP: cộng TON_KHO.OnHand, cập nhật giá vốn/giá bán và ghi NHAT_KY_KHO (NHAP).
 public sealed partial class PurchaseService
 {
+    // [UC08.03] Chốt phiếu nhập kho trong 1 giao dịch nguyên tử (kiểm tra NCC Active, Version, tổng tiền và OperationKey).
     public Task<bool> Confirm(Actor actor, long id, VersionedCommand command) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); Rules.Key(command.OperationKey); var db = kernel.Db;

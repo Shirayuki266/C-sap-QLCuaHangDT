@@ -8,6 +8,7 @@ using PhoneStore.Web.Storefront;
 
 namespace PhoneStore.Web.Controllers;
 
+// [UC03.01, UC03.02] Controller giỏ hàng (khách vãng lai localStorage + CUSTOMER SQL) và đặt hàng COD trên Website MVC.
 [Route("Cart"), ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public sealed class CartController(IStoreService store, CheckoutConfirmation confirmations) : Controller
 {
@@ -22,6 +23,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
     [HttpGet("Index")]
     public Task<IActionResult> Index() => Page();
 
+    // [UC03.02 - Bước 1] Mở trang đặt hàng COD: kiểm tra giỏ không rỗng, điền sẵn hồ sơ và ký token xác nhận giá.
     [Authorize(Policy = "Customer"), HttpGet("Checkout")]
     public async Task<IActionResult> Checkout(CancellationToken cancellationToken)
     {
@@ -39,6 +41,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         return View("Checkout", model);
     }
 
+    // [UC03.02 - Bước 2-7] Đặt hàng COD: kiểm tra token xác nhận, gọi CheckoutService.Place và bắt E1 (PriceChanged), RequestKey conflict, E2 (thiếu tồn/giỏ lỗi).
     [Authorize(Policy = "Customer"), HttpPost("Checkout")]
     public async Task<IActionResult> Checkout(CheckoutViewModel model)
     {
@@ -91,6 +94,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         return await CheckoutPage(model);
     }
 
+    // [UC03.01 - Bước 1-3] Thêm biến thể vào giỏ máy chủ của khách hàng đang đăng nhập.
     [Authorize(Policy = "Customer"), HttpPost("Add")]
     public async Task<IActionResult> Add(CartChangeForm form)
     {
@@ -102,6 +106,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         return await Page(form.VariantId, Request.Form["quantity"]);
     }
 
+    // [UC03.01 - Bước 4-5] Cập nhật số lượng hoặc xóa 1 biến thể khỏi giỏ máy chủ.
     [Authorize(Policy = "Customer"), HttpPost("Update")]
     public async Task<IActionResult> Update(CartQuantityForm form)
     {
@@ -122,6 +127,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         return RedirectToAction(nameof(Index));
     }
 
+    // [UC03.01 - Bước 2] Báo giá và kiểm tra tồn kho cho giỏ tạm trên trình duyệt của khách vãng lai.
     [HttpPost("Quote")]
     public async Task<IActionResult> Quote([FromBody] CartQuoteForm form)
     {
@@ -130,6 +136,7 @@ public sealed class CartController(IStoreService store, CheckoutConfirmation con
         catch (BusinessException error) { return StatusCode(WebsiteServiceErrors.Status(error.Code), WebsiteServiceErrors.Json(error, HttpContext.TraceIdentifier)); }
     }
 
+    // [UC03.01 - A1] Hợp nhất giỏ tạm trong localStorage vào giỏ máy chủ ngay sau khi khách đăng nhập.
     [Authorize(Policy = "Customer"), HttpPost("Merge")]
     public async Task<IActionResult> Merge([FromBody] CartQuoteForm form)
     {

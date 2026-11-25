@@ -5,6 +5,7 @@ using PhoneStore.Web.Security;
 
 namespace PhoneStore.Web.Endpoints;
 
+// [UC06.02] Định tuyến Admin API tải ảnh sản phẩm PNG/JPG/WebP (giới hạn 5 MB / 7 MB request) về lưu cục bộ.
 public static class ProductImageEndpoints
 {
     public static void MapProductImages(this WebApplication app)

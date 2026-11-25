@@ -5,6 +5,7 @@ using PhoneStore.Infrastructure.Commerce;
 
 namespace PhoneStore.Web.Storefront;
 
+// Bộ chuyển đổi IStoreService cho Website MVC: ủy quyền mọi nghiệp vụ xuống các dịch vụ SQL-backed của Infrastructure.
 public sealed class MvcStoreAdapter(CatalogService catalog, CartService carts,
     IAccountRegistration registration, IAccountSessions sessions, IAccountProfiles profiles,
     IAccountPasswords passwords, LookupService lookups, PublicBestsellerService bestsellers,

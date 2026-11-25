@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC03.02] Dịch vụ đặt hàng COD (idempotent theo RequestKey, giữ kho TON_KHO và tạo đơn trọn gói trong 1 giao dịch).
 public sealed class CheckoutService(BusinessKernel kernel)
 {
+    // Tra cứu lại đơn đã tạo theo RequestKey khi cần đối soát kết quả đặt hàng trùng/gián đoạn.
     public async Task<OrderView> Resolve(Actor actor,Guid requestKey)
     {
         await kernel.Require(actor,"CUSTOMER");Rules.Key(requestKey);
@@ -11,6 +13,7 @@ public sealed class CheckoutService(BusinessKernel kernel)
             ??throw Rules.Error("NOT_FOUND","Không tìm thấy yêu cầu đặt hàng của bạn.");
         return await kernel.Read(()=>OrderReadModel.Load(kernel.Db,id));
     }
+    // [UC03.02] Kiểm tra RequestKey, đối chiếu giá xác nhận, giữ kho, tạo DON_HANG/THANH_TOAN/DON_HANG_CT/NHAT_KY_KHO/LICH_SU_DON và xóa giỏ.
     public async Task<OrderView> Place(Actor actor,CheckoutInput input)
     {
         var id=await kernel.Write(async()=>
@@ -21,6 +24,7 @@ public sealed class CheckoutService(BusinessKernel kernel)
             if(input.Lines is null||input.Lines.Count is 0 or >100||input.Lines.Any(x=>x is null||x.VariantId<=0)||input.Lines.Select(x=>x.VariantId).Distinct().Count()!=input.Lines.Count)
                 throw Rules.Error("INVALID_INPUT","Dòng xác nhận giá không hợp lệ.");
             foreach(var line in input.Lines){Rules.Quantity(line.Quantity);Rules.Money(line.Price);}
+            // [UC03.02 - A1] Nếu RequestKey đã tồn tại với cùng khách & khớp nội dung thì trả về Id đơn cũ (idempotent).
             var db=kernel.Db;var previous=await db.Orders.AsNoTracking().SingleOrDefaultAsync(x=>x.RequestKey==input.RequestKey);
             if(previous is not null)
             {
@@ -30,6 +34,7 @@ public sealed class CheckoutService(BusinessKernel kernel)
                     throw Rules.Error("INVALID_STATE","Khóa đặt hàng đã dùng cho nội dung khác. Vui lòng tra cứu đơn trước khi thử lại.");
                 return previous.Id;
             }
+            // [UC03.02 - E1 & E2] Kiểm tra giỏ rỗng, biến động giá (PriceChangedException), ngừng bán hoặc thiếu tồn khả dụng.
             var cart=await db.Cart.Where(x=>x.CustomerId==actor.AccountId).OrderBy(x=>x.VariantId).ToListAsync();
             if(cart.Count==0)throw Rules.Error("INVALID_INPUT","Giỏ hàng đang rỗng.");
             var current=await new CartService(kernel).Read(actor);
@@ -42,6 +47,7 @@ public sealed class CheckoutService(BusinessKernel kernel)
             var order=new Order{Code="DH"+input.RequestKey.ToString("N"),CustomerId=actor.AccountId,Recipient=recipient,Phone=phone,Address=address,Total=current.Total,CreatedAt=kernel.Now,RequestKey=input.RequestKey};
             db.Orders.Add(order);await db.SaveChangesAsync();
             db.Payments.Add(new Payment{OrderId=order.Id});
+            // [UC03.02 - Bước 6] Giữ hàng nguyên tử trên TON_KHO, lưu snapshot DON_HANG_CT và ghi nhật ký GIU theo từng biến thể.
             foreach(var line in current.Lines)
             {
                 if(await db.Database.ExecuteSqlInterpolatedAsync($"UPDATE dbo.TON_KHO SET Reserved=Reserved+{line.Quantity} WHERE VariantId={line.VariantId} AND OnHand-Reserved>={line.Quantity}")!=1)

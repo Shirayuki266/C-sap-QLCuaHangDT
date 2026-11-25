@@ -6,6 +6,7 @@ namespace PhoneStore.Web.ProductImages;
 public sealed record ProductImageUpload(byte[] Content);
 public sealed record UploadedProductImage(string Url, int Width, int Height, byte[] Preview);
 
+// [UC06.02] Giải mã, chuẩn hóa kích thước (tối đa 1600px), lưu tệp PNG theo SHA-256 và tạo ảnh xem trước bằng SkiaSharp.
 public sealed class ProductImageStorage(string directory)
 {
     public const int MaxFileBytes = 5 * 1024 * 1024;

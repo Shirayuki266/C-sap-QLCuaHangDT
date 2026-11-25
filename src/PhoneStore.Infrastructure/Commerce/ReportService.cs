@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC10.01] Dịch vụ tổng hợp báo cáo tồn kho tức thời, doanh thu theo ngày và bán chạy theo biến thể.
 public sealed class ReportService(BusinessKernel kernel)
 {
+    // [UC10.01] Đọc StoreReport: nhánh stock đọc TON_KHO; nhánh revenue/bestsellers lọc đơn HOAN_TAT đã thu COD theo CompletedAt (UTC+7).
     public Task<StoreReport> Read(Actor actor,string kind,string? from=null,string? to=null) => kernel.Read<StoreReport>(async () =>
     {
         await kernel.Require(actor,"ADMIN");

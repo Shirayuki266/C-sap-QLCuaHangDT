@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace PhoneStore.Admin.Client;
 
+// [UC08.02 - UC08.05] DTO, phiên nháp phiếu nhập (RequestKey) và Workspace điều phối Nhập hàng, Xác nhận kho, Tồn kho & Kiểm kê.
 public sealed record PurchaseLineRequest(long VariantId,int Quantity,decimal Cost);
 public sealed record PurchaseRequest(long SupplierId,IReadOnlyList<PurchaseLineRequest> Lines,
     [property:JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)] string? Version=null,

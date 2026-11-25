@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC09.03] Điều phối giao hàng, thu COD, báo giao thất bại và nhận lại hàng trả về kho.
 public sealed partial class OrderWorkflow
 {
+    // [UC09.03 - Bước 2] Xuất giao (DA_XAC_NHAN -> DANG_GIAO): trừ đồng thời OnHand & Reserved và ghi XUAT_GIAO.
     public Task<bool> Dispatch(Actor actor,long id,VersionedCommand command)=>kernel.Write(async()=>
     {
         var order=await Load(actor,id,command,true);await Unpaid(id);
@@ -17,6 +19,7 @@ public sealed partial class OrderWorkflow
         }
         order.Status="DANG_GIAO";History(actor,order,"DA_XAC_NHAN");return true;
     });
+    // [UC09.03 - Bước 4] Hoàn tất đơn (DANG_GIAO -> HOAN_TAT) và cập nhật THANH_TOAN sang DA_THU kèm mốc CompletedAt.
     public Task<bool> Complete(Actor actor,long id,VersionedCommand command)=>kernel.Write(async()=>
     {
         var order=await Load(actor,id,command,true);await Unpaid(id);
@@ -26,6 +29,7 @@ public sealed partial class OrderWorkflow
         payment.Status="DA_THU";payment.Amount=order.Total;payment.ActorId=actor.AccountId;payment.CollectedAt=completedAt;
         order.Status="HOAN_TAT";order.CompletedAt=completedAt;History(actor,order,"DANG_GIAO");return true;
     });
+    // [UC09.03 - Bước 4] Ghi nhận giao thất bại (DANG_GIAO -> GIAO_THAT_BAI) kèm lý do; chưa cộng lại tồn kho.
     public Task<bool> Fail(Actor actor,long id,VersionedCommand command)=>kernel.Write(async()=>
     {
         var order=await Load(actor,id,command,true);await Unpaid(id);
@@ -33,6 +37,7 @@ public sealed partial class OrderWorkflow
         var reason=Rules.Text(command.Reason,1000,"Lý do giao thất bại");
         order.Status="GIAO_THAT_BAI";History(actor,order,"DANG_GIAO",reason);return true;
     });
+    // [UC09.03 - Bước 6 & A1] Nhận lại hàng của đơn GIAO_THAT_BAI đúng 1 lần: cộng OnHand, ghi NHAN_LAI, giữ nguyên trạng thái đơn và tăng Version.
     public Task<bool> ReceiveReturn(Actor actor,long id,VersionedCommand command)=>kernel.Write(async()=>
     {
         var order=await Load(actor,id,command,true);await Unpaid(id);

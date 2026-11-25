@@ -5,6 +5,7 @@ public sealed record DatabaseAudit(Dictionary<string,int> Counts,List<string> Er
 {
     public bool Valid=>Errors.Count==0;
 }
+// Bộ kiểm toán toàn vẹn dữ liệu CSDL (đối chiếu tồn kho với nhật ký, tổng đơn, lịch sử trạng thái và khóa ngoại).
 public sealed class DataAudit(StoreDbContext db)
 {
     public Task<DatabaseAudit> Run()=>new BusinessKernel(db,TimeProvider.System).Read<DatabaseAudit>(async()=>

@@ -3,6 +3,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC05.01] Lưu/đọc cấu hình máy chủ (BaseUrl, ExpectedEnvironment, ExpectedFingerprint) vào settings.json cục bộ.
 public sealed class SettingsStore(string? directory = null)
 {
     private readonly string directory = directory ?? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PhoneStore.Admin");

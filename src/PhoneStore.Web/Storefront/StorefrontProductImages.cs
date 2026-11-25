@@ -1,5 +1,6 @@
 namespace PhoneStore.Web.Storefront;
 
+// Ánh xạ URL ảnh demo sang tài nguyên SVG của Storefront; ảnh tải lên tùy chỉnh giữ nguyên đường dẫn gốc.
 /// <summary>Presentation assets for the fixed demo catalog; persisted product data stays authoritative.</summary>
 public static class StorefrontProductImages
 {

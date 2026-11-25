@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC08.02] Dịch vụ đọc, lập, sửa và hủy phiếu nhập nháp (PHIEU_NHAP, PHIEU_NHAP_CT).
 public sealed partial class PurchaseService(BusinessKernel kernel)
 {
+    // Đọc chi tiết phiếu nhập kèm các dòng biến thể và Version.
     public Task<PurchaseView> Read(Actor actor, long id) => kernel.Read<PurchaseView>(async () =>
     {
         await kernel.Require(actor, "ADMIN");
@@ -26,6 +28,7 @@ public sealed partial class PurchaseService(BusinessKernel kernel)
         var count = await q.CountAsync(); var ids = await q.OrderByDescending(x => x.Id).Skip(Rules.Offset(page, pageSize)).Take(pageSize).Select(x => x.Id).ToListAsync();
         var rows = new List<PurchaseView>(); foreach (var id in ids) rows.Add(await Read(actor, id)); return new(rows, count, page, pageSize);
     });
+    // [UC08.02] Tạo mới (idempotent theo RequestKey) hoặc cập nhật phiếu nhập ở trạng thái NHAP.
     public Task<long> Save(Actor actor, long id, PurchaseInput input) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); var db = kernel.Db;
@@ -59,6 +62,7 @@ public sealed partial class PurchaseService(BusinessKernel kernel)
         db.PurchaseLines.AddRange(input.Lines.Select(x => new PurchaseLine { PurchaseId = row.Id, VariantId = x.VariantId, Quantity = x.Quantity, Cost = x.Cost }));
         return row.Id;
     });
+    // [UC08.02 - A2] Hủy phiếu nhập nháp (NHAP -> DA_HUY) có kiểm tra Version và OperationKey.
     public Task<bool> Cancel(Actor actor, long id, VersionedCommand command) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); Rules.Key(command.OperationKey);

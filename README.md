@@ -4,6 +4,10 @@ For the current full **real-product demo**, follow [DEMO_DATA.md](docs/DEMO_DATA
 
 .NET10 + ASP.NET Core API + EF Core/SQL Server. The accepted backend implements K01-K15/A01-A22 server behavior; MVC/WinForms UI is a separate stage. See [API mapping](docs/API_COMPATIBILITY.md), [final backend checklist](docs/BACKEND_CHECKLIST_FINAL.md) and [database details](docs/DATABASE.md).
 
+## Code Map (28 Use Case & 10 Sequence Diagram)
+
+Xem tài liệu tra cứu mã nguồn tại **[UC & Sequence Code Map](docs/UC_SEQUENCE_CODE_MAP.md)** để trace trực tiếp toàn bộ **28 Use Case (`UC01.01`–`UC10.01`)** (gồm luồng chính, luồng thay thế `A1/A2` và luồng ngoại lệ `E1/E2` với số dòng chính xác), luồng dữ liệu từng bước của **10 Sequence Diagram (`2.6.1`–`2.6.10`)** và danh mục **133 tệp C#** trong `src/` đã được chú thích tiếng Việt trực tiếp.
+
 ## Run from a new database
 
 Requires the .NET10 SDK and SQL Server. Run at the repository root. The following is a **local Windows-authentication example**, not a production connection or credential:

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PhoneStore.Infrastructure.Data;
 
+// DbContext chính ánh xạ 18 bảng nghiệp vụ sang SQL Server với khóa ngoại NO ACTION để bảo toàn lịch sử.
 public sealed class StoreDbContext(DbContextOptions<StoreDbContext> options) : DbContext(options)
 {
     public DbSet<Account> Accounts => Set<Account>();
@@ -23,6 +24,7 @@ public sealed class StoreDbContext(DbContextOptions<StoreDbContext> options) : D
     public DbSet<PurchaseLine> PurchaseLines => Set<PurchaseLine>();
     public DbSet<StockMovement> Movements => Set<StockMovement>();
 
+    // Cấu hình tên bảng tiếng Việt, chỉ mục duy nhất (UNIQUE), cột tính UrlHash và rowversion (Version).
     protected override void OnModelCreating(ModelBuilder model)
     {
         model.Entity<Account>(e =>
@@ -135,6 +137,7 @@ public sealed class StoreDbContext(DbContextOptions<StoreDbContext> options) : D
             e.HasIndex(x => new { x.PurchaseId, x.VariantId, x.Kind }).IsUnique().HasFilter("[PurchaseId] IS NOT NULL");
             e.HasIndex(x => new { x.VariantId, x.Id });
         });
+        // Chặn xóa dây chuyền (NO ACTION) trên toàn bộ khóa ngoại để không mất lịch sử đơn và nhập kho.
         foreach (var relationship in model.Model.GetEntityTypes().SelectMany(entity => entity.GetForeignKeys()))
             relationship.DeleteBehavior = DeleteBehavior.NoAction;
     }

@@ -27,6 +27,7 @@ public sealed class InvoicePrinter:IInvoicePrinter
         preview.ShowDialog(owner);
     }
 }
+// [UC09.01] Màn hình xem chứng từ hóa đơn bán hàng nội bộ và PrintPreview (A1: vẫn xem được dù chưa cài máy in).
 public sealed class InvoiceForm:NavigationPageForm
 {
     private readonly OrdersWorkspace workspace;private readonly long id;private readonly IInvoicePrinter printer;private bool busy;

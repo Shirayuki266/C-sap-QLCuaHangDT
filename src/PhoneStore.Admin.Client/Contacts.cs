@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin.Client;
 
+// [UC07.01 - UC07.03, UC08.01] DTO và Workspace quản lý Khách hàng, Đơn hàng của khách và Nhà cung cấp qua Admin API.
 public sealed record CustomerRecord(long Id,string Username,string FullName,string Phone,string? Email,string Address,bool Active,DateTimeOffset CreatedAt);
 public sealed record CustomerProfileRequest(string FullName,string Phone,string? Email,string Address);
 public sealed record CustomerStateRequest(bool Active,bool ExpectedActive);

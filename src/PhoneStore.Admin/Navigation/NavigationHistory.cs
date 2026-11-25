@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin.Navigation;
 
+// Ngăn xếp lịch sử điều hướng Back / Forward (tối đa 30 trang) cho MainForm.
 // Deliberately independent of WinForms; the Ubuntu runner compiles this same source.
 public sealed class NavigationHistory<T> where T : class
 {

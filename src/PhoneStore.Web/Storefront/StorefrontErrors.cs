@@ -12,6 +12,7 @@ namespace PhoneStore.Web.Storefront;
 
 public sealed record WebsiteError(int Status, string Title, string Message, string? TraceId = null);
 
+// Middleware bắt lỗi cho các trang Website MVC: chuyển hướng đăng nhập khi UNAUTHORIZED và hiển thị trang WebsiteError thân thiện.
 public sealed class StorefrontErrors(RequestDelegate next, ILogger<StorefrontErrors> logger)
 {
     public async Task InvokeAsync(HttpContext context)

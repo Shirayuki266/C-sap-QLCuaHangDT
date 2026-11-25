@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC03.01] Định tuyến API giỏ hàng (/api/cart/preview công khai và /api/cart/* cho CUSTOMER).
 public static class CartEndpoints
 {
     public static void MapCarts(this WebApplication app)

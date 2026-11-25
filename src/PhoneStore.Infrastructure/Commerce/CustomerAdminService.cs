@@ -3,8 +3,10 @@ using PhoneStore.Core.Accounts;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Accounts;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC07.01, UC07.02, UC07.03] Dịch vụ quản trị khách hàng: tra cứu, sửa hồ sơ và khóa/mở khóa tài khoản.
 public sealed class CustomerAdminService(BusinessKernel kernel)
 {
+    // [UC07.01] Liệt kê và tìm kiếm khách hàng theo từ khóa, trạng thái Active và phân trang.
     public Task<Page<AdminCustomer>> List(Actor actor,string? query=null,bool? active=null,int page=1,int pageSize=20) => kernel.Read<Page<AdminCustomer>>(async () =>
     {
         await kernel.Require(actor,"ADMIN");var offset=Rules.Offset(page,pageSize);var term=Rules.Text(query,100,"Từ khóa",true);
@@ -20,12 +22,14 @@ public sealed class CustomerAdminService(BusinessKernel kernel)
             ??throw Rules.Error("NOT_FOUND","Không tìm thấy khách hàng.");
         return new(row.c.Id,row.a.Username,row.c.FullName,row.c.Phone,row.c.Email,row.c.Address,row.a.Active,new(DateTime.SpecifyKind(row.a.CreatedAt,DateTimeKind.Utc)));
     });
+    // [UC07.02] Cập nhật hồ sơ KHACH_HANG từ ứng dụng quản trị.
     public Task<bool> Update(Actor actor,long id,ProfileChangeRequest input)=>kernel.Write(async()=>
     {
         await Read(actor,id);var profile=ProfileInput.Validate(input);
         var customer=await kernel.Db.Customers.SingleAsync(x=>x.Id==id);
         customer.FullName=profile.FullName;customer.Phone=profile.Phone;customer.Email=profile.Email;customer.Address=profile.Address;return true;
     });
+    // [UC07.03] Khóa/mở khóa TAI_KHOAN theo ExpectedActive (E1 CONCURRENT_UPDATE); khi khóa sẽ xóa toàn bộ phiên trong PHIEN.
     public Task<bool> SetActive(Actor actor,long id,CustomerStateInput input)=>kernel.Write(async()=>
     {
         var current=await Read(actor,id);

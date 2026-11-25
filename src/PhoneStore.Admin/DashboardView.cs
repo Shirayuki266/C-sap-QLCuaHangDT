@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC10.01] Màn hình Tổng quan: tải chỉ số đơn chờ, đang giao, cần nhận lại, tồn sắp hết, doanh thu kỳ/hôm nay và biểu đồ 7 ngày.
 public sealed class DashboardView:UserControl
 {
     private readonly IAdminApi api;private readonly ReportsWorkspace workspace;private bool loading;

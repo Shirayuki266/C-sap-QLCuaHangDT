@@ -3,6 +3,7 @@ using PhoneStore.Core;
 namespace PhoneStore.Web.Storefront;
 
 // MVC transport aliases only. Business decisions remain in the existing services.
+// Ánh xạ mã lỗi BusinessException sang HTTP Status và JSON cho các endpoint AJAX của Website (/Cart/Quote, /Cart/Merge).
 public static class WebsiteServiceErrors
 {
     public static bool CartIssue(string code) => code is "OUT_OF_STOCK" or "INSUFFICIENT_STOCK" or "VARIANT_INACTIVE" or "CART_EMPTY";

@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC06.01 - UC06.03] Định tuyến Admin API đọc chi tiết, thêm mới và cập nhật sản phẩm/biến thể (/api/admin/products).
 public static class ProductEndpoints
 {
     public static void MapProducts(this WebApplication app)

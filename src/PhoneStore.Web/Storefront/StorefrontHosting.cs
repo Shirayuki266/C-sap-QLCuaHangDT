@@ -5,6 +5,7 @@ using PhoneStore.Web.Security;
 
 namespace PhoneStore.Web.Storefront;
 
+// Cấu hình dịch vụ MVC Website (Antiforgery toàn cục, MvcStoreAdapter, CheckoutConfirmation, StorefrontCookieEvents).
 public static class StorefrontHosting
 {
     public static IServiceCollection AddStorefrontMvc(this IServiceCollection services, IConfiguration configuration)

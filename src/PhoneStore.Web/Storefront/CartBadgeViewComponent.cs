@@ -4,6 +4,7 @@ using PhoneStore.Web.Security;
 
 namespace PhoneStore.Web.Storefront;
 
+// [UC03.01] ViewComponent hiển thị tổng số lượng sản phẩm trên badge Giỏ hàng của thanh điều hướng.
 public sealed class CartBadgeViewComponent(IStoreService store) : ViewComponent
 {
     public async Task<IViewComponentResult> InvokeAsync()

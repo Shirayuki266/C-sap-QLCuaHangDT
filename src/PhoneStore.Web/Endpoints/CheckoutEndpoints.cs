@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC03.02] Định tuyến API đặt hàng COD (POST /api/orders) và đối soát đơn theo RequestKey.
 public static class CheckoutEndpoints
 {
     public static void MapCheckout(this WebApplication app)

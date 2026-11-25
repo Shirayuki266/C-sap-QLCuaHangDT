@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC04.02, UC09.02] Định tuyến API xác nhận đơn (Admin) và hủy đơn (Customer / Admin).
 public static class OrderDecisionEndpoints
 {
     public static void MapOrderDecisions(this WebApplication app)

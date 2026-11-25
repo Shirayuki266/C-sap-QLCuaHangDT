@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace PhoneStore.Admin.Client;
 
+// [UC09.01 - UC09.03] DTO, quy tắc hiển thị nút theo ma trận trạng thái và Workspace xử lý Đơn hàng & Hóa đơn cho Admin.
 public sealed record AdminOrderLine(long VariantId,string Name,string Sku,string Description,int Quantity,decimal Price,decimal Total);
 public sealed record AdminOrderHistory(long Id,string? From,string To,long ActorId,string Actor,DateTimeOffset At,string? Reason);
 public sealed record AdminOrder(long Id,string Code,long CustomerId,string Recipient,string Phone,string Address,string Status,string Payment,

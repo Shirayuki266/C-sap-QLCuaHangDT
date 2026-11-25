@@ -3,6 +3,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC08.02] Màn hình danh sách phiếu nhập kho (lọc theo từ khóa và trạng thái NHAP/DA_XAC_NHAN/DA_HUY).
 public sealed class PurchaseListForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly SupplyWorkspace workspace;private int page=1,total;private bool busy;
@@ -28,6 +29,7 @@ public sealed class PurchaseListForm:NavigationPageForm
     }
 }
 
+// [UC08.02, UC08.03] Biểu mẫu lập/sửa phiếu nhập nháp (nhận từ ProductEditor hoặc mới), hủy nháp và xác nhận nhập kho.
 public sealed class PurchaseEditor:Form
 {
     private readonly IAdminApi api;private readonly SupplyWorkspace workspace;private readonly ContactsWorkspace contacts;private readonly PurchaseDraftSession session;private readonly PurchaseHandoff? handoff;

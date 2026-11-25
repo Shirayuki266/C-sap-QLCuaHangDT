@@ -2,6 +2,7 @@ using System.Globalization;
 
 namespace PhoneStore.Admin.Client;
 
+// Hợp đồng giao tiếp chung của Admin Client: cấu hình server, danh tính phiên, IAdminApi, CommandIntent (khóa chống trùng) và định dạng hiển thị.
 public sealed record ServerSettings(string BaseUrl, string? ExpectedEnvironment = null, string? ExpectedFingerprint = null);
 public sealed record ReadyInfo(string Status, string Environment, string Fingerprint);
 public sealed record AdminIdentity(long Id, string Username, string Role, DateTimeOffset ExpiresAt);

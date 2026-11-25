@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// Điểm vào ứng dụng WinForms quản trị (khởi tạo giao diện và vòng đời phiên đăng nhập Admin).
 internal static class Program
 {
     [STAThread]
@@ -48,6 +49,7 @@ public sealed class AdminApplication : ApplicationContext
         };
         login.Show();
     }
+    // [UC05.02 - A1] Khi phiên kết thúc hoặc hết hạn, cảnh báo nháp phiếu nhập chưa lưu (nếu đang mở) rồi quay về LoginForm.
     private void ReturnToLogin()
     {
         if (disposing || shell is null) return;

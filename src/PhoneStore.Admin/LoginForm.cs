@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC05.01] Màn hình đăng nhập quản trị WinForms: kiểm tra /health/ready, gọi API đăng nhập và mở MainForm.
 public sealed class LoginForm : Form
 {
     private readonly IAdminApi api;

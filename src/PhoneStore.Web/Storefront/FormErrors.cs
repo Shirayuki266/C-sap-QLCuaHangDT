@@ -3,6 +3,7 @@ using PhoneStore.Core;
 
 namespace PhoneStore.Web.Storefront;
 
+// Đưa thông điệp lỗi BusinessException vào ModelState summary của biểu mẫu MVC.
 public static class FormErrors
 {
     // Current services do not return a field-error contract. Never infer one from message text.

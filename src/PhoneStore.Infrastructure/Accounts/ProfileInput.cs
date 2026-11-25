@@ -7,6 +7,7 @@ namespace PhoneStore.Infrastructure.Accounts;
 
 internal sealed record ValidatedProfile(string FullName, string Phone, string? Email, string Address);
 
+// [UC01.01, UC01.03, UC07.02] Chuẩn hóa và kiểm tra định dạng họ tên, số điện thoại (9–15 chữ số), email và địa chỉ.
 internal static class ProfileInput
 {
     public static ValidatedProfile Validate(ProfileChangeRequest request)

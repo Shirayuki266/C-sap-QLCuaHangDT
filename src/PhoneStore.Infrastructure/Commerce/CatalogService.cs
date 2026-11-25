@@ -3,9 +3,11 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC02.01, UC02.02, UC06.01] Dịch vụ truy vấn danh mục sản phẩm công khai (lọc Active) và tra cứu nội bộ Admin.
 public sealed class CatalogService(BusinessKernel kernel)
 {
     private const string SearchCollation = "Latin1_General_100_CI_AI_SC";
+    // [UC02.01 - E1] Kiểm tra bộ lọc giá/hãng/dung lượng và lọc biến thể theo điều kiện hoạt động.
     private IQueryable<Variant> Variants(CatalogFilter filter, bool all)
     {
         if (filter.MinPrice.HasValue) Rules.Money(filter.MinPrice.Value, true);
@@ -15,6 +17,7 @@ public sealed class CatalogService(BusinessKernel kernel)
         return kernel.Db.Variants.AsNoTracking().Where(v => (all || v.Active) && (!filter.MinPrice.HasValue || v.Price >= filter.MinPrice) &&
             (!filter.MaxPrice.HasValue || v.Price <= filter.MaxPrice) && (!filter.StorageGb.HasValue || v.StorageGb == filter.StorageGb) && (color == "" || v.Color == color));
     }
+    // [UC02.01] Tạo truy vấn lọc theo hãng, từ khóa (tên, mã, thông số, hãng, SKU) và sắp xếp.
     private IQueryable<Product> Query(CatalogFilter filter, bool all)
     {
         Rules.Offset(filter.Page, filter.PageSize); var variants = Variants(filter, all);
@@ -34,6 +37,7 @@ public sealed class CatalogService(BusinessKernel kernel)
             _ => throw Rules.Error("INVALID_INPUT", "Cách sắp xếp không hợp lệ.")
         };
     }
+    // [UC02.01] Lấy danh sách sản phẩm công khai phân trang (chỉ lấy sản phẩm, hãng, danh mục và biến thể đều Active).
     public Task<Page<PublicProduct>> List(CatalogFilter filter) => kernel.Read<Page<PublicProduct>>(async () =>
     {
         var query = Query(filter, false); var total = await query.CountAsync();
@@ -41,6 +45,7 @@ public sealed class CatalogService(BusinessKernel kernel)
         var rows = new List<PublicProduct>(); foreach (var id in ids) rows.Add(await Read(id, filter));
         return new(rows, total, filter.Page, filter.PageSize);
     });
+    // [UC06.01] Tra cứu danh sách sản phẩm nội bộ cho Admin (kèm giá vốn và sản phẩm ngừng bán).
     public Task<Page<AdminProduct>> Internal(Actor actor, CatalogFilter filter) => kernel.Read<Page<AdminProduct>>(async () =>
     {
         await kernel.Require(actor, "ADMIN"); var query = Query(filter, true); var total = await query.CountAsync();
@@ -49,6 +54,7 @@ public sealed class CatalogService(BusinessKernel kernel)
         foreach (var id in ids) rows.Add(await service.Read(actor, id));
         return new(rows, total, filter.Page, filter.PageSize);
     });
+    // [UC02.02] Đọc chi tiết sản phẩm công khai, biến thể Active, tồn khả dụng (OnHand - Reserved) và ảnh phụ; ném NOT_FOUND nếu không hợp lệ (E1).
     public Task<PublicProduct> Read(long id, CatalogFilter? filter = null) => kernel.Read<PublicProduct>(async () =>
     {
         filter ??= new(); var variants = Variants(filter, false);

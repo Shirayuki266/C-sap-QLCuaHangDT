@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC04.01, UC07.01, UC09.01] Định tuyến API truy vấn danh sách và chi tiết đơn hàng cho Khách hàng và Admin.
 public static class OrderQueryEndpoints
 {
     public static void MapOrderQueries(this WebApplication app)

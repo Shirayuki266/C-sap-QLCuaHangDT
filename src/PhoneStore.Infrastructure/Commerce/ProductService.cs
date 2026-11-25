@@ -4,8 +4,10 @@ using PhoneStore.Infrastructure.Data;
 
 namespace PhoneStore.Infrastructure.Commerce;
 
+// [UC06.02, UC06.03] Dịch vụ đọc chi tiết và lưu/cập nhật sản phẩm, biến thể, tồn kho khởi tạo (=0) và tối đa 12 ảnh phụ.
 public sealed class ProductService(BusinessKernel kernel)
 {
+    // [UC06.01, UC06.02] Đọc đầy đủ thông tin nội bộ sản phẩm (kèm giá vốn, % lợi nhuận, tồn kho và Version từng biến thể).
     public Task<AdminProduct> Read(Actor actor, long id) => kernel.Read<AdminProduct>(async () =>
     {
         await kernel.Require(actor, "ADMIN");
@@ -16,6 +18,7 @@ public sealed class ProductService(BusinessKernel kernel)
         return new(p.Id, p.Code, p.Name, p.BrandId, p.CategoryId, p.Specifications, p.Description, p.ImageUrl, p.Active,
             variants.Select(x => new AdminVariant(x.v.Id, x.v.Sku, x.v.Color, x.v.StorageGb, x.v.Cost, x.v.ProfitPercent, x.v.Price, x.v.Active, x.s.OnHand, x.s.Reserved, Convert.ToBase64String(x.v.Version))).ToList(), images);
     });
+    // [UC06.02, UC06.03] Tạo mới hoặc sửa sản phẩm/biến thể, kiểm tra Version và đủ biến thể cũ (E1), tính giá và đồng bộ ảnh.
     public Task<long> Save(Actor actor, long id, ProductInput input) => kernel.Write(async () =>
     {
         await kernel.Require(actor, "ADMIN"); if (id < 0) throw Rules.Error("INVALID_INPUT", "Mã sản phẩm không hợp lệ.");

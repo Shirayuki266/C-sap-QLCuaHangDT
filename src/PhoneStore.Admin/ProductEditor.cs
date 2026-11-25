@@ -3,6 +3,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC06.02, UC06.03] Biểu mẫu thêm/sửa sản phẩm, biến thể, tải ảnh và chuyển giao lập phiếu nhập (PurchaseHandoff - A1).
 public sealed class ProductEditor : Form
 {
     private readonly CatalogWorkspace workspace;
