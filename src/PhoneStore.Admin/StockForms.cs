@@ -3,6 +3,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC08.04] Lưu ngưỡng cảnh báo tồn thấp cục bộ vào stock-settings.json của máy Admin.
 public sealed class StockPreferenceStore(string? directory=null)
 {
     private readonly string directory=directory??Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"PhoneStore.Admin");
@@ -11,6 +12,7 @@ public sealed class StockPreferenceStore(string? directory=null)
     private sealed record Threshold(int Below);
 }
 
+// [UC08.04] Màn hình tra cứu tồn kho (OnHand, Reserved, Available), lọc hàng sắp hết và mở kiểm kê/nhật ký kho.
 public sealed class StockListForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly SupplyWorkspace workspace;private readonly Action<int>? saveThreshold;private int page=1,total;private bool busy;
@@ -40,6 +42,7 @@ public sealed class StockListForm:NavigationPageForm
     }
 }
 
+// [UC08.05] Hộp thoại kiểm kê điều chỉnh số dư tồn thực tế kèm lý do và đối soát OperationKey.
 public sealed class StockCountDialog:Form
 {
     private readonly SupplyWorkspace workspace;private readonly IAdminApi api;private readonly Func<string,string,bool> confirm;private StockRecord stock;private CountOperation? operation;private bool busy;
@@ -76,6 +79,7 @@ public sealed class StockCountDialog:Form
     }
 }
 
+// [UC08.04] Màn hình xem nhật ký biến động kho (NHAT_KY_KHO) của một biến thể.
 public sealed class StockJournalForm:NavigationPageForm
 {
     private readonly SupplyWorkspace workspace;private readonly StockRecord stock;private int page=1,total;private bool busy;

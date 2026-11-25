@@ -3,6 +3,7 @@ using System.Text.Json;
 using Microsoft.Data.SqlClient;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Web;
+// [UC05.01] Sinh mã vân tay SHA-256 (environment + SQL server + database) để WinForms kiểm tra đúng backend đích.
 public static class BackendIdentity
 {
     public static string Fingerprint(string connection,string environment)

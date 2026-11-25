@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC08.04, UC08.05] Dịch vụ tra cứu tồn kho, xem nhật ký kho và kiểm kê điều chỉnh số dư OnHand.
 public sealed class InventoryService(BusinessKernel kernel)
 {
+    // [UC08.04] Tra cứu tồn kho từng biến thể (OnHand, Reserved, Available) theo từ khóa, hãng và ngưỡng tồn thấp.
     public Task<Page<StockView>> List(Actor actor, string? query = null, int? brandId = null, int? below = null, int page = 1, int pageSize = 20) => kernel.Read<Page<StockView>>(async () =>
     {
         await kernel.Require(actor,"ADMIN"); var offset=Rules.Offset(page,pageSize);var term=Rules.Text(query,100,"Từ khóa",true);
@@ -16,6 +18,7 @@ public sealed class InventoryService(BusinessKernel kernel)
         var count=await rows.CountAsync();var data=await rows.OrderBy(x=>x.p.Name).ThenBy(x=>x.v.Id).Skip(offset).Take(pageSize).ToListAsync();
         return new(data.Select(x=>new StockView(x.v.Id,x.p.Id,x.p.Name,x.v.Sku,x.b.Name,x.v.Color,x.v.StorageGb,x.s.OnHand,x.s.Reserved,x.s.OnHand-x.s.Reserved,Convert.ToBase64String(x.s.Version))).ToList(),count,page,pageSize);
     });
+    // [UC08.04] Đọc lịch sử biến động NHAT_KY_KHO (NHAP, GIU, HUY_GIU, XUAT_GIAO, NHAN_LAI, DIEU_CHINH).
     public Task<Page<MovementView>> Movements(Actor actor,long? variantId=null,Guid? operationKey=null,int page=1,int pageSize=20) => kernel.Read<Page<MovementView>>(async () =>
     {
         await kernel.Require(actor,"ADMIN");var offset=Rules.Offset(page,pageSize);
@@ -26,6 +29,7 @@ public sealed class InventoryService(BusinessKernel kernel)
         var count=await rows.CountAsync();var data=await rows.OrderByDescending(x=>x.m.Id).Skip(offset).Take(pageSize).ToListAsync();
         return new(data.Select(x=>new MovementView(x.m.Id,x.m.VariantId,x.Sku,x.m.Kind,x.m.DeltaOnHand,x.m.DeltaReserved,new(DateTime.SpecifyKind(x.m.At,DateTimeKind.Utc)),x.m.ActorId,x.Username,x.m.OrderId,x.m.PurchaseId,x.m.Reason,x.m.OperationKey)).ToList(),count,page,pageSize);
     });
+    // [UC08.05] Kiểm kê điều chỉnh OnHand có lý do (bảo đảm Counted >= Reserved, khớp Version và OperationKey chưa dùng).
     public Task<bool> Adjust(Actor actor,long variantId,StockCountInput input)=>kernel.Write(async()=>
     {
         await kernel.Require(actor,"ADMIN");Rules.Key(input.OperationKey);var reason=Rules.Text(input.Reason,1000,"Lý do kiểm kê");

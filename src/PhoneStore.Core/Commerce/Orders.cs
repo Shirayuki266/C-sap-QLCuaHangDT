@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 namespace PhoneStore.Core.Commerce;
+// [UC03.02, UC04.01, UC09.01 - UC09.03] DTO đặt hàng COD, ngoại lệ đổi giá PriceChangedException và chi tiết đơn/lịch sử OrderView.
 public sealed record PriceConfirmation([property:JsonRequired] long VariantId,[property:JsonRequired] int Quantity,[property:JsonRequired] decimal Price);
 public sealed record CheckoutInput(Guid RequestKey,string? Recipient,string? Phone,string? Address,List<PriceConfirmation>? Lines,string PaymentMethod="COD");
 public sealed class PriceChangedException(CartView cart):Exception("Giỏ hàng hoặc giá đã thay đổi. Vui lòng kiểm tra và xác nhận lại.")

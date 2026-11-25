@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC08.02] Hộp thoại tìm và chọn biến thể điện thoại để thêm dòng vào phiếu nhập hàng.
 public sealed class SupplyVariantPicker:Form
 {
     private readonly CatalogWorkspace catalog;private int page=1,total;private bool busy;

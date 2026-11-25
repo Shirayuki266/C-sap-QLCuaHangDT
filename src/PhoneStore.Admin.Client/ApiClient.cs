@@ -4,6 +4,7 @@ using System.Text.Json;
 
 namespace PhoneStore.Admin.Client;
 
+// HTTP Client dùng cho ứng dụng WinForms: quản lý cookie phiên trong RAM, tự lấy CSRF token, tuần tự hóa lệnh ghi và kiểm tra /health/ready.
 public sealed class ApiClient : IAdminApi
 {
     private readonly HttpClient http;
@@ -25,6 +26,7 @@ public sealed class ApiClient : IAdminApi
         http = new HttpClient(new MemoryCookies(cookies, network)) { BaseAddress = address, Timeout = TimeSpan.FromSeconds(20) };
     }
 
+    // [UC05.01 - Bước 3 & E1] Gọi GET /health/ready và đối chiếu ExpectedEnvironment / ExpectedFingerprint (SERVER_MISMATCH).
     public async Task<ReadyInfo> ReadinessAsync(CancellationToken cancellationToken = default)
     {
         var ready = await ReadAsync<ReadyInfo>("/health/ready", false, cancellationToken);
@@ -34,6 +36,7 @@ public sealed class ApiClient : IAdminApi
         return ready;
     }
 
+    // [UC05.01 - Bước 4-5 & E2] Kiểm tra readiness, lấy CSRF token, gửi POST /api/auth/login (Surface = "admin") và lưu Identity 8 giờ.
     public async Task<AdminIdentity> LoginAsync(string username, string password, CancellationToken cancellationToken = default)
     {
         await writes.WaitAsync(cancellationToken);
@@ -72,6 +75,7 @@ public sealed class ApiClient : IAdminApi
         finally { writes.Release(); }
     }
 
+    // [UC05.02] Gửi POST /api/auth/logout rồi xóa sạch phiên và cookie trong bộ nhớ.
     public async Task LogoutAsync(CancellationToken cancellationToken = default)
     {
         await writes.WaitAsync(cancellationToken);
@@ -86,6 +90,7 @@ public sealed class ApiClient : IAdminApi
         finally { Reset(); writes.Release(); }
     }
 
+    // [UC05.02] Gửi POST /api/account/password kèm CSRF token và tự động đặt lại phiên cục bộ.
     public async Task ChangePasswordAsync(string currentPassword, string newPassword, CancellationToken cancellationToken = default)
     {
         await CommandAsync("/api/account/password", new PasswordInput(currentPassword, newPassword), new CommandIntent(), cancellationToken);
@@ -155,6 +160,31 @@ public sealed class ApiClient : IAdminApi
     }
     private sealed record CreatedId(long Id);
 
+    public async Task<UploadedProductImage> UploadProductImageAsync(byte[] content, CancellationToken cancellationToken = default)
+    {
+        if (content.Length is 0 or > 5 * 1024 * 1024) throw new AdminApiException("IMAGE_TOO_LARGE", 400);
+        await writes.WaitAsync(cancellationToken);
+        try
+        {
+            RequireSession(); if (NeedsReconciliation) throw new AdminApiException("UNCERTAIN");
+            var token = await ReadAsync<TokenResult>("/api/security/token", false, cancellationToken);
+            if (string.IsNullOrWhiteSpace(token.Token)) throw new AdminApiException("INVALID_RESPONSE");
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/api/admin/product-images") { Content = JsonContent.Create(new { content }) };
+            request.Headers.Add("X-CSRF-TOKEN", token.Token);
+            using var response = await http.SendAsync(request, cancellationToken);
+            await Check(response, cancellationToken);
+            var result = await Deserialize<UploadedProductImage>(response, cancellationToken);
+            if (!System.Text.RegularExpressions.Regex.IsMatch(result.Url ?? "", @"\A/images/uploads/products/[a-f0-9]{64}\.png\z") ||
+                result.Preview is null || result.Preview.Length is 0 or > 512000 || result.Width is < 1 or > 1600 || result.Height is < 1 or > 1600)
+                throw new AdminApiException("INVALID_RESPONSE");
+            return result;
+        }
+        // Uploads are content-addressed and safe to retry; they never change a product.
+        catch (HttpRequestException) { throw new AdminApiException("NETWORK"); }
+        catch (OperationCanceledException) { throw new AdminApiException("TIMEOUT"); }
+        finally { writes.Release(); }
+    }
+
     public async Task<long> RetryPurchaseCreateAsync(PurchaseRequest input,CancellationToken cancellationToken=default)
     {
         await writes.WaitAsync(cancellationToken);
@@ -174,6 +204,7 @@ public sealed class ApiClient : IAdminApi
         finally{writes.Release();}
     }
 
+    // Tự động lấy GET /api/security/token (Antiforgery) trước khi gửi mọi yêu cầu ghi POST/PUT và đánh dấu NeedsReconciliation nếu lỗi mạng/5xx.
     private async Task<HttpResponseMessage> WriteAsync<T>(string path, T input, CancellationToken cancellationToken, HttpMethod? method = null)
     {
         var token = await ReadAsync<TokenResult>("/api/security/token", false, cancellationToken);

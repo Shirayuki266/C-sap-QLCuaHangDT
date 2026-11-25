@@ -5,9 +5,11 @@ using PhoneStore.Web.Storefront;
 
 namespace PhoneStore.Web.Controllers;
 
+// [UC02.01, UC02.02] Controller danh mục và chi tiết sản phẩm công khai trên Website MVC.
 [Route("Catalog"), ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public sealed class CatalogController(IStoreService store) : Controller
 {
+    // [UC02.01] Tìm kiếm, lọc hãng/giá/dung lượng/màu sắc và sắp xếp danh sách điện thoại đang bán.
     [HttpGet("Index")]
     public async Task<IActionResult> Index([FromQuery] CatalogQuery query)
     {
@@ -24,6 +26,7 @@ public sealed class CatalogController(IStoreService store) : Controller
         return View(new CatalogIndexViewModel(query, brands, null));
     }
 
+    // [UC02.02] Hiển thị trang chi tiết điện thoại, chọn biến thể mặc định còn hàng và trả 404 nếu ngừng bán (E1).
     [HttpGet("Details/{id:long}")]
     public async Task<IActionResult> Details(long id, long? variantId)
     {

@@ -2,6 +2,7 @@ using System.Globalization;
 
 namespace PhoneStore.Admin.Client;
 
+// Hợp đồng giao tiếp chung của Admin Client: cấu hình server, danh tính phiên, IAdminApi, CommandIntent (khóa chống trùng) và định dạng hiển thị.
 public sealed record ServerSettings(string BaseUrl, string? ExpectedEnvironment = null, string? ExpectedFingerprint = null);
 public sealed record ReadyInfo(string Status, string Environment, string Fingerprint);
 public sealed record AdminIdentity(long Id, string Username, string Role, DateTimeOffset ExpiresAt);
@@ -10,6 +11,7 @@ public sealed record LoginInput(string Username, string Password, string Surface
 public sealed record PasswordInput(string CurrentPassword, string NewPassword);
 public sealed record EmptyInput;
 public sealed record TokenResult(string Token);
+public sealed record UploadedProductImage(string Url, int Width, int Height, byte[] Preview);
 
 public interface IAdminApi : IDisposable
 {
@@ -25,6 +27,7 @@ public interface IAdminApi : IDisposable
     Task CommandAsync<T>(string path, T input, CommandIntent intent, CancellationToken cancellationToken = default);
     Task<long> CreateAsync<T>(string path, T input, CancellationToken cancellationToken = default) => throw new NotSupportedException();
     Task PutAsync<T>(string path, T input, CancellationToken cancellationToken = default) => throw new NotSupportedException();
+    Task<UploadedProductImage> UploadProductImageAsync(byte[] content, CancellationToken cancellationToken = default) => throw new NotSupportedException();
     Task<long> RetryPurchaseCreateAsync(PurchaseRequest input,CancellationToken cancellationToken=default) => throw new NotSupportedException();
     Task ReconcileAsync(Func<CancellationToken, Task> readAuthoritativeResult, CancellationToken cancellationToken = default);
 }

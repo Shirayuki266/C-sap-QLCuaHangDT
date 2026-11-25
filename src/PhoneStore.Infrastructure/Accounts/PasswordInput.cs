@@ -2,6 +2,7 @@ using PhoneStore.Core;
 
 namespace PhoneStore.Infrastructure.Accounts;
 
+// [UC01.01, UC01.03, UC05.02] Kiểm tra quy tắc độ dài (10–128 ký tự) và phải có cả chữ lẫn số cho mật khẩu.
 internal static class PasswordInput
 {
     public static string Validate(string? password)

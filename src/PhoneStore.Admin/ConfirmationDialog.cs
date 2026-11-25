@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin;
 
+// [UC06.03, UC07.03, UC08.03, UC08.05, UC09.02, UC09.03] Hộp thoại xác nhận thao tác quan trọng trước khi gọi API ghi.
 // Shared presentation only; future modules must invoke this before their service commands.
 public sealed class ConfirmationDialog : Form
 {

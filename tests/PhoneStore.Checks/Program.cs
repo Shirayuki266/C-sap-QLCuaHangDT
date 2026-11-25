@@ -3,6 +3,11 @@ using PhoneStore.Core;
 using PhoneStore.Infrastructure.Data;
 using PhoneStore.Web;
 
+if(args.SequenceEqual(new[]{"--product-images"}))
+{
+    await ProductImageChecks.Run(); Check.Summary(); return;
+}
+
 if(args.SequenceEqual(new[]{"--mvc-acceptance-browser"}))
 {
     await MvcAcceptanceBrowserChecks.Run();return;
@@ -105,6 +110,7 @@ if (args.Contains("--integration"))
     await MvcFoundationChecks.Run();
     await MvcAccountChecks.Run();
     await MvcCatalogChecks.Run();
+    await ProductImageChecks.Run();
     await MvcCartChecks.Run();
     await MvcCheckoutChecks.Run();
     await MvcOrdersChecks.Run();

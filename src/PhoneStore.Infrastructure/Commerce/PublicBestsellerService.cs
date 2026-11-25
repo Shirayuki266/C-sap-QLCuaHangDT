@@ -2,6 +2,7 @@ using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC02.01] Đọc tối đa 8 sản phẩm bán chạy trong tháng hiện tại (UTC+7) từ các đơn HOAN_TAT đã thu COD cho Trang chủ.
 public sealed class PublicBestsellerService(BusinessKernel kernel)
 {
     public Task<PublicBestsellers> Read()=>kernel.Read<PublicBestsellers>(async()=>

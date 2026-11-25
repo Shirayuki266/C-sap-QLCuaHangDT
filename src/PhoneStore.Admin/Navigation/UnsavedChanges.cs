@@ -4,6 +4,7 @@ namespace PhoneStore.Admin;
 
 public enum LeaveChoice { Stay, Discard, Save }
 
+// [UC05.02 - A1] Bảo vệ biểu mẫu có dữ liệu đang nhập (nháp phiếu/hồ sơ/sản phẩm) khi đóng trang hoặc chuyển màn hình.
 public static class UnsavedChanges
 {
     private sealed class Guard(Func<string> snapshot, Func<bool> busy, Func<Task>? save, Action? discard)

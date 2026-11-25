@@ -3,6 +3,7 @@ using PhoneStore.Core.Commerce;
 
 namespace PhoneStore.Web.Security;
 
+// Hỗ trợ trích xuất Actor từ phiên đã xác thực và bộ lọc kiểm tra CSRF (Antiforgery) cho mọi API ghi.
 public static class CommerceEndpoints
 {
     public static Actor Actor(HttpContext context)

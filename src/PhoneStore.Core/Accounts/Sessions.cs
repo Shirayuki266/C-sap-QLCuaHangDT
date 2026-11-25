@@ -1,5 +1,6 @@
 namespace PhoneStore.Core.Accounts;
 
+// [UC01.02, UC01.04, UC05.01, UC05.02] Hợp đồng phiên đăng nhập và chính sách thời hạn cố định 8 giờ (SessionPolicy.Lifetime).
 public sealed record LoginRequest(string? Username, string? Password, string Surface = "customer");
 public sealed record AccountIdentity(long Id, string Username, string Role);
 public sealed record AccountSession(AccountIdentity Account, Guid SessionId, DateTimeOffset ExpiresAt);

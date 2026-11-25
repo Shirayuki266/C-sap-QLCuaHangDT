@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC09.01] Màn hình tra cứu đơn hàng toàn cửa hàng theo từ khóa, trạng thái và khoảng ngày (UTC+7).
 public sealed class OrderListForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly OrdersWorkspace workspace;private bool busy;private int page=1,total;
@@ -27,6 +28,7 @@ public sealed class OrderListForm:NavigationPageForm
     }
 }
 
+// [UC09.01 - UC09.03] Màn hình chi tiết đơn hàng quản trị: xác nhận, hủy, xuất giao, hoàn tất thu COD, giao thất bại, nhận lại hàng và xem hóa đơn.
 public sealed class OrderDetailForm:NavigationPageForm
 {
     private readonly IAdminApi api;private readonly OrdersWorkspace workspace;private readonly long id;private readonly Func<string,string,bool> confirm;private bool busy;private OrderOperation? operation;

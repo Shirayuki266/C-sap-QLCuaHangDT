@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC03.01] Dịch vụ giỏ hàng: báo giá giỏ tạm (Preview), đọc giỏ máy chủ (Read), cập nhật (Set) và hợp nhất (Merge).
 public sealed class CartService(BusinessKernel kernel)
 {
+    // [UC03.01 - Bước 2] Kiểm tra danh sách biến thể, trạng thái kinh doanh, tồn khả dụng và tính tổng tiền cho giỏ tạm/giỏ máy chủ.
     public Task<CartView> Preview(List<CartInput> inputs) => kernel.Read<CartView>(async () =>
     {
         Validate(inputs);var ids=inputs.Select(x=>x.VariantId).Distinct().ToList();
@@ -21,6 +23,7 @@ public sealed class CartService(BusinessKernel kernel)
         }
         return new(result,result.Sum(x=>x.Quantity*(x.Price??0)),result.Any(x=>x.Issue is not null));
     });
+    // [UC03.01 - Bước 3] Đọc toàn bộ giỏ hàng hiện tại của khách hàng từ bảng GIO_HANG_CT.
     public Task<CartView> Read(Actor actor) => kernel.Read<CartView>(async () =>
     {
         await kernel.Require(actor,"CUSTOMER");
@@ -31,6 +34,7 @@ public sealed class CartService(BusinessKernel kernel)
     {
         if(lines is null||lines.Count>100||lines.Any(x=>x is null||x.VariantId<=0||x.Quantity<=0))throw Rules.Error("INVALID_INPUT","Giỏ cần mã biến thể/số lượng hợp lệ, tối đa 100 dòng.");
     }
+    // [UC03.01 - Bước 3, 5 & E1] Thêm/sửa/xóa 1 dòng trong GIO_HANG_CT (kiểm tra còn bán, không vượt Available và tối đa 100 biến thể).
     private async Task SetOne(long customer,CartInput input,bool add)
     {
         if(input.VariantId<=0)throw Rules.Error("INVALID_INPUT","Mã biến thể không hợp lệ.");
@@ -49,6 +53,7 @@ public sealed class CartService(BusinessKernel kernel)
     }
     public Task<bool> Set(Actor actor,CartInput input,bool add=false)=>kernel.Write(async()=>
     {await kernel.Require(actor,"CUSTOMER");await SetOne(actor.AccountId,input,add);return true;});
+    // [UC03.01 - A1] Hợp nhất giỏ tạm trình duyệt vào GIO_HANG_CT sau khi đăng nhập (lấy max số lượng, cắt theo Available, bỏ ngừng bán).
     public Task<CartMergeResult> Merge(Actor actor,List<CartInput> inputs)=>kernel.Write(async()=>
     {
         await kernel.Require(actor,"CUSTOMER");Validate(inputs);

@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC06.01, UC06.03] Màn hình tra cứu danh sách sản phẩm nội bộ (kể cả đã ngừng) và chuyển nhanh trạng thái kinh doanh.
 public sealed class ProductListForm:NavigationPageForm
 {
     private readonly IAdminApi api;
@@ -69,6 +70,7 @@ public sealed class ProductListForm:NavigationPageForm
     private void SetBusy(bool value){busy=value;PageNavigation.StateChanged(this);SearchButton.Enabled=NewButton.Enabled=Grid.Enabled=QueryBox.Enabled=BrandBox.Enabled=StateBox.Enabled=!value;PreviousButton.Enabled=!value&&page>1;NextButton.Enabled=!value&&page*20<total;UpdateActions();if(value)MessageLabel.Text="Đang tải…";}
 }
 
+// [UC06.01] Màn hình xem chi tiết sản phẩm nội bộ (hiển thị giá vốn, % lợi nhuận, giá bán, tồn kho và Version từng biến thể).
 public sealed class ProductDetailsForm:NavigationPageForm
 {
     private readonly CatalogWorkspace workspace;

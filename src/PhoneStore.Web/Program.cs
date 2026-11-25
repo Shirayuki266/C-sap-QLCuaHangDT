@@ -15,6 +15,7 @@ using PhoneStore.Web.Security;
 using PhoneStore.Web.Endpoints;
 using PhoneStore.Web.Storefront;
 
+// Khởi tạo host ASP.NET Core phục vụ đồng thời Website MVC khách hàng và HTTP Admin/Customer API.
 var commandModes = new[]{"--migrate","--provision-admin","--seed-demo","--audit-db"};
 var modes = args.Where(commandModes.Contains).ToArray();
 if(modes.Length>1)throw new ArgumentException("Chỉ chọn một lệnh quản trị mỗi lần.");
@@ -22,6 +23,8 @@ var migrate = modes.Contains("--migrate");
 var builder = WebApplication.CreateBuilder(args.Where(argument => !commandModes.Contains(argument)).ToArray());
 var connection = SqlTarget.Validate(builder.Configuration.GetConnectionString("Store"));
 var backendFingerprint = BackendIdentity.Fingerprint(connection,builder.Environment.EnvironmentName);
+builder.Services.AddSingleton(new PhoneStore.Web.ProductImages.ProductImageStorage(
+    Path.Combine(builder.Environment.ContentRootPath, "App_Data", "product-images", backendFingerprint)));
 builder.Services.AddDbContext<StoreDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<DatabaseMigrator>();
 builder.Services.AddScoped<BusinessKernel>();
@@ -47,6 +50,7 @@ builder.Services.AddScoped<IAccountSessions, AccountSessions>();
 builder.Services.AddScoped<IAccountPasswords, AccountPasswords>();
 builder.Services.AddScoped<IAccountProfiles, AccountProfiles>();
 builder.Services.AddScoped<SessionAuthentication>();
+// Đăng ký Cookie Authentication tên PhoneStore.Session (8 giờ cố định, không trượt hạn) và phân quyền Customer/Admin.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
     options.Cookie.Name = "PhoneStore.Session";
@@ -89,6 +93,7 @@ if (migrate)
     return;
 }
 
+// Middleware bắt ngoại lệ toàn cục cho API JSON, chuyển đổi sang ApiError chuẩn (400/401/403/404/409/500).
 app.Use(async (context, next) =>
 {
     context.Response.Headers["X-Content-Type-Options"] = "nosniff";
@@ -117,11 +122,23 @@ app.UseStatusCodePages(async status =>
 });
 
 app.UseStaticFiles();
+var productImages = app.Services.GetRequiredService<PhoneStore.Web.ProductImages.ProductImageStorage>();
+Directory.CreateDirectory(productImages.DirectoryPath);
+var productImageFiles = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(productImages.DirectoryPath);
+app.Lifetime.ApplicationStopped.Register(productImageFiles.Dispose);
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = productImageFiles,
+    RequestPath = "/images/uploads/products",
+    OnPrepareResponse = context => context.Context.Response.Headers["X-Content-Type-Options"] = "nosniff"
+});
+app.MapProductImages();
 app.UseStorefrontMvc();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGet("/health/live", () => Results.Ok(new { application = "PhoneStore", status = "live" }));
+// [UC01.02, UC05.01] Đăng nhập qua API cho customer hoặc admin: kiểm tra CSRF, tạo PHIEN 8 giờ và cấp cookie PhoneStore.Session.
 app.MapPost("/api/auth/login", async (LoginRequest request, IAccountSessions sessions, IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
 {
     await antiforgery.ValidateRequestAsync(context);
@@ -144,6 +161,7 @@ app.MapGet("/api/auth/session", (HttpContext context) =>
     var session = SessionAuthentication.Current(context);
     return Results.Ok(new { session.Account.Id, session.Account.Username, session.Account.Role, session.ExpiresAt });
 }).RequireAuthorization();
+// [UC01.04, UC05.02] Đăng xuất qua API: thu hồi bản ghi PHIEN hiện tại và xóa cookie.
 app.MapPost("/api/auth/logout", async (IAccountSessions sessions, IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
 {
     await antiforgery.ValidateRequestAsync(context);
@@ -153,6 +171,7 @@ app.MapPost("/api/auth/logout", async (IAccountSessions sessions, IAntiforgery a
     context.Response.Headers.CacheControl = "no-store";
     return Results.NoContent();
 }).RequireAuthorization();
+// [UC01.03, UC05.02] Đổi mật khẩu qua API: xác minh mật khẩu cũ, xóa toàn bộ PHIEN và đăng xuất.
 app.MapPost("/api/account/password", async (PasswordChangeRequest request, IAccountPasswords passwords,
     IAntiforgery antiforgery, HttpContext context, CancellationToken cancellationToken) =>
 {
@@ -184,6 +203,7 @@ app.MapPut("/api/account/profile", async (ProfileChangeRequest request, IAccount
     context.Response.Headers.CacheControl = "no-store";
     return Results.NoContent();
 }).RequireAuthorization("Customer");
+// [UC05.01] Cấp Antiforgery (CSRF) token cho client WinForms và các yêu cầu API ghi.
 app.MapGet("/api/security/token", (IAntiforgery antiforgery, HttpContext context) =>
 {
     context.Response.Headers.CacheControl = "no-store";
@@ -199,6 +219,7 @@ app.MapPost("/api/auth/register", async (RegistrationRequest request, IAccountRe
     context.Response.Headers.CacheControl = "no-store";
     return Results.Json(result, statusCode: 201);
 });
+// [UC05.01] Kiểm tra kết nối CSDL và schema migration sẵn sàng (trả environment & fingerprint cho WinForms đối chiếu).
 app.MapGet("/health/ready", async (DatabaseMigrator migrations, HttpContext context) =>
 {
     using var deadline = CancellationTokenSource.CreateLinkedTokenSource(context.RequestAborted);

@@ -8,6 +8,7 @@ using PhoneStore.Core.Commerce;
 
 namespace PhoneStore.Web.Models;
 
+// [UC04.01, UC04.02] ViewModel tra cứu danh sách đơn, chi tiết đơn và biểu mẫu hủy đơn chờ xác nhận của khách.
 public sealed class OrderQuery
 {
     [StringLength(100, ErrorMessage = "Từ khóa tối đa 100 ký tự.")] public string? Code { get; set; }

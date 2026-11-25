@@ -7,8 +7,10 @@ using PhoneStore.Infrastructure.Data;
 
 namespace PhoneStore.Infrastructure.Accounts;
 
+// [UC01.03] Dịch vụ đọc và cập nhật hồ sơ cá nhân của khách hàng đang đăng nhập.
 public sealed class AccountProfiles(StoreDbContext db, TimeProvider clock) : IAccountProfiles
 {
+    // Xác thực tài khoản CUSTOMER còn hoạt động và phiên hiện tại còn hạn trong PHIEN.
     private async Task<Account> Require(long accountId, Guid sessionId, CancellationToken cancellationToken)
     {
         var account = await db.Accounts.AsNoTracking().SingleOrDefaultAsync(x => x.Id == accountId && x.Active, cancellationToken)
@@ -20,6 +22,7 @@ public sealed class AccountProfiles(StoreDbContext db, TimeProvider clock) : IAc
         return account;
     }
 
+    // [UC01.03] Đọc hồ sơ KHACH_HANG hiện tại của chính khách hàng.
     public async Task<CustomerProfile> ReadAsync(long accountId, Guid sessionId, CancellationToken cancellationToken = default)
     {
         var account = await Require(accountId, sessionId, cancellationToken);
@@ -28,6 +31,7 @@ public sealed class AccountProfiles(StoreDbContext db, TimeProvider clock) : IAc
         return new(customer.Id, account.Username, customer.FullName, customer.Phone, customer.Email, customer.Address);
     }
 
+    // [UC01.03] Cập nhật họ tên, SĐT, email, địa chỉ và bắt lỗi trùng SĐT/Email (E2).
     public async Task UpdateAsync(long accountId, Guid sessionId, ProfileChangeRequest request, CancellationToken cancellationToken = default)
     {
         var input = ProfileInput.Validate(request);

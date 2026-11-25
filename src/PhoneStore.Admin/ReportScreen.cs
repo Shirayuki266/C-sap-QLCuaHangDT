@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC10.01] Điều khiển vẽ biểu đồ cột tương tác đồng bộ dữ liệu với bảng báo cáo.
 public sealed class ReportChart:UserControl
 {
     public Control Canvas { get; }
@@ -37,6 +38,7 @@ public sealed class ReportChart:UserControl
     }
 }
 
+// [UC10.01] Màn hình xem báo cáo Doanh thu / Bán chạy / Tồn hiện tại: A1 vô hiệu ngày khi chọn Tồn; E1 chặn ngày không hợp lệ.
 public sealed class ReportScreen:NavigationPageForm
 {
     private readonly ReportsWorkspace workspace;private bool busy;private int page=1;

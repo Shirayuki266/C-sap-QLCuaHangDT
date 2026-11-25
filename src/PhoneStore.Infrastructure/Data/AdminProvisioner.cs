@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Infrastructure.Accounts;
 using PhoneStore.Infrastructure.Commerce;
 namespace PhoneStore.Infrastructure.Data;
+// Công cụ dòng lệnh khởi tạo tài khoản ADMIN đầu tiên (không ghi đè tài khoản đã tồn tại).
 public sealed class AdminProvisioner(StoreDbContext db,IPasswordHasher<Account> hasher)
 {
     public Task<long> Create(string? username,string? password)=>new BusinessKernel(db,TimeProvider.System).Write(async()=>

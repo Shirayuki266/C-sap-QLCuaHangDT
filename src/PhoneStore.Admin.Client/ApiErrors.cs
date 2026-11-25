@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin.Client;
 
+// Ngoại lệ chuẩn phía WinForms Client (ánh xạ mã lỗi API sang thông báo tiếng Việt) và bộ kiểm tra URL HTTP loopback / HTTPS từ xa.
 public sealed class AdminApiException(string code, int status = 0, string? traceId = null,string? publicValidation=null) : Exception(MessageFor(code, status, traceId))
 {
     public string Code { get; } = code;
@@ -15,6 +16,9 @@ public sealed class AdminApiException(string code, int status = 0, string? trace
             "UNAUTHORIZED" => "Phiên đăng nhập không còn hiệu lực. Vui lòng đăng nhập lại.",
             "LOGIN_FAILED" => "Tên đăng nhập hoặc mật khẩu không đúng, hoặc tài khoản chưa được phép đăng nhập.",
             "INVALID_INPUT" => "Dữ liệu chưa hợp lệ. Vui lòng kiểm tra các ô đã nhập.",
+            "IMAGE_TOO_LARGE" => "Chọn ảnh có dữ liệu, tối đa 5 MB. Hãy chọn ảnh nhỏ hơn nếu vượt giới hạn.",
+            "IMAGE_DIMENSIONS" => "Ảnh tối đa 6000 pixel mỗi chiều và 16 triệu pixel. Hãy thu nhỏ ảnh trước khi tải.",
+            "IMAGE_INVALID" => "Ảnh không hợp lệ. Chọn ảnh PNG, JPG hoặc WebP có thể mở được.",
             "FORBIDDEN" => "Bạn không có quyền thực hiện thao tác này.",
             "NOT_FOUND" => "Không tìm thấy dữ liệu. Vui lòng tải lại danh sách.",
             "CONCURRENT_UPDATE" => "Dữ liệu đã thay đổi, vui lòng tải lại.",

@@ -1,4 +1,5 @@
 namespace PhoneStore.Core.Commerce;
+// [UC02.01, UC02.02] DTO bộ lọc tìm kiếm và thông tin sản phẩm/biến thể công khai cho khách hàng.
 public sealed record CatalogFilter(string? Query = null, int? BrandId = null, decimal? MinPrice = null, decimal? MaxPrice = null,
     int? StorageGb = null, string? Color = null, string Sort = "name", int Page = 1, int PageSize = 20, bool? Active = null);
 public sealed record PublicVariant(long Id, string Sku, string Color, int StorageGb, decimal Price, int Available);

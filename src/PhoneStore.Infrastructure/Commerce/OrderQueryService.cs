@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC04.01, UC09.01] Dịch vụ đọc chi tiết và danh sách phân trang đơn hàng (lọc bắt buộc theo CustomerId nếu là khách hàng).
 public sealed class OrderQueryService(BusinessKernel kernel)
 {
     public static readonly string[] States=["CHO_XAC_NHAN","DA_XAC_NHAN","DANG_GIAO","HOAN_TAT","DA_HUY","GIAO_THAT_BAI"];

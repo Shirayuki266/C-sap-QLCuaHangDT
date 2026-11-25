@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace PhoneStore.Web.Models;
 
 // Presentation validation mirrors DEC.01; existing services validate every command independently.
+// [UC01.01 - UC01.03] Các ViewModel và thuộc tính kiểm tra hợp lệ đầu vào biểu mẫu tài khoản trên Website MVC.
 public sealed class CustomerPasswordAttribute : ValidationAttribute
 {
     public const string Policy = "Mật khẩu cần 10–128 ký tự, gồm chữ và số.";

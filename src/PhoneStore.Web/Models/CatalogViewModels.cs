@@ -7,6 +7,7 @@ using PhoneStore.Core.Commerce;
 
 namespace PhoneStore.Web.Models;
 
+// [UC02.01, UC02.02] ViewModel truy vấn lọc danh mục, thẻ sản phẩm và chi tiết biến thể trên Website MVC.
 public sealed record CatalogQuery : IValidatableObject
 {
     [FromQuery(Name = "q"), StringLength(100, ErrorMessage = "Từ khóa tối đa 100 ký tự.")]

@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC08.01] Định tuyến Admin API tra cứu, thêm và cập nhật nhà cung cấp (/api/admin/suppliers).
 public static class SupplierEndpoints
 {
     public static void MapSuppliers(this WebApplication app)

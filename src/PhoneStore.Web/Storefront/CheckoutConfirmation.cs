@@ -6,6 +6,7 @@ using PhoneStore.Core.Commerce;
 namespace PhoneStore.Web.Storefront;
 
 // Protect the displayed server quote; posted price/total/line fields are never used as authority.
+// [UC03.02] Mã hóa/giải mã báo giá giỏ hàng bằng DataProtection để phát hiện lệch giá hoặc thay đổi giỏ khi đặt hàng.
 public sealed class CheckoutConfirmation(IDataProtectionProvider provider)
 {
     private readonly IDataProtector protector = provider.CreateProtector("PhoneStore.Mvc.CheckoutConfirmation.v1");

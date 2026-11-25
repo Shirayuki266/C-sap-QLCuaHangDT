@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC02.01, UC02.02, UC06.01] Định tuyến API danh mục công khai (/api/catalog) và danh sách sản phẩm nội bộ Admin (/api/admin/products).
 public static class CatalogEndpoints
 {
     public static void MapCatalog(this WebApplication app)

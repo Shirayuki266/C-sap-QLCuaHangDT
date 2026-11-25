@@ -4,6 +4,7 @@ using PhoneStore.Infrastructure.Data;
 
 namespace PhoneStore.Infrastructure.Commerce;
 
+// [UC02.01, UC06.04] Dịch vụ đọc danh sách hãng/danh mục công khai và quản lý danh mục (HANG, DANH_MUC) cho Admin.
 public sealed class LookupService(BusinessKernel kernel)
 {
     public async Task<List<LookupView>> Public(string kind)

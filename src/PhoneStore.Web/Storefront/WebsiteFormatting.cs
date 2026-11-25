@@ -2,6 +2,7 @@ using System.Globalization;
 
 namespace PhoneStore.Web.Storefront;
 
+// Định dạng tiền tệ (VNĐ) và thời gian hiển thị theo múi giờ Việt Nam (UTC+07:00).
 public static class WebsiteFormatting
 {
     private static readonly CultureInfo Vietnamese = CultureInfo.GetCultureInfo("vi-VN");

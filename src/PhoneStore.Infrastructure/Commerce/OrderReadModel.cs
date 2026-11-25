@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// Tổng hợp DTO OrderView đầy đủ từ DON_HANG, THANH_TOAN, DON_HANG_CT, LICH_SU_DON và cờ đã nhận lại hàng.
 internal static class OrderReadModel
 {
     public static async Task<OrderView> Load(StoreDbContext db,long id)

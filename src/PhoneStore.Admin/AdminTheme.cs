@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin;
 
+// Bảng màu, kiểu chữ, phím tắt (Esc, Ctrl+S) và hàm dựng control chuẩn cho toàn bộ màn hình WinForms.
 internal static class AdminTheme
 {
     public static readonly Color Ink = Color.FromArgb(25, 38, 61), Navy = Color.FromArgb(20, 45, 92), Blue = Color.FromArgb(36, 84, 220), Canvas = Color.FromArgb(244, 246, 251), Muted = Color.FromArgb(82, 100, 127);

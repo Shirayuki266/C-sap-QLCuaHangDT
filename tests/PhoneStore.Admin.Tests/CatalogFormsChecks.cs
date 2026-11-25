@@ -17,6 +17,30 @@ internal static partial class Program
     private static async Task CatalogFormsChecks()
     {
         var previousOutput=output;output=Path.Combine(FindRoot(),".artifacts","admin-w2","forms");Directory.CreateDirectory(output);var first=passed;var firstCapture=captures.Count;
+        await Test("Product images: cancel sends nothing; upload preview, duplicate guard, gallery, errors and limits preserve draft", async () =>
+        {
+            var file = Path.Combine(output, "upload-fixture.png");
+            using (var bitmap = new Bitmap(24, 32)) { using var graphics = Graphics.FromImage(bitmap); graphics.Clear(Color.CornflowerBlue); bitmap.Save(file, System.Drawing.Imaging.ImageFormat.Png); }
+            string[]? selected = null;
+            using var api = new CatalogFake(); using var form = new ProductEditor(api, imagePicker: _ => selected); form.Show(); await Task.Delay(80);
+            await form.ChooseAndUploadAsync(true); Assert(api.UploadCalls == 0, "Cancel sent an upload");
+            selected = [file]; api.HoldUpload = new(TaskCreationOptions.RunContinuationsAsynchronously);
+            var uploading = form.ChooseAndUploadAsync(true); await Task.Delay(30);
+            form.QuickChooseImageButton.PerformClick(); Assert(api.UploadCalls == 1 && !form.SaveButton.Enabled && !form.ChooseMainImageButton.Enabled, "Upload duplicate/busy guard failed");
+            api.HoldUpload.SetResult(true); await uploading; api.HoldUpload = null;
+            Assert(form.ImageBox.Text.StartsWith("/images/uploads/products/") && form.ImagePreview.Image is not null && form.Tabs.SelectedIndex == 2 && form.Saved is null && api.Writes == 0, "Upload did not stage image/preview without saving product");
+            await Capture(form, "product-image-upload-preview");
+            selected = [file, file]; await form.ChooseAndUploadAsync(false);
+            Assert(form.Input().Images.Count == 2, "Additional images not appended");
+            var old = form.ImageBox.Text; api.UploadError = new AdminApiException("NETWORK"); selected = [file];
+            await form.ChooseAndUploadAsync(true); Assert(form.ImageBox.Text == old && form.SaveButton.Enabled, "Failed upload lost existing image or left disabled controls"); api.UploadError = null;
+            var huge = Path.Combine(output, "oversized.png"); using (var stream = File.Create(huge)) stream.SetLength(5 * 1024 * 1024 + 1);
+            var calls = api.UploadCalls; await form.UploadImagesAsync([huge], true);
+            Assert(api.UploadCalls == calls && form.ImageBox.Text == old && form.MessageLabel.Text.Contains("5 MB"), "Oversize sent request or lost image");
+            form.ImagesBox.Text = string.Join(Environment.NewLine, Enumerable.Repeat("/images/kept.png", 12)); await form.UploadImagesAsync([file], false);
+            Assert(api.UploadCalls == calls && form.Input().Images.Count == 12, "Gallery limit sent upload");
+            UnsavedChanges.DiscardAndClose(form);
+        });
         await Test("WIN.A04.01/03 actual list filters/paging, inactive label resolution and no-match/error",async()=>
         {
             using var api=new CatalogFake();using var form=new ProductListForm(api);form.Show();await Task.Delay(90);
@@ -73,6 +97,14 @@ internal sealed class CatalogFake:IAdminApi
     public bool NeedsReconciliation=>false;
     public event Action? SessionEnded { add{} remove{} }
     public int Writes,CreateCalls;public bool FailRead;public Exception? WriteError;
+    public int UploadCalls; public Exception? UploadError; public TaskCompletionSource<bool>? HoldUpload;
+    public async Task<UploadedProductImage> UploadProductImageAsync(byte[] content, CancellationToken ct = default)
+    {
+        UploadCalls++; var number = UploadCalls;
+        if (HoldUpload is not null) await HoldUpload.Task;
+        if (UploadError is not null) throw UploadError;
+        return new("/images/uploads/products/" + number.ToString("x64") + ".png", 24, 32, content);
+    }
     public ProductRequest? LastRequest;public LookupRequest? LastLookup;
     public ProductRecord Product=new(1,"QA-PHONE","Điện thoại QA",1,1,"Thông số QA","Mô tả QA","/images/qa.png",true,
         [new(1,"QA-B","Đen",128,10000000,20,12000000,true,5,1,"AAAAAAAAAAE="),new(2,"QA-W","Trắng",256,12000000,0,12000000,true,0,0,"AAAAAAAAAAI=")],[new("https://example.test/qa.png",0)]);

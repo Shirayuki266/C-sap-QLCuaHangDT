@@ -3,6 +3,7 @@ using PhoneStore.Core.Accounts;
 
 namespace PhoneStore.Core;
 
+// Hợp đồng giao tiếp nội bộ giữa Website MVC (Controllers) và các dịch vụ nghiệp vụ qua MvcStoreAdapter.
 /// <summary>In-process customer MVC boundary. Existing services remain authoritative.</summary>
 public interface IStoreService
 {

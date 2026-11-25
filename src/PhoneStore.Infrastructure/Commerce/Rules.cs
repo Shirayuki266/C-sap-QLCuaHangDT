@@ -3,6 +3,7 @@ using PhoneStore.Core;
 
 namespace PhoneStore.Infrastructure.Commerce;
 
+// Tập quy tắc kiểm tra dữ liệu đầu vào, tính giá bán từ giá vốn + % lợi nhuận và kiểm tra rowversion/ảnh.
 public static class Rules
 {
     public const decimal MaxMoney = 9999999999999999.99m;
@@ -24,6 +25,7 @@ public static class Rules
         if (value < 0 || (!zero && value == 0) || value > MaxMoney || decimal.Round(value, 2) != value) throw Error("INVALID_INPUT", "Số tiền phải hợp lệ, tối đa 2 chữ số thập phân và nằm trong giới hạn lưu trữ.");
         return value;
     }
+    // Tính giá bán = ROUND(Cost * (1 + ProfitPercent / 100), 2) với tỷ lệ 0–10.000%.
     public static decimal Price(decimal cost, decimal percent)
     {
         Money(cost);
@@ -32,6 +34,7 @@ public static class Rules
     }
     public static void Quantity(int value) { if (value <= 0) throw Error("INVALID_INPUT", "Số lượng phải là số nguyên dương."); }
     public static void Key(Guid value) { if (value == Guid.Empty) throw Error("INVALID_INPUT", "Thiếu khóa yêu cầu."); }
+    // So khớp Base64 rowversion (8 byte) để phát hiện ghi đè đồng thời (CONCURRENT_UPDATE).
     public static void Version(byte[] actual, string? expected)
     {
         byte[] decoded;
