@@ -1,5 +1,6 @@
 namespace PhoneStore.Core.Accounts;
 
+// [UC01.03, UC07.02] Hợp đồng đọc và cập nhật thông tin hồ sơ khách hàng.
 public sealed record ProfileChangeRequest(string? FullName, string? Phone, string? Email = null, string? Address = null);
 public sealed record CustomerProfile(long Id, string Username, string FullName, string Phone, string? Email, string Address);
 

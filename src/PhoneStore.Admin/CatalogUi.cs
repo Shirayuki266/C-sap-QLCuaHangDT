@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin;
 
+// Tiện ích dựng DataGridView, thanh công cụ, bố cục 4 tầng và hộp thoại xác nhận cho các trang quản trị.
 internal static class CatalogUi
 {
     public static DataGridView Grid() => new()

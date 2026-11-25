@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC07.02] Hộp thoại chỉnh sửa 4 trường hồ sơ liên hệ của khách hàng từ WinForms.
 public sealed class CustomerProfileEditor:Form
 {
     private readonly IAdminApi api;
@@ -40,6 +41,7 @@ public sealed class CustomerProfileEditor:Form
     private void SetBusy(bool value){busy=value;PageNavigation.StateChanged(this);SaveButton.Enabled=!value&&loaded;ReloadButton.Enabled=FullNameBox.Enabled=PhoneBox.Enabled=EmailBox.Enabled=AddressBox.Enabled=!value;if(value)MessageLabel.Text="Đang xử lý…";}
 }
 
+// [UC07.01, UC07.03] Màn hình chi tiết khách hàng, khóa/mở khóa tài khoản (xác nhận trước khi xóa phiên) và xem đơn của khách.
 public sealed class CustomerDetailsForm:NavigationPageForm
 {
     private readonly IAdminApi api;

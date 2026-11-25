@@ -4,6 +4,7 @@ using PhoneStore.Web.Models;
 
 namespace PhoneStore.Web.Controllers;
 
+// [UC02.01] Controller trang chủ Website: hiển thị tối đa 8 điện thoại bán chạy trong tháng hiện tại.
 [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public sealed class HomeController(IStoreService store) : Controller
 {

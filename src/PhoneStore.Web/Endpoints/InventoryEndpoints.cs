@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC08.04, UC08.05] Định tuyến Admin API tra cứu tồn kho, nhật ký kho và kiểm kê điều chỉnh (/api/admin/stock).
 public static class InventoryEndpoints
 {
     public static void MapInventory(this WebApplication app)

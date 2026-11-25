@@ -1,4 +1,5 @@
 namespace PhoneStore.Core.Commerce;
+// [UC10.01] DTO báo cáo doanh thu theo ngày, bán chạy theo biến thể và tồn kho hiện tại.
 public sealed record DailyRevenue(DateOnly Day,int Orders,decimal Revenue);
 public sealed record Bestseller(long VariantId,string Name,string Sku,long Quantity,decimal Revenue);
 public sealed record StockReportLine(long VariantId,string Name,string Sku,int OnHand,int Reserved,int Available);

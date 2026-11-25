@@ -1,5 +1,6 @@
 using PhoneStore.Core.Commerce;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC09.01] Tạo chứng từ hóa đơn bán hàng nội bộ từ snapshot đơn hàng (chỉ cho phép DA_XAC_NHAN / DANG_GIAO / HOAN_TAT; E1 chặn các trạng thái còn lại).
 public sealed class InvoiceService(BusinessKernel kernel)
 {
     public Task<SalesInvoice> Read(Actor actor,long id) => kernel.Read<SalesInvoice>(async () =>

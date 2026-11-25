@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC07.01, UC08.01] Lớp nền phân trang và các màn hình danh sách Khách hàng, Nhà cung cấp, chọn NCC hoạt động.
 public abstract class PagedContactsForm:NavigationPageForm
 {
     protected bool Busy;

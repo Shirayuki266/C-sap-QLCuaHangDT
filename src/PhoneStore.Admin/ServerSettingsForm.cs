@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC05.01 - A1 & E1] Hộp thoại cấu hình URL máy chủ (bắt buộc HTTPS cho máy từ xa) và môi trường/fingerprint kỳ vọng.
 public sealed class ServerSettingsForm : Form
 {
     public TextBox AddressBox { get; } = AdminTheme.Input("Địa chỉ máy chủ");

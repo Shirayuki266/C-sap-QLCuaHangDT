@@ -1,5 +1,6 @@
 namespace PhoneStore.Web.Storefront;
 
+// Chuyển đổi mã trạng thái đơn hàng và trạng thái thanh toán sang nhãn hiển thị tiếng Việt trên giao diện.
 public static class OrderLabels
 {
     public static readonly string[] States = ["CHO_XAC_NHAN", "DA_XAC_NHAN", "DANG_GIAO", "HOAN_TAT", "DA_HUY", "GIAO_THAT_BAI"];

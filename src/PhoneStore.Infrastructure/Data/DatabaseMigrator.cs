@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace PhoneStore.Infrastructure.Data;
 
+// Khởi tạo CSDL mới (nếu chưa có) và áp dụng script schema 001_InitialStore.sql có kiểm tra checksum SHA-256.
 public sealed class DatabaseMigrator(StoreDbContext db)
 {
     public const string MigrationId = "rebuild/001_initial_store";

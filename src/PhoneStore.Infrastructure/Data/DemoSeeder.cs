@@ -4,6 +4,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Accounts;
 using PhoneStore.Infrastructure.Commerce;
 namespace PhoneStore.Infrastructure.Data;
+// Sinh bộ dữ liệu mẫu đầy đủ (1 admin, 20 khách, 20 sản phẩm, 20 phiếu nhập, 20 đơn hàng) chỉ khi CSDL trống.
 public sealed class DemoSeeder(StoreDbContext db,IPasswordHasher<Account> passwords)
 {
     public const string AdminUsername="demo.admin.v1";

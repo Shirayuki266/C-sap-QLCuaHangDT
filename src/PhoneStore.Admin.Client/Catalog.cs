@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin.Client;
 
+// [UC06.01 - UC06.04] DTO, kiểm tra biểu mẫu và Workspace giao tiếp API cho Sản phẩm, Biến thể, Hãng, Danh mục và chuyển giao Phiếu nhập.
 public sealed record LookupRow(int Id, string Name, bool Active)
 {
     public override string ToString() => Name + (Active ? "" : " · Đã ngừng");

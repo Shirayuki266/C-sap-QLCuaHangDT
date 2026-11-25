@@ -2,6 +2,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Identity;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Web;
+// Bộ điều phối các lệnh CLI quản trị (--provision-admin, --seed-demo, --audit-db).
 public static class BootstrapCommand
 {
     public static async Task Run(string mode,IServiceProvider services)

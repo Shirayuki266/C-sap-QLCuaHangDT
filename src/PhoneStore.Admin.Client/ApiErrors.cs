@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin.Client;
 
+// Ngoại lệ chuẩn phía WinForms Client (ánh xạ mã lỗi API sang thông báo tiếng Việt) và bộ kiểm tra URL HTTP loopback / HTTPS từ xa.
 public sealed class AdminApiException(string code, int status = 0, string? traceId = null,string? publicValidation=null) : Exception(MessageFor(code, status, traceId))
 {
     public string Code { get; } = code;

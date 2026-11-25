@@ -5,6 +5,7 @@ using PhoneStore.Web.Security;
 
 namespace PhoneStore.Web.Storefront;
 
+// Điều hướng các sự kiện Cookie Auth: chuyển hướng về /Account/Login cho MVC và giữ mã 401/403 JSON cho API.
 public sealed class StorefrontCookieEvents(SessionAuthentication original) : CookieAuthenticationEvents
 {
     public override Task ValidatePrincipal(CookieValidatePrincipalContext context) => original.ValidatePrincipal(context);

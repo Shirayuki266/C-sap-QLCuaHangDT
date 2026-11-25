@@ -7,6 +7,7 @@ using PhoneStore.Core.Accounts;
 
 namespace PhoneStore.Web.Security;
 
+// Xác thực cookie PhoneStore.Session qua bảng PHIEN và tài khoản Active ở mọi request cần đăng nhập.
 public sealed class SessionAuthentication(IAccountSessions sessions) : CookieAuthenticationEvents
 {
     public const string SessionClaim = "phone_store_session";

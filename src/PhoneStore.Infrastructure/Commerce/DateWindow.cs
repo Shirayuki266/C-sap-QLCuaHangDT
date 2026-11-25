@@ -1,5 +1,6 @@
 using System.Globalization;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC04.01, UC09.01, UC10.01] Quy đổi khoảng ngày lịch theo múi giờ Việt Nam (UTC+07:00) sang mốc UTC [Start, End).
 public sealed record DateWindow(DateTime? Start,DateTime? End)
 {
     public static DateWindow Parse(string? from,string? to)

@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC09.03] Định tuyến Admin API xuất giao (dispatch), hoàn tất thu COD (complete), thất bại (fail) và nhận lại hàng (receive-return).
 public static class OrderFulfillmentEndpoints
 {
     public static void MapOrderFulfillment(this WebApplication app)

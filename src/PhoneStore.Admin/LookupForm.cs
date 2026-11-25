@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC06.04] Màn hình quản lý Hãng điện thoại (HANG) và Danh mục (DANH_MUC) dùng chung qua tham số kind.
 public sealed class LookupForm:NavigationPageForm
 {
     private readonly CatalogWorkspace workspace;

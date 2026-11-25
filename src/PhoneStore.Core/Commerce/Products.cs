@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 namespace PhoneStore.Core.Commerce;
 
+// [UC06.01 - UC06.03] DTO nhập/xuất thông tin sản phẩm, biến thể (giá vốn, % lợi nhuận, Version) và ảnh cho Admin.
 public sealed record ImageInput(string? Url, int SortOrder = 0);
 public sealed record VariantInput(long Id, string? Sku, string? Color, int StorageGb, decimal Cost,
     [property: JsonRequired] decimal ProfitPercent, [property: JsonRequired] bool Active = true, string? Version = null);

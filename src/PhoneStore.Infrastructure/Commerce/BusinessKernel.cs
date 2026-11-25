@@ -6,10 +6,12 @@ using PhoneStore.Infrastructure.Data;
 
 namespace PhoneStore.Infrastructure.Commerce;
 
+// Hạt nhân giao dịch & phân quyền dùng chung cho toàn bộ nghiệp vụ thương mại: Serializable + khóa sp_getapplock.
 public sealed class BusinessKernel(StoreDbContext db, TimeProvider clock)
 {
     public StoreDbContext Db => db;
     public DateTime Now => clock.GetUtcNow().UtcDateTime;
+    // Xác thực phiên đăng nhập (PHIEN + TAI_KHOAN.Active) và kiểm tra đúng vai trò CUSTOMER hoặc ADMIN.
     public async Task<Account> Require(Actor actor, string role, CancellationToken ct = default)
     {
         var now = Now;
@@ -21,6 +23,7 @@ public sealed class BusinessKernel(StoreDbContext db, TimeProvider clock)
         if (account.Role != role) throw Rules.Error("FORBIDDEN", "Bạn không có quyền thực hiện chức năng này.");
         return account;
     }
+    // Thực thi truy vấn chỉ đọc trong giao dịch Serializable với khóa Shared trên tài nguyên PhoneStore:write.
     public async Task<T> Read<T>(Func<Task<T>> action, CancellationToken ct = default)
     {
         if (db.Database.CurrentTransaction is not null) return await action();
@@ -42,6 +45,7 @@ public sealed class BusinessKernel(StoreDbContext db, TimeProvider clock)
         }
     }
 
+    // Thực thi thao tác ghi trong giao dịch Serializable với khóa Exclusive, tự SaveChanges và rollback/ánh xạ lỗi SQL.
     public async Task<T> Write<T>(Func<Task<T>> action, CancellationToken ct = default)
     {
         if (db.Database.CurrentTransaction is not null)
@@ -64,6 +68,7 @@ public sealed class BusinessKernel(StoreDbContext db, TimeProvider clock)
             catch (SqlException) { /* A broken connection must not replace the original failure. */ }
             catch (InvalidOperationException) { /* Commit outcome may need request-key reconciliation. */ }
             db.ChangeTracker.Clear();
+            // Ánh xạ lỗi xung đột rowversion, lỗi trùng khóa duy nhất (2601/2627), ràng buộc/tràn số (547/8115) và khóa bận (51000/1205).
             if (error is DbUpdateConcurrencyException) throw Rules.Error("CONCURRENT_UPDATE", "Dữ liệu đã thay đổi. Vui lòng tải lại.");
             var sql = error as SqlException ?? error.InnerException as SqlException;
             if (sql?.Number is 2601 or 2627) throw Rules.Error("INVALID_INPUT", "Mã hoặc thông tin duy nhất đã tồn tại.");

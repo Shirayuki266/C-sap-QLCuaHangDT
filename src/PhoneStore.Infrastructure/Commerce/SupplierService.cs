@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC08.01] Dịch vụ tra cứu, thêm mới và cập nhật nhà cung cấp trong bảng NHA_CUNG_CAP.
 public sealed class SupplierService(BusinessKernel kernel)
 {
     public Task<Page<SupplierView>> List(Actor actor, string? query = null, bool? active = null, int page = 1, int pageSize = 20) => kernel.Read<Page<SupplierView>>(async () =>

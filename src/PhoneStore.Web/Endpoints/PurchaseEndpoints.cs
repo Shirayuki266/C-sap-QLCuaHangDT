@@ -2,6 +2,7 @@ using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 namespace PhoneStore.Web.Endpoints;
+// [UC08.02, UC08.03] Định tuyến Admin API quản lý phiếu nhập, hủy phiếu nháp và xác nhận nhập kho (/api/admin/purchases).
 public static class PurchaseEndpoints
 {
     public static void MapPurchases(this WebApplication app)

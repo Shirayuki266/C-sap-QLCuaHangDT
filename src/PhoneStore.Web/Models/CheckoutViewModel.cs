@@ -5,6 +5,7 @@ using PhoneStore.Core.Commerce;
 
 namespace PhoneStore.Web.Models;
 
+// [UC03.02] ViewModel biểu mẫu đặt hàng COD kèm RequestKey, token Confirmation đã mã hóa và cờ PriceChanged.
 public sealed class CheckoutViewModel
 {
     public Guid RequestKey { get; set; }

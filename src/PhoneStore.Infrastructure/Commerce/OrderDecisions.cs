@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using PhoneStore.Core.Commerce;
 using PhoneStore.Infrastructure.Data;
 namespace PhoneStore.Infrastructure.Commerce;
+// [UC04.02, UC09.02] Luồng xử lý xác nhận và hủy đơn hàng (kiểm tra Version, OperationKey, thanh toán COD/CHUA_THU).
 public sealed partial class OrderWorkflow(BusinessKernel kernel)
 {
+    // Kiểm tra quyền (ADMIN/CUSTOMER), sở hữu đơn, Version (rowversion) và khớp tổng tiền chốt.
     private async Task<Order> Load(Actor actor,long id,VersionedCommand command,bool admin)
     {
         await kernel.Require(actor,admin?"ADMIN":"CUSTOMER");
@@ -22,12 +24,14 @@ public sealed partial class OrderWorkflow(BusinessKernel kernel)
     {
         if(await kernel.Db.Movements.AnyAsync(x=>x.OperationKey==key))throw Rules.Error("INVALID_STATE","Thao tác đã được ghi nhận. Vui lòng tra cứu đơn/nhật ký trước khi thử lại.");
     }
+    // [UC09.02] Admin xác nhận đơn CHO_XAC_NHAN -> DA_XAC_NHAN và ghi LICH_SU_DON.
     public Task<bool> Confirm(Actor actor,long id,VersionedCommand command)=>kernel.Write(async()=>
     {
         var order=await Load(actor,id,command,true);await Unpaid(id);
         if(order.Status!="CHO_XAC_NHAN")throw Rules.Error("INVALID_STATE","Chỉ được xác nhận đơn đang chờ.");
         order.Status="DA_XAC_NHAN";History(actor,order,"CHO_XAC_NHAN");return true;
     });
+    // [UC04.02, UC09.02] Hủy đơn (khách chỉ hủy CHO_XAC_NHAN; Admin hủy CHO_XAC_NHAN/DA_XAC_NHAN), hoàn TON_KHO.Reserved và ghi HUY_GIU.
     public Task<bool> Cancel(Actor actor,long id,VersionedCommand command,bool admin=false)=>kernel.Write(async()=>
     {
         var order=await Load(actor,id,command,admin);await Unpaid(id);

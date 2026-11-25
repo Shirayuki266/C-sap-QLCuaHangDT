@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC05 - UC10] Cửa sổ chính ứng dụng WinForms quản trị với thanh điều hướng bên trái, lịch sử Back/Forward và nút Đăng xuất/Đổi mật khẩu.
 public sealed class MainForm : Form
 {
     private readonly IAdminApi api;

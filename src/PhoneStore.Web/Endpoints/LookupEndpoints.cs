@@ -3,6 +3,7 @@ using PhoneStore.Infrastructure.Commerce;
 using PhoneStore.Web.Security;
 
 namespace PhoneStore.Web.Endpoints;
+// [UC02.01, UC06.04] Định tuyến API hãng và danh mục (công khai /api/lookups/{kind} và quản trị /api/admin/lookups/{kind}).
 public static class LookupEndpoints
 {
     public static void MapLookups(this WebApplication app)

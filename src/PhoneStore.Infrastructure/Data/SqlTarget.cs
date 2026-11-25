@@ -2,6 +2,7 @@ using Microsoft.Data.SqlClient;
 
 namespace PhoneStore.Infrastructure.Data;
 
+// Kiểm tra chuỗi kết nối SQL Server hợp lệ và không trỏ vào các CSDL hệ thống (master/model/msdb/tempdb).
 public static class SqlTarget
 {
     public static string Validate(string? connectionString)

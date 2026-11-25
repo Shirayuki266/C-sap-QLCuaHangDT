@@ -3,6 +3,7 @@ using PhoneStore.Core.Commerce;
 
 namespace PhoneStore.Web.Models;
 
+// [UC03.01] Các ViewModel nhận dữ liệu thêm/sửa số lượng giỏ hàng, báo giá/hợp nhất và hiển thị trang Giỏ hàng.
 public sealed class CartChangeForm
 {
     [Range(1, long.MaxValue, ErrorMessage = "Vui lòng chọn sản phẩm hợp lệ.")]

@@ -11,6 +11,7 @@ using PhoneStore.Web.Storefront;
 
 namespace PhoneStore.Web.Controllers;
 
+// [UC01.01 - UC01.04] Controller tài khoản khách hàng trên Website MVC (đăng ký, đăng nhập, đăng xuất, hồ sơ, đổi mật khẩu).
 [Route("Account"), ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public sealed class AccountController(IStoreService store) : Controller
 {
@@ -32,6 +33,7 @@ public sealed class AccountController(IStoreService store) : Controller
     [HttpGet("Register")]
     public IActionResult Register() => User.Identity?.IsAuthenticated == true ? LocalRedirect("/Home/Index") : View(new RegisterViewModel());
 
+    // [UC01.01] Xử lý đăng ký CUSTOMER: bắt lỗi E1/E2 từ BusinessException và xóa sạch mật khẩu trước khi trả form.
     [HttpPost("Register")]
     public async Task<IActionResult> Register(RegisterViewModel model, CancellationToken cancellationToken)
     {
@@ -54,6 +56,7 @@ public sealed class AccountController(IStoreService store) : Controller
     public IActionResult Login(string? returnUrl) => User.Identity?.IsAuthenticated == true ?
         LocalRedirect("/Home/Index") : View(new LoginViewModel { ReturnUrl = LocalDestination(returnUrl) });
 
+    // [UC01.02] Xử lý đăng nhập CUSTOMER: tạo cookie PhoneStore.Session (8 giờ, không gia hạn trượt); bắt E1 trả thông báo lỗi chung.
     [HttpPost("Login")]
     public async Task<IActionResult> Login(LoginViewModel model, CancellationToken cancellationToken)
     {
@@ -81,6 +84,7 @@ public sealed class AccountController(IStoreService store) : Controller
         return View(model);
     }
 
+    // [UC01.04] Đăng xuất khách hàng: thu hồi phiên PHIEN và xóa cookie xác thực khỏi trình duyệt.
     [Authorize(Policy = "Customer"), HttpPost("Logout")]
     public async Task<IActionResult> Logout(CancellationToken cancellationToken)
     {
@@ -98,6 +102,7 @@ public sealed class AccountController(IStoreService store) : Controller
             Phone = profile.Phone, Email = profile.Email, Address = profile.Address });
     }
 
+    // [UC01.03] Cập nhật hồ sơ cá nhân; nếu lỗi luôn giữ Username từ phiên hiện tại thay vì form.
     [Authorize(Policy = "Customer"), HttpPost("Profile")]
     public async Task<IActionResult> Profile(ProfileViewModel model, CancellationToken cancellationToken)
     {
@@ -119,6 +124,7 @@ public sealed class AccountController(IStoreService store) : Controller
     [Authorize(Policy = "Customer"), HttpGet("Password")]
     public IActionResult Password() => View(new ChangePasswordViewModel());
 
+    // [UC01.03] Đổi mật khẩu khách hàng: thu hồi toàn bộ phiên và đăng xuất bắt buộc; bắt INVALID_INPUT về CurrentPassword (E1).
     [Authorize(Policy = "Customer"), HttpPost("Password")]
     public async Task<IActionResult> Password(ChangePasswordViewModel model, CancellationToken cancellationToken)
     {

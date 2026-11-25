@@ -1,5 +1,6 @@
 namespace PhoneStore.Admin;
 
+// Tiện ích tìm MainForm chủ quản để mở trang trong Navigator hoặc hiển thị hộp thoại con đúng owner.
 internal static class PageNavigation
 {
     public static MainForm? Shell(Control? source)

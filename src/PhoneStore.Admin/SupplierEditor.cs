@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC08.01] Biểu mẫu thêm mới hoặc chỉnh sửa thông tin nhà cung cấp (mã, tên, SĐT, địa chỉ, Active).
 public sealed class SupplierEditor:Form
 {
     private readonly IAdminApi api;

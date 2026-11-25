@@ -2,6 +2,7 @@ using PhoneStore.Admin.Navigation;
 
 namespace PhoneStore.Admin;
 
+// Bộ điều phối chuyển trang, lưu trạng thái cuộn/chọn dòng và kiểm tra thay đổi chưa lưu trong MainForm.
 public sealed class NavigationService : IDisposable
 {
     private readonly MainForm shell;

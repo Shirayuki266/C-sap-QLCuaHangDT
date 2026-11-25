@@ -2,6 +2,7 @@ using PhoneStore.Admin.Client;
 
 namespace PhoneStore.Admin;
 
+// [UC05.02] Hộp thoại đổi mật khẩu quản trị viên (gọi POST /api/account/password và thu hồi mọi phiên).
 public sealed class PasswordForm : Form
 {
     private readonly IAdminApi api;

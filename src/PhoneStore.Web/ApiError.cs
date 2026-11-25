@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace PhoneStore.Web;
 
+// Ánh xạ ngoại lệ nghiệp vụ/hệ thống thành cấu trúc lỗi JSON chuẩn và mã HTTP tương ứng (400/401/403/404/409/503/500).
 public sealed record ApiError(string Code, string Message, string TraceId, [property:JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)] object? Details=null)
 {
     public static int Status(string code) => code switch
