@@ -1,0 +1,1588 @@
+﻿TRƯỜNG ĐẠI HỌC SÀI GÒN
+KHOA CÔNG NGHỆ THÔNG TIN
+--------***--------
+
+
+
+
+
+
+
+
+
+
+BÁO CÁO ĐỒ ÁN MÔN HỌC C#
+Xây dựng hệ thống quản lý và bán điện thoại di động
+
+
+Giảng viên hướng dẫn:
+	Cao Thái Phương Thanh
+	Nhóm sinh viên thực hiện:
+	 
+	Lê Vũ Hoàng
+Nguyễn Thế Bảo
+Võ Đồng Gia Bảo
+Huỳnh Khánh Duy
+	3123411104
+3124411032
+3124411040
+3124411056
+	
+
+
+
+
+
+
+
+
+
+Thành phố Hồ Chí Minh, tháng 11 năm 2026
+MỤC LỤC
+CHƯƠNG 1: TỔNG QUAN ĐỀ TÀI VÀ CÔNG NGHỆ        4
+1.1 Bối cảnh và lý do chọn đề tài        4
+1.2 Mục tiêu của đề tài        4
+1.2.1 Mục tiêu phân hệ Website dành cho Khách hàng        4
+1.2.2 Mục tiêu phân hệ Desktop quản trị dành cho Admin        4
+1.3 Đặc điểm nghiệp vụ cửa hàng điện thoại di động        5
+1.4 Đối tượng và phạm vi ứng dụng        5
+1.4.1 Đối tượng sử dụng hệ thống        5
+1.4.2 Phạm vi và giới hạn của đề tài        6
+1.5 Môi trường và công nghệ phát triển hệ thống        6
+CHƯƠNG 2: PHÂN TÍCH VÀ THIẾT KẾ        7
+2.1 PHÂN TÍCH HỆ THỐNG        7
+2.1.1 Đối tượng sử dụng        7
+2.1.2 Danh sách chức năng tổng hợp theo phân hệ        8
+2.1.3 Đặc tả luồng thao tác nghiệp vụ        9
+2.1.4 Quy trình tích hợp và đồng bộ dữ liệu giữa Website và Desktop        30
+2.2 THIẾT KẾ GIAO DIỆN VÀ LUỒNG MÀN HÌNH        30
+2.2.1 Luồng chuyển tiếp màn hình        30
+2.2.1.1 Luồng màn hình Quản trị viên (WinForms)        30
+2.2.1.2 Luồng màn hình Khách hàng (Website)        31
+2.2.2 Danh sách các màn hình hệ thống        31
+2.3 THIẾT KẾ MÔ HÌNH USE CASE        32
+2.3.1 Sơ đồ Use Case tổng quát        32
+2.3.2 Sơ đồ Use Case theo nhóm chức năng        33
+2.3.2.1 Use Case Tài khoản khách hàng (Website)        33
+2.3.2.2 Use Case Tra cứu điện thoại (Website)        34
+2.3.2.3 Use Case Giỏ hàng và đặt hàng COD (Website)        34
+2.3.2.4 Use Case Lịch sử và hủy đơn của khách (Website)        35
+2.3.2.5 Use Case Tài khoản quản trị (WinForms)        35
+2.3.2.6 Use Case Quản lý điện thoại (WinForms)        36
+2.3.2.7 Use Case Quản lý khách hàng (WinForms)        36
+2.3.2.8 Use Case Nhập hàng và tồn kho (WinForms)        37
+2.3.2.9 Use Case Quản lý đơn hàng và COD (WinForms)        37
+2.3.2.10 Use Case Thống kê và báo cáo (WinForms)        38
+2.4 THIẾT KẾ CƠ SỞ DỮ LIỆU        38
+2.4.1 Mô hình dữ liệu và các thực thể        38
+2.4.2 Các quan hệ dữ liệu và chuẩn hóa        39
+2.4.3 Chi tiết các bảng dữ liệu chính        40
+2.5 THIẾT KẾ UI        42
+2.5.1 Giao diện Website dành cho Khách hàng        42
+2.5.1.1 Trang chủ và sản phẩm bán chạy (Home/Index)        42
+2.5.1.2 Danh mục điện thoại (Catalog/Index)        43
+2.5.1.3 Chi tiết điện thoại (Catalog/Details)        44
+2.5.1.4 Giỏ hàng (Cart/Index)        45
+2.5.1.5 Đặt hàng COD (Cart/Checkout)        46
+2.5.1.6 Lịch sử đơn hàng của khách (Orders/Index)        47
+2.5.2 Giao diện Desktop WinForms dành cho Admin        48
+2.5.2.1 Đăng nhập quản trị (LoginForm)        48
+2.5.2.2 Màn hình Tổng quan (MainForm & DashboardView)        49
+2.5.2.3 Quản lý đơn hàng (OrderListForm)        50
+2.5.2.4 Hóa đơn bán hàng (InvoiceForm)        50
+2.5.2.5 Quản lý phiếu nhập kho (PurchaseEditor)        51
+2.5.2.6 Nhật ký tồn kho (StockJournalForm)        52
+2.5.2.7 Báo cáo thống kê (ReportScreen)        52
+2.6 SEQUENCE DIAGRAM        53
+2.6.1 Sequence UC01 – Đăng nhập khách hàng        53
+2.6.2 Sequence UC02 – Tra cứu và xem chi tiết điện thoại        54
+2.6.3 Sequence UC03 – Đặt hàng thanh toán COD        55
+2.6.4 Sequence UC04 – Khách hàng hủy đơn chờ xác nhận        56
+2.6.5 Sequence UC05 – Đăng nhập quản trị WinForms        57
+2.6.6 Sequence UC06 – Lưu sản phẩm, biến thể và giá bán        58
+2.6.7 Sequence UC07 – Cập nhật hoặc khóa tài khoản khách hàng        59
+2.6.8 Sequence UC08 – Xác nhận phiếu nhập kho        60
+2.6.9 Sequence UC09 – Xử lý đơn hàng và giao hàng COD        61
+2.6.10 Sequence UC10 – Xem báo cáo thống kê        62
+2.7 CLASS DIAGRAM        63
+2.7.1 Danh sách các lớp trong sơ đồ lớp        68
+2.7.2 Danh sách các mối quan hệ giữa các lớp        71
+2.7.3 Giải thích thiết kế        73
+PHỤ LỤC A: KIẾN TRÚC TRIỂN KHAI VÀ BẢO MẬT        74
+A.1 Sơ đồ thành phần và sơ đồ triển khai        75
+A.1.1 Sơ đồ thành phần        75
+A.1.2 Sơ đồ triển khai        75
+A.2 Xác thực, bảo vệ dữ liệu và vận hành        76
+
+
+CHƯƠNG 1: TỔNG QUAN ĐỀ TÀI VÀ CÔNG NGHỆ
+1.1 Bối cảnh và lý do chọn đề tài
+Trong hoạt động bán lẻ điện thoại di động, mỗi dòng máy thường đi kèm nhiều biến thể về màu sắc và dung lượng lưu trữ, có mã SKU, giá vốn, giá bán và số lượng tồn kho riêng biệt. Khi cửa hàng vận hành đồng thời kênh bán hàng trực tuyến cho khách và công cụ quản trị nội bộ cho người quản lý, việc ghi chép rời rạc trên sổ sách hoặc bảng tính dễ dẫn đến sai lệch giá bán, nhầm lẫn số lượng nhập và nhận đơn vượt quá lượng hàng thực tế trong kho.
+Xuất phát từ nhu cầu đó, nhóm thực hiện đề tài “Xây dựng hệ thống quản lý cửa hàng bán điện thoại” bằng ngôn ngữ C#. Hệ thống gồm một Website ASP.NET Core MVC phục vụ khách hàng tra cứu và đặt mua điện thoại, kết hợp với ứng dụng Desktop Windows Forms dành cho quản trị viên theo dõi danh mục, khách hàng, phiếu nhập, tồn kho, đơn hàng và báo cáo. Hai giao diện dùng chung tầng xử lý nghiệp vụ và cơ sở dữ liệu SQL Server tập trung, bảo đảm dữ liệu luôn nhất quán ngay cả khi có nhiều thao tác đồng thời.
+1.2 Mục tiêu của đề tài
+1.2.1 Mục tiêu phân hệ Website dành cho Khách hàng
+•  Tài khoản cá nhân: Hỗ trợ khách hàng đăng ký, đăng nhập, đăng xuất, cập nhật hồ sơ liên hệ và đổi mật khẩu.
+•  Tra cứu sản phẩm công khai: Cho phép khách xem danh sách điện thoại đang kinh doanh, sản phẩm bán chạy trong tháng, tìm kiếm theo từ khóa, lọc theo hãng, khoảng giá, dung lượng, màu sắc và xem chi tiết từng biến thể.
+•  Giỏ hàng và đặt hàng COD: Khách hàng đã đăng nhập quản lý giỏ hàng trên máy chủ và thực hiện đặt đơn thanh toán khi nhận hàng (COD).
+•  Theo dõi và hủy đơn: Cho phép khách tra cứu lịch sử đơn hàng của chính mình, xem chi tiết giá đã chốt, tiến trình xử lý và hủy đơn khi còn ở trạng thái chờ xác nhận.
+1.2.2 Mục tiêu phân hệ Desktop quản trị dành cho Admin
+•  Xác thực an toàn qua API: Quản trị viên đăng nhập qua ứng dụng WinForms kết nối tới Admin API, kiểm tra trạng thái sẵn sàng của máy chủ (/health/ready) và hỗ trợ đổi mật khẩu, đăng xuất.
+•  Quản lý danh mục và giá bán: Thêm, chỉnh sửa sản phẩm nhiều biến thể, quản lý hãng, danh mục, ảnh sản phẩm và tính giá bán tự động từ giá vốn và tỷ lệ lợi nhuận.
+•  Quản lý nhập hàng và tồn kho: Quản lý nhà cung cấp, lập và xác nhận phiếu nhập kho tăng tồn một lần, theo dõi tồn thực tế (OnHand), đang giữ (Reserved), có thể bán (Available), kiểm kê điều chỉnh và tra cứu nhật ký kho.
+•  Điều phối đơn hàng và thống kê: Xác nhận, hủy, xuất giao, hoàn tất thu COD, ghi nhận giao thất bại/nhận lại hàng, xem trước/in hóa đơn bán hàng nội bộ và xem báo cáo doanh thu, bán chạy, tồn kho bằng bảng và biểu đồ.
+1.3 Đặc điểm nghiệp vụ cửa hàng điện thoại di động
+Mỗi sản phẩm điện thoại có thông tin chung (mã sản phẩm, tên, hãng, danh mục, thông số kỹ thuật, mô tả, ảnh chính, ảnh phụ) và ít nhất một biến thể phân biệt theo màu sắc, dung lượng và mã SKU duy nhất. Biến thể mới tạo có tồn thực tế bằng 0; tồn kho chỉ tăng khi xác nhận phiếu nhập hợp lệ hoặc khi kiểm kê/nhận lại hàng trả sau giao thất bại.
+Giá bán hiện hành (Price) của biến thể được tính theo công thức Round(Cost * (1 + ProfitPercent / 100), 2, AwayFromZero) với tỷ lệ lợi nhuận nằm trong khoảng 0–10.000%. Khi xác nhận phiếu nhập, hệ thống cập nhật giá vốn gần nhất (Cost) và tính lại giá bán; phiếu nháp hoặc đã hủy không làm đổi giá và tồn. Thông tin tên sản phẩm, SKU và đơn giá trên chi tiết đơn hàng (DON_HANG_CT) được lưu cố định tại thời điểm đặt hàng để mọi điều chỉnh danh mục sau này không làm sai lệch lịch sử giao dịch.
+Để bảo toàn lịch sử tham chiếu, hệ thống áp dụng xóa mềm (ngừng kinh doanh ở hãng, danh mục, sản phẩm, biến thể, nhà cung cấp hoặc khóa tài khoản khách) thay vì xóa vật lý bản ghi đã phát sinh chứng từ.
+1.4 Đối tượng và phạm vi ứng dụng
+1.4.1 Đối tượng sử dụng hệ thống
+Đối tượng
+	Giao diện sử dụng
+	Phạm vi thao tác chính
+	Khách hàng (CUSTOMER)
+	Website MVC
+	Quản lý hồ sơ, đổi mật khẩu, lưu và hợp nhất giỏ hàng máy chủ, đặt hàng COD, xem lịch sử và hủy đơn chờ xác nhận.
+	Quản trị viên (ADMIN)
+	WinForms Desktop (qua Admin API)
+	Quản lý sản phẩm/biến thể/hãng/danh mục, quản lý khách hàng, nhà cung cấp, phiếu nhập, tồn kho, xử lý đơn hàng COD, in hóa đơn và xem báo cáo.
+	 
+1.4.2 Phạm vi và giới hạn của đề tài
+Hệ thống phục vụ mô hình một cửa hàng bán lẻ điện thoại với phương thức thanh toán duy nhất là thanh toán khi nhận hàng (COD). Các yêu cầu thanh toán trực tuyến/QR ngân hàng, tích hợp đơn vị vận chuyển, quản lý mã IMEI từng máy, chương trình khuyến mãi, bảo hành, hóa đơn điện tử thuế và báo cáo lợi nhuận gộp theo giá vốn từng lần bán thuộc hướng mở rộng, nằm ngoài phạm vi phiên bản hiện tại.
+1.5 Môi trường và công nghệ phát triển hệ thống
+Hệ thống được xây dựng trên nền tảng .NET 10 với ngôn ngữ C#, tổ chức theo cấu trúc tách lớp giữa hợp đồng miền, hạ tầng dữ liệu, máy chủ Web/API và ứng dụng Desktop:
+Thành phần
+	Dự án / Công nghệ trong mã nguồn
+	Vai trò chính
+	Hợp đồng & Quy ước miền
+	PhoneStore.Core (net10.0)
+	Chứa DTO, interface IStoreService, interface tài khoản, chính sách phiên SessionPolicy (8 giờ cố định) và mã lỗi BusinessException.
+	Dữ liệu & Nghiệp vụ
+	PhoneStore.Infrastructure (EF Core + SQL Server)
+	Chứa StoreDbContext, migration SQL quản lý phiên bản (001_InitialStore.sql), quy tắc Rules và toàn bộ dịch vụ nghiệp vụ qua BusinessKernel.
+	Máy chủ Web & API
+	PhoneStore.Web (ASP.NET Core MVC & Minimal API)
+	Chạy chung một host: Website MVC gọi dịch vụ trong tiến trình qua MvcStoreAdapter; Admin Minimal API phục vụ WinForms và kiểm tra /health/ready.
+	Ứng dụng Quản trị
+	PhoneStore.Admin & PhoneStore.Admin.Client (net10.0-windows)
+	Giao diện WinForms mỏng chỉ hiển thị; mọi gọi dữ liệu đi qua ApiClient (HttpClient, Cookie, CSRF token tự động) tới Admin API, không nối thẳng SQL.
+	Cơ sở dữ liệu
+	Microsoft SQL Server
+	Lưu trữ tập trung 19 bảng (18 bảng nghiệp vụ và __PhoneStoreMigrations) với khóa ngoại NO ACTION, ràng buộc CHECK và rowversion.
+	Bảo mật & Đồng thời
+	PasswordHasher, PhoneStore.Session, Serializable + sp_getapplock
+	Băm mật khẩu kèm salt, cookie HttpOnly/SameSite=Lax, kiểm tra phiên bảng PHIEN, chống CSRF và khóa ghi PhoneStore:write.
+	Kiểm thử tự động
+	PhoneStore.Checks, Admin.Client.Checks, Admin.Tests
+	Kiểm tra quy tắc miền, đồng thời đa kết nối SQL, nghiệm thu HTTP/MVC và kiểm thử giao diện WinForms.
+	 
+
+
+ 
+CHƯƠNG 2: PHÂN TÍCH VÀ THIẾT KẾ
+2.1 PHÂN TÍCH HỆ THỐNG
+2.1.1 Đối tượng sử dụng
+Hệ thống phân biệt rõ tác nhân nghiệp vụ (Khách hàng CUSTOMER và Quản trị viên ADMIN) với các thành phần kỹ thuật bên trong như API và SQL Server. Mọi yêu cầu truy cập dữ liệu hoặc thay đổi trạng thái đều được kiểm tra phiên đăng nhập và vai trò tại tầng xử lý nghiệp vụ (BusinessKernel.Require hoặc AccountProfiles.Require), bảo đảm không thể vượt quyền ngay cả khi gọi trực tiếp endpoint.
+2.1.2 Danh sách chức năng tổng hợp theo phân hệ
+A. Phân hệ Website (Khách hàng)
+•  Tài khoản (UC01): Đăng ký tài khoản CUSTOMER, đăng nhập, đăng xuất, cập nhật hồ sơ cá nhân và đổi mật khẩu.
+•  Tra cứu điện thoại (UC02): Xem trang chủ sản phẩm bán chạy, duyệt danh mục, tìm kiếm theo từ khóa, lọc theo hãng/giá/dung lượng/màu, sắp xếp và xem chi tiết biến thể.
+•  Giỏ hàng & đặt hàng COD (UC03): Lưu giỏ tạm trên trình duyệt hoặc giỏ máy chủ, gộp giỏ khi đăng nhập, kiểm tra giá xác nhận và đặt hàng COD trong một giao dịch.
+•  Đơn hàng của khách (UC04): Xem danh sách đơn theo trạng thái/thời gian, xem chi tiết snapshot đơn hàng và hủy đơn còn chờ xác nhận kèm lý do.
+B. Phân hệ Desktop WinForms (Quản trị viên)
+•  Tài khoản quản trị (UC05): Cấu hình máy chủ, kiểm tra /health/ready, đăng nhập ADMIN, đổi mật khẩu và đăng xuất.
+•  Quản lý sản phẩm & danh mục (UC06): Tra cứu nội bộ, thêm/sửa sản phẩm và nhiều biến thể, tính giá bán theo tỷ lệ lợi nhuận, ngừng/mở bán, quản lý hãng và danh mục.
+•  Quản lý khách hàng (UC07): Tra cứu khách hàng, xem lịch sử mua hàng, chỉnh sửa hồ sơ và khóa/mở khóa tài khoản (khóa sẽ thu hồi toàn bộ phiên).
+•  Nhà cung cấp, nhập hàng & kho (UC08): Quản lý NCC, lập/sửa/hủy phiếu nháp, xác nhận phiếu nhập tăng tồn một lần, xem tồn kho, kiểm kê điều chỉnh và tra cứu nhật ký kho.
+•  Quản lý đơn hàng & hóa đơn (UC09): Tra cứu đơn hàng, xác nhận, hủy đơn chưa giao, xuất giao, hoàn tất thu COD, ghi giao thất bại, nhận lại hàng trả một lần và in hóa đơn.
+•  Tổng quan & báo cáo (UC10): Xem màn hình tổng quan và báo cáo doanh thu, bán chạy theo biến thể, tồn kho hiện tại bằng bảng dữ liệu và biểu đồ.
+  
+
+Hình 2.1. Sơ đồ phân rã chức năng (BFD) của hệ thống quản lý và  bán điện thoại di dộng
+2.1.3 Đặc tả luồng thao tác nghiệp vụ
+Bảng đặc tả dưới đây mô tả chi tiết từng ca sử dụng nghiệp vụ trên cả hai phân hệ Website và WinForms, phản ánh đúng điều kiện đầu vào, luồng xử lý trong tầng dịch vụ và các ngoại lệ của mã nguồn hiện tại:
+UC01.01 – Đăng ký tài khoản khách hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Đăng ký tài khoản khách hàng
+	Tác nhân
+	Người dùng chưa đăng nhập
+	Tóm tắt
+	Tạo mới tài khoản với vai trò CUSTOMER cùng hồ sơ khách hàng sau khi kiểm tra tính hợp lệ và duy nhất của dữ liệu.
+	Luồng sự kiện chính
+	Actor: 1. Mở trang Đăng ký tài khoản (/Account/Register).
+System: 2. Hiển thị biểu mẫu gồm tên đăng nhập, mật khẩu, họ tên, số điện thoại, email (tùy chọn) và địa chỉ.
+Actor: 3. Nhập đầy đủ thông tin và nhấn Đăng ký.
+System: 4. Chuẩn hóa tên đăng nhập về chữ thường, kiểm tra định dạng mật khẩu (10–128 ký tự gồm chữ và số) và số điện thoại (9–15 chữ số).
+System: 5. Mở giao dịch Serializable, băm mật khẩu bằng PasswordHasher, lưu TAI_KHOAN (Active = true, Role = CUSTOMER) và KHACH_HANG.
+System: 6. Thông báo đăng ký thành công và chuyển hướng để khách đăng nhập.
+	Luồng thay thế
+	Actor: A1 tại bước 3: Khách bỏ trống email hoặc địa chỉ; hệ thống lưu Email = NULL nếu để trống.
+	Luồng ngoại lệ
+	E1 tại bước 4: Dữ liệu sai định dạng hoặc mật khẩu chưa đủ độ dài → giữ lại các giá trị hợp lệ (trừ mật khẩu) và hiển thị lỗi tại biểu mẫu.
+E2 tại bước 5: Trùng tên đăng nhập, số điện thoại hoặc email → rollback giao dịch và thông báo trùng dữ liệu ở đầu biểu mẫu.
+	Tiền điều kiện
+	Người dùng chưa đăng nhập.
+	Hậu điều kiện
+	Tài khoản CUSTOMER và hồ sơ KHACH_HANG được tạo mới; chưa tự động tạo phiên đăng nhập.
+	Quy tắc nghiệp vụ
+	Chỉ tạo tài khoản vai trò CUSTOMER. Mật khẩu luôn được băm kèm salt bằng PasswordHasher trước khi lưu.
+	 
+UC01.02 – Đăng nhập khách hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Đăng nhập khách hàng
+	Tác nhân
+	Khách hàng
+	Tóm tắt
+	Xác thực tài khoản khách hàng, tạo phiên 8 giờ trong bảng PHIEN và cấp cookie PhoneStore.Session.
+	Luồng sự kiện chính
+	Actor: 1. Mở trang Đăng nhập (/Account/Login), nhập tên đăng nhập và mật khẩu.
+Actor: 2. Nhấn Đăng nhập.
+System: 3. Gọi AccountSessions.LoginAsync: mở giao dịch Serializable với khóa PhoneStore:write và đọc TAI_KHOAN theo tên đăng nhập chữ thường.
+System: 4. Đối chiếu mật khẩu băm, kiểm tra trạng thái Active = true và vai trò Role = CUSTOMER.
+System: 5. Tạo bản ghi PHIEN có thời hạn cố định 8 giờ (SessionPolicy.Lifetime) và cấp cookie PhoneStore.Session (HttpOnly, SameSite=Lax).
+System: 6. Chuyển về trang chủ hoặc trang khách đang yêu cầu trước đó.
+	Luồng thay thế
+	System: A1 tại bước 4: Nếu PasswordHasher trả về SuccessRehashNeeded, hệ thống cập nhật lại PasswordHash trước khi Commit.
+	Luồng ngoại lệ
+	E1 tại bước 4: Sai tên đăng nhập, sai mật khẩu, tài khoản bị khóa hoặc dùng tài khoản ADMIN → không tạo phiên, hiển thị thông báo đăng nhập thất bại.
+	Tiền điều kiện
+	Tài khoản CUSTOMER tồn tại và đang hoạt động.
+	Hậu điều kiện
+	Bản ghi phiên hợp lệ được lưu trong PHIEN; trình duyệt giữ cookie PhoneStore.Session.
+	Quy tắc nghiệp vụ
+	Phiên hết hạn cố định sau 8 giờ (không gia hạn trượt). Mỗi yêu cầu được xác thực đều kiểm tra lại PHIEN và Active.
+	 
+UC01.03 – Cập nhật hồ sơ và đổi mật khẩu khách hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Cập nhật hồ sơ và đổi mật khẩu khách hàng
+	Tác nhân
+	Khách hàng (CUSTOMER)
+	Tóm tắt
+	Cho phép khách hàng chỉnh sửa hồ sơ cá nhân hoặc đổi mật khẩu của chính tài khoản đang đăng nhập.
+	Luồng sự kiện chính
+	Actor: 1. Truy cập trang Hồ sơ (/Account/Profile) hoặc Đổi mật khẩu (/Account/Password).
+System: 2. Kiểm tra phiên hợp lệ và hiển thị thông tin hiện tại của khách hàng.
+Actor: 3. Nhập thông tin hồ sơ mới (họ tên, SĐT, email, địa chỉ) hoặc nhập mật khẩu cũ và mật khẩu mới rồi nhấn Lưu.
+System: 4. Kiểm tra định dạng dữ liệu (hoặc xác minh mật khẩu hiện tại qua PasswordHasher).
+System: 5. Cập nhật bảng KHACH_HANG hoặc lưu PasswordHash mới và xóa toàn bộ phiên trong PHIEN của tài khoản nếu đổi mật khẩu.
+System: 6. Hiển thị thông báo kết quả (chuyển về đăng nhập nếu vừa đổi mật khẩu).
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 4: Mật khẩu hiện tại sai hoặc dữ liệu mới sai định dạng → giữ nguyên dữ liệu cũ và báo lỗi tại biểu mẫu.
+E2 tại bước 5: Số điện thoại hoặc email mới trùng với khách khác → rollback và yêu cầu nhập lại.
+	Tiền điều kiện
+	Khách hàng đã đăng nhập với phiên còn hiệu lực.
+	Hậu điều kiện
+	Hồ sơ được cập nhật; riêng thao tác đổi mật khẩu thu hồi mọi phiên cũ để yêu cầu đăng nhập lại.
+	Quy tắc nghiệp vụ
+	Khách hàng chỉ sửa được hồ sơ và mật khẩu của chính mình dựa trên Actor lấy từ phiên.
+	 
+UC01.04 – Đăng xuất khách hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Đăng xuất khách hàng
+	Tác nhân
+	Khách hàng (CUSTOMER)
+	Tóm tắt
+	Thu hồi phiên hiện tại trong bảng PHIEN và xóa cookie xác thực khỏi trình duyệt.
+	Luồng sự kiện chính
+	Actor: 1. Nhấn nút Đăng xuất trên thanh điều hướng website.
+System: 2. Gửi yêu cầu POST /Account/Logout kèm Antiforgery token.
+System: 3. Xóa bản ghi phiên hiện tại trong bảng PHIEN và xóa cookie PhoneStore.Session.
+System: 4. Chuyển người dùng về trang chủ ở trạng thái chưa đăng nhập.
+	Luồng thay thế
+	System: A1 tại bước 3: Nếu phiên đã hết hạn trước đó, hệ thống vẫn xóa cookie trên trình duyệt và đưa về trang chủ.
+	Luồng ngoại lệ
+	Không phát sinh ngoại lệ thay đổi dữ liệu.
+	Tiền điều kiện
+	Người dùng đang có cookie đăng nhập trên trình duyệt.
+	Hậu điều kiện
+	Phiên hiện tại bị vô hiệu hóa; cookie cũ không còn truy cập được trang cần xác thực.
+	Quy tắc nghiệp vụ
+	Đăng xuất chỉ thu hồi phiên hiện tại, giữ nguyên giỏ hàng máy chủ và lịch sử đơn của tài khoản.
+	 
+UC02.01 – Xem danh sách, tìm kiếm, lọc và sắp xếp điện thoại
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Xem danh sách, tìm kiếm, lọc và sắp xếp điện thoại
+	Tác nhân
+	Khách hàng
+	Tóm tắt
+	Hiển thị trang chủ (sản phẩm bán chạy) và danh mục điện thoại đang kinh doanh theo từ khóa, bộ lọc và sắp xếp.
+	Luồng sự kiện chính
+	Actor: 1. Truy cập trang chủ (/) hoặc trang Danh mục (/Catalog).
+System: 2. Đọc danh sách sản phẩm bán chạy trong tháng (tối đa 8 sản phẩm ở trang chủ) hoặc danh sách hãng hoạt động và sản phẩm công khai.
+Actor: 3. Nhập từ khóa (tên, mã, thông số, hãng, SKU), chọn hãng, khoảng giá, dung lượng, màu sắc hoặc kiểu sắp xếp.
+System: 4. Kiểm tra điều kiện lọc; thực hiện truy vấn chỉ đọc trong BusinessKernel.Read (Serializable, Shared).
+System: 5. Chỉ chọn sản phẩm, hãng, danh mục và biến thể đều đang Active; tính giá thấp nhất và tổng tồn khả dụng.
+System: 6. Phân trang và hiển thị danh sách sản phẩm phù hợp.
+	Luồng thay thế
+	Actor: A1 tại bước 3: Khách nhấn xóa bộ lọc để xem lại toàn bộ danh mục đang bán.
+	Luồng ngoại lệ
+	E1 tại bước 4: Giá lọc âm, MinPrice > MaxPrice hoặc kiểu sắp xếp không hợp lệ → báo lỗi bộ lọc và không thực hiện truy vấn sai.
+E2 tại bước 5: Không có sản phẩm khớp điều kiện → hiển thị trạng thái danh sách rỗng và gợi ý đổi từ khóa.
+	Tiền điều kiện
+	Hệ thống website đang hoạt động (không yêu cầu đăng nhập).
+	Hậu điều kiện
+	Danh sách sản phẩm công khai được hiển thị đúng bộ lọc; không làm thay đổi dữ liệu tồn kho.
+	Quy tắc nghiệp vụ
+	Hãng, danh mục hoặc sản phẩm ngừng kinh doanh tự động ẩn khỏi danh mục công khai.
+	 
+UC02.02 – Xem chi tiết điện thoại và biến thể
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Xem chi tiết điện thoại và biến thể
+	Tác nhân
+	Khách hàng
+	Tóm tắt
+	Hiển thị thông tin cấu hình, mô tả, thư viện ảnh và giá/tồn khả dụng theo từng biến thể màu sắc – dung lượng.
+	Luồng sự kiện chính
+	Actor: 1. Chọn một sản phẩm từ trang chủ hoặc trang danh mục (/Catalog/Details/{id}).
+System: 2. Gọi CatalogService.Read kiểm tra sản phẩm, hãng và danh mục đều đang Active.
+System: 3. Đọc danh sách biến thể đang Active, tồn khả dụng (Available = OnHand - Reserved) và danh sách ảnh phụ (SAN_PHAM_ANH).
+System: 4. Hiển thị thông số kỹ thuật, mô tả, ảnh và nút chọn từng biến thể.
+Actor: 5. Chuyển đổi giữa các biến thể màu sắc, dung lượng.
+System: 6. Cập nhật giá bán, số lượng có thể bán hoặc trạng thái Hết hàng tương ứng.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 2: Sản phẩm không tồn tại hoặc đã ngừng kinh doanh → trả về mã lỗi 404 (NOT_FOUND).
+	Tiền điều kiện
+	Sản phẩm tồn tại và đang được phép kinh doanh.
+	Hậu điều kiện
+	Thông tin chi tiết và biến thể được hiển thị; chưa giữ hàng trong kho.
+	Quy tắc nghiệp vụ
+	Khi Available = 0, giao diện khóa thao tác thêm vào giỏ hàng của biến thể đó.
+	 
+UC03.01 – Quản lý giỏ hàng (thêm, sửa, xóa, hợp nhất)
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Quản lý giỏ hàng (thêm, sửa, xóa, hợp nhất)
+	Tác nhân
+	Khách hàng (CUSTOMER)
+	Tóm tắt
+	Cập nhật sản phẩm trong giỏ hàng máy chủ của tài khoản khách hàng.
+	Luồng sự kiện chính
+	Actor: 1. Chọn biến thể và số lượng rồi nhấn Thêm vào giỏ hàng trên trang chi tiết.
+System: 2. Kiểm tra cặp (productId, variantId) qua MvcStoreAdapter và xác minh tài khoản đăng nhập.
+System: 3. Kiểm tra biến thể còn kinh doanh và số lượng tổng không vượt Available; lưu vào bảng GIO_HANG_CT.
+Actor: 4. Mở trang Giỏ hàng (/Cart), thay đổi số lượng hoặc xóa mặt hàng.
+System: 5. Cập nhật lại dòng giỏ hàng, tính lại thành tiền và tổng giỏ hàng theo giá hiện hành.
+	
+
+	
+
+	Luồng ngoại lệ
+	E1 tại bước 3 hoặc 5: Số lượng <= 0, vượt tồn khả dụng, giỏ vượt quá 100 biến thể hoặc biến thể ngừng bán → từ chối cập nhật và báo lỗi tại dòng liên quan.
+	Tiền điều kiện
+	Biến thể đang kinh doanh và còn tồn khả dụng.
+	Hậu điều kiện
+	Giỏ hàng được cập nhật đúng số lượng hợp lệ; chưa giữ hàng trong bảng TON_KHO.
+	Quy tắc nghiệp vụ
+	Giỏ hàng không giữ tồn kho. Việc hợp nhất giỏ chạy trong giao dịch và có tính idempotent (gọi lặp không cộng dồn).
+	 
+UC03.02 – Đặt hàng thanh toán khi nhận hàng (COD)
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Đặt hàng thanh toán khi nhận hàng (COD)
+	Tác nhân
+	Khách hàng (CUSTOMER)
+	Tóm tắt
+	Kiểm tra lại giá và tồn kho, giữ hàng và tạo đơn đặt hàng COD hoàn chỉnh trong một giao dịch duy nhất.
+	Luồng sự kiện chính
+	Actor: 1. Mở trang Đặt hàng (/Cart/Checkout), kiểm tra danh sách sản phẩm và giá chốt.
+Actor: 2. Nhập tên người nhận, số điện thoại, địa chỉ giao hàng, chọn phương thức COD và nhấn Đặt hàng.
+System: 3. Gọi CheckoutService.Place trong BusinessKernel.Write (Serializable, khóa PhoneStore:write).
+System: 4. Kiểm tra RequestKey: nếu đơn đã được tạo trước đó cho cùng khách và cùng nội dung thì trả về OrderView cũ.
+System: 5. So sánh giá và số lượng xác nhận với bảng BIEN_THE; kiểm tra toàn bộ mặt hàng còn kinh doanh và đủ Available.
+System: 6. Tạo DON_HANG (CHO_XAC_NHAN), THANH_TOAN (COD, CHUA_THU), giữ kho TON_KHO (Reserved += Quantity), ghi DON_HANG_CT (snapshot tên, SKU, giá), NHAT_KY_KHO (GIU), LICH_SU_DON và xóa GIO_HANG_CT.
+System: 7. Commit giao dịch và chuyển sang trang chi tiết đơn hàng vừa tạo.
+	Luồng thay thế
+	System: A1 tại bước 4: Nếu khách bấm gửi lại cùng RequestKey với nội dung giống hệt, hệ thống trả lại đơn đã lưu mà không trừ kho hay tạo đơn thứ hai.
+	Luồng ngoại lệ
+	E1 tại bước 5: Giá biến thể vừa thay đổi → ném PriceChangedException, rollback toàn bộ, giữ trang Checkout và hiển thị giá mới để khách xác nhận lại.
+E2 tại bước 5 hoặc 6: Giỏ rỗng, biến thể ngừng bán hoặc không đủ tồn (OnHand - Reserved < Quantity) → rollback toàn bộ, không tạo đơn dở dang.
+	Tiền điều kiện
+	Đã đăng nhập tài khoản CUSTOMER và giỏ hàng máy chủ không rỗng.
+	Hậu điều kiện
+	Đơn hàng trạng thái CHO_XAC_NHAN, thanh toán CHUA_THU được tạo; lượng giữ Reserved tăng tương ứng; giỏ hàng trống.
+	Quy tắc nghiệp vụ
+	Chỉ hỗ trợ thanh toán COD. Giá bán và mô tả trên DON_HANG_CT được chốt tại thời điểm đặt.
+	 
+UC04.01 – Xem lịch sử và chi tiết đơn hàng của khách
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Xem lịch sử và chi tiết đơn hàng của khách
+	Tác nhân
+	Khách hàng (CUSTOMER)
+	Tóm tắt
+	Hiển thị danh sách đơn hàng thuộc tài khoản đang đăng nhập và xem chi tiết cùng lịch sử xử lý của từng đơn.
+	Luồng sự kiện chính
+	Actor: 1. Mở trang Đơn hàng của tôi (/Orders).
+System: 2. Gọi OrderQueryService.List lọc bắt buộc theo CustomerId = actor.AccountId và hiển thị danh sách phân trang.
+Actor: 3. Lọc theo từ khóa, trạng thái hoặc khoảng thời gian, rồi nhấn chọn một đơn hàng.
+System: 4. Gọi OrderQueryService.Read kiểm tra đúng chủ đơn; hiển thị chi tiết mặt hàng đã chốt (snapshot), trạng thái thanh toán và timeline LICH_SU_DON.
+	Luồng thay thế
+	System: A1 tại bước 2: Nếu tài khoản chưa có đơn nào khớp bộ lọc, hiển thị trạng thái danh sách rỗng.
+	Luồng ngoại lệ
+	E1 tại bước 4: Mã đơn không tồn tại hoặc thuộc tài khoản khác → trả về 404 (NOT_FOUND).
+	Tiền điều kiện
+	Đã đăng nhập tài khoản CUSTOMER.
+	Hậu điều kiện
+	Thông tin đơn hàng của chính khách hàng được hiển thị; không thay đổi dữ liệu.
+	Quy tắc nghiệp vụ
+	Khách hàng tuyệt đối không xem được đơn hàng của tài khoản khác.
+	 
+UC04.02 – Khách hàng hủy đơn chờ xác nhận
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Khách hàng hủy đơn chờ xác nhận
+	Tác nhân
+	Khách hàng (CUSTOMER)
+	Tóm tắt
+	Cho phép khách hủy đơn của mình khi đơn còn ở trạng thái CHO_XAC_NHAN, giải phóng lượng hàng đã giữ.
+	Luồng sự kiện chính
+	Actor: 1. Mở chi tiết đơn hàng đang CHO_XAC_NHAN (/Orders/Details/{id}).
+Actor: 2. Nhập lý do hủy đơn và nhấn Hủy đơn.
+System: 3. Gọi OrderWorkflow.Cancel trong BusinessKernel.Write: kiểm tra quyền chủ đơn, Version (rowversion), OperationKey và trạng thái thanh toán COD/CHUA_THU.
+System: 4. Giảm Reserved trong TON_KHO và ghi NHAT_KY_KHO (Kind = HUY_GIU) cho từng dòng đơn theo thứ tự VariantId.
+System: 5. Chuyển trạng thái DON_HANG sang DA_HUY, thêm bản ghi LICH_SU_DON kèm lý do và Commit.
+System: 6. Tải lại trang chi tiết đơn với trạng thái Đã hủy.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 3: Thiếu lý do, Version không khớp do Admin vừa xử lý đơn, hoặc đơn không còn ở trạng thái CHO_XAC_NHAN → rollback và thông báo lỗi.
+	Tiền điều kiện
+	Đã đăng nhập CUSTOMER; đơn thuộc khách và đang CHO_XAC_NHAN.
+	Hậu điều kiện
+	Đơn chuyển sang DA_HUY; tồn khả dụng tăng lại tương ứng số lượng đã giải phóng.
+	Quy tắc nghiệp vụ
+	Khách hàng không được tự hủy đơn từ trạng thái DA_XAC_NHAN trở đi.
+	 
+UC05.01 – Đăng nhập quản trị trên ứng dụng WinForms
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Đăng nhập quản trị trên ứng dụng WinForms
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Kiểm tra máy chủ đích qua /health/ready, lấy CSRF token và xác thực tài khoản quản trị qua Admin API.
+	Luồng sự kiện chính
+	Actor: 1. Mở ứng dụng WinForms PhoneStore.Admin, kiểm tra địa chỉ máy chủ (nếu cần) tại ServerSettingsForm.
+Actor: 2. Nhập tên đăng nhập và mật khẩu quản trị trên LoginForm rồi nhấn Đăng nhập.
+System: 3. ApiClient gọi GET /health/ready kiểm tra trạng thái ready, environment và fingerprint của máy chủ.
+System: 4. Gọi GET /api/security/token lấy Antiforgery token, sau đó gửi POST /api/auth/login với Surface = "admin".
+System: 5. AccountSessions.LoginAsync xác minh mật khẩu, kiểm tra Active = true và Role = ADMIN; tạo PHIEN 8 giờ và cấp cookie PhoneStore.Session.
+System: 6. Đóng LoginForm và mở cửa sổ chính MainForm (màn hình Tổng quan).
+	Luồng thay thế
+	Actor: A1 tại bước 1: Admin cấu hình máy chủ từ xa (bắt buộc HTTPS) và nhập ExpectedEnvironment / ExpectedFingerprint trong SettingsStore.
+	Luồng ngoại lệ
+	E1 tại bước 1 hoặc 3: Máy chủ từ xa dùng HTTP (không phải localhost) bị chặn bởi ServerAddress.Validate; nếu /health/ready trả về sai environment/fingerprint cấu hình → chặn đăng nhập (SERVER_MISMATCH).
+E2 tại bước 5: Sai thông tin đăng nhập, tài khoản khóa hoặc tài khoản CUSTOMER → API trả HTTP 401, hiển thị thông báo từ chối đăng nhập.
+	Tiền điều kiện
+	Backend PhoneStore.Web đang chạy sẵn; tài khoản ADMIN tồn tại và đang hoạt động.
+	Hậu điều kiện
+	Phiên quản trị 8 giờ được thiết lập trong bộ nhớ ApiClient và bảng PHIEN.
+	Quy tắc nghiệp vụ
+	HTTP chỉ được phép cho địa chỉ loopback (localhost); mọi máy chủ khác bắt buộc HTTPS.
+	 
+UC05.02 – Đổi mật khẩu và đăng xuất quản trị
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Đổi mật khẩu và đăng xuất quản trị
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Cho phép Admin đổi mật khẩu hiện tại (thu hồi mọi phiên) hoặc đăng xuất khỏi ứng dụng WinForms.
+	Luồng sự kiện chính
+	Actor: 1. Chọn chức năng Đổi mật khẩu (PasswordForm) hoặc nhấn Đăng xuất trên thanh công cụ MainForm.
+System: 2. Nếu đổi mật khẩu: nhập mật khẩu cũ và mật khẩu mới, gửi POST /api/account/password kèm CSRF token; AccountPasswords cập nhật PasswordHash và xóa mọi PHIEN.
+System: 3. Nếu đăng xuất: gửi POST /api/auth/logout; AccountSessions xóa phiên hiện tại trong bảng PHIEN.
+System: 4. AdminApplication xóa trạng thái phiên cục bộ và đưa ứng dụng về LoginForm.
+	Luồng thay thế
+	System: A1 nếu Admin đang mở cửa sổ phiếu nhập chưa lưu khi phiên hết hạn: ứng dụng hiển thị cảnh báo nháp chưa lưu trước khi quay về LoginForm.
+	Luồng ngoại lệ
+	E1 tại bước 2: Mật khẩu hiện tại sai hoặc mật khẩu mới không hợp lệ → API trả lỗi, giữ nguyên mật khẩu và phiên hiện tại.
+	Tiền điều kiện
+	Quản trị viên đã đăng nhập vào MainForm.
+	Hậu điều kiện
+	Phiên làm việc kết thúc (hoặc toàn bộ phiên bị thu hồi sau khi đổi mật khẩu) và quay lại LoginForm.
+	Quy tắc nghiệp vụ
+	Mọi thao tác ghi qua Admin API đều tự động lấy CSRF token và khóa gửi trùng trên ApiClient.
+	 
+UC06.01 – Tra cứu điện thoại nội bộ
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Tra cứu điện thoại nội bộ
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Xem, tìm kiếm và lọc toàn bộ sản phẩm trong hệ thống kể cả sản phẩm hoặc biến thể đã ngừng kinh doanh.
+	Luồng sự kiện chính
+	Actor: 1. Mở mục Điện thoại (ProductListForm) từ thanh điều hướng bên trái MainForm.
+System: 2. Gọi GET /api/admin/products (CatalogService.Internal) hiển thị danh sách sản phẩm phân trang.
+Actor: 3. Nhập từ khóa, chọn hãng, trạng thái kinh doanh (Tất cả / Đang bán / Ngừng bán) rồi nhấn Tìm.
+System: 4. Lọc danh sách và cho phép mở ProductDetailsForm xem chi tiết giá vốn, tỷ lệ lợi nhuận, giá bán và tồn kho từng biến thể.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 4: Không có sản phẩm phù hợp bộ lọc → hiển thị danh sách rỗng và thông báo.
+	Tiền điều kiện
+	Quản trị viên đã đăng nhập với vai trò ADMIN.
+	Hậu điều kiện
+	Danh sách và thông số nội bộ được hiển thị; không làm thay đổi dữ liệu.
+	Quy tắc nghiệp vụ
+	Chỉ Admin được xem giá vốn (Cost) và sản phẩm đã ngừng kinh doanh.
+	 
+UC06.02 – Thêm mới, chỉnh sửa sản phẩm, biến thể và giá bán
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Thêm mới, chỉnh sửa sản phẩm, biến thể và giá bán
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Tạo hoặc cập nhật thông tin sản phẩm, biến thể, ảnh sản phẩm và tính giá bán tự động theo giá vốn và tỷ lệ lợi nhuận.
+	Luồng sự kiện chính
+	Actor: 1. Chọn Thêm điện thoại hoặc Sửa từ danh sách để mở ProductEditor.
+Actor: 2. Nhập thông tin chung (mã SP, tên, hãng, danh mục, thông số, mô tả, ảnh chính/ảnh phụ) và danh sách biến thể (SKU, màu, GB, giá vốn/tỷ lệ lợi nhuận, lượng gợi ý nếu định nhập ngay).
+Actor: 3. Nhấn Lưu để gửi POST /api/admin/products hoặc PUT /api/admin/products/{id}.
+System: 4. ProductService.Save kiểm tra mã không trùng, hãng/danh mục hợp lệ, đủ toàn bộ biến thể cũ và khớp Version (rowversion).
+System: 5. Lưu SAN_PHAM, BIEN_THE (tính Price = Rules.Price(Cost, ProfitPercent), tạo TON_KHO OnHand=0, Reserved=0 cho biến thể mới), SAN_PHAM_ANH và Commit.
+System: 6. Tải lại AdminProduct từ máy chủ để hiển thị giá bán và Version mới.
+	Luồng thay thế
+	Actor: A1 sau khi lưu thành công: Admin nhấn Lập phiếu nhập để ProductEditor chuyển sẵn sản phẩm, biến thể và SuggestedQuantity sang PurchaseEditor (PurchaseHandoff) lập phiếu nháp.
+	Luồng ngoại lệ
+	E1 tại bước 4: Trùng mã sản phẩm/SKU/tổ hợp (Màu, GB), thiếu biến thể cũ, tỷ lệ ngoài 0–10.000% hoặc Version bị người khác cập nhật trước → rollback và giữ nguyên dữ liệu nhập trên form.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; có sẵn hãng và danh mục hoạt động.
+	Hậu điều kiện
+	Sản phẩm/biến thể được lưu; biến thể mới có tồn = 0; giá trên các đơn hàng cũ không thay đổi.
+	Quy tắc nghiệp vụ
+	Không cho phép xóa biến thể cũ; khi sửa biến thể cũ chỉ tính lại Price khi đổi ProfitPercent (giá vốn Cost chỉ cập nhật khi xác nhận phiếu nhập). Ảnh phụ tối đa 12 ảnh và kiểm tra trùng theo UrlHash.
+	 
+UC06.03 – Ngừng hoặc mở lại kinh doanh sản phẩm
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Ngừng hoặc mở lại kinh doanh sản phẩm
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Thay đổi cờ trạng thái Active của sản phẩm hoặc biến thể để ẩn khỏi website khách hàng mà vẫn bảo toàn lịch sử.
+	Luồng sự kiện chính
+	Actor: 1. Mở ProductEditor cho sản phẩm cần cập nhật.
+Actor: 2. Bỏ chọn hoặc chọn lại trạng thái Kinh doanh (Active) trên sản phẩm hoặc dòng biến thể rồi nhấn Lưu.
+System: 3. Gọi PUT /api/admin/products/{id} kiểm tra Version hiện tại và cập nhật cờ Active.
+System: 4. Tăng Version của các biến thể liên quan, Commit và tải lại dữ liệu sản phẩm.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 3: Version cũ không khớp → từ chối ghi đè và yêu cầu tải lại sản phẩm.
+	Tiền điều kiện
+	Sản phẩm đã tồn tại trong cơ sở dữ liệu.
+	Hậu điều kiện
+	Website công khai ẩn/hiện ngay sản phẩm theo trạng thái mới; dữ liệu đơn hàng và phiếu nhập cũ được bảo toàn.
+	Quy tắc nghiệp vụ
+	Hệ thống không xóa vật lý sản phẩm hoặc biến thể để giữ toàn vẹn khóa ngoại NO ACTION.
+	 
+UC06.04 – Quản lý hãng và danh mục
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Quản lý hãng và danh mục
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Tra cứu, thêm mới, đổi tên hoặc ngừng sử dụng hãng điện thoại (HANG) và danh mục (DANH_MUC).
+	Luồng sự kiện chính
+	Actor: 1. Chọn mục Hãng hoặc Danh mục trên MainForm để mở LookupForm.
+System: 2. Gọi GET /api/admin/lookups/{brands|categories} hiển thị danh sách hiện có.
+Actor: 3. Tìm kiếm, nhập tên mới hoặc chọn sửa/ngừng hoạt động một mục rồi nhấn Lưu.
+System: 4. Gọi LookupService.Save kiểm tra tên không rỗng, không trùng và cập nhật HANG hoặc DANH_MUC.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 4: Tên trùng hoặc rỗng → thông báo lỗi và không lưu.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN.
+	Hậu điều kiện
+	Hãng hoặc danh mục được cập nhật; khi ngừng sử dụng, sản phẩm liên quan ẩn khỏi website công khai nhưng dữ liệu lịch sử giữ nguyên.
+	Quy tắc nghiệp vụ
+	Không xóa vật lý hãng hoặc danh mục đang được sản phẩm tham chiếu.
+	 
+UC07.01 – Tra cứu khách hàng và xem đơn của khách
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Tra cứu khách hàng và xem đơn của khách
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Tìm kiếm khách hàng theo tên, số điện thoại, email, tài khoản và xem danh sách đơn hàng đã mua của khách.
+	Luồng sự kiện chính
+	Actor: 1. Mở mục Khách hàng (CustomerListForm).
+System: 2. Gọi GET /api/admin/customers (CustomerAdminService.List) hiển thị danh sách phân trang.
+Actor: 3. Nhập từ khóa hoặc lọc trạng thái Hoạt động / Đã khóa; chọn một khách để mở CustomerDetailsForm.
+Actor: 4. Nhấn Xem đơn hàng của khách để mở CustomerOrdersForm.
+System: 5. Gọi GET /api/admin/customers/{id}/orders hiển thị các đơn hàng của khách hàng đó.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 3: Khách hàng không tồn tại → báo lỗi NOT_FOUND.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN.
+	Hậu điều kiện
+	Thông tin hồ sơ và lịch sử đơn hàng của khách được hiển thị; không thay đổi dữ liệu.
+	Quy tắc nghiệp vụ
+	Không hiển thị mật khẩu hay PasswordHash trên giao diện quản trị.
+	 
+UC07.02 – Cập nhật hồ sơ khách hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Cập nhật hồ sơ khách hàng
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Chỉnh sửa họ tên, số điện thoại, email hoặc địa chỉ của khách hàng từ ứng dụng quản trị.
+	Luồng sự kiện chính
+	Actor: 1. Trên CustomerDetailsForm, nhấn Sửa hồ sơ để mở CustomerProfileEditor.
+Actor: 2. Chỉnh sửa họ tên, số điện thoại, email hoặc địa chỉ rồi nhấn Lưu.
+System: 3. Gửi PUT /api/admin/customers/{id} tới CustomerAdminService.Update.
+System: 4. Kiểm tra định dạng, tính duy nhất của SĐT/Email, lưu KHACH_HANG và tải lại thông tin hiển thị.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 4: SĐT hoặc Email trùng khách khác, hoặc sai định dạng → rollback và báo lỗi trên form.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN và khách hàng tồn tại.
+	Hậu điều kiện
+	Hồ sơ khách hàng được cập nhật; thông tin giao hàng trên các đơn đã đặt không bị sửa theo.
+	Quy tắc nghiệp vụ
+	Cập nhật hồ sơ không làm thay đổi vai trò, mật khẩu hay trạng thái tài khoản.
+	 
+UC07.03 – Khóa hoặc mở khóa tài khoản khách hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Khóa hoặc mở khóa tài khoản khách hàng
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Thay đổi trạng thái Active của tài khoản khách hàng; khi khóa tài khoản sẽ xóa mọi phiên đăng nhập đang hoạt động.
+	Luồng sự kiện chính
+	Actor: 1. Trên CustomerDetailsForm, chọn Khóa tài khoản hoặc Mở khóa và xác nhận trên ConfirmationDialog.
+System: 2. Gửi POST /api/admin/customers/{id}/state kèm ExpectedActive tới CustomerAdminService.SetActive.
+System: 3. Kiểm tra ExpectedActive khớp trạng thái hiện tại, cập nhật TAI_KHOAN.Active.
+System: 4. Nếu khóa (Active = false), xóa ngay toàn bộ bản ghi của tài khoản trong bảng PHIEN.
+System: 5. Tải lại AdminCustomer và cập nhật trạng thái hiển thị.
+	Luồng thay thế
+	Actor: A1 tại bước 1: Admin hủy xác nhận trên hộp thoại → không gửi yêu cầu và giữ nguyên trạng thái.
+	Luồng ngoại lệ
+	E1 tại bước 3: Trạng thái tài khoản vừa bị thay đổi bởi phiên khác → trả lỗi CONCURRENT_UPDATE.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; tài khoản khách tồn tại.
+	Hậu điều kiện
+	Tài khoản bị khóa không thể đăng nhập và mọi cookie phiên cũ lập tức mất hiệu lực; dữ liệu đơn cũ vẫn giữ.
+	Quy tắc nghiệp vụ
+	Kiểm tra ExpectedActive giúp tránh thao tác nhầm khi nhiều màn hình cùng xem một khách hàng.
+	 
+UC08.01 – Quản lý nhà cung cấp
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Quản lý nhà cung cấp
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Tra cứu, thêm mới, chỉnh sửa hoặc ngừng hợp tác nhà cung cấp phục vụ nghiệp vụ nhập hàng.
+	Luồng sự kiện chính
+	Actor: 1. Mở mục Nhà cung cấp (SupplierListForm) và nhấn Thêm hoặc Sửa (SupplierEditor).
+Actor: 2. Nhập mã NCC, tên, số điện thoại, địa chỉ và trạng thái Active rồi nhấn Lưu.
+System: 3. Gọi SupplierService.Save kiểm tra trùng mã NCC, định dạng SĐT và lưu vào bảng NHA_CUNG_CAP.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 3: Trùng mã nhà cung cấp hoặc SĐT không hợp lệ → báo lỗi và không lưu.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN.
+	Hậu điều kiện
+	Nhà cung cấp được lưu; phiếu nhập cũ vẫn giữ liên kết lịch sử kể cả khi NCC ngừng hoạt động.
+	Quy tắc nghiệp vụ
+	Không cho phép xác nhận phiếu nhập mới nếu nhà cung cấp đã ngừng hoạt động.
+	 
+UC08.02 – Lập, sửa và hủy phiếu nhập nháp
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Lập, sửa và hủy phiếu nhập nháp
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Tạo mới hoặc chỉnh sửa phiếu nhập ở trạng thái NHAP với các dòng biến thể, số lượng và đơn giá vốn.
+	Luồng sự kiện chính
+	Actor: 1. Mở Nhập hàng (PurchaseListForm), chọn Lập phiếu mới hoặc mở phiếu NHAP trên PurchaseEditor.
+Actor: 2. Chọn nhà cung cấp đang hoạt động, thêm các dòng biến thể (qua SupplyVariantPicker), nhập số lượng dương và đơn giá vốn.
+Actor: 3. Nhấn Lưu nháp (hoặc Hủy phiếu nháp nếu không nhập nữa).
+System: 4. PurchaseService.Save kiểm tra RequestKey (khi tạo mới), Version (khi sửa), trạng thái NHAP và NCC hoạt động; lưu PHIEU_NHAP và PHIEU_NHAP_CT.
+	Luồng thay thế
+	Actor: A1 tại bước 1: Mở PurchaseEditor từ nút Lập phiếu nhập của ProductEditor để điền sẵn các biến thể và số lượng gợi ý.
+Actor: A2 tại bước 3: Nhấn Hủy phiếu chuyển trạng thái từ NHAP sang DA_HUY (PurchaseService.Cancel).
+	Luồng ngoại lệ
+	E1 tại bước 4: Phiếu không còn ở trạng thái NHAP, NCC đã ngừng, trùng RequestKey khác nội dung hoặc lệch Version → rollback và báo lỗi.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; có ít nhất một nhà cung cấp và biến thể hợp lệ.
+	Hậu điều kiện
+	Phiếu nhập ở trạng thái NHAP hoặc DA_HUY; tồn kho và giá bán chưa thay đổi.
+	Quy tắc nghiệp vụ
+	Chỉ phiếu nháp (NHAP) mới được chỉnh sửa hoặc hủy.
+	 
+UC08.03 – Xác nhận phiếu nhập kho
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Xác nhận phiếu nhập kho
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Chốt phiếu nhập nháp để tăng tồn thực tế OnHand, cập nhật giá vốn, tính lại giá bán và ghi nhật ký kho duy nhất một lần.
+	Luồng sự kiện chính
+	Actor: 1. Mở phiếu nhập trạng thái NHAP trên PurchaseEditor và nhấn Xác nhận nhập kho (xác nhận trên ConfirmationDialog).
+System: 2. Gửi POST /api/admin/purchases/{id}/confirm kèm Version và OperationKey.
+System: 3. PurchaseService.Confirm kiểm tra trạng thái NHAP, Version, nhà cung cấp đang Active, có ít nhất 1 dòng, tổng phiếu khớp chi tiết và OperationKey chưa dùng.
+System: 4. Lần lượt từng dòng theo VariantId tăng dần: tăng TON_KHO.OnHand, cập nhật BIEN_THE.Cost và tính lại Price = Rules.Price(Cost, ProfitPercent), ghi NHAT_KY_KHO (Kind = NHAP).
+System: 5. Chuyển PHIEU_NHAP sang DA_XAC_NHAN (ghi ConfirmerId, ConfirmedAt), Commit và tải lại PurchaseView.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 3: Phiếu rỗng, nhà cung cấp ngừng, Version lệch, phiếu đã chốt hoặc OperationKey lặp → rollback, tuyệt đối không tăng tồn kho lần hai.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; phiếu nhập ở trạng thái NHAP, có dòng hợp lệ và NCC đang hoạt động.
+	Hậu điều kiện
+	Tồn kho tăng đúng 1 lần; giá vốn & giá bán biến thể được cập nhật; phiếu chuyển sang DA_XAC_NHAN và khóa chỉnh sửa.
+	Quy tắc nghiệp vụ
+	Giá bán mới chỉ áp dụng cho đơn đặt mới sau thời điểm xác nhận; các đơn cũ giữ nguyên giá đã chốt.
+	 
+UC08.04 – Tra cứu tồn kho và nhật ký biến động kho
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Tra cứu tồn kho và nhật ký biến động kho
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Theo dõi số tồn thực tế (OnHand), đang giữ (Reserved), có thể bán (Available), cảnh báo tồn thấp và lịch sử NHAT_KY_KHO.
+	Luồng sự kiện chính
+	Actor: 1. Mở mục Tồn kho (StockListForm) trên MainForm.
+System: 2. Gọi GET /api/admin/stock (InventoryService.List) hiển thị từng biến thể cùng OnHand, Reserved, Available.
+Actor: 3. Tìm theo từ khóa, lọc theo hãng, lọc hàng sắp hết theo ngưỡng tùy chỉnh (lưu cục bộ tại StockPreferenceStore) hoặc mở Nhật ký kho (StockJournalForm).
+System: 4. Gọi GET /api/admin/stock/movements hiển thị lịch sử biến động (NHAP, GIU, HUY_GIU, XUAT_GIAO, NHAN_LAI, DIEU_CHINH) kèm actor và OperationKey.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 3: Ngưỡng lọc âm → báo lỗi nhập liệu không hợp lệ.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN.
+	Hậu điều kiện
+	Dữ liệu tồn kho và lịch sử kho được hiển thị; không thay đổi cơ sở dữ liệu.
+	Quy tắc nghiệp vụ
+	Ngưỡng cảnh báo tồn thấp là tùy chọn hiển thị lưu cục bộ ở máy Admin (StockPreferenceStore).
+	 
+UC08.05 – Kiểm kê và điều chỉnh tồn kho
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Kiểm kê và điều chỉnh tồn kho
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Cập nhật số tồn thực tế theo kết quả kiểm kê có lý do, bảo đảm không thấp hơn lượng hàng đang giữ.
+	Luồng sự kiện chính
+	Actor: 1. Chọn biến thể trên StockListForm, nhấn Kiểm kê để mở StockCountDialog.
+Actor: 2. Nhập số lượng đếm thực tế và lý do điều chỉnh rồi nhấn Xác nhận.
+System: 3. Gửi POST /api/admin/stock/{variantId}/adjust kèm Version và OperationKey.
+System: 4. InventoryService.Adjust kiểm tra số đếm khác OnHand hiện tại, >= Reserved và OperationKey chưa tồn tại.
+System: 5. Cập nhật TON_KHO.OnHand theo điều kiện Version và Reserved <= Counted, ghi NHAT_KY_KHO (DIEU_CHINH, DeltaOnHand = Counted - OnHand) và Commit.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 4 hoặc 5: Thiếu lý do, số đếm < Reserved, số đếm trùng số hiện tại, Version lệch hoặc gửi lặp OperationKey → rollback và thông báo lỗi.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; biến thể tồn tại.
+	Hậu điều kiện
+	Số tồn thực tế và nhật ký DIEU_CHINH được ghi nhận nhất quán.
+	Quy tắc nghiệp vụ
+	Không cho phép điều chỉnh làm vi phạm ràng buộc CHECK (Reserved >= 0 AND OnHand >= Reserved).
+	 
+UC09.01 – Tra cứu đơn hàng quản trị và in hóa đơn bán hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Tra cứu đơn hàng quản trị và in hóa đơn bán hàng
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Tìm kiếm, lọc danh sách đơn hàng toàn cửa hàng, xem chi tiết và xem trước/in chứng từ bán hàng.
+	Luồng sự kiện chính
+	Actor: 1. Mở mục Đơn hàng (OrderListForm), lọc theo từ khóa, trạng thái hoặc khoảng ngày (UTC+7).
+System: 2. Gọi GET /api/admin/orders hiển thị danh sách phân trang.
+Actor: 3. Chọn một đơn hàng để mở OrderDetailForm xem dòng đơn chốt, thanh toán COD và lịch sử LICH_SU_DON.
+Actor: 4. Nhấn Xem/In hóa đơn để mở InvoiceForm rồi nhấn PrintPreview.
+System: 5. Gọi GET /api/admin/orders/{id}/invoice (InvoiceService) kiểm tra đơn thuộc DA_XAC_NHAN, DANG_GIAO hoặc HOAN_TAT và mở PrintPreviewDialog cục bộ.
+	Luồng thay thế
+	System: A1 tại bước 5: Nếu thiết bị của quản trị viên chưa cài máy in/driver, InvoiceForm vẫn hiển thị đầy đủ nội dung snapshot hóa đơn để xem và thông báo rõ.
+	Luồng ngoại lệ
+	E1 tại bước 5: Đơn ở trạng thái CHO_XAC_NHAN, DA_HUY hoặc GIAO_THAT_BAI → InvoiceService từ chối lập chứng từ bán hàng (INVALID_STATE).
+	Tiền điều kiện
+	Đã đăng nhập ADMIN.
+	Hậu điều kiện
+	Hiển thị danh sách, chi tiết đơn hoặc bản xem trước in; không làm thay đổi trạng thái đơn hay tồn kho.
+	Quy tắc nghiệp vụ
+	Hóa đơn trong ứng dụng là chứng từ bán hàng nội bộ dựa trên dữ liệu đã chốt, không phải hóa đơn điện tử thuế.
+	 
+UC09.02 – Xác nhận hoặc hủy đơn hàng (Quản trị)
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Xác nhận hoặc hủy đơn hàng (Quản trị)
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Duyệt đơn CHO_XAC_NHAN sang DA_XAC_NHAN hoặc hủy đơn chưa xuất giao kèm lý do và hoàn lượng giữ kho.
+	Luồng sự kiện chính
+	Actor: 1. Mở chi tiết đơn hàng trên OrderDetailForm.
+Actor: 2. Nhấn Xác nhận đơn (cho đơn CHO_XAC_NHAN) hoặc nhập lý do và nhấn Hủy đơn (cho đơn CHO_XAC_NHAN hoặc DA_XAC_NHAN).
+System: 3. Gửi POST /api/admin/orders/{id}/confirm hoặc /cancel kèm Version và OperationKey.
+System: 4. OrderWorkflow.Confirm chuyển CHO_XAC_NHAN → DA_XAC_NHAN và ghi LICH_SU_DON.
+System: 5. OrderWorkflow.Cancel giảm TON_KHO.Reserved, ghi NHAT_KY_KHO (HUY_GIU), chuyển DON_HANG → DA_HUY và ghi LICH_SU_DON.
+	Luồng thay thế
+	Không có luồng thay thế riêng.
+	Luồng ngoại lệ
+	E1 tại bước 4 hoặc 5: Sai trạng thái, thiếu lý do khi hủy, lệch Version hoặc lặp OperationKey → rollback và yêu cầu tải lại đơn.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; đơn chưa xuất giao.
+	Hậu điều kiện
+	Đơn chuyển sang DA_XAC_NHAN hoặc DA_HUY (lượng giữ được giải phóng).
+	Quy tắc nghiệp vụ
+	Đơn đã xuất giao (DANG_GIAO) không thể hủy trực tiếp mà phải xử lý qua nhánh Hoàn tất hoặc Giao thất bại.
+	 
+UC09.03 – Xuất giao, hoàn tất thu COD, giao thất bại và nhận lại hàng
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Xuất giao, hoàn tất thu COD, giao thất bại và nhận lại hàng
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Điều phối giao hàng theo ma trận trạng thái chặt chẽ, ghi nhận thu tiền COD hoặc hoàn kho một lần khi thực nhận hàng trả.
+	Luồng sự kiện chính
+	Actor: 1. Trên OrderDetailForm (đơn DA_XAC_NHAN), nhấn Xuất giao.
+System: 2. OrderWorkflow.Dispatch giảm đồng thời OnHand và Reserved trên TON_KHO, ghi NHAT_KY_KHO (XUAT_GIAO), chuyển đơn sang DANG_GIAO.
+Actor: 3. Khi giao thành công, nhấn Hoàn tất & thu COD; hoặc khi không giao được, nhập lý do và nhấn Giao thất bại.
+System: 4. OrderWorkflow.Complete cập nhật THANH_TOAN thành DA_THU (Amount = Total, CollectedAt) và đơn thành HOAN_TAT; nếu Fail thì chuyển sang GIAO_THAT_BAI (chưa cộng tồn).
+Actor: 5. Khi hàng thực sự quay về cửa hàng từ đơn GIAO_THAT_BAI, nhấn Nhận lại hàng (có thể kèm ghi chú).
+System: 6. OrderWorkflow.ReceiveReturn kiểm tra chưa có NHAN_LAI cho đơn này, cộng lại TON_KHO.OnHand, ghi NHAT_KY_KHO (NHAN_LAI), giữ trạng thái GIAO_THAT_BAI và tăng Version.
+	Luồng thay thế
+	System: A1 tại bước 5: Lý do nhận lại hàng là tùy chọn; nút Nhận lại hàng chỉ mở khi đơn GIAO_THAT_BAI chưa từng ghi nhận NHAN_LAI.
+	Luồng ngoại lệ
+	E1 tại bất kỳ bước chuyển nào: Trạng thái đơn không hợp lệ, thiếu lý do khi báo giao thất bại, lặp NHAN_LAI/OperationKey hoặc lệch Version → rollback toàn bộ.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN; đơn ở trạng thái hợp lệ cho từng thao tác.
+	Hậu điều kiện
+	Trạng thái đơn, thanh toán COD, tồn kho, lịch sử đơn và nhật ký kho được cập nhật đồng bộ.
+	Quy tắc nghiệp vụ
+	Nhận lại hàng giữ nguyên trạng thái đơn GIAO_THAT_BAI (không phát sinh trạng thái đơn mới cho bước hoàn kho) và chỉ được thực hiện đúng 1 lần nhờ ràng buộc duy nhất (OrderId, VariantId, Kind).
+	 
+UC10.01 – Tổng quan và xem báo cáo doanh thu, bán chạy, tồn kho
+Mục đặc tả
+	Nội dung chi tiết
+	Tên ca sử dụng
+	Tổng quan và xem báo cáo doanh thu, bán chạy, tồn kho
+	Tác nhân
+	Quản trị viên (ADMIN)
+	Tóm tắt
+	Theo dõi các chỉ số tổng quan và xem báo cáo doanh thu, sản phẩm bán chạy, tồn kho hiện tại trên bảng và biểu đồ.
+	Luồng sự kiện chính
+	Actor: 1. Xem màn hình Tổng quan (DashboardView) hoặc mở mục Báo cáo (ReportScreen).
+Actor: 2. Chọn loại báo cáo (Doanh thu / Bán chạy theo biến thể / Tồn hiện tại), khoảng ngày (cho Doanh thu/Bán chạy) và tùy chọn Nhóm theo tháng.
+System: 3. ReportsWorkspace.Read gửi GET /api/admin/reports?kind=...&from=...&to=... tới ReportService.Read.
+System: 4. Nếu là stock: đọc TON_KHO join BIEN_THE, SAN_PHAM tính số dư hiện tại. Nếu là revenue/bestsellers: lọc đơn HOAN_TAT có thanh toán COD/DA_THU theo ngày CompletedAt (UTC+7).
+System: 5. Trả về một đối tượng StoreReport duy nhất; ReportScreen hiển thị đồng thời lên DataGridView (phân trang 20 dòng) và biểu đồ ReportChart.
+	Luồng thay thế
+	Actor: A1 tại bước 2: Chọn Tồn hiện tại → giao diện vô hiệu ô chọn Từ ngày / Đến ngày vì báo cáo tồn phản ánh số dư tức thời.
+	Luồng ngoại lệ
+	E1 tại bước 2 hoặc 3: Loại báo cáo không hợp lệ hoặc Từ ngày > Đến ngày → hiển thị thông báo lỗi ngày và không gọi máy chủ.
+E2 tại bước 4: Không có đơn phát sinh trong kỳ → hiển thị bảng/biểu đồ rỗng với tổng doanh thu bằng 0.
+	Tiền điều kiện
+	Đã đăng nhập ADMIN.
+	Hậu điều kiện
+	Bảng số liệu và biểu đồ hiển thị nhất quán từ cùng kết quả máy chủ; không ghi thay đổi dữ liệu.
+	Quy tắc nghiệp vụ
+	Doanh thu tính theo ngày hoàn tất (CompletedAt UTC+7), không tính theo ngày tạo đơn. Hệ thống chưa tính báo cáo lợi nhuận thực tế.
+	 
+2.1.4 Quy trình tích hợp và đồng bộ dữ liệu giữa Website và Desktop
+Website MVC và Admin Minimal API cùng chạy trong tiến trình PhoneStore.Web và chia sẻ chung các dịch vụ nghiệp vụ của PhoneStore.Infrastructure cùng một cơ sở dữ liệu SQL Server duy nhất. Controller MVC gọi dịch vụ trực tiếp trong tiến trình thông qua MvcStoreAdapter (cài đặt IStoreService), trong khi ứng dụng WinForms (PhoneStore.Admin) giao tiếp hoàn toàn qua HTTP/HTTPS bằng lớp ApiClient của PhoneStore.Admin.Client.
+Mọi thao tác ghi dữ liệu (đặt hàng, hủy đơn, xuất giao, hoàn tất, nhận lại hàng, xác nhận phiếu nhập, kiểm kê, lưu sản phẩm) đều đi qua BusinessKernel.Write với mức cô lập Serializable kết hợp khóa ứng dụng PhoneStore:write (sys.sp_getapplock chế độ Exclusive). Cơ chế này bảo đảm tại một thời điểm chỉ có một giao dịch ghi làm thay đổi tồn kho hoặc trạng thái chứng từ; kết hợp cùng RequestKey, OperationKey và cột rowversion (Version) để ngăn đặt đơn lặp, ngăn cộng/trừ kho hai lần và phát hiện xung đột sửa đổi đồng thời.
+2.2 THIẾT KẾ GIAO DIỆN VÀ LUỒNG MÀN HÌNH
+2.2.1 Luồng chuyển tiếp màn hình
+2.2.1.1 Luồng màn hình Quản trị viên (WinForms)
+Từ LoginForm (có thể mở ServerSettingsForm để đổi địa chỉ máy chủ), sau khi xác thực thành công vai trò ADMIN, ứng dụng mở cửa sổ chính MainForm với trang khởi đầu là Tổng quan (DashboardView). Thanh điều hướng bên trái cho phép chuyển qua các màn hình: Tổng quan, Điện thoại (ProductListForm → ProductEditor), Khách hàng (CustomerListForm → CustomerDetailsForm → CustomerProfileEditor / CustomerOrdersForm), Nhập hàng (PurchaseListForm → PurchaseEditor), Tồn kho (StockListForm → StockCountDialog / StockJournalForm), Đơn hàng (OrderListForm → OrderDetailForm → InvoiceForm), Báo cáo (ReportScreen), Hãng và Danh mục (LookupForm), Nhà cung cấp (SupplierListForm → SupplierEditor) và Tài khoản (PasswordForm). Người dùng có thể nhấn Back/Forward hoặc Alt+Mũi tên.
+2.2.1.2 Luồng màn hình Khách hàng (Website)
+Khách hàng bắt đầu tại Trang chủ (Home/Index) hoặc Danh mục (Catalog/Index) có tìm kiếm, lọc, sắp xếp và phân trang; chọn điện thoại để mở Chi tiết (Catalog/Details), chọn biến thể và thêm vào Giỏ hàng (Cart/Index). Người dùng đăng nhập/đăng ký tài khoản (Account/Login, Account/Register) để đi tới Đặt hàng COD (Cart/Checkout) và trang Lịch sử / Chi tiết đơn (Orders/Index, Orders/Details). Menu tài khoản dẫn tới Hồ sơ (Account/Profile), Đổi mật khẩu (Account/Password) và Đăng xuất.
+2.2.2 Danh sách các màn hình hệ thống
+Mã MH
+	Tên màn hình
+	Phân hệ / Lớp UI
+	Chức năng chính
+	MH01
+	Trang chủ & Bán chạy
+	Website (Home/Index)
+	Giới thiệu cửa hàng và hiển thị tối đa 8 điện thoại bán chạy trong tháng.
+	MH02
+	Danh mục điện thoại
+	Website (Catalog/Index)
+	Tìm kiếm từ khóa, lọc hãng/giá/dung lượng/màu sắc, sắp xếp và phân trang.
+	MH03
+	Chi tiết sản phẩm
+	Website (Catalog/Details)
+	Hiển thị ảnh, thông số, mô tả, chọn biến thể và kiểm tra lượng có thể bán.
+	MH04
+	Giỏ hàng
+	Website (Cart/Index)
+	Quản lý giỏ hàng trên máy chủ, đổi số lượng, xóa dòng sản phẩm.
+	MH05
+	Đặt hàng COD
+	Website (Cart/Checkout)
+	Nhập thông tin nhận hàng, rà soát giá xác nhận và tạo đơn COD.
+	MH06
+	Tài khoản khách hàng
+	Website (Account/*)
+	Đăng ký, đăng nhập, cập nhật hồ sơ và đổi mật khẩu khách hàng.
+	MH07
+	Lịch sử & chi tiết đơn
+	Website (Orders/Index, Details)
+	Tra cứu đơn của tôi, xem snapshot/timeline và hủy đơn CHO_XAC_NHAN.
+	MH08
+	Đăng nhập & Cấu hình server
+	WinForms (LoginForm, ServerSettingsForm)
+	Kiểm tra /health/ready, cấu hình HTTPS/môi trường và đăng nhập ADMIN.
+	MH09
+	Tổng quan quản trị
+	WinForms (MainForm, DashboardView)
+	Xem nhanh doanh thu, biểu đồ 7 ngày, đơn chờ xử lý và hàng sắp hết.
+	MH10
+	Quản lý điện thoại & danh mục
+	WinForms (ProductListForm, ProductEditor, LookupForm)
+	Tìm kiếm nội bộ, thêm/sửa sản phẩm nhiều biến thể, gợi ý nhập hàng, quản lý hãng/danh mục.
+	MH11
+	Quản lý khách hàng
+	WinForms (CustomerListForm, Details, ProfileEditor)
+	Tra cứu khách hàng, xem đơn đã mua, sửa hồ sơ và khóa/mở tài khoản.
+	MH12
+	Quản lý NCC & Nhập hàng
+	WinForms (SupplierList/Editor, PurchaseList/Editor)
+	Quản lý nhà cung cấp, lập/sửa/hủy phiếu nháp và xác nhận phiếu nhập.
+	MH13
+	Quản lý tồn kho & Kiểm kê
+	WinForms (StockListForm, StockCountDialog, StockJournalForm)
+	Xem OnHand/Reserved/Available, kiểm kê điều chỉnh có lý do và xem nhật ký kho.
+	MH14
+	Xử lý đơn hàng & Hóa đơn
+	WinForms (OrderListForm, OrderDetailForm, InvoiceForm)
+	Xác nhận, hủy, xuất giao, hoàn tất thu COD, giao thất bại, nhận lại hàng và xem trước in.
+	MH15
+	Báo cáo thống kê
+	WinForms (ReportScreen, ReportChart)
+	Xem báo cáo doanh thu, bán chạy và tồn kho dạng bảng (20 dòng/trang) và biểu đồ cột.
+	MH16
+	Đổi mật khẩu quản trị
+	WinForms (PasswordForm)
+	Đổi mật khẩu Admin và thu hồi toàn bộ phiên cũ.
+	 
+2.3 THIẾT KẾ MÔ HÌNH USE CASE
+2.3.1 Sơ đồ Use Case tổng quát
+Sơ đồ tổng quát mô tả sự phân tách vai trò giữa Khách hàng (tài khoản CUSTOMER khi đặt hàng/xem đơn và thao tác website) với Quản trị viên (ADMIN) trên ứng dụng WinForms. Các thành phần kỹ thuật như Admin API và SQL Server nằm bên trong ranh giới hệ thống.
+  
+
+Hình 2.2. Sơ đồ Use Case tổng quát hệ thống quản lý và  bán điện thoại di động
+2.3.2 Sơ đồ Use Case theo nhóm chức năng
+2.3.2.1 Use Case Tài khoản khách hàng (Website)
+Khách hàng đăng ký tài khoản CUSTOMER, đăng nhập tạo phiên 8 giờ, đăng xuất, cập nhật hồ sơ hoặc đổi mật khẩu.
+  
+
+Hình 2.3. Sơ đồ Use Case nhóm tài khoản khách hàng
+2.3.2.2 Use Case Tra cứu điện thoại (Website)
+Khách hàng xem danh mục đang kinh doanh, tìm kiếm từ khóa, lọc giá/hãng/cấu hình, sắp xếp và xem chi tiết biến thể.
+  
+
+Hình 2.4. Sơ đồ Use Case nhóm tra cứu điện thoại
+2.3.2.3 Use Case Giỏ hàng và đặt hàng COD (Website)
+Thêm biến thể vào giỏ máy chủ, chỉnh sửa số lượng và đặt hàng COD kiểm tra lại giá/tồn.
+  
+
+Hình 2.5. Sơ đồ Use Case nhóm giỏ hàng và đặt hàng COD
+2.3.2.4 Use Case Lịch sử và hủy đơn của khách (Website)
+Khách hàng xem danh sách đơn của mình, mở chi tiết snapshot/timeline và hủy đơn khi đang ở trạng thái CHO_XAC_NHAN.
+  
+
+Hình 2.6. Sơ đồ Use Case nhóm lịch sử đơn hàng của khách
+2.3.2.5 Use Case Tài khoản quản trị (WinForms)
+Admin đăng nhập ứng dụng WinForms (kiểm tra /health/ready và vai trò ADMIN), đổi mật khẩu hoặc đăng xuất.
+  
+
+Hình 2.7. Sơ đồ Use Case nhóm tài khoản quản trị
+2.3.2.6 Use Case Quản lý điện thoại (WinForms)
+Admin tra cứu nội bộ, thêm mới hoặc sửa thông tin sản phẩm, biến thể, tỷ lệ lợi nhuận, ngừng/mở bán và quản lý hãng, danh mục.
+  
+
+Hình 2.8. Sơ đồ Use Case nhóm quản lý điện thoại
+2.3.2.7 Use Case Quản lý khách hàng (WinForms)
+Admin tra cứu khách hàng, xem các đơn hàng của khách, cập nhật hồ sơ liên hệ và khóa/mở khóa tài khoản.
+  
+
+Hình 2.9. Sơ đồ Use Case nhóm quản lý khách hàng
+2.3.2.8 Use Case Nhập hàng và tồn kho (WinForms)
+Admin quản lý nhà cung cấp, lập/xác nhận phiếu nhập tăng tồn một lần, tra cứu số dư tồn và kiểm kê điều chỉnh có lý do.
+  
+
+Hình 2.10. Sơ đồ Use Case nhóm nhập hàng và tồn kho
+2.3.2.9 Use Case Quản lý đơn hàng và COD (WinForms)
+Admin tra cứu đơn, xác nhận hoặc hủy đơn chưa giao, xuất giao, hoàn tất thu COD, ghi giao thất bại, nhận lại hàng và in hóa đơn.
+  
+
+Hình 2.11. Sơ đồ Use Case nhóm quản lý đơn hàng và COD
+2.3.2.10 Use Case Thống kê và báo cáo (WinForms)
+Admin xem tổng quan và tra cứu báo cáo doanh thu, sản phẩm bán chạy theo khoảng ngày (UTC+7) hoặc tồn kho hiện tại.
+  
+
+Hình 2.12. Sơ đồ Use Case nhóm thống kê và báo cáo
+2.4 THIẾT KẾ CƠ SỞ DỮ LIỆU
+2.4.1 Mô hình dữ liệu và các thực thể
+Cơ sở dữ liệu SQL Server được định nghĩa qua migration 001_InitialStore.sql và ánh xạ bằng Entity Framework Core trong lớp StoreDbContext, gồm 18 bảng nghiệp vụ (tên tiếng Việt không dấu để đồng bộ với mô hình dữ liệu) và 1 bảng hệ thống __PhoneStoreMigrations theo dõi lịch sử migration:
+  
+
+Hình 2.13. Sơ đồ ERD nhóm danh mục và tồn kho
+  
+
+Hình 2.14. Sơ đồ ERD nhóm tài khoản và bán hàng
+  
+
+Hình 2.15. Sơ đồ ERD nhóm nhập hàng và nhật ký kho
+2.4.2 Các quan hệ dữ liệu và chuẩn hóa
+•  Chuẩn hóa dữ liệu và phi chuẩn hóa: Cơ sở dữ liệu được thiết kế đạt chuẩn chuẩn hóa 3NF để loại bỏ dư thừa dữ liệu và bảo toàn tính nhất quán. Đồng thời, hệ thống áp dụng phi chuẩn hóa có kiểm soát tại bảng DON_HANG_CT (lưu snapshot tên, SKU, đơn giá tại thời điểm đặt), TON_KHO (tách riêng OnHand và Reserved) và THANH_TOAN (tách biệt trạng thái thu tiền COD khỏi trạng thái đơn) nhằm tối ưu hiệu năng truy vấn báo cáo và bảo toàn lịch sử giao dịch.
+•  Ràng buộc cân bằng tồn kho: Bảng TON_KHO áp đặt ràng buộc CHECK (Reserved >= 0 AND OnHand >= Reserved) bảo đảm lượng giữ không âm và không vượt quá tồn thực tế.
+•  Trạng thái đơn hàng và nhật ký kho: DON_HANG.Status chỉ nhận 6 giá trị hợp lệ (CHO_XAC_NHAN, DA_XAC_NHAN, DANG_GIAO, HOAN_TAT, DA_HUY, GIAO_THAT_BAI). NHAT_KY_KHO.Kind nhận 6 giá trị (NHAP, GIU, HUY_GIU, XUAT_GIAO, NHAN_LAI, DIEU_CHINH).
+•  Kiểm soát đồng thời và chống trùng lặp: 4 bảng BIEN_THE, TON_KHO, DON_HANG, PHIEU_NHAP sử dụng cột rowversion (Version) để phát hiện tranh chấp cập nhật. Các chỉ mục duy nhất trên RequestKey (DON_HANG), (OperationKey, VariantId) và (OrderId, VariantId, Kind) (NHAT_KY_KHO) giúp chống gửi lặp và chống cộng kho hai lần khi nhận lại hàng.
+•  Lưu trữ tiền tệ và thời gian: Mọi giá trị tiền tệ dùng kiểu decimal(18,2) (riêng ProfitPercent dùng decimal(7,2)); dấu thời gian lưu chuẩn UTC và quy đổi UTC+7 khi lọc hoặc thống kê theo ngày.
+2.4.3 Chi tiết các bảng dữ liệu chính
+STT
+	Tên bảng SQL
+	Lớp Entity (C#)
+	Khóa chính
+	Các cột chính & Ràng buộc nổi bật
+	1
+	TAI_KHOAN
+	Account
+	Id
+	Username (unique, max 100), PasswordHash, Role ('CUSTOMER'/'ADMIN'), Active, CreatedAt.
+	2
+	KHACH_HANG
+	Customer
+	Id (FK → TAI_KHOAN)
+	FullName, Phone (unique), Email (nullable unique), Address.
+	3
+	PHIEN
+	LoginSession
+	Id (Guid)
+	AccountId (FK → TAI_KHOAN), ExpiresAt (index, thời hạn 8 giờ).
+	4
+	HANG
+	Brand
+	Id
+	Name (unique, max 100), Active.
+	5
+	DANH_MUC
+	Category
+	Id
+	Name (unique, max 100), Active.
+	6
+	SAN_PHAM
+	Product
+	Id
+	Code (unique), Name, BrandId, CategoryId, Specifications, Description, ImageUrl, Active.
+	7
+	SAN_PHAM_ANH
+	ProductImage
+	Id
+	ProductId (FK), Url, SortOrder, UrlHash (cột tính SHA2_256 unique theo ProductId).
+	8
+	BIEN_THE
+	Variant
+	Id
+	ProductId, Sku (unique), Color, StorageGb (unique cùng ProductId), Cost, ProfitPercent, Price, Active, Version.
+	9
+	TON_KHO
+	Inventory
+	VariantId (FK → BIEN_THE)
+	OnHand, Reserved, Version; CHECK (Reserved >= 0 AND OnHand >= Reserved).
+	10
+	GIO_HANG_CT
+	CartLine
+	(CustomerId, VariantId)
+	Quantity (> 0), UpdatedAt; liên kết KHACH_HANG và BIEN_THE.
+	11
+	DON_HANG
+	Order
+	Id
+	Code (unique), CustomerId, Recipient, Phone, Address, Status (6 trạng thái), Total, CreatedAt, CompletedAt, RequestKey (unique), Version.
+	12
+	DON_HANG_CT
+	OrderLine
+	Id
+	OrderId, VariantId (unique cặp), Name, Sku, Description, Quantity, Price (snapshot lúc đặt).
+	13
+	THANH_TOAN
+	Payment
+	OrderId (FK → DON_HANG)
+	Method ('COD'), Status ('CHUA_THU'/'DA_THU'), Amount, CollectedAt, ActorId.
+	14
+	LICH_SU_DON
+	OrderHistory
+	Id
+	OrderId, From, To, ActorId, At, Reason (max 1000).
+	15
+	NHA_CUNG_CAP
+	Supplier
+	Id
+	Code (unique), Name, Phone, Address, Active.
+	16
+	PHIEU_NHAP
+	Purchase
+	Id
+	Code (unique), SupplierId, CreatorId, ConfirmerId, Status ('NHAP'/'DA_XAC_NHAN'/'DA_HUY'), Total, CreatedAt, ConfirmedAt, Version.
+	17
+	PHIEU_NHAP_CT
+	PurchaseLine
+	Id
+	PurchaseId, VariantId (unique cặp), Quantity (> 0), Cost (> 0).
+	18
+	NHAT_KY_KHO
+	StockMovement
+	Id
+	VariantId, ActorId, OrderId, PurchaseId, Kind (6 loại), DeltaOnHand, DeltaReserved, At, Reason, OperationKey.
+	19
+	__PhoneStoreMigrations
+	(Hệ thống)
+	Id
+	Sha256 — lưu dấu vết và mã kiểm tra toàn vẹn schema SQL đã áp dụng.
+	 
+2.5 THIẾT KẾ UI
+Giao diện hệ thống được triển khai nhất quán trên hai phân hệ: các nút thao tác có trạng thái đang xử lý để tránh gửi trùng yêu cầu, hộp xác nhận cho thao tác nhạy cảm (hủy đơn, khóa tài khoản, xác nhận nhập hàng, kiểm kê kho) và giữ nguyên dữ liệu nhập trên biểu mẫu khi gặp lỗi.
+2.5.1 Giao diện Website dành cho Khách hàng
+2.5.1.1 Trang chủ và sản phẩm bán chạy (Home/Index)
+Hiển thị thanh điều hướng, phần giới thiệu cửa hàng và tối đa 8 sản phẩm bán chạy trong tháng hiện tại theo UTC+7.
+  
+
+Hình 2.16. Giao diện Trang chủ website với danh mục sản phẩm bán chạy
+2.5.1.2 Danh mục điện thoại (Catalog/Index)
+Hỗ trợ tìm kiếm theo từ khóa, lọc đồng thời theo hãng, mức giá, dung lượng, màu sắc, sắp xếp và phân trang.
+  
+
+Hình 2.17. Giao diện Danh mục điện thoại trên website
+2.5.1.3 Chi tiết điện thoại (Catalog/Details)
+Hiển thị ảnh sản phẩm, thông số kỹ thuật, mô tả và bộ chọn biến thể; khóa nút Thêm vào giỏ khi biến thể hết hàng.
+  
+
+Hình 2.18. Giao diện Chi tiết sản phẩm và lựa chọn biến thể
+2.5.1.4 Giỏ hàng (Cart/Index)
+Hiển thị danh sách biến thể đã chọn, đơn giá hiện hành, tồn khả dụng và cho phép cập nhật số lượng hoặc xóa mặt hàng.
+  
+
+Hình 2.19. Giao diện Giỏ hàng trên website
+2.5.1.5 Đặt hàng COD (Cart/Checkout)
+Cho phép nhập thông tin người nhận, địa chỉ giao hàng, rà soát giá xác nhận trước khi gửi đơn COD.
+  
+
+Hình 2.20. Giao diện Đặt hàng COD trên website
+2.5.1.6 Lịch sử đơn hàng của khách (Orders/Index)
+Liệt kê các đơn hàng thuộc tài khoản đang đăng nhập kèm bộ lọc trạng thái/thời gian và liên kết tới chi tiết đơn.
+  
+
+Hình 2.21. Giao diện Lịch sử đơn hàng của khách hàng
+2.5.2 Giao diện Desktop WinForms dành cho Admin
+2.5.2.1 Đăng nhập quản trị (LoginForm)
+Kiểm tra trạng thái máy chủ qua /health/ready, cho phép mở ServerSettingsForm và xác thực tài khoản ADMIN.
+  
+
+Hình 2.22. Giao diện Đăng nhập ứng dụng WinForms quản trị
+2.5.2.2 Màn hình Tổng quan (MainForm & DashboardView)
+Hiển thị thanh điều hướng bên trái, doanh thu kỳ/hôm nay, biểu đồ 7 ngày gần nhất, số đơn chờ xử lý và hàng sắp hết.
+  
+
+Hình 2.23. Giao diện Tổng quan trên ứng dụng WinForms
+2.5.2.3 Quản lý đơn hàng (OrderListForm)
+Cho phép lọc đơn hàng theo từ khóa, trạng thái và khoảng ngày đặt; nhấp đúp mở OrderDetailForm để xử lý đơn.
+  
+
+Hình 2.24. Giao diện Danh sách đơn hàng trên WinForms
+2.5.2.4 Hóa đơn bán hàng (InvoiceForm)
+Hiển thị nội dung chứng từ bán hàng từ dữ liệu đã chốt trên máy chủ và hỗ trợ PrintPreview cục bộ.
+  
+
+Hình 2.25. Giao diện Hóa đơn bán hàng snapshot trên WinForms
+2.5.2.5 Quản lý phiếu nhập kho (PurchaseEditor)
+Cho phép chọn nhà cung cấp, thêm dòng biến thể, nhập số lượng/đơn giá vốn, lưu nháp hoặc xác nhận nhập kho.
+  
+
+Hình 2.26. Giao diện Phiếu nhập hàng trên WinForms
+2.5.2.6 Nhật ký tồn kho (StockJournalForm)
+Theo dõi chi tiết từng biến động kho (NHAP, GIU, HUY_GIU, XUAT_GIAO, NHAN_LAI, DIEU_CHINH) kèm actor và OperationKey.
+  
+
+Hình 2.27. Giao diện Nhật ký biến động kho trên WinForms
+2.5.2.7 Báo cáo thống kê (ReportScreen)
+Cho phép chọn Doanh thu, Bán chạy hoặc Tồn hiện tại; hiển thị bảng số liệu phân trang và biểu đồ cột từ cùng StoreReport.
+  
+
+Hình 2.28. Giao diện Báo cáo doanh thu trên WinForms
+2.6 SEQUENCE DIAGRAM
+Dưới đây trình bày 10 sơ đồ tuần tự tương ứng với 10 nhóm ca sử dụng của hệ thống, trong đó mỗi ca sử dụng được minh họa bằng 1 luồng xử lý tiêu biểu. Các sơ đồ mô tả luồng trao đổi thông điệp từ tác nhân qua giao diện Website (Controller MVC) hoặc WinForms (Form → Admin API) tới lớp dịch vụ nghiệp vụ và cơ sở dữ liệu SQL Server, phản ánh đúng tên hàm, giao dịch, khóa đồng thời và các nhánh xử lý lỗi trong mã nguồn:
+2.6.1 Sequence UC01 – Đăng nhập khách hàng
+AccountSessions mở giao dịch Serializable với khóa Exclusive PhoneStore:write, xác minh mật khẩu bằng PasswordHasher, kiểm tra Active và vai trò CUSTOMER trước khi tạo phiên 8 giờ trong bảng PHIEN.
+  
+
+Hình 2.29. Sơ đồ tuần tự đăng nhập khách hàng (UC01)
+2.6.2 Sequence UC02 – Tra cứu và xem chi tiết điện thoại
+CatalogController gọi LookupService.Public và CatalogService.List/Read qua IStoreService trong giao dịch chỉ đọc Serializable (Shared), chỉ trả các sản phẩm đang kinh doanh và tính tồn khả dụng.
+  
+
+Hình 2.30. Sơ đồ tuần tự tra cứu sản phẩm (UC02)
+2.6.3 Sequence UC03 – Đặt hàng thanh toán COD
+CheckoutService.Place kiểm tra RequestKey chống gửi lặp, đối chiếu giá xác nhận (ném PriceChangedException nếu giá đổi), cập nhật giữ hàng trên TON_KHO và ghi DON_HANG, THANH_TOAN, NHAT_KY_KHO, LICH_SU_DON rồi xóa giỏ trong cùng giao dịch.
+  
+
+Hình 2.31. Sơ đồ tuần tự đặt hàng COD (UC03)
+2.6.4 Sequence UC04 – Khách hàng hủy đơn chờ xác nhận
+OrderWorkflow.Cancel kiểm tra quyền chủ đơn, Version (rowversion), OperationKey và trạng thái CHO_XAC_NHAN; giải phóng Reserved trong TON_KHO và chuyển đơn sang DA_HUY.
+  
+
+Hình 2.32. Sơ đồ tuần tự khách hủy đơn hàng (UC04)
+2.6.5 Sequence UC05 – Đăng nhập quản trị WinForms
+LoginForm thông qua ApiClient kiểm tra /health/ready (môi trường và fingerprint), lấy CSRF token rồi gọi /api/auth/login với Surface="admin"; chỉ tài khoản ADMIN hoạt động mới được cấp cookie PhoneStore.Session.
+  
+
+Hình 2.33. Sơ đồ tuần tự đăng nhập quản trị WinForms (UC05)
+2.6.6 Sequence UC06 – Lưu sản phẩm, biến thể và giá bán
+ProductService.Save kiểm tra đủ biến thể cũ và Version, tính giá bán bằng Rules.Price(Cost, ProfitPercent), tạo TON_KHO mặc định (0, 0) cho biến thể mới và lưu tối đa 12 ảnh phụ.
+  
+
+Hình 2.34. Sơ đồ tuần tự lưu sản phẩm và biến thể (UC06)
+2.6.7 Sequence UC07 – Cập nhật hoặc khóa tài khoản khách hàng
+CustomerAdminService xử lý cập nhật hồ sơ KHACH_HANG hoặc thay đổi trạng thái Active (có kiểm tra ExpectedActive); khi khóa tài khoản sẽ xóa toàn bộ phiên của khách trong bảng PHIEN.
+  
+
+Hình 2.35. Sơ đồ tuần tự cập nhật và khóa khách hàng (UC07)
+2.6.8 Sequence UC08 – Xác nhận phiếu nhập kho
+PurchaseService.Confirm kiểm tra trạng thái NHAP, Version, nhà cung cấp hoạt động và OperationKey; tăng OnHand, cập nhật giá vốn, tính lại giá bán và chốt phiếu DA_XAC_NHAN trong một giao dịch.
+  
+
+Hình 2.36. Sơ đồ tuần tự xác nhận phiếu nhập kho (UC08)
+2.6.9 Sequence UC09 – Xử lý đơn hàng và giao hàng COD
+OrderWorkflow điều phối 6 hành động chuyển trạng thái hợp lệ (Confirm, Cancel, Dispatch, Complete, Fail, ReceiveReturn); nhận lại hàng thực tế từ GIAO_THAT_BAI chỉ cộng tồn một lần và giữ nguyên trạng thái GIAO_THAT_BAI.
+  
+
+Hình 2.37. Sơ đồ tuần tự xử lý đơn hàng quản trị (UC09)
+2.6.10 Sequence UC10 – Xem báo cáo thống kê
+ReportService.Read chạy trong BusinessKernel.Read (Shared) tổng hợp tồn kho hiện tại hoặc doanh thu/bán chạy từ các đơn HOAN_TAT và đã thu COD theo ngày hoàn tất UTC+7, trả về StoreReport.
+  
+
+Hình 2.38. Sơ đồ tuần tự xem báo cáo thống kê (UC10)
+2.7 CLASS DIAGRAM
+Kiến trúc lớp được tổ chức theo mô hình Boundary – Control – Entity và tách thành 5 sơ đồ theo nhóm chức năng tương ứng với các ca sử dụng. Website MVC giao tiếp với lớp điều khiển qua giao diện IStoreService (MvcStoreAdapter), còn giao diện WinForms giao tiếp qua Admin API:
+Nhóm 1. Tài khoản (UC01, UC05, UC07)
+  
+
+Hình 2.39. Sơ đồ lớp nhóm tài khoản: AccountController, LoginForm, CustomerDetailsForm, CustomerProfileEditor, AccountSessions, CustomerAdminService, Account, LoginSession, Customer.
+Nhóm 2. Tra cứu và quản lý sản phẩm (UC02, UC06)
+  
+
+Hình 2.40. Sơ đồ lớp nhóm sản phẩm: CatalogController, ProductEditor, CatalogService, LookupService, ProductService, LoginSession, Brand, Category, Product, Variant, Inventory, ProductImage.
+Nhóm 3. Giỏ hàng và đơn hàng (UC03, UC04, UC09)
+  
+
+Hình 2.41. Sơ đồ lớp nhóm đơn hàng: CartController, OrdersController, OrderDetailForm, CheckoutService, OrderWorkflow, LoginSession, Account, Customer, Variant, CartLine, Order, OrderLine, Payment, Inventory, StockMovement, OrderHistory.
+Nhóm 4. Nhập hàng và tồn kho (UC08)
+  
+
+Hình 2.42. Sơ đồ lớp nhóm nhập hàng: PurchaseEditor, PurchaseService, LoginSession, Account, Supplier, Purchase, PurchaseLine, Variant, Inventory, StockMovement.
+Nhóm 5. Báo cáo thống kê (UC10)
+  
+
+Hình 2.43. Sơ đồ lớp nhóm báo cáo: ReportScreen, ReportService, LoginSession, Order, OrderLine, Payment, Product, Variant, Inventory.
+2.7.1 Danh sách các lớp trong sơ đồ lớp
+STT
+	Tên lớp (C#)
+	Nhóm / Tầng
+	Thuộc tính / Thành phần tiêu biểu
+	Chức năng chính
+	1
+	Account
+	Entity (TAI_KHOAN)
+	Id, Username, PasswordHash, Role, Active, CreatedAt
+	Lưu thông tin đăng nhập, vai trò và trạng thái hoạt động.
+	2
+	Customer
+	Entity (KHACH_HANG)
+	Id, FullName, Phone, Email, Address
+	Lưu hồ sơ khách hàng gắn 1–1 với Account.
+	3
+	LoginSession
+	Entity (PHIEN)
+	Id (Guid), AccountId, ExpiresAt
+	Quản lý phiên đăng nhập cố định 8 giờ và hỗ trợ thu hồi phiên.
+	4
+	Brand / Category
+	Entity (HANG / DANH_MUC)
+	Id, Name, Active
+	Phân loại hãng sản xuất và danh mục điện thoại.
+	5
+	Product / ProductImage
+	Entity (SAN_PHAM / ANH)
+	Id, Code, Name, BrandId, CategoryId, Specifications, Active; Url, SortOrder
+	Lưu thông tin sản phẩm dùng chung và danh sách tối đa 12 ảnh phụ.
+	6
+	Variant
+	Entity (BIEN_THE)
+	Id, ProductId, Sku, Color, StorageGb, Cost, ProfitPercent, Price, Active, Version
+	Biến thể điện thoại kèm giá vốn, tỷ lệ lợi nhuận, giá bán và rowversion.
+	7
+	Inventory
+	Entity (TON_KHO)
+	VariantId, OnHand, Reserved, Version
+	Theo dõi tồn thực tế, lượng giữ cho đơn chờ và kiểm soát đồng thời.
+	8
+	CartLine
+	Entity (GIO_HANG_CT)
+	CustomerId, VariantId, Quantity, UpdatedAt
+	Lưu các dòng sản phẩm trong giỏ hàng máy chủ của khách.
+	9
+	Order / OrderLine
+	Entity (DON_HANG / CT)
+	Id, Code, CustomerId, Status, Total, RequestKey, Version; VariantId, Name, Sku, Quantity, Price
+	Lưu đơn hàng COD và snapshot chi tiết sản phẩm tại thời điểm đặt.
+	10
+	Payment
+	Entity (THANH_TOAN)
+	OrderId, Method, Status, Amount, CollectedAt, ActorId
+	Lưu trạng thái thu tiền COD tách biệt với trạng thái đơn hàng.
+	11
+	OrderHistory
+	Entity (LICH_SU_DON)
+	Id, OrderId, From, To, ActorId, At, Reason
+	Ghi vết toàn bộ quá trình chuyển trạng thái đơn hàng.
+	12
+	Supplier
+	Entity (NHA_CUNG_CAP)
+	Id, Code, Name, Phone, Address, Active
+	Lưu thông tin đối tác cung cấp điện thoại.
+	13
+	Purchase / PurchaseLine
+	Entity (PHIEU_NHAP / CT)
+	Id, Code, SupplierId, Status, Total, Version; VariantId, Quantity, Cost
+	Quản lý chứng từ nhập kho và đơn giá nhập từng biến thể.
+	14
+	StockMovement
+	Entity (NHAT_KY_KHO)
+	Id, VariantId, ActorId, OrderId, PurchaseId, Kind, DeltaOnHand, DeltaReserved, OperationKey
+	Ghi nhật ký mọi biến động tồn kho phục vụ đối soát và chống chạy lặp.
+	15
+	StoreDbContext & BusinessKernel
+	Hạ tầng dữ liệu
+	DbSet<...>, Require(), Read(), Write()
+	Ánh xạ EF Core, kiểm tra quyền/phiên và quản lý giao dịch Serializable + khóa PhoneStore:write.
+	16
+	Rules & Dịch vụ nghiệp vụ
+	Control (Infrastructure)
+	AccountSessions, CatalogService, CartService, CheckoutService, OrderWorkflow, ProductService, CustomerAdminService, PurchaseService, InventoryService, InvoiceService, ReportService
+	Thực thi toàn bộ quy tắc nghiệp vụ, kiểm tra giá/tồn/trạng thái và tổng hợp báo cáo.
+	17
+	MvcStoreAdapter & ApiClient
+	Tích hợp giao diện
+	IStoreService; ApiClient (HttpClient, Cookie, CSRF)
+	Cầu nối in-process cho Website MVC và cầu nối HTTP/HTTPS an toàn cho WinForms Admin.
+	 
+2.7.2 Danh sách các mối quan hệ giữa các lớp
+STT
+	Lớp nguồn
+	Lớp đích
+	Quan hệ & Bội số
+	Ý nghĩa nghiệp vụ
+	1
+	Account
+	Customer
+	1 – 0..1
+	Mỗi tài khoản CUSTOMER gắn một hồ sơ khách hàng dùng chung khóa Id.
+	2
+	Account
+	LoginSession
+	1 – 0..*
+	Một tài khoản có thể có nhiều phiên đăng nhập; bị xóa phiên khi khóa hoặc đổi mật khẩu.
+	3
+	Brand / Category
+	Product
+	1 – 0..*
+	Mỗi hãng và mỗi danh mục phân loại cho nhiều sản phẩm điện thoại.
+	4
+	Product
+	ProductImage
+	1 – 0..*
+	Một sản phẩm có tối đa 12 ảnh phụ lưu theo thứ tự trong SAN_PHAM_ANH.
+	5
+	Product
+	Variant
+	1 – 0..*
+	Một sản phẩm gồm nhiều biến thể màu sắc – dung lượng trong BIEN_THE.
+	6
+	Variant
+	Inventory
+	1 – 0..1
+	Mỗi biến thể có đúng một dòng tồn kho TON_KHO đi kèm (tạo cùng lúc khi thêm biến thể).
+	7
+	Customer
+	CartLine
+	1 – 0..*
+	Một khách hàng có thể lưu tối đa 100 biến thể trong giỏ hàng máy chủ GIO_HANG_CT.
+	8
+	Variant
+	CartLine
+	1 – 0..*
+	Mỗi dòng trong giỏ hàng tham chiếu tới một biến thể cụ thể (CartLine.VariantId).
+	9
+	Customer
+	Order
+	1 – 0..*
+	Một khách hàng có thể đặt nhiều đơn hàng theo thời gian (Order.CustomerId).
+	10
+	Order
+	OrderLine
+	1 – 1..*
+	Mỗi đơn hàng chứa ít nhất một dòng chi tiết sản phẩm đã chốt giá.
+	11
+	Variant
+	OrderLine
+	1 – 0..*
+	Mỗi dòng chi tiết đơn hàng tham chiếu tới biến thể đã đặt (OrderLine.VariantId).
+	12
+	Order
+	Payment
+	1 – 0..1
+	Mỗi đơn hàng gắn tối đa một bản ghi thanh toán COD trong THANH_TOAN.
+	13
+	Account
+	Payment
+	0..1 – 0..*
+	Khóa ngoại ActorId (nullable) ghi nhận quản trị viên xác nhận thu COD khi hoàn tất đơn.
+	14
+	Order
+	OrderHistory
+	1 – 0..*
+	Lưu đầy đủ lịch sử các bước chuyển trạng thái của đơn hàng.
+	15
+	Account
+	OrderHistory
+	1 – 0..*
+	Ghi nhận tài khoản khách hàng hoặc quản trị viên đã thực hiện chuyển trạng thái (ActorId).
+	16
+	Supplier
+	Purchase
+	1 – 0..*
+	Mỗi nhà cung cấp có thể cung ứng nhiều phiếu nhập hàng (Purchase.SupplierId).
+	17
+	Account
+	Purchase (Creator)
+	1 – 0..*
+	Ghi nhận tài khoản quản trị viên đã lập phiếu nhập hàng (Purchase.CreatorId).
+	18
+	Account
+	Purchase (Confirmer)
+	0..1 – 0..*
+	Khóa ngoại ConfirmerId (nullable) ghi nhận quản trị viên xác nhận nhập kho phiếu.
+	19
+	Purchase
+	PurchaseLine
+	1 – 1..*
+	Mỗi phiếu nhập khi xác nhận phải có từ 1 đến 100 dòng chi tiết biến thể.
+	20
+	Variant
+	PurchaseLine
+	1 – 0..*
+	Mỗi dòng chi tiết phiếu nhập tham chiếu tới biến thể được nhập (PurchaseLine.VariantId).
+	21
+	Variant
+	StockMovement
+	1 – 0..*
+	Mọi biến động tồn kho trong NHAT_KY_KHO đều gắn với một biến thể cụ thể.
+	22
+	Account
+	StockMovement
+	1 – 0..*
+	Ghi nhận tài khoản thực hiện thao tác kho qua khóa ngoại StockMovement.ActorId.
+	23
+	Order
+	StockMovement
+	0..1 – 0..*
+	Khóa ngoại OrderId (nullable) liên kết nhật ký giữ hàng, hủy giữ, xuất giao hoặc nhận lại hàng.
+	24
+	Purchase
+	StockMovement
+	0..1 – 0..*
+	Khóa ngoại PurchaseId (nullable) liên kết nhật ký nhập kho khi xác nhận phiếu nhập.
+	 
+2.7.3 Giải thích thiết kế
+1. Lưu giá cố định và ảnh chụp thông tin trên chứng từ: OrderLine (DON_HANG_CT) lưu trực tiếp tên sản phẩm, SKU, mô tả biến thể và đơn giá tại thời điểm khách xác nhận đặt đơn; tương tự PurchaseLine lưu đơn giá vốn theo từng lần nhập. Nhờ vậy, khi Admin thay đổi giá bán hoặc ngừng kinh doanh sản phẩm về sau, số liệu đơn hàng cũ và báo cáo doanh thu không bị sai lệch.
+2. Cơ chế tính giá bán và bảo vệ giá vốn: Lớp Rules.Price chuẩn hóa cách tính giá bán từ giá vốn và tỷ lệ lợi nhuận (0–10.000%, làm tròn AwayFromZero hai chữ số thập phân). Khi sửa sản phẩm cũ, máy chủ không chấp nhận giá bán tùy ý từ client gửi lên mà luôn tự tính lại từ Cost hiện có và ProfitPercent mới.
+3. Tách trạng thái thanh toán khỏi trạng thái đơn hàng: Payment (THANH_TOAN) theo dõi phương thức COD, trạng thái CHUA_THU/DA_THU, số tiền thực thu và người xác nhận (ActorId), tách khỏi tiến trình giao vận trên Order. Báo cáo doanh thu và bán chạy trong ReportService chỉ tổng hợp những đơn đồng thời đạt Status = HOAN_TAT và thanh toán DA_THU, tính theo ngày CompletedAt (UTC+7).
+4. Kiểm soát tồn kho và đồng thời: Thay vì giữ kho lúc thêm vào giỏ hàng, hệ thống chỉ tăng Reserved khi khách đặt đơn thành công và chạy câu lệnh SQL có điều kiện ngay trong giao dịch Serializable của BusinessKernel.Write (khóa PhoneStore:write). Cơ chế này kết hợp với rowversion (Version), RequestKey và OperationKey giúp tránh hoàn toàn tình trạng bán vượt tồn hoặc xác nhận lặp.
+Thay vì giữ kho lúc thêm vào giỏ hàng, hệ thống chỉ tăng Reserved khi khách đặt đơn thành công và chạy câu lệnh SQL có điều kiện ngay trong giao dịch Serializable của BusinessKernel.Write (khóa PhoneStore:write). Cơ chế này kết hợp với rowversion (Version), RequestKey và OperationKey giúp ngăn chặn/hạn chế tình trạng bán vượt tồn hoặc xác nhận lặp.
+Đề tài “Xây dựng hệ thống quản lý và bán điện thoại di động” đã hoàn thành các yêu cầu cốt lõi đặt ra ban đầu, bao gồm phân hệ Website ASP.NET Core MVC dành cho khách hàng và phân hệ Desktop Windows Forms dành cho quản trị viên giao tiếp qua Admin Minimal API, dùng chung tầng nghiệp vụ PhoneStore.Infrastructure và cơ sở dữ liệu SQL Server tập trung.
+Về mặt kỹ thuật, hệ thống giải quyết tốt các bài toán trọng tâm của bán lẻ điện thoại: quản lý biến thể theo màu sắc và dung lượng, tính giá tự động theo giá vốn và tỷ lệ lợi nhuận, kiểm soát chặt chẽ tồn kho ba đại lượng (OnHand, Reserved, Available) trong giao dịch Serializable, hỗ trợ nhận lại hàng sau giao thất bại đúng một lần và bảo toàn lịch sử giao dịch bằng xóa mềm.
+Tuy nhiên, ở quy mô một đồ án môn học, hệ thống vẫn còn hạn chế do sử dụng khóa ghi toàn cục PhoneStore:write gây giới hạn thông lượng khi xử lý giao dịch đồng thời cao. Trong thời gian tới, hướng phát triển trọng tâm là thu hẹp phạm vi khóa theo từng biến thể (variant-level lock) kết hợp tích hợp thanh toán trực tuyến/QR ngân hàng và kết nối API đơn vị giao hàng để nâng cao hiệu năng vận hành thực tế.
+
+
+
+
+ 
+PHỤ LỤC A: KIẾN TRÚC TRIỂN KHAI VÀ BẢO MẬT
+A.1 Sơ đồ thành phần và sơ đồ triển khai
+A.1.1 Sơ đồ thành phần
+Website MVC và Admin Minimal API cùng được tổ chức trong PhoneStore.Web và chia sẻ chung các dịch vụ nghiệp vụ của PhoneStore.Infrastructure trong một tiến trình. Ứng dụng Desktop WinForms (PhoneStore.Admin) không tham chiếu PhoneStore.Infrastructure hay SQL Server mà ủy quyền toàn bộ giao tiếp HTTP/HTTPS cho thư viện PhoneStore.Admin.Client.
+  
+
+Hình A.1. Sơ đồ thành phần (Component Diagram) của hệ thống
+A.1.2 Sơ đồ triển khai
+Trên sơ đồ triển khai, máy của Khách hàng (chạy trình duyệt web) và máy của Quản trị viên (cài ứng dụng desktop PhoneStore.Admin.exe) được tách thành hai thiết bị độc lập, cùng giao tiếp qua mạng với máy chủ chạy host PhoneStore.Web, và chỉ duy nhất máy chủ ứng dụng mới kết nối trực tiếp tới SQL Server.
+Ứng dụng WinForms đọc cấu hình địa chỉ máy chủ từ SettingsStore (mặc định http://localhost:5080 khi chạy thử cục bộ). Theo quy tắc trong ServerAddress.Validate, các máy chủ từ xa bắt buộc sử dụng giao thức HTTPS; giao thức HTTP chỉ được phép đối với địa chỉ loopback (localhost). Trước khi gửi yêu cầu đăng nhập, ApiClient tự động gọi endpoint /health/ready để kiểm tra trạng thái sẵn sàng cùng tên môi trường (environment) và mã định danh máy chủ (fingerprint băm từ chuỗi kết nối và môi trường); nếu quản trị viên có khai báo giá trị kỳ vọng trong cài đặt mà máy chủ trả về không khớp, đăng nhập sẽ bị từ chối. Ứng dụng WinForms không tự khởi động tiến trình backend nên máy chủ Web phải được chạy sẵn.
+  
+
+Hình A.2. Sơ đồ triển khai (Deployment Diagram) của hệ thống
+A.2 Xác thực, bảo vệ dữ liệu và vận hành
+•  Bảo mật mật khẩu và phiên đăng nhập: Mật khẩu người dùng được băm kèm salt bằng ASP.NET Core Identity PasswordHasher. Cookie PhoneStore.Session sử dụng cờ HttpOnly, SameSite=Lax, thời hạn cố định 8 giờ (SessionPolicy.Lifetime) và đối chiếu trực tiếp với bảng PHIEN cùng cờ Active trên mỗi yêu cầu.
+•  Chống giả mạo yêu cầu (CSRF) và ẩn chi tiết lỗi: Các thao tác thay đổi dữ liệu trên cả MVC và Admin API đều bắt buộc Antiforgery token (WinForms lấy từ /api/security/token). Mọi ngoại lệ nghiệp vụ trả về thông báo tiếng Việt có cấu trúc, trong khi lỗi hệ thống ngoài dự kiến chỉ trả về mã tra cứu và ghi nhật ký ở phía máy chủ.
+•  Quản lý schema và sao lưu: Cấu trúc cơ sở dữ liệu được dựng từ tệp migration 001_InitialStore.sql có kiểm tra mã băm SHA-256 trong bảng __PhoneStoreMigrations và không tự động chạy sửa schema khi khởi động Web. Việc sao lưu/phục hồi hỗ trợ qua tập lệnh BackupRestore.ps1 với chế độ COPY_ONLY, CHECKSUM và kiểm tra VERIFYONLY.
